@@ -1,0 +1,59 @@
+name: lint 
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - "**"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ['16']
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: hp/package-lock.json
+      - name: install deps
+        working-directory: ./hp
+        run: |
+          npm install
+      - name: lint
+        working-directory: ./hp
+        run: |
+          npm run lint
+
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ['16']
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: hp/package-lock.json
+      - name: install deps
+        working-directory: ./hp
+        run: |
+          npm install
+      - name: build
+        working-directory: ./hp
+        run: |
+          npm run build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: public
+          path: hp/dist/
