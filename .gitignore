@@ -56,3 +56,6 @@ baseline.json
 
 # Husky
 .husky/_
+
+dist/
+.angular
