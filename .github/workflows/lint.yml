@@ -1,9 +1,9 @@
-name: lint 
+name: lint & build
 
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     types:
       - opened
