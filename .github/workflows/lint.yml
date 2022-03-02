@@ -53,7 +53,9 @@ jobs:
         working-directory: ./hp
         run: |
           npm run build
-      - uses: actions/upload-artifact@v2
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/master' }}
         with:
-          name: public
-          path: hp/dist/
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./hp/dist/
