@@ -30,4 +30,4 @@ jobs:
       - name: deploy
         working-directory: ./hp
         run: |
-          npm run ng deploy --base-href=/kemu.site/
+          npm run ng deploy --base-href=https://kemu3007.github.io/kemu.site/
