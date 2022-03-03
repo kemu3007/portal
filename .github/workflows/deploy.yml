@@ -1,18 +1,12 @@
-name: lint
+name: deploy
 
 on:
   push:
     branches:
       - master
-  pull_request:
-    types:
-      - opened
-      - synchronize
-    branches:
-      - "**"
 
 jobs:
-  lint:
+  deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -28,7 +22,7 @@ jobs:
         working-directory: ./hp
         run: |
           npm install
-      - name: lint
+      - name: deploy
         working-directory: ./hp
         run: |
-          npm run lint
+          npm run ng deploy --base-href=/kemu.site/
