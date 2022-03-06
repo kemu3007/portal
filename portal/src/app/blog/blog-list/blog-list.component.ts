@@ -17,6 +17,10 @@ export class BlogListComponent {
     return articles;
   }
 
+  get articleKeys(): string[] {
+    return Object.keys(this.articles).sort((a, b) => (a > b ? -1 : 1));
+  }
+
   getLabels(article: Article): Label[] {
     return article.labels.filter((label) => label.name !== 'article');
   }

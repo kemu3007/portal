@@ -1,22 +1,22 @@
 <div class="container">
   <div
     class="card mt-3"
-    *ngFor="let article of articles | keyvalue"
-    (click)="transitToDetail(article.key)"
+    *ngFor="let key of articleKeys"
+    (click)="transitToDetail(key)"
   >
     <div class="card-body">
       <div class="d-flex justify-content-between">
-        <h5 class="card-link">{{ article.value.title }}</h5>
+        <h5 class="card-link">{{ articles[key].title }}</h5>
         <p
           class="badge rounded-pill"
-          *ngFor="let label of getLabels(article.value)"
+          *ngFor="let label of getLabels(articles[key])"
           [ngStyle]="{ 'background-color': '#' + label.color }"
         >
           {{ label.name }}
         </p>
       </div>
       <hr class="mt-0" />
-      <p class="card-text">{{ article.value.body }}...</p>
+      <p class="card-text">{{ articles[key].body }}...</p>
     </div>
   </div>
 </div>
