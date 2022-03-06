@@ -2,7 +2,7 @@ name: deploy
 
 on:
   issues:
-    types: [opened, edited]
+    types: [opened, edited, deleted]
   push:
     branches:
       - master
