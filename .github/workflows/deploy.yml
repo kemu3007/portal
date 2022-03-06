@@ -1,6 +1,8 @@
 name: deploy
 
 on:
+  issues:
+    types: [opened, edited]
   push:
     branches:
       - master
@@ -37,4 +39,4 @@ jobs:
       - name: deploy
         working-directory: ./hp
         run: |
-          npm run ng deploy
+          npm run ng deploy --cname=hp.kemu.site

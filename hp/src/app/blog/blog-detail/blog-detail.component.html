@@ -8,9 +8,9 @@
   <div [innerHTML]="body"></div>
   <hr />
   <p>
-    コメントはこちらから <a [href]="article?.url">{{ article?.html_url }}</a>
-  </p>
-  <p>
+    コメントはこちらから
+    <a [href]="article?.html_url">{{ article?.html_url }}</a
+    ><br />
     ※リリースタイミングの問題ページ上には反映されないことがありますが確認してます。
   </p>
 </div>
