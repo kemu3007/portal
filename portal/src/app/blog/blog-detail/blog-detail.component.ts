@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import articles from '../../../../../articles.json';
 import { marked } from 'marked';
 import hljs from 'highlight.js';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog-detail',
   templateUrl: './blog-detail.component.html',
 })
-export class BlogDetailComponent {
-  constructor(private route: ActivatedRoute) {
+export class BlogDetailComponent implements OnInit {
+  constructor(private titleService: Title, private route: ActivatedRoute) {
     marked.setOptions({
       highlight: function (code, lang) {
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
@@ -19,6 +20,10 @@ export class BlogDetailComponent {
       gfm: true,
       breaks: true,
     });
+  }
+
+  ngOnInit(): void {
+    this.titleService.setTitle(`kemu portal | blog | ${this.article.title}`);
   }
 
   get article(): any {

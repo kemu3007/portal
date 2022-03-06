@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import articles from '../../../../../articles.json';
 
@@ -7,7 +8,9 @@ import articles from '../../../../../articles.json';
   templateUrl: './blog-list.component.html',
 })
 export class BlogListComponent {
-  constructor(private router: Router) {}
+  constructor(titleService: Title, private router: Router) {
+    titleService.setTitle('kemu portal | blog');
+  }
 
   get articles() {
     return Object.values(articles);
