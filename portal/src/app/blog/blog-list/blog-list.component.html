@@ -1,14 +1,14 @@
 <div class="container">
   <div
     class="card mt-3"
-    *ngFor="let article of articles"
-    (click)="transitToDetail(article.node_id)"
+    *ngFor="let article of articles | keyvalue"
+    (click)="transitToDetail(article.key)"
   >
     <div class="card-body">
       <a class="stretched-link"
-        ><h5 class="card-link">{{ article.title }}</h5></a
+        ><h5 class="card-link">{{ article.value.title }}</h5></a
       >
-      <p class="card-text">{{ escapeMD(article.body | slice: 0:200) }}...</p>
+      <p class="card-text">{{ article.value.body }}...</p>
     </div>
   </div>
 </div>

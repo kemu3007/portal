@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import articles from '../../../../../articles.json';
+import articles from '../../../../../articles/list.json';
+import { Article } from '../models';
 
 @Component({
   selector: 'app-blog-list',
@@ -12,8 +13,8 @@ export class BlogListComponent {
     titleService.setTitle('kemu portal | blog');
   }
 
-  get articles() {
-    return Object.values(articles);
+  get articles(): Record<string, Article> {
+    return articles;
   }
 
   /** サブタイトルのため、markdown記法を削除する */

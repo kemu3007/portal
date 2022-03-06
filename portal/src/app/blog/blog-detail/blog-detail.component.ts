@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import articles from '../../../../../articles.json';
 import { marked } from 'marked';
 import hljs from 'highlight.js';
 import { Title } from '@angular/platform-browser';
+import { ArticleDetail } from '../models';
 
 @Component({
   selector: 'app-blog-detail',
   templateUrl: './blog-detail.component.html',
 })
 export class BlogDetailComponent implements OnInit {
+  marked = marked;
+  article?: ArticleDetail;
+
   constructor(private titleService: Title, private route: ActivatedRoute) {
     marked.setOptions({
       highlight: function (code, lang) {
@@ -23,19 +26,17 @@ export class BlogDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.titleService.setTitle(`kemu portal | blog | ${this.article.title}`);
+    this.article$.then((article) => {
+      this.titleService.setTitle(`kemu portal | blog | ${article.title}`);
+      this.article = article;
+    });
   }
 
-  get article(): any {
-    const nodeId: string = this.route.snapshot.paramMap.get('nodeId') ?? '';
-    return (articles as Record<string, any>)[nodeId];
-  }
-
-  get body() {
-    return marked.parse(this.article?.body ?? '');
-  }
-
-  get comments() {
-    return this.article?.comments;
+  get article$(): Promise<ArticleDetail> {
+    return import(
+      `../../../../../articles/retrieve/${this.route.snapshot.paramMap.get(
+        'id'
+      )}.json`
+    );
   }
 }

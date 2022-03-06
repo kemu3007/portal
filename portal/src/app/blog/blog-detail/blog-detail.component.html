@@ -2,11 +2,11 @@
   rel="stylesheet"
   href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css"
 />
-<div class="container mt-3">
+<div class="container mt-3" *ngIf="article">
   <h2>{{ article?.title }}</h2>
   <p>{{ article?.created_at | date: "yyyy.MM.dd hh:mm" }}</p>
   <hr />
-  <div [innerHTML]="body"></div>
+  <div [innerHTML]="marked.parse(article['body'])"></div>
   <hr class="mt-5" />
   <h3>comments</h3>
   <div class="card" *ngFor="let comment of article?.comments">
