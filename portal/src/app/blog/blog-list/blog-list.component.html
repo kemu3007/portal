@@ -5,15 +5,17 @@
     (click)="transitToDetail(key)"
   >
     <div class="card-body">
-      <div class="d-flex justify-content-between">
-        <h5 class="card-link">{{ articles[key].title }}</h5>
-        <p
-          class="badge rounded-pill"
-          *ngFor="let label of getLabels(articles[key])"
-          [ngStyle]="{ 'background-color': '#' + label.color }"
-        >
-          {{ label.name }}
-        </p>
+      <div class="row">
+        <h5 class="col-9 card-link">{{ articles[key].title }}</h5>
+        <div class="col-3 text-end">
+          <p
+            class="badge rounded-pill"
+            *ngFor="let label of getLabels(articles[key])"
+            [ngStyle]="{ 'background-color': '#' + label.color }"
+          >
+            {{ label.name }}
+          </p>
+        </div>
       </div>
       <hr class="mt-0" />
       <p class="card-text">{{ articles[key].body }}...</p>
