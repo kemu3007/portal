@@ -1,6 +1,14 @@
-<div class="card" *ngFor="let article of articles;">
-  <div class="card-body">
-    <h5 class="card-title">{{ article.title }}</h5>
-    <p class="card-text">{{ article.contents | slice: 0:200 }}...</p>
+<div class="container">
+  <div
+    class="card mt-3"
+    *ngFor="let article of articles"
+    (click)="transitToDetail(article.node_id)"
+  >
+    <div class="card-body">
+      <a class="stretched-link"
+        ><h5 class="card-link">{{ article.title }}</h5></a
+      >
+      <p class="card-text">{{ escapeMD(article.body | slice: 0:200) }}...</p>
+    </div>
   </div>
 </div>

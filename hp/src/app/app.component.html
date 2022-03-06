@@ -3,7 +3,7 @@
     <a ngbNavLink>kemu portal</a>
   </li>
   <li *ngFor="let tab of tabs; index as i" [ngbNavItem]="i">
-    <a ngbNavLink [routerLink]="tab.to">{{tab.name}}</a>
+    <a ngbNavLink [routerLink]="tab.to">{{ tab.name }}</a>
   </li>
 </ul>
 <div [ngbNavOutlet]="nav"></div>

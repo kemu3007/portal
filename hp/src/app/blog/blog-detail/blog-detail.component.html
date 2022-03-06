@@ -1,0 +1,16 @@
+<link
+  rel="stylesheet"
+  href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css"
+/>
+<div class="container mt-3">
+  <h2>{{ article?.title }}</h2>
+  <hr />
+  <div [innerHTML]="body"></div>
+  <hr />
+  <p>
+    コメントはこちらから <a [href]="article?.url">{{ article?.html_url }}</a>
+  </p>
+  <p>
+    ※リリースタイミングの問題ページ上には反映されないことがありますが確認してます。
+  </p>
+</div>

@@ -13,6 +13,9 @@ jobs:
         node-version: ['16']
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
@@ -22,6 +25,10 @@ jobs:
         working-directory: ./hp
         run: |
           npm install
+      - name: collect article
+        run: |
+          pip install requests
+          python export.py
       - name: setup git
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
