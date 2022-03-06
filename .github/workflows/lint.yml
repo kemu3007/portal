@@ -23,12 +23,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-          cache-dependency-path: hp/package-lock.json
+          cache-dependency-path: portal/package-lock.json
       - name: install deps
-        working-directory: ./hp
+        working-directory: ./portal
         run: |
           npm install
       - name: lint
-        working-directory: ./hp
+        working-directory: ./portal
         run: |
           npm run lint

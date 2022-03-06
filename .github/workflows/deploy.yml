@@ -22,9 +22,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-          cache-dependency-path: hp/package-lock.json
+          cache-dependency-path: portal/package-lock.json
       - name: install deps
-        working-directory: ./hp
+        working-directory: ./portal
         run: |
           npm install
       - name: collect article
@@ -37,6 +37,6 @@ jobs:
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
       - name: deploy
-        working-directory: ./hp
+        working-directory: ./portal
         run: |
           npm run ng deploy -- --cname=portal.kemu.site

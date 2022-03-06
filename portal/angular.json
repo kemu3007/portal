@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hp": {
+    "portal": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/hp",
+            "outputPath": "dist/portal",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "hp:build:production"
+              "browserTarget": "portal:build:production"
             },
             "development": {
-              "browserTarget": "hp:build:development"
+              "browserTarget": "portal:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hp:build"
+            "browserTarget": "portal:build"
           }
         },
         "test": {
@@ -119,7 +119,7 @@
       }
     }
   },
-  "defaultProject": "hp",
+  "defaultProject": "portal",
   "cli": {
     "defaultCollection": "@angular-eslint/schematics"
   }
