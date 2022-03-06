@@ -39,4 +39,4 @@ jobs:
       - name: deploy
         working-directory: ./hp
         run: |
-          npm run ng deploy --cname=hp.kemu.site
+          npm run ng deploy --cname=portal.kemu.site
