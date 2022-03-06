@@ -21,9 +21,9 @@ export class BlogDetailComponent {
     });
   }
 
-  get article() {
-    const articleId = this.route.snapshot.params['nodeId'];
-    return articles.find((article) => article.node_id === articleId);
+  get article(): any {
+    const nodeId: string = this.route.snapshot.paramMap.get('nodeId') ?? '';
+    return (articles as Record<string, any>)[nodeId];
   }
 
   get body() {

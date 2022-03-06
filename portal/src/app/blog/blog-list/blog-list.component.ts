@@ -10,7 +10,7 @@ export class BlogListComponent {
   constructor(private router: Router) {}
 
   get articles() {
-    return articles;
+    return Object.values(articles);
   }
 
   /** サブタイトルのため、markdown記法を削除する */
