@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import articles from '../../../../../articles/list.json';
-import { Article } from '../models';
+import { Article, Label } from '../models';
 
 @Component({
   selector: 'app-blog-list',
@@ -17,13 +17,11 @@ export class BlogListComponent {
     return articles;
   }
 
-  /** サブタイトルのため、markdown記法を削除する */
-  escapeMD(body: string) {
-    const target = /#|`|\n|\r/gi;
-    return body.replaceAll(target, '');
+  getLabels(article: Article): Label[] {
+    return article.labels.filter((label) => label.name !== 'article');
   }
 
-  transitToDetail(nodeId: string) {
-    this.router.navigate(['/blog', nodeId]);
+  transitToDetail(id: string) {
+    this.router.navigate(['/blog', id]);
   }
 }
