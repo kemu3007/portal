@@ -4,6 +4,7 @@
 />
 <div class="container mt-3">
   <h2>{{ article?.title }}</h2>
+  <p>{{ article?.created_at | date: "yyyy.MM.dd hh:mm" }}</p>
   <hr />
   <div [innerHTML]="body"></div>
   <hr />
