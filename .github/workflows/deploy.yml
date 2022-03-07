@@ -29,7 +29,7 @@ jobs:
           npm install
       - name: collect article
         run: |
-          pip install requests
+          pip install requests Pillow
           python export.py
           python create_img.py
       - name: setup git
