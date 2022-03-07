@@ -7,9 +7,9 @@ import { Meta } from '@angular/platform-browser';
 })
 export class IndexComponent {
   constructor(meta: Meta) {
-    meta.updateTag({ name: 'og:title', content: 'kemu portal | home' });
+    meta.updateTag({ property: 'og:title', content: 'kemu portal | home' });
     meta.updateTag({
-      name: 'og:image',
+      property: 'og:image',
       content: 'https://portal.kemu.site/assets/images/home.png',
     });
     meta.updateTag({ name: 'twitter:title', content: 'kemu portal | home' });

@@ -34,11 +34,11 @@ export class BlogDetailComponent implements OnInit {
       this.titleService.setTitle(`kemu tech blog | ${article.title}`);
       this.article = article;
       this.meta.updateTag({
-        name: 'og:title',
+        property: 'og:title',
         content: `kemu tech blog | ${article.title}`,
       });
       this.meta.updateTag({
-        name: 'og:image',
+        property: 'og:image',
         content: `https://portal.kemu.site/assets/images/${article.id}.png`,
       });
       this.meta.updateTag({
@@ -47,7 +47,7 @@ export class BlogDetailComponent implements OnInit {
       });
       this.meta.updateTag({
         name: 'twitter:image',
-        content: `https://portal.kemu.site/${article.id}.png`,
+        content: `https://portal.kemu.site/assets/images/${article.id}.png`,
       });
     });
   }

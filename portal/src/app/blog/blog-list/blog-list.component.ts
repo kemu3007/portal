@@ -11,9 +11,9 @@ import { Article, Label } from '../models';
 export class BlogListComponent {
   constructor(titleService: Title, meta: Meta, private router: Router) {
     titleService.setTitle('kemu tech blog');
-    meta.updateTag({ name: 'og:title', content: 'kemu tech blog' });
+    meta.updateTag({ property: 'og:title', content: 'kemu tech blog' });
     meta.updateTag({
-      name: 'og:image',
+      property: 'og:image',
       content: 'https://portal.kemu.site/assets/images/blog.png',
     });
     meta.updateTag({ name: 'twitter:title', content: 'kemu tech blog' });
