@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import articles from '../../../../../articles/list.json';
+import articles from '@assets/articles/list.json';
 import { Article, Label } from '../models';
 
 @Component({
@@ -9,8 +9,18 @@ import { Article, Label } from '../models';
   templateUrl: './blog-list.component.html',
 })
 export class BlogListComponent {
-  constructor(titleService: Title, private router: Router) {
-    titleService.setTitle('kemu portal | blog');
+  constructor(titleService: Title, meta: Meta, private router: Router) {
+    titleService.setTitle('kemu tech blog');
+    meta.updateTag({ name: 'og:title', content: 'kemu tech blog' });
+    meta.updateTag({
+      name: 'og:image',
+      content: 'https://portal.kemu.site/assets/images/blog.png',
+    });
+    meta.updateTag({ name: 'twitter:title', content: 'kemu tech blog' });
+    meta.updateTag({
+      name: 'twitter:image',
+      content: 'https://portal.kemu.site/assets/images/blog.png',
+    });
   }
 
   get articles(): Record<string, Article> {

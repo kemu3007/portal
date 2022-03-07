@@ -31,6 +31,7 @@ jobs:
         run: |
           pip install requests
           python export.py
+          python create_img.py
       - name: setup git
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
