@@ -57,7 +57,7 @@ baseline.json
 # Husky
 .husky/_
 
-portal/dist/portal/
+dist/
 .angular
 
 venv/
