@@ -42,4 +42,5 @@ jobs:
       - name: deploy
         working-directory: ./portal
         run: |
+          npm run compodoc
           npm run ng deploy -- --cname=portal.kemu.site

@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "fmt": "npx prettier src/ --write"
+    "fmt": "npx prettier src/ --write",
+    "compodoc": "npx @compodoc/compodoc -p ./tsconfig.doc.json -d dist/doc"
   },
   "private": true,
   "dependencies": {
