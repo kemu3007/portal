@@ -67,6 +67,12 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -108,6 +114,33 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
 
     <section>
     <h3 id="constructor">Constructor</h3>
@@ -115,7 +148,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(meta: <a href="https://angular.io/api/platform-browser/Meta" target="_blank">Meta</a>)</code>
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -138,10 +171,22 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>meta</td>
+                                                        <td>route</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/platform-browser/Meta" target="_blank" >Meta</a></code>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -162,31 +207,69 @@
 
 
 
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="11"
+                            class="link-to-prism">src/app/home/index/index.component.ts:11</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { Meta } from &#x27;@angular/platform-browser&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
 
 @Component({
   selector: &#x27;app-index&#x27;,
   templateUrl: &#x27;./index.component.html&#x27;,
 })
-export class IndexComponent {
-  constructor(meta: Meta) {
-    meta.updateTag({ property: &#x27;og:title&#x27;, content: &#x27;kemu portal | home&#x27; });
-    meta.updateTag({
-      property: &#x27;og:image&#x27;,
-      content: &#x27;https://portal.kemu.site/assets/images/home.png&#x27;,
-    });
-    meta.updateTag({ name: &#x27;twitter:title&#x27;, content: &#x27;kemu portal | home&#x27; });
-    meta.updateTag({
-      name: &#x27;twitter:image&#x27;,
-      content: &#x27;https://portal.kemu.site/assets/images/home.png&#x27;,
-    });
+export class IndexComponent implements OnInit {
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit(): void {
+    const redirectTo &#x3D; this.route.snapshot.queryParamMap.get(&#x27;to&#x27;);
+    if (redirectTo) {
+      this.router.navigate([redirectTo]);
+    }
   }
 }
 </code></pre>

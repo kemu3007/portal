@@ -180,7 +180,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, meta: <a href="https://angular.io/api/platform-browser/Meta" target="_blank">Meta</a>)</code>
+<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -226,18 +226,6 @@
                                                     </td>
                                                     
                                                 </tr>
-                                                <tr>
-                                                        <td>meta</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/platform-browser/Meta" target="_blank" >Meta</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -276,8 +264,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:28</a></div>
                 </td>
             </tr>
 
@@ -373,7 +361,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:55</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:35</a></div>
                                 </td>
                             </tr>
 
@@ -399,11 +387,7 @@ export class BlogDetailComponent implements OnInit {
   marked &#x3D; marked;
   article?: ArticleDetail;
 
-  constructor(
-    private titleService: Title,
-    private route: ActivatedRoute,
-    private meta: Meta
-  ) {
+  constructor(private titleService: Title, private route: ActivatedRoute) {
     marked.setOptions({
       highlight: function (code, lang) {
         const language &#x3D; hljs.getLanguage(lang) ? lang : &#x27;plaintext&#x27;;
@@ -419,22 +403,6 @@ export class BlogDetailComponent implements OnInit {
     this.article$.then((article) &#x3D;&gt; {
       this.titleService.setTitle(&#x60;kemu tech blog | ${article.title}&#x60;);
       this.article &#x3D; article;
-      this.meta.updateTag({
-        property: &#x27;og:title&#x27;,
-        content: &#x60;kemu tech blog | ${article.title}&#x60;,
-      });
-      this.meta.updateTag({
-        property: &#x27;og:image&#x27;,
-        content: &#x60;https://portal.kemu.site/assets/images/${article.id}.png&#x60;,
-      });
-      this.meta.updateTag({
-        name: &#x27;twitter:title&#x27;,
-        content: &#x60;kemu tech blog | ${article.title}&#x60;,
-      });
-      this.meta.updateTag({
-        name: &#x27;twitter:image&#x27;,
-        content: &#x60;https://portal.kemu.site/assets/images/${article.id}.png&#x60;,
-      });
     });
   }
 

@@ -162,7 +162,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, meta: <a href="https://angular.io/api/platform-browser/Meta" target="_blank">Meta</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -189,18 +189,6 @@
                                                   
                                                         <td>
                                                                         <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>meta</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/platform-browser/Meta" target="_blank" >Meta</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -258,8 +246,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:24</a></div>
                 </td>
             </tr>
 
@@ -327,8 +315,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:28</a></div>
                 </td>
             </tr>
 
@@ -398,7 +386,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:16</a></div>
                                 </td>
                             </tr>
 
@@ -420,7 +408,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:20</a></div>
                                 </td>
                             </tr>
 
@@ -442,18 +430,8 @@ import { Article, Label } from &#x27;../models&#x27;;
   templateUrl: &#x27;./blog-list.component.html&#x27;,
 })
 export class BlogListComponent {
-  constructor(titleService: Title, meta: Meta, private router: Router) {
+  constructor(titleService: Title, private router: Router) {
     titleService.setTitle(&#x27;kemu tech blog&#x27;);
-    meta.updateTag({ property: &#x27;og:title&#x27;, content: &#x27;kemu tech blog&#x27; });
-    meta.updateTag({
-      property: &#x27;og:image&#x27;,
-      content: &#x27;https://portal.kemu.site/assets/images/blog.png&#x27;,
-    });
-    meta.updateTag({ name: &#x27;twitter:title&#x27;, content: &#x27;kemu tech blog&#x27; });
-    meta.updateTag({
-      name: &#x27;twitter:image&#x27;,
-      content: &#x27;https://portal.kemu.site/assets/images/blog.png&#x27;,
-    });
   }
 
   get articles(): Record&lt;string, Article&gt; {
