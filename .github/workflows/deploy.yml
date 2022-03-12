@@ -34,6 +34,7 @@ jobs:
           pip install requests Pillow
           python export.py
           python create_img.py
+          python create_pages.py
       - name: setup git
         run: |
           git config --global user.name "${GITHUB_ACTOR}"
