@@ -13,11 +13,7 @@ export class BlogDetailComponent implements OnInit {
   marked = marked;
   article?: ArticleDetail;
 
-  constructor(
-    private titleService: Title,
-    private route: ActivatedRoute,
-    private meta: Meta
-  ) {
+  constructor(private titleService: Title, private route: ActivatedRoute) {
     marked.setOptions({
       highlight: function (code, lang) {
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
@@ -33,22 +29,6 @@ export class BlogDetailComponent implements OnInit {
     this.article$.then((article) => {
       this.titleService.setTitle(`kemu tech blog | ${article.title}`);
       this.article = article;
-      this.meta.updateTag({
-        property: 'og:title',
-        content: `kemu tech blog | ${article.title}`,
-      });
-      this.meta.updateTag({
-        property: 'og:image',
-        content: `https://portal.kemu.site/assets/images/${article.id}.png`,
-      });
-      this.meta.updateTag({
-        name: 'twitter:title',
-        content: `kemu tech blog | ${article.title}`,
-      });
-      this.meta.updateTag({
-        name: 'twitter:image',
-        content: `https://portal.kemu.site/assets/images/${article.id}.png`,
-      });
     });
   }
 

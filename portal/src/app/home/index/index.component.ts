@@ -1,21 +1,17 @@
-import { Component } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
 })
-export class IndexComponent {
-  constructor(meta: Meta) {
-    meta.updateTag({ property: 'og:title', content: 'kemu portal | home' });
-    meta.updateTag({
-      property: 'og:image',
-      content: 'https://portal.kemu.site/assets/images/home.png',
-    });
-    meta.updateTag({ name: 'twitter:title', content: 'kemu portal | home' });
-    meta.updateTag({
-      name: 'twitter:image',
-      content: 'https://portal.kemu.site/assets/images/home.png',
-    });
+export class IndexComponent implements OnInit {
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit(): void {
+    const redirectTo = this.route.snapshot.queryParamMap.get('to');
+    if (redirectTo) {
+      this.router.navigate([redirectTo]);
+    }
   }
 }
