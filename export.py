@@ -32,4 +32,4 @@ if __name__ == "__main__":
         loc.text = f"https://portal.kemu.site/blog/{article['id']}"
         lastmod = ElementTree.SubElement(url_element, 'lastmod')
         lastmod.text = article["created_at"][:10]
-    ElementTree.ElementTree(element=urlset).write(save_dir / 'sitemap.xml', encoding='utf-8', xml_declaration=True)
+    ElementTree.ElementTree(element=urlset).write('portal/src/assets/sitemap.xml', encoding='utf-8', xml_declaration=True)
