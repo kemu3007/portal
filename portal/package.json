@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "fmt": "npx prettier src/ --write",
-    "compodoc": "npx @compodoc/compodoc -p ./tsconfig.doc.json -d dist/portal"
+    "compodoc": "npx @compodoc/compodoc -p ./tsconfig.doc.json -d src/doc"
   },
   "private": true,
   "dependencies": {
