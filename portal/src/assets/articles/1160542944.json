@@ -8,7 +8,7 @@
   "id": 1160542944,
   "node_id": "I_kwDOG7qoq85FLHrg",
   "number": 5,
-  "title": "Django4.0\u304c\u30ea\u30ea\u30fc\u30b9\u3055\u308c\u305f\u306e\u3067\u9069\u5f53\u306b\u8a66\u3057\u3066\u307f\u308b(1)",
+  "title": "Django4.0\u304c\u30ea\u30ea\u30fc\u30b9\u3055\u308c\u305f\u306e\u3067\u9069\u5f53\u306b\u8a66\u3057\u3066\u307f\u308b",
   "user": {
     "login": "kemu3007",
     "id": 29157528,
@@ -56,7 +56,7 @@
   "milestone": null,
   "comments": [],
   "created_at": "2022-03-06T07:44:51Z",
-  "updated_at": "2022-03-06T15:21:23Z",
+  "updated_at": "2022-03-12T07:52:04Z",
   "closed_at": null,
   "author_association": "OWNER",
   "active_lock_reason": null,
