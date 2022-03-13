@@ -5,12 +5,7 @@
 <div class="container mt-3" *ngIf="article">
   <h2>{{ article?.title }}</h2>
   <p>{{ article?.created_at | date: "yyyy.MM.dd hh:mm" }}</p>
-  <ng2-adsense
-    style="display: block; text-align: center"
-    slot="4626967535"
-    layout="in-article"
-    adFormat="fluid"
-  ></ng2-adsense>
+  <ng2-adsense adFormat="horizontal" [fullWidthResponsive]="true"></ng2-adsense>
   <hr />
   <div [innerHTML]="marked.parse(article['body'])"></div>
   <hr class="mt-5" />
