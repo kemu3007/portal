@@ -7,6 +7,10 @@ import { AdsenseModule } from 'ng2-adsense';
 
 @NgModule({
   declarations: [IndexComponent, ProfileComponent],
-  imports: [CommonModule, HomeRoutingModule, AdsenseModule],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    AdsenseModule.forRoot({ adClient: 'ca-pub-6219032039771696' }),
+  ],
 })
 export class HomeModule {}
