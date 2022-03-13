@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { IndexComponent } from './index/index.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AdsenseModule } from 'ng2-adsense';
 
 @NgModule({
   declarations: [IndexComponent, ProfileComponent],
-  imports: [CommonModule, HomeRoutingModule],
+  imports: [CommonModule, HomeRoutingModule, AdsenseModule],
 })
 export class HomeModule {}
