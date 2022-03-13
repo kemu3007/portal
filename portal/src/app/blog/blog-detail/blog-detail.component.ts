@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { marked } from 'marked';
 import hljs from 'highlight.js';
-import { Meta, Title } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 import { ArticleDetail } from '../models';
+import { MessageService } from '@app/message/message.service';
 
 @Component({
   selector: 'app-blog-detail',
@@ -13,7 +14,12 @@ export class BlogDetailComponent implements OnInit {
   marked = marked;
   article?: ArticleDetail;
 
-  constructor(private titleService: Title, private route: ActivatedRoute) {
+  constructor(
+    private titleService: Title,
+    private route: ActivatedRoute,
+    private router: Router,
+    private messageService: MessageService
+  ) {
     marked.setOptions({
       highlight: function (code, lang) {
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
@@ -35,6 +41,13 @@ export class BlogDetailComponent implements OnInit {
   get article$(): Promise<ArticleDetail> {
     return import(
       `../../../assets/articles/${this.route.snapshot.paramMap.get('id')}.json`
+    ).catch((_) =>
+      this.router.navigate(['/blog']).then((_) =>
+        this.messageService.messages.push({
+          type: 'warning',
+          body: '記事が存在していません',
+        })
+      )
     );
   }
 }
