@@ -276,9 +276,13 @@ export class IndexComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;text-end mt-1&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;ngb-alert type&#x3D;&quot;warning&quot; class&#x3D;&quot;my-0 py-1&quot; [dismissible]&#x3D;&quot;false&quot;
+  &gt;このサイトは広告収益で成り立っています。広告ブロックツールは停止してください。&lt;/ngb-alert
+&gt;
+&lt;div class&#x3D;&quot;text-end mt-1&quot;&gt;
   &lt;app-profile&gt;&lt;/app-profile&gt;
 &lt;/div&gt;
+
 &lt;div class&#x3D;&quot;text-center mt-3&quot;&gt;
   &lt;h2&gt;Contributions&lt;/h2&gt;
   &lt;img style&#x3D;&quot;max-width: 100%&quot; src&#x3D;&quot;./../../../assets/images/weed.png&quot; /&gt;
@@ -289,12 +293,6 @@ export class IndexComponent implements OnInit {
     &lt;li&gt;&lt;a href&#x3D;&quot;https://kemu.site&quot;&gt;旧ブログ(閉鎖予定)&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href&#x3D;&quot;/doc/&quot;&gt;document(portal.kemu.site)&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
-  &lt;ng2-adsense
-    style&#x3D;&quot;display: block&quot;
-    adFormat&#x3D;&quot;fluid&quot;
-    slot&#x3D;&quot;9091938102&quot;
-    layoutKey&#x3D;&quot;-ef+6k-30-ac+ty&quot;
-  &gt;&lt;/ng2-adsense&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -325,7 +323,7 @@ export class IndexComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="text-end mt-1">  <app-profile></app-profile></div><div class="text-center mt-3">  <h2>Contributions</h2>  <img style="max-width: 100%" src="./../../../assets/images/weed.png" />  <h2>Links</h2>  <ul class="list-group">    <li><a href="https://twitter.com/kemu43">twitter | kemu43</a></li>    <li><a href="https://github.com/kemu3007">github | kemu3007</a></li>    <li><a href="https://kemu.site">旧ブログ(閉鎖予定)</a></li>    <li><a href="/doc/">document(portal.kemu.site)</a></li>  </ul>  <ng2-adsense    style="display: block"    adFormat="fluid"    slot="9091938102"    layoutKey="-ef+6k-30-ac+ty"  ></ng2-adsense></div></div>'
+        var COMPONENT_TEMPLATE = '<div><ngb-alert type="warning" class="my-0 py-1" [dismissible]="false"  >このサイトは広告収益で成り立っています。広告ブロックツールは停止してください。</ngb-alert><div class="text-end mt-1">  <app-profile></app-profile></div><div class="text-center mt-3">  <h2>Contributions</h2>  <img style="max-width: 100%" src="./../../../assets/images/weed.png" />  <h2>Links</h2>  <ul class="list-group">    <li><a href="https://twitter.com/kemu43">twitter | kemu43</a></li>    <li><a href="https://github.com/kemu3007">github | kemu3007</a></li>    <li><a href="https://kemu.site">旧ブログ(閉鎖予定)</a></li>    <li><a href="/doc/">document(portal.kemu.site)</a></li>  </ul></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'IndexComponent'};
