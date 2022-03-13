@@ -455,12 +455,6 @@ export class BlogListComponent {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
-  &lt;ng2-adsense
-    style&#x3D;&quot;display: block&quot;
-    adFormat&#x3D;&quot;auto&quot;
-    [fullWidthResponsive]&#x3D;&quot;true&quot;
-    slot&#x3D;&quot;9319206807&quot;
-  &gt;&lt;/ng2-adsense&gt;
   &lt;div
     class&#x3D;&quot;card mt-3&quot;
     *ngFor&#x3D;&quot;let key of articleKeys&quot;
@@ -518,7 +512,7 @@ export class BlogListComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <ng2-adsense    style="display: block"    adFormat="auto"    [fullWidthResponsive]="true"    slot="9319206807"  ></ng2-adsense>  <div    class="card mt-3"    *ngFor="let key of articleKeys"    (click)="transitToDetail(key)"  >    <div class="card-body">      <div class="row">        <h5 class="col-9 card-link">{{ articles[key].title }}</h5>        <div class="col-3 text-end">          <p            class="badge rounded-pill"            *ngFor="let label of getLabels(articles[key])"            [ngStyle]="{ \'background-color\': \'#\' + label.color }"          >            {{ label.name }}          </p>        </div>      </div>      <hr class="mt-0" />      <p class="card-text">{{ articles[key].body }}...</p>    </div>  </div>  <ng2-adsense    style="display: block"    adFormat="autorelaxed"    slot="7814515457"  ></ng2-adsense></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <div    class="card mt-3"    *ngFor="let key of articleKeys"    (click)="transitToDetail(key)"  >    <div class="card-body">      <div class="row">        <h5 class="col-9 card-link">{{ articles[key].title }}</h5>        <div class="col-3 text-end">          <p            class="badge rounded-pill"            *ngFor="let label of getLabels(articles[key])"            [ngStyle]="{ \'background-color\': \'#\' + label.color }"          >            {{ label.name }}          </p>        </div>      </div>      <hr class="mt-0" />      <p class="card-text">{{ articles[key].body }}...</p>    </div>  </div>  <ng2-adsense    style="display: block"    adFormat="autorelaxed"    slot="7814515457"  ></ng2-adsense></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BlogListComponent'};
