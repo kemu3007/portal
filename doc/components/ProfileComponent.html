@@ -280,7 +280,7 @@ export class ProfileComponent {
   constructor(private modalService: NgbModal) {}
 
   open(content: TemplateRef&lt;any&gt;) {
-    this.modalService.open(content, { size: &#x27;lg&#x27; });
+    this.modalService.open(content, { size: &#x27;lg&#x27;, centered: true });
   }
 }
 </code></pre>
