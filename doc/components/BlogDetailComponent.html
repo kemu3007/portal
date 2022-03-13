@@ -174,6 +174,9 @@
                                 <li>
                                     <a href="#article$" >article$</a>
                                 </li>
+                                <li>
+                                    <a href="#adsLength" >adsLength</a>
+                                </li>
                             </ul>
                         </td>
                     </tr>
@@ -398,6 +401,28 @@
 
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="adsLength"></a>
+                        <span class="name"><b>adsLength</b><a href="#adsLength"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>adsLength()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:55</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
 </section>
 </div>
 
@@ -456,6 +481,11 @@ export class BlogDetailComponent implements OnInit {
       )
     );
   }
+
+  get adsLength(): number {
+    const hasMd &#x3D; window.screen.width &gt;&#x3D; 768;
+    return hasMd ? 4 : 1;
+  }
 }
 </code></pre>
     </div>
@@ -496,6 +526,7 @@ export class BlogDetailComponent implements OnInit {
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
       &lt;ng2-adsense
+        *ngFor&#x3D;&quot;let _ of [].constructor(adsLength)&quot;
         style&#x3D;&quot;display: block&quot;
         adFormat&#x3D;&quot;fluid&quot;
         slot&#x3D;&quot;9091938102&quot;
@@ -542,7 +573,7 @@ export class BlogDetailComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><link  rel="stylesheet"  href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css"/><div class="container-fluid">  <div class="row mt-3" *ngIf="article">    <div class="col-md-8">      <h2>{{ article.title }}</h2>      <p>{{ article.created_at | date: "yyyy.MM.dd hh:mm" }}</p>      <hr />      <div [innerHTML]="marked.parse(article[\'body\'])"></div>      <hr class="mt-5" />      <h3>comments</h3>      <div class="card" *ngFor="let comment of article.comments">        <div class="card-body">          <div class="row">            <img [src]="comment.user.avatar_url" style="width: 50px" />            <a style="display: contents" [href]="comment.user.html_url">{{              comment.user.login            }}</a            ><br />          </div>          <hr />          {{ comment.body }}        </div>      </div>      <p>        コメントはこちらから        <a [href]="article.html_url">{{ article.html_url }}</a        ><br />        ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。      </p>    </div>    <div class="col-md-4">      <ng2-adsense        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></ng2-adsense>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><link  rel="stylesheet"  href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css"/><div class="container-fluid">  <div class="row mt-3" *ngIf="article">    <div class="col-md-8">      <h2>{{ article.title }}</h2>      <p>{{ article.created_at | date: "yyyy.MM.dd hh:mm" }}</p>      <hr />      <div [innerHTML]="marked.parse(article[\'body\'])"></div>      <hr class="mt-5" />      <h3>comments</h3>      <div class="card" *ngFor="let comment of article.comments">        <div class="card-body">          <div class="row">            <img [src]="comment.user.avatar_url" style="width: 50px" />            <a style="display: contents" [href]="comment.user.html_url">{{              comment.user.login            }}</a            ><br />          </div>          <hr />          {{ comment.body }}        </div>      </div>      <p>        コメントはこちらから        <a [href]="article.html_url">{{ article.html_url }}</a        ><br />        ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。      </p>    </div>    <div class="col-md-4">      <ng2-adsense        *ngFor="let _ of [].constructor(adsLength)"        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></ng2-adsense>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BlogDetailComponent'};

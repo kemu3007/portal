@@ -149,6 +149,9 @@
                                 <li>
                                     <a href="#articleKeys" >articleKeys</a>
                                 </li>
+                                <li>
+                                    <a href="#adsLength" >adsLength</a>
+                                </li>
                             </ul>
                         </td>
                     </tr>
@@ -246,8 +249,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:29</a></div>
                 </td>
             </tr>
 
@@ -315,8 +318,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:33</a></div>
                 </td>
             </tr>
 
@@ -414,6 +417,28 @@
 
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="adsLength"></a>
+                        <span class="name"><b>adsLength</b><a href="#adsLength"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>adsLength()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:24</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
 </section>
 </div>
 
@@ -440,6 +465,11 @@ export class BlogListComponent {
 
   get articleKeys(): string[] {
     return Object.keys(this.articles).sort((a, b) &#x3D;&gt; (a &gt; b ? -1 : 1));
+  }
+
+  get adsLength(): number {
+    const hasMd &#x3D; window.screen.width &gt;&#x3D; 768;
+    return hasMd ? Math.floor(Object.keys(this.articles).length / 2) : 1;
   }
 
   getLabels(article: Article): Label[] {
@@ -482,6 +512,7 @@ export class BlogListComponent {
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
       &lt;ng2-adsense
+        *ngFor&#x3D;&quot;let _ of [].constructor(adsLength)&quot;
         style&#x3D;&quot;display: block&quot;
         adFormat&#x3D;&quot;fluid&quot;
         slot&#x3D;&quot;9091938102&quot;
@@ -519,7 +550,7 @@ export class BlogListComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row">    <div class="col-md-8">      <div        class="card mt-3"        *ngFor="let key of articleKeys"        (click)="transitToDetail(key)"      >        <div class="card-body">          <div class="row">            <h5 class="col-9 card-link">{{ articles[key].title }}</h5>            <div class="col-3 text-end">              <p                class="badge rounded-pill"                *ngFor="let label of getLabels(articles[key])"                [ngStyle]="{ \'background-color\': \'#\' + label.color }"              >                {{ label.name }}              </p>            </div>          </div>          <hr class="mt-0" />          <p class="card-text">{{ articles[key].body }}...</p>        </div>      </div>    </div>    <div class="col-md-4">      <ng2-adsense        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></ng2-adsense>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row">    <div class="col-md-8">      <div        class="card mt-3"        *ngFor="let key of articleKeys"        (click)="transitToDetail(key)"      >        <div class="card-body">          <div class="row">            <h5 class="col-9 card-link">{{ articles[key].title }}</h5>            <div class="col-3 text-end">              <p                class="badge rounded-pill"                *ngFor="let label of getLabels(articles[key])"                [ngStyle]="{ \'background-color\': \'#\' + label.color }"              >                {{ label.name }}              </p>            </div>          </div>          <hr class="mt-0" />          <p class="card-text">{{ articles[key].body }}...</p>        </div>      </div>    </div>    <div class="col-md-4">      <ng2-adsense        *ngFor="let _ of [].constructor(adsLength)"        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></ng2-adsense>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BlogListComponent'};
