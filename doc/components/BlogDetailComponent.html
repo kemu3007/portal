@@ -466,13 +466,13 @@ export class BlogDetailComponent implements OnInit {
   href&#x3D;&quot;//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css&quot;
 /&gt;
 &lt;div class&#x3D;&quot;container mt-3&quot; *ngIf&#x3D;&quot;article&quot;&gt;
-  &lt;h2&gt;{{ article?.title }}&lt;/h2&gt;
-  &lt;p&gt;{{ article?.created_at | date: &quot;yyyy.MM.dd hh:mm&quot; }}&lt;/p&gt;
+  &lt;h2&gt;{{ article.title }}&lt;/h2&gt;
+  &lt;p&gt;{{ article.created_at | date: &quot;yyyy.MM.dd hh:mm&quot; }}&lt;/p&gt;
   &lt;hr /&gt;
   &lt;div [innerHTML]&#x3D;&quot;marked.parse(article[&#x27;body&#x27;])&quot;&gt;&lt;/div&gt;
   &lt;hr class&#x3D;&quot;mt-5&quot; /&gt;
   &lt;h3&gt;comments&lt;/h3&gt;
-  &lt;div class&#x3D;&quot;card&quot; *ngFor&#x3D;&quot;let comment of article?.comments&quot;&gt;
+  &lt;div class&#x3D;&quot;card&quot; *ngFor&#x3D;&quot;let comment of article.comments&quot;&gt;
     &lt;div class&#x3D;&quot;card-body&quot;&gt;
       &lt;div class&#x3D;&quot;row&quot;&gt;
         &lt;img [src]&#x3D;&quot;comment.user.avatar_url&quot; style&#x3D;&quot;width: 50px&quot; /&gt;
@@ -487,7 +487,7 @@ export class BlogDetailComponent implements OnInit {
   &lt;/div&gt;
   &lt;p&gt;
     コメントはこちらから
-    &lt;a [href]&#x3D;&quot;article?.html_url&quot;&gt;{{ article?.html_url }}&lt;/a
+    &lt;a [href]&#x3D;&quot;article.html_url&quot;&gt;{{ article.html_url }}&lt;/a
     &gt;&lt;br /&gt;
     ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。
   &lt;/p&gt;
@@ -505,7 +505,7 @@ export class BlogDetailComponent implements OnInit {
                 <p class="comment">
                     <code>./blog-detail.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">img {
+                <pre class="line-numbers"><code class="language-scss">:host ::ng-deep img {
   max-width: 100%;
 }
 </code></pre>
@@ -536,7 +536,7 @@ export class BlogDetailComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><link  rel="stylesheet"  href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css"/><div class="container mt-3" *ngIf="article">  <h2>{{ article?.title }}</h2>  <p>{{ article?.created_at | date: "yyyy.MM.dd hh:mm" }}</p>  <hr />  <div [innerHTML]="marked.parse(article[\'body\'])"></div>  <hr class="mt-5" />  <h3>comments</h3>  <div class="card" *ngFor="let comment of article?.comments">    <div class="card-body">      <div class="row">        <img [src]="comment.user.avatar_url" style="width: 50px" />        <a style="display: contents" [href]="comment.user.html_url">{{          comment.user.login        }}</a        ><br />      </div>      <hr />      {{ comment.body }}    </div>  </div>  <p>    コメントはこちらから    <a [href]="article?.html_url">{{ article?.html_url }}</a    ><br />    ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。  </p>  <ng2-adsense    style="display: block"    adFormat="fluid"    slot="9091938102"    layoutKey="-ef+6k-30-ac+ty"  ></ng2-adsense></div></div>'
+        var COMPONENT_TEMPLATE = '<div><link  rel="stylesheet"  href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css"/><div class="container mt-3" *ngIf="article">  <h2>{{ article.title }}</h2>  <p>{{ article.created_at | date: "yyyy.MM.dd hh:mm" }}</p>  <hr />  <div [innerHTML]="marked.parse(article[\'body\'])"></div>  <hr class="mt-5" />  <h3>comments</h3>  <div class="card" *ngFor="let comment of article.comments">    <div class="card-body">      <div class="row">        <img [src]="comment.user.avatar_url" style="width: 50px" />        <a style="display: contents" [href]="comment.user.html_url">{{          comment.user.login        }}</a        ><br />      </div>      <hr />      {{ comment.body }}    </div>  </div>  <p>    コメントはこちらから    <a [href]="article.html_url">{{ article.html_url }}</a    ><br />    ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。  </p>  <ng2-adsense    style="display: block"    adFormat="fluid"    slot="9091938102"    layoutKey="-ef+6k-30-ac+ty"  ></ng2-adsense></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BlogDetailComponent'};
