@@ -479,8 +479,9 @@ export class BlogListComponent {
   &lt;/div&gt;
   &lt;ng2-adsense
     style&#x3D;&quot;display: block&quot;
-    adFormat&#x3D;&quot;autorelaxed&quot;
-    slot&#x3D;&quot;7814515457&quot;
+    adFormat&#x3D;&quot;fluid&quot;
+    slot&#x3D;&quot;9091938102&quot;
+    layoutKey&#x3D;&quot;-ef+6k-30-ac+ty&quot;
   &gt;&lt;/ng2-adsense&gt;
 &lt;/div&gt;
 </code></pre>
@@ -512,7 +513,7 @@ export class BlogListComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <div    class="card mt-3"    *ngFor="let key of articleKeys"    (click)="transitToDetail(key)"  >    <div class="card-body">      <div class="row">        <h5 class="col-9 card-link">{{ articles[key].title }}</h5>        <div class="col-3 text-end">          <p            class="badge rounded-pill"            *ngFor="let label of getLabels(articles[key])"            [ngStyle]="{ \'background-color\': \'#\' + label.color }"          >            {{ label.name }}          </p>        </div>      </div>      <hr class="mt-0" />      <p class="card-text">{{ articles[key].body }}...</p>    </div>  </div>  <ng2-adsense    style="display: block"    adFormat="autorelaxed"    slot="7814515457"  ></ng2-adsense></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <div    class="card mt-3"    *ngFor="let key of articleKeys"    (click)="transitToDetail(key)"  >    <div class="card-body">      <div class="row">        <h5 class="col-9 card-link">{{ articles[key].title }}</h5>        <div class="col-3 text-end">          <p            class="badge rounded-pill"            *ngFor="let label of getLabels(articles[key])"            [ngStyle]="{ \'background-color\': \'#\' + label.color }"          >            {{ label.name }}          </p>        </div>      </div>      <hr class="mt-0" />      <p class="card-text">{{ articles[key].body }}...</p>    </div>  </div>  <ng2-adsense    style="display: block"    adFormat="fluid"    slot="9091938102"    layoutKey="-ef+6k-30-ac+ty"  ></ng2-adsense></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BlogListComponent'};
