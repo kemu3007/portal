@@ -454,35 +454,41 @@ export class BlogListComponent {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
-  &lt;div
-    class&#x3D;&quot;card mt-3&quot;
-    *ngFor&#x3D;&quot;let key of articleKeys&quot;
-    (click)&#x3D;&quot;transitToDetail(key)&quot;
-  &gt;
-    &lt;div class&#x3D;&quot;card-body&quot;&gt;
-      &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;h5 class&#x3D;&quot;col-9 card-link&quot;&gt;{{ articles[key].title }}&lt;/h5&gt;
-        &lt;div class&#x3D;&quot;col-3 text-end&quot;&gt;
-          &lt;p
-            class&#x3D;&quot;badge rounded-pill&quot;
-            *ngFor&#x3D;&quot;let label of getLabels(articles[key])&quot;
-            [ngStyle]&#x3D;&quot;{ &#x27;background-color&#x27;: &#x27;#&#x27; + label.color }&quot;
-          &gt;
-            {{ label.name }}
-          &lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+      &lt;div
+        class&#x3D;&quot;card mt-3&quot;
+        *ngFor&#x3D;&quot;let key of articleKeys&quot;
+        (click)&#x3D;&quot;transitToDetail(key)&quot;
+      &gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;h5 class&#x3D;&quot;col-9 card-link&quot;&gt;{{ articles[key].title }}&lt;/h5&gt;
+            &lt;div class&#x3D;&quot;col-3 text-end&quot;&gt;
+              &lt;p
+                class&#x3D;&quot;badge rounded-pill&quot;
+                *ngFor&#x3D;&quot;let label of getLabels(articles[key])&quot;
+                [ngStyle]&#x3D;&quot;{ &#x27;background-color&#x27;: &#x27;#&#x27; + label.color }&quot;
+              &gt;
+                {{ label.name }}
+              &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;hr class&#x3D;&quot;mt-0&quot; /&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ articles[key].body }}...&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-      &lt;hr class&#x3D;&quot;mt-0&quot; /&gt;
-      &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ articles[key].body }}...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+      &lt;ng2-adsense
+        style&#x3D;&quot;display: block&quot;
+        adFormat&#x3D;&quot;fluid&quot;
+        slot&#x3D;&quot;9091938102&quot;
+        layoutKey&#x3D;&quot;-ef+6k-30-ac+ty&quot;
+      &gt;&lt;/ng2-adsense&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;ng2-adsense
-    style&#x3D;&quot;display: block&quot;
-    adFormat&#x3D;&quot;fluid&quot;
-    slot&#x3D;&quot;9091938102&quot;
-    layoutKey&#x3D;&quot;-ef+6k-30-ac+ty&quot;
-  &gt;&lt;/ng2-adsense&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -513,7 +519,7 @@ export class BlogListComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">  <div    class="card mt-3"    *ngFor="let key of articleKeys"    (click)="transitToDetail(key)"  >    <div class="card-body">      <div class="row">        <h5 class="col-9 card-link">{{ articles[key].title }}</h5>        <div class="col-3 text-end">          <p            class="badge rounded-pill"            *ngFor="let label of getLabels(articles[key])"            [ngStyle]="{ \'background-color\': \'#\' + label.color }"          >            {{ label.name }}          </p>        </div>      </div>      <hr class="mt-0" />      <p class="card-text">{{ articles[key].body }}...</p>    </div>  </div>  <ng2-adsense    style="display: block"    adFormat="fluid"    slot="9091938102"    layoutKey="-ef+6k-30-ac+ty"  ></ng2-adsense></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row">    <div class="col-md-8">      <div        class="card mt-3"        *ngFor="let key of articleKeys"        (click)="transitToDetail(key)"      >        <div class="card-body">          <div class="row">            <h5 class="col-9 card-link">{{ articles[key].title }}</h5>            <div class="col-3 text-end">              <p                class="badge rounded-pill"                *ngFor="let label of getLabels(articles[key])"                [ngStyle]="{ \'background-color\': \'#\' + label.color }"              >                {{ label.name }}              </p>            </div>          </div>          <hr class="mt-0" />          <p class="card-text">{{ articles[key].body }}...</p>        </div>      </div>    </div>    <div class="col-md-4">      <ng2-adsense        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></ng2-adsense>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BlogListComponent'};
