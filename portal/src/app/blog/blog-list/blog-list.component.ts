@@ -21,6 +21,11 @@ export class BlogListComponent {
     return Object.keys(this.articles).sort((a, b) => (a > b ? -1 : 1));
   }
 
+  get adsLength(): number {
+    const hasMd = window.screen.width >= 768;
+    return hasMd ? Math.floor(Object.keys(this.articles).length / 2) : 1;
+  }
+
   getLabels(article: Article): Label[] {
     return article.labels.filter((label) => label.name !== 'article');
   }

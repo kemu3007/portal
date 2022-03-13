@@ -51,4 +51,9 @@ export class BlogDetailComponent implements OnInit {
       )
     );
   }
+
+  get adsLength(): number {
+    const hasMd = window.screen.width >= 768;
+    return hasMd ? 4 : 1;
+  }
 }
