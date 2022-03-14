@@ -30,7 +30,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/blog",
-              "src/doc"
+              "src/doc",
+              "src/log"
             ],
             "styles": [
               "src/styles.scss"
