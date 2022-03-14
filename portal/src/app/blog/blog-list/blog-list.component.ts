@@ -23,7 +23,7 @@ export class BlogListComponent {
 
   get adsLength(): number {
     const hasMd = window.screen.width >= 768;
-    return hasMd ? Math.floor(Object.keys(this.articles).length / 2) : 1;
+    return hasMd ? Math.floor(Object.keys(this.articles).length / 3) : 1;
   }
 
   getLabels(article: Article): Label[] {
