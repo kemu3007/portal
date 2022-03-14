@@ -1,8 +1,8 @@
-from typing import Any, List
 import requests
 import json
 from pathlib import Path
 import re
+import datetime
 from xml.etree import ElementTree
 
 articles_dir = Path("portal/src/assets/articles")
@@ -32,8 +32,24 @@ def export_issues(label:str, dir: Path, extract_photo: bool=False):
 if __name__ == "__main__":
     articles = export_issues("article", articles_dir)
     logs = export_issues("log", logs_dir, extract_photo=True)
+    today = datetime.datetime.now().strftime("%Y-%m-%d")
     urlset = ElementTree.Element('urlset')
     urlset.set("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
+    url_element = ElementTree.SubElement(urlset, 'url')
+    loc = ElementTree.SubElement(url_element, 'loc')
+    loc.text = f"https://portal.kemu.site/"
+    lastmod = ElementTree.SubElement(url_element, 'lastmod')
+    lastmod.text = today
+    url_element = ElementTree.SubElement(urlset, 'url')
+    loc = ElementTree.SubElement(url_element, 'loc')
+    loc.text = f"https://portal.kemu.site/blog/"
+    lastmod = ElementTree.SubElement(url_element, 'lastmod')
+    lastmod.text = today
+    url_element = ElementTree.SubElement(urlset, 'url')
+    loc = ElementTree.SubElement(url_element, 'loc')
+    loc.text = f"https://portal.kemu.site/log/"
+    lastmod = ElementTree.SubElement(url_element, 'lastmod')
+    lastmod.text = today
     for article in articles:
         url_element = ElementTree.SubElement(urlset, 'url')
         loc = ElementTree.SubElement(url_element, 'loc')
