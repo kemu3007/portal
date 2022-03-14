@@ -54,10 +54,7 @@
   "assignee": null,
   "assignees": [],
   "milestone": null,
-  "comments": {
-    "message": "API rate limit exceeded for 153.243.38.139. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)",
-    "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
-  },
+  "comments": [],
   "created_at": "2022-03-13T12:39:35Z",
   "updated_at": "2022-03-13T15:28:08Z",
   "closed_at": null,
