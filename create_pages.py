@@ -23,7 +23,7 @@ if __name__ == "__main__":
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(log_home)
     for key, data in logs.items():
-        blog = base_html.replace("page_image", data["photo"] or f"https://portal.kemu.site/assets/images/{key}.png").replace("page_title", f"kemu logs | {data['title']}").replace("page_description", data['body'])
+        log = base_html.replace("page_image", data["photo"] or f"https://portal.kemu.site/assets/images/{key}.png").replace("page_title", f"kemu logs | {data['title']}").replace("page_description", data['body'])
         path = Path("portal/src/log") / key
         path.mkdir(exist_ok=True)
-        (path / "index.html").write_text(blog)
+        (path / "index.html").write_text(log)

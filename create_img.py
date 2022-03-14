@@ -46,4 +46,5 @@ if __name__ == "__main__":
         write_log_image(logs[key]["title"], key)
     write_portal_image("home", "home")
     write_portal_image("blog", "blog")
+    write_portal_image("log", "log")
     write_weed_image()
