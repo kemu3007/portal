@@ -1,29 +1,37 @@
+from typing import Any, List
 import requests
 import json
 from pathlib import Path
 import re
 from xml.etree import ElementTree
 
-save_dir = Path("portal/src/assets/articles")
+articles_dir = Path("portal/src/assets/articles")
+logs_dir = Path("portal/src/assets/logs")
+
+def export_issues(label:str, dir: Path, extract_photo: bool=False):
+    for path in dir.glob("*.json"):
+        path.unlink(missing_ok=True)
+    res = requests.get(f"https://api.github.com/repos/kemu3007/portal/issues?labels={label}")
+    issues = json.loads(res.content)
+    issue_dict = {}
+    for issue in reversed(issues):
+        res = requests.get(f"https://api.github.com/repos/kemu3007/portal/issues/{issue['number']}/comments")
+        issue["comments"] = json.loads(res.content)
+        issue_dict[issue["id"]] = {
+            "title": issue["title"],
+            "body": re.sub(r"#|`|\n|\r", "", issue["body"])[:100],
+            "labels": [{"name": label["name"], "color": label["color"]} for label in issue["labels"]]
+        }
+        if extract_photo:
+            issue_dict[issue["id"]]["photo"] = re.search("https:\/\/user-images.githubusercontent.com.*\.png", issue["body"]).group() or ""
+        (dir / f"{issue['id']}.json").write_text(json.dumps(issue))
+    (dir / "list.json").write_text(json.dumps(issue_dict))
+    return issues
+
 
 if __name__ == "__main__":
-    for path in save_dir.glob("*.json"):
-        path.unlink(missing_ok=True)
-    res = requests.get("https://api.github.com/repos/kemu3007/portal/issues?labels=article")
-    articles = json.loads(res.content)
-    article_dict = {}
-    for article in reversed(articles):
-        res = requests.get(f"https://api.github.com/repos/kemu3007/portal/issues/{article['number']}/comments")
-        article["comments"] = json.loads(res.content)
-        article_dict[article["id"]] = {
-            "title": article["title"],
-            "body": re.sub(r"#|`|\n|\r", "", article["body"])[:100],
-            "labels": [{"name": label["name"], "color": label["color"]} for label in article["labels"]]
-        }
-        with (save_dir / f"{article['id']}.json").open("x") as f:
-            f.write(json.dumps(article))
-    with (save_dir / "list.json").open("x") as f:
-        f.write(json.dumps(article_dict))
+    articles = export_issues("article", articles_dir)
+    logs = export_issues("log", logs_dir, extract_photo=True)
     urlset = ElementTree.Element('urlset')
     urlset.set("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
     for article in articles:
@@ -32,4 +40,10 @@ if __name__ == "__main__":
         loc.text = f"https://portal.kemu.site/blog/{article['id']}"
         lastmod = ElementTree.SubElement(url_element, 'lastmod')
         lastmod.text = article["created_at"][:10]
+    for log in logs:
+        url_element = ElementTree.SubElement(urlset, 'url')
+        loc = ElementTree.SubElement(url_element, 'loc')
+        loc.text = f"https://portal.kemu.site/log/{log['id']}"
+        lastmod = ElementTree.SubElement(url_element, 'lastmod')
+        lastmod.text = log["created_at"][:10]
     ElementTree.ElementTree(element=urlset).write('portal/src/assets/sitemap.xml', encoding='utf-8', xml_declaration=True)

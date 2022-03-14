@@ -10,6 +10,7 @@ export class AppComponent {
   tabs = [
     { name: 'home', to: '/' },
     { name: 'blog', to: '/blog' },
+    { name: 'log', to: '/log' },
   ];
 
   constructor(titleService: Title) {
