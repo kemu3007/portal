@@ -124,6 +124,29 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="modules/HomeRoutingModule.html" data-type="entity-link" >HomeRoutingModule</a>
                             </li>
+                            <li class="link">
+                                <a href="modules/LogModule.html" data-type="entity-link" >LogModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-LogModule-a10328a1100897cea519b389f93b408b02bdf9f5fb73c1a30caec6dd424a3fe6de6780aff6f8e54f38511ed7ea9a74366cff2c5c7620930d217b41211ed22153"' : 'data-target="#xs-components-links-module-LogModule-a10328a1100897cea519b389f93b408b02bdf9f5fb73c1a30caec6dd424a3fe6de6780aff6f8e54f38511ed7ea9a74366cff2c5c7620930d217b41211ed22153"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-LogModule-a10328a1100897cea519b389f93b408b02bdf9f5fb73c1a30caec6dd424a3fe6de6780aff6f8e54f38511ed7ea9a74366cff2c5c7620930d217b41211ed22153"' :
+                                            'id="xs-components-links-module-LogModule-a10328a1100897cea519b389f93b408b02bdf9f5fb73c1a30caec6dd424a3fe6de6780aff6f8e54f38511ed7ea9a74366cff2c5c7620930d217b41211ed22153"' }>
+                                            <li class="link">
+                                                <a href="components/LogDetailComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >LogDetailComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/LogListComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >LogListComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/LogRoutingModule.html" data-type="entity-link" >LogRoutingModule</a>
+                            </li>
                 </ul>
                 </li>
                         <li class="chapter">
@@ -160,13 +183,31 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/Label.html" data-type="entity-link" >Label</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/Label-1.html" data-type="entity-link" >Label</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/LabelDetail.html" data-type="entity-link" >LabelDetail</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/LabelDetail-1.html" data-type="entity-link" >LabelDetail</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Log.html" data-type="entity-link" >Log</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/LogDetail.html" data-type="entity-link" >LogDetail</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/Reactions.html" data-type="entity-link" >Reactions</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/Reactions-1.html" data-type="entity-link" >Reactions</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/User.html" data-type="entity-link" >User</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/User-1.html" data-type="entity-link" >User</a>
                             </li>
                         </ul>
                     </li>
