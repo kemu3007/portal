@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  TweetBtnComponent</li>
+  LoadingComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -47,6 +47,12 @@
         </li>
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
         </li>
         <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
@@ -58,18 +64,12 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/shared/tweet-btn/tweet-btn.component.ts</code>
+    <code>src/app/shared/loading/loading.component.ts</code>
 </p>
 
 
 
 
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
-    </p>
 
 
 <section>
@@ -89,19 +89,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-tweet-btn</code></td>
+                <td class="col-md-9"><code>app-loading</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./loading.component.scss</code></td>
             </tr>
 
 
 
             <tr>
-                <td class="col-md-3">template</td>
-                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;a    id&#x3D;&quot;btn&quot;
-    href&#x3D;&quot;https://twitter.com/share?ref_src&#x3D;twsrc%5Etfw&quot;
-    class&#x3D;&quot;twitter-share-button&quot;
-    data-show-count&#x3D;&quot;false&quot;
-    &gt;tweet&lt;/a
-  &gt;</code></pre></td>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./loading.component.html</code></td>
             </tr>
 
 
@@ -111,117 +111,77 @@
 
 
 
-
         </tbody>
     </table>
 </section>
-
-    <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-
-
-
 
 
     <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngAfterViewInit"></a>
-                    <span class="name">
-                        <span ><b>ngAfterViewInit</b></span>
-                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngAfterViewInit()</code>
-                </td>
-            </tr>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/shared/loading/loading.component.ts:8</a></div>
+                            </td>
+                        </tr>
 
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/shared/tweet-btn/tweet-btn.component.ts:14</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 </section>
+
+
+
+
+
+
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, AfterViewInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 
 @Component({
-  selector: &#x27;app-tweet-btn&#x27;,
-  template: &#x60;&lt;a
-    id&#x3D;&quot;btn&quot;
-    href&#x3D;&quot;https://twitter.com/share?ref_src&#x3D;twsrc%5Etfw&quot;
-    class&#x3D;&quot;twitter-share-button&quot;
-    data-show-count&#x3D;&quot;false&quot;
-    &gt;tweet&lt;/a
-  &gt;&#x60;,
+  selector: &#x27;app-loading&#x27;,
+  templateUrl: &#x27;./loading.component.html&#x27;,
+  styleUrls: [&#x27;./loading.component.scss&#x27;],
 })
-export class TweetBtnComponent implements AfterViewInit {
-  ngAfterViewInit(): void {
-    const script &#x3D; document.createElement(&#x27;script&#x27;);
-    script.async &#x3D; true;
-    script.src &#x3D; &#x27;https://platform.twitter.com/widgets.js&#x27;;
-    const btn &#x3D; document.getElementById(&#x27;btn&#x27;)!;
-    btn.insertAdjacentElement(&#x27;afterend&#x27;, script);
-  }
+export class LoadingComponent {
+  constructor() {}
 }
 </code></pre>
     </div>
 
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div id&#x3D;&quot;fs&quot; class&#x3D;&quot;d-flex justify-content-center align-items-center&quot;&gt;
+  &lt;div class&#x3D;&quot;spinner-border&quot; role&#x3D;&quot;status&quot;&gt;
+    &lt;span class&#x3D;&quot;visually-hidden&quot;&gt;Loading...&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
 
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./loading.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">#fs {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 9999;
+  top: 0px;
+  left: 0px;
+}
+</code></pre>
+    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -248,10 +208,10 @@ export class TweetBtnComponent implements AfterViewInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><a    id="btn"    href="https://twitter.com/share?ref_src=twsrc%5Etfw"    class="twitter-share-button"    data-show-count="false"    >tweet</a  ></div>'
+        var COMPONENT_TEMPLATE = '<div><div id="fs" class="d-flex justify-content-center align-items-center">  <div class="spinner-border" role="status">    <span class="visually-hidden">Loading...</span>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'TweetBtnComponent'};
+    var ACTUAL_COMPONENT = {'name': 'LoadingComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -297,7 +257,7 @@ export class TweetBtnComponent implements AfterViewInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'TweetBtnComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'LoadingComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

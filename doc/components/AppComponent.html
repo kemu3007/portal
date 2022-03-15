@@ -67,6 +67,12 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -121,12 +127,29 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#loading" >loading</a>
+                            </li>
+                            <li>
                                 <a href="#tabs" >tabs</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -156,12 +179,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>)</code>
+<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/app.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/app.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -190,6 +213,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -203,12 +238,79 @@
 
 
 
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/app.component.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
     <section>
     
     <h3 id="inputs">
         Properties
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/app.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -237,7 +339,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/app.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/app.component.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -266,7 +368,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/app.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/app.component.ts:36</a></div>
                                 </td>
                             </tr>
 
@@ -277,22 +379,39 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from &#x27;@angular/router&#x27;;
 
 @Component({
   selector: &#x27;app-root&#x27;,
   templateUrl: &#x27;./app.component.html&#x27;,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  loading &#x3D; false;
+
   tabs &#x3D; [
     { name: &#x27;home&#x27;, to: &#x27;/&#x27; },
     { name: &#x27;blog&#x27;, to: &#x27;/blog&#x27; },
     { name: &#x27;log&#x27;, to: &#x27;/log&#x27; },
   ];
 
-  constructor(titleService: Title) {
+  constructor(titleService: Title, private router: Router) {
     titleService.setTitle(&#x27;kemu portal&#x27;);
+  }
+
+  ngOnInit(): void {
+    this.router.events.subscribe((event) &#x3D;&gt; {
+      if (event instanceof NavigationStart) {
+        this.loading &#x3D; true;
+      } else if (
+        event instanceof NavigationEnd ||
+        event instanceof NavigationCancel ||
+        event instanceof NavigationError
+      ) {
+        this.loading &#x3D; false;
+      }
+    });
   }
 
   get activeTab() {
@@ -321,7 +440,12 @@ export class AppComponent {
 &lt;/ul&gt;
 &lt;app-message&gt;&lt;/app-message&gt;
 
-&lt;router-outlet&gt;&lt;/router-outlet&gt;
+&lt;ng-container *ngIf&#x3D;&quot;loading; else contents&quot;&gt;
+  &lt;app-loading&gt;&lt;/app-loading&gt;
+&lt;/ng-container&gt;
+&lt;ng-template #contents&gt;
+  &lt;router-outlet&gt;&lt;/router-outlet&gt;
+&lt;/ng-template&gt;
 </code></pre>
     </div>
 
@@ -351,8 +475,8 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ul ngbNav #nav="ngbNav" [activeId]="activeTab" class="nav-tabs">  <a ngbNavItem [disabled]="true" [routerLink]="[\'/\']" class="text-decoration-none">    <a ngbNavLink>kemu portal</a>  </a>  <li *ngFor="let tab of tabs; index as i" [ngbNavItem]="i">    <a ngbNavLink [routerLink]="tab.to">{{ tab.name }}</a>  </li></ul><app-message></app-message><router-outlet></router-outlet></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
+        var COMPONENT_TEMPLATE = '<div><ul ngbNav #nav="ngbNav" [activeId]="activeTab" class="nav-tabs">  <a ngbNavItem [disabled]="true" [routerLink]="[\'/\']" class="text-decoration-none">    <a ngbNavLink>kemu portal</a>  </a>  <li *ngFor="let tab of tabs; index as i" [ngbNavItem]="i">    <a ngbNavLink [routerLink]="tab.to">{{ tab.name }}</a>  </li></ul><app-message></app-message><ng-container *ngIf="loading; else contents">  <app-loading></app-loading></ng-container><ng-template #contents>  <router-outlet></router-outlet></ng-template></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>
