@@ -112,6 +112,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#search" >search</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -123,6 +137,9 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#getLabels" >getLabels</a>
+                            </li>
+                            <li>
+                                <a href="#selectArticle" >selectArticle</a>
                             </li>
                         </ul>
                     </td>
@@ -147,6 +164,9 @@
                                     <a href="#articleKeys" >articleKeys</a>
                                 </li>
                                 <li>
+                                    <a href="#searchData" >searchData</a>
+                                </li>
+                                <li>
                                     <a href="#adsLength" >adsLength</a>
                                 </li>
                             </ul>
@@ -167,7 +187,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -246,8 +266,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:40</a></div>
                 </td>
             </tr>
 
@@ -295,6 +315,112 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectArticle"></a>
+                    <span class="name">
+                        <span ><b>selectArticle</b></span>
+                        <a href="#selectArticle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectArticle(event: NgbTypeaheadSelectItemEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>NgbTypeaheadSelectItemEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search"></a>
+                    <span class="name">
+                        <span ><b>search</b></span>
+                        <a href="#search"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>OperatorFunction&lt;string | string[]&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
 </section>
 
     <section>
@@ -317,7 +443,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:18</a></div>
                                 </td>
                             </tr>
 
@@ -339,7 +465,29 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:22</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchData"></a>
+                        <span class="name"><b>searchData</b><a href="#searchData"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>searchData()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:26</a></div>
                                 </td>
                             </tr>
 
@@ -361,7 +509,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/blog/blog-list/blog-list.component.ts:35</a></div>
                                 </td>
                             </tr>
 
@@ -376,6 +524,8 @@
 import { Title } from &#x27;@angular/platform-browser&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 import articles from &#x27;@assets/articles/list.json&#x27;;
+import { NgbTypeaheadSelectItemEvent } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
+import { debounceTime, distinctUntilChanged, map, Observable, OperatorFunction } from &#x27;rxjs&#x27;;
 import { Article, Label } from &#x27;../models&#x27;;
 
 @Component({
@@ -395,6 +545,15 @@ export class BlogListComponent {
     return Object.keys(this.articles).sort((a, b) &#x3D;&gt; (a &gt; b ? -1 : 1));
   }
 
+  get searchData() {
+    const data: Record&lt;string, string&gt; &#x3D; {};
+    Object.keys(this.articles).forEach((key) &#x3D;&gt; {
+      const title &#x3D; &#x60;${this.articles[key].title} | ${this.getLabels(this.articles[key])[0].name}&#x60;;
+      data[title] &#x3D; key;
+    });
+    return data;
+  }
+
   get adsLength(): number {
     const hasMd &#x3D; window.screen.width &gt;&#x3D; 768;
     return hasMd ? Math.floor(Object.keys(this.articles).length / 3) : 1;
@@ -402,6 +561,18 @@ export class BlogListComponent {
 
   getLabels(article: Article): Label[] {
     return article.labels.filter((label) &#x3D;&gt; label.name !&#x3D;&#x3D; &#x27;article&#x27;);
+  }
+
+  search: OperatorFunction&lt;string, readonly string[]&gt; &#x3D; (text$: Observable&lt;string&gt;) &#x3D;&gt; {
+    return text$
+      .pipe(debounceTime(200), distinctUntilChanged())
+      .pipe(
+        map((text) &#x3D;&gt; Object.keys(this.searchData).filter((title) &#x3D;&gt; title.toLowerCase().includes(text.toLowerCase())))
+      );
+  };
+
+  selectArticle(event: NgbTypeaheadSelectItemEvent) {
+    this.router.navigate([&#x27;/blog&#x27;, this.searchData[event.item]]);
   }
 }
 </code></pre>
@@ -411,12 +582,17 @@ export class BlogListComponent {
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
   &lt;div class&#x3D;&quot;row mt-3&quot;&gt;
     &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+      &lt;input
+        class&#x3D;&quot;form-control&quot;
+        placeholder&#x3D;&quot;search&quot;
+        NgbTypeahead
+        [ngbTypeahead]&#x3D;&quot;search&quot;
+        (selectItem)&#x3D;&quot;selectArticle($event)&quot;
+        #instance&#x3D;&quot;ngbTypeahead&quot;
+        (blur)&#x3D;&quot;instance.dismissPopup()&quot;
+      /&gt;
       &lt;div *ngFor&#x3D;&quot;let key of articleKeys; index as i&quot;&gt;
-        &lt;a
-          class&#x3D;&quot;card mt-1 text-decoration-none text-muted&quot;
-          [routerLink]&#x3D;&quot;[&#x27;/blog&#x27;, key]&quot;
-          style&#x3D;&quot;cursor: pointer&quot;
-        &gt;
+        &lt;a class&#x3D;&quot;card mt-1 text-decoration-none text-muted&quot; [routerLink]&#x3D;&quot;[&#x27;/blog&#x27;, key]&quot; style&#x3D;&quot;cursor: pointer&quot;&gt;
           &lt;div class&#x3D;&quot;card-body&quot;&gt;
             &lt;div class&#x3D;&quot;row&quot;&gt;
               &lt;h5 class&#x3D;&quot;col-9 card-link text-black&quot;&gt;
@@ -436,10 +612,7 @@ export class BlogListComponent {
             &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ articles[key].body }}...&lt;/p&gt;
           &lt;/div&gt;
         &lt;/a&gt;
-        &lt;ng-adsense
-          *ngIf&#x3D;&quot;(i + 1) % 3 &#x3D;&#x3D;&#x3D; 0&quot;
-          adFormat&#x3D;&quot;horizontal&quot;
-        &gt;&lt;/ng-adsense&gt;
+        &lt;ng-adsense *ngIf&#x3D;&quot;(i + 1) % 3 &#x3D;&#x3D;&#x3D; 0&quot; adFormat&#x3D;&quot;horizontal&quot;&gt;&lt;/ng-adsense&gt;
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
@@ -482,7 +655,7 @@ export class BlogListComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row mt-3">    <div class="col-md-8">      <div *ngFor="let key of articleKeys; index as i">        <a          class="card mt-1 text-decoration-none text-muted"          [routerLink]="[\'/blog\', key]"          style="cursor: pointer"        >          <div class="card-body">            <div class="row">              <h5 class="col-9 card-link text-black">                {{ articles[key].title }}              </h5>              <div class="col-3 text-end">                <p                  class="badge rounded-pill"                  *ngFor="let label of getLabels(articles[key])"                  [ngStyle]="{ \'background-color\': \'#\' + label.color }"                >                  {{ label.name }}                </p>              </div>            </div>            <hr class="mt-0" />            <p class="card-text">{{ articles[key].body }}...</p>          </div>        </a>        <ng-adsense          *ngIf="(i + 1) % 3 === 0"          adFormat="horizontal"        ></ng-adsense>      </div>    </div>    <div class="col-md-4">      <ng2-adsense        *ngFor="let _ of [].constructor(adsLength)"        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></ng2-adsense>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row mt-3">    <div class="col-md-8">      <input        class="form-control"        placeholder="search"        NgbTypeahead        [ngbTypeahead]="search"        (selectItem)="selectArticle($event)"        #instance="ngbTypeahead"        (blur)="instance.dismissPopup()"      />      <div *ngFor="let key of articleKeys; index as i">        <a class="card mt-1 text-decoration-none text-muted" [routerLink]="[\'/blog\', key]" style="cursor: pointer">          <div class="card-body">            <div class="row">              <h5 class="col-9 card-link text-black">                {{ articles[key].title }}              </h5>              <div class="col-3 text-end">                <p                  class="badge rounded-pill"                  *ngFor="let label of getLabels(articles[key])"                  [ngStyle]="{ \'background-color\': \'#\' + label.color }"                >                  {{ label.name }}                </p>              </div>            </div>            <hr class="mt-0" />            <p class="card-text">{{ articles[key].body }}...</p>          </div>        </a>        <ng-adsense *ngIf="(i + 1) % 3 === 0" adFormat="horizontal"></ng-adsense>      </div>    </div>    <div class="col-md-4">      <ng2-adsense        *ngFor="let _ of [].constructor(adsLength)"        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></ng2-adsense>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BlogListComponent'};

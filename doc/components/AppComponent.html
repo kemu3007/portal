@@ -312,12 +312,7 @@ export class AppComponent {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ul ngbNav #nav&#x3D;&quot;ngbNav&quot; [activeId]&#x3D;&quot;activeTab&quot; class&#x3D;&quot;nav-tabs&quot;&gt;
-  &lt;a
-    ngbNavItem
-    [disabled]&#x3D;&quot;true&quot;
-    [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot;
-    class&#x3D;&quot;text-decoration-none&quot;
-  &gt;
+  &lt;a ngbNavItem [disabled]&#x3D;&quot;true&quot; [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot; class&#x3D;&quot;text-decoration-none&quot;&gt;
     &lt;a ngbNavLink&gt;kemu portal&lt;/a&gt;
   &lt;/a&gt;
   &lt;li *ngFor&#x3D;&quot;let tab of tabs; index as i&quot; [ngbNavItem]&#x3D;&quot;i&quot;&gt;
@@ -356,7 +351,7 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ul ngbNav #nav="ngbNav" [activeId]="activeTab" class="nav-tabs">  <a    ngbNavItem    [disabled]="true"    [routerLink]="[\'/\']"    class="text-decoration-none"  >    <a ngbNavLink>kemu portal</a>  </a>  <li *ngFor="let tab of tabs; index as i" [ngbNavItem]="i">    <a ngbNavLink [routerLink]="tab.to">{{ tab.name }}</a>  </li></ul><app-message></app-message><router-outlet></router-outlet></div>'
+        var COMPONENT_TEMPLATE = '<div><ul ngbNav #nav="ngbNav" [activeId]="activeTab" class="nav-tabs">  <a ngbNavItem [disabled]="true" [routerLink]="[\'/\']" class="text-decoration-none">    <a ngbNavLink>kemu portal</a>  </a>  <li *ngFor="let tab of tabs; index as i" [ngbNavItem]="i">    <a ngbNavLink [routerLink]="tab.to">{{ tab.name }}</a>  </li></ul><app-message></app-message><router-outlet></router-outlet></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};

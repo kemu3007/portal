@@ -417,7 +417,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:55</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:53</a></div>
                                 </td>
                             </tr>
 
@@ -470,9 +470,7 @@ export class BlogDetailComponent implements OnInit {
   }
 
   get article$(): Promise&lt;ArticleDetail&gt; {
-    return import(
-      &#x60;../../../assets/articles/${this.route.snapshot.paramMap.get(&#x27;id&#x27;)}.json&#x60;
-    ).catch((_) &#x3D;&gt;
+    return import(&#x60;../../../assets/articles/${this.route.snapshot.paramMap.get(&#x27;id&#x27;)}.json&#x60;).catch((_) &#x3D;&gt;
       this.router.navigate([&#x27;/blog&#x27;]).then((_) &#x3D;&gt;
         this.messageService.messages.push({
           type: &#x27;warning&#x27;,
@@ -491,16 +489,13 @@ export class BlogDetailComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;link
-  rel&#x3D;&quot;stylesheet&quot;
-  href&#x3D;&quot;//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css&quot;
-/&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css&quot; /&gt;
 &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
   &lt;div class&#x3D;&quot;row mt-3&quot; *ngIf&#x3D;&quot;article&quot;&gt;
     &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
       &lt;h2&gt;{{ article.title }}&lt;/h2&gt;
       &lt;div class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
-        &lt;p&gt;{{ article.created_at | date: &quot;yyyy.MM.dd hh:mm&quot; }}&lt;/p&gt;
+        &lt;p&gt;{{ article.created_at | date: &#x27;yyyy.MM.dd hh:mm&#x27; }}&lt;/p&gt;
         &lt;app-tweet-btn&gt;&lt;/app-tweet-btn&gt;
       &lt;/div&gt;
       &lt;hr /&gt;
@@ -511,9 +506,7 @@ export class BlogDetailComponent implements OnInit {
         &lt;div class&#x3D;&quot;card-body&quot;&gt;
           &lt;div class&#x3D;&quot;row&quot;&gt;
             &lt;img [src]&#x3D;&quot;comment.user.avatar_url&quot; style&#x3D;&quot;width: 50px&quot; /&gt;
-            &lt;a style&#x3D;&quot;display: contents&quot; [href]&#x3D;&quot;comment.user.html_url&quot;&gt;{{
-              comment.user.login
-            }}&lt;/a
+            &lt;a style&#x3D;&quot;display: contents&quot; [href]&#x3D;&quot;comment.user.html_url&quot;&gt;{{ comment.user.login }}&lt;/a
             &gt;&lt;br /&gt;
           &lt;/div&gt;
           &lt;hr /&gt;
@@ -576,7 +569,7 @@ export class BlogDetailComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><link  rel="stylesheet"  href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css"/><div class="container-fluid">  <div class="row mt-3" *ngIf="article">    <div class="col-md-8">      <h2>{{ article.title }}</h2>      <div class="d-flex justify-content-between">        <p>{{ article.created_at | date: "yyyy.MM.dd hh:mm" }}</p>        <app-tweet-btn></app-tweet-btn>      </div>      <hr />      <div [innerHTML]="marked.parse(article[\'body\'])"></div>      <hr class="mt-5" />      <h3>comments</h3>      <div class="card" *ngFor="let comment of article.comments">        <div class="card-body">          <div class="row">            <img [src]="comment.user.avatar_url" style="width: 50px" />            <a style="display: contents" [href]="comment.user.html_url">{{              comment.user.login            }}</a            ><br />          </div>          <hr />          {{ comment.body }}        </div>      </div>      <p>        コメントはこちらから        <a [href]="article.html_url">{{ article.html_url }}</a        ><br />        ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。      </p>    </div>    <div class="col-md-4">      <ng2-adsense        *ngFor="let _ of [].constructor(adsLength)"        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></ng2-adsense>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css" /><div class="container-fluid">  <div class="row mt-3" *ngIf="article">    <div class="col-md-8">      <h2>{{ article.title }}</h2>      <div class="d-flex justify-content-between">        <p>{{ article.created_at | date: \'yyyy.MM.dd hh:mm\' }}</p>        <app-tweet-btn></app-tweet-btn>      </div>      <hr />      <div [innerHTML]="marked.parse(article[\'body\'])"></div>      <hr class="mt-5" />      <h3>comments</h3>      <div class="card" *ngFor="let comment of article.comments">        <div class="card-body">          <div class="row">            <img [src]="comment.user.avatar_url" style="width: 50px" />            <a style="display: contents" [href]="comment.user.html_url">{{ comment.user.login }}</a            ><br />          </div>          <hr />          {{ comment.body }}        </div>      </div>      <p>        コメントはこちらから        <a [href]="article.html_url">{{ article.html_url }}</a        ><br />        ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。      </p>    </div>    <div class="col-md-4">      <ng2-adsense        *ngFor="let _ of [].constructor(adsLength)"        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></ng2-adsense>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BlogDetailComponent'};

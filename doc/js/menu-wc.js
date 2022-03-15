@@ -151,13 +151,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/SharedModule.html" data-type="entity-link" >SharedModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-SharedModule-f5d6fb97f87a26853cfd7e23679d315f3541c678877af35e06470536fac67bb5a24bbcda5a2067d00f2bc4f7aff37917ad425e719bed15ddc1fb790a9fabb23a"' : 'data-target="#xs-components-links-module-SharedModule-f5d6fb97f87a26853cfd7e23679d315f3541c678877af35e06470536fac67bb5a24bbcda5a2067d00f2bc4f7aff37917ad425e719bed15ddc1fb790a9fabb23a"' }>
+                                            'data-target="#components-links-module-SharedModule-7afc20734c06bc0de9d4234ffe289d07e7b8bc6471b6b86f50b68ff876151752ae6cec331ae3dcefdf928cde90dfe2703296aed9cb5b2182329d5ed918d31c23"' : 'data-target="#xs-components-links-module-SharedModule-7afc20734c06bc0de9d4234ffe289d07e7b8bc6471b6b86f50b68ff876151752ae6cec331ae3dcefdf928cde90dfe2703296aed9cb5b2182329d5ed918d31c23"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SharedModule-f5d6fb97f87a26853cfd7e23679d315f3541c678877af35e06470536fac67bb5a24bbcda5a2067d00f2bc4f7aff37917ad425e719bed15ddc1fb790a9fabb23a"' :
-                                            'id="xs-components-links-module-SharedModule-f5d6fb97f87a26853cfd7e23679d315f3541c678877af35e06470536fac67bb5a24bbcda5a2067d00f2bc4f7aff37917ad425e719bed15ddc1fb790a9fabb23a"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SharedModule-7afc20734c06bc0de9d4234ffe289d07e7b8bc6471b6b86f50b68ff876151752ae6cec331ae3dcefdf928cde90dfe2703296aed9cb5b2182329d5ed918d31c23"' :
+                                            'id="xs-components-links-module-SharedModule-7afc20734c06bc0de9d4234ffe289d07e7b8bc6471b6b86f50b68ff876151752ae6cec331ae3dcefdf928cde90dfe2703296aed9cb5b2182329d5ed918d31c23"' }>
                                             <li class="link">
                                                 <a href="components/TweetBtnComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TweetBtnComponent</a>
                                             </li>

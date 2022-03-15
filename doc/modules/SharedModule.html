@@ -162,11 +162,12 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { TweetBtnComponent } from &#x27;./tweet-btn/tweet-btn.component&#x27;;
+import { NgbModule } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
 
 @NgModule({
   declarations: [TweetBtnComponent],
-  imports: [CommonModule],
-  exports: [TweetBtnComponent],
+  imports: [CommonModule, NgbModule],
+  exports: [TweetBtnComponent, NgbModule],
 })
 export class SharedModule {}
 </code></pre>
