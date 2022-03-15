@@ -34,7 +34,7 @@ export class LogDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.article$.then((article) => {
-      this.titleService.setTitle(`kemu tech blog | ${article.title}`);
+      this.titleService.setTitle(`kemu logs | ${article.title}`);
       this.article = article;
     });
   }
