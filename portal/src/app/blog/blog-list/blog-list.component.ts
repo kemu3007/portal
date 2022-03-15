@@ -29,8 +29,4 @@ export class BlogListComponent {
   getLabels(article: Article): Label[] {
     return article.labels.filter((label) => label.name !== 'article');
   }
-
-  transitToDetail(id: string) {
-    this.router.navigate(['/blog', id]);
-  }
 }

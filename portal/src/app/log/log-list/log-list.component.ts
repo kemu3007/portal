@@ -29,8 +29,4 @@ export class LogListComponent {
   getLabels(article: Log): Label[] {
     return article.labels.filter((label) => label.name !== 'log');
   }
-
-  transitToDetail(id: string) {
-    this.router.navigate(['/log', id]);
-  }
 }

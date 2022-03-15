@@ -2,14 +2,16 @@
   <div class="row mt-3">
     <div class="col-md-8">
       <div *ngFor="let key of articleKeys; index as i">
-        <div
-          class="card mt-1"
-          (click)="transitToDetail(key)"
+        <a
+          class="card mt-1 text-decoration-none text-muted"
+          [routerLink]="['/blog', key]"
           style="cursor: pointer"
         >
           <div class="card-body">
             <div class="row">
-              <h5 class="col-9 card-link">{{ articles[key].title }}</h5>
+              <h5 class="col-9 card-link text-black">
+                {{ articles[key].title }}
+              </h5>
               <div class="col-3 text-end">
                 <p
                   class="badge rounded-pill"
@@ -23,7 +25,7 @@
             <hr class="mt-0" />
             <p class="card-text">{{ articles[key].body }}...</p>
           </div>
-        </div>
+        </a>
         <ng-adsense
           *ngIf="(i + 1) % 3 === 0"
           adFormat="horizontal"
