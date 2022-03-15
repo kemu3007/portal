@@ -8,4 +8,9 @@
 </ul>
 <app-message></app-message>
 
-<router-outlet></router-outlet>
+<ng-container *ngIf="loading; else contents">
+  <app-loading></app-loading>
+</ng-container>
+<ng-template #contents>
+  <router-outlet></router-outlet>
+</ng-template>

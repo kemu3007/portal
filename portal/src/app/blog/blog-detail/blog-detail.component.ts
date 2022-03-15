@@ -4,7 +4,7 @@ import { marked } from 'marked';
 import hljs from 'highlight.js';
 import { Title } from '@angular/platform-browser';
 import { ArticleDetail } from '../models';
-import { MessageService } from '@app/message/message.service';
+import { MessageService } from '@app/shared/message/message.service';
 
 @Component({
   selector: 'app-blog-detail',

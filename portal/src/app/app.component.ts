@@ -1,19 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  loading = false;
+
   tabs = [
     { name: 'home', to: '/' },
     { name: 'blog', to: '/blog' },
     { name: 'log', to: '/log' },
   ];
 
-  constructor(titleService: Title) {
+  constructor(titleService: Title, private router: Router) {
     titleService.setTitle('kemu portal');
+  }
+
+  ngOnInit(): void {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        this.loading = true;
+      } else if (
+        event instanceof NavigationEnd ||
+        event instanceof NavigationCancel ||
+        event instanceof NavigationError
+      ) {
+        this.loading = false;
+      }
+    });
   }
 
   get activeTab() {
