@@ -13,7 +13,7 @@ export class AppComponent {
   ];
 
   constructor(titleService: Title) {
-    titleService.setTitle('kemu portal | home');
+    titleService.setTitle('kemu portal');
   }
 
   get activeTab() {

@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class IndexComponent implements OnInit {
   constructor(title: Title, private route: ActivatedRoute, private router: Router) {
-    title.setTitle('kemu portal | home');
+    title.setTitle('kemu portal');
   }
 
   ngOnInit(): void {
