@@ -40,9 +40,7 @@ export class LogDetailComponent implements OnInit {
   }
 
   get article$(): Promise<LogDetail> {
-    return import(
-      `../../../assets/logs/${this.route.snapshot.paramMap.get('id')}.json`
-    ).catch((_) =>
+    return import(`../../../assets/logs/${this.route.snapshot.paramMap.get('id')}.json`).catch((_) =>
       this.router.navigate(['/log']).then((_) =>
         this.messageService.messages.push({
           type: 'warning',

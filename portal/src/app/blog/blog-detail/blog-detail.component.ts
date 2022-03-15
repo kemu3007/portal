@@ -40,9 +40,7 @@ export class BlogDetailComponent implements OnInit {
   }
 
   get article$(): Promise<ArticleDetail> {
-    return import(
-      `../../../assets/articles/${this.route.snapshot.paramMap.get('id')}.json`
-    ).catch((_) =>
+    return import(`../../../assets/articles/${this.route.snapshot.paramMap.get('id')}.json`).catch((_) =>
       this.router.navigate(['/blog']).then((_) =>
         this.messageService.messages.push({
           type: 'warning',

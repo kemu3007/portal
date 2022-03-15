@@ -7,11 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './index.component.html',
 })
 export class IndexComponent implements OnInit {
-  constructor(
-    title: Title,
-    private route: ActivatedRoute,
-    private router: Router
-  ) {
+  constructor(title: Title, private route: ActivatedRoute, private router: Router) {
     title.setTitle('kemu portal | home');
   }
 

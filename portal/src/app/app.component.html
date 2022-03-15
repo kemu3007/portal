@@ -1,10 +1,5 @@
 <ul ngbNav #nav="ngbNav" [activeId]="activeTab" class="nav-tabs">
-  <a
-    ngbNavItem
-    [disabled]="true"
-    [routerLink]="['/']"
-    class="text-decoration-none"
-  >
+  <a ngbNavItem [disabled]="true" [routerLink]="['/']" class="text-decoration-none">
     <a ngbNavLink>kemu portal</a>
   </a>
   <li *ngFor="let tab of tabs; index as i" [ngbNavItem]="i">
