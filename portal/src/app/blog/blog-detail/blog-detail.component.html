@@ -6,7 +6,10 @@
   <div class="row mt-3" *ngIf="article">
     <div class="col-md-8">
       <h2>{{ article.title }}</h2>
-      <p>{{ article.created_at | date: "yyyy.MM.dd hh:mm" }}</p>
+      <div class="d-flex justify-content-between">
+        <p>{{ article.created_at | date: "yyyy.MM.dd hh:mm" }}</p>
+        <app-tweet-btn></app-tweet-btn>
+      </div>
       <hr />
       <div [innerHTML]="marked.parse(article['body'])"></div>
       <hr class="mt-5" />
