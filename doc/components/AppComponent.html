@@ -509,7 +509,7 @@ export class AppComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;nav ngbNav #nav&#x3D;&quot;ngbNav&quot; [activeId]&#x3D;&quot;activeTab&quot; class&#x3D;&quot;navbar navbar-expand-md navbar-light bg-light mb-3&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;nav ngbNav #nav&#x3D;&quot;ngbNav&quot; [activeId]&#x3D;&quot;activeTab&quot; class&#x3D;&quot;navbar navbar-expand-md navbar-light bg-light pb-0&quot;&gt;
   &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
     &lt;a [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot; class&#x3D;&quot;navbar-brand&quot;&gt; kemu portal &lt;/a&gt;
     &lt;button class&#x3D;&quot;navbar-toggler&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;menu.toggle()&quot;&gt;&amp;#9776;&lt;/button&gt;
@@ -560,7 +560,7 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav ngbNav #nav="ngbNav" [activeId]="activeTab" class="navbar navbar-expand-md navbar-light bg-light mb-3">  <div class="container-fluid">    <a [routerLink]="[\'/\']" class="navbar-brand"> kemu portal </a>    <button class="navbar-toggler" type="button" (click)="menu.toggle()">&#9776;</button>    <div [ngbCollapse]="true" #menu="ngbCollapse" class="collapse navbar-collapse">      <ul class="navbar-nav">        <li *ngFor="let tab of tabs; index as i" class="nav-item">          <a class="nav-link" [routerLink]="tab.to" [ngClass]="{ active: isActive(tab.to) }">{{ tab.name }}</a>        </li>      </ul>    </div>  </div></nav><app-message></app-message><ng-container *ngIf="loading; else contents">  <app-loading></app-loading></ng-container><ng-template #contents>  <router-outlet></router-outlet></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><nav ngbNav #nav="ngbNav" [activeId]="activeTab" class="navbar navbar-expand-md navbar-light bg-light pb-0">  <div class="container-fluid">    <a [routerLink]="[\'/\']" class="navbar-brand"> kemu portal </a>    <button class="navbar-toggler" type="button" (click)="menu.toggle()">&#9776;</button>    <div [ngbCollapse]="true" #menu="ngbCollapse" class="collapse navbar-collapse">      <ul class="navbar-nav">        <li *ngFor="let tab of tabs; index as i" class="nav-item">          <a class="nav-link" [routerLink]="tab.to" [ngClass]="{ active: isActive(tab.to) }">{{ tab.name }}</a>        </li>      </ul>    </div>  </div></nav><app-message></app-message><ng-container *ngIf="loading; else contents">  <app-loading></app-loading></ng-container><ng-template #contents>  <router-outlet></router-outlet></ng-template></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
