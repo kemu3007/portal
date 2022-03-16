@@ -33,6 +33,13 @@ export class AppComponent implements OnInit {
     });
   }
 
+  isActive(to: string) {
+    if (to !== '/') {
+      return window.location.pathname.startsWith(to);
+    }
+    return to === window.location.pathname;
+  }
+
   get activeTab() {
     const matched = this.tabs
       .map((tab, index) => {
