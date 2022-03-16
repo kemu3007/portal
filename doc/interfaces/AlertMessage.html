@@ -178,6 +178,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { interval } from &#x27;rxjs&#x27;;
 
 export interface AlertMessage {
   type: string;
@@ -189,7 +190,16 @@ export interface AlertMessage {
 })
 export class MessageService {
   constructor() {}
-  messages: AlertMessage[] &#x3D; [];
+  private _messages: AlertMessage[] &#x3D; [];
+
+  get messages() {
+    return this._messages;
+  }
+
+  pushMessage(message: AlertMessage) {
+    this._messages.push(message);
+    interval(5000).subscribe((_) &#x3D;&gt; this._messages.shift());
+  }
 }
 </code></pre>
     </div>
