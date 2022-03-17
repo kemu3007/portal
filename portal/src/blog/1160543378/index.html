@@ -7,24 +7,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:title" content="kemu tech blog | Gmail API push notificationを利用する" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:description"
-      content="メールにフックして処理を挟むことができるようになります。 環境- Python 3.10- google-api-python-client==2.36.0- google_auth_oauthlib"
-    />
+    <meta property="og:description" content="メールにフックして処理を挟むことができるようになります。 環境- Python 3.10- google-api-python-client==2.36.0- google_auth_oauthlib" />
     <meta property="og:url" content="https://portal.kemu.site" />
-    <meta property="og:image" content="https://portal.kemu.site/assets/images/1160543378.png" />
+    <meta
+      property="og:image"
+      content="https://portal.kemu.site/assets/images/1160543378.png"
+    />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://portal.kemu.site/assets/images/1160543378.png" />
     <meta
-      name="twitter:description"
-      content="メールにフックして処理を挟むことができるようになります。 環境- Python 3.10- google-api-python-client==2.36.0- google_auth_oauthlib"
+      name="twitter:image"
+      content="https://portal.kemu.site/assets/images/1160543378.png"
     />
+    <meta name="twitter:description" content="メールにフックして処理を挟むことができるようになります。 環境- Python 3.10- google-api-python-client==2.36.0- google_auth_oauthlib" />
     <meta name="twitter:title" content="kemu tech blog | Gmail API push notificationを利用する" />
     <meta name="twitter:url" content="https://twitter.com/kemu43" />
-    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/29157528?v=4" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://avatars.githubusercontent.com/u/29157528?v=4"
+    />
   </head>
+  <body>
+    <h2>Gmail API push notificationを利用する</h2> メールにフックして処理を挟むことができるようになります。
+
+### 環境
+- Python 3.10
+- google-api-python-client==2.36.0
+- google_auth_oauthlib==0.4.6
+- google-cloud-pubsub==2.9.0
+
+
+### 手順
+① GCPコンソールからプロジェクトを作成し、[Gmail API](https://console.cloud.google.com/apis/api/gmail.googleapis.com/)を有効化
+
+② Gmail API -> 認証情報 -> 認証情報を作成をクリックし、OAuth クライアント IDを作成する(手元で遊ぶだけであればリダイレクトURIについて考えなくて良いのでデスクトップアプリを選択するのが便利です。)
+
+③ OAuth クライアント IDを作成後、クリックしてアクセスし、JSONをダウンロード
+
+④ ダウンロードしてきたJSONにはtokenが付与されていないため、以下のコードを実行し、コンソールに表示されたURLをクリックし同意を行ったうえで生成されたコードをコンソールにペーストし、認証情報をpickleの形式で保存します。(説明ではdjnagoをベースにしていますが特に意識する必要はないです。)
+
+---
+
+```py
+import json
+import pickle
+from pathlib import Path
+
+from django.conf import settings
+from django.core.management.base import BaseCommand
+from google_auth_oauthlib.flow import InstalledAppFlow
+
+
+class Command(BaseCommand):
+    def handle(self, *args, **options):
+        credential_path: Path = settings.BASE_DIR.parent / "auth.json"
+        credential_scopes = ["https://mail.google.com/"]
+        raw_credentials = json.loads(credential_path.read_text())
+        flow = InstalledAppFlow.from_client_config(raw_credentials, credential_scopes)
+        credentials = flow.run_console()
+        with open("token.pickle", "wb") as token:
+            pickle.dump(credentials, token)
+```
+
+---
+
+⑤ GCPのコンソールからGmailのpush notificationに必要となる[pub/sub](https://console.cloud.google.com/cloudpubsub/)を作成します。トピックをまず作成します、この際チェックボックスにチェックを入れる必要はありません。
+
+⑥ トピックに対するpublisherを設定します。画面右側情報パネル権限欄から`プリンシパルを追加`をクリックし、 `gmail-api-push@system.gserviceaccount.com` をロール `Pub/Sub パブリッシャー` として追加します。
+
+⑦ サブスクリプションを作成します。配信タイプは`pull`を選択してください。トピックは手順5で作成したものになります。
+
+⑧ 手順4で作成した認証情報を元に `users.watch` を実行します。この際labelIdsをINBOXと指定することで通知がイベント発火を制御しています。
+
+---
+
+```py
+from googleapiclient.discovery import build
+
+with open(settings.BASE_DIR / "mail/token.pickle", "rb") as token:
+    credentials = pickle.load(token)
+service = build("gmail", "v1", credentials=self.credentials)
+# settings.PUBSUB_TOPICには  projects/{project_name}-{project_id}/topics/{topic_name} のような値が入ります。
+service.users().watch(userId="me", body={"labelIds": ["INBOX"], "topicName": settings.PUBSUB_TOPIC}).execute()
+```
+
+---
+
+⑨ callback関数を設定し、subscribeする
+
+---
+
+```py
+from google.cloud.pubsub_v1 import SubscriberClient
+
+# settings.PUBSUB_SUBSCRIPTIONにはprojects/{project_name}-{project_id}/subscriptions/{topic_name} のような値が入ります
+SubscriberClient(credentials=credentials).subscribe(settings.PUBSUB_SUBSCRIPTION, callback=callback)
+```
+
+---
+
+⑩ subscribeして得られたデータは以下の形式です。
+https://developers.google.com/gmail/api/guides/push#receiving_notifications
+
+この時の"messageId"はgmailのIDとは一切関係がないので注意する必要があります。
+
+⑪ historyIdを元にメッセージを取得する
+
+手順10で取得したhistoryIdを利用した場合startHistoryIdクエリを利用する都合上取得できない場合があります。そのため、ひとつ前の値、存在しない場合は `user.watch` を利用した際のhistoryIdを利用する必要があります。
+
+---
+
+```py
+histories = service.users().history().list(userId="me", historyTypes=["messageAdded"], labelId="INBOX", startHistoryId=past_history_id).execute(num_retries=5)
+message_id = histories["history"][0]["messagesAdded"][0]["message"]["id"]
+message = self.service.users().messages().get(userId="me", id=message_id).execute(num_retries=5)
+```
+
+---
+
+⑫ 手順12でメッセージが取得できたため、slackに通知、DBに保存など好きな処理を行う。
+
+本文はbase64でエンコードされているため、 `base64.urlsafe_b64decode` するなどして取り扱ってください。
+
+### 注意
+
+- GCPのアクセス権を扱うためくれぐれもgithubなどに認証情報をアップロードしないようにしてください。
+- `user.watch` は定期的に実行する必要があります。コマンド化してoferiaやcronなどで定期実行をかけるのが良いかなと思います。
+
+### 総評
+
+slackにメールを流し込むこと自体はもっと簡単な方法がいくらでも存在していますが、ほかの処理を挟み込みたい、使いやすいDBにメール情報を蓄積しておきたいなど思った場合に便利だなと思いました。
+
+日本語の資料がほとんど転がっておらず苦労しましたがなんとか1日で動くslackbotまで持っていけたのでよかったなと思っています。 <hr /> meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/10', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/10/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/10/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/10/events', 'html_url': 'https://github.com/kemu3007/portal/issues/10', 'id': 1160543378, 'node_id': 'I_kwDOG7qoq85FLHyS', 'number': 10, 'title': 'Gmail API push notificationを利用する', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3900073969, 'node_id': 'LA_kwDOG7qoq87odmfx', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/GCP', 'name': 'GCP', 'color': 'FBCA04', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': [], 'created_at': '2022-03-06T07:47:32Z', 'updated_at': '2022-03-06T15:19:57Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': 'メールにフックして処理を挟むことができるようになります。\r\n\r\n### 環境\r\n- Python 3.10\r\n- google-api-python-client==2.36.0\r\n- google_auth_oauthlib==0.4.6\r\n- google-cloud-pubsub==2.9.0\r\n\r\n\r\n### 手順\r\n① GCPコンソールからプロジェクトを作成し、[Gmail API](https://console.cloud.google.com/apis/api/gmail.googleapis.com/)を有効化\r\n\r\n② Gmail API -> 認証情報 -> 認証情報を作成をクリックし、OAuth クライアント IDを作成する(手元で遊ぶだけであればリダイレクトURIについて考えなくて良いのでデスクトップアプリを選択するのが便利です。)\r\n\r\n③ OAuth クライアント IDを作成後、クリックしてアクセスし、JSONをダウンロード\r\n\r\n④ ダウンロードしてきたJSONにはtokenが付与されていないため、以下のコードを実行し、コンソールに表示されたURLをクリックし同意を行ったうえで生成されたコードをコンソールにペーストし、認証情報をpickleの形式で保存します。(説明ではdjnagoをベースにしていますが特に意識する必要はないです。)\r\n\r\n---\r\n\r\n```py\r\nimport json\r\nimport pickle\r\nfrom pathlib import Path\r\n\r\nfrom django.conf import settings\r\nfrom django.core.management.base import BaseCommand\r\nfrom google_auth_oauthlib.flow import InstalledAppFlow\r\n\r\n\r\nclass Command(BaseCommand):\r\n    def handle(self, *args, **options):\r\n        credential_path: Path = settings.BASE_DIR.parent / "auth.json"\r\n        credential_scopes = ["https://mail.google.com/"]\r\n        raw_credentials = json.loads(credential_path.read_text())\r\n        flow = InstalledAppFlow.from_client_config(raw_credentials, credential_scopes)\r\n        credentials = flow.run_console()\r\n        with open("token.pickle", "wb") as token:\r\n            pickle.dump(credentials, token)\r\n```\r\n\r\n---\r\n\r\n⑤ GCPのコンソールからGmailのpush notificationに必要となる[pub/sub](https://console.cloud.google.com/cloudpubsub/)を作成します。トピックをまず作成します、この際チェックボックスにチェックを入れる必要はありません。\r\n\r\n⑥ トピックに対するpublisherを設定します。画面右側情報パネル権限欄から`プリンシパルを追加`をクリックし、 `gmail-api-push@system.gserviceaccount.com` をロール `Pub/Sub パブリッシャー` として追加します。\r\n\r\n⑦ サブスクリプションを作成します。配信タイプは`pull`を選択してください。トピックは手順5で作成したものになります。\r\n\r\n⑧ 手順4で作成した認証情報を元に `users.watch` を実行します。この際labelIdsをINBOXと指定することで通知がイベント発火を制御しています。\r\n\r\n---\r\n\r\n```py\r\nfrom googleapiclient.discovery import build\r\n\r\nwith open(settings.BASE_DIR / "mail/token.pickle", "rb") as token:\r\n    credentials = pickle.load(token)\r\nservice = build("gmail", "v1", credentials=self.credentials)\r\n# settings.PUBSUB_TOPICには  projects/{project_name}-{project_id}/topics/{topic_name} のような値が入ります。\r\nservice.users().watch(userId="me", body={"labelIds": ["INBOX"], "topicName": settings.PUBSUB_TOPIC}).execute()\r\n```\r\n\r\n---\r\n\r\n⑨ callback関数を設定し、subscribeする\r\n\r\n---\r\n\r\n```py\r\nfrom google.cloud.pubsub_v1 import SubscriberClient\r\n\r\n# settings.PUBSUB_SUBSCRIPTIONにはprojects/{project_name}-{project_id}/subscriptions/{topic_name} のような値が入ります\r\nSubscriberClient(credentials=credentials).subscribe(settings.PUBSUB_SUBSCRIPTION, callback=callback)\r\n```\r\n\r\n---\r\n\r\n⑩ subscribeして得られたデータは以下の形式です。\r\nhttps://developers.google.com/gmail/api/guides/push#receiving_notifications\r\n\r\nこの時の"messageId"はgmailのIDとは一切関係がないので注意する必要があります。\r\n\r\n⑪ historyIdを元にメッセージを取得する\r\n\r\n手順10で取得したhistoryIdを利用した場合startHistoryIdクエリを利用する都合上取得できない場合があります。そのため、ひとつ前の値、存在しない場合は `user.watch` を利用した際のhistoryIdを利用する必要があります。\r\n\r\n---\r\n\r\n```py\r\nhistories = service.users().history().list(userId="me", historyTypes=["messageAdded"], labelId="INBOX", startHistoryId=past_history_id).execute(num_retries=5)\r\nmessage_id = histories["history"][0]["messagesAdded"][0]["message"]["id"]\r\nmessage = self.service.users().messages().get(userId="me", id=message_id).execute(num_retries=5)\r\n```\r\n\r\n---\r\n\r\n⑫ 手順12でメッセージが取得できたため、slackに通知、DBに保存など好きな処理を行う。\r\n\r\n本文はbase64でエンコードされているため、 `base64.urlsafe_b64decode` するなどして取り扱ってください。\r\n\r\n### 注意\r\n\r\n- GCPのアクセス権を扱うためくれぐれもgithubなどに認証情報をアップロードしないようにしてください。\r\n- `user.watch` は定期的に実行する必要があります。コマンド化してoferiaやcronなどで定期実行をかけるのが良いかなと思います。\r\n\r\n### 総評\r\n\r\nslackにメールを流し込むこと自体はもっと簡単な方法がいくらでも存在していますが、ほかの処理を挟み込みたい、使いやすいDBにメール情報を蓄積しておきたいなど思った場合に便利だなと思いました。\r\n\r\n日本語の資料がほとんど転がっておらず苦労しましたがなんとか1日で動くslackbotまで持っていけたのでよかったなと思っています。', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/10/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/10/timeline', 'performed_via_github_app': None}
+  </body>
   <script>
-    window.location.href = window.location.origin + '?to=' + window.location.pathname;
+    if (!window.navigator.userAgent.includes("Googlebot")) {
+      window.location.href=window.location.origin + '?to=' + window.location.pathname
+    }
   </script>
 </html>
