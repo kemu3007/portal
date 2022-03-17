@@ -28,5 +28,59 @@
       href="https://avatars.githubusercontent.com/u/29157528?v=4"
     />
   </head>
-  <script>window.location.href=window.location.origin + '?to=' + window.location.pathname</script>
+  <body>
+    <h2>GitHub ActionとPagesでブログを作る</h2> ## 環境
+- npm v8.3.1
+- node: v16.14.0
+- Angular: v13.2.5
+- @ng-bootstrap/ng-bootstrap: 12.0.0
+
+※ `npm run ng add @ng-bootstrap/ng-bootstrap` が失敗する場合は一旦 `npm config set legacy-peer-deps true` としてから行なってください。
+
+## 動作概要
+
+行なったことは以下の通りです。 `.github/workflows/deploy.yml` あたりを見てもらえればわかるんじゃないかなと思います。
+
+1. GitHubのissueが作成/更新されたタイミングでGitHub Actionを走らせ`article`ラベルのついているissueを収集
+
+```python
+import requests
+import json
+from pathlib import Path
+
+if __name__ == "__main__":
+    Path("articles/list.json").unlink(missing_ok=True)
+    res = requests.get("https://api.github.com/repos/kemu3007/portal/issues?labels=article")
+    articles = json.loads(res.content)
+    with open("articles/list.json", "x") as f:
+        f.write(json.dumps(articles))
+```
+
+2. 収集されたissueをjson形式で保存し、Angularが記事を表示する際に参照するように設定
+3. ビルドしたAngularプロジェクトをGitHub Pagesで配信
+
+Octokitを利用してGitHub Rest APIを利用することも考えたのですが手元で遊んでいる際にレート制限になってしまい面倒だったのでこの形式にしました。
+
+デプロイには `angular-cli-ghpages` を利用しました。`/` 以外でリダイレクト処理を行なった際に404 -> 目的のパスへの遷移を自動的に行なってくれます。`--base-href`, `--cname` のどちらかの引数を利用する必要があるのでそこだけ忘れないようにしてください。
+
+- 初期のドメインを利用する場合はbasehrefを指定(--base-href={repo_name})
+- カスタムドメインを利用する場合はcnameを指定(--cname=portal.kemu.site)
+
+
+httpsの証明書も自動で発行してくれるためあまり気にする必要もありません。(カスタムドメインを利用する場合はCNAMEレコードを作成して{user_id}/github/ioに向ける必要があります。)
+
+
+ブログのためだけにEC2借りてバックエンドとフロントエンド用意するのはちょっとなーとなっていたのでしばらくこれで行こうと思います。
+
+
+## 参考リンク
+
+- [angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)
+- [カスタムドメインとGitHub Pagesについて](https://docs.github.com/ja/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages) <hr /> meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/12', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/12/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/12/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/12/events', 'html_url': 'https://github.com/kemu3007/portal/issues/12', 'id': 1160653032, 'node_id': 'I_kwDOG7qoq85FLijo', 'number': 12, 'title': 'GitHub ActionとPagesでブログを作る', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3900074882, 'node_id': 'LA_kwDOG7qoq87odmuC', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/Angular', 'name': 'Angular', 'color': 'D93F0B', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': [], 'created_at': '2022-03-06T16:25:06Z', 'updated_at': '2022-03-06T23:44:03Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': '## 環境\r\n- npm v8.3.1\r\n- node: v16.14.0\r\n- Angular: v13.2.5\r\n- @ng-bootstrap/ng-bootstrap: 12.0.0\r\n\r\n※ `npm run ng add @ng-bootstrap/ng-bootstrap` が失敗する場合は一旦 `npm config set legacy-peer-deps true` としてから行なってください。\r\n\r\n## 動作概要\r\n\r\n行なったことは以下の通りです。 `.github/workflows/deploy.yml` あたりを見てもらえればわかるんじゃないかなと思います。\r\n\r\n1. GitHubのissueが作成/更新されたタイミングでGitHub Actionを走らせ`article`ラベルのついているissueを収集\r\n\r\n```python\r\nimport requests\r\nimport json\r\nfrom pathlib import Path\r\n\r\nif __name__ == "__main__":\r\n    Path("articles/list.json").unlink(missing_ok=True)\r\n    res = requests.get("https://api.github.com/repos/kemu3007/portal/issues?labels=article")\r\n    articles = json.loads(res.content)\r\n    with open("articles/list.json", "x") as f:\r\n        f.write(json.dumps(articles))\r\n```\r\n\r\n2. 収集されたissueをjson形式で保存し、Angularが記事を表示する際に参照するように設定\r\n3. ビルドしたAngularプロジェクトをGitHub Pagesで配信\r\n\r\nOctokitを利用してGitHub Rest APIを利用することも考えたのですが手元で遊んでいる際にレート制限になってしまい面倒だったのでこの形式にしました。\r\n\r\nデプロイには `angular-cli-ghpages` を利用しました。`/` 以外でリダイレクト処理を行なった際に404 -> 目的のパスへの遷移を自動的に行なってくれます。`--base-href`, `--cname` のどちらかの引数を利用する必要があるのでそこだけ忘れないようにしてください。\r\n\r\n- 初期のドメインを利用する場合はbasehrefを指定(--base-href={repo_name})\r\n- カスタムドメインを利用する場合はcnameを指定(--cname=portal.kemu.site)\r\n\r\n\r\nhttpsの証明書も自動で発行してくれるためあまり気にする必要もありません。(カスタムドメインを利用する場合はCNAMEレコードを作成して{user_id}/github/ioに向ける必要があります。)\r\n\r\n\r\nブログのためだけにEC2借りてバックエンドとフロントエンド用意するのはちょっとなーとなっていたのでしばらくこれで行こうと思います。\r\n\r\n\r\n## 参考リンク\r\n\r\n- [angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)\r\n- [カスタムドメインとGitHub Pagesについて](https://docs.github.com/ja/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages)', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/12/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/12/timeline', 'performed_via_github_app': None}
+  </body>
+  <script>
+    if (!window.navigator.userAgent.includes("Googlebot")) {
+      window.location.href=window.location.origin + '?to=' + window.location.pathname
+    }
+  </script>
 </html>

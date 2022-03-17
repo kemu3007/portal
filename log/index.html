@@ -28,5 +28,12 @@
       href="https://avatars.githubusercontent.com/u/29157528?v=4"
     />
   </head>
-  <script>window.location.href=window.location.origin + '?to=' + window.location.pathname</script>
+  <body>
+    page_contents
+  </body>
+  <script>
+    if (!window.navigator.userAgent.includes("Googlebot")) {
+      window.location.href=window.location.origin + '?to=' + window.location.pathname
+    }
+  </script>
 </html>
