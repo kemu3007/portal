@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
+import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -50,5 +51,11 @@ export class AppComponent implements OnInit {
       })
       .filter(Boolean);
     return matched[0] || 0;
+  }
+
+  onClickedNav(collapse: NgbCollapse) {
+    if (!collapse.collapsed) {
+      collapse.toggle();
+    }
   }
 }

@@ -5,9 +5,13 @@
     <div [ngbCollapse]="true" #menu="ngbCollapse" class="collapse navbar-collapse">
       <ul class="navbar-nav">
         <li *ngFor="let tab of tabs; index as i" class="nav-item">
-          <a class="nav-link" [routerLink]="tab.to" (click)="menu.toggle()" [ngClass]="{ active: isActive(tab.to) }">{{
-            tab.name
-          }}</a>
+          <a
+            class="nav-link"
+            [routerLink]="tab.to"
+            (click)="onClickedNav(menu)"
+            [ngClass]="{ active: isActive(tab.to) }"
+            >{{ tab.name }}</a
+          >
         </li>
       </ul>
     </div>
