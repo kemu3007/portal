@@ -22,7 +22,7 @@ if __name__ == "__main__":
     logs = json.loads((Path() / "portal/src/assets/logs/list.json").read_text())
     log_home = base_html.replace("page_image", "https://portal.kemu.site/assets/images/log.png").replace("page_title", "kemu logs").replace("page_description", "kemu logs")
     log_home_html = [f"<a href='/log/{key}'>{log['title']}</a><hr /> {log['body']}" for key, log in logs.items()]
-    log_home.replace("page_contents", "<hr />".join(log_home_html))    
+    log_home = log_home.replace("page_contents", "<hr />".join(log_home_html))    
     path = Path("portal/src/log")
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(log_home)
