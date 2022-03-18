@@ -472,7 +472,7 @@ export class LogDetailComponent implements OnInit {
   get article$(): Promise&lt;LogDetail&gt; {
     return import(&#x60;../../../assets/logs/${this.route.snapshot.paramMap.get(&#x27;id&#x27;)}.json&#x60;).catch((_) &#x3D;&gt;
       this.router.navigate([&#x27;/log&#x27;]).then((_) &#x3D;&gt;
-        this.messageService.messages.push({
+        this.messageService.pushMessage({
           type: &#x27;warning&#x27;,
           body: &#x27;記事が存在していません&#x27;,
         })
