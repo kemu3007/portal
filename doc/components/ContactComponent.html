@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  LogListComponent</li>
+  ContactComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/log/log-list/log-list.component.ts</code>
+    <code>src/app/home/contact/contact.component.ts</code>
 </p>
 
 
@@ -86,7 +86,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-blog-list</code></td>
+                <td class="col-md-9"><code>app-contact</code></td>
             </tr>
 
 
@@ -94,7 +94,7 @@
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./log-list.component.html</code></td>
+                <td class="col-md-9"><code>./contact.component.html</code></td>
             </tr>
 
 
@@ -112,6 +112,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isShowed" >isShowed</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -122,7 +136,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#getLabels" >getLabels</a>
+                                <a href="#copyAddress" >copyAddress</a>
+                            </li>
+                            <li>
+                                <a href="#open" >open</a>
+                            </li>
+                            <li>
+                                <a href="#resolveReCaptcha" >resolveReCaptcha</a>
                             </li>
                         </ul>
                     </td>
@@ -132,26 +152,6 @@
 
 
 
-                    <tr>
-                        <td class="col-md-4">
-                            <h6><b>Accessors</b></h6>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <ul class="index-list">
-                                <li>
-                                    <a href="#articles" >articles</a>
-                                </li>
-                                <li>
-                                    <a href="#articleKeys" >articleKeys</a>
-                                </li>
-                                <li>
-                                    <a href="#adsLength" >adsLength</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
         </tbody>
     </table>
 </section>
@@ -162,12 +162,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(modalService: NgbModal, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/log/log-list/log-list.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/home/contact/contact.component.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -185,10 +185,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>titleService</td>
+                                                        <td>modalService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                                    <code>NgbModal</code>
                                                         </td>
                                                   
                                                     <td>
@@ -197,10 +197,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>router</td>
+                                                        <td>messageService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                        <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -230,24 +230,61 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getLabels"></a>
+                    <a name="copyAddress"></a>
                     <span class="name">
-                        <span ><b>getLabels</b></span>
-                        <a href="#getLabels"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>copyAddress</b></span>
+                        <a href="#copyAddress"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getLabels(article: <a href="../interfaces/Log.html" target="_self">Log</a>)</code>
+<code>copyAddress()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/log/log-list/log-list.component.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/home/contact/contact.component.ts:22</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="open"></a>
+                    <span class="name">
+                        <span ><b>open</b></span>
+                        <a href="#open"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>open(content: TemplateRef<any>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/app/home/contact/contact.component.ts:14</a></div>
                 </td>
             </tr>
 
@@ -268,9 +305,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>article</td>
+                                    <td>content</td>
                                     <td>
-                                                <code><a href="../interfaces/Log.html" target="_self" >Log</a></code>
+                                            <code>TemplateRef&lt;any&gt;</code>
                                     </td>
 
                                     <td>
@@ -285,7 +322,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Label[]</code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                     <div class="io-description">
@@ -295,164 +332,142 @@
             </tr>
         </tbody>
     </table>
-</section>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resolveReCaptcha"></a>
+                    <span class="name">
+                        <span ><b>resolveReCaptcha</b></span>
+                        <a href="#resolveReCaptcha"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resolveReCaptcha()</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/home/contact/contact.component.ts:18</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
     <section>
-    <h3 id="accessors">
-        Accessors
+    
+    <h3 id="inputs">
+        Properties
     </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isShowed"></a>
+                    <span class="name">
+                        <span ><b>isShowed</b></span>
+                        <a href="#isShowed"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="articles"></a>
-                        <span class="name"><b>articles</b><a href="#articles"><span class="icon ion-ios-link"></span></a></span>
+                        <i>Default value : </i><code>false</code>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/home/contact/contact.component.ts:12</a></div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>articles()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/log/log-list/log-list.component.ts:16</a></div>
-                                </td>
-                            </tr>
 
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="articleKeys"></a>
-                        <span class="name"><b>articleKeys</b><a href="#articleKeys"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>articleKeys()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/log/log-list/log-list.component.ts:20</a></div>
-                                </td>
-                            </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="adsLength"></a>
-                        <span class="name"><b>adsLength</b><a href="#adsLength"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>adsLength()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/log/log-list/log-list.component.ts:24</a></div>
-                                </td>
-                            </tr>
-
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
+
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { Title } from &#x27;@angular/platform-browser&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
-import articles from &#x27;@assets/logs/list.json&#x27;;
-import { Log, Label } from &#x27;../models&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, TemplateRef } from &#x27;@angular/core&#x27;;
+import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
+import { NgbModal } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
 
 @Component({
-  selector: &#x27;app-blog-list&#x27;,
-  templateUrl: &#x27;./log-list.component.html&#x27;,
+  selector: &#x27;app-contact&#x27;,
+  templateUrl: &#x27;./contact.component.html&#x27;,
 })
-export class LogListComponent {
-  constructor(titleService: Title, private router: Router) {
-    titleService.setTitle(&#x27;kemu logs&#x27;);
+export class ContactComponent {
+  constructor(private modalService: NgbModal, private messageService: MessageService) {}
+
+  isShowed &#x3D; false;
+
+  open(content: TemplateRef&lt;any&gt;) {
+    this.modalService.open(content, { size: &#x27;lg&#x27;, centered: true });
   }
 
-  get articles(): Record&lt;string, Log&gt; {
-    return articles;
+  resolveReCaptcha() {
+    this.isShowed &#x3D; true;
   }
 
-  get articleKeys(): string[] {
-    return Object.keys(this.articles).sort((a, b) &#x3D;&gt; (a &gt; b ? -1 : 1));
-  }
-
-  get adsLength(): number {
-    const hasMd &#x3D; window.screen.width &gt;&#x3D; 768;
-    return hasMd ? Math.floor(Object.keys(this.articles).length / 3) || 1 : 1;
-  }
-
-  getLabels(article: Log): Label[] {
-    return article.labels.filter((label) &#x3D;&gt; label.name !&#x3D;&#x3D; &#x27;log&#x27;);
+  copyAddress() {
+    navigator.clipboard
+      .writeText(&#x27;kemu430113+portal@gmail.com&#x27;)
+      .then(() &#x3D;&gt;
+        this.messageService.pushMessage({ type: &#x27;info&#x27;, body: &#x27;copied email address to your clipboard (*ゝω・)ﾉ&#x27; })
+      )
+      .catch(() &#x3D;&gt; this.messageService.pushMessage({ type: &#x27;danger&#x27;, body: &quot;we can&#x27;t access your clipboard (◇´Д｀ﾟ&quot; }))
+      .finally(() &#x3D;&gt; this.modalService.dismissAll());
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
-  &lt;div class&#x3D;&quot;row mt-3&quot;&gt;
-    &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
-      &lt;div *ngFor&#x3D;&quot;let key of articleKeys; index as i&quot;&gt;
-        &lt;a class&#x3D;&quot;card mt-1 text-decoration-none text-muted&quot; [routerLink]&#x3D;&quot;[&#x27;/log&#x27;, key]&quot; style&#x3D;&quot;cursor: pointer&quot;&gt;
-          &lt;div class&#x3D;&quot;row g-0&quot;&gt;
-            &lt;div class&#x3D;&quot;col-3&quot;&gt;
-              &lt;img style&#x3D;&quot;max-width: 100%&quot; [src]&#x3D;&quot;articles[key].photo&quot; alt&#x3D;&quot;no image&quot; /&gt;
-            &lt;/div&gt;
-            &lt;div class&#x3D;&quot;col-9&quot;&gt;
-              &lt;div class&#x3D;&quot;card-body&quot;&gt;
-                &lt;div class&#x3D;&quot;row&quot;&gt;
-                  &lt;h5 class&#x3D;&quot;col-9 card-link text-black&quot;&gt;
-                    {{ articles[key].title }}
-                  &lt;/h5&gt;
-                  &lt;div class&#x3D;&quot;col-3 text-end&quot;&gt;
-                    &lt;p
-                      class&#x3D;&quot;badge rounded-pill&quot;
-                      *ngFor&#x3D;&quot;let label of getLabels(articles[key])&quot;
-                      [ngStyle]&#x3D;&quot;{ &#x27;background-color&#x27;: &#x27;#&#x27; + label.color }&quot;
-                    &gt;
-                      {{ label.name }}
-                    &lt;/p&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;hr class&#x3D;&quot;mt-0&quot; /&gt;
-                &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ articles[key].body }}...&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/a&gt;
-        &lt;ng-adsense *ngIf&#x3D;&quot;(i + 1) % 3 &#x3D;&#x3D;&#x3D; 0&quot; adFormat&#x3D;&quot;horizontal&quot;&gt;&lt;/ng-adsense&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
-      &lt;ng2-adsense
-        *ngFor&#x3D;&quot;let _ of [].constructor(adsLength)&quot;
-        style&#x3D;&quot;display: block&quot;
-        adFormat&#x3D;&quot;fluid&quot;
-        slot&#x3D;&quot;9091938102&quot;
-        layoutKey&#x3D;&quot;-ef+6k-30-ac+ty&quot;
-      &gt;&lt;/ng2-adsense&gt;
-    &lt;/div&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-3&quot;&gt;
+  &lt;h2&gt;Contact&lt;/h2&gt;
+  &lt;hr /&gt;
+  &lt;div&gt;仕事の依頼などは以下のメールアドレスにお願いします。&lt;br /&gt;セールスメールはお控えください。&lt;/div&gt;
+  &lt;div&gt;Please use the following e-mail address for work requests.&lt;br /&gt;Please refrain from sales emails.&lt;/div&gt;
+  &lt;div class&#x3D;&quot;mt-3 d-flex justify-content-center&quot;&gt;
+    &lt;button class&#x3D;&quot;btn btn-secondary mt-3&quot; (click)&#x3D;&quot;open(content)&quot;&gt;メールアドレスを入手する&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+
+&lt;ng-template #content let-modal&gt;
+  &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+    &lt;h4 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;modal-basic-title&quot;&gt;Contact Address / メールアドレス&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+    &lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
+      &lt;re-captcha
+        *ngIf&#x3D;&quot;!isShowed&quot;
+        (resolved)&#x3D;&quot;resolveReCaptcha()&quot;
+        siteKey&#x3D;&quot;6LeCx-4eAAAAAM4bOC4sVLZB0uYrfBNE59Rlvz52&quot;
+      &gt;&lt;/re-captcha&gt;
+      &lt;button *ngIf&#x3D;&quot;isShowed&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;copyAddress()&quot;&gt;
+        クリップボードにコピー / copy email address
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
 </code></pre>
     </div>
 
@@ -482,10 +497,10 @@ export class LogListComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row mt-3">    <div class="col-md-8">      <div *ngFor="let key of articleKeys; index as i">        <a class="card mt-1 text-decoration-none text-muted" [routerLink]="[\'/log\', key]" style="cursor: pointer">          <div class="row g-0">            <div class="col-3">              <img style="max-width: 100%" [src]="articles[key].photo" alt="no image" />            </div>            <div class="col-9">              <div class="card-body">                <div class="row">                  <h5 class="col-9 card-link text-black">                    {{ articles[key].title }}                  </h5>                  <div class="col-3 text-end">                    <p                      class="badge rounded-pill"                      *ngFor="let label of getLabels(articles[key])"                      [ngStyle]="{ \'background-color\': \'#\' + label.color }"                    >                      {{ label.name }}                    </p>                  </div>                </div>                <hr class="mt-0" />                <p class="card-text">{{ articles[key].body }}...</p>              </div>            </div>          </div>        </a>        <ng-adsense *ngIf="(i + 1) % 3 === 0" adFormat="horizontal"></ng-adsense>      </div>    </div>    <div class="col-md-4">      <ng2-adsense        *ngFor="let _ of [].constructor(adsLength)"        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></ng2-adsense>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-3">  <h2>Contact</h2>  <hr />  <div>仕事の依頼などは以下のメールアドレスにお願いします。<br />セールスメールはお控えください。</div>  <div>Please use the following e-mail address for work requests.<br />Please refrain from sales emails.</div>  <div class="mt-3 d-flex justify-content-center">    <button class="btn btn-secondary mt-3" (click)="open(content)">メールアドレスを入手する</button>  </div></div><ng-template #content let-modal>  <div class="modal-header">    <h4 class="modal-title" id="modal-basic-title">Contact Address / メールアドレス</h4>  </div>  <div class="modal-body">    <div class="d-flex justify-content-center">      <re-captcha        *ngIf="!isShowed"        (resolved)="resolveReCaptcha()"        siteKey="6LeCx-4eAAAAAM4bOC4sVLZB0uYrfBNE59Rlvz52"      ></re-captcha>      <button *ngIf="isShowed" class="btn btn-secondary" (click)="copyAddress()">        クリップボードにコピー / copy email address      </button>    </div>  </div></ng-template></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'LogListComponent'};
+    var ACTUAL_COMPONENT = {'name': 'ContactComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -531,7 +546,7 @@ export class LogListComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'LogListComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ContactComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

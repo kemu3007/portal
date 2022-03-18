@@ -190,7 +190,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/app.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/app.component.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -269,8 +269,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/app.component.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/app.component.ts:38</a></div>
                 </td>
             </tr>
 
@@ -338,8 +338,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/app.component.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/app.component.ts:24</a></div>
                 </td>
             </tr>
 
@@ -375,8 +375,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/app/app.component.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/app.component.ts:57</a></div>
                 </td>
             </tr>
 
@@ -478,6 +478,7 @@
     { name: &#x27;home&#x27;, to: &#x27;/&#x27; },
     { name: &#x27;blog&#x27;, to: &#x27;/blog&#x27; },
     { name: &#x27;log&#x27;, to: &#x27;/log&#x27; },
+    { name: &#x27;contact&#x27;, to: &#x27;/contact&#x27; },
   ]</code>
                     </td>
                 </tr>
@@ -512,7 +513,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/app.component.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/app.component.ts:45</a></div>
                                 </td>
                             </tr>
 
@@ -539,6 +540,7 @@ export class AppComponent implements OnInit {
     { name: &#x27;home&#x27;, to: &#x27;/&#x27; },
     { name: &#x27;blog&#x27;, to: &#x27;/blog&#x27; },
     { name: &#x27;log&#x27;, to: &#x27;/log&#x27; },
+    { name: &#x27;contact&#x27;, to: &#x27;/contact&#x27; },
   ];
 
   constructor(titleService: Title, private router: Router) {
@@ -646,7 +648,7 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><nav ngbNav #nav="ngbNav" [activeId]="activeTab" class="navbar navbar-expand-md navbar-light bg-light pb-0">  <div class="container-fluid">    <a [routerLink]="[\'/\']" class="navbar-brand"> kemu portal </a>    <button class="navbar-toggler" type="button" (click)="menu.toggle()">&#9776;</button>    <div [ngbCollapse]="true" #menu="ngbCollapse" class="collapse navbar-collapse">      <ul class="navbar-nav">        <li *ngFor="let tab of tabs; index as i" class="nav-item">          <a            class="nav-link"            [routerLink]="tab.to"            (click)="onClickedNav(menu)"            [ngClass]="{ active: isActive(tab.to) }"            >{{ tab.name }}</a          >        </li>      </ul>    </div>  </div></nav><app-message></app-message><ng-container *ngIf="loading; else contents">  <app-loading></app-loading></ng-container><ng-template #contents>  <router-outlet></router-outlet></ng-template></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>
