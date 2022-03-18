@@ -11,4 +11,8 @@ export class ProfileComponent {
   open(content: TemplateRef<any>) {
     this.modalService.open(content, { size: 'lg', centered: true });
   }
+
+  close() {
+    this.modalService.dismissAll();
+  }
 }

@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("%c 👀 why are you seeing this console?", "background: black; color: white;")
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         this.loading = true;
