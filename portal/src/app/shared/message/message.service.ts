@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { interval } from 'rxjs';
+import { interval, take, timer } from 'rxjs';
 
 export interface AlertMessage {
   type: string;
@@ -19,6 +19,8 @@ export class MessageService {
 
   pushMessage(message: AlertMessage) {
     this._messages.push(message);
-    interval(5000).subscribe((_) => this._messages.shift());
+    interval(5000)
+      .pipe(take(1))
+      .subscribe((_) => this._messages.shift());
   }
 }

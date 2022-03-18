@@ -42,7 +42,7 @@ export class BlogDetailComponent implements OnInit {
   get article$(): Promise<ArticleDetail> {
     return import(`../../../assets/articles/${this.route.snapshot.paramMap.get('id')}.json`).catch((_) =>
       this.router.navigate(['/blog']).then((_) =>
-        this.messageService.messages.push({
+        this.messageService.pushMessage({
           type: 'warning',
           body: '記事が存在していません',
         })
