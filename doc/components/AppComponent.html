@@ -269,8 +269,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/app.component.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/app.component.ts:39</a></div>
                 </td>
             </tr>
 
@@ -375,8 +375,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/app/app.component.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/app.component.ts:58</a></div>
                 </td>
             </tr>
 
@@ -513,7 +513,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/app.component.ts:45</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/app.component.ts:46</a></div>
                                 </td>
                             </tr>
 
@@ -548,6 +548,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(&quot;%c 👀 why are you seeing this console?&quot;, &quot;background: black; color: white;&quot;)
     this.router.events.subscribe((event) &#x3D;&gt; {
       if (event instanceof NavigationStart) {
         this.loading &#x3D; true;
