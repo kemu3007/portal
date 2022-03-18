@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
     { name: 'home', to: '/' },
     { name: 'blog', to: '/blog' },
     { name: 'log', to: '/log' },
+    { name: 'contact', to: '/contact' },
   ];
 
   constructor(titleService: Title, private router: Router) {
