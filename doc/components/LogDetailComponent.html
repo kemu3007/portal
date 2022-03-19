@@ -190,12 +190,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>)</code>
+<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -260,6 +260,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>breadcrumbService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BreadcrumbService.html" target="_self" >BreadcrumbService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -298,8 +310,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:37</a></div>
                 </td>
             </tr>
 
@@ -341,7 +353,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -366,7 +378,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -395,7 +407,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:45</a></div>
                                 </td>
                             </tr>
 
@@ -417,7 +429,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:53</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:56</a></div>
                                 </td>
                             </tr>
 
@@ -435,6 +447,7 @@ import hljs from &#x27;highlight.js&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
 import { LogDetail } from &#x27;../models&#x27;;
 import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
+import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
 
 @Component({
   selector: &#x27;app-blog-detail&#x27;,
@@ -449,7 +462,8 @@ export class LogDetailComponent implements OnInit {
     private titleService: Title,
     private route: ActivatedRoute,
     private router: Router,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private breadcrumbService: BreadcrumbService
   ) {
     marked.setOptions({
       highlight: function (code, lang) {
@@ -466,6 +480,7 @@ export class LogDetailComponent implements OnInit {
     this.article$.then((article) &#x3D;&gt; {
       this.titleService.setTitle(&#x60;kemu logs | ${article.title}&#x60;);
       this.article &#x3D; article;
+      this.breadcrumbService.breadcrumb &#x3D; &#x60;/log/${this.article.title}&#x60;;
     });
   }
 

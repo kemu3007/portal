@@ -158,6 +158,9 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
+                                    <a href="#breadcrumb" >breadcrumb</a>
+                                </li>
+                                <li>
                                     <a href="#activeTab" >activeTab</a>
                                 </li>
                             </ul>
@@ -167,6 +170,54 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/nav/nav.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>breadcrumbService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BreadcrumbService.html" target="_self" >BreadcrumbService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -197,8 +248,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/shared/nav/nav.component.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/shared/nav/nav.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -266,8 +317,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/shared/nav/nav.component.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/shared/nav/nav.component.ts:42</a></div>
                 </td>
             </tr>
 
@@ -350,7 +401,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/shared/nav/nav.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/shared/nav/nav.component.ts:10</a></div>
                         </td>
                     </tr>
 
@@ -367,6 +418,28 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="breadcrumb"></a>
+                        <span class="name"><b>breadcrumb</b><a href="#breadcrumb"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>breadcrumb()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/nav/nav.component.ts:19</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="activeTab"></a>
                         <span class="name"><b>activeTab</b><a href="#activeTab"><span class="icon ion-ios-link"></span></a></span>
                     </td>
@@ -379,7 +452,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/shared/nav/nav.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/shared/nav/nav.component.ts:30</a></div>
                                 </td>
                             </tr>
 
@@ -392,6 +465,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import { NgbCollapse } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
+import { BreadcrumbService } from &#x27;./breadcrumb.service&#x27;;
 
 @Component({
   selector: &#x27;app-nav&#x27;,
@@ -404,6 +478,12 @@ export class NavComponent {
     { name: &#x27;log&#x27;, to: &#x27;/log&#x27; },
     { name: &#x27;contact&#x27;, to: &#x27;/contact&#x27; },
   ];
+
+  constructor(private breadcrumbService: BreadcrumbService) {}
+
+  get breadcrumb() {
+    return this.breadcrumbService.breadcrumb;
+  }
 
   isActive(to: string) {
     if (to !&#x3D;&#x3D; &#x27;/&#x27;) {
@@ -450,6 +530,7 @@ export class NavComponent {
           &gt;
         &lt;/li&gt;
       &lt;/ul&gt;
+      &lt;p class&#x3D;&quot;ms-auto text-muted mb-0&quot;&gt;{{ breadcrumb }}&lt;/p&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/nav&gt;
@@ -482,7 +563,7 @@ export class NavComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav ngbNav #nav="ngbNav" [activeId]="activeTab" class="navbar navbar-expand-md navbar-light bg-light pb-0">  <div class="container-fluid">    <a [routerLink]="[\'/\']" class="navbar-brand"> kemu portal </a>    <button class="navbar-toggler" type="button" (click)="menu.toggle()">&#9776;</button>    <div [ngbCollapse]="true" #menu="ngbCollapse" class="collapse navbar-collapse">      <ul class="navbar-nav">        <li *ngFor="let tab of tabs; index as i" class="nav-item">          <a            class="nav-link"            [routerLink]="tab.to"            (click)="onClickedNav(menu)"            [ngClass]="{ active: isActive(tab.to) }"            >{{ tab.name }}</a          >        </li>      </ul>    </div>  </div></nav></div>'
+        var COMPONENT_TEMPLATE = '<div><nav ngbNav #nav="ngbNav" [activeId]="activeTab" class="navbar navbar-expand-md navbar-light bg-light pb-0">  <div class="container-fluid">    <a [routerLink]="[\'/\']" class="navbar-brand"> kemu portal </a>    <button class="navbar-toggler" type="button" (click)="menu.toggle()">&#9776;</button>    <div [ngbCollapse]="true" #menu="ngbCollapse" class="collapse navbar-collapse">      <ul class="navbar-nav">        <li *ngFor="let tab of tabs; index as i" class="nav-item">          <a            class="nav-link"            [routerLink]="tab.to"            (click)="onClickedNav(menu)"            [ngClass]="{ active: isActive(tab.to) }"            >{{ tab.name }}</a          >        </li>      </ul>      <p class="ms-auto text-muted mb-0">{{ breadcrumb }}</p>    </div>  </div></nav></div>'
     var COMPONENTS = [{'name': 'AdsenseComponent', 'selector': 'app-adsense'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NavComponent'};
