@@ -10,12 +10,6 @@ import { RecaptchaModule } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [IndexComponent, ProfileComponent, ContactComponent],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    NgbModule,
-    RecaptchaModule,
-    AdsenseModule.forRoot({ adClient: 'ca-pub-6219032039771696' }),
-  ],
+  imports: [CommonModule, HomeRoutingModule, NgbModule, RecaptchaModule],
 })
 export class HomeModule {}

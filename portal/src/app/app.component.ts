@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
+import { PageState } from './shared/repositories/page.repository';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnDestroy {
   loading = false;
+  state = new PageState();
 
   tabs = [
     { name: 'home', to: '/' },
@@ -17,13 +19,9 @@ export class AppComponent implements OnInit {
     { name: 'contact', to: '/contact' },
   ];
 
-  constructor(titleService: Title, private router: Router) {
+  constructor(titleService: Title, router: Router, changeDetectorRef: ChangeDetectorRef) {
     titleService.setTitle('kemu portal');
-  }
-
-  ngOnInit(): void {
-    console.log('%c 👀 why are you seeing this console?', 'background: black; color: white;');
-    this.router.events.subscribe((event) => {
+    router.events.pipe().subscribe((event) => {
       if (event instanceof NavigationStart) {
         this.loading = true;
       } else if (
@@ -32,32 +30,15 @@ export class AppComponent implements OnInit {
         event instanceof NavigationError
       ) {
         this.loading = false;
+        changeDetectorRef.detectChanges();
+        window.scrollTo(0, this.state.location);
       }
     });
+    window.onbeforeunload = () => this.ngOnDestroy();
+    console.log('%c 👀 why are you seeing this console?', 'background: black; color: white;');
   }
 
-  isActive(to: string) {
-    if (to !== '/') {
-      return window.location.pathname.startsWith(to);
-    }
-    return to === window.location.pathname;
-  }
-
-  get activeTab() {
-    const matched = this.tabs
-      .map((tab, index) => {
-        if (window.location.pathname.match(tab.name)?.length) {
-          return index;
-        }
-        return null;
-      })
-      .filter(Boolean);
-    return matched[0] || 0;
-  }
-
-  onClickedNav(collapse: NgbCollapse) {
-    if (!collapse.collapsed) {
-      collapse.toggle();
-    }
+  ngOnDestroy() {
+    this.state.update('location', window.scrollY);
   }
 }

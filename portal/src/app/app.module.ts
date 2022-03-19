@@ -10,13 +10,7 @@ import { SharedModule } from './shared/shared.module';
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    SharedModule,
-    AdsenseModule.forRoot({ adClient: 'ca-pub-6219032039771696' }),
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })
