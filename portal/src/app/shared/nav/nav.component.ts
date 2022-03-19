@@ -11,6 +11,7 @@ export class NavComponent {
     { name: 'home', to: '/' },
     { name: 'blog', to: '/blog' },
     { name: 'log', to: '/log' },
+    { name: 'tools', to: '/tools' },
     { name: 'contact', to: '/contact' },
   ];
 

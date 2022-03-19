@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'log',
     loadChildren: () => import('./log/log.module').then((m) => m.LogModule),
   },
+  {
+    path: 'tools',
+    loadChildren: () => import('./tools/tools.module').then((m) => m.ToolsModule),
+  },
 ];
 
 @NgModule({
