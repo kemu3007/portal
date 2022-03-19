@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
+import { BreadcrumbService } from './breadcrumb.service';
 
 @Component({
   selector: 'app-nav',
@@ -12,6 +13,12 @@ export class NavComponent {
     { name: 'log', to: '/log' },
     { name: 'contact', to: '/contact' },
   ];
+
+  constructor(private breadcrumbService: BreadcrumbService) {}
+
+  get breadcrumb() {
+    return this.breadcrumbService.breadcrumb;
+  }
 
   isActive(to: string) {
     if (to !== '/') {

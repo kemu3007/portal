@@ -5,6 +5,7 @@ import hljs from 'highlight.js';
 import { Title } from '@angular/platform-browser';
 import { LogDetail } from '../models';
 import { MessageService } from '@app/shared/message/message.service';
+import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 
 @Component({
   selector: 'app-blog-detail',
@@ -19,7 +20,8 @@ export class LogDetailComponent implements OnInit {
     private titleService: Title,
     private route: ActivatedRoute,
     private router: Router,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private breadcrumbService: BreadcrumbService
   ) {
     marked.setOptions({
       highlight: function (code, lang) {
@@ -36,6 +38,7 @@ export class LogDetailComponent implements OnInit {
     this.article$.then((article) => {
       this.titleService.setTitle(`kemu logs | ${article.title}`);
       this.article = article;
+      this.breadcrumbService.breadcrumb = `/log/${this.article.title}`;
     });
   }
 
