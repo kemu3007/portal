@@ -1,7 +1,8 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { LoadingService } from './shared/loading/loading.service';
+import { MessageService } from './shared/message/message.service';
 import { BreadcrumbService } from './shared/nav/breadcrumb.service';
 
 @Component({
@@ -19,8 +20,9 @@ export class AppComponent {
   constructor(
     titleService: Title,
     router: Router,
-    private loadingService: LoadingService,
-    breadcrumbService: BreadcrumbService
+    messageService: MessageService,
+    breadcrumbService: BreadcrumbService,
+    private loadingService: LoadingService
   ) {
     titleService.setTitle('kemu portal');
     router.events.pipe().subscribe((event) => {
@@ -29,6 +31,12 @@ export class AppComponent {
       } else if (event instanceof NavigationEnd) {
         loadingService.loading = false;
         breadcrumbService.breadcrumb = event.url;
+      } else if (event instanceof NavigationCancel || event instanceof NavigationError) {
+        messageService.pushMessage({
+          type: 'danger',
+          body: `ページが見つかりませんでした。o(･ω･ = ･ω･)o '${event.url}'`,
+        });
+        router.navigate(['']);
       }
     });
     console.log('%c 👀 why are you seeing this console?', 'background: black; color: white;');

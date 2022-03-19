@@ -1,5 +1,5 @@
 <ng-container *ngIf="messages.length">
-  <ngb-alert [type]="message.type" *ngFor="let message of messages" [dismissible]="false" class="mb-0">
+  <ngb-alert class="my-0 py-1" [type]="message.type" *ngFor="let message of messages" [dismissible]="false">
     {{ message.body }}
   </ngb-alert>
 </ng-container>
