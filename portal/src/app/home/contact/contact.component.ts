@@ -12,7 +12,7 @@ export class ContactComponent {
   isShowed = false;
 
   open(content: TemplateRef<any>) {
-    this.modalService.open(content, { size: 'lg', centered: true });
+    this.modalService.open(content, { centered: true });
   }
 
   resolveReCaptcha() {
