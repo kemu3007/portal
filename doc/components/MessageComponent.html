@@ -241,7 +241,7 @@ export class MessageComponent {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;messages.length&quot;&gt;
-  &lt;ngb-alert [type]&#x3D;&quot;message.type&quot; *ngFor&#x3D;&quot;let message of messages&quot; [dismissible]&#x3D;&quot;false&quot; class&#x3D;&quot;mb-0&quot;&gt;
+  &lt;ngb-alert class&#x3D;&quot;my-0 py-1&quot; [type]&#x3D;&quot;message.type&quot; *ngFor&#x3D;&quot;let message of messages&quot; [dismissible]&#x3D;&quot;false&quot;&gt;
     {{ message.body }}
   &lt;/ngb-alert&gt;
 &lt;/ng-container&gt;
@@ -274,7 +274,7 @@ export class MessageComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="messages.length">  <ngb-alert [type]="message.type" *ngFor="let message of messages" [dismissible]="false" class="mb-0">    {{ message.body }}  </ngb-alert></ng-container></div>'
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="messages.length">  <ngb-alert class="my-0 py-1" [type]="message.type" *ngFor="let message of messages" [dismissible]="false">    {{ message.body }}  </ngb-alert></ng-container></div>'
     var COMPONENTS = [{'name': 'AdsenseComponent', 'selector': 'app-adsense'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MessageComponent'};

@@ -156,12 +156,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, loadingService: <a href="../injectables/LoadingService.html" target="_self">LoadingService</a>, breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>)</code>
+<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>, loadingService: <a href="../injectables/LoadingService.html" target="_self">LoadingService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/app.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/app.component.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -203,10 +203,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>loadingService</td>
+                                                        <td>messageService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/LoadingService.html" target="_self" >LoadingService</a></code>
+                                                                        <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -219,6 +219,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/BreadcrumbService.html" target="_self" >BreadcrumbService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loadingService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoadingService.html" target="_self" >LoadingService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -274,7 +286,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/app.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/app.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -303,7 +315,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/app.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/app.component.ts:45</a></div>
                                 </td>
                             </tr>
 
@@ -316,8 +328,9 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, Component } from &#x27;@angular/core&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
-import { NavigationEnd, NavigationStart, Router } from &#x27;@angular/router&#x27;;
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from &#x27;@angular/router&#x27;;
 import { LoadingService } from &#x27;./shared/loading/loading.service&#x27;;
+import { MessageService } from &#x27;./shared/message/message.service&#x27;;
 import { BreadcrumbService } from &#x27;./shared/nav/breadcrumb.service&#x27;;
 
 @Component({
@@ -335,8 +348,9 @@ export class AppComponent {
   constructor(
     titleService: Title,
     router: Router,
-    private loadingService: LoadingService,
-    breadcrumbService: BreadcrumbService
+    messageService: MessageService,
+    breadcrumbService: BreadcrumbService,
+    private loadingService: LoadingService
   ) {
     titleService.setTitle(&#x27;kemu portal&#x27;);
     router.events.pipe().subscribe((event) &#x3D;&gt; {
@@ -345,6 +359,12 @@ export class AppComponent {
       } else if (event instanceof NavigationEnd) {
         loadingService.loading &#x3D; false;
         breadcrumbService.breadcrumb &#x3D; event.url;
+      } else if (event instanceof NavigationCancel || event instanceof NavigationError) {
+        messageService.pushMessage({
+          type: &#x27;danger&#x27;,
+          body: &#x60;ページが見つかりませんでした。o(･ω･ &#x3D; ･ω･)o &#x27;${event.url}&#x27;&#x60;,
+        });
+        router.navigate([&#x27;&#x27;]);
       }
     });
     console.log(&#x27;%c 👀 why are you seeing this console?&#x27;, &#x27;background: black; color: white;&#x27;);
