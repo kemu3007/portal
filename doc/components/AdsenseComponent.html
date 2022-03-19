@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  MessageComponent</li>
+  AdsenseComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -47,9 +47,6 @@
         </li>
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
@@ -61,7 +58,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/shared/message/message.component.ts</code>
+    <code>src/app/shared/adsense/adsense.component.ts</code>
 </p>
 
 
@@ -86,16 +83,21 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-message</code></td>
+                <td class="col-md-9"><code>app-adsense</code></td>
             </tr>
-
 
 
 
             <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./message.component.html</code></td>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;ng2-adsense    *ngIf&#x3D;&quot;isProd&quot;
+    [style]&#x3D;&quot;style&quot;
+    [adFormat]&#x3D;&quot;adFormat&quot;
+    [slot]&#x3D;&quot;slot&quot;
+    [layoutKey]&#x3D;&quot;layoutKey&quot;
+  &gt;&lt;/ng2-adsense&gt;</code></pre></td>
             </tr>
+
 
 
 
@@ -114,6 +116,29 @@
         <tbody>
 
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#adFormat" >adFormat</a>
+                            </li>
+                            <li>
+                                <a href="#layoutKey" >layoutKey</a>
+                            </li>
+                            <li>
+                                <a href="#slot" >slot</a>
+                            </li>
+                            <li>
+                                <a href="#style" >style</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -127,7 +152,7 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#messages" >messages</a>
+                                    <a href="#isProd" >isProd</a>
                                 </li>
                             </ul>
                         </td>
@@ -136,56 +161,114 @@
     </table>
 </section>
 
+
     <section>
-    <h3 id="constructor">Constructor</h3>
+    <h3 id="inputs">Inputs</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>)</code>
+                        <a name="adFormat"></a>
+                        <b>adFormat</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
                     </td>
                 </tr>
                         <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/shared/message/message.component.ts:8</a></div>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/adsense/adsense.component.ts:16</a></div>
                             </td>
                         </tr>
-
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
                 <tr>
                     <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>messageService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
+                        <a name="layoutKey"></a>
+                        <b>layoutKey</b>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/adsense/adsense.component.ts:18</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="slot"></a>
+                        <b>slot</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/shared/adsense/adsense.component.ts:17</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="style"></a>
+                        <b>style</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/adsense/adsense.component.ts:15</a></div>
+                            </td>
+                        </tr>
             </tbody>
         </table>
 </section>
-
-
 
 
 
@@ -199,19 +282,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="messages"></a>
-                        <span class="name"><b>messages</b><a href="#messages"><span class="icon ion-ios-link"></span></a></span>
+                        <a name="isProd"></a>
+                        <span class="name"><b>isProd</b><a href="#isProd"><span class="icon ion-ios-link"></span></a></span>
                     </td>
                 </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>messages()</code></span>
+                        <span class="accessor"><b>get</b><code>isProd()</code></span>
                     </td>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/message/message.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/adsense/adsense.component.ts:20</a></div>
                                 </td>
                             </tr>
 
@@ -222,31 +305,32 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { MessageService } from &#x27;./message.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
+import { environment } from &#x27;@environments/environment&#x27;;
 
 @Component({
-  selector: &#x27;app-message&#x27;,
-  templateUrl: &#x27;./message.component.html&#x27;,
+  selector: &#x27;app-adsense&#x27;,
+  template: &#x60;&lt;ng2-adsense
+    *ngIf&#x3D;&quot;isProd&quot;
+    [style]&#x3D;&quot;style&quot;
+    [adFormat]&#x3D;&quot;adFormat&quot;
+    [slot]&#x3D;&quot;slot&quot;
+    [layoutKey]&#x3D;&quot;layoutKey&quot;
+  &gt;&lt;/ng2-adsense&gt;&#x60;,
 })
-export class MessageComponent {
-  constructor(private messageService: MessageService) {}
+export class AdsenseComponent {
+  @Input() style: string &#x3D; &#x27;&#x27;;
+  @Input() adFormat: string &#x3D; &#x27;&#x27;;
+  @Input() slot: string &#x3D; &#x27;&#x27;;
+  @Input() layoutKey: string &#x3D; &#x27;&#x27;;
 
-  get messages() {
-    return this.messageService.messages;
+  get isProd() {
+    return true;
   }
 }
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;messages.length&quot;&gt;
-  &lt;ngb-alert [type]&#x3D;&quot;message.type&quot; *ngFor&#x3D;&quot;let message of messages&quot; [dismissible]&#x3D;&quot;false&quot; class&#x3D;&quot;mb-0&quot;&gt;
-    {{ message.body }}
-  &lt;/ngb-alert&gt;
-&lt;/ng-container&gt;
-</code></pre>
-    </div>
 
 
     <div class="tab-pane fade " id="c-tree">
@@ -274,10 +358,10 @@ export class MessageComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="messages.length">  <ngb-alert [type]="message.type" *ngFor="let message of messages" [dismissible]="false" class="mb-0">    {{ message.body }}  </ngb-alert></ng-container></div>'
+        var COMPONENT_TEMPLATE = '<div><ng2-adsense    *ngIf="isProd"    [style]="style"    [adFormat]="adFormat"    [slot]="slot"    [layoutKey]="layoutKey"  ></ng2-adsense></div>'
     var COMPONENTS = [{'name': 'AdsenseComponent', 'selector': 'app-adsense'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'MessageComponent'};
+    var ACTUAL_COMPONENT = {'name': 'AdsenseComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -323,7 +407,7 @@ export class MessageComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'MessageComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdsenseComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

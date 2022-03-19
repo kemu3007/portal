@@ -14,13 +14,13 @@
 <title>cluster_AppModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-230.8 415,-230.8 415,-32.8 8,-32.8"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_AppModule_declarations</title>
-<polygon fill="none" stroke="black" points="285,-40.8 285,-92.8 407,-92.8 407,-40.8 285,-40.8"/>
-</g>
 <g id="clust6" class="cluster">
 <title>cluster_AppModule_bootstrap</title>
 <polygon fill="none" stroke="black" points="143,-170.8 143,-222.8 267,-222.8 267,-170.8 143,-170.8"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_AppModule_declarations</title>
+<polygon fill="none" stroke="black" points="285,-40.8 285,-92.8 407,-92.8 407,-40.8 285,-40.8"/>
 </g>
 <g id="clust4" class="cluster">
 <title>cluster_AppModule_imports</title>

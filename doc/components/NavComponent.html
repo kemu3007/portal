@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  ContactComponent</li>
+  NavComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/home/contact/contact.component.ts</code>
+    <code>src/app/shared/nav/nav.component.ts</code>
 </p>
 
 
@@ -86,7 +86,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-contact</code></td>
+                <td class="col-md-9"><code>app-nav</code></td>
             </tr>
 
 
@@ -94,7 +94,7 @@
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./contact.component.html</code></td>
+                <td class="col-md-9"><code>./nav.component.html</code></td>
             </tr>
 
 
@@ -121,7 +121,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#isShowed" >isShowed</a>
+                                <a href="#tabs" >tabs</a>
                             </li>
                         </ul>
                     </td>
@@ -136,13 +136,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#copyAddress" >copyAddress</a>
+                                <a href="#isActive" >isActive</a>
                             </li>
                             <li>
-                                <a href="#open" >open</a>
-                            </li>
-                            <li>
-                                <a href="#resolveReCaptcha" >resolveReCaptcha</a>
+                                <a href="#onClickedNav" >onClickedNav</a>
                             </li>
                         </ul>
                     </td>
@@ -152,70 +149,24 @@
 
 
 
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#activeTab" >activeTab</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
         </tbody>
     </table>
 </section>
 
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(modalService: NgbModal, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/home/contact/contact.component.ts:9</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>modalService</td>
-                                                  
-                                                        <td>
-                                                                    <code>NgbModal</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>messageService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
 
 
@@ -230,61 +181,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="copyAddress"></a>
+                    <a name="isActive"></a>
                     <span class="name">
-                        <span ><b>copyAddress</b></span>
-                        <a href="#copyAddress"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>isActive</b></span>
+                        <a href="#isActive"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>copyAddress()</code>
+<code>isActive(to: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/home/contact/contact.component.ts:22</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="open"></a>
-                    <span class="name">
-                        <span ><b>open</b></span>
-                        <a href="#open"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>open(content: TemplateRef<any>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/home/contact/contact.component.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/shared/nav/nav.component.ts:16</a></div>
                 </td>
             </tr>
 
@@ -305,9 +219,78 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>content</td>
+                                    <td>to</td>
                                     <td>
-                                            <code>TemplateRef&lt;any&gt;</code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClickedNav"></a>
+                    <span class="name">
+                        <span ><b>onClickedNav</b></span>
+                        <a href="#onClickedNav"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClickedNav(collapse: NgbCollapse)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/shared/nav/nav.component.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>collapse</td>
+                                    <td>
+                                            <code>NgbCollapse</code>
                                     </td>
 
                                     <td>
@@ -332,43 +315,6 @@
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="resolveReCaptcha"></a>
-                    <span class="name">
-                        <span ><b>resolveReCaptcha</b></span>
-                        <a href="#resolveReCaptcha"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>resolveReCaptcha()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/home/contact/contact.component.ts:18</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </section>
     <section>
     
@@ -379,21 +325,32 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isShowed"></a>
+                    <a name="tabs"></a>
                     <span class="name">
-                        <span ><b>isShowed</b></span>
-                        <a href="#isShowed"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>tabs</b></span>
+                        <a href="#tabs"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>false</code>
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    { name: &#x27;home&#x27;, to: &#x27;/&#x27; },
+    { name: &#x27;blog&#x27;, to: &#x27;/blog&#x27; },
+    { name: &#x27;log&#x27;, to: &#x27;/log&#x27; },
+    { name: &#x27;contact&#x27;, to: &#x27;/contact&#x27; },
+  ]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/home/contact/contact.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/shared/nav/nav.component.ts:9</a></div>
                         </td>
                     </tr>
 
@@ -402,72 +359,100 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="activeTab"></a>
+                        <span class="name"><b>activeTab</b><a href="#activeTab"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>activeTab()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/shared/nav/nav.component.ts:23</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, TemplateRef } from &#x27;@angular/core&#x27;;
-import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
-import { NgbModal } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { NgbCollapse } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
 
 @Component({
-  selector: &#x27;app-contact&#x27;,
-  templateUrl: &#x27;./contact.component.html&#x27;,
+  selector: &#x27;app-nav&#x27;,
+  templateUrl: &#x27;./nav.component.html&#x27;,
 })
-export class ContactComponent {
-  constructor(private modalService: NgbModal, private messageService: MessageService) {}
+export class NavComponent {
+  tabs &#x3D; [
+    { name: &#x27;home&#x27;, to: &#x27;/&#x27; },
+    { name: &#x27;blog&#x27;, to: &#x27;/blog&#x27; },
+    { name: &#x27;log&#x27;, to: &#x27;/log&#x27; },
+    { name: &#x27;contact&#x27;, to: &#x27;/contact&#x27; },
+  ];
 
-  isShowed &#x3D; false;
-
-  open(content: TemplateRef&lt;any&gt;) {
-    this.modalService.open(content, { size: &#x27;lg&#x27;, centered: true });
+  isActive(to: string) {
+    if (to !&#x3D;&#x3D; &#x27;/&#x27;) {
+      return window.location.pathname.startsWith(to);
+    }
+    return to &#x3D;&#x3D;&#x3D; window.location.pathname;
   }
 
-  resolveReCaptcha() {
-    this.isShowed &#x3D; true;
+  get activeTab() {
+    const matched &#x3D; this.tabs
+      .map((tab, index) &#x3D;&gt; {
+        if (window.location.pathname.match(tab.name)?.length) {
+          return index;
+        }
+        return null;
+      })
+      .filter(Boolean);
+    return matched[0] || 0;
   }
 
-  copyAddress() {
-    navigator.clipboard
-      .writeText(&#x27;kemu430113+portal@gmail.com&#x27;)
-      .then(() &#x3D;&gt;
-        this.messageService.pushMessage({ type: &#x27;info&#x27;, body: &#x27;copied email address to your clipboard (*ゝω・)ﾉ&#x27; })
-      )
-      .catch(() &#x3D;&gt; this.messageService.pushMessage({ type: &#x27;danger&#x27;, body: &quot;we can&#x27;t access your clipboard (◇´Д｀ﾟ&quot; }))
-      .finally(() &#x3D;&gt; this.modalService.dismissAll());
+  onClickedNav(collapse: NgbCollapse) {
+    if (!collapse.collapsed) {
+      collapse.toggle();
+    }
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-3&quot;&gt;
-  &lt;h2&gt;Contact&lt;/h2&gt;
-  &lt;hr /&gt;
-  &lt;div&gt;仕事の依頼などは以下のメールアドレスにお願いします。&lt;br /&gt;セールスメールはお控えください。&lt;/div&gt;
-  &lt;div&gt;Please use the following e-mail address for work requests.&lt;br /&gt;Please refrain from sales emails.&lt;/div&gt;
-  &lt;div class&#x3D;&quot;mt-3 d-flex justify-content-center&quot;&gt;
-    &lt;button class&#x3D;&quot;btn btn-secondary mt-3&quot; (click)&#x3D;&quot;open(content)&quot;&gt;メールアドレスを入手する&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;ng-template #content let-modal&gt;
-  &lt;div class&#x3D;&quot;modal-header&quot;&gt;
-    &lt;h4 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;modal-basic-title&quot;&gt;Contact Address / メールアドレス&lt;/h4&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;modal-body&quot;&gt;
-    &lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
-      &lt;re-captcha
-        *ngIf&#x3D;&quot;!isShowed&quot;
-        (resolved)&#x3D;&quot;resolveReCaptcha()&quot;
-        siteKey&#x3D;&quot;6LeCx-4eAAAAAM4bOC4sVLZB0uYrfBNE59Rlvz52&quot;
-      &gt;&lt;/re-captcha&gt;
-      &lt;button *ngIf&#x3D;&quot;isShowed&quot; class&#x3D;&quot;btn btn-secondary&quot; (click)&#x3D;&quot;copyAddress()&quot;&gt;
-        クリップボードにコピー / copy email address
-      &lt;/button&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;nav ngbNav #nav&#x3D;&quot;ngbNav&quot; [activeId]&#x3D;&quot;activeTab&quot; class&#x3D;&quot;navbar navbar-expand-md navbar-light bg-light pb-0&quot;&gt;
+  &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+    &lt;a [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot; class&#x3D;&quot;navbar-brand&quot;&gt; kemu portal &lt;/a&gt;
+    &lt;button class&#x3D;&quot;navbar-toggler&quot; type&#x3D;&quot;button&quot; (click)&#x3D;&quot;menu.toggle()&quot;&gt;&amp;#9776;&lt;/button&gt;
+    &lt;div [ngbCollapse]&#x3D;&quot;true&quot; #menu&#x3D;&quot;ngbCollapse&quot; class&#x3D;&quot;collapse navbar-collapse&quot;&gt;
+      &lt;ul class&#x3D;&quot;navbar-nav&quot;&gt;
+        &lt;li *ngFor&#x3D;&quot;let tab of tabs; index as i&quot; class&#x3D;&quot;nav-item&quot;&gt;
+          &lt;a
+            class&#x3D;&quot;nav-link&quot;
+            [routerLink]&#x3D;&quot;tab.to&quot;
+            (click)&#x3D;&quot;onClickedNav(menu)&quot;
+            [ngClass]&#x3D;&quot;{ active: isActive(tab.to) }&quot;
+            &gt;{{ tab.name }}&lt;/a
+          &gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/ng-template&gt;
+&lt;/nav&gt;
 </code></pre>
     </div>
 
@@ -497,10 +482,10 @@ export class ContactComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container mt-3">  <h2>Contact</h2>  <hr />  <div>仕事の依頼などは以下のメールアドレスにお願いします。<br />セールスメールはお控えください。</div>  <div>Please use the following e-mail address for work requests.<br />Please refrain from sales emails.</div>  <div class="mt-3 d-flex justify-content-center">    <button class="btn btn-secondary mt-3" (click)="open(content)">メールアドレスを入手する</button>  </div></div><ng-template #content let-modal>  <div class="modal-header">    <h4 class="modal-title" id="modal-basic-title">Contact Address / メールアドレス</h4>  </div>  <div class="modal-body">    <div class="d-flex justify-content-center">      <re-captcha        *ngIf="!isShowed"        (resolved)="resolveReCaptcha()"        siteKey="6LeCx-4eAAAAAM4bOC4sVLZB0uYrfBNE59Rlvz52"      ></re-captcha>      <button *ngIf="isShowed" class="btn btn-secondary" (click)="copyAddress()">        クリップボードにコピー / copy email address      </button>    </div>  </div></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><nav ngbNav #nav="ngbNav" [activeId]="activeTab" class="navbar navbar-expand-md navbar-light bg-light pb-0">  <div class="container-fluid">    <a [routerLink]="[\'/\']" class="navbar-brand"> kemu portal </a>    <button class="navbar-toggler" type="button" (click)="menu.toggle()">&#9776;</button>    <div [ngbCollapse]="true" #menu="ngbCollapse" class="collapse navbar-collapse">      <ul class="navbar-nav">        <li *ngFor="let tab of tabs; index as i" class="nav-item">          <a            class="nav-link"            [routerLink]="tab.to"            (click)="onClickedNav(menu)"            [ngClass]="{ active: isActive(tab.to) }"            >{{ tab.name }}</a          >        </li>      </ul>    </div>  </div></nav></div>'
     var COMPONENTS = [{'name': 'AdsenseComponent', 'selector': 'app-adsense'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'ContactComponent'};
+    var ACTUAL_COMPONENT = {'name': 'NavComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -546,7 +531,7 @@ export class ContactComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'ContactComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'NavComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
