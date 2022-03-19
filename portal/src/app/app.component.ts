@@ -1,16 +1,13 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
-import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
-import { PageState } from './shared/repositories/page.repository';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent {
   loading = false;
-  state = new PageState();
 
   tabs = [
     { name: 'home', to: '/' },
@@ -24,21 +21,11 @@ export class AppComponent implements OnDestroy {
     router.events.pipe().subscribe((event) => {
       if (event instanceof NavigationStart) {
         this.loading = true;
-      } else if (
-        event instanceof NavigationEnd ||
-        event instanceof NavigationCancel ||
-        event instanceof NavigationError
-      ) {
+      } else if (event instanceof NavigationEnd) {
         this.loading = false;
         changeDetectorRef.detectChanges();
-        window.scrollTo(0, this.state.location);
       }
     });
-    window.onbeforeunload = () => this.ngOnDestroy();
     console.log('%c 👀 why are you seeing this console?', 'background: black; color: white;');
-  }
-
-  ngOnDestroy() {
-    this.state.update('location', window.scrollY);
   }
 }
