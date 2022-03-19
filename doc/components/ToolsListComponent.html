@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  MessageComponent</li>
+  ToolsListComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/shared/message/message.component.ts</code>
+    <code>src/app/tools/tools-list/tools-list.component.ts</code>
 </p>
 
 
@@ -86,7 +86,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-message</code></td>
+                <td class="col-md-9"><code>app-tools-list</code></td>
             </tr>
 
 
@@ -94,7 +94,7 @@
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./message.component.html</code></td>
+                <td class="col-md-9"><code>./tools-list.component.html</code></td>
             </tr>
 
 
@@ -112,6 +112,20 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#oldTools" >oldTools</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -127,7 +141,7 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#messages" >messages</a>
+                                    <a href="#adsLength" >adsLength</a>
                                 </li>
                             </ul>
                         </td>
@@ -136,60 +150,43 @@
     </table>
 </section>
 
+
+
+
+
+
+
     <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="oldTools"></a>
+                    <span class="name">
+                        <span ><b>oldTools</b></span>
+                        <a href="#oldTools"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>)</code>
+                        <i>Default value : </i><code>oldTools</code>
                     </td>
                 </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/shared/message/message.component.ts:8</a></div>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:9</a></div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>messageService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+        </tbody>
+    </table>
 </section>
-
-
-
-
-
-
 
     <section>
     <h3 id="accessors">
@@ -199,19 +196,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="messages"></a>
-                        <span class="name"><b>messages</b><a href="#messages"><span class="icon ion-ios-link"></span></a></span>
+                        <a name="adsLength"></a>
+                        <span class="name"><b>adsLength</b><a href="#adsLength"><span class="icon ion-ios-link"></span></a></span>
                     </td>
                 </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>messages()</code></span>
+                        <span class="accessor"><b>get</b><code>adsLength()</code></span>
                     </td>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/message/message.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:11</a></div>
                                 </td>
                             </tr>
 
@@ -222,29 +219,55 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { MessageService } from &#x27;./message.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import oldTools from &#x27;../kemu-site.tools.json&#x27;;
 
 @Component({
-  selector: &#x27;app-message&#x27;,
-  templateUrl: &#x27;./message.component.html&#x27;,
+  selector: &#x27;app-tools-list&#x27;,
+  templateUrl: &#x27;./tools-list.component.html&#x27;,
 })
-export class MessageComponent {
-  constructor(private messageService: MessageService) {}
+export class ToolsListComponent {
+  oldTools &#x3D; oldTools;
 
-  get messages() {
-    return this.messageService.messages;
+  get adsLength(): number {
+    const hasMd &#x3D; window.screen.width &gt;&#x3D; 768;
+    return hasMd ? Math.floor(oldTools.length / 3) : 1;
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;messages.length&quot;&gt;
-  &lt;ngb-alert class&#x3D;&quot;my-0 py-1&quot; [type]&#x3D;&quot;message.type&quot; *ngFor&#x3D;&quot;let message of messages&quot; [dismissible]&#x3D;&quot;false&quot;&gt;
-    {{ message.body }}
-  &lt;/ngb-alert&gt;
-&lt;/ng-container&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+  &lt;div class&#x3D;&quot;mt-3&quot;&gt;個人的に使ったりする自作ツール置き場（不定期更新）&lt;/div&gt;
+  &lt;div class&#x3D;&quot;row mt-3&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+      &lt;div *ngFor&#x3D;&quot;let tool of oldTools; index as i&quot;&gt;
+        &lt;a class&#x3D;&quot;card mt-1 text-decoration-none text-muted&quot; [href]&#x3D;&quot;tool.link&quot; style&#x3D;&quot;cursor: pointer&quot;&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;h5 class&#x3D;&quot;card-link text-black&quot;&gt;
+                {{ tool.name }}
+              &lt;/h5&gt;
+            &lt;/div&gt;
+            &lt;hr class&#x3D;&quot;mt-0&quot; /&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ tool.description }}&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+        &lt;app-adsense *ngIf&#x3D;&quot;(i + 1) % 3 &#x3D;&#x3D;&#x3D; 0&quot; adFormat&#x3D;&quot;horizontal&quot;&gt;&lt;/app-adsense&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+      &lt;app-adsense
+        *ngFor&#x3D;&quot;let _ of [].constructor(adsLength)&quot;
+        style&#x3D;&quot;display: block&quot;
+        adFormat&#x3D;&quot;fluid&quot;
+        slot&#x3D;&quot;9091938102&quot;
+        layoutKey&#x3D;&quot;-ef+6k-30-ac+ty&quot;
+      &gt;&lt;/app-adsense&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -274,10 +297,10 @@ export class MessageComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="messages.length">  <ngb-alert class="my-0 py-1" [type]="message.type" *ngFor="let message of messages" [dismissible]="false">    {{ message.body }}  </ngb-alert></ng-container></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="mt-3">個人的に使ったりする自作ツール置き場（不定期更新）</div>  <div class="row mt-3">    <div class="col-md-8">      <div *ngFor="let tool of oldTools; index as i">        <a class="card mt-1 text-decoration-none text-muted" [href]="tool.link" style="cursor: pointer">          <div class="card-body">            <div class="row">              <h5 class="card-link text-black">                {{ tool.name }}              </h5>            </div>            <hr class="mt-0" />            <p class="card-text">{{ tool.description }}</p>          </div>        </a>        <app-adsense *ngIf="(i + 1) % 3 === 0" adFormat="horizontal"></app-adsense>      </div>    </div>    <div class="col-md-4">      <app-adsense        *ngFor="let _ of [].constructor(adsLength)"        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></app-adsense>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AdsenseComponent', 'selector': 'app-adsense'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'MessageComponent'};
+    var ACTUAL_COMPONENT = {'name': 'ToolsListComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -323,7 +346,7 @@ export class MessageComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'MessageComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ToolsListComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

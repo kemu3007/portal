@@ -176,6 +176,26 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         </ul>
                                     </li>
                             </li>
+                            <li class="link">
+                                <a href="modules/ToolsModule.html" data-type="entity-link" >ToolsModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-ToolsModule-0031a60054e9d07587a0b6dc482421e42553dc8d0a6ee9ab9d20e9967af50b9fe9771f55d615831c042bd9f25317384ecf1208a570f116ebc97a059cfe4c4c87"' : 'data-target="#xs-components-links-module-ToolsModule-0031a60054e9d07587a0b6dc482421e42553dc8d0a6ee9ab9d20e9967af50b9fe9771f55d615831c042bd9f25317384ecf1208a570f116ebc97a059cfe4c4c87"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ToolsModule-0031a60054e9d07587a0b6dc482421e42553dc8d0a6ee9ab9d20e9967af50b9fe9771f55d615831c042bd9f25317384ecf1208a570f116ebc97a059cfe4c4c87"' :
+                                            'id="xs-components-links-module-ToolsModule-0031a60054e9d07587a0b6dc482421e42553dc8d0a6ee9ab9d20e9967af50b9fe9771f55d615831c042bd9f25317384ecf1208a570f116ebc97a059cfe4c4c87"' }>
+                                            <li class="link">
+                                                <a href="components/ToolsListComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ToolsListComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/ToolsRoutingModule.html" data-type="entity-link" >ToolsRoutingModule</a>
+                            </li>
                 </ul>
                 </li>
                         <li class="chapter">
