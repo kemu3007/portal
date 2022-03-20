@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <script>
+      if (!window.navigator.userAgent.includes("Googlebot")) {
+        window.location.href=window.location.origin + '?to=' + window.location.pathname
+      }
+    </script>
     <meta charset="utf-8" />
     <title>kemu tools</title>
     <base href="/" />
@@ -38,9 +43,4 @@
     <hr />
     <a href='https://kemu.site/utils/qrcode/'>QRコードジェネレータ</a><hr /> 任意の文字列をQRコードに変換します。<hr /><a href='https://kemu.site/utils/markdown/'>Markdown Editor</a><hr /> markdown記法で書かれた文字列をHTMLで表示します。<hr /><a href='https://kemu.site/utils/csv_to_md/'>CSV to MD table</a><hr /> コンマ区切りで入力されたcsvをMarkdownテーブル形式に変換します。
   </body>
-  <script>
-    if (!window.navigator.userAgent.includes("Googlebot")) {
-      window.location.href=window.location.origin + '?to=' + window.location.pathname
-    }
-  </script>
 </html>
