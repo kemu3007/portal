@@ -30,7 +30,7 @@ if __name__ == "__main__":
     tools = json.loads((Path() / "portal/src/assets/kemu-site.tools.json").read_text())
     tools_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/tools.png").replace("page_title", "kemu tools").replace("page_description", "自作ツール置き場")
     tools_base = [f"<a href='{tool['link']}'>{tool['name']}</a><hr /> {tool['description']}" for tool in tools]
-    tools_html = blog_home.replace("page_contents", "<hr />".join(tools_base))
+    tools_html = tools_html.replace("page_contents", "<hr />".join(tools_base))
     path = Path("portal/src/tools")
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(tools_html)
