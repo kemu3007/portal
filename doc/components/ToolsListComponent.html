@@ -150,6 +150,54 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:10</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>title</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -179,7 +227,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:10</a></div>
                         </td>
                     </tr>
 
@@ -208,7 +256,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:16</a></div>
                                 </td>
                             </tr>
 
@@ -220,6 +268,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { Title } from &#x27;@angular/platform-browser&#x27;;
 import oldTools from &#x27;@assets/kemu-site.tools.json&#x27;;
 
 @Component({
@@ -228,6 +277,10 @@ import oldTools from &#x27;@assets/kemu-site.tools.json&#x27;;
 })
 export class ToolsListComponent {
   oldTools &#x3D; oldTools;
+
+  constructor(title: Title) {
+    title.setTitle(&#x27;kemu tools&#x27;);
+  }
 
   get adsLength(): number {
     const hasMd &#x3D; window.screen.width &gt;&#x3D; 768;
