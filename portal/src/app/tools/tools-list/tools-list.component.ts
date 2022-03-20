@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import oldTools from '@assets/kemu-site.tools.json';
 
 @Component({
@@ -7,6 +8,10 @@ import oldTools from '@assets/kemu-site.tools.json';
 })
 export class ToolsListComponent {
   oldTools = oldTools;
+
+  constructor(title: Title) {
+    title.setTitle('kemu tools');
+  }
 
   get adsLength(): number {
     const hasMd = window.screen.width >= 768;
