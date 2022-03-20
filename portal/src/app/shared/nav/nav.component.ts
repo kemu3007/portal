@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 import { BreadcrumbService } from './breadcrumb.service';
+import count from '@assets/count.json';
 
 @Component({
   selector: 'app-nav',
@@ -9,8 +10,8 @@ import { BreadcrumbService } from './breadcrumb.service';
 export class NavComponent {
   tabs = [
     { name: 'home', to: '/' },
-    { name: 'blog', to: '/blog' },
-    { name: 'log', to: '/log' },
+    { name: 'blog', to: '/blog', count: count.blog },
+    { name: 'log', to: '/log', count: count.log },
     { name: 'tools', to: '/tools' },
     { name: 'contact', to: '/contact' },
   ];

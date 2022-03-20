@@ -10,7 +10,7 @@
             [routerLink]="tab.to"
             (click)="onClickedNav(menu)"
             [ngClass]="{ active: isActive(tab.to) }"
-            >{{ tab.name }}</a
+            >{{ tab.name }}<span class="ms-1 badge rounded-pill bg-success" *ngIf="tab.count">{{ tab.count }}</span></a
           >
         </li>
       </ul>

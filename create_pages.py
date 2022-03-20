@@ -47,3 +47,6 @@ if __name__ == "__main__":
         path = Path("portal/src/log") / key
         path.mkdir(exist_ok=True)
         (path / "index.html").write_text(log)
+    # nav count
+    Path("portal/src/assets/count.json").write_text(json.dumps({ "blog": len(articles.keys()), "log": len(logs.keys())}))
+    
