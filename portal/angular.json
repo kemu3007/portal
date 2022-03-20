@@ -31,7 +31,9 @@
               "src/assets",
               "src/blog",
               "src/doc",
-              "src/log"
+              "src/log",
+              "src/tools",
+              "src/contact"
             ],
             "styles": [
               "src/styles.scss"
