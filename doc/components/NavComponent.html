@@ -181,7 +181,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/nav/nav.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/shared/nav/nav.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -248,8 +248,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/shared/nav/nav.component.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/shared/nav/nav.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -317,8 +317,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/shared/nav/nav.component.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/shared/nav/nav.component.ts:44</a></div>
                 </td>
             </tr>
 
@@ -393,8 +393,8 @@
                     <td class="col-md-4">
                         <i>Default value : </i><code>[
     { name: &#x27;home&#x27;, to: &#x27;/&#x27; },
-    { name: &#x27;blog&#x27;, to: &#x27;/blog&#x27; },
-    { name: &#x27;log&#x27;, to: &#x27;/log&#x27; },
+    { name: &#x27;blog&#x27;, to: &#x27;/blog&#x27;, count: count.blog },
+    { name: &#x27;log&#x27;, to: &#x27;/log&#x27;, count: count.log },
     { name: &#x27;tools&#x27;, to: &#x27;/tools&#x27; },
     { name: &#x27;contact&#x27;, to: &#x27;/contact&#x27; },
   ]</code>
@@ -402,7 +402,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/shared/nav/nav.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/nav/nav.component.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -431,7 +431,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/shared/nav/nav.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/shared/nav/nav.component.ts:21</a></div>
                                 </td>
                             </tr>
 
@@ -453,7 +453,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/nav/nav.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/nav/nav.component.ts:32</a></div>
                                 </td>
                             </tr>
 
@@ -467,6 +467,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import { NgbCollapse } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
 import { BreadcrumbService } from &#x27;./breadcrumb.service&#x27;;
+import count from &#x27;@assets/count.json&#x27;;
 
 @Component({
   selector: &#x27;app-nav&#x27;,
@@ -475,8 +476,8 @@ import { BreadcrumbService } from &#x27;./breadcrumb.service&#x27;;
 export class NavComponent {
   tabs &#x3D; [
     { name: &#x27;home&#x27;, to: &#x27;/&#x27; },
-    { name: &#x27;blog&#x27;, to: &#x27;/blog&#x27; },
-    { name: &#x27;log&#x27;, to: &#x27;/log&#x27; },
+    { name: &#x27;blog&#x27;, to: &#x27;/blog&#x27;, count: count.blog },
+    { name: &#x27;log&#x27;, to: &#x27;/log&#x27;, count: count.log },
     { name: &#x27;tools&#x27;, to: &#x27;/tools&#x27; },
     { name: &#x27;contact&#x27;, to: &#x27;/contact&#x27; },
   ];
@@ -528,7 +529,7 @@ export class NavComponent {
             [routerLink]&#x3D;&quot;tab.to&quot;
             (click)&#x3D;&quot;onClickedNav(menu)&quot;
             [ngClass]&#x3D;&quot;{ active: isActive(tab.to) }&quot;
-            &gt;{{ tab.name }}&lt;/a
+            &gt;{{ tab.name }}&lt;span class&#x3D;&quot;ms-1 badge rounded-pill bg-success&quot; *ngIf&#x3D;&quot;tab.count&quot;&gt;{{ tab.count }}&lt;/span&gt;&lt;/a
           &gt;
         &lt;/li&gt;
       &lt;/ul&gt;
@@ -565,7 +566,7 @@ export class NavComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav ngbNav #nav="ngbNav" [activeId]="activeTab" class="navbar navbar-expand-md navbar-light bg-light pb-0">  <div class="container-fluid">    <a [routerLink]="[\'/\']" class="navbar-brand"> kemu portal </a>    <button class="navbar-toggler" type="button" (click)="menu.toggle()">&#9776;</button>    <div [ngbCollapse]="true" #menu="ngbCollapse" class="collapse navbar-collapse">      <ul class="navbar-nav">        <li *ngFor="let tab of tabs; index as i" class="nav-item">          <a            class="nav-link"            [routerLink]="tab.to"            (click)="onClickedNav(menu)"            [ngClass]="{ active: isActive(tab.to) }"            >{{ tab.name }}</a          >        </li>      </ul>      <p class="ms-auto text-muted mb-0">{{ breadcrumb }}</p>    </div>  </div></nav></div>'
+        var COMPONENT_TEMPLATE = '<div><nav ngbNav #nav="ngbNav" [activeId]="activeTab" class="navbar navbar-expand-md navbar-light bg-light pb-0">  <div class="container-fluid">    <a [routerLink]="[\'/\']" class="navbar-brand"> kemu portal </a>    <button class="navbar-toggler" type="button" (click)="menu.toggle()">&#9776;</button>    <div [ngbCollapse]="true" #menu="ngbCollapse" class="collapse navbar-collapse">      <ul class="navbar-nav">        <li *ngFor="let tab of tabs; index as i" class="nav-item">          <a            class="nav-link"            [routerLink]="tab.to"            (click)="onClickedNav(menu)"            [ngClass]="{ active: isActive(tab.to) }"            >{{ tab.name }}<span class="ms-1 badge rounded-pill bg-success" *ngIf="tab.count">{{ tab.count }}</span></a          >        </li>      </ul>      <p class="ms-auto text-muted mb-0">{{ breadcrumb }}</p>    </div>  </div></nav></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NavComponent'};
