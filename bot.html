@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <script>
+      if (!window.navigator.userAgent.includes("Googlebot")) {
+        window.location.href=window.location.origin + '?to=' + window.location.pathname
+      }
+    </script>
     <meta charset="utf-8" />
     <title>page_title</title>
     <base href="/" />
@@ -38,9 +43,4 @@
     <hr />
     page_contents
   </body>
-  <script>
-    if (!window.navigator.userAgent.includes("Googlebot")) {
-      window.location.href=window.location.origin + '?to=' + window.location.pathname
-    }
-  </script>
 </html>
