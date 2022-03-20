@@ -190,12 +190,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>)</code>
+<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>, markedService: <a href="../injectables/MarkedService.html" target="_self">MarkedService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -272,6 +272,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>markedService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MarkedService.html" target="_self" >MarkedService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -310,8 +322,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:27</a></div>
                 </td>
             </tr>
 
@@ -353,7 +365,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -373,12 +385,12 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>marked</code>
+                        <i>Default value : </i><code>this.markedService.marked</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -407,7 +419,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:45</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:35</a></div>
                                 </td>
                             </tr>
 
@@ -429,7 +441,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:56</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:46</a></div>
                                 </td>
                             </tr>
 
@@ -442,12 +454,11 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
-import { marked } from &#x27;marked&#x27;;
-import hljs from &#x27;highlight.js&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
 import { LogDetail } from &#x27;../models&#x27;;
 import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
 import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
+import { MarkedService } from &#x27;@app/shared/markdown/marked.service&#x27;;
 
 @Component({
   selector: &#x27;app-blog-detail&#x27;,
@@ -455,7 +466,7 @@ import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;
   styleUrls: [&#x27;./log-detail.component.scss&#x27;],
 })
 export class LogDetailComponent implements OnInit {
-  marked &#x3D; marked;
+  marked &#x3D; this.markedService.marked;
   article?: LogDetail;
 
   constructor(
@@ -463,18 +474,9 @@ export class LogDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private messageService: MessageService,
-    private breadcrumbService: BreadcrumbService
-  ) {
-    marked.setOptions({
-      highlight: function (code, lang) {
-        const language &#x3D; hljs.getLanguage(lang) ? lang : &#x27;plaintext&#x27;;
-        return hljs.highlight(code, { language }).value;
-      },
-      langPrefix: &#x27;hljs language-&#x27;,
-      gfm: true,
-      breaks: true,
-    });
-  }
+    private breadcrumbService: BreadcrumbService,
+    private markedService: MarkedService
+  ) {}
 
   ngOnInit(): void {
     this.article$.then((article) &#x3D;&gt; {
@@ -536,13 +538,13 @@ export class LogDetailComponent implements OnInit {
       &lt;/p&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
-      &lt;app-adsense
+      &lt;ng2-adsense
         *ngFor&#x3D;&quot;let _ of [].constructor(adsLength)&quot;
         style&#x3D;&quot;display: block&quot;
         adFormat&#x3D;&quot;fluid&quot;
         slot&#x3D;&quot;9091938102&quot;
         layoutKey&#x3D;&quot;-ef+6k-30-ac+ty&quot;
-      &gt;&lt;/app-adsense&gt;
+      &gt;&lt;/ng2-adsense&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -584,8 +586,8 @@ export class LogDetailComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css" /><div class="container-fluid">  <div class="row mt-3" *ngIf="article">    <div class="col-md-8">      <h2>{{ article.title }}</h2>      <div class="d-flex justify-content-between">        <p>{{ article.created_at | date: \'yyyy.MM.dd hh:mm\' }}</p>        <app-tweet-btn></app-tweet-btn>      </div>      <hr />      <div [innerHTML]="marked.parse(article[\'body\'])"></div>      <hr class="mt-5" />      <h3>comments</h3>      <div class="card" *ngFor="let comment of article.comments">        <div class="card-body">          <div class="row">            <img [src]="comment.user.avatar_url" style="width: 50px" />            <a style="display: contents" [href]="comment.user.html_url">{{ comment.user.login }}</a            ><br />          </div>          <hr />          {{ comment.body }}        </div>      </div>      <p>        コメントはこちらから        <a [href]="article.html_url">{{ article.html_url }}</a        ><br />        ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。      </p>    </div>    <div class="col-md-4">      <app-adsense        *ngFor="let _ of [].constructor(adsLength)"        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></app-adsense>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AdsenseComponent', 'selector': 'app-adsense'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
+        var COMPONENT_TEMPLATE = '<div><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css" /><div class="container-fluid">  <div class="row mt-3" *ngIf="article">    <div class="col-md-8">      <h2>{{ article.title }}</h2>      <div class="d-flex justify-content-between">        <p>{{ article.created_at | date: \'yyyy.MM.dd hh:mm\' }}</p>        <app-tweet-btn></app-tweet-btn>      </div>      <hr />      <div [innerHTML]="marked.parse(article[\'body\'])"></div>      <hr class="mt-5" />      <h3>comments</h3>      <div class="card" *ngFor="let comment of article.comments">        <div class="card-body">          <div class="row">            <img [src]="comment.user.avatar_url" style="width: 50px" />            <a style="display: contents" [href]="comment.user.html_url">{{ comment.user.login }}</a            ><br />          </div>          <hr />          {{ comment.body }}        </div>      </div>      <p>        コメントはこちらから        <a [href]="article.html_url">{{ article.html_url }}</a        ><br />        ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。      </p>    </div>    <div class="col-md-4">      <ng2-adsense        *ngFor="let _ of [].constructor(adsLength)"        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></ng2-adsense>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LogDetailComponent'};
 </script>
