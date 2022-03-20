@@ -47,4 +47,6 @@ if __name__ == "__main__":
     write_portal_image("home", "home")
     write_portal_image("blog", "blog")
     write_portal_image("log", "log")
+    write_portal_image("tools", "tools")
+    write_portal_image("contact", "contact")
     write_weed_image()

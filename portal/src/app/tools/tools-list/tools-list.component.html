@@ -14,17 +14,17 @@
             <p class="card-text">{{ tool.description }}</p>
           </div>
         </a>
-        <app-adsense *ngIf="(i + 1) % 3 === 0" adFormat="horizontal"></app-adsense>
+        <ng2-adsense *ngIf="(i + 1) % 3 === 0" adFormat="horizontal"></ng2-adsense>
       </div>
     </div>
     <div class="col-md-4">
-      <app-adsense
+      <ng2-adsense
         *ngFor="let _ of [].constructor(adsLength)"
         style="display: block"
         adFormat="fluid"
         slot="9091938102"
         layoutKey="-ef+6k-30-ac+ty"
-      ></app-adsense>
+      ></ng2-adsense>
     </div>
   </div>
 </div>

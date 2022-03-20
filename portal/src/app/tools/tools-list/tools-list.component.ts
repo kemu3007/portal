@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import oldTools from '../kemu-site.tools.json';
+import { Component } from '@angular/core';
+import oldTools from '@assets/kemu-site.tools.json';
 
 @Component({
   selector: 'app-tools-list',

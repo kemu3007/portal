@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { marked } from 'marked';
-import hljs from 'highlight.js';
 import { Title } from '@angular/platform-browser';
 import { ArticleDetail } from '../models';
 import { MessageService } from '@app/shared/message/message.service';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
+import { MarkedService } from '@app/shared/markdown/marked.service';
 
 @Component({
   selector: 'app-blog-detail',
@@ -13,7 +12,7 @@ import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
   styleUrls: ['./blog-detail.component.scss'],
 })
 export class BlogDetailComponent implements OnInit {
-  marked = marked;
+  marked = this.markedService.marked;
   article?: ArticleDetail;
 
   constructor(
@@ -21,18 +20,9 @@ export class BlogDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private messageService: MessageService,
-    private breadcrumbService: BreadcrumbService
-  ) {
-    marked.setOptions({
-      highlight: function (code, lang) {
-        const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-        return hljs.highlight(code, { language }).value;
-      },
-      langPrefix: 'hljs language-',
-      gfm: true,
-      breaks: true,
-    });
-  }
+    private breadcrumbService: BreadcrumbService,
+    private markedService: MarkedService
+  ) {}
 
   ngOnInit(): void {
     this.article$.then((article) => {

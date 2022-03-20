@@ -26,6 +26,20 @@ if __name__ == "__main__":
     path = Path("portal/src/log")
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(log_home)
+    # tools
+    tools = json.loads((Path() / "portal/src/assets/kemu-site.tools.json").read_text())
+    tools_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/tools.png").replace("page_title", "kemu tools").replace("page_description", "自作ツール置き場")
+    tools_base = [f"<a href='{tool['link']}'>{tool['name']}</a><hr /> {tool['description']}" for tool in tools]
+    tools_html = blog_home.replace("page_contents", "<hr />".join(tools_base))
+    path = Path("portal/src/tools")
+    path.mkdir(exist_ok=True)
+    (path / "index.html").write_text(tools_html)
+    # contact
+    contact_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/contact.png").replace("page_title", "Contact").replace("page_description", "Contact")
+    contact_html = contact_html.replace("page_contents", "仕事の依頼などは以下のメールアドレスにお願いします。セールスメールはお控えください。")
+    path = Path("portal/src/contact")
+    path.mkdir(exist_ok=True)
+    (path / "index.html").write_text(contact_html)
     for key, data in logs.items():
         log = base_html.replace("page_image", data["photo"] or f"https://portal.kemu.site/assets/images/{key}.png").replace("page_title", f"kemu logs | {data['title']}").replace("page_description", data['body'])
         log_details = json.loads((Path() / f"portal/src/assets/logs/{key}.json").read_text())
