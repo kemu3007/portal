@@ -11,18 +11,21 @@ const store = createStore({ name: 'userInfoStore' }, withProps<state>({ historie
 persistState(store, { key: 'userInfo', storage: localStorageStrategy });
 
 export class UserInfoState {
-  histories$ = store.pipe(select((state) => state.histories));
+  histories$ = store.pipe(select((state) => state.histories.reverse()));
 
-  pushHistory(information: UserInfo) {
+  pushHistory(history: UserInfo) {
     let histories = store.getValue().histories;
     if (store.getValue().histories.length) {
       const lastHistory = histories.slice(-1)[0];
-      if (lastHistory.headers['x-forwarded-for'] === information.headers['x-forwarded-for']) {
+      if (lastHistory.headers['x-forwarded-for'] === history.headers['x-forwarded-for']) {
         return;
       }
-      histories = histories.slice(-2, -1);
     }
-    histories.push(information);
+    histories.push(history);
     store.update((state) => (state = { histories: histories }));
+  }
+
+  reset() {
+    store.reset();
   }
 }
