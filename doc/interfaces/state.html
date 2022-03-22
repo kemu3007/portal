@@ -151,19 +151,22 @@ const store &#x3D; createStore({ name: &#x27;userInfoStore&#x27; }, withProps&lt
 persistState(store, { key: &#x27;userInfo&#x27;, storage: localStorageStrategy });
 
 export class UserInfoState {
-  histories$ &#x3D; store.pipe(select((state) &#x3D;&gt; state.histories));
+  histories$ &#x3D; store.pipe(select((state) &#x3D;&gt; state.histories.reverse()));
 
-  pushHistory(information: UserInfo) {
+  pushHistory(history: UserInfo) {
     let histories &#x3D; store.getValue().histories;
     if (store.getValue().histories.length) {
       const lastHistory &#x3D; histories.slice(-1)[0];
-      if (lastHistory.headers[&#x27;x-forwarded-for&#x27;] &#x3D;&#x3D;&#x3D; information.headers[&#x27;x-forwarded-for&#x27;]) {
+      if (lastHistory.headers[&#x27;x-forwarded-for&#x27;] &#x3D;&#x3D;&#x3D; history.headers[&#x27;x-forwarded-for&#x27;]) {
         return;
       }
-      histories &#x3D; histories.slice(-2, -1);
     }
-    histories.push(information);
+    histories.push(history);
     store.update((state) &#x3D;&gt; (state &#x3D; { histories: histories }));
+  }
+
+  reset() {
+    store.reset();
   }
 }
 </code></pre>

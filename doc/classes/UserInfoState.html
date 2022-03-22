@@ -100,6 +100,9 @@
                             <li>
                                 <a href="#pushHistory" >pushHistory</a>
                             </li>
+                            <li>
+                                <a href="#reset" >reset</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -131,7 +134,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>store.pipe(select((state) &#x3D;&gt; state.histories))</code>
+                        <i>Default value : </i><code>store.pipe(select((state) &#x3D;&gt; state.histories.reverse()))</code>
                     </td>
                 </tr>
                     <tr>
@@ -163,7 +166,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>pushHistory(information: <a href="../interfaces/UserInfo.html" target="_self">UserInfo</a>)</code>
+<code>pushHistory(history: <a href="../interfaces/UserInfo.html" target="_self">UserInfo</a>)</code>
                 </td>
             </tr>
 
@@ -192,7 +195,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>information</td>
+                                    <td>history</td>
                                     <td>
                                                 <code><a href="../interfaces/UserInfo.html" target="_self" >UserInfo</a></code>
                                     </td>
@@ -214,6 +217,43 @@
                     </div>
                     <div class="io-description">
                         
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reset"></a>
+                    <span class="name">
+                        <span ><b>reset</b></span>
+                        <a href="#reset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>reset()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/tools/user-info/user-info.repository.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
                     </div>
                 </td>
             </tr>
@@ -242,19 +282,22 @@ const store &#x3D; createStore({ name: &#x27;userInfoStore&#x27; }, withProps&lt
 persistState(store, { key: &#x27;userInfo&#x27;, storage: localStorageStrategy });
 
 export class UserInfoState {
-  histories$ &#x3D; store.pipe(select((state) &#x3D;&gt; state.histories));
+  histories$ &#x3D; store.pipe(select((state) &#x3D;&gt; state.histories.reverse()));
 
-  pushHistory(information: UserInfo) {
+  pushHistory(history: UserInfo) {
     let histories &#x3D; store.getValue().histories;
     if (store.getValue().histories.length) {
       const lastHistory &#x3D; histories.slice(-1)[0];
-      if (lastHistory.headers[&#x27;x-forwarded-for&#x27;] &#x3D;&#x3D;&#x3D; information.headers[&#x27;x-forwarded-for&#x27;]) {
+      if (lastHistory.headers[&#x27;x-forwarded-for&#x27;] &#x3D;&#x3D;&#x3D; history.headers[&#x27;x-forwarded-for&#x27;]) {
         return;
       }
-      histories &#x3D; histories.slice(-2, -1);
     }
-    histories.push(information);
+    histories.push(history);
     store.update((state) &#x3D;&gt; (state &#x3D; { histories: histories }));
+  }
+
+  reset() {
+    store.reset();
   }
 }
 </code></pre>
