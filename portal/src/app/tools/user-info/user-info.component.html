@@ -1,32 +1,39 @@
 <div class="container mt-3 row" *ngIf="data">
   <div class="col-sm-8">
     <h2>ユーザ情報</h2>
-    <div class="d-flex justify-content-center">
-      <h2>{{ data.headers['x-forwarded-for'] }}</h2>
+    <div class="mt-2">
+      IP Address
+      <div class="d-flex justify-content-center">
+        <h2>{{ data.headers['x-forwarded-for'] }}</h2>
+      </div>
     </div>
     <hr />
-    その他の情報
-    <table class="table table-striped">
-      <tr>
-        <td>user-agent</td>
-        <td>{{ data.headers['user-agent'] }}</td>
-      </tr>
-      <tr>
-        <td>sec-ch-ua-mobile</td>
-        <td>{{ data.headers['sec-ch-ua-mobile'] }}</td>
-      </tr>
-      <tr>
-        <td>sec-ch-ua-platform</td>
-        <td>{{ data.headers['sec-ch-ua-platform'] }}</td>
-      </tr>
-    </table>
+    <div class="mt-2">
+      その他の情報
+      <table class="table table-striped">
+        <tr>
+          <td>user-agent</td>
+          <td>{{ data.headers['user-agent'] }}</td>
+        </tr>
+        <tr>
+          <td>sec-ch-ua-mobile</td>
+          <td>{{ data.headers['sec-ch-ua-mobile'] }}</td>
+        </tr>
+        <tr>
+          <td>sec-ch-ua-platform</td>
+          <td>{{ data.headers['sec-ch-ua-platform'] }}</td>
+        </tr>
+      </table>
+    </div>
     <hr />
-    過去の検査時のIPアドレス
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let history of state.histories$ | async">
-        {{ history.headers['x-forwarded-for'] }}
-      </li>
-    </ul>
+    <div class="mt-2">
+      過去の検査時のIPアドレス
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let history of state.histories$ | async">
+          {{ history.headers['x-forwarded-for'] }}
+        </li>
+      </ul>
+    </div>
     <ng2-adsense adFormat="horizontal"></ng2-adsense>
   </div>
   <div class="col-sm-4">

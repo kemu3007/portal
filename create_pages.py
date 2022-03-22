@@ -39,7 +39,7 @@ if __name__ == "__main__":
     user_info_html = tools_html.replace("page_contents", "IPアドレス等の情報を確認します。 あなたのIPアドレス ...")
     path = Path("portal/src/tools/userInfo")
     path.mkdir(exist_ok=True)
-    (path / "index.html").write_text(tools_html)
+    (path / "index.html").write_text(user_info_html)
     # contact
     contact_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/contact.png").replace("page_title", "Contact").replace("page_description", "Contact")
     contact_html = contact_html.replace("page_contents", "仕事の依頼などは以下のメールアドレスにお願いします。セールスメールはお控えください。")
