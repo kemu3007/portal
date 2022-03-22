@@ -146,6 +146,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#copyAddress" >copyAddress</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                         </ul>
@@ -260,6 +263,75 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="copyAddress"></a>
+                    <span class="name">
+                        <span ><b>copyAddress</b></span>
+                        <a href="#copyAddress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>copyAddress(address: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>address</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="ngOnInit"></a>
                     <span class="name">
                         <span ><b>ngOnInit</b></span>
@@ -276,8 +348,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -373,7 +445,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:39</a></div>
                                 </td>
                             </tr>
 
@@ -400,22 +472,36 @@ export class UserInfoComponent implements OnInit {
   data?: UserInfo;
   state &#x3D; new UserInfoState();
 
-  constructor(private userInfoService: UserInfoService, private messageService: MessageService, private router: Router) {}
+  constructor(
+    private userInfoService: UserInfoService,
+    private messageService: MessageService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.userInfoService.get().pipe(catchError(() &#x3D;&gt; {
-      this.messageService.pushMessage({ &quot;type&quot;: &quot;danger&quot;, &quot;body&quot;: &quot;ユーザ情報の取得に失敗しました。maybe CORS 😉&quot;})
-      this.router.navigate([&quot;/tools&quot;])
-      return NEVER
-    })).subscribe((data) &#x3D;&gt; {
-      this.data &#x3D; data;
-      this.state.pushHistory(data);
-    });
+    this.userInfoService
+      .get()
+      .pipe(
+        catchError(() &#x3D;&gt; {
+          this.messageService.pushMessage({ type: &#x27;danger&#x27;, body: &#x27;ユーザ情報の取得に失敗しました。maybe CORS 😉&#x27; });
+          this.router.navigate([&#x27;/tools&#x27;]);
+          return NEVER;
+        })
+      )
+      .subscribe((data) &#x3D;&gt; {
+        this.data &#x3D; data;
+        this.state.pushHistory(data);
+      });
   }
 
   get adsLength(): number {
     const hasMd &#x3D; window.screen.width &gt;&#x3D; 768;
     return hasMd ? 3 : 1;
+  }
+
+  copyAddress(address: string) {
+    window.navigator.clipboard.writeText(address);
+    this.messageService.pushMessage({ type: &#x27;info&#x27;, body: &#x60;${address} をクリップボードにコピーしました&#x60; });
   }
 }
 </code></pre>
@@ -429,6 +515,9 @@ export class UserInfoComponent implements OnInit {
       IP Address
       &lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
         &lt;h2&gt;{{ data.headers[&#x27;x-forwarded-for&#x27;] }}&lt;/h2&gt;
+        &lt;button class&#x3D;&quot;ms-1 btn&quot; (click)&#x3D;&quot;copyAddress(data.headers[&#x27;x-forwarded-for&#x27;])&quot;&gt;
+          &lt;i class&#x3D;&quot;bi bi-stickies&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;hr /&gt;
@@ -462,8 +551,16 @@ export class UserInfoComponent implements OnInit {
       過去の検査時のIPアドレス
       &lt;button class&#x3D;&quot;btn btn-sm btn-danger&quot; (click)&#x3D;&quot;state.reset()&quot;&gt;&lt;i class&#x3D;&quot;bi bi-trash&quot;&gt;&lt;/i&gt;&lt;/button&gt;
       &lt;ul class&#x3D;&quot;list-group mt-2&quot;&gt;
-        &lt;li class&#x3D;&quot;list-group-item&quot; *ngFor&#x3D;&quot;let history of state.histories$ | async&quot;&gt;
+        &lt;li
+          class&#x3D;&quot;list-group-item&quot;
+          *ngFor&#x3D;&quot;let history of state.histories$ | async&quot;
+          [ngbTooltip]&#x3D;&quot;history.requestContext.time&quot;
+          placement&#x3D;&quot;top-start&quot;
+        &gt;
           {{ history.headers[&#x27;x-forwarded-for&#x27;] }}
+          &lt;button class&#x3D;&quot;ms-1 btn btn-sm&quot; (click)&#x3D;&quot;copyAddress(history.headers[&#x27;x-forwarded-for&#x27;])&quot;&gt;
+            &lt;i class&#x3D;&quot;bi bi-stickies&quot;&gt;&lt;/i&gt;
+          &lt;/button&gt;
         &lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
@@ -508,7 +605,7 @@ export class UserInfoComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container mt-3 row" *ngIf="data">  <div class="col-sm-8">    <h2>ユーザ情報</h2>    <div class="mt-2">      IP Address      <div class="d-flex justify-content-center">        <h2>{{ data.headers[\'x-forwarded-for\'] }}</h2>      </div>    </div>    <hr />    <div class="mt-2">      その他の情報      <table class="table table-striped mt-3">        <thead>          <tr>            <th>key</th>            <th>value</th>          </tr>        </thead>        <tbody>          <tr>            <td>user-agent</td>            <td>{{ data.headers[\'user-agent\'] }}</td>          </tr>          <tr>            <td>sec-ch-ua-mobile</td>            <td>{{ data.headers[\'sec-ch-ua-mobile\'] }}</td>          </tr>          <tr>            <td>sec-ch-ua-platform</td>            <td>{{ data.headers[\'sec-ch-ua-platform\'] }}</td>          </tr>        </tbody>      </table>    </div>    <hr />    <div class="mt-2 mb-3">      過去の検査時のIPアドレス      <button class="btn btn-sm btn-danger" (click)="state.reset()"><i class="bi bi-trash"></i></button>      <ul class="list-group mt-2">        <li class="list-group-item" *ngFor="let history of state.histories$ | async">          {{ history.headers[\'x-forwarded-for\'] }}        </li>      </ul>    </div>    <ng2-adsense adFormat="horizontal"></ng2-adsense>  </div>  <div class="col-sm-4">    <ng2-adsense      *ngFor="let _ of [].constructor(adsLength)"      style="display: block"      adFormat="fluid"      slot="9091938102"      layoutKey="-ef+6k-30-ac+ty"    ></ng2-adsense>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-3 row" *ngIf="data">  <div class="col-sm-8">    <h2>ユーザ情報</h2>    <div class="mt-2">      IP Address      <div class="d-flex justify-content-center">        <h2>{{ data.headers[\'x-forwarded-for\'] }}</h2>        <button class="ms-1 btn" (click)="copyAddress(data.headers[\'x-forwarded-for\'])">          <i class="bi bi-stickies"></i>        </button>      </div>    </div>    <hr />    <div class="mt-2">      その他の情報      <table class="table table-striped mt-3">        <thead>          <tr>            <th>key</th>            <th>value</th>          </tr>        </thead>        <tbody>          <tr>            <td>user-agent</td>            <td>{{ data.headers[\'user-agent\'] }}</td>          </tr>          <tr>            <td>sec-ch-ua-mobile</td>            <td>{{ data.headers[\'sec-ch-ua-mobile\'] }}</td>          </tr>          <tr>            <td>sec-ch-ua-platform</td>            <td>{{ data.headers[\'sec-ch-ua-platform\'] }}</td>          </tr>        </tbody>      </table>    </div>    <hr />    <div class="mt-2 mb-3">      過去の検査時のIPアドレス      <button class="btn btn-sm btn-danger" (click)="state.reset()"><i class="bi bi-trash"></i></button>      <ul class="list-group mt-2">        <li          class="list-group-item"          *ngFor="let history of state.histories$ | async"          [ngbTooltip]="history.requestContext.time"          placement="top-start"        >          {{ history.headers[\'x-forwarded-for\'] }}          <button class="ms-1 btn btn-sm" (click)="copyAddress(history.headers[\'x-forwarded-for\'])">            <i class="bi bi-stickies"></i>          </button>        </li>      </ul>    </div>    <ng2-adsense adFormat="horizontal"></ng2-adsense>  </div>  <div class="col-sm-4">    <ng2-adsense      *ngFor="let _ of [].constructor(adsLength)"      style="display: block"      adFormat="fluid"      slot="9091938102"      layoutKey="-ef+6k-30-ac+ty"    ></ng2-adsense>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'UserInfoComponent'};
