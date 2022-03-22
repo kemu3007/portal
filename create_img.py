@@ -49,4 +49,5 @@ if __name__ == "__main__":
     write_portal_image("log", "log")
     write_portal_image("tools", "tools")
     write_portal_image("contact", "contact")
+    write_portal_image("ユーザ情報確認", "user-info")
     write_weed_image()
