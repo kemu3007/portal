@@ -180,12 +180,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userInfoService: <a href="../injectables/UserInfoService.html" target="_self">UserInfoService</a>)</code>
+<code>constructor(userInfoService: <a href="../injectables/UserInfoService.html" target="_self">UserInfoService</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -207,6 +207,30 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/UserInfoService.html" target="_self" >UserInfoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>messageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -252,8 +276,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:19</a></div>
                 </td>
             </tr>
 
@@ -295,7 +319,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -320,7 +344,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -349,7 +373,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:30</a></div>
                                 </td>
                             </tr>
 
@@ -361,6 +385,9 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
+import { catchError, NEVER } from &#x27;rxjs&#x27;;
 import { UserInfo } from &#x27;./user-info&#x27;;
 import { UserInfoState } from &#x27;./user-info.repository&#x27;;
 import { UserInfoService } from &#x27;./user-info.service&#x27;;
@@ -373,10 +400,14 @@ export class UserInfoComponent implements OnInit {
   data?: UserInfo;
   state &#x3D; new UserInfoState();
 
-  constructor(private userInfoService: UserInfoService) {}
+  constructor(private userInfoService: UserInfoService, private messageService: MessageService, private router: Router) {}
 
   ngOnInit(): void {
-    this.userInfoService.get().subscribe((data) &#x3D;&gt; {
+    this.userInfoService.get().pipe(catchError(() &#x3D;&gt; {
+      this.messageService.pushMessage({ &quot;type&quot;: &quot;danger&quot;, &quot;body&quot;: &quot;ユーザ情報の取得に失敗しました。maybe CORS 😉&quot;})
+      this.router.navigate([&quot;/tools&quot;])
+      return NEVER
+    })).subscribe((data) &#x3D;&gt; {
       this.data &#x3D; data;
       this.state.pushHistory(data);
     });
