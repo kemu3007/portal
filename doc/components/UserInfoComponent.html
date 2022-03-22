@@ -403,19 +403,27 @@ export class UserInfoComponent implements OnInit {
     &lt;hr /&gt;
     &lt;div class&#x3D;&quot;mt-2&quot;&gt;
       その他の情報
-      &lt;table class&#x3D;&quot;table table-striped&quot;&gt;
-        &lt;tr&gt;
-          &lt;td&gt;user-agent&lt;/td&gt;
-          &lt;td&gt;{{ data.headers[&#x27;user-agent&#x27;] }}&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;sec-ch-ua-mobile&lt;/td&gt;
-          &lt;td&gt;{{ data.headers[&#x27;sec-ch-ua-mobile&#x27;] }}&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;sec-ch-ua-platform&lt;/td&gt;
-          &lt;td&gt;{{ data.headers[&#x27;sec-ch-ua-platform&#x27;] }}&lt;/td&gt;
-        &lt;/tr&gt;
+      &lt;table class&#x3D;&quot;table table-striped mt-3&quot;&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;key&lt;/th&gt;
+            &lt;th&gt;value&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;
+            &lt;td&gt;user-agent&lt;/td&gt;
+            &lt;td&gt;{{ data.headers[&#x27;user-agent&#x27;] }}&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;sec-ch-ua-mobile&lt;/td&gt;
+            &lt;td&gt;{{ data.headers[&#x27;sec-ch-ua-mobile&#x27;] }}&lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td&gt;sec-ch-ua-platform&lt;/td&gt;
+            &lt;td&gt;{{ data.headers[&#x27;sec-ch-ua-platform&#x27;] }}&lt;/td&gt;
+          &lt;/tr&gt;
+        &lt;/tbody&gt;
       &lt;/table&gt;
     &lt;/div&gt;
     &lt;hr /&gt;
@@ -468,7 +476,7 @@ export class UserInfoComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container mt-3 row" *ngIf="data">  <div class="col-sm-8">    <h2>ユーザ情報</h2>    <div class="mt-2">      IP Address      <div class="d-flex justify-content-center">        <h2>{{ data.headers[\'x-forwarded-for\'] }}</h2>      </div>    </div>    <hr />    <div class="mt-2">      その他の情報      <table class="table table-striped">        <tr>          <td>user-agent</td>          <td>{{ data.headers[\'user-agent\'] }}</td>        </tr>        <tr>          <td>sec-ch-ua-mobile</td>          <td>{{ data.headers[\'sec-ch-ua-mobile\'] }}</td>        </tr>        <tr>          <td>sec-ch-ua-platform</td>          <td>{{ data.headers[\'sec-ch-ua-platform\'] }}</td>        </tr>      </table>    </div>    <hr />    <div class="mt-2">      過去の検査時のIPアドレス      <ul class="list-group">        <li class="list-group-item" *ngFor="let history of state.histories$ | async">          {{ history.headers[\'x-forwarded-for\'] }}        </li>      </ul>    </div>    <ng2-adsense adFormat="horizontal"></ng2-adsense>  </div>  <div class="col-sm-4">    <ng2-adsense      *ngFor="let _ of [].constructor(adsLength)"      style="display: block"      adFormat="fluid"      slot="9091938102"      layoutKey="-ef+6k-30-ac+ty"    ></ng2-adsense>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-3 row" *ngIf="data">  <div class="col-sm-8">    <h2>ユーザ情報</h2>    <div class="mt-2">      IP Address      <div class="d-flex justify-content-center">        <h2>{{ data.headers[\'x-forwarded-for\'] }}</h2>      </div>    </div>    <hr />    <div class="mt-2">      その他の情報      <table class="table table-striped mt-3">        <thead>          <tr>            <th>key</th>            <th>value</th>          </tr>        </thead>        <tbody>          <tr>            <td>user-agent</td>            <td>{{ data.headers[\'user-agent\'] }}</td>          </tr>          <tr>            <td>sec-ch-ua-mobile</td>            <td>{{ data.headers[\'sec-ch-ua-mobile\'] }}</td>          </tr>          <tr>            <td>sec-ch-ua-platform</td>            <td>{{ data.headers[\'sec-ch-ua-platform\'] }}</td>          </tr>        </tbody>      </table>    </div>    <hr />    <div class="mt-2">      過去の検査時のIPアドレス      <ul class="list-group">        <li class="list-group-item" *ngFor="let history of state.histories$ | async">          {{ history.headers[\'x-forwarded-for\'] }}        </li>      </ul>    </div>    <ng2-adsense adFormat="horizontal"></ng2-adsense>  </div>  <div class="col-sm-4">    <ng2-adsense      *ngFor="let _ of [].constructor(adsLength)"      style="display: block"      adFormat="fluid"      slot="9091938102"      layoutKey="-ef+6k-30-ac+ty"    ></ng2-adsense>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'UserInfoComponent'};
