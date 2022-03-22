@@ -28,17 +28,23 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content class">
                    <div class="content-data">
 
 
 
 
+
+
+
+
+
+
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
-  >
-  TweetBtnComponent</li>
+  <li>Classes</li>
+  <li >UserInfoState</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -48,78 +54,40 @@
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/shared/tweet-btn/tweet-btn.component.ts</code>
-</p>
-
-
-
-
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
-    </p>
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover metadata">
-        <tbody>
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/tools/user-info/user-info.repository.ts</code>
+        </p>
 
 
 
 
 
 
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-tweet-btn</code></td>
-            </tr>
-
-
-
-            <tr>
-                <td class="col-md-3">template</td>
-                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;a    id&#x3D;&quot;btn&quot;
-    href&#x3D;&quot;https://twitter.com/share?ref_src&#x3D;twsrc%5Etfw&quot;
-    class&#x3D;&quot;twitter-share-button&quot;
-    data-show-count&#x3D;&quot;false&quot;
-    &gt;tweet&lt;/a
-  &gt;</code></pre></td>
-            </tr>
-
-
-
-
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#histories$" >histories$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -130,7 +98,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                                <a href="#pushHistory" >pushHistory</a>
                             </li>
                         </ul>
                     </td>
@@ -145,11 +113,39 @@
 </section>
 
 
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="histories$"></a>
+                    <span class="name">
+                        <span ><b>histories$</b></span>
+                        <a href="#histories$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>store.pipe(select((state) &#x3D;&gt; state.histories))</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/tools/user-info/user-info.repository.ts:14</a></div>
+                        </td>
+                    </tr>
 
 
+        </tbody>
+    </table>
+</section>
 
-
-    <section>
+            <section>
     
     <h3 id="methods">
         Methods
@@ -158,24 +154,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngAfterViewInit"></a>
+                    <a name="pushHistory"></a>
                     <span class="name">
-                        <span ><b>ngAfterViewInit</b></span>
-                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>pushHistory</b></span>
+                        <a href="#pushHistory"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngAfterViewInit()</code>
+<code>pushHistory(information: <a href="../interfaces/UserInfo.html" target="_self">UserInfo</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/shared/tweet-btn/tweet-btn.component.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/tools/user-info/user-info.repository.ts:16</a></div>
                 </td>
             </tr>
 
@@ -184,8 +180,40 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>information</td>
+                                    <td>
+                                                <code><a href="../interfaces/UserInfo.html" target="_self" >UserInfo</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -193,75 +221,45 @@
     </table>
 </section>
 
-</div>
+
+
+
+
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, AfterViewInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { createStore, withProps, select } from &#x27;@ngneat/elf&#x27;;
+import { localStorageStrategy, persistState } from &#x27;@ngneat/elf-persist-state&#x27;;
+import { UserInfo } from &#x27;./user-info&#x27;;
 
-@Component({
-  selector: &#x27;app-tweet-btn&#x27;,
-  template: &#x60;&lt;a
-    id&#x3D;&quot;btn&quot;
-    href&#x3D;&quot;https://twitter.com/share?ref_src&#x3D;twsrc%5Etfw&quot;
-    class&#x3D;&quot;twitter-share-button&quot;
-    data-show-count&#x3D;&quot;false&quot;
-    &gt;tweet&lt;/a
-  &gt;&#x60;,
-})
-export class TweetBtnComponent implements AfterViewInit {
-  ngAfterViewInit(): void {
-    const script &#x3D; document.createElement(&#x27;script&#x27;);
-    script.async &#x3D; true;
-    script.src &#x3D; &#x27;https://platform.twitter.com/widgets.js&#x27;;
-    const btn &#x3D; document.getElementById(&#x27;btn&#x27;)!;
-    btn.insertAdjacentElement(&#x27;afterend&#x27;, script);
+interface state {
+  histories: UserInfo[];
+}
+
+const store &#x3D; createStore({ name: &#x27;userInfoStore&#x27; }, withProps&lt;state&gt;({ histories: [] }));
+
+persistState(store, { key: &#x27;userInfo&#x27;, storage: localStorageStrategy });
+
+export class UserInfoState {
+  histories$ &#x3D; store.pipe(select((state) &#x3D;&gt; state.histories));
+
+  pushHistory(information: UserInfo) {
+    let histories &#x3D; store.getValue().histories;
+    if (store.getValue().histories.length) {
+      const lastHistory &#x3D; histories.slice(-1)[0];
+      if (lastHistory.headers[&#x27;x-forwarded-for&#x27;] &#x3D;&#x3D;&#x3D; information.headers[&#x27;x-forwarded-for&#x27;]) {
+        return;
+      }
+      histories &#x3D; histories.slice(-2, -1);
+    }
+    histories.push(information);
+    store.update((state) &#x3D;&gt; (state &#x3D; { histories: histories }));
   }
 }
 </code></pre>
     </div>
-
-
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><a    id="btn"    href="https://twitter.com/share?ref_src=twsrc%5Etfw"    class="twitter-share-button"    data-show-count="false"    >tweet</a  ></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'TweetBtnComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
-
-
-
-
-
 
 
 
@@ -296,8 +294,8 @@ export class TweetBtnComponent implements AfterViewInit {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'TweetBtnComponent.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserInfoState.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

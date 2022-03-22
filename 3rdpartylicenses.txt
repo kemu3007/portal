@@ -41,6 +41,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+@ngneat/elf
+MIT
+
+@ngneat/elf-persist-state
+MIT
+
 @popperjs/core
 MIT
 The MIT License (MIT)

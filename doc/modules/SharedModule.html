@@ -56,13 +56,13 @@
 <title>cluster_SharedModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-230.8 608,-230.8 608,-32.8 8,-32.8"/>
 </g>
-<g id="clust8" class="cluster">
-<title>cluster_SharedModule_exports</title>
-<polygon fill="none" stroke="black" points="16,-170.8 16,-222.8 600,-222.8 600,-170.8 16,-170.8"/>
-</g>
 <g id="clust2" class="cluster">
 <title>cluster_SharedModule_declarations</title>
 <polygon fill="none" stroke="black" points="25,-40.8 25,-92.8 594,-92.8 594,-40.8 25,-40.8"/>
+</g>
+<g id="clust8" class="cluster">
+<title>cluster_SharedModule_exports</title>
+<polygon fill="none" stroke="black" points="16,-170.8 16,-222.8 600,-222.8 600,-170.8 16,-170.8"/>
 </g>
 <!-- LoadingComponent -->
 <g id="node1" class="node">
@@ -259,11 +259,26 @@ import { AdsenseModule } from &#x27;ng2-adsense&#x27;;
 import { RouterModule } from &#x27;@angular/router&#x27;;
 import { NavComponent } from &#x27;./nav/nav.component&#x27;;
 import { environment } from &#x27;@environments/environment&#x27;;
+import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
 
 @NgModule({
   declarations: [TweetBtnComponent, MessageComponent, LoadingComponent, NavComponent],
-  imports: [CommonModule, NgbModule, AdsenseModule.forRoot({ adClient: environment.adClient }), RouterModule],
-  exports: [TweetBtnComponent, NgbModule, MessageComponent, LoadingComponent, AdsenseModule, NavComponent],
+  imports: [
+    CommonModule,
+    NgbModule,
+    AdsenseModule.forRoot({ adClient: environment.adClient }),
+    RouterModule,
+    HttpClientModule,
+  ],
+  exports: [
+    TweetBtnComponent,
+    NgbModule,
+    MessageComponent,
+    LoadingComponent,
+    AdsenseModule,
+    NavComponent,
+    HttpClientModule,
+  ],
 })
 export class SharedModule {}
 </code></pre>
