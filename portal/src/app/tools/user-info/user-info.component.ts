@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MessageService } from '@app/shared/message/message.service';
+import { catchError, NEVER } from 'rxjs';
 import { UserInfo } from './user-info';
 import { UserInfoState } from './user-info.repository';
 import { UserInfoService } from './user-info.service';
@@ -11,10 +14,14 @@ export class UserInfoComponent implements OnInit {
   data?: UserInfo;
   state = new UserInfoState();
 
-  constructor(private userInfoService: UserInfoService) {}
+  constructor(private userInfoService: UserInfoService, private messageService: MessageService, private router: Router) {}
 
   ngOnInit(): void {
-    this.userInfoService.get().subscribe((data) => {
+    this.userInfoService.get().pipe(catchError(() => {
+      this.messageService.pushMessage({ "type": "danger", "body": "ユーザ情報の取得に失敗しました。maybe CORS 😉"})
+      this.router.navigate(["/tools"])
+      return NEVER
+    })).subscribe((data) => {
       this.data = data;
       this.state.pushHistory(data);
     });
