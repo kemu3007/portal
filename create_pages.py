@@ -36,7 +36,7 @@ if __name__ == "__main__":
     (path / "index.html").write_text(tools_html)
     # userInfo
     user_info_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/user-info.png").replace("page_title", "kemu tools | user information").replace("page_description", "ユーザ情報確認")
-    user_info_html = tools_html.replace("page_contents", "IPアドレス等の情報を確認します。 あなたのIPアドレス ...")
+    user_info_html = user_info_html.replace("page_contents", "IPアドレス等の情報を確認します。 あなたのIPアドレス ...")
     path = Path("portal/src/tools/userInfo")
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(user_info_html)
