@@ -15,7 +15,9 @@
           <p class="card-text">IPアドレス等のデータを表示します。過去の履歴も表示可能です。</p>
         </div>
       </a>
-      <ng2-adsense adFormat="horizontal"></ng2-adsense>
+      <div class="card mt-1">
+        <ng2-adsense adFormat="horizontal"></ng2-adsense>
+      </div>
       <div *ngFor="let tool of oldTools; index as i">
         <a class="card mt-1 text-decoration-none text-muted" [href]="tool.link" style="cursor: pointer">
           <div class="card-body">
