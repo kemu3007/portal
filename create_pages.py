@@ -6,7 +6,7 @@ if __name__ == "__main__":
     articles = json.loads((Path() / "portal/src/assets/articles/list.json").read_text())
     base_html = Path('./bot.html').read_text()
     blog_home = base_html.replace("page_image", "https://portal.kemu.site/assets/images/blog.png").replace("page_title", "kemu tech blog").replace("page_description", "kemu tech blog")
-    blog_home_html = [f"<a href='/blog/{key}'>{article['title']}</a><hr /> {article['body']}" for key, article in articles.items()]
+    blog_home_html = [f"<h2><a href='/blog/{key}'>{article['title']}</a></h2><hr /> {article['body']}" for key, article in articles.items()]
     blog_home = blog_home.replace("page_contents", "<hr />".join(blog_home_html))
     path = Path("portal/src/blog")
     path.mkdir(exist_ok=True)
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     # log
     logs = json.loads((Path() / "portal/src/assets/logs/list.json").read_text())
     log_home = base_html.replace("page_image", "https://portal.kemu.site/assets/images/log.png").replace("page_title", "kemu logs").replace("page_description", "kemu logs")
-    log_home_html = [f"<a href='/log/{key}'>{log['title']}</a><hr /> {log['body']}" for key, log in logs.items()]
+    log_home_html = [f"<h2><a href='/log/{key}'>{log['title']}</a></h2><hr /> {log['body']}" for key, log in logs.items()]
     log_home = log_home.replace("page_contents", "<hr />".join(log_home_html))    
     path = Path("portal/src/log")
     path.mkdir(exist_ok=True)
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     # tools
     tools = json.loads((Path() / "portal/src/assets/kemu-site.tools.json").read_text())
     tools_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/tools.png").replace("page_title", "kemu tools").replace("page_description", "自作ツール置き場")
-    tools_base = [f"<a href='{tool['link']}'>{tool['name']}</a><hr /> {tool['description']}" for tool in tools]
+    tools_base = [f"<h2><a href='{tool['link']}'>{tool['name']}</a></h2><hr /> {tool['description']}" for tool in tools]
     tools_html = tools_html.replace("page_contents", "<hr />".join(tools_base))
     path = Path("portal/src/tools")
     path.mkdir(exist_ok=True)
@@ -55,4 +55,3 @@ if __name__ == "__main__":
         (path / "index.html").write_text(log)
     # nav count
     Path("portal/src/assets/count.json").write_text(json.dumps({ "blog": len(articles.keys()), "log": len(logs.keys())}))
-    
