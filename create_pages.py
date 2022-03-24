@@ -35,13 +35,13 @@ if __name__ == "__main__":
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(tools_html)
     # ip address checker
-    user_info_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/user-info.png").replace("page_title", "kemu tools | IP Address Checker").replace("page_description", "IP Address Checker")
+    user_info_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/user-info.png").replace("page_title", "kemu tools | IP Address Checker").replace("page_description", "IP Addressなどの端末情報を確認できます。")
     user_info_html = user_info_html.replace("page_contents", "<h2>IP Address Checker</h2>IPアドレス等の情報を確認します。 あなたのIPアドレス ..........<table><tr><th>IP Address</th><td>...</td><th>UserAgent</th><td>...</td><th>ETC...</th><td>...</td></tr>")
     path = Path("portal/src/tools/userInfo")
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(user_info_html)
     # associate link maker
-    associate_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/associate.png").replace("page_title", "kemu tools | Amazon Associate Linker").replace("page_description", "Amazon Associate Linker")
+    associate_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/associate.png").replace("page_title", "kemu tools | Amazon Associate Linker").replace("page_description", "アソシエイトIDからアソシエイトリンクを生成します。")
     associate_html = associate_html.replace("page_contents", "<h2>Amazon Associate Linker</h2>Amazon Associate Linkを生成します。アソシエイトID <input /> 商品リンク <input /> <button>generate</button> result ..........")
     path = Path("portal/src/tools/amazonAssociate")
     path.mkdir(exist_ok=True)
