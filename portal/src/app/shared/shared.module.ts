@@ -10,6 +10,7 @@ import { NavComponent } from './nav/nav.component';
 import { environment } from '@environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { AmazonAdsComponent } from './amazon-ads/amazon-ads.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [TweetBtnComponent, MessageComponent, LoadingComponent, NavComponent, AmazonAdsComponent],
@@ -19,6 +20,7 @@ import { AmazonAdsComponent } from './amazon-ads/amazon-ads.component';
     AdsenseModule.forRoot({ adClient: environment.adClient }),
     RouterModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   exports: [
     TweetBtnComponent,
@@ -29,6 +31,7 @@ import { AmazonAdsComponent } from './amazon-ads/amazon-ads.component';
     NavComponent,
     HttpClientModule,
     AmazonAdsComponent,
+    ReactiveFormsModule,
   ],
 })
 export class SharedModule {}

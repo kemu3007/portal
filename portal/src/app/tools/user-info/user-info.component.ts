@@ -21,7 +21,7 @@ export class UserInfoComponent implements OnInit {
     private router: Router,
     title: Title
   ) {
-    title.setTitle("kemu tools | IP Address Checker")
+    title.setTitle('kemu tools | IP Address Checker');
   }
 
   ngOnInit(): void {
