@@ -47,6 +47,9 @@ MIT
 @ngneat/elf-persist-state
 MIT
 
+@ngneat/reactive-forms
+MIT
+
 @popperjs/core
 MIT
 The MIT License (MIT)

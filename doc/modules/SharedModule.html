@@ -56,13 +56,13 @@
 <title>cluster_SharedModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-230.8 780,-230.8 780,-32.8 8,-32.8"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_SharedModule_declarations</title>
-<polygon fill="none" stroke="black" points="25,-40.8 25,-92.8 764,-92.8 764,-40.8 25,-40.8"/>
-</g>
 <g id="clust9" class="cluster">
 <title>cluster_SharedModule_exports</title>
 <polygon fill="none" stroke="black" points="16,-170.8 16,-222.8 772,-222.8 772,-170.8 16,-170.8"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_SharedModule_declarations</title>
+<polygon fill="none" stroke="black" points="25,-40.8 25,-92.8 764,-92.8 764,-40.8 25,-40.8"/>
 </g>
 <!-- AmazonAdsComponent -->
 <g id="node1" class="node">
@@ -291,6 +291,7 @@ import { NavComponent } from &#x27;./nav/nav.component&#x27;;
 import { environment } from &#x27;@environments/environment&#x27;;
 import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
 import { AmazonAdsComponent } from &#x27;./amazon-ads/amazon-ads.component&#x27;;
+import { ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
 
 @NgModule({
   declarations: [TweetBtnComponent, MessageComponent, LoadingComponent, NavComponent, AmazonAdsComponent],
@@ -300,6 +301,7 @@ import { AmazonAdsComponent } from &#x27;./amazon-ads/amazon-ads.component&#x27;
     AdsenseModule.forRoot({ adClient: environment.adClient }),
     RouterModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   exports: [
     TweetBtnComponent,
@@ -310,6 +312,7 @@ import { AmazonAdsComponent } from &#x27;./amazon-ads/amazon-ads.component&#x27;
     NavComponent,
     HttpClientModule,
     AmazonAdsComponent,
+    ReactiveFormsModule,
   ],
 })
 export class SharedModule {}
