@@ -9,14 +9,15 @@
       >
         <div class="card-body">
           <div class="row">
-            <h5 class="card-link text-black">ユーザ情報閲覧</h5>
+            <h5 class="card-link text-black">IP Address Checker</h5>
           </div>
           <hr class="mt-0" />
           <p class="card-text">IPアドレス等のデータを表示します。過去の履歴も表示可能です。</p>
         </div>
       </a>
       <div class="card mt-1">
-        <ng2-adsense adFormat="horizontal"></ng2-adsense>
+        <!-- <ng2-adsense adFormat="horizontal"></ng2-adsense> -->
+        <app-amazon-ads type="list"></app-amazon-ads>
       </div>
       <div *ngFor="let tool of oldTools; index as i">
         <a class="card mt-1 text-decoration-none text-muted" [href]="tool.link" style="cursor: pointer">
@@ -34,13 +35,14 @@
       </div>
     </div>
     <div class="col-md-4">
-      <ng2-adsense
+      <!-- <ng2-adsense
         *ngFor="let _ of [].constructor(adsLength)"
         style="display: block"
         adFormat="fluid"
         slot="9091938102"
         layoutKey="-ef+6k-30-ac+ty"
-      ></ng2-adsense>
+      ></ng2-adsense> -->
+      <app-amazon-ads type="box" *ngFor="let _ of [].constructor(adsLength)"></app-amazon-ads>
     </div>
   </div>
 </div>

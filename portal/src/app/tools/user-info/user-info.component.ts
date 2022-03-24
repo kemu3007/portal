@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { MessageService } from '@app/shared/message/message.service';
 import { catchError, NEVER } from 'rxjs';
@@ -17,8 +18,11 @@ export class UserInfoComponent implements OnInit {
   constructor(
     private userInfoService: UserInfoService,
     private messageService: MessageService,
-    private router: Router
-  ) {}
+    private router: Router,
+    title: Title
+  ) {
+    title.setTitle("kemu tools | IP Address Checker")
+  }
 
   ngOnInit(): void {
     this.userInfoService

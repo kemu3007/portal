@@ -1,6 +1,6 @@
 <div class="container mt-3 row" *ngIf="data">
   <div class="col-sm-8">
-    <h2>ユーザ情報</h2>
+    <h2>IP Address Checker</h2>
     <div class="mt-2">
       IP Address
       <div class="d-flex justify-content-center">
@@ -54,15 +54,17 @@
         </li>
       </ul>
     </div>
-    <ng2-adsense adFormat="horizontal"></ng2-adsense>
+    <!-- <ng2-adsense adFormat="horizontal"></ng2-adsense> -->
+    <app-amazon-ads type="list"></app-amazon-ads>
   </div>
   <div class="col-sm-4">
-    <ng2-adsense
+    <!-- <ng2-adsense
       *ngFor="let _ of [].constructor(adsLength)"
       style="display: block"
       adFormat="fluid"
       slot="9091938102"
       layoutKey="-ef+6k-30-ac+ty"
-    ></ng2-adsense>
+    ></ng2-adsense> -->
+    <app-amazon-ads type="box" *ngFor="let _ of [].constructor(adsLength)"></app-amazon-ads>
   </div>
 </div>
