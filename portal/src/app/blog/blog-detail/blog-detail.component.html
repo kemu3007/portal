@@ -22,6 +22,7 @@
           {{ comment.body }}
         </div>
       </div>
+      <app-amazon-ads type="list"></app-amazon-ads>
       <p>
         コメントはこちらから
         <a [href]="article.html_url">{{ article.html_url }}</a
@@ -30,13 +31,14 @@
       </p>
     </div>
     <div class="col-md-4">
-      <ng2-adsense
+      <app-amazon-ads *ngFor="let _ of [].constructor(adsLength)" type="box"></app-amazon-ads>
+      <!-- <ng2-adsense
         *ngFor="let _ of [].constructor(adsLength)"
         style="display: block"
         adFormat="fluid"
         slot="9091938102"
         layoutKey="-ef+6k-30-ac+ty"
-      ></ng2-adsense>
+      ></ng2-adsense> -->
     </div>
   </div>
 </div>

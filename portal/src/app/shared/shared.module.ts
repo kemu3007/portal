@@ -9,9 +9,10 @@ import { RouterModule } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
 import { environment } from '@environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { AmazonAdsComponent } from './amazon-ads/amazon-ads.component';
 
 @NgModule({
-  declarations: [TweetBtnComponent, MessageComponent, LoadingComponent, NavComponent],
+  declarations: [TweetBtnComponent, MessageComponent, LoadingComponent, NavComponent, AmazonAdsComponent],
   imports: [
     CommonModule,
     NgbModule,
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     AdsenseModule,
     NavComponent,
     HttpClientModule,
+    AmazonAdsComponent,
   ],
 })
 export class SharedModule {}
