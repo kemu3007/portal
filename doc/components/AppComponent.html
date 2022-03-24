@@ -52,6 +52,9 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -89,6 +92,10 @@
                 <td class="col-md-9"><code>app-root</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./app.component.scss</code></td>
+            </tr>
 
 
 
@@ -143,6 +150,9 @@
                                 <li>
                                     <a href="#loading" >loading</a>
                                 </li>
+                                <li>
+                                    <a href="#releaseDate" >releaseDate</a>
+                                </li>
                             </ul>
                         </td>
                     </tr>
@@ -161,7 +171,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/app.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/app.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -286,7 +296,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/app.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/app.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -315,7 +325,29 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/app.component.ts:45</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/app.component.ts:47</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="releaseDate"></a>
+                        <span class="name"><b>releaseDate</b><a href="#releaseDate"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>releaseDate()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/app.component.ts:51</a></div>
                                 </td>
                             </tr>
 
@@ -326,16 +358,18 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectorRef, Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from &#x27;@angular/router&#x27;;
 import { LoadingService } from &#x27;./shared/loading/loading.service&#x27;;
 import { MessageService } from &#x27;./shared/message/message.service&#x27;;
 import { BreadcrumbService } from &#x27;./shared/nav/breadcrumb.service&#x27;;
+import version from &#x27;@assets/version.json&#x27;;
 
 @Component({
   selector: &#x27;app-root&#x27;,
   templateUrl: &#x27;./app.component.html&#x27;,
+  styleUrls: [&#x27;./app.component.scss&#x27;],
 })
 export class AppComponent {
   tabs &#x3D; [
@@ -373,6 +407,10 @@ export class AppComponent {
   get loading() {
     return this.loadingService.loading;
   }
+
+  get releaseDate() {
+    return version[&#x27;last-release&#x27;];
+  }
 }
 </code></pre>
     </div>
@@ -388,7 +426,9 @@ export class AppComponent {
 &lt;ng-template #contents&gt;
   &lt;router-outlet&gt;&lt;/router-outlet&gt;
 &lt;/ng-template&gt;
-
+&lt;div class&#x3D;&quot;fixed-bottom d-flex justify-content-end&quot;&gt;
+  &lt;p class&#x3D;&quot;version text-muted&quot;&gt;version: {{ releaseDate }}&lt;/p&gt;
+&lt;/div&gt;
 &lt;footer class&#x3D;&quot;my-5 footer&quot;&gt;
   &lt;div class&#x3D;&quot;d-flex justify-content-end&quot;&gt;
     &lt;span style&#x3D;&quot;font-size: 24px&quot;&gt;
@@ -404,6 +444,15 @@ export class AppComponent {
 </code></pre>
     </div>
 
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./app.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.version {
+  font-size: 10px;
+}
+</code></pre>
+    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -430,7 +479,7 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-nav></app-nav><app-message></app-message><ng-container *ngIf="loading; else contents">  <app-loading></app-loading></ng-container><ng-template #contents>  <router-outlet></router-outlet></ng-template><footer class="my-5 footer">  <div class="d-flex justify-content-end">    <span style="font-size: 24px">      <a href="https://github.com/kemu3007"><i class="bi bi-github fa-sm"></i></a>      <a class="ms-2" href="https://twitter.com/kemu43"><i class="bi bi-twitter"></i></a>      <a class="mx-2" href="https://portal.kemu.site/doc/"><i class="bi bi-book"></i></a>    </span>  </div>  <div class="d-flex justify-content-center">    <span class="text-muted">Copyright ©️ 2017-2022 kemu All Rights Reserved.</span>  </div></footer></div>'
+        var COMPONENT_TEMPLATE = '<div><app-nav></app-nav><app-message></app-message><ng-container *ngIf="loading; else contents">  <app-loading></app-loading></ng-container><ng-template #contents>  <router-outlet></router-outlet></ng-template><div class="fixed-bottom d-flex justify-content-end">  <p class="version text-muted">version: {{ releaseDate }}</p></div><footer class="my-5 footer">  <div class="d-flex justify-content-end">    <span style="font-size: 24px">      <a href="https://github.com/kemu3007"><i class="bi bi-github fa-sm"></i></a>      <a class="ms-2" href="https://twitter.com/kemu43"><i class="bi bi-twitter"></i></a>      <a class="mx-2" href="https://portal.kemu.site/doc/"><i class="bi bi-book"></i></a>    </span>  </div>  <div class="d-flex justify-content-center">    <span class="text-muted">Copyright ©️ 2017-2022 kemu All Rights Reserved.</span>  </div></footer></div>'
     var COMPONENTS = [{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
