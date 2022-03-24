@@ -174,12 +174,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>)</code>
+<code>constructor(messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, breadCrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -197,10 +197,34 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
+                                                        <td>messageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
                                                         <td>title</td>
                                                   
                                                         <td>
                                                                         <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>breadCrumbService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BreadcrumbService.html" target="_self" >BreadcrumbService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -246,8 +270,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:34</a></div>
                 </td>
             </tr>
 
@@ -315,8 +339,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:39</a></div>
                 </td>
             </tr>
 
@@ -352,8 +376,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -389,8 +413,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:30</a></div>
                 </td>
             </tr>
 
@@ -433,7 +457,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -464,7 +488,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/tools/amazon-associate/amazon-associate.component.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -480,6 +504,8 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Validators } from &#x27;@angular/forms&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
+import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
+import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
 import { FormGroup, FormControl, persistControl } from &#x27;@ngneat/reactive-forms&#x27;;
 
 @Component({
@@ -492,8 +518,9 @@ export class AmazonAssociateComponent implements OnInit {
     product: new FormControl(&#x27;&#x27;, [Validators.required]),
   });
   result &#x3D; &#x27;&#x27;;
-  constructor(title: Title) {
+  constructor(private messageService: MessageService, title: Title, breadCrumbService: BreadcrumbService) {
     title.setTitle(&#x27;kemu tools | Amazon Associate Linker&#x27;);
+    breadCrumbService.breadcrumb &#x3D; &#x27;/tools/Amazon Associate Linker&#x27;;
   }
 
   ngOnInit() {
@@ -509,6 +536,7 @@ export class AmazonAssociateComponent implements OnInit {
 
   copy(text: string) {
     window.navigator.clipboard.writeText(text);
+    this.messageService.pushMessage({ type: &#x27;info&#x27;, body: &#x27;リンクをクリップボードにコピーしました。&#x27; });
   }
 
   generate() {

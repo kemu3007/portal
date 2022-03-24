@@ -183,12 +183,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userInfoService: <a href="../injectables/UserInfoService.html" target="_self">UserInfoService</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>)</code>
+<code>constructor(userInfoService: <a href="../injectables/UserInfoService.html" target="_self">UserInfoService</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, breadCrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -253,6 +253,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>breadCrumbService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BreadcrumbService.html" target="_self" >BreadcrumbService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -291,8 +303,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:51</a></div>
                 </td>
             </tr>
 
@@ -360,8 +372,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:30</a></div>
                 </td>
             </tr>
 
@@ -403,7 +415,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -428,7 +440,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -457,7 +469,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:43</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:46</a></div>
                                 </td>
                             </tr>
 
@@ -472,6 +484,7 @@
 import { Title } from &#x27;@angular/platform-browser&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
+import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
 import { catchError, NEVER } from &#x27;rxjs&#x27;;
 import { UserInfo } from &#x27;./user-info&#x27;;
 import { UserInfoState } from &#x27;./user-info.repository&#x27;;
@@ -489,9 +502,11 @@ export class UserInfoComponent implements OnInit {
     private userInfoService: UserInfoService,
     private messageService: MessageService,
     private router: Router,
-    title: Title
+    title: Title,
+    breadCrumbService: BreadcrumbService
   ) {
     title.setTitle(&#x27;kemu tools | IP Address Checker&#x27;);
+    breadCrumbService.breadcrumb &#x3D; &#x27;/tools/IP Address Checker&#x27;;
   }
 
   ngOnInit(): void {
