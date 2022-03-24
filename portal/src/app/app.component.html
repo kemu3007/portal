@@ -8,7 +8,9 @@
 <ng-template #contents>
   <router-outlet></router-outlet>
 </ng-template>
-
+<div class="fixed-bottom d-flex justify-content-end">
+  <p class="version text-muted">version: {{ releaseDate }}</p>
+</div>
 <footer class="my-5 footer">
   <div class="d-flex justify-content-end">
     <span style="font-size: 24px">
