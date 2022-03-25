@@ -8,6 +8,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
 import { AmazonAssociateComponent } from './amazon-associate/amazon-associate.component';
 import { JsonTyperComponent } from './json-typer/json-typer.component';
 import { RealtimeComponent } from './realtime/realtime.component';
+import { JsonFormatterComponent } from './json-formatter/json-formatter.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { RealtimeComponent } from './realtime/realtime.component';
     AmazonAssociateComponent,
     JsonTyperComponent,
     RealtimeComponent,
+    JsonFormatterComponent,
   ],
   imports: [CommonModule, SharedModule, ToolsRoutingModule],
 })

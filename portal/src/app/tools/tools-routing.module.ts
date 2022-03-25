@@ -2,6 +2,7 @@ import { DecimalPipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AmazonAssociateComponent } from './amazon-associate/amazon-associate.component';
+import { JsonFormatterComponent } from './json-formatter/json-formatter.component';
 import { JsonTyperComponent } from './json-typer/json-typer.component';
 import { RealtimeComponent } from './realtime/realtime.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'realtime',
     component: RealtimeComponent,
+  },
+  {
+    path: 'jsonFormatter',
+    component: JsonFormatterComponent,
   },
 ];
 

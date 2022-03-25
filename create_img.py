@@ -53,4 +53,5 @@ if __name__ == "__main__":
     write_portal_image("Amazon Associate Linker", "associate")
     write_portal_image("JSON Typer", "json-typer")
     write_portal_image("REALTIME", "realtime")
+    write_portal_image("JSON Formatter", "json-formatter")
     write_weed_image()

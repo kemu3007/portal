@@ -1,0 +1,28 @@
+<div class="mt-3 container-fluid">
+  <h2>JSON Formatter</h2>
+  未整形のJSONデータを整形します。
+  <div class="row">
+    <div class="col-md-6 border">
+      <form [formGroup]="form">
+        <label class="form-label">Space</label><br />
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" name="space" type="radio" id="two" formControlName="space" value="  " />
+            <label class="form-check-label" for="two">two space</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" name="space" type="radio" id="four" formControlName="space" value="    " />
+            <label class="form-check-label" for="four">four space</label>
+          </div>
+        </div>
+        <label class="form-control-label" for="json">JSON</label>
+        <textarea class="form-control" id="json" rows="15" formControlName="json"></textarea>
+        <app-amazon-ads type="list"></app-amazon-ads>
+      </form>
+    </div>
+    <div class="col-md-6 border rounded">
+      RESULT <button class="ms-1 btn btn-sm" (click)="copy()"><i class="bi bi-stickies"></i></button>
+      <pre style="background-color: antiquewhite">{{ result }}</pre>
+    </div>
+  </div>
+</div>
