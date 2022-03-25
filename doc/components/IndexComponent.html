@@ -297,16 +297,27 @@ export class IndexComponent implements OnInit {
 &lt;div class&#x3D;&quot;text-end mt-1&quot;&gt;
   &lt;app-profile&gt;&lt;/app-profile&gt;
 &lt;/div&gt;
-&lt;div class&#x3D;&quot;text-center mt-3&quot;&gt;
-  &lt;div class&#x3D;&quot;mt-5&quot;&gt;
+&lt;div class&#x3D;&quot;container text-center mt-3&quot;&gt;
+  &lt;div&gt;
     &lt;h2&gt;Contributions&lt;/h2&gt;
     &lt;img style&#x3D;&quot;max-width: 100%&quot; src&#x3D;&quot;/assets/images/weed.png&quot; /&gt;
   &lt;/div&gt;
-  &lt;div class&#x3D;&quot;mt-5&quot;&gt;
-    &lt;h2&gt;Links&lt;/h2&gt;
-    &lt;ul class&#x3D;&quot;list-group&quot;&gt;
-      &lt;li&gt;&lt;a href&#x3D;&quot;https://kemu.site&quot;&gt;旧ブログ(閉鎖予定)&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+      &lt;h2&gt;News&lt;/h2&gt;
+      &lt;div class&#x3D;&quot;border border-light rounded&quot;&gt;
+        &lt;app-news&gt;&lt;/app-news&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+      &lt;h2&gt;Links&lt;/h2&gt;
+      &lt;ul class&#x3D;&quot;list-group&quot;&gt;
+        &lt;a class&#x3D;&quot;list-group-item border-0&quot; href&#x3D;&quot;/doc&quot;&gt;Document | portal.kemu.site&lt;/a&gt;
+        &lt;a class&#x3D;&quot;list-group-item border-0&quot; href&#x3D;&quot;https://kemu.site&quot;&gt;旧ブログ(閉鎖予定)&lt;/a&gt;
+        &lt;a class&#x3D;&quot;list-group-item border-0&quot; href&#x3D;&quot;https://github.com/kemu3007&quot;&gt;GitHub | kemu3007&lt;/a&gt;
+        &lt;a class&#x3D;&quot;list-group-item border-0&quot; href&#x3D;&quot;https://twitter.com/kemu43&quot;&gt;Twitter | kemu43&lt;/a&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -351,8 +362,8 @@ export class IndexComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ngb-alert type="warning" class="my-0 py-1" [dismissible]="false"  >このサイトは広告収益で成り立っています。広告ブロックツールは停止してください。(▽◕ ᴥ ◕▽)</ngb-alert><div class="text-end mt-1">  <app-profile></app-profile></div><div class="text-center mt-3">  <div class="mt-5">    <h2>Contributions</h2>    <img style="max-width: 100%" src="/assets/images/weed.png" />  </div>  <div class="mt-5">    <h2>Links</h2>    <ul class="list-group">      <li><a href="https://kemu.site">旧ブログ(閉鎖予定)</a></li>    </ul>  </div></div><div class="mt-5 d-flex justify-content-center">  <iframe    src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=48&l=ur1&category=monthlydealevent&banner=0SN7PKM3ZXK5BW58WTR2&f=ifr&linkID=c4a78199505dd7da5dfc4016ee8728cc&t=kemu03-22&tracking_id=kemu03-22"    width="728"    height="90"    scrolling="no"    marginwidth="0"    style="border: none"    frameborder="0"    sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"  ></iframe></div></div>'
-    var COMPONENTS = [{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
+        var COMPONENT_TEMPLATE = '<div><ngb-alert type="warning" class="my-0 py-1" [dismissible]="false"  >このサイトは広告収益で成り立っています。広告ブロックツールは停止してください。(▽◕ ᴥ ◕▽)</ngb-alert><div class="text-end mt-1">  <app-profile></app-profile></div><div class="container text-center mt-3">  <div>    <h2>Contributions</h2>    <img style="max-width: 100%" src="/assets/images/weed.png" />  </div>  <div class="row">    <div class="col-md-6">      <h2>News</h2>      <div class="border border-light rounded">        <app-news></app-news>      </div>    </div>    <div class="col-md-6">      <h2>Links</h2>      <ul class="list-group">        <a class="list-group-item border-0" href="/doc">Document | portal.kemu.site</a>        <a class="list-group-item border-0" href="https://kemu.site">旧ブログ(閉鎖予定)</a>        <a class="list-group-item border-0" href="https://github.com/kemu3007">GitHub | kemu3007</a>        <a class="list-group-item border-0" href="https://twitter.com/kemu43">Twitter | kemu43</a>      </ul>    </div>  </div></div><div class="mt-5 d-flex justify-content-center">  <iframe    src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=48&l=ur1&category=monthlydealevent&banner=0SN7PKM3ZXK5BW58WTR2&f=ifr&linkID=c4a78199505dd7da5dfc4016ee8728cc&t=kemu03-22&tracking_id=kemu03-22"    width="728"    height="90"    scrolling="no"    marginwidth="0"    style="border: none"    frameborder="0"    sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"  ></iframe></div></div>'
+    var COMPONENTS = [{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'IndexComponent'};
 </script>

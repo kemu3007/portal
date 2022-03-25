@@ -102,18 +102,21 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/HomeModule.html" data-type="entity-link" >HomeModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-HomeModule-25311c3765532ec14cf7dae7d23c145907e52840bb796e2f683faedb68496465bf707bd28a156c5708a4405245a28ff8659dfd1c00a597047231beb8041607b6"' : 'data-target="#xs-components-links-module-HomeModule-25311c3765532ec14cf7dae7d23c145907e52840bb796e2f683faedb68496465bf707bd28a156c5708a4405245a28ff8659dfd1c00a597047231beb8041607b6"' }>
+                                            'data-target="#components-links-module-HomeModule-37c3faed8f53941b197c0429cd946e7458ae78c953ae7c39ce92364ac961ef9fe5bbd9c5d4905c8fa606a95ab37134017bbc3160945ab37d91eac0aa4d6eb91a"' : 'data-target="#xs-components-links-module-HomeModule-37c3faed8f53941b197c0429cd946e7458ae78c953ae7c39ce92364ac961ef9fe5bbd9c5d4905c8fa606a95ab37134017bbc3160945ab37d91eac0aa4d6eb91a"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-HomeModule-25311c3765532ec14cf7dae7d23c145907e52840bb796e2f683faedb68496465bf707bd28a156c5708a4405245a28ff8659dfd1c00a597047231beb8041607b6"' :
-                                            'id="xs-components-links-module-HomeModule-25311c3765532ec14cf7dae7d23c145907e52840bb796e2f683faedb68496465bf707bd28a156c5708a4405245a28ff8659dfd1c00a597047231beb8041607b6"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-HomeModule-37c3faed8f53941b197c0429cd946e7458ae78c953ae7c39ce92364ac961ef9fe5bbd9c5d4905c8fa606a95ab37134017bbc3160945ab37d91eac0aa4d6eb91a"' :
+                                            'id="xs-components-links-module-HomeModule-37c3faed8f53941b197c0429cd946e7458ae78c953ae7c39ce92364ac961ef9fe5bbd9c5d4905c8fa606a95ab37134017bbc3160945ab37d91eac0aa4d6eb91a"' }>
                                             <li class="link">
                                                 <a href="components/ContactComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ContactComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/IndexComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >IndexComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/NewsComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >NewsComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/ProfileComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ProfileComponent</a>
