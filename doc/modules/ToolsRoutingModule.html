@@ -76,6 +76,7 @@
 import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 import { AmazonAssociateComponent } from &#x27;./amazon-associate/amazon-associate.component&#x27;;
+import { JsonFormatterComponent } from &#x27;./json-formatter/json-formatter.component&#x27;;
 import { JsonTyperComponent } from &#x27;./json-typer/json-typer.component&#x27;;
 import { RealtimeComponent } from &#x27;./realtime/realtime.component&#x27;;
 import { ToolsListComponent } from &#x27;./tools-list/tools-list.component&#x27;;
@@ -101,6 +102,10 @@ const routes: Routes &#x3D; [
   {
     path: &#x27;realtime&#x27;,
     component: RealtimeComponent,
+  },
+  {
+    path: &#x27;jsonFormatter&#x27;,
+    component: JsonFormatterComponent,
   },
 ];
 
