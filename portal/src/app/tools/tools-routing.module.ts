@@ -1,3 +1,4 @@
+import { DecimalPipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AmazonAssociateComponent } from './amazon-associate/amazon-associate.component';
@@ -32,5 +33,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
+  providers: [DecimalPipe],
 })
 export class ToolsRoutingModule {}

@@ -7,8 +7,8 @@ import { interval } from 'rxjs';
   templateUrl: './realtime.component.html',
 })
 export class RealtimeComponent implements OnInit {
-  date = '';
-  time = '';
+  datetime = '';
+  ms = 0;
 
   constructor(title: Title) {
     title.setTitle('kemu tools | REALTIME');
@@ -17,8 +17,8 @@ export class RealtimeComponent implements OnInit {
   ngOnInit() {
     interval(100).subscribe((_) => {
       const now = new Date();
-      this.date = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
-      this.time = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}:${now.getMilliseconds()}`;
+      this.datetime = now.toLocaleString();
+      this.ms = now.getMilliseconds();
     });
   }
 }
