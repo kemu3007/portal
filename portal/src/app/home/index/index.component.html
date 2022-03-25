@@ -4,16 +4,27 @@
 <div class="text-end mt-1">
   <app-profile></app-profile>
 </div>
-<div class="text-center mt-3">
-  <div class="mt-5">
+<div class="container text-center mt-3">
+  <div>
     <h2>Contributions</h2>
     <img style="max-width: 100%" src="/assets/images/weed.png" />
   </div>
-  <div class="mt-5">
-    <h2>Links</h2>
-    <ul class="list-group">
-      <li><a href="https://kemu.site">旧ブログ(閉鎖予定)</a></li>
-    </ul>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>News</h2>
+      <div class="border border-light rounded">
+        <app-news></app-news>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h2>Links</h2>
+      <ul class="list-group">
+        <a class="list-group-item border-0" href="/doc">Document | portal.kemu.site</a>
+        <a class="list-group-item border-0" href="https://kemu.site">旧ブログ(閉鎖予定)</a>
+        <a class="list-group-item border-0" href="https://github.com/kemu3007">GitHub | kemu3007</a>
+        <a class="list-group-item border-0" href="https://twitter.com/kemu43">Twitter | kemu43</a>
+      </ul>
+    </div>
   </div>
 </div>
 

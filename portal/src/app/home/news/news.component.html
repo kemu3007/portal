@@ -1,0 +1,7 @@
+<div class="list-group" id="news">
+  <div *ngFor="let item of (articles | keyvalue).reverse(); index as i">
+    <a class="list-group-item" [routerLink]="['/blog', item.key]"
+      ><span *ngIf="i === 0" class="text-danger">new!</span>{{ item.value.title }}</a
+    >
+  </div>
+</div>

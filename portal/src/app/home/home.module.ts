@@ -6,9 +6,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './contact/contact.component';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
-  declarations: [IndexComponent, ProfileComponent, ContactComponent],
+  declarations: [IndexComponent, ProfileComponent, ContactComponent, NewsComponent],
   imports: [CommonModule, HomeRoutingModule, NgbModule, RecaptchaModule],
 })
 export class HomeModule {}
