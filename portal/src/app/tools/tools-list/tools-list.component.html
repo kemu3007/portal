@@ -4,6 +4,19 @@
     <div class="col-md-8">
       <a
         class="card mt-1 text-decoration-none text-muted"
+        [routerLink]="['/tools', 'realtime']"
+        style="cursor: pointer"
+      >
+        <div class="card-body">
+          <div class="row">
+            <h5 class="card-link text-black">REALTIME</h5>
+          </div>
+          <hr class="mt-0" />
+          <p class="card-text">現在時刻を100ms単位で更新し、正確な日時をお知らせします。</p>
+        </div>
+      </a>
+      <a
+        class="card mt-1 text-decoration-none text-muted"
         [routerLink]="['/tools', 'jsonTyper']"
         style="cursor: pointer"
       >

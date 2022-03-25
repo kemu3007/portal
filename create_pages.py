@@ -52,6 +52,12 @@ if __name__ == "__main__":
     path = Path("portal/src/tools/jsonTyper")
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(typer_html)
+    # JSON Typer
+    realtime_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/realtime.png").replace("page_title", "kemu tools | REALTIME").replace("page_description", "JSONの値をTypeScriptのinterface型に変換します。")
+    realtime_html = realtime_html.replace("page_contents", "<h2>REALTIME</h2> 現在時刻を100ms単位で更新し、正確な日時をお知らせします。")
+    path = Path("portal/src/tools/realtime")
+    path.mkdir(exist_ok=True)
+    (path / "index.html").write_text(realtime_html)
     # contact
     contact_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/contact.png").replace("page_title", "Contact").replace("page_description", "Contact")
     contact_html = contact_html.replace("page_contents", "仕事の依頼などは以下のメールアドレスにお願いします。セールスメールはお控えください。")
