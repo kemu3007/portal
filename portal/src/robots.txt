@@ -1,0 +1,5 @@
+User-Agent: *
+
+Allow: /
+
+Sitemap: https://portal.kemu.site/assets/sitemap.xml
