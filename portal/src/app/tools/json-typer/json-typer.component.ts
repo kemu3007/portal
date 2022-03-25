@@ -12,6 +12,7 @@ export class JsonTyperComponent implements OnInit {
     title.setTitle('kemu portal | JSON Typer');
   }
   results: string[] = [];
+  error: any;
   form = new FormGroup({
     json: new FormControl('', Validators.required),
     rootType: new FormControl('Root', Validators.required),
@@ -27,11 +28,16 @@ export class JsonTyperComponent implements OnInit {
 
   submit() {
     this.results = [];
+    this.error = null;
     let spaceValue = this.form.controls.space.value;
     if (spaceValue === String.raw`\t`) {
       spaceValue = '\t';
     }
-    this.typer(JSON.parse(this.form.controls.json.value), this.form.controls.rootType.value, spaceValue);
+    try {
+      this.typer(JSON.parse(this.form.controls.json.value), this.form.controls.rootType.value, spaceValue);
+    } catch (error) {
+      this.error = error;
+    }
   }
 
   typer(dict: Record<string, any>, clsName = 'Root', space = '\t') {
