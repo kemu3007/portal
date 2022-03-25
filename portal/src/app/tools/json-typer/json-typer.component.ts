@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { FormGroup, FormControl, persistControl } from '@ngneat/reactive-forms';
 
 @Component({
@@ -8,8 +9,9 @@ import { FormGroup, FormControl, persistControl } from '@ngneat/reactive-forms';
   templateUrl: './json-typer.component.html',
 })
 export class JsonTyperComponent implements OnInit {
-  constructor(title: Title) {
+  constructor(title: Title, breadcrumbService: BreadcrumbService) {
     title.setTitle('kemu portal | JSON Typer');
+    breadcrumbService.breadcrumb = '/tools/JSON Typer';
   }
   results: string[] = [];
   error: any;
