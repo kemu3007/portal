@@ -34,7 +34,8 @@
               "src/log",
               "src/tools",
               "src/contact",
-              "src/robots.txt"
+              "src/robots.txt",
+              "src/sitemap.xml"
             ],
             "styles": [
               "src/styles.scss"
