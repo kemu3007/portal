@@ -6,9 +6,10 @@ import { SharedModule } from '@app/shared/shared.module';
 import { ToolsListComponent } from './tools-list/tools-list.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { AmazonAssociateComponent } from './amazon-associate/amazon-associate.component';
+import { JsonTyperComponent } from './json-typer/json-typer.component';
 
 @NgModule({
-  declarations: [ToolsListComponent, UserInfoComponent, AmazonAssociateComponent],
+  declarations: [ToolsListComponent, UserInfoComponent, AmazonAssociateComponent, JsonTyperComponent],
   imports: [CommonModule, SharedModule, ToolsRoutingModule],
 })
 export class ToolsModule {}

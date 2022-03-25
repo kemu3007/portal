@@ -51,4 +51,5 @@ if __name__ == "__main__":
     write_portal_image("contact", "contact")
     write_portal_image("IP Address Checker", "user-info")
     write_portal_image("Amazon Associate Linker", "associate")
+    write_portal_image("JSON Typer", "json-typer")
     write_weed_image()

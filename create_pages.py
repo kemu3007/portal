@@ -46,6 +46,12 @@ if __name__ == "__main__":
     path = Path("portal/src/tools/amazonAssociate")
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(associate_html)
+    # JSON Typer
+    typer_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/json-typer.png").replace("page_title", "kemu tools | JSON Typer").replace("page_description", "JSONの値をTypeScriptのinterface型に変換します。")
+    typer_html = typer_html.replace("page_contents", "<h2>JSON Typer</h2>JSONの値をTypeScriptのinterface型に変換します。List Typeには非対応です。any[]と出力されます。<br />またJSONキーにスラッシュなどの値が含まれている場合正しく出力されないケースがあります。RootTypeName<input /> JSON <textarea></textarea> <button>TYPE</button> result ..........")
+    path = Path("portal/src/tools/jsonTyper")
+    path.mkdir(exist_ok=True)
+    (path / "index.html").write_text(typer_html)
     # contact
     contact_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/contact.png").replace("page_title", "Contact").replace("page_description", "Contact")
     contact_html = contact_html.replace("page_contents", "仕事の依頼などは以下のメールアドレスにお願いします。セールスメールはお控えください。")
