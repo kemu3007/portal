@@ -65,7 +65,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/log/models.ts</code>
+            <code>src/app/blog/models.ts</code>
         </p>
 
 
@@ -442,10 +442,9 @@
   color: string;
 }
 
-export interface Log {
+export interface Article {
   title: string;
   body: string;
-  photo: string;
   labels: Label[];
 }
 
@@ -493,7 +492,7 @@ export interface Reactions {
   eyes: number;
 }
 
-export interface LogDetail {
+export interface ArticleDetail {
   url: string;
   repository_url: string;
   labels_url: string;
