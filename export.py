@@ -70,6 +70,11 @@ if __name__ == "__main__":
     loc.text = f"https://portal.kemu.site/tools/amazonAssociate"
     lastmod = ElementTree.SubElement(url_element, 'lastmod')
     lastmod.text = today
+    url_element = ElementTree.SubElement(urlset, 'url')
+    loc = ElementTree.SubElement(url_element, 'loc')
+    loc.text = f"https://portal.kemu.site/tools/jsonTyper"
+    lastmod = ElementTree.SubElement(url_element, 'lastmod')
+    lastmod.text = today
     for article in articles:
         url_element = ElementTree.SubElement(urlset, 'url')
         loc = ElementTree.SubElement(url_element, 'loc')
