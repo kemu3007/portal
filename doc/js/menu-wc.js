@@ -183,18 +183,21 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/ToolsModule.html" data-type="entity-link" >ToolsModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-ToolsModule-8e5126b7447c0c912ad9b190834a6b06fe6a8920c1660f8a42bc6084d087aa6f4688614f0c039d235e52b88a9a98b815c697675390e4e6be0b7e08ebb724fb80"' : 'data-target="#xs-components-links-module-ToolsModule-8e5126b7447c0c912ad9b190834a6b06fe6a8920c1660f8a42bc6084d087aa6f4688614f0c039d235e52b88a9a98b815c697675390e4e6be0b7e08ebb724fb80"' }>
+                                            'data-target="#components-links-module-ToolsModule-eb0bcba476463ad215fcf50121056367643e7ca782653089eb9dabb206c10947a35b93a164009c9193fa0cbe1c3c6846616be592c15dac9591266a0358babcdd"' : 'data-target="#xs-components-links-module-ToolsModule-eb0bcba476463ad215fcf50121056367643e7ca782653089eb9dabb206c10947a35b93a164009c9193fa0cbe1c3c6846616be592c15dac9591266a0358babcdd"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ToolsModule-8e5126b7447c0c912ad9b190834a6b06fe6a8920c1660f8a42bc6084d087aa6f4688614f0c039d235e52b88a9a98b815c697675390e4e6be0b7e08ebb724fb80"' :
-                                            'id="xs-components-links-module-ToolsModule-8e5126b7447c0c912ad9b190834a6b06fe6a8920c1660f8a42bc6084d087aa6f4688614f0c039d235e52b88a9a98b815c697675390e4e6be0b7e08ebb724fb80"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ToolsModule-eb0bcba476463ad215fcf50121056367643e7ca782653089eb9dabb206c10947a35b93a164009c9193fa0cbe1c3c6846616be592c15dac9591266a0358babcdd"' :
+                                            'id="xs-components-links-module-ToolsModule-eb0bcba476463ad215fcf50121056367643e7ca782653089eb9dabb206c10947a35b93a164009c9193fa0cbe1c3c6846616be592c15dac9591266a0358babcdd"' }>
                                             <li class="link">
                                                 <a href="components/AmazonAssociateComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AmazonAssociateComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/JsonTyperComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >JsonTyperComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/RealtimeComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RealtimeComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/ToolsListComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ToolsListComponent</a>
