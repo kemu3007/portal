@@ -143,6 +143,54 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(keyValuePipe: <a href="https://angular.io/api/common/KeyValuePipe" target="_blank">KeyValuePipe</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/home/news/news.component.ts:10</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>keyValuePipe</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/common/KeyValuePipe" target="_blank" >KeyValuePipe</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
 
@@ -170,7 +218,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/home/news/news.component.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/home/news/news.component.ts:13</a></div>
                                 </td>
                             </tr>
 
@@ -181,7 +229,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { KeyValuePipe } from &#x27;@angular/common&#x27;;
+import { Component } from &#x27;@angular/core&#x27;;
 import articles from &#x27;@assets/articles/list.json&#x27;;
 
 @Component({
@@ -190,8 +239,10 @@ import articles from &#x27;@assets/articles/list.json&#x27;;
   styleUrls: [&#x27;./news.component.scss&#x27;],
 })
 export class NewsComponent {
+  constructor(private keyValuePipe: KeyValuePipe) {}
+
   get articles() {
-    return articles;
+    return this.keyValuePipe.transform(articles).sort((a, b) &#x3D;&gt; Number(b.key) - Number(a.key));
   }
 }
 </code></pre>
@@ -199,7 +250,7 @@ export class NewsComponent {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;list-group&quot; id&#x3D;&quot;news&quot;&gt;
-  &lt;div *ngFor&#x3D;&quot;let item of (articles | keyvalue).reverse(); index as i&quot;&gt;
+  &lt;div *ngFor&#x3D;&quot;let item of articles; index as i&quot;&gt;
     &lt;a class&#x3D;&quot;list-group-item&quot; [routerLink]&#x3D;&quot;[&#x27;/blog&#x27;, item.key]&quot;
       &gt;&lt;span *ngIf&#x3D;&quot;i &#x3D;&#x3D;&#x3D; 0&quot; class&#x3D;&quot;text-danger&quot;&gt;new!&lt;/span&gt;{{ item.value.title }}&lt;/a
     &gt;
@@ -244,7 +295,7 @@ export class NewsComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="list-group" id="news">  <div *ngFor="let item of (articles | keyvalue).reverse(); index as i">    <a class="list-group-item" [routerLink]="[\'/blog\', item.key]"      ><span *ngIf="i === 0" class="text-danger">new!</span>{{ item.value.title }}</a    >  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="list-group" id="news">  <div *ngFor="let item of articles; index as i">    <a class="list-group-item" [routerLink]="[\'/blog\', item.key]"      ><span *ngIf="i === 0" class="text-danger">new!</span>{{ item.value.title }}</a    >  </div></div></div>'
     var COMPONENTS = [{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NewsComponent'};

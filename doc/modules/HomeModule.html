@@ -205,7 +205,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { CommonModule } from &#x27;@angular/common&#x27;;
+import { CommonModule, KeyValuePipe } from &#x27;@angular/common&#x27;;
 import { HomeRoutingModule } from &#x27;./home-routing.module&#x27;;
 import { IndexComponent } from &#x27;./index/index.component&#x27;;
 import { ProfileComponent } from &#x27;./profile/profile.component&#x27;;
@@ -217,6 +217,7 @@ import { NewsComponent } from &#x27;./news/news.component&#x27;;
 @NgModule({
   declarations: [IndexComponent, ProfileComponent, ContactComponent, NewsComponent],
   imports: [CommonModule, HomeRoutingModule, NgbModule, RecaptchaModule],
+  providers: [KeyValuePipe],
 })
 export class HomeModule {}
 </code></pre>
