@@ -1,3 +1,4 @@
+import { KeyValuePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import articles from '@assets/articles/list.json';
 
@@ -7,7 +8,9 @@ import articles from '@assets/articles/list.json';
   styleUrls: ['./news.component.scss'],
 })
 export class NewsComponent {
+  constructor(private keyValuePipe: KeyValuePipe) {}
+
   get articles() {
-    return articles;
+    return this.keyValuePipe.transform(articles).sort((a, b) => Number(b.key) - Number(a.key));
   }
 }

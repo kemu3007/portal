@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, KeyValuePipe } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { IndexComponent } from './index/index.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -11,5 +11,6 @@ import { NewsComponent } from './news/news.component';
 @NgModule({
   declarations: [IndexComponent, ProfileComponent, ContactComponent, NewsComponent],
   imports: [CommonModule, HomeRoutingModule, NgbModule, RecaptchaModule],
+  providers: [KeyValuePipe],
 })
 export class HomeModule {}
