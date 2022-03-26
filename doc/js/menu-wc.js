@@ -308,6 +308,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/state.html" data-type="entity-link" >state</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/Tool.html" data-type="entity-link" >Tool</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/User.html" data-type="entity-link" >User</a>
                             </li>
                             <li class="link">
