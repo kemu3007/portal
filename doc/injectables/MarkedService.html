@@ -69,26 +69,26 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#marked" >marked</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
 
 
-                    <tr>
-                        <td class="col-md-4">
-                            <h6><b>Accessors</b></h6>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <ul class="index-list">
-                                <li>
-                                    <a href="#marked" >marked</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
         </tbody>
     </table>
 </section>
@@ -99,62 +99,104 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(domSanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/shared/markdown/marked.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/markdown/marked.service.ts:11</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>domSanitizer</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
-
 
 
             <section>
-    <h3 id="accessors">
-        Accessors
+    
+    <h3 id="inputs">
+        Properties
     </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="marked"></a>
+                    <span class="name">
+                        <span ><b>marked</b></span>
+                        <a href="#marked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="marked"></a>
-                        <span class="name"><b>marked</b><a href="#marked"><span class="icon ion-ios-link"></span></a></span>
+                        <i>Default value : </i><code>marked</code>
                     </td>
                 </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/markdown/marked.service.ts:11</a></div>
+                        </td>
+                    </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>marked()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/shared/markdown/marked.service.ts:21</a></div>
-                                </td>
-                            </tr>
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
+
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { DomSanitizer } from &#x27;@angular/platform-browser&#x27;;
+import { marked, Renderer } from &#x27;marked&#x27;;
+import crypt from &#x27;crypto-js&#x27;;
 import hljs from &#x27;highlight.js&#x27;;
-import { marked } from &#x27;marked&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;,
 })
 export class MarkedService {
-  constructor() {
-    marked.setOptions({
+  marked &#x3D; marked;
+
+  constructor(private domSanitizer: DomSanitizer) {
+    const renderer &#x3D; new Renderer();
+    renderer.heading &#x3D; (text, lebel) &#x3D;&gt; &#x60;&lt;h${lebel} #${crypt.MD5(text)}&gt;${text}&lt;/h${lebel}&gt;&#x60;;
+    renderer.image &#x3D; (href) &#x3D;&gt; &#x60;&lt;img src&#x3D;${href} loading&#x3D;lazy /&gt;&#x60;;
+    this.marked.setOptions({
+      renderer,
       highlight: function (code, lang) {
         const language &#x3D; hljs.getLanguage(lang) ? lang : &#x27;plaintext&#x27;;
         return hljs.highlight(code, { language }).value;
@@ -163,10 +205,6 @@ export class MarkedService {
       gfm: true,
       breaks: true,
     });
-  }
-
-  get marked() {
-    return marked;
   }
 }
 </code></pre>
