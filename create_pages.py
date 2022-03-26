@@ -27,9 +27,9 @@ if __name__ == "__main__":
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(log_home)
     # tools
-    tools = json.loads((Path() / "portal/src/assets/kemu-site.tools.json").read_text())
+    tools = json.loads((Path() / "portal/src/app/tools/tools.json").read_text())
     tools_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/tools.png").replace("page_title", "kemu tools").replace("page_description", "自作ツール置き場")
-    tools_base = [f"<h2><a href='{tool['link']}'>{tool['name']}</a></h2><hr /> {tool['description']}" for tool in tools]
+    tools_base = [f"<h2><a href='{tool['link']}'>{tool['label']}</a></h2><hr /> {tool['description']}" for tool in tools]
     tools_html = tools_html.replace("page_contents", "<hr />".join(tools_base))
     path = Path("portal/src/tools")
     path.mkdir(exist_ok=True)

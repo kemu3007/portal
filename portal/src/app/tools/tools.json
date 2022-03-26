@@ -1,0 +1,50 @@
+[
+  {
+    "label": "JSON Formatter",
+    "link": "/tools/jsonFormatter",
+    "description": "未整形のJSONデータを整形します。",
+    "external": false
+  },
+  {
+    "label": "REALTIME",
+    "link": "/tools/realtime",
+    "description": "現在時刻を100ms単位で更新し、正確な日時をお知らせします。",
+    "external": false
+  },
+  {
+    "label": "JSON Typer",
+    "link": "/tools/jsonTyper",
+    "description": "JSONの値をTypeScriptのinterface型に変換します。",
+    "external": false
+  },
+  {
+    "label": "Amazon Associate Linker",
+    "link": "/tools/amazonAssociate",
+    "description": "Amazonリンクにアソシエイト情報を付与します。",
+    "external": false
+  },
+  {
+    "label": "IP Address Checker",
+    "link": "/tools/userInfo",
+    "description": "IPアドレス等のデータを表示します。過去の履歴も表示可能です。",
+    "external": false
+  },
+  {
+    "label": "QRコードジェネレータ",
+    "link": "https://kemu.site/utils/qrcode/",
+    "description": "任意の文字列をQRコードに変換します。",
+    "external": true
+  },
+  {
+    "label": "Markdown Editor",
+    "link": "https://kemu.site/utils/markdown/",
+    "description": "markdown記法で書かれた文字列をHTMLで表示します。",
+    "external": true
+  },
+  {
+    "label": "CSV to MD table",
+    "link": "https://kemu.site/utils/csv_to_md/",
+    "description": "コンマ区切りで入力されたcsvをMarkdownテーブル形式に変換します。",
+    "external": true
+  }
+]

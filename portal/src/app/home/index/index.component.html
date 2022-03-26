@@ -19,34 +19,10 @@
     <div class="col-md-6">
       <h2>Tools</h2>
       <ol class="list-group">
-        <a class="list-group-item d-flex" routerLink="/tools/jsonFormatter">
+        <a class="list-group-item d-flex" *ngFor="let tool of tools" (click)="transitTool(tool)">
           <div class="text-start">
-            <div class="fw-bold">JSON Formatter</div>
-            未整形のJSONデータを整形します。
-          </div>
-        </a>
-        <a class="list-group-item d-flex" routerLink="/tools/realtime">
-          <div class="text-start">
-            <div class="fw-bold">REALTIME</div>
-            現在時刻を100ms単位で更新し、正確な日時をお知らせします。
-          </div>
-        </a>
-        <a class="list-group-item d-flex" routerLink="/tools/jsonTyper">
-          <div class="text-start">
-            <div class="fw-bold">JSON Typer</div>
-            JSONの値をTypeScriptのinterface型に変換します。
-          </div>
-        </a>
-        <a class="list-group-item d-flex" routerLink="/tools/amazonAssociate">
-          <div class="text-start">
-            <div class="fw-bold">Amazon Associate Linker</div>
-            Amazonリンクにアソシエイト情報を付与します。
-          </div>
-        </a>
-        <a class="list-group-item d-flex" routerLink="/tools/userInfo">
-          <div class="text-start">
-            <div class="fw-bold">IP Address Checker</div>
-            IPアドレス等のデータを表示します。過去の履歴も表示可能です。
+            <div class="fw-bold">{{ tool.label }}</div>
+            {{ tool.description }}
           </div>
         </a>
       </ol>
