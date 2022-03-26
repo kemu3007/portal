@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Title } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml, Title } from '@angular/platform-browser';
 import { LogDetail } from '../models';
 import { MessageService } from '@app/shared/message/message.service';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
@@ -13,6 +13,7 @@ import { MarkedService } from '@app/shared/markdown/marked.service';
 })
 export class LogDetailComponent implements OnInit {
   marked = this.markedService.marked;
+  html: SafeHtml = '';
   article?: LogDetail;
 
   constructor(
@@ -21,7 +22,8 @@ export class LogDetailComponent implements OnInit {
     private router: Router,
     private messageService: MessageService,
     private breadcrumbService: BreadcrumbService,
-    private markedService: MarkedService
+    private markedService: MarkedService,
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
@@ -29,6 +31,7 @@ export class LogDetailComponent implements OnInit {
       this.titleService.setTitle(`kemu logs | ${article.title}`);
       this.article = article;
       this.breadcrumbService.breadcrumb = `/log/${this.article.title}`;
+      this.html = this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));
     });
   }
 

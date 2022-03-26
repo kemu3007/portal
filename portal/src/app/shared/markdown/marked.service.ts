@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { marked, Renderer } from 'marked';
+import crypt from 'crypto-js';
 import hljs from 'highlight.js';
-import { marked } from 'marked';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MarkedService {
-  constructor() {
-    marked.setOptions({
+  marked = marked;
+
+  constructor(private domSanitizer: DomSanitizer) {
+    const renderer = new Renderer();
+    renderer.heading = (text, lebel) => `<h${lebel} #${crypt.MD5(text)}>${text}</h${lebel}>`;
+    renderer.image = (href) => `<img src=${href} loading=lazy />`;
+    this.marked.setOptions({
+      renderer,
       highlight: function (code, lang) {
         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
         return hljs.highlight(code, { language }).value;
@@ -16,9 +24,5 @@ export class MarkedService {
       gfm: true,
       breaks: true,
     });
-  }
-
-  get marked() {
-    return marked;
   }
 }
