@@ -19,7 +19,7 @@ def export_issues(label:str, dir: Path, extract_photo: bool=False):
         issue["comments"] = json.loads(res.content)
         issue_dict[issue["id"]] = {
             "title": issue["title"],
-            "body": re.sub(r"#|`|\n|\r", "", issue["body"])[:100],
+            "body": re.sub(r"#|`|\n|\r|[|]|(http.*)", "", issue["body"])[:150],
             "labels": [{"name": label["name"], "color": label["color"]} for label in issue["labels"]]
         }
         if extract_photo:

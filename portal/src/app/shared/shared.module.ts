@@ -11,9 +11,17 @@ import { environment } from '@environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { AmazonAdsComponent } from './amazon-ads/amazon-ads.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MdescapePipe } from './pipes/mdescape.pipe';
 
 @NgModule({
-  declarations: [TweetBtnComponent, MessageComponent, LoadingComponent, NavComponent, AmazonAdsComponent],
+  declarations: [
+    TweetBtnComponent,
+    MessageComponent,
+    LoadingComponent,
+    NavComponent,
+    AmazonAdsComponent,
+    MdescapePipe,
+  ],
   imports: [
     CommonModule,
     NgbModule,
@@ -32,6 +40,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     AmazonAdsComponent,
     ReactiveFormsModule,
+    MdescapePipe
   ],
 })
 export class SharedModule {}

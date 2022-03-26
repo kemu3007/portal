@@ -20,9 +20,9 @@ export class MarkedService {
           id=${hash}
           style="border-left: solid 3px; border-color: darkturquoise; border-radius: 2px; padding-left: 5px;"
         >${text}</h${lebel}>
-        <span class="btn btn-sm">
+        <button class="btn btn-sm">
           <i class="bi bi-clipboard" onclick="window.navigator.clipboard.writeText('${window.location.origin}${window.location.pathname}#${hash}')"></i>
-        </span>
+        </button>
       </div>
       `;
     };

@@ -24,7 +24,7 @@
                   </div>
                 </div>
                 <hr class="mt-0" />
-                <p class="card-text">{{ articles[key].body }}...</p>
+                <p class="card-text">{{ articles[key].body | mdescape }}</p>
               </div>
             </div>
           </div>
