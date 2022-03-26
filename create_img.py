@@ -4,7 +4,7 @@ from urllib.request import urlopen
 from PIL import Image, ImageFont, ImageDraw
 
 ogp_size = (1200, 630)
-font = ImageFont.truetype("./font.ttf", size=36)
+font = ImageFont.truetype(urlopen("https://github.com/googlefonts/morisawa-biz-ud-mincho/raw/main/fonts/ttf/BIZUDPMincho-Regular.ttf"), size=36)
 white = (255, 255, 255)
 black = (0, 0, 0)
 save_dir = Path("portal/src/assets/images")
