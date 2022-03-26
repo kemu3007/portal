@@ -404,7 +404,7 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
     const redirectTo &#x3D; this.route.snapshot.queryParamMap.get(&#x27;to&#x27;);
     if (redirectTo) {
-      this.router.navigate([redirectTo]);
+      this.router.navigate([redirectTo], { fragment: this.route.snapshot.fragment ?? undefined });
     }
   }
 

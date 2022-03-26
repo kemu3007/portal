@@ -198,7 +198,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -337,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:30</a></div>
                 </td>
             </tr>
 
@@ -380,7 +380,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -411,7 +411,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -436,7 +436,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -465,7 +465,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:48</a></div>
                                 </td>
                             </tr>
 
@@ -487,7 +487,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:49</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:59</a></div>
                                 </td>
                             </tr>
 
@@ -505,6 +505,7 @@ import { LogDetail } from &#x27;../models&#x27;;
 import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
 import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
 import { MarkedService } from &#x27;@app/shared/markdown/marked.service&#x27;;
+import { interval, take } from &#x27;rxjs&#x27;;
 
 @Component({
   selector: &#x27;app-blog-detail&#x27;,
@@ -532,6 +533,15 @@ export class LogDetailComponent implements OnInit {
       this.article &#x3D; article;
       this.breadcrumbService.breadcrumb &#x3D; &#x60;/log/${this.article.title}&#x60;;
       this.html &#x3D; this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));
+      if (this.route.snapshot.fragment) {
+        interval(100)
+          .pipe(take(1))
+          .subscribe((_) &#x3D;&gt; {
+            window.location.replace(
+              &#x60;${window.location.origin}${window.location.pathname}#${this.route.snapshot.fragment}&#x60;
+            );
+          });
+      }
     });
   }
 

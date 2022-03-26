@@ -198,7 +198,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -337,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:30</a></div>
                 </td>
             </tr>
 
@@ -380,7 +380,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -411,7 +411,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:18</a></div>
                         </td>
                     </tr>
 
@@ -436,7 +436,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -465,7 +465,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:48</a></div>
                                 </td>
                             </tr>
 
@@ -487,7 +487,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:49</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:59</a></div>
                                 </td>
                             </tr>
 
@@ -505,6 +505,7 @@ import { ArticleDetail } from &#x27;../models&#x27;;
 import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
 import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
 import { MarkedService } from &#x27;@app/shared/markdown/marked.service&#x27;;
+import { interval, take } from &#x27;rxjs&#x27;;
 
 @Component({
   selector: &#x27;app-blog-detail&#x27;,
@@ -532,6 +533,15 @@ export class BlogDetailComponent implements OnInit {
       this.article &#x3D; article;
       this.breadcrumbService.breadcrumb &#x3D; &#x60;/blog/${this.article.title}&#x60;;
       this.html &#x3D; this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));
+      if (this.route.snapshot.fragment) {
+        interval(100)
+          .pipe(take(1))
+          .subscribe((_) &#x3D;&gt; {
+            window.location.replace(
+              &#x60;${window.location.origin}${window.location.pathname}#${this.route.snapshot.fragment}&#x60;
+            );
+          });
+      }
     });
   }
 
@@ -567,7 +577,7 @@ export class BlogDetailComponent implements OnInit {
       &lt;hr /&gt;
       &lt;div [innerHTML]&#x3D;&quot;html&quot;&gt;&lt;/div&gt;
       &lt;hr class&#x3D;&quot;mt-5&quot; /&gt;
-      &lt;h3 fragment&#x3D;&quot;comments&quot;&gt;comments&lt;/h3&gt;
+      &lt;h3 id&#x3D;&quot;comments&quot;&gt;comments&lt;/h3&gt;
       &lt;div class&#x3D;&quot;card&quot; *ngFor&#x3D;&quot;let comment of article.comments&quot;&gt;
         &lt;div class&#x3D;&quot;card-body&quot;&gt;
           &lt;div class&#x3D;&quot;row&quot;&gt;
@@ -579,7 +589,6 @@ export class BlogDetailComponent implements OnInit {
           {{ comment.body }}
         &lt;/div&gt;
       &lt;/div&gt;
-      &lt;app-amazon-ads type&#x3D;&quot;list&quot;&gt;&lt;/app-amazon-ads&gt;
       &lt;p&gt;
         コメントはこちらから
         &lt;a [href]&#x3D;&quot;article.html_url&quot;&gt;{{ article.html_url }}&lt;/a
@@ -637,7 +646,7 @@ export class BlogDetailComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css" /><div class="container-fluid">  <div class="row mt-3" *ngIf="article">    <div class="col-md-8">      <h2>{{ article.title }}</h2>      <div class="d-flex justify-content-between">        <p>{{ article.created_at | date: \'yyyy.MM.dd hh:mm\' }}</p>        <app-tweet-btn></app-tweet-btn>      </div>      <hr />      <div [innerHTML]="html"></div>      <hr class="mt-5" />      <h3 fragment="comments">comments</h3>      <div class="card" *ngFor="let comment of article.comments">        <div class="card-body">          <div class="row">            <img [src]="comment.user.avatar_url" style="width: 50px" />            <a style="display: contents" [href]="comment.user.html_url">{{ comment.user.login }}</a            ><br />          </div>          <hr />          {{ comment.body }}        </div>      </div>      <app-amazon-ads type="list"></app-amazon-ads>      <p>        コメントはこちらから        <a [href]="article.html_url">{{ article.html_url }}</a        ><br />        ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。      </p>    </div>    <div class="col-md-4">      <app-amazon-ads *ngFor="let _ of [].constructor(adsLength)" type="box"></app-amazon-ads>      <!-- <ng2-adsense        *ngFor="let _ of [].constructor(adsLength)"        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></ng2-adsense> -->    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/default.min.css" /><div class="container-fluid">  <div class="row mt-3" *ngIf="article">    <div class="col-md-8">      <h2>{{ article.title }}</h2>      <div class="d-flex justify-content-between">        <p>{{ article.created_at | date: \'yyyy.MM.dd hh:mm\' }}</p>        <app-tweet-btn></app-tweet-btn>      </div>      <hr />      <div [innerHTML]="html"></div>      <hr class="mt-5" />      <h3 id="comments">comments</h3>      <div class="card" *ngFor="let comment of article.comments">        <div class="card-body">          <div class="row">            <img [src]="comment.user.avatar_url" style="width: 50px" />            <a style="display: contents" [href]="comment.user.html_url">{{ comment.user.login }}</a            ><br />          </div>          <hr />          {{ comment.body }}        </div>      </div>      <p>        コメントはこちらから        <a [href]="article.html_url">{{ article.html_url }}</a        ><br />        ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。      </p>    </div>    <div class="col-md-4">      <app-amazon-ads *ngFor="let _ of [].constructor(adsLength)" type="box"></app-amazon-ads>      <!-- <ng2-adsense        *ngFor="let _ of [].constructor(adsLength)"        style="display: block"        adFormat="fluid"        slot="9091938102"        layoutKey="-ef+6k-30-ac+ty"      ></ng2-adsense> -->    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BlogDetailComponent'};
