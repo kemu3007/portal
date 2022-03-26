@@ -18,7 +18,7 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
     const redirectTo = this.route.snapshot.queryParamMap.get('to');
     if (redirectTo) {
-      this.router.navigate([redirectTo]);
+      this.router.navigate([redirectTo], { fragment: this.route.snapshot.fragment ?? undefined });
     }
   }
 

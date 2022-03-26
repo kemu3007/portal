@@ -5,6 +5,7 @@ import { ArticleDetail } from '../models';
 import { MessageService } from '@app/shared/message/message.service';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { MarkedService } from '@app/shared/markdown/marked.service';
+import { interval, take } from 'rxjs';
 
 @Component({
   selector: 'app-blog-detail',
@@ -32,6 +33,15 @@ export class BlogDetailComponent implements OnInit {
       this.article = article;
       this.breadcrumbService.breadcrumb = `/blog/${this.article.title}`;
       this.html = this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));
+      if (this.route.snapshot.fragment) {
+        interval(100)
+          .pipe(take(1))
+          .subscribe((_) => {
+            window.location.replace(
+              `${window.location.origin}${window.location.pathname}#${this.route.snapshot.fragment}`
+            );
+          });
+      }
     });
   }
 

@@ -63,3 +63,8 @@ dist/
 venv/
 
 articles.json
+
+portal/src/blog/
+portal/src/log/
+portal/src/tools/
+portal/src/contact/

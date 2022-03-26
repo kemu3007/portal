@@ -10,7 +10,7 @@
       <hr />
       <div [innerHTML]="html"></div>
       <hr class="mt-5" />
-      <h3 fragment="comments">comments</h3>
+      <h3 id="comments">comments</h3>
       <div class="card" *ngFor="let comment of article.comments">
         <div class="card-body">
           <div class="row">
@@ -22,7 +22,6 @@
           {{ comment.body }}
         </div>
       </div>
-      <app-amazon-ads type="list"></app-amazon-ads>
       <p>
         コメントはこちらから
         <a [href]="article.html_url">{{ article.html_url }}</a
