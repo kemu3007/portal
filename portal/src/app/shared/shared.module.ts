@@ -40,7 +40,7 @@ import { MdescapePipe } from './pipes/mdescape.pipe';
     HttpClientModule,
     AmazonAdsComponent,
     ReactiveFormsModule,
-    MdescapePipe
+    MdescapePipe,
   ],
 })
 export class SharedModule {}

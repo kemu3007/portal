@@ -27,7 +27,8 @@ export class MarkedService {
       `;
     };
     renderer.image = (href) => `<img src=${href} loading=lazy />`;
-    renderer.link = (href, title, text) => `<a href=${href} class="text-muted">${text}</a>`;
+    renderer.link = (href, title, text) =>
+      `<a href=${href} class="text-muted">${text}<i class="bi bi-link-45deg"></i></a>`;
     this.marked.setOptions({
       renderer,
       highlight: function (code, lang) {
