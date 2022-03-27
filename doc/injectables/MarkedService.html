@@ -208,7 +208,8 @@ export class MarkedService {
       &#x60;;
     };
     renderer.image &#x3D; (href) &#x3D;&gt; &#x60;&lt;img src&#x3D;${href} loading&#x3D;lazy /&gt;&#x60;;
-    renderer.link &#x3D; (href, title, text) &#x3D;&gt; &#x60;&lt;a href&#x3D;${href} class&#x3D;&quot;text-muted&quot;&gt;${text}&lt;/a&gt;&#x60;;
+    renderer.link &#x3D; (href, title, text) &#x3D;&gt;
+      &#x60;&lt;a href&#x3D;${href} class&#x3D;&quot;text-muted&quot;&gt;${text}&lt;i class&#x3D;&quot;bi bi-link-45deg&quot;&gt;&lt;/i&gt;&lt;/a&gt;&#x60;;
     this.marked.setOptions({
       renderer,
       highlight: function (code, lang) {
