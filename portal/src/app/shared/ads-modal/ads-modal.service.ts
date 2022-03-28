@@ -9,7 +9,7 @@ export class AdsModalService {
   constructor(private modalService: NgbModal) {}
 
   open() {
-    this.modalService.open(this.modal, { size: 'lg', centered: true });
+    this.modalService.open(this.modal, { size: 'lg', centered: true, backdrop: 'static' });
   }
 
   close() {
