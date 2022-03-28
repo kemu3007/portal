@@ -1,5 +1,11 @@
 [
   {
+    "label": "Base64 Encoder/Decoder",
+    "link": "/tools/base64",
+    "description": "Base64フォーマットのデータをエンコード/デコードします。",
+    "external": false
+  },
+  {
     "label": "JSON Formatter",
     "link": "/tools/jsonFormatter",
     "description": "未整形のJSONデータを整形します。",

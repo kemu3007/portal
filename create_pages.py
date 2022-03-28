@@ -64,6 +64,12 @@ if __name__ == "__main__":
     path = Path("portal/src/tools/jsonFormatter")
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(formatter_html)
+    # Base64 Encoder/Decoder
+    base64_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/base64.png").replace("page_title", "kemu tools | Base64 Encoder/Decoder").replace("page_description", "文字列データをBase64に、Base64データを文字列に変換します。")
+    base64_html = base64_html.replace("page_contents", "<h2>Base64 Encoder/Decoder</h2> 文字列データをBase64に、Base64データを文字列に変換します。 <input /> <textarea></textarea>")
+    path = Path("portal/src/tools/base64")
+    path.mkdir(exist_ok=True)
+    (path / "index.html").write_text(base64_html)
     # contact
     contact_html = base_html.replace("page_image", "https://portal.kemu.site/assets/images/contact.png").replace("page_title", "Contact").replace("page_description", "Contact")
     contact_html = contact_html.replace("page_contents", "仕事の依頼などは以下のメールアドレスにお願いします。セールスメールはお控えください。")

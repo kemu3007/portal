@@ -1,0 +1,44 @@
+<div class="container mt-3 row">
+  <div class="col-md-8">
+    <h2>Base64 Encoder/Decoder</h2>
+    <div class="my-3">文字列データをBase64に、Base64データを文字列に変換します。</div>
+    <ul ngbNav class="nav-tabs" #nav="ngbNav">
+      <li ngbNavItem>
+        <a ngbNavLink>Encoder</a>
+        <ng-template ngbNavContent>
+          <form [formGroup]="form" class="mt-3">
+            <label>変換する文字列</label>
+            <textarea class="form-control" formControlName="rawData" rows="10"></textarea>
+          </form>
+          <hr class="mb-3" />
+          Base64<button class="ms-1 btn btn-sm" (click)="copy(encodedData)"><i class="bi bi-stickies"></i></button>
+          <pre>{{ encodedData }}</pre>
+        </ng-template>
+      </li>
+      <li ngbNavItem>
+        <a ngbNavLink>Decoder</a>
+        <ng-template ngbNavContent>
+          <form [formGroup]="form" class="mt-3">
+            <label>Base64</label>
+            <textarea class="form-control" formControlName="base64Data" rows="10"></textarea>
+          </form>
+          <hr class="mb-3" />
+          変換後の文字列<button class="ms-1 btn btn-sm" (click)="copy(decodedData)">
+            <i class="bi bi-stickies"></i>
+          </button>
+          <pre>{{ decodedData }}</pre>
+          変換後の文字列(マルチバイト文字を含む場合)<button class="ms-1 btn btn-sm" (click)="copy(decodeMultiByte)">
+            <i class="bi bi-stickies"></i>
+          </button>
+          <pre>{{ decodeMultiByte }}</pre>
+        </ng-template>
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav"></div>
+  </div>
+  <div class="col-md-4">
+    <app-amazon-ads type="box"></app-amazon-ads>
+    <app-amazon-ads type="box"></app-amazon-ads>
+    <app-amazon-ads type="box"></app-amazon-ads>
+  </div>
+</div>

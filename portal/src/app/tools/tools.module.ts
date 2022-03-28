@@ -9,6 +9,7 @@ import { AmazonAssociateComponent } from './amazon-associate/amazon-associate.co
 import { JsonTyperComponent } from './json-typer/json-typer.component';
 import { RealtimeComponent } from './realtime/realtime.component';
 import { JsonFormatterComponent } from './json-formatter/json-formatter.component';
+import { Base64Component } from './base64/base64.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { JsonFormatterComponent } from './json-formatter/json-formatter.componen
     JsonTyperComponent,
     RealtimeComponent,
     JsonFormatterComponent,
+    Base64Component,
   ],
   imports: [CommonModule, SharedModule, ToolsRoutingModule],
 })

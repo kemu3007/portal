@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TweetBtnComponent } from './tweet-btn/tweet-btn.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { MessageComponent } from './message/message.component';
 import { LoadingComponent } from './loading/loading.component';
 import { AdsenseModule } from 'ng2-adsense';
@@ -29,6 +29,7 @@ import { MdescapePipe } from './pipes/mdescape.pipe';
     RouterModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgbNavModule,
   ],
   exports: [
     TweetBtnComponent,
