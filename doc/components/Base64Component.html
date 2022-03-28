@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  UserInfoComponent</li>
+  Base64Component</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -52,6 +52,9 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -61,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/tools/user-info/user-info.component.ts</code>
+    <code>src/app/tools/base64/base64.component.ts</code>
 </p>
 
 
@@ -92,15 +95,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-user-info</code></td>
+                <td class="col-md-9"><code>app-base64</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./base64.component.scss</code></td>
+            </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./user-info.component.html</code></td>
+                <td class="col-md-9"><code>./base64.component.html</code></td>
             </tr>
 
 
@@ -127,11 +134,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Optional</span>
-                                <a href="#data" >data</a>
-                            </li>
-                            <li>
-                                <a href="#state" >state</a>
+                                <a href="#form" >form</a>
                             </li>
                         </ul>
                     </td>
@@ -146,7 +149,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#copyAddress" >copyAddress</a>
+                                <a href="#copy" >copy</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
@@ -168,7 +171,13 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#adsLength" >adsLength</a>
+                                    <a href="#encodedData" >encodedData</a>
+                                </li>
+                                <li>
+                                    <a href="#decodedData" >decodedData</a>
+                                </li>
+                                <li>
+                                    <a href="#decodeMultiByte" >decodeMultiByte</a>
                                 </li>
                             </ul>
                         </td>
@@ -183,12 +192,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userInfoService: <a href="../injectables/UserInfoService.html" target="_self">UserInfoService</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, breadCrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>)</code>
+<code>constructor(messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/tools/base64/base64.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -206,58 +215,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>userInfoService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/UserInfoService.html" target="_self" >UserInfoService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
                                                         <td>messageService</td>
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>router</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>title</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>breadCrumbService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/BreadcrumbService.html" target="_self" >BreadcrumbService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -287,24 +248,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="copyAddress"></a>
+                    <a name="copy"></a>
                     <span class="name">
-                        <span ><b>copyAddress</b></span>
-                        <a href="#copyAddress"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>copy</b></span>
+                        <a href="#copy"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>copyAddress(address: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>copy(text: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/tools/base64/base64.component.ts:22</a></div>
                 </td>
             </tr>
 
@@ -325,7 +286,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>address</td>
+                                    <td>text</td>
                                     <td>
                                                 <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                     </td>
@@ -372,8 +333,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/tools/base64/base64.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -399,48 +360,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="data"></a>
+                    <a name="form"></a>
                     <span class="name">
-                            <span class="modifier">Optional</span>
-                        <span ><b>data</b></span>
-                        <a href="#data"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>form</b></span>
+                        <a href="#form"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/UserInfo.html" target="_self" >UserInfo</a></code>
-
+                        <i>Default value : </i><code>new FormGroup({
+    rawData: new FormControl(&#x27;&#x27;),
+    base64Data: new FormControl(&#x27;&#x27;),
+  })</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:16</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="state"></a>
-                    <span class="name">
-                        <span ><b>state</b></span>
-                        <a href="#state"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new UserInfoState()</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/tools/base64/base64.component.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -457,19 +394,63 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="adsLength"></a>
-                        <span class="name"><b>adsLength</b><a href="#adsLength"><span class="icon ion-ios-link"></span></a></span>
+                        <a name="encodedData"></a>
+                        <span class="name"><b>encodedData</b><a href="#encodedData"><span class="icon ion-ios-link"></span></a></span>
                     </td>
                 </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>adsLength()</code></span>
+                        <span class="accessor"><b>get</b><code>encodedData()</code></span>
                     </td>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:46</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/tools/base64/base64.component.ts:27</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="decodedData"></a>
+                        <span class="name"><b>decodedData</b><a href="#decodedData"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>decodedData()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/tools/base64/base64.component.ts:39</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="decodeMultiByte"></a>
+                        <span class="name"><b>decodeMultiByte</b><a href="#decodeMultiByte"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>decodeMultiByte()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/tools/base64/base64.component.ts:47</a></div>
                                 </td>
                             </tr>
 
@@ -481,138 +462,120 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { Title } from &#x27;@angular/platform-browser&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
 import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
-import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
-import { catchError, NEVER } from &#x27;rxjs&#x27;;
-import { UserInfo } from &#x27;./user-info&#x27;;
-import { UserInfoState } from &#x27;./user-info.repository&#x27;;
-import { UserInfoService } from &#x27;./user-info.service&#x27;;
+import { FormControl, FormGroup, persistControl } from &#x27;@ngneat/reactive-forms&#x27;;
 
 @Component({
-  selector: &#x27;app-user-info&#x27;,
-  templateUrl: &#x27;./user-info.component.html&#x27;,
+  selector: &#x27;app-base64&#x27;,
+  templateUrl: &#x27;./base64.component.html&#x27;,
+  styleUrls: [&#x27;./base64.component.scss&#x27;],
 })
-export class UserInfoComponent implements OnInit {
-  data?: UserInfo;
-  state &#x3D; new UserInfoState();
+export class Base64Component implements OnInit {
+  form &#x3D; new FormGroup({
+    rawData: new FormControl(&#x27;&#x27;),
+    base64Data: new FormControl(&#x27;&#x27;),
+  });
 
-  constructor(
-    private userInfoService: UserInfoService,
-    private messageService: MessageService,
-    private router: Router,
-    title: Title,
-    breadCrumbService: BreadcrumbService
-  ) {
-    title.setTitle(&#x27;kemu tools | IP Address Checker&#x27;);
-    breadCrumbService.breadcrumb &#x3D; &#x27;/tools/IP Address Checker&#x27;;
+  constructor(private messageService: MessageService) {}
+
+  ngOnInit() {
+    persistControl(this.form, &#x27;base64&#x27;, {}).subscribe();
   }
 
-  ngOnInit(): void {
-    this.userInfoService
-      .get()
-      .pipe(
-        catchError(() &#x3D;&gt; {
-          this.messageService.pushMessage({ type: &#x27;danger&#x27;, body: &#x27;ユーザ情報の取得に失敗しました。maybe CORS 😉&#x27; });
-          this.router.navigate([&#x27;/tools&#x27;]);
-          return NEVER;
-        })
-      )
-      .subscribe((data) &#x3D;&gt; {
-        this.data &#x3D; data;
-        this.state.pushHistory(data);
-      });
+  copy(text: string) {
+    window.navigator.clipboard.writeText(text);
+    this.messageService.pushMessage({ type: &#x27;info&#x27;, body: &#x27;変換後のデータをクリップボードにコピーしました。&#x27; });
   }
 
-  get adsLength(): number {
-    const hasMd &#x3D; window.screen.width &gt;&#x3D; 768;
-    return hasMd ? 3 : 1;
+  get encodedData(): string {
+    try {
+      return btoa(this.form.controls.rawData.value);
+    } catch (_) {
+      try {
+        return btoa(encodeURIComponent(this.form.controls.rawData.value));
+      } catch (err: any) {
+        return err.toString();
+      }
+    }
   }
 
-  copyAddress(address: string) {
-    window.navigator.clipboard.writeText(address);
-    this.messageService.pushMessage({ type: &#x27;info&#x27;, body: &#x60;${address} をクリップボードにコピーしました&#x60; });
+  get decodedData(): string {
+    try {
+      return atob(this.form.controls.base64Data.value);
+    } catch (err: any) {
+      return err.toString();
+    }
+  }
+
+  get decodeMultiByte(): string {
+    try {
+      return decodeURIComponent(atob(this.form.controls.base64Data.value));
+    } catch (err: any) {
+      return err.toString();
+    }
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-3 row&quot; *ngIf&#x3D;&quot;data&quot;&gt;
-  &lt;div class&#x3D;&quot;col-sm-8&quot;&gt;
-    &lt;h2&gt;IP Address Checker&lt;/h2&gt;
-    &lt;div class&#x3D;&quot;d-flex justify-content-end&quot;&gt;&lt;app-tweet-btn&gt;&lt;/app-tweet-btn&gt;&lt;/div&gt;
-    &lt;div class&#x3D;&quot;mt-2&quot;&gt;
-      IP Address
-      &lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
-        &lt;h2&gt;{{ data.headers[&#x27;x-forwarded-for&#x27;] }}&lt;/h2&gt;
-        &lt;button class&#x3D;&quot;ms-1 btn&quot; (click)&#x3D;&quot;copyAddress(data.headers[&#x27;x-forwarded-for&#x27;])&quot;&gt;
-          &lt;i class&#x3D;&quot;bi bi-stickies&quot;&gt;&lt;/i&gt;
-        &lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;hr /&gt;
-    &lt;div class&#x3D;&quot;mt-2&quot;&gt;
-      その他の情報
-      &lt;table class&#x3D;&quot;table table-striped mt-3&quot;&gt;
-        &lt;thead&gt;
-          &lt;tr&gt;
-            &lt;th&gt;key&lt;/th&gt;
-            &lt;th&gt;value&lt;/th&gt;
-          &lt;/tr&gt;
-        &lt;/thead&gt;
-        &lt;tbody&gt;
-          &lt;tr&gt;
-            &lt;td&gt;user-agent&lt;/td&gt;
-            &lt;td&gt;{{ data.headers[&#x27;user-agent&#x27;] }}&lt;/td&gt;
-          &lt;/tr&gt;
-          &lt;tr&gt;
-            &lt;td&gt;sec-ch-ua-mobile&lt;/td&gt;
-            &lt;td&gt;{{ data.headers[&#x27;sec-ch-ua-mobile&#x27;] }}&lt;/td&gt;
-          &lt;/tr&gt;
-          &lt;tr&gt;
-            &lt;td&gt;sec-ch-ua-platform&lt;/td&gt;
-            &lt;td&gt;{{ data.headers[&#x27;sec-ch-ua-platform&#x27;] }}&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/div&gt;
-    &lt;hr /&gt;
-    &lt;div class&#x3D;&quot;mt-2 mb-3&quot;&gt;
-      過去の検査時のIPアドレス
-      &lt;button class&#x3D;&quot;btn btn-sm btn-danger&quot; (click)&#x3D;&quot;state.reset()&quot;&gt;&lt;i class&#x3D;&quot;bi bi-trash&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-      &lt;ul class&#x3D;&quot;list-group mt-2&quot;&gt;
-        &lt;li
-          class&#x3D;&quot;list-group-item&quot;
-          *ngFor&#x3D;&quot;let history of state.histories$ | async&quot;
-          [ngbTooltip]&#x3D;&quot;history.requestContext.time&quot;
-          placement&#x3D;&quot;top-start&quot;
-        &gt;
-          {{ history.headers[&#x27;x-forwarded-for&#x27;] }}
-          &lt;button class&#x3D;&quot;ms-1 btn btn-sm&quot; (click)&#x3D;&quot;copyAddress(history.headers[&#x27;x-forwarded-for&#x27;])&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-3 row&quot;&gt;
+  &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+    &lt;h2&gt;Base64 Encoder/Decoder&lt;/h2&gt;
+    &lt;div class&#x3D;&quot;my-3&quot;&gt;文字列データをBase64に、Base64データを文字列に変換します。&lt;/div&gt;
+    &lt;ul ngbNav class&#x3D;&quot;nav-tabs&quot; #nav&#x3D;&quot;ngbNav&quot;&gt;
+      &lt;li ngbNavItem&gt;
+        &lt;a ngbNavLink&gt;Encoder&lt;/a&gt;
+        &lt;ng-template ngbNavContent&gt;
+          &lt;form [formGroup]&#x3D;&quot;form&quot; class&#x3D;&quot;mt-3&quot;&gt;
+            &lt;label&gt;変換する文字列&lt;/label&gt;
+            &lt;textarea class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;rawData&quot; rows&#x3D;&quot;10&quot;&gt;&lt;/textarea&gt;
+          &lt;/form&gt;
+          &lt;hr class&#x3D;&quot;mb-3&quot; /&gt;
+          Base64&lt;button class&#x3D;&quot;ms-1 btn btn-sm&quot; (click)&#x3D;&quot;copy(encodedData)&quot;&gt;&lt;i class&#x3D;&quot;bi bi-stickies&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;pre&gt;{{ encodedData }}&lt;/pre&gt;
+        &lt;/ng-template&gt;
+      &lt;/li&gt;
+      &lt;li ngbNavItem&gt;
+        &lt;a ngbNavLink&gt;Decoder&lt;/a&gt;
+        &lt;ng-template ngbNavContent&gt;
+          &lt;form [formGroup]&#x3D;&quot;form&quot; class&#x3D;&quot;mt-3&quot;&gt;
+            &lt;label&gt;Base64&lt;/label&gt;
+            &lt;textarea class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;base64Data&quot; rows&#x3D;&quot;10&quot;&gt;&lt;/textarea&gt;
+          &lt;/form&gt;
+          &lt;hr class&#x3D;&quot;mb-3&quot; /&gt;
+          変換後の文字列&lt;button class&#x3D;&quot;ms-1 btn btn-sm&quot; (click)&#x3D;&quot;copy(decodedData)&quot;&gt;
             &lt;i class&#x3D;&quot;bi bi-stickies&quot;&gt;&lt;/i&gt;
           &lt;/button&gt;
-        &lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-    &lt;!-- &lt;ng2-adsense adFormat&#x3D;&quot;horizontal&quot;&gt;&lt;/ng2-adsense&gt; --&gt;
-    &lt;app-amazon-ads type&#x3D;&quot;list&quot;&gt;&lt;/app-amazon-ads&gt;
+          &lt;pre&gt;{{ decodedData }}&lt;/pre&gt;
+          変換後の文字列(マルチバイト文字を含む場合)&lt;button class&#x3D;&quot;ms-1 btn btn-sm&quot; (click)&#x3D;&quot;copy(decodeMultiByte)&quot;&gt;
+            &lt;i class&#x3D;&quot;bi bi-stickies&quot;&gt;&lt;/i&gt;
+          &lt;/button&gt;
+          &lt;pre&gt;{{ decodeMultiByte }}&lt;/pre&gt;
+        &lt;/ng-template&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div [ngbNavOutlet]&#x3D;&quot;nav&quot;&gt;&lt;/div&gt;
   &lt;/div&gt;
-  &lt;div class&#x3D;&quot;col-sm-4&quot;&gt;
-    &lt;!-- &lt;ng2-adsense
-      *ngFor&#x3D;&quot;let _ of [].constructor(adsLength)&quot;
-      style&#x3D;&quot;display: block&quot;
-      adFormat&#x3D;&quot;fluid&quot;
-      slot&#x3D;&quot;9091938102&quot;
-      layoutKey&#x3D;&quot;-ef+6k-30-ac+ty&quot;
-    &gt;&lt;/ng2-adsense&gt; --&gt;
-    &lt;app-amazon-ads type&#x3D;&quot;box&quot; *ngFor&#x3D;&quot;let _ of [].constructor(adsLength)&quot;&gt;&lt;/app-amazon-ads&gt;
+  &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+    &lt;app-amazon-ads type&#x3D;&quot;box&quot;&gt;&lt;/app-amazon-ads&gt;
+    &lt;app-amazon-ads type&#x3D;&quot;box&quot;&gt;&lt;/app-amazon-ads&gt;
+    &lt;app-amazon-ads type&#x3D;&quot;box&quot;&gt;&lt;/app-amazon-ads&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
 
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./base64.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">pre {
+  background-color: antiquewhite;
+  border-radius: 10px;
+}
+</code></pre>
+    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -639,10 +602,10 @@ export class UserInfoComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container mt-3 row" *ngIf="data">  <div class="col-sm-8">    <h2>IP Address Checker</h2>    <div class="d-flex justify-content-end"><app-tweet-btn></app-tweet-btn></div>    <div class="mt-2">      IP Address      <div class="d-flex justify-content-center">        <h2>{{ data.headers[\'x-forwarded-for\'] }}</h2>        <button class="ms-1 btn" (click)="copyAddress(data.headers[\'x-forwarded-for\'])">          <i class="bi bi-stickies"></i>        </button>      </div>    </div>    <hr />    <div class="mt-2">      その他の情報      <table class="table table-striped mt-3">        <thead>          <tr>            <th>key</th>            <th>value</th>          </tr>        </thead>        <tbody>          <tr>            <td>user-agent</td>            <td>{{ data.headers[\'user-agent\'] }}</td>          </tr>          <tr>            <td>sec-ch-ua-mobile</td>            <td>{{ data.headers[\'sec-ch-ua-mobile\'] }}</td>          </tr>          <tr>            <td>sec-ch-ua-platform</td>            <td>{{ data.headers[\'sec-ch-ua-platform\'] }}</td>          </tr>        </tbody>      </table>    </div>    <hr />    <div class="mt-2 mb-3">      過去の検査時のIPアドレス      <button class="btn btn-sm btn-danger" (click)="state.reset()"><i class="bi bi-trash"></i></button>      <ul class="list-group mt-2">        <li          class="list-group-item"          *ngFor="let history of state.histories$ | async"          [ngbTooltip]="history.requestContext.time"          placement="top-start"        >          {{ history.headers[\'x-forwarded-for\'] }}          <button class="ms-1 btn btn-sm" (click)="copyAddress(history.headers[\'x-forwarded-for\'])">            <i class="bi bi-stickies"></i>          </button>        </li>      </ul>    </div>    <!-- <ng2-adsense adFormat="horizontal"></ng2-adsense> -->    <app-amazon-ads type="list"></app-amazon-ads>  </div>  <div class="col-sm-4">    <!-- <ng2-adsense      *ngFor="let _ of [].constructor(adsLength)"      style="display: block"      adFormat="fluid"      slot="9091938102"      layoutKey="-ef+6k-30-ac+ty"    ></ng2-adsense> -->    <app-amazon-ads type="box" *ngFor="let _ of [].constructor(adsLength)"></app-amazon-ads>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-3 row">  <div class="col-md-8">    <h2>Base64 Encoder/Decoder</h2>    <div class="my-3">文字列データをBase64に、Base64データを文字列に変換します。</div>    <ul ngbNav class="nav-tabs" #nav="ngbNav">      <li ngbNavItem>        <a ngbNavLink>Encoder</a>        <ng-template ngbNavContent>          <form [formGroup]="form" class="mt-3">            <label>変換する文字列</label>            <textarea class="form-control" formControlName="rawData" rows="10"></textarea>          </form>          <hr class="mb-3" />          Base64<button class="ms-1 btn btn-sm" (click)="copy(encodedData)"><i class="bi bi-stickies"></i></button>          <pre>{{ encodedData }}</pre>        </ng-template>      </li>      <li ngbNavItem>        <a ngbNavLink>Decoder</a>        <ng-template ngbNavContent>          <form [formGroup]="form" class="mt-3">            <label>Base64</label>            <textarea class="form-control" formControlName="base64Data" rows="10"></textarea>          </form>          <hr class="mb-3" />          変換後の文字列<button class="ms-1 btn btn-sm" (click)="copy(decodedData)">            <i class="bi bi-stickies"></i>          </button>          <pre>{{ decodedData }}</pre>          変換後の文字列(マルチバイト文字を含む場合)<button class="ms-1 btn btn-sm" (click)="copy(decodeMultiByte)">            <i class="bi bi-stickies"></i>          </button>          <pre>{{ decodeMultiByte }}</pre>        </ng-template>      </li>    </ul>    <div [ngbNavOutlet]="nav"></div>  </div>  <div class="col-md-4">    <app-amazon-ads type="box"></app-amazon-ads>    <app-amazon-ads type="box"></app-amazon-ads>    <app-amazon-ads type="box"></app-amazon-ads>  </div></div></div>'
     var COMPONENTS = [{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'UserInfoComponent'};
+    var ACTUAL_COMPONENT = {'name': 'Base64Component'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -688,7 +651,7 @@ export class UserInfoComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'UserInfoComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'Base64Component.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
