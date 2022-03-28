@@ -5,6 +5,7 @@ import { LoadingService } from './shared/loading/loading.service';
 import { MessageService } from './shared/message/message.service';
 import { BreadcrumbService } from './shared/nav/breadcrumb.service';
 import version from '@assets/version.json';
+import { AdsModalService } from './shared/ads-modal/ads-modal.service';
 
 @Component({
   selector: 'app-root',
@@ -18,12 +19,14 @@ export class AppComponent {
     { name: 'log', to: '/log' },
     { name: 'contact', to: '/contact' },
   ];
+  adsCount = 0;
 
   constructor(
     titleService: Title,
     router: Router,
     messageService: MessageService,
     breadcrumbService: BreadcrumbService,
+    private adsModalService: AdsModalService,
     private loadingService: LoadingService
   ) {
     titleService.setTitle('kemu portal');
@@ -33,6 +36,7 @@ export class AppComponent {
       } else if (event instanceof NavigationEnd) {
         loadingService.loading = false;
         breadcrumbService.breadcrumb = event.url;
+        this.displayOrWaitAds();
       } else if (event instanceof NavigationCancel || event instanceof NavigationError) {
         messageService.pushMessage({
           type: 'danger',
@@ -50,5 +54,13 @@ export class AppComponent {
 
   get releaseDate() {
     return version['last-release'];
+  }
+
+  displayOrWaitAds() {
+    if (this.adsCount === 3) {
+      this.adsModalService.open();
+      this.adsCount = 0;
+    }
+    this.adsCount += 1;
   }
 }

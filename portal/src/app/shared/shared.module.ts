@@ -13,6 +13,7 @@ import { AmazonAdsComponent } from './amazon-ads/amazon-ads.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MdescapePipe } from './pipes/mdescape.pipe';
 import { AdsComponent } from './ads/ads.component';
+import { AdsModalComponent } from './ads-modal/ads-modal.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AdsComponent } from './ads/ads.component';
     AmazonAdsComponent,
     MdescapePipe,
     AdsComponent,
+    AdsModalComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +47,7 @@ import { AdsComponent } from './ads/ads.component';
     ReactiveFormsModule,
     MdescapePipe,
     AdsComponent,
+    AdsModalComponent,
   ],
 })
 export class SharedModule {}
