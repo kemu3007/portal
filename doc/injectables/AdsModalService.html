@@ -185,8 +185,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/shared/ads-modal/ads-modal.service.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/shared/ads-modal/ads-modal.service.ts:17</a></div>
                 </td>
             </tr>
 
@@ -289,7 +289,9 @@ export class AdsModalService {
   constructor(private modalService: NgbModal) {}
 
   open() {
-    this.modalService.open(this.modal, { size: &#x27;lg&#x27;, centered: true, backdrop: &#x27;static&#x27; });
+    if (localStorage.getItem(&#x27;mode&#x27;) !&#x3D;&#x3D; &#x27;dev&#x27;) {
+      this.modalService.open(this.modal, { size: &#x27;lg&#x27;, centered: true, backdrop: &#x27;static&#x27; });
+    }
   }
 
   close() {
