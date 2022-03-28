@@ -1,5 +1,5 @@
-<div class="list-group" id="news">
-  <div *ngFor="let item of articles; index as i" class="text-start">
+<div class="list-group border" id="news">
+  <div *ngFor="let item of articles; index as i" class="text-start mt-1 ms-1">
     <span class="text-muted">{{ item.value.created_at | date: 'yyyy.MM.dd' }}</span>
     <a class="list-group-item border-0" [routerLink]="['/blog', item.key]">
       <span *ngIf="i === 0" class="text-danger">new! </span>{{ item.value.title }}
