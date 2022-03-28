@@ -1,3 +1,8 @@
 :host ::ng-deep img {
   max-width: 100%;
 }
+
+:host ::ng-deep pre > code {
+  background-color: antiquewhite;
+  border-radius: 10px;
+}
