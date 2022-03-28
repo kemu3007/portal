@@ -55,17 +55,9 @@
         </li>
       </ul>
     </div>
-    <!-- <ng2-adsense adFormat="horizontal"></ng2-adsense> -->
-    <app-amazon-ads type="list"></app-amazon-ads>
+    <app-ads type="list"></app-ads>
   </div>
   <div class="col-sm-4">
-    <!-- <ng2-adsense
-      *ngFor="let _ of [].constructor(adsLength)"
-      style="display: block"
-      adFormat="fluid"
-      slot="9091938102"
-      layoutKey="-ef+6k-30-ac+ty"
-    ></ng2-adsense> -->
-    <app-amazon-ads type="box" *ngFor="let _ of [].constructor(adsLength)"></app-amazon-ads>
+    <app-ads type="box" [count]="adsLength"></app-ads>
   </div>
 </div>

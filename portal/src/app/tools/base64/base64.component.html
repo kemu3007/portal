@@ -1,7 +1,8 @@
 <div class="container-fluid mt-3 row">
   <div class="col-md-8">
     <h2>Base64 Encoder/Decoder</h2>
-    <div class="my-3">文字列データをBase64に、Base64データを文字列に変換します。</div>
+    <div class="d-flex justify-content-end"><app-tweet-btn></app-tweet-btn></div>
+    <div class="mb-3">文字列データをBase64に、Base64データを文字列に変換します。</div>
     <ul ngbNav class="nav-tabs" #nav="ngbNav">
       <li ngbNavItem>
         <a ngbNavLink>Encoder</a>
@@ -35,10 +36,9 @@
       </li>
     </ul>
     <div [ngbNavOutlet]="nav"></div>
+    <app-ads type="list"></app-ads>
   </div>
   <div class="col-md-4">
-    <app-amazon-ads type="box"></app-amazon-ads>
-    <app-amazon-ads type="box"></app-amazon-ads>
-    <app-amazon-ads type="box"></app-amazon-ads>
+    <app-ads type="box" [count]="3"></app-ads>
   </div>
 </div>

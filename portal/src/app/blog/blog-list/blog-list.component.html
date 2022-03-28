@@ -32,20 +32,12 @@
           </div>
         </a>
         <div class="card mt-1" *ngIf="(i + 1) % 3 === 0">
-          <!-- <ng2-adsense adFormat="horizontal"></ng2-adsense> -->
-          <app-amazon-ads type="list"></app-amazon-ads>
+          <app-ads type="list"></app-ads>
         </div>
       </div>
     </div>
     <div class="col-md-4">
-      <app-amazon-ads *ngFor="let _ of [].constructor(adsLength)" type="box"></app-amazon-ads>
-      <!-- <ng2-adsense
-        *ngFor="let _ of [].constructor(adsLength)"
-        style="display: block"
-        adFormat="fluid"
-        slot="9091938102"
-        layoutKey="-ef+6k-30-ac+ty"
-      ></ng2-adsense> -->
+      <app-ads type="box" [count]="adsLength"></app-ads>
     </div>
   </div>
 </div>
