@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { MessageService } from '@app/shared/message/message.service';
+import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
 
 @Component({
@@ -13,7 +15,10 @@ export class Base64Component implements OnInit {
     base64Data: new FormControl(''),
   });
 
-  constructor(private messageService: MessageService) {}
+  constructor(title: Title, breadCrumbService: BreadcrumbService, private messageService: MessageService) {
+    title.setTitle('kemu tools | Base64 Encoder/Decoder');
+    breadCrumbService.breadcrumb = '/tools/Base64 Encoder/Decoder';
+  }
 
   ngOnInit() {
     persistControl(this.form, 'base64', {}).subscribe();
