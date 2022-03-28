@@ -6,6 +6,7 @@ export interface Label {
 export interface Article {
   title: string;
   body: string;
+  created_at: string;
   labels: Label[];
 }
 

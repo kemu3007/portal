@@ -26,6 +26,7 @@
                   {{ label.name }}
                 </p>
               </div>
+              <div class="col-12">{{ articles[key].created_at | date: 'yyyy.MM.dd' }}</div>
             </div>
             <hr class="mt-0" />
             <p class="card-text">{{ articles[key].body | mdescape }}</p>
