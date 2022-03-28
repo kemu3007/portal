@@ -41,4 +41,8 @@ export class JsonFormatterComponent implements OnInit {
     window.navigator.clipboard.writeText(this.result);
     this.messageService.pushMessage({ type: 'info', body: '整形後のデータをクリップボードにコピーしました。' });
   }
+
+  get jsonBytes() {
+    return new TextEncoder().encode(this.result).length;
+  }
 }
