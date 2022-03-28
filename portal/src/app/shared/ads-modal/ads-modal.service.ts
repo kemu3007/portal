@@ -9,7 +9,9 @@ export class AdsModalService {
   constructor(private modalService: NgbModal) {}
 
   open() {
-    this.modalService.open(this.modal, { size: 'lg', centered: true, backdrop: 'static' });
+    if (localStorage.getItem('mode') !== 'dev') {
+      this.modalService.open(this.modal, { size: 'lg', centered: true, backdrop: 'static' });
+    }
   }
 
   close() {
