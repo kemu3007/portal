@@ -20,7 +20,7 @@ def export_issues(label:str, dir: Path, extract_photo: bool=False):
         issue_dict[issue["id"]] = {
             "title": issue["title"],
             "created_at": issue["created_at"],
-            "body": re.sub(r"#|`|\n|\r|[|]|(http.*)", "", issue["body"])[:150],
+            "body": re.sub(r"#|`|\n|\r|[|]|\(http.*\)", "", issue["body"])[:150],
             "labels": [{"name": label["name"], "color": label["color"]} for label in issue["labels"]]
         }
         if extract_photo:
