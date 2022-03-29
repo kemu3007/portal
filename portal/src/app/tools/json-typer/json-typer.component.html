@@ -33,11 +33,11 @@
           <textarea id="json" class="form-control" rows="10" formControlName="json"></textarea>
         </div>
         <div class="mt-3">
-          <button class="btn btn-secondary" [disabled]="!form.valid">TYPE</button>
+          <button matRipple class="btn btn-secondary" [disabled]="!form.valid">TYPE</button>
         </div>
       </form>
       <hr />
-      RESULT <button class="ms-1 btn btn-sm" (click)="copy()"><i class="bi bi-stickies"></i></button>
+      RESULT <button matRipple class="ms-1 btn btn-sm" (click)="copy()"><i class="bi bi-stickies"></i></button>
       <p class="text-danger">{{ error }}</p>
       <pre class="mt-3" style="background-color: #f6f8fa; border-radius: 10px">{{ resultText }}</pre>
       <app-ads type="list"></app-ads>

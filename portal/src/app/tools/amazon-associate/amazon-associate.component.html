@@ -13,7 +13,7 @@
           <label for="associateId" class="form-label">Associate ID</label>
           <div class="input-group">
             <input class="form-control" id="associateId" formControlName="associateId" />
-            <button class="btn btn-outline-secondary" (click)="useDefault()">DEFAULT</button>
+            <button matRipple class="btn btn-outline-secondary" (click)="useDefault()">DEFAULT</button>
           </div>
         </div>
         <div class="mt-3">
@@ -26,13 +26,14 @@
           />
         </div>
         <div class="mt-3">
-          <button class="btn btn-secondary" (click)="generate()" [disabled]="!form.valid">GENERATE</button>
+          <button matRipple class="btn btn-secondary" (click)="generate()" [disabled]="!form.valid">GENERATE</button>
         </div>
       </form>
       <hr />
       <div *ngIf="result">
         <div class="mt-3" style="overflow-wrap: anywhere">
-          RESULT<button class="ms-1 btn btn-sm" (click)="copy(result)"><i class="bi bi-stickies"></i></button><br />
+          RESULT<button matRipple class="ms-1 btn btn-sm" (click)="copy(result)"><i class="bi bi-stickies"></i></button
+          ><br />
           <a [href]="result">{{ result }}</a>
         </div>
         <hr />

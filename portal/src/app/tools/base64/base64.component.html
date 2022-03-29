@@ -12,7 +12,9 @@
             <textarea class="form-control" formControlName="rawData" rows="10"></textarea>
           </form>
           <hr class="mb-3" />
-          Base64<button class="ms-1 btn btn-sm" (click)="copy(encodedData)"><i class="bi bi-stickies"></i></button>
+          Base64<button matRipple class="ms-1 btn btn-sm" (click)="copy(encodedData)">
+            <i class="bi bi-stickies"></i>
+          </button>
           <pre>{{ encodedData }}</pre>
         </ng-template>
       </li>
@@ -24,11 +26,15 @@
             <textarea class="form-control" formControlName="base64Data" rows="10"></textarea>
           </form>
           <hr class="mb-3" />
-          変換後の文字列<button class="ms-1 btn btn-sm" (click)="copy(decodedData)">
+          変換後の文字列<button matRipple class="ms-1 btn btn-sm" (click)="copy(decodedData)">
             <i class="bi bi-stickies"></i>
           </button>
           <pre>{{ decodedData }}</pre>
-          変換後の文字列(マルチバイト文字を含む場合)<button class="ms-1 btn btn-sm" (click)="copy(decodeMultiByte)">
+          変換後の文字列(マルチバイト文字を含む場合)<button
+            matRipple
+            class="ms-1 btn btn-sm"
+            (click)="copy(decodeMultiByte)"
+          >
             <i class="bi bi-stickies"></i>
           </button>
           <pre>{{ decodeMultiByte }}</pre>

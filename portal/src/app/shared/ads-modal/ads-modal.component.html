@@ -1,11 +1,11 @@
 <ng-template #content let-modal>
   <div class="modal-header py-1 text-end d-flex justify-content-end">
-    <button class="btn bi bi-x-lg" (click)="close()"></button>
+    <button matRipple class="btn bi bi-x-lg" (click)="close()"></button>
   </div>
   <div class="modal-body">
     <app-ads type="box"></app-ads>
   </div>
   <div class="modal-footer py-0">
-    <button class="btn btn-secondary btn-block w-100" (click)="close()">閉じる</button>
+    <button matRipple class="btn btn-secondary btn-block w-100" (click)="close()">閉じる</button>
   </div>
 </ng-template>

@@ -6,7 +6,7 @@
       IP Address
       <div class="d-flex justify-content-center">
         <h2>{{ data.headers['x-forwarded-for'] }}</h2>
-        <button class="ms-1 btn" (click)="copyAddress(data.headers['x-forwarded-for'])">
+        <button matRipple class="ms-1 btn" (click)="copyAddress(data.headers['x-forwarded-for'])">
           <i class="bi bi-stickies"></i>
         </button>
       </div>
@@ -40,7 +40,7 @@
     <hr />
     <div class="mt-2 mb-3">
       過去の検査時のIPアドレス
-      <button class="btn btn-sm btn-danger" (click)="state.reset()"><i class="bi bi-trash"></i></button>
+      <button matRipple class="btn btn-sm btn-danger" (click)="state.reset()"><i class="bi bi-trash"></i></button>
       <ul class="list-group mt-2">
         <li
           class="list-group-item"
@@ -49,7 +49,7 @@
           placement="top-start"
         >
           {{ history.headers['x-forwarded-for'] }}
-          <button class="ms-1 btn btn-sm" (click)="copyAddress(history.headers['x-forwarded-for'])">
+          <button matRipple class="ms-1 btn btn-sm" (click)="copyAddress(history.headers['x-forwarded-for'])">
             <i class="bi bi-stickies"></i>
           </button>
         </li>
