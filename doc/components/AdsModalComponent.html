@@ -365,13 +365,13 @@ export class AdsModalComponent implements AfterViewInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ng-template #content let-modal&gt;
   &lt;div class&#x3D;&quot;modal-header py-1 text-end d-flex justify-content-end&quot;&gt;
-    &lt;button class&#x3D;&quot;btn bi bi-x-lg&quot; (click)&#x3D;&quot;close()&quot;&gt;&lt;/button&gt;
+    &lt;button matRipple class&#x3D;&quot;btn bi bi-x-lg&quot; (click)&#x3D;&quot;close()&quot;&gt;&lt;/button&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;modal-body&quot;&gt;
     &lt;app-ads type&#x3D;&quot;box&quot;&gt;&lt;/app-ads&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;modal-footer py-0&quot;&gt;
-    &lt;button class&#x3D;&quot;btn btn-secondary btn-block w-100&quot; (click)&#x3D;&quot;close()&quot;&gt;閉じる&lt;/button&gt;
+    &lt;button matRipple class&#x3D;&quot;btn btn-secondary btn-block w-100&quot; (click)&#x3D;&quot;close()&quot;&gt;閉じる&lt;/button&gt;
   &lt;/div&gt;
 &lt;/ng-template&gt;
 </code></pre>
@@ -403,7 +403,7 @@ export class AdsModalComponent implements AfterViewInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-template #content let-modal>  <div class="modal-header py-1 text-end d-flex justify-content-end">    <button class="btn bi bi-x-lg" (click)="close()"></button>  </div>  <div class="modal-body">    <app-ads type="box"></app-ads>  </div>  <div class="modal-footer py-0">    <button class="btn btn-secondary btn-block w-100" (click)="close()">閉じる</button>  </div></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><ng-template #content let-modal>  <div class="modal-header py-1 text-end d-flex justify-content-end">    <button matRipple class="btn bi bi-x-lg" (click)="close()"></button>  </div>  <div class="modal-body">    <app-ads type="box"></app-ads>  </div>  <div class="modal-footer py-0">    <button matRipple class="btn btn-secondary btn-block w-100" (click)="close()">閉じる</button>  </div></ng-template></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AdsModalComponent'};

@@ -385,6 +385,7 @@ import { ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
 import { MdescapePipe } from &#x27;./pipes/mdescape.pipe&#x27;;
 import { AdsComponent } from &#x27;./ads/ads.component&#x27;;
 import { AdsModalComponent } from &#x27;./ads-modal/ads-modal.component&#x27;;
+import { MatRippleModule } from &#x27;@angular/material/core&#x27;;
 
 @NgModule({
   declarations: [
@@ -405,6 +406,7 @@ import { AdsModalComponent } from &#x27;./ads-modal/ads-modal.component&#x27;;
     HttpClientModule,
     ReactiveFormsModule,
     NgbNavModule,
+    MatRippleModule,
   ],
   exports: [
     TweetBtnComponent,
@@ -419,6 +421,7 @@ import { AdsModalComponent } from &#x27;./ads-modal/ads-modal.component&#x27;;
     MdescapePipe,
     AdsComponent,
     AdsModalComponent,
+    MatRippleModule,
   ],
 })
 export class SharedModule {}
