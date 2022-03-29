@@ -36,10 +36,11 @@
   </head>
   <body>
     <a href="/">home</a>
-    <a href="/blog">blog</a>
-    <a href="/log">log</a>
-    <a href="/tools">tools</a>
-    <a href="/contact">contact</a>
+    <a href="/blog/">blog</a>
+    <a href="/log/">log</a>
+    <a href="/tools/">tools</a>
+    <a href="/contact/">contact</a>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <hr />
     <h2>Nuxtでキャッシュとうまくやる</h2> 自動的に現在のコードが最新かどうかチェックし、キャッシュの更新を行います。
 
@@ -79,11 +80,12 @@ export default async () => {
 ```
 [2022-02-05T11:06:44.398Z]  "GET /sw.js" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) ..."
 ``` <hr /> meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/11', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/11/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/11/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/11/events', 'html_url': 'https://github.com/kemu3007/portal/issues/11', 'id': 1160543419, 'node_id': 'I_kwDOG7qoq85FLHy7', 'number': 11, 'title': 'Nuxtでキャッシュとうまくやる', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3900072852, 'node_id': 'LA_kwDOG7qoq87odmOU', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/Nuxt', 'name': 'Nuxt', 'color': '0E8A16', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': [], 'created_at': '2022-03-06T07:47:51Z', 'updated_at': '2022-03-06T15:19:29Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': '自動的に現在のコードが最新かどうかチェックし、キャッシュの更新を行います。\r\n\r\n#### 検証環境\r\n- Nuxt: 2.15.8\r\n- @nuxtjs/pwa: 3.3.5\r\n\r\n#### コード\r\n`nuxt.config.js`\r\n\r\n```js\r\n{\r\n  plugins: [\'plugins/prompt-update.js\']\r\n}\r\n```\r\n\r\n`plugins/prompt-update.js`\r\n\r\n```js\r\nexport default async () => {\r\n  if (\'serviceWorker\' in navigator) {\r\n    navigator.serviceWorker.getRegistration("/sw.js").then(registration => {\r\n      setInterval(()=>{registration.update()}, 1000)\r\n      registration.onupdatefound  = () => window.location.reload()\r\n    })\r\n  }\r\n}\r\n```\r\n\r\n`setInterval` の `1000` の部分は更新のチェックを行うスパンを任意に指定してください(ミリ秒)\r\n`registration.update()` により、`/sw.js`へリクエストが送られ、内部の`revision`の値が変更されたことを検知し、リロードする処理を行っています。\r\n\r\n#### 動作確認手法\r\n`npm run generate`, `http-server dist/ -p 3000`で配信を行い、内部のファイルを変更後再度generateすることで自動的に更新されることが確認できます。\r\n\r\n以下のネットワークログで`sw.js`の更新チェックがされていることを確認できます。\r\n```\r\n[2022-02-05T11:06:44.398Z]  "GET /sw.js" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) ..."\r\n```', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/11/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/11/timeline', 'performed_via_github_app': None}
-
-    <a href="/tools/jsonFormatter">JSON Formatter</a>
-    <a href="/tools/realtime">REALTIME</a>
-    <a href="/tools/jsonTyper">JSON Typer</a>
-    <a href="/tools/userInfo">IP Addreass Checker</a>
+    <hr />
+    <a href="/tools/base64/">Base64 Encoder/Decoder</a>
+    <a href="/tools/jsonFormatter/">JSON Formatter</a>
+    <a href="/tools/realtime/">REALTIME</a>
+    <a href="/tools/jsonTyper/">JSON Typer</a>
+    <a href="/tools/userInfo/">IP Addreass Checker</a>
   
     <footer class="my-5 footer">
       <div class="d-flex justify-content-end">
