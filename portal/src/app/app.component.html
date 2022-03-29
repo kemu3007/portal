@@ -9,9 +9,6 @@
 <ng-template #contents>
   <router-outlet></router-outlet>
 </ng-template>
-<div class="fixed-bottom d-flex justify-content-end">
-  <p class="version text-muted">version: {{ releaseDate }}</p>
-</div>
 <footer class="my-5 footer">
   <div class="d-flex justify-content-end">
     <span style="font-size: 24px">
@@ -24,10 +21,13 @@
     <span class="text-muted">Copyright ©️ 2017-2022 kemu All Rights Reserved.</span>
   </div>
   <div class="d-flex justify-content-center">
-    <a class="text-muted" routerLink="/">home</a>
-    <a class="text-muted ms-2" routerLink="/blog">blog</a>
-    <a class="text-muted ms-2" routerLink="/log">log</a>
-    <a class="text-muted ms-2" routerLink="/tools">tools</a>
-    <a class="text-muted ms-2" routerLink="/contact">contact</a>
+    <a class="text-muted" href="/">home</a>
+    <a class="text-muted ms-2" href="/blog/">blog</a>
+    <a class="text-muted ms-2" href="/log/">log</a>
+    <a class="text-muted ms-2" href="/tools/">tools</a>
+    <a class="text-muted ms-2" href="/contact/">contact</a>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="mb-3">last release: {{ releaseDate }}</div>
   </div>
 </footer>
