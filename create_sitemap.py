@@ -13,6 +13,18 @@ if __name__ == "__main__":
 
     url_element = ElementTree.SubElement(urlset, 'url')
     loc = ElementTree.SubElement(url_element, 'loc')
+    loc.text = f"https://portal.kemu.site/robots.txt"
+    lastmod = ElementTree.SubElement(url_element, 'lastmod')
+    lastmod.text = "2022-03-29"
+
+    url_element = ElementTree.SubElement(urlset, 'url')
+    loc = ElementTree.SubElement(url_element, 'loc')
+    loc.text = f"https://portal.kemu.site/sitemap.xml"
+    lastmod = ElementTree.SubElement(url_element, 'lastmod')
+    lastmod.text = "2022-03-29"
+
+    url_element = ElementTree.SubElement(urlset, 'url')
+    loc = ElementTree.SubElement(url_element, 'loc')
     loc.text = f"https://portal.kemu.site/"
     lastmod = ElementTree.SubElement(url_element, 'lastmod')
     lastmod.text = "2022-03-29"
