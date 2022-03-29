@@ -541,9 +541,6 @@ export class AppComponent {
 &lt;ng-template #contents&gt;
   &lt;router-outlet&gt;&lt;/router-outlet&gt;
 &lt;/ng-template&gt;
-&lt;div class&#x3D;&quot;fixed-bottom d-flex justify-content-end&quot;&gt;
-  &lt;p class&#x3D;&quot;version text-muted&quot;&gt;version: {{ releaseDate }}&lt;/p&gt;
-&lt;/div&gt;
 &lt;footer class&#x3D;&quot;my-5 footer&quot;&gt;
   &lt;div class&#x3D;&quot;d-flex justify-content-end&quot;&gt;
     &lt;span style&#x3D;&quot;font-size: 24px&quot;&gt;
@@ -556,11 +553,14 @@ export class AppComponent {
     &lt;span class&#x3D;&quot;text-muted&quot;&gt;Copyright ©️ 2017-2022 kemu All Rights Reserved.&lt;/span&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
-    &lt;a class&#x3D;&quot;text-muted&quot; routerLink&#x3D;&quot;/&quot;&gt;home&lt;/a&gt;
-    &lt;a class&#x3D;&quot;text-muted ms-2&quot; routerLink&#x3D;&quot;/blog&quot;&gt;blog&lt;/a&gt;
-    &lt;a class&#x3D;&quot;text-muted ms-2&quot; routerLink&#x3D;&quot;/log&quot;&gt;log&lt;/a&gt;
-    &lt;a class&#x3D;&quot;text-muted ms-2&quot; routerLink&#x3D;&quot;/tools&quot;&gt;tools&lt;/a&gt;
-    &lt;a class&#x3D;&quot;text-muted ms-2&quot; routerLink&#x3D;&quot;/contact&quot;&gt;contact&lt;/a&gt;
+    &lt;a class&#x3D;&quot;text-muted&quot; href&#x3D;&quot;/&quot;&gt;home&lt;/a&gt;
+    &lt;a class&#x3D;&quot;text-muted ms-2&quot; href&#x3D;&quot;/blog/&quot;&gt;blog&lt;/a&gt;
+    &lt;a class&#x3D;&quot;text-muted ms-2&quot; href&#x3D;&quot;/log/&quot;&gt;log&lt;/a&gt;
+    &lt;a class&#x3D;&quot;text-muted ms-2&quot; href&#x3D;&quot;/tools/&quot;&gt;tools&lt;/a&gt;
+    &lt;a class&#x3D;&quot;text-muted ms-2&quot; href&#x3D;&quot;/contact/&quot;&gt;contact&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;last release: {{ releaseDate }}&lt;/div&gt;
   &lt;/div&gt;
 &lt;/footer&gt;
 </code></pre>
@@ -601,7 +601,7 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-nav></app-nav><app-message></app-message><app-ads-modal></app-ads-modal><ng-container *ngIf="loading; else contents">  <app-loading></app-loading></ng-container><ng-template #contents>  <router-outlet></router-outlet></ng-template><div class="fixed-bottom d-flex justify-content-end">  <p class="version text-muted">version: {{ releaseDate }}</p></div><footer class="my-5 footer">  <div class="d-flex justify-content-end">    <span style="font-size: 24px">      <a href="https://github.com/kemu3007"><i class="bi bi-github fa-sm"></i></a>      <a class="ms-2" href="https://twitter.com/kemu43"><i class="bi bi-twitter"></i></a>      <a class="mx-2" href="https://portal.kemu.site/doc/"><i class="bi bi-book"></i></a>    </span>  </div>  <div class="d-flex justify-content-center">    <span class="text-muted">Copyright ©️ 2017-2022 kemu All Rights Reserved.</span>  </div>  <div class="d-flex justify-content-center">    <a class="text-muted" routerLink="/">home</a>    <a class="text-muted ms-2" routerLink="/blog">blog</a>    <a class="text-muted ms-2" routerLink="/log">log</a>    <a class="text-muted ms-2" routerLink="/tools">tools</a>    <a class="text-muted ms-2" routerLink="/contact">contact</a>  </div></footer></div>'
+        var COMPONENT_TEMPLATE = '<div><app-nav></app-nav><app-message></app-message><app-ads-modal></app-ads-modal><ng-container *ngIf="loading; else contents">  <app-loading></app-loading></ng-container><ng-template #contents>  <router-outlet></router-outlet></ng-template><footer class="my-5 footer">  <div class="d-flex justify-content-end">    <span style="font-size: 24px">      <a href="https://github.com/kemu3007"><i class="bi bi-github fa-sm"></i></a>      <a class="ms-2" href="https://twitter.com/kemu43"><i class="bi bi-twitter"></i></a>      <a class="mx-2" href="https://portal.kemu.site/doc/"><i class="bi bi-book"></i></a>    </span>  </div>  <div class="d-flex justify-content-center">    <span class="text-muted">Copyright ©️ 2017-2022 kemu All Rights Reserved.</span>  </div>  <div class="d-flex justify-content-center">    <a class="text-muted" href="/">home</a>    <a class="text-muted ms-2" href="/blog/">blog</a>    <a class="text-muted ms-2" href="/log/">log</a>    <a class="text-muted ms-2" href="/tools/">tools</a>    <a class="text-muted ms-2" href="/contact/">contact</a>  </div>  <div class="d-flex justify-content-center">    <div class="mb-3">last release: {{ releaseDate }}</div>  </div></footer></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
