@@ -21,7 +21,7 @@ jobs:
           cache-dependency-path: 'requirements.lock.txt'
       - name: install deps
         run: |
-          pip install -r rerequirements.lock.txt
+          pip install -r requirements.lock.txt
       - name: lint
         run: |
           make lint
