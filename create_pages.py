@@ -42,11 +42,11 @@ if __name__ == "__main__":
     logs = json.loads((Path() / "portal/src/assets/logs/list.json").read_text())
     log_home = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/log.png")
-        .replace("page_title", "kemu logs")
+        .replace("page_title", "kemu 旅行記録など雑記 | kemu logs")
         .replace(
             "page_description",
             """
-            旅行ログ置き場、日ごろは東京にいたり淡路島にいたり大阪にいたり。
+            旅行ログなど雑記置き場、日ごろは東京にいたり淡路島にいたり大阪にいたり。
             淡路島のログが多めになるかと思います(写真が撮りやすいということもあるので)
             """,
         )
