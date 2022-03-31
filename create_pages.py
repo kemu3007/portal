@@ -8,7 +8,13 @@ if __name__ == "__main__":
     blog_home = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/blog.png")
         .replace("page_title", "kemu tech blog")
-        .replace("page_description", "kemu tech blog")
+        .replace(
+            "page_description",
+            """
+            Angular / Djangoがメインのtech blogです。このページはAngularで作成後Github Actionsでビルド、GitHub Pagesで配信されています。
+            メモ書きのような記事が中心ではありますがつまりどころっぽいのを寄せ集めています。転職先/個人での仕事の依頼など可能です。contactより連絡を行なってください。
+            """,
+        )
     )
     blog_home_html = [
         f"<h2><a href='/blog/{key}'>{article['title']}</a></h2><hr /> {article['body']}"
@@ -37,7 +43,13 @@ if __name__ == "__main__":
     log_home = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/log.png")
         .replace("page_title", "kemu logs")
-        .replace("page_description", "kemu logs")
+        .replace(
+            "page_description",
+            """
+            旅行ログ置き場、日ごろは東京にいたり淡路島にいたり大阪にいたり。
+            淡路島のログが多めになるかと思います(写真が撮りやすいということもあるので)
+            """,
+        )
     )
     log_home_html = [
         f"<h2><a href='/log/{key}'>{log['title']}</a></h2><hr /> {log['body']}" for key, log in logs.items()
@@ -64,7 +76,12 @@ if __name__ == "__main__":
     user_info_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/user-info.png")
         .replace("page_title", "IP Address Checker | kemu tools")
-        .replace("page_description", "IP Addressなどの端末情報を確認できます。")
+        .replace(
+            "page_description",
+            """
+            IP Address, User Agentなどの端末情報を確認することができ、結果を自動的にローカルストレージに保存することで、過去データとの称号を可能にしています。
+            """,
+        )
     )
     user_info_html = user_info_html.replace(
         "page_contents",
@@ -93,7 +110,13 @@ if __name__ == "__main__":
     associate_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/associate.png")
         .replace("page_title", "Amazon Associate Linker | kemu tools")
-        .replace("page_description", "アソシエイトIDからアソシエイトリンクを生成します。")
+        .replace(
+            "page_description",
+            """
+            Amazon Associate IDと商品URLを入力することで商品リンクにアソシエイトIDの紐付けを可能にしています。
+            ローカルストレージ上に前回入力したデータを保存することで再入力の手間を削減しています。
+            """,
+        )
     )
     associate_html = associate_html.replace(
         "page_contents",
@@ -114,7 +137,13 @@ if __name__ == "__main__":
     typer_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/json-typer.png")
         .replace("page_title", "JSON Typer | kemu tools")
-        .replace("page_description", "JSONの値をTypeScriptのinterface型に変換します。")
+        .replace(
+            "page_description",
+            """
+            任意のJSONの値をTypeScriptのinterface型に変換します。
+            ローカルストレージ上に前回入力されたデータを保存することで利便性を高めており、ワンクリックで結果をコピーすることが可能です。
+            """,
+        )
     )
     typer_html = typer_html.replace(
         "page_contents",
@@ -135,7 +164,13 @@ if __name__ == "__main__":
     realtime_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/realtime.png")
         .replace("page_title", "REALTIME | kemu tools")
-        .replace("page_description", "現在時刻を100ms単位で更新し、正確な日時をお知らせします。")
+        .replace(
+            "page_description",
+            """
+            現在時刻を100ms単位で更新し、正確な日時をお知らせします。
+            指定した時刻に指定したワードを呟きたいTwitterのmeme / 先着順の申し込みカウントダウンのようなケースでお使いください。
+            """,
+        )
     )
     realtime_html = realtime_html.replace(
         "page_contents",
@@ -155,7 +190,13 @@ if __name__ == "__main__":
     formatter_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/json-formatter.png")
         .replace("page_title", "JSON Formatter | kemu tools")
-        .replace("page_description", "未整形のJSONデータを整形します。")
+        .replace(
+            "page_description",
+            """
+            未整形のJSONデータを整形します。
+            ローカルストレージ上に前回入力されたデータを保存することで利便性を高めており、ワンクリックで結果をコピーすることが可能です。
+            """,
+        )
     )
     formatter_html = formatter_html.replace(
         "page_contents",
@@ -176,7 +217,13 @@ if __name__ == "__main__":
     base64_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/base64.png")
         .replace("page_title", "Base64 Encoder/Decoder | kemu tools")
-        .replace("page_description", "文字列データをBase64に、Base64データを文字列に変換します。")
+        .replace(
+            "page_description",
+            """
+            文字列データをBase64に、Base64データを文字列に変換します。
+            マルチバイト文字にも対応しており、フロントエンドからバックエンドにJSON形式でファイルを送信する場合のダミーデータ作成などに便利です。
+            """,
+        )
     )
     base64_html = base64_html.replace(
         "page_contents",
@@ -204,7 +251,7 @@ if __name__ == "__main__":
     contact_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/contact.png")
         .replace("page_title", "Contact | kemu portal")
-        .replace("page_description", "Contact")
+        .replace("page_description", """仕事の依頼/転職の誘いなどはこちらからお願いします。セールスメールはお控えください。""")
     )
     contact_html = contact_html.replace(
         "page_contents",
