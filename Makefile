@@ -1,4 +1,4 @@
 fmt:
-	black . && isort .
+	black . && isort . && cd portal && npm run fmt
 lint:
 	black --check . && isort --check .
