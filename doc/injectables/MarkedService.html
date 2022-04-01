@@ -99,45 +99,15 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(domSanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/markdown/marked.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/shared/markdown/marked.service.ts:10</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>domSanitizer</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -166,7 +136,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/markdown/marked.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/shared/markdown/marked.service.ts:10</a></div>
                         </td>
                     </tr>
 
@@ -180,7 +150,6 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { DomSanitizer } from &#x27;@angular/platform-browser&#x27;;
 import { marked, Renderer } from &#x27;marked&#x27;;
 import crypt from &#x27;crypto-js&#x27;;
 import hljs from &#x27;highlight.js&#x27;;
@@ -191,7 +160,7 @@ import hljs from &#x27;highlight.js&#x27;;
 export class MarkedService {
   marked &#x3D; marked;
 
-  constructor(private domSanitizer: DomSanitizer) {
+  constructor() {
     const renderer &#x3D; new Renderer();
     renderer.heading &#x3D; (text, lebel) &#x3D;&gt; {
       const hash &#x3D; crypt.MD5(text);
