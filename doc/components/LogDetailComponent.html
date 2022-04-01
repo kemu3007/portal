@@ -444,7 +444,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>import(&#x60;../../../assets/comments/${this.issueId}.json&#x60;).catch(_ &#x3D;&gt; {})</code>
+                        <i>Default value : </i><code>import(&#x60;../../../assets/comments/${this.issueId}.json&#x60;).catch((_) &#x3D;&gt; {})</code>
                     </td>
                 </tr>
                     <tr>
@@ -618,7 +618,7 @@ export class LogDetailComponent implements OnInit {
     return this.route.snapshot.paramMap.get(&#x27;id&#x27;);
   }
 
-  comments$: Promise&lt;any[]&gt; &#x3D; import(&#x60;../../../assets/comments/${this.issueId}.json&#x60;).catch(_ &#x3D;&gt; {});
+  comments$: Promise&lt;any[]&gt; &#x3D; import(&#x60;../../../assets/comments/${this.issueId}.json&#x60;).catch((_) &#x3D;&gt; {});
 
   article$ &#x3D; import(&#x60;../../../assets/logs/${this.issueId}.json&#x60;).catch((_) &#x3D;&gt;
     this.router.navigate([&#x27;/log&#x27;]).then((_) &#x3D;&gt;
