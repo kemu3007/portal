@@ -34,7 +34,7 @@ jobs:
       - name: collect article
         run: |
           pip install -r requirements.lock.txt
-          python export.py
+          python export_issues.py
           python create_img.py
           python create_pages.py
           python create_version.py
@@ -49,4 +49,3 @@ jobs:
         run: |
           npm run compodoc
           npm run ng deploy -- --cname=portal.kemu.site
-

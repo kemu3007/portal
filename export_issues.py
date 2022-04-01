@@ -15,9 +15,6 @@ def export_issues(label: str, dir: Path, extract_photo: bool = False):
     issues = json.loads(res.content)
     issue_dict = {}
     for issue in reversed(issues):
-        # APIの制限にかかることが増えているため一旦コメントアウト、スケジュール実行 -> commentsを保持という流れにしたい
-        # res = requests.get(f"https://api.github.com/repos/kemu3007/portal/issues/{issue['number']}/comments")
-        # issue["comments"] = json.loads(res.content)
         issue_dict[issue["id"]] = {
             "title": issue["title"],
             "created_at": issue["created_at"],

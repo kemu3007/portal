@@ -15,6 +15,7 @@ import { interval, take } from 'rxjs';
 export class BlogDetailComponent implements OnInit {
   marked = this.markedService.marked;
   article?: ArticleDetail;
+  comments: any[] = [];
   html: SafeHtml = '';
 
   constructor(
@@ -27,11 +28,15 @@ export class BlogDetailComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {}
 
+  get issueId() {
+    return this.route.snapshot.paramMap.get('id');
+  }
+
   ngOnInit(): void {
     this.article$.then((article) => {
       this.titleService.setTitle(`kemu tech blog | ${article.title}`);
       this.article = article;
-      this.breadcrumbService.breadcrumb = `/blog/${this.article.title}`;
+      this.breadcrumbService.breadcrumb = `/blog/${article.title}`;
       this.html = this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));
       if (this.route.snapshot.fragment) {
         interval(100)
@@ -43,18 +48,24 @@ export class BlogDetailComponent implements OnInit {
           });
       }
     });
+    // this.comments$.then((comments) => (this.comments = comments));
   }
 
-  get article$(): Promise<ArticleDetail> {
-    return import(`../../../assets/articles/${this.route.snapshot.paramMap.get('id')}.json`).catch((_) =>
-      this.router.navigate(['/blog']).then((_) =>
-        this.messageService.pushMessage({
-          type: 'warning',
-          body: '記事が存在していません',
-        })
-      )
-    );
-  }
+  // comments$: Promise<any[]> = import(`../../../assets/comments/${this.issueId}.json`).catch((_) => {
+  //   this.messageService.pushMessage({
+  //     type: 'warning',
+  //     body: 'コメントが読み込めませんでした。',
+  //   });
+  // });
+
+  article$: Promise<ArticleDetail> = import(`../../../assets/articles/${this.issueId}.json`).catch((_) =>
+    this.router.navigate(['/blog']).then((_) =>
+      this.messageService.pushMessage({
+        type: 'warning',
+        body: '記事が存在していません',
+      })
+    )
+  );
 
   get adsLength(): number {
     const hasMd = window.screen.width >= 768;
