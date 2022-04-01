@@ -2,13 +2,14 @@
 
 <app-message></app-message>
 <app-ads-modal></app-ads-modal>
-
-<ng-container *ngIf="loading; else contents">
-  <app-loading></app-loading>
-</ng-container>
-<ng-template #contents>
-  <router-outlet></router-outlet>
-</ng-template>
+<div style="min-height: calc(100vh - 144px);">
+  <ng-container *ngIf="loading; else contents">
+    <app-loading></app-loading>
+  </ng-container>
+  <ng-template #contents>
+    <router-outlet></router-outlet>
+  </ng-template>
+</div>
 <footer class="my-5 footer">
   <div class="d-flex justify-content-end">
     <span style="font-size: 24px">
