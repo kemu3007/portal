@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <script>
+      if (!window.navigator.userAgent.includes("Googlebot")) {
+        window.location.href=window.location.origin + '?to=' + window.location.pathname + window.location.hash
+      }
+    </script>
+    <meta charset="utf-8" />
+    <title>marked.jsとhighlight.jsでGitHub Flavored Markdownを扱う | kemu tech blog</title>
+    <base href="/" />
+    <meta name="description" content="GitHub上で扱っているMarkdownの正式名称はGitHub Flavored Markdownと言われ、デフォルトのMarkdownを拡張した独自記法になっています。今回はhighlight.jsのGitHub cssを適用してMarkdownテキストをHTMLに変換します。[GitHub " />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="marked.jsとhighlight.jsでGitHub Flavored Markdownを扱う | kemu tech blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="GitHub上で扱っているMarkdownの正式名称はGitHub Flavored Markdownと言われ、デフォルトのMarkdownを拡張した独自記法になっています。今回はhighlight.jsのGitHub cssを適用してMarkdownテキストをHTMLに変換します。[GitHub " />
+    <meta property="og:url" content="https://portal.kemu.site" />
+    <meta
+      property="og:image"
+      content="https://portal.kemu.site/assets/images/1189790754.png"
+    />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://portal.kemu.site/assets/images/1189790754.png"
+    />
+    <meta name="twitter:description" content="GitHub上で扱っているMarkdownの正式名称はGitHub Flavored Markdownと言われ、デフォルトのMarkdownを拡張した独自記法になっています。今回はhighlight.jsのGitHub cssを適用してMarkdownテキストをHTMLに変換します。[GitHub " />
+    <meta name="twitter:title" content="marked.jsとhighlight.jsでGitHub Flavored Markdownを扱う | kemu tech blog" />
+    <meta name="twitter:url" content="https://twitter.com/kemu43" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://avatars.githubusercontent.com/u/29157528?v=4"
+    />
+  </head>
+  <body>
+    <a href="/">home</a>
+    <a href="/blog/">blog</a>
+    <a href="/log/">log</a>
+    <a href="/tools/">tools</a>
+    <a href="/contact/">contact</a>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <hr />
+    <h2>marked.jsとhighlight.jsでGitHub Flavored Markdownを扱う</h2> GitHub上で扱っているMarkdownの正式名称はGitHub Flavored Markdownと言われ、デフォルトのMarkdownを拡張した独自記法になっています。
+
+今回はhighlight.jsのGitHub cssを適用してMarkdownテキストをHTMLに変換します。
+
+[GitHub Flavored Markdown spec](https://github.github.com/gfm/)
+
+今回使用したライブラリ
+
+- [highlight.js](https://highlightjs.org/)
+- [marked.js](https://github.com/markedjs/marked)
+
+
+#### 導入
+
+```bash
+$ npm i highlight.js marked
+```
+tipsのコードを実行する場合は `crypto-js` も同時にインストールしてください。
+
+#### GFMをHTMLに変換する
+
+MarkdownテキストをHTMLに変換し、コードブロックに対してhighlight.jsのcssがあたる様に設定します。
+
+```ts
+import { marked } from 'marked';
+import hljs from 'highlight.js';
+
+const gfm_text = ""
+
+marked.setOptions({
+  highlight: function (code, lang) {
+    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+    return hljs.highlight(code, { language }).value;
+  },
+  langPrefix: 'hljs language-',
+  gfm: true,
+  breaks: true,
+});
+
+markd.parse(gfm_text)
+```
+
+#### highlight.jsのcss適用
+
+style.scss
+
+```scss
+@import '~highlight.js/styles/github.css';
+```
+
+---
+
+これによりMarkdownをGitHub上と同じように表示することができます。コードブロックのbackground-colorが存在していないなどがある場合は適宜cssを追加して適用してください。
+
+```scss
+:host ::ng-deep pre > code {
+  background-color: #f6f8fa;
+  border-radius: 10px;
+}
+```
+
+---
+
+tips: 以下のような形でrendererを上書きしカスタマイズすることもできます。
+
+```ts
+import { marked, Renderer } from 'marked';
+import crypt from 'crypto-js';
+import hljs from 'highlight.js';
+
+const renderer = new Renderer();
+/** ヘッダーにはテキストのhash値から生成したフラグメント, リンクをコピーするボタンを追加する */
+renderer.heading = (text, lebel) => {
+  const hash = crypt.MD5(text);
+  return `
+  <div class="d-flex">
+    <h${lebel}
+      id=${hash}
+      style="border-left: solid 3px; border-color: darkturquoise; border-radius: 2px; padding-left: 5px;"
+    >${text}</h${lebel}>
+    <button class="btn btn-sm">
+      <i class="bi bi-clipboard" onclick="window.navigator.clipboard.writeText('${window.location.origin}${window.location.pathname}#${hash}')"></i>
+    </button>
+  </div>
+  `;
+};
+/** img要素にloading lazyを追加する */
+renderer.image = (href) => `<img src=${href} loading=lazy />`;
+/** リンク要素にbootstrap iconのリンクマークを付与する */
+renderer.link = (href, title, text) =>
+  `<a href=${href} class="text-muted">${text}<i class="bi bi-link-45deg"></i></a>`;
+marked.setOptions({
+  renderer,
+  highlight: function (code, lang) {
+    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+    return hljs.highlight(code, { language }).value;
+  },
+  langPrefix: 'hljs language-',
+  gfm: true,
+  breaks: true,
+});
+
+```
+
+これによりGFMをレンダリングすることができました。
+
+利用している実際のソースコードは[こちら](https://github.com/kemu3007/portal/blob/master/portal/src/app/shared/markdown/marked.service.ts)を参照してください。 <hr /> meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/27', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/27/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/27/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/27/events', 'html_url': 'https://github.com/kemu3007/portal/issues/27', 'id': 1189790754, 'node_id': 'I_kwDOG7qoq85G6sQi', 'number': 27, 'title': 'marked.jsとhighlight.jsでGitHub Flavored Markdownを扱う', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3965428013, 'node_id': 'LA_kwDOG7qoq87sW6Et', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/TypeScript', 'name': 'TypeScript', 'color': 'bfdadc', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': [], 'created_at': '2022-04-01T13:22:10Z', 'updated_at': '2022-04-01T13:24:58Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': 'GitHub上で扱っているMarkdownの正式名称はGitHub Flavored Markdownと言われ、デフォルトのMarkdownを拡張した独自記法になっています。\r\n\r\n今回はhighlight.jsのGitHub cssを適用してMarkdownテキストをHTMLに変換します。\r\n\r\n[GitHub Flavored Markdown spec](https://github.github.com/gfm/)\r\n\r\n今回使用したライブラリ\r\n\r\n- [highlight.js](https://highlightjs.org/)\r\n- [marked.js](https://github.com/markedjs/marked)\r\n\r\n\r\n#### 導入\r\n\r\n```bash\r\n$ npm i highlight.js marked\r\n```\r\ntipsのコードを実行する場合は `crypto-js` も同時にインストールしてください。\r\n\r\n#### GFMをHTMLに変換する\r\n\r\nMarkdownテキストをHTMLに変換し、コードブロックに対してhighlight.jsのcssがあたる様に設定します。\r\n\r\n```ts\r\nimport { marked } from \'marked\';\r\nimport hljs from \'highlight.js\';\r\n\r\nconst gfm_text = ""\r\n\r\nmarked.setOptions({\r\n  highlight: function (code, lang) {\r\n    const language = hljs.getLanguage(lang) ? lang : \'plaintext\';\r\n    return hljs.highlight(code, { language }).value;\r\n  },\r\n  langPrefix: \'hljs language-\',\r\n  gfm: true,\r\n  breaks: true,\r\n});\r\n\r\nmarkd.parse(gfm_text)\r\n```\r\n\r\n#### highlight.jsのcss適用\r\n\r\nstyle.scss\r\n\r\n```scss\r\n@import \'~highlight.js/styles/github.css\';\r\n```\r\n\r\n---\r\n\r\nこれによりMarkdownをGitHub上と同じように表示することができます。コードブロックのbackground-colorが存在していないなどがある場合は適宜cssを追加して適用してください。\r\n\r\n```scss\r\n:host ::ng-deep pre > code {\r\n  background-color: #f6f8fa;\r\n  border-radius: 10px;\r\n}\r\n```\r\n\r\n---\r\n\r\ntips: 以下のような形でrendererを上書きしカスタマイズすることもできます。\r\n\r\n```ts\r\nimport { marked, Renderer } from \'marked\';\r\nimport crypt from \'crypto-js\';\r\nimport hljs from \'highlight.js\';\r\n\r\nconst renderer = new Renderer();\r\n/** ヘッダーにはテキストのhash値から生成したフラグメント, リンクをコピーするボタンを追加する */\r\nrenderer.heading = (text, lebel) => {\r\n  const hash = crypt.MD5(text);\r\n  return `\r\n  <div class="d-flex">\r\n    <h${lebel}\r\n      id=${hash}\r\n      style="border-left: solid 3px; border-color: darkturquoise; border-radius: 2px; padding-left: 5px;"\r\n    >${text}</h${lebel}>\r\n    <button class="btn btn-sm">\r\n      <i class="bi bi-clipboard" onclick="window.navigator.clipboard.writeText(\'${window.location.origin}${window.location.pathname}#${hash}\')"></i>\r\n    </button>\r\n  </div>\r\n  `;\r\n};\r\n/** img要素にloading lazyを追加する */\r\nrenderer.image = (href) => `<img src=${href} loading=lazy />`;\r\n/** リンク要素にbootstrap iconのリンクマークを付与する */\r\nrenderer.link = (href, title, text) =>\r\n  `<a href=${href} class="text-muted">${text}<i class="bi bi-link-45deg"></i></a>`;\r\nmarked.setOptions({\r\n  renderer,\r\n  highlight: function (code, lang) {\r\n    const language = hljs.getLanguage(lang) ? lang : \'plaintext\';\r\n    return hljs.highlight(code, { language }).value;\r\n  },\r\n  langPrefix: \'hljs language-\',\r\n  gfm: true,\r\n  breaks: true,\r\n});\r\n\r\n```\r\n\r\nこれによりGFMをレンダリングすることができました。\r\n\r\n利用している実際のソースコードは[こちら](https://github.com/kemu3007/portal/blob/master/portal/src/app/shared/markdown/marked.service.ts)を参照してください。', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/27/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/27/timeline', 'performed_via_github_app': None}
+    <hr />
+    <a href="/tools/base64/">Base64 Encoder/Decoder</a>
+    <a href="/tools/jsonFormatter/">JSON Formatter</a>
+    <a href="/tools/realtime/">REALTIME</a>
+    <a href="/tools/jsonTyper/">JSON Typer</a>
+    <a href="/tools/userInfo/">IP Addreass Checker</a>
+  
+    <footer class="my-5 footer">
+      <div class="d-flex justify-content-end">
+        <span style="font-size: 24px">
+          <a href="https://github.com/kemu3007"><i class="bi bi-github fa-sm"></i></a>
+          <a class="ms-2" href="https://twitter.com/kemu43"><i class="bi bi-twitter"></i></a>
+          <a class="mx-2" href="https://portal.kemu.site/doc/"><i class="bi bi-book"></i></a>
+        </span>
+      </div>
+      <div class="d-flex justify-content-center">
+        <span class="text-muted">Copyright ©️ 2017-2022 kemu All Rights Reserved.</span>
+      </div>
+    </footer>
+  </body>
+</html>
