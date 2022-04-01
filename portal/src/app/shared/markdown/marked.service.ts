@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 import { marked, Renderer } from 'marked';
 import crypt from 'crypto-js';
 import hljs from 'highlight.js';
@@ -10,7 +9,7 @@ import hljs from 'highlight.js';
 export class MarkedService {
   marked = marked;
 
-  constructor(private domSanitizer: DomSanitizer) {
+  constructor() {
     const renderer = new Renderer();
     renderer.heading = (text, lebel) => {
       const hash = crypt.MD5(text);
