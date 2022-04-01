@@ -49,7 +49,7 @@ export class LogDetailComponent implements OnInit {
     return this.route.snapshot.paramMap.get('id');
   }
 
-  comments$: Promise<any[]> = import(`../../../assets/comments/${this.issueId}.json`).catch(_ => {});
+  comments$: Promise<any[]> = import(`../../../assets/comments/${this.issueId}.json`).catch((_) => {});
 
   article$ = import(`../../../assets/logs/${this.issueId}.json`).catch((_) =>
     this.router.navigate(['/log']).then((_) =>

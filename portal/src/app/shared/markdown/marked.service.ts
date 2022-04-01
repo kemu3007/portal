@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { marked, Renderer } from 'marked';
-import crypt from 'crypto-js';
+import crypt from 'crypto-es';
 import hljs from 'highlight.js';
 
 @Injectable({
