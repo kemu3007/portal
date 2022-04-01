@@ -27,11 +27,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
           cache-dependency-path: portal/package-lock.json
+      - uses: actions/cache@v2
+        with:
+          path: ./portal/src/assets/
       - name: install deps
         working-directory: ./portal
         run: |
           npm install
-      - name: collect article
+      - name: collect article / prepare page, image, version, sitemap
         run: |
           pip install -r requirements.lock.txt
           python export_issues.py
@@ -39,6 +42,10 @@ jobs:
           python create_pages.py
           python create_version.py
           python create_sitemap.py
+      - name: collect comments
+        if: ${{ github.event_name == 'schedule' }}
+        run: |
+          python export_comments.py
       - name: setup git
         run: |
           git config --global user.name "${GITHUB_ACTOR}"

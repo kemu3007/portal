@@ -31,7 +31,7 @@ export class LogDetailComponent implements OnInit {
     this.article$.then((article) => {
       this.titleService.setTitle(`kemu logs | ${article.title}`);
       this.article = article;
-      this.breadcrumbService.breadcrumb = `/log/${this.article.title}`;
+      this.breadcrumbService.breadcrumb = `/log/${article.title}`;
       this.html = this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));
       if (this.route.snapshot.fragment) {
         interval(100)
@@ -45,16 +45,20 @@ export class LogDetailComponent implements OnInit {
     });
   }
 
-  get article$(): Promise<LogDetail> {
-    return import(`../../../assets/logs/${this.route.snapshot.paramMap.get('id')}.json`).catch((_) =>
-      this.router.navigate(['/log']).then((_) =>
-        this.messageService.pushMessage({
-          type: 'warning',
-          body: '記事が存在していません',
-        })
-      )
-    );
+  get issueId() {
+    return this.route.snapshot.paramMap.get('id');
   }
+
+  comments$: Promise<any[]> = import(`../../../assets/comments/${this.issueId}.json`).catch(_ => {});
+
+  article$ = import(`../../../assets/logs/${this.issueId}.json`).catch((_) =>
+    this.router.navigate(['/log']).then((_) =>
+      this.messageService.pushMessage({
+        type: 'warning',
+        body: '記事が存在していません',
+      })
+    )
+  );
 
   get adsLength(): number {
     const hasMd = window.screen.width >= 768;

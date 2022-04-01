@@ -48,15 +48,10 @@ export class BlogDetailComponent implements OnInit {
           });
       }
     });
-    // this.comments$.then((comments) => (this.comments = comments));
+    this.comments$.then((comments) => (comments = comments));
   }
 
-  // comments$: Promise<any[]> = import(`../../../assets/comments/${this.issueId}.json`).catch((_) => {
-  //   this.messageService.pushMessage({
-  //     type: 'warning',
-  //     body: 'コメントが読み込めませんでした。',
-  //   });
-  // });
+  comments$: Promise<any[]> = import(`../../../assets/comments/${this.issueId}.json`);
 
   article$: Promise<ArticleDetail> = import(`../../../assets/articles/${this.issueId}.json`).catch((_) =>
     this.router.navigate(['/blog']).then((_) =>
