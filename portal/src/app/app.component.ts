@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
 import { LoadingService } from './shared/loading/loading.service';
-import { MessageService } from './shared/message/message.service';
-import { BreadcrumbService } from './shared/nav/breadcrumb.service';
 import version from '@assets/version.json';
-import { AdsModalService } from './shared/ads-modal/ads-modal.service';
+import { RouterService } from './router.service';
 
 @Component({
   selector: 'app-root',
@@ -21,31 +18,10 @@ export class AppComponent {
   ];
   adsCount = 0;
 
-  constructor(
-    titleService: Title,
-    router: Router,
-    messageService: MessageService,
-    breadcrumbService: BreadcrumbService,
-    private adsModalService: AdsModalService,
-    private loadingService: LoadingService
-  ) {
+  constructor(titleService: Title, private loadingService: LoadingService, routerService: RouterService) {
     titleService.setTitle('kemu portal');
-    router.events.pipe().subscribe((event) => {
-      if (event instanceof NavigationStart) {
-        loadingService.loading = true;
-      } else if (event instanceof NavigationEnd) {
-        loadingService.loading = false;
-        breadcrumbService.breadcrumb = event.url;
-        this.displayOrWaitAds();
-      } else if (event instanceof NavigationCancel || event instanceof NavigationError) {
-        messageService.pushMessage({
-          type: 'danger',
-          body: `ページが見つかりませんでした。o(･ω･ = ･ω･)o '${event.url}'`,
-        });
-        router.navigate(['']);
-      }
-    });
-    console.log('%c 👀 why are you seeing this console?', 'background: black; color: white;');
+    routerService.watchNavigation().subscribe();
+    console.log('%c 👀 why are you seeing this?', 'background: black; color: white;');
   }
 
   get loading() {
@@ -54,13 +30,5 @@ export class AppComponent {
 
   get releaseDate() {
     return version['last-release'];
-  }
-
-  displayOrWaitAds() {
-    if (this.adsCount === 3) {
-      this.adsModalService.open();
-      this.adsCount = 0;
-    }
-    this.adsCount += 1;
   }
 }
