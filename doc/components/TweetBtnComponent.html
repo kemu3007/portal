@@ -96,12 +96,14 @@
 
             <tr>
                 <td class="col-md-3">template</td>
-                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;a    id&#x3D;&quot;btn&quot;
-    href&#x3D;&quot;https://twitter.com/share?ref_src&#x3D;twsrc%5Etfw&quot;
-    class&#x3D;&quot;twitter-share-button&quot;
-    data-show-count&#x3D;&quot;false&quot;
-    &gt;tweet&lt;/a
-  &gt;</code></pre></td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;height: 30px;&quot;&gt;   &lt;a
+     id&#x3D;&quot;btn&quot;
+     href&#x3D;&quot;https://twitter.com/share?ref_src&#x3D;twsrc%5Etfw&quot;
+     class&#x3D;&quot;twitter-share-button&quot;
+     data-show-count&#x3D;&quot;false&quot;
+     &gt;tweet&lt;/a
+   &gt;
+ &lt;/div&gt;</code></pre></td>
             </tr>
 
 
@@ -174,8 +176,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="14"
-                            class="link-to-prism">src/app/shared/tweet-btn/tweet-btn.component.ts:14</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/shared/tweet-btn/tweet-btn.component.ts:16</a></div>
                 </td>
             </tr>
 
@@ -201,13 +203,15 @@
 
 @Component({
   selector: &#x27;app-tweet-btn&#x27;,
-  template: &#x60;&lt;a
-    id&#x3D;&quot;btn&quot;
-    href&#x3D;&quot;https://twitter.com/share?ref_src&#x3D;twsrc%5Etfw&quot;
-    class&#x3D;&quot;twitter-share-button&quot;
-    data-show-count&#x3D;&quot;false&quot;
-    &gt;tweet&lt;/a
-  &gt;&#x60;,
+  template: &#x60; &lt;div style&#x3D;&quot;height: 30px;&quot;&gt;
+    &lt;a
+      id&#x3D;&quot;btn&quot;
+      href&#x3D;&quot;https://twitter.com/share?ref_src&#x3D;twsrc%5Etfw&quot;
+      class&#x3D;&quot;twitter-share-button&quot;
+      data-show-count&#x3D;&quot;false&quot;
+      &gt;tweet&lt;/a
+    &gt;
+  &lt;/div&gt;&#x60;,
 })
 export class TweetBtnComponent implements AfterViewInit {
   ngAfterViewInit(): void {
@@ -248,7 +252,7 @@ export class TweetBtnComponent implements AfterViewInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><a    id="btn"    href="https://twitter.com/share?ref_src=twsrc%5Etfw"    class="twitter-share-button"    data-show-count="false"    >tweet</a  ></div>'
+        var COMPONENT_TEMPLATE = '<div><div style="height: 30px;">   <a     id="btn"     href="https://twitter.com/share?ref_src=twsrc%5Etfw"     class="twitter-share-button"     data-show-count="false"     >tweet</a   > </div></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TweetBtnComponent'};
