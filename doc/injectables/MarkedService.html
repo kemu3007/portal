@@ -168,12 +168,19 @@ export class MarkedService {
       &lt;div class&#x3D;&quot;d-flex&quot;&gt;
         &lt;h${lebel}
           id&#x3D;${hash}
-          style&#x3D;&quot;border-left: solid 3px; border-color: darkturquoise; border-radius: 2px; padding-left: 5px;&quot;
-        &gt;${text}&lt;/h${lebel}&gt;
-        &lt;button class&#x3D;&quot;btn btn-sm&quot;&gt;
-          &lt;i class&#x3D;&quot;bi bi-clipboard&quot; onclick&#x3D;&quot;window.navigator.clipboard.writeText(&#x27;${window.location.origin}${window.location.pathname}#${hash}&#x27;)&quot;&gt;&lt;/i&gt;
-        &lt;/button&gt;
+          class&#x3D;&quot;mb-0&quot;
+          style&#x3D;&quot;
+            border-left: solid 3px;
+            border-color: darkturquoise;
+            border-radius: 2px;
+            padding-left: 5px;
+          &quot;
+        &gt;
+          ${text}
+          &lt;button class&#x3D;&quot;btn btn-sm bi bi-clipboard&quot; onclick&#x3D;&quot;window.navigator.clipboard.writeText(&#x27;${window.location.origin}${window.location.pathname}#${hash}&#x27;)&quot;&gt;&lt;/button&gt;
+        &lt;/h${lebel}&gt;
       &lt;/div&gt;
+      &lt;hr class&#x3D;&quot;mt-0&quot; /&gt;
       &#x60;;
     };
     renderer.image &#x3D; (href) &#x3D;&gt; &#x60;&lt;img src&#x3D;${href} loading&#x3D;lazy /&gt;&#x60;;
