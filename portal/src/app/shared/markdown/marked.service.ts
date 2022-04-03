@@ -17,12 +17,19 @@ export class MarkedService {
       <div class="d-flex">
         <h${lebel}
           id=${hash}
-          style="border-left: solid 3px; border-color: darkturquoise; border-radius: 2px; padding-left: 5px;"
-        >${text}</h${lebel}>
-        <button class="btn btn-sm">
-          <i class="bi bi-clipboard" onclick="window.navigator.clipboard.writeText('${window.location.origin}${window.location.pathname}#${hash}')"></i>
-        </button>
+          class="mb-0"
+          style="
+            border-left: solid 3px;
+            border-color: darkturquoise;
+            border-radius: 2px;
+            padding-left: 5px;
+          "
+        >
+          ${text}
+          <button class="btn btn-sm bi bi-clipboard" onclick="window.navigator.clipboard.writeText('${window.location.origin}${window.location.pathname}#${hash}')"></button>
+        </h${lebel}>
       </div>
+      <hr class="mt-0" />
       `;
     };
     renderer.image = (href) => `<img src=${href} loading=lazy />`;
