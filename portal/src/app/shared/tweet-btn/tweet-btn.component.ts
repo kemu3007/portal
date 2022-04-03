@@ -2,13 +2,15 @@ import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-tweet-btn',
-  template: `<a
-    id="btn"
-    href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-    class="twitter-share-button"
-    data-show-count="false"
-    >tweet</a
-  >`,
+  template: ` <div style="height: 30px;">
+    <a
+      id="btn"
+      href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+      class="twitter-share-button"
+      data-show-count="false"
+      >tweet</a
+    >
+  </div>`,
 })
 export class TweetBtnComponent implements AfterViewInit {
   ngAfterViewInit(): void {
