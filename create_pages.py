@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import markdown
+
 if __name__ == "__main__":
     # blog
     articles = json.loads((Path() / "portal/src/assets/articles/list.json").read_text())
@@ -31,9 +33,16 @@ if __name__ == "__main__":
             .replace("page_description", data["body"])
         )
         blog_details = json.loads((Path() / f"portal/src/assets/articles/{key}.json").read_text())
+        body = markdown.Markdown().convert(blog_details["body"])
         blog = blog.replace(
             "page_contents",
-            f"<h2>{data['title']}</h2> {blog_details['body']} <hr /> meta: {blog_details}",
+            f"""
+            <h2>{data['title']}</h2> 
+            <hr />
+            {body}
+            <hr /> 
+            meta: {blog_details}
+            """,
         )
         path = Path("portal/src/blog") / key
         path.mkdir(exist_ok=True)
@@ -58,6 +67,31 @@ if __name__ == "__main__":
     path = Path("portal/src/log")
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(log_home)
+    for key, data in logs.items():
+        log = (
+            base_html.replace(
+                "page_image",
+                data["photo"] or f"https://portal.kemu.site/assets/images/{key}.png",
+            )
+            .replace("page_title", f"{data['title']} | kemu logs")
+            .replace("page_description", data["body"])
+        )
+        log_details = json.loads((Path() / f"portal/src/assets/logs/{key}.json").read_text())
+        body = markdown.Markdown().convert(log_details["body"])
+        log = log.replace(
+            "page_contents",
+            f"""
+            <h2>{data['title']}</h2>
+            <hr />
+            {body}
+            <hr /> 
+            meta: {log_details}
+            """,
+        )
+        path = Path("portal/src/log") / key
+        path.mkdir(exist_ok=True)
+        (path / "index.html").write_text(log)
+
     # tools
     tools = json.loads((Path() / "portal/src/app/tools/tools.json").read_text())
     tools_html = (
@@ -267,22 +301,5 @@ if __name__ == "__main__":
     path = Path("portal/src/contact")
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(contact_html)
-    for key, data in logs.items():
-        log = (
-            base_html.replace(
-                "page_image",
-                data["photo"] or f"https://portal.kemu.site/assets/images/{key}.png",
-            )
-            .replace("page_title", f"{data['title']} | kemu logs")
-            .replace("page_description", data["body"])
-        )
-        log_details = json.loads((Path() / f"portal/src/assets/logs/{key}.json").read_text())
-        log = log.replace(
-            "page_contents",
-            f"<h2>{data['title']}</h2><hr />{log_details['body']}<hr /> meta: {log_details}",
-        )
-        path = Path("portal/src/log") / key
-        path.mkdir(exist_ok=True)
-        (path / "index.html").write_text(log)
     # nav count
     Path("portal/src/assets/count.json").write_text(json.dumps({"blog": len(articles.keys()), "log": len(logs.keys())}))
