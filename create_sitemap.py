@@ -35,7 +35,9 @@ if __name__ == "__main__":
     add_url_element("https://portal.kemu.site/tools/jsonFormatter/")
     add_url_element("https://portal.kemu.site/tools/base64/")
 
-    add_url_element(f"https://portal.kemu.site/blog/{article_id}/" for article_id in articles_list.keys())
-    add_url_element(f"https://portal.kemu.site/log/{log_id}/" for log_id in logs_list.keys())
+    for article_id in articles_list.keys():
+        add_url_element(f"https://portal.kemu.site/blog/{article_id}/")
+    for log_id in logs_list.keys():
+        add_url_element(f"https://portal.kemu.site/log/{log_id}/")
 
     ElementTree.ElementTree(element=urlset).write("portal/src/sitemap.xml", encoding="utf-8", xml_declaration=True)
