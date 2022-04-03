@@ -30,7 +30,7 @@ import { MatRippleModule } from '@angular/material/core';
   imports: [
     CommonModule,
     NgbModule,
-    AdsenseModule.forRoot({ adClient: environment.adClient }),
+    AdsenseModule.forRoot({ adClient: environment.googleAdClient }),
     RouterModule,
     HttpClientModule,
     ReactiveFormsModule,

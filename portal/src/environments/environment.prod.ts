@@ -1,5 +1,7 @@
-export const environment = {
+import { Env } from './interface';
+
+export const environment: Env = {
   production: true,
-  adClient: 'ca-pub-6219032039771696',
-  useGoogleAdsense: false,
+  googleAdClient: 'ca-pub-6219032039771696',
+  adsenseProvider: 'amazon',
 };

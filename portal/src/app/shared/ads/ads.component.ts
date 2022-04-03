@@ -11,7 +11,7 @@ export class AdsComponent {
   constructor() {}
 
   get useGoogleAdsense() {
-    return environment.useGoogleAdsense;
+    return environment.adsenseProvider === 'google';
   }
 
   get isList() {
