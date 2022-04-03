@@ -42,33 +42,23 @@
     <a href="/contact/">contact</a>
     <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <hr />
-    <h2>DRF 紐づくモデルの表示件数を制限する</h2> djangoには`prefetch_related` という機能が存在しており以下のように記載することで発行されるSQLを抑制することができます。
-
-```python
-Article.objects.prefetch_related("tags")
-```
-
-と記載することでManyToManyの値をキャッシュに保存し、SQLの発行数が減少します。
-
-この機能を応用し、
-
-```python
+    
+            <h2>DRF 紐づくモデルの表示件数を制限する</h2> 
+            <hr />
+            <p>djangoには<code>prefetch_related</code> という機能が存在しており以下のように記載することで発行されるSQLを抑制することができます。</p>
+<p><code>python
+Article.objects.prefetch_related("tags")</code></p>
+<p>と記載することでManyToManyの値をキャッシュに保存し、SQLの発行数が減少します。</p>
+<p>この機能を応用し、</p>
+<p><code>python
 class ArticleViewSets(ModelViewSet):
     def get_queryset(self):
-        return Article.objects.all().prefetch_related(Prefetch("tags", Tag.objects.filter(enable=True)))
-```
-
-のように記載することで返却されるarticle.tagsの値をフィルタリングすることが可能です。
-
-しかし、このやり方はArticleのステータスが下書きの際のみtagsの中身を空に、公開の際にはすべてのtagsを公開するといったレコードに基づいた表示の変更は行うことができません。
-
-
-その際に利用するのが`prefetch_related_objects`です。
-
-prefetch_related_objectを利用して上述のような処理を書くと下記のようになります。
-
-
-```python
+        return Article.objects.all().prefetch_related(Prefetch("tags", Tag.objects.filter(enable=True)))</code></p>
+<p>のように記載することで返却されるarticle.tagsの値をフィルタリングすることが可能です。</p>
+<p>しかし、このやり方はArticleのステータスが下書きの際のみtagsの中身を空に、公開の際にはすべてのtagsを公開するといったレコードに基づいた表示の変更は行うことができません。</p>
+<p>その際に利用するのが<code>prefetch_related_objects</code>です。</p>
+<p>prefetch_related_objectを利用して上述のような処理を書くと下記のようになります。</p>
+<p><code>python
 class ArticleViewSets(ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         instance: Article = self.get_object()
@@ -78,10 +68,11 @@ class ArticleViewSets(ModelViewSet):
              tags = Tag.objects.none()
         prefetch_related_objects([instance], Prefetch("tags", tags ))
         serializer = self.get_serializer(instance)
-        return Response(serializer.data)
-```
-
-このように記載することで返却するtagsの値について制限をかけることが可能です。 <hr /> meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/8', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/8/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/8/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/8/events', 'html_url': 'https://github.com/kemu3007/portal/issues/8', 'id': 1160543248, 'node_id': 'I_kwDOG7qoq85FLHwQ', 'number': 8, 'title': 'DRF 紐づくモデルの表示件数を制限する', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3900075763, 'node_id': 'LA_kwDOG7qoq87odm7z', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/Django', 'name': 'Django', 'color': '5FC353', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': 0, 'created_at': '2022-03-06T07:46:40Z', 'updated_at': '2022-03-06T15:20:58Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': 'djangoには`prefetch_related` という機能が存在しており以下のように記載することで発行されるSQLを抑制することができます。\r\n\r\n```python\r\nArticle.objects.prefetch_related("tags")\r\n```\r\n\r\nと記載することでManyToManyの値をキャッシュに保存し、SQLの発行数が減少します。\r\n\r\nこの機能を応用し、\r\n\r\n```python\r\nclass ArticleViewSets(ModelViewSet):\r\n    def get_queryset(self):\r\n        return Article.objects.all().prefetch_related(Prefetch("tags", Tag.objects.filter(enable=True)))\r\n```\r\n\r\nのように記載することで返却されるarticle.tagsの値をフィルタリングすることが可能です。\r\n\r\nしかし、このやり方はArticleのステータスが下書きの際のみtagsの中身を空に、公開の際にはすべてのtagsを公開するといったレコードに基づいた表示の変更は行うことができません。\r\n\r\n\r\nその際に利用するのが`prefetch_related_objects`です。\r\n\r\nprefetch_related_objectを利用して上述のような処理を書くと下記のようになります。\r\n\r\n\r\n```python\r\nclass ArticleViewSets(ModelViewSet):\r\n    def retrieve(self, request, *args, **kwargs):\r\n        instance: Article = self.get_object()\r\n        tags = Tag.objects.all()\r\n        # ステータスに応じて返却するファイルを制限する\r\n        if instance.status == Article.StatusChoices.DRAFT:\r\n             tags = Tag.objects.none()\r\n        prefetch_related_objects([instance], Prefetch("tags", tags ))\r\n        serializer = self.get_serializer(instance)\r\n        return Response(serializer.data)\r\n```\r\n\r\nこのように記載することで返却するtagsの値について制限をかけることが可能です。', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/8/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/8/timeline', 'performed_via_github_app': None}
+        return Response(serializer.data)</code></p>
+<p>このように記載することで返却するtagsの値について制限をかけることが可能です。</p>
+            <hr /> 
+            meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/8', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/8/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/8/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/8/events', 'html_url': 'https://github.com/kemu3007/portal/issues/8', 'id': 1160543248, 'node_id': 'I_kwDOG7qoq85FLHwQ', 'number': 8, 'title': 'DRF 紐づくモデルの表示件数を制限する', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3900075763, 'node_id': 'LA_kwDOG7qoq87odm7z', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/Django', 'name': 'Django', 'color': '5FC353', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': 0, 'created_at': '2022-03-06T07:46:40Z', 'updated_at': '2022-03-06T15:20:58Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': 'djangoには`prefetch_related` という機能が存在しており以下のように記載することで発行されるSQLを抑制することができます。\r\n\r\n```python\r\nArticle.objects.prefetch_related("tags")\r\n```\r\n\r\nと記載することでManyToManyの値をキャッシュに保存し、SQLの発行数が減少します。\r\n\r\nこの機能を応用し、\r\n\r\n```python\r\nclass ArticleViewSets(ModelViewSet):\r\n    def get_queryset(self):\r\n        return Article.objects.all().prefetch_related(Prefetch("tags", Tag.objects.filter(enable=True)))\r\n```\r\n\r\nのように記載することで返却されるarticle.tagsの値をフィルタリングすることが可能です。\r\n\r\nしかし、このやり方はArticleのステータスが下書きの際のみtagsの中身を空に、公開の際にはすべてのtagsを公開するといったレコードに基づいた表示の変更は行うことができません。\r\n\r\n\r\nその際に利用するのが`prefetch_related_objects`です。\r\n\r\nprefetch_related_objectを利用して上述のような処理を書くと下記のようになります。\r\n\r\n\r\n```python\r\nclass ArticleViewSets(ModelViewSet):\r\n    def retrieve(self, request, *args, **kwargs):\r\n        instance: Article = self.get_object()\r\n        tags = Tag.objects.all()\r\n        # ステータスに応じて返却するファイルを制限する\r\n        if instance.status == Article.StatusChoices.DRAFT:\r\n             tags = Tag.objects.none()\r\n        prefetch_related_objects([instance], Prefetch("tags", tags ))\r\n        serializer = self.get_serializer(instance)\r\n        return Response(serializer.data)\r\n```\r\n\r\nこのように記載することで返却するtagsの値について制限をかけることが可能です。', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/8/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/8/timeline', 'performed_via_github_app': None}
+            
     <hr />
     <a href="/tools/base64/">Base64 Encoder/Decoder</a>
     <a href="/tools/jsonFormatter/">JSON Formatter</a>

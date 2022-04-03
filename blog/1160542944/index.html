@@ -42,70 +42,58 @@
     <a href="/contact/">contact</a>
     <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <hr />
-    <h2>Django4.0がリリースされたので適当に試してみる</h2> [release notes](https://docs.djangoproject.com/en/dev/releases/4.0/)
-
-### 依存ライブラリ
-- Django 3.2
-```
-asgiref==3.4.1
+    
+            <h2>Django4.0がリリースされたので適当に試してみる</h2> 
+            <hr />
+            <p><a href="https://docs.djangoproject.com/en/dev/releases/4.0/">release notes</a></p>
+<h3>依存ライブラリ</h3>
+<ul>
+<li>Django 3.2
+<code>asgiref==3.4.1
 pytz==2021.3
-sqlparse==0.4.2
-```
-- Django4.0
-```
-asgiref==3.4.1
+sqlparse==0.4.2</code></li>
+<li>Django4.0
+<code>asgiref==3.4.1
 backports.zoneinfo==0.2.1
-sqlparse==0.4.2
-```
+sqlparse==0.4.2</code>
 pytzに依存しなくなり、標準のzoneinfoモジュールに変更された形になります。
-`backports.zoneinfo`は3.9以前をサポートするための依存です。
-
-[backports.zoneinfo](https://pypi.org/project/backports.zoneinfo/)
-
-### UniqueConstraint Expression
-
-UniqueConstraintを設定する際に`desc()`, `asc()`を指定してインデックスを張ることができるようになりました。
-
-```python
+<code>backports.zoneinfo</code>は3.9以前をサポートするための依存です。</li>
+</ul>
+<p><a href="https://pypi.org/project/backports.zoneinfo/">backports.zoneinfo</a></p>
+<h3>UniqueConstraint Expression</h3>
+<p>UniqueConstraintを設定する際に<code>desc()</code>, <code>asc()</code>を指定してインデックスを張ることができるようになりました。</p>
+<p>```python
 class TestModel(models.Model):
     code_1 = models.CharField(max_length=32)
-    code_2 = models.CharField(max_length=32)
-
-    class Meta:
-        constraints = [
-            UniqueConstraint(
-                Lower('code_1'),
-                Lower('code_2').desc(),
-                name='code_1_2_unique',
-            ),
-        ]
-```
-
-発行されるSQL
-```sql
-CREATE UNIQUE INDEX "code_1_2_unique" ON "common_testmodel" ((LOWER("code_1")), (LOWER("code_2")) DESC);
-```
-
-
-### QuerySet.contains
-QuerySetの中に該当のモデルが存在するかチェックすることができます。
-
-```python
-TestModel.objects.contains(TestModel(id=1))
-```
-```sql
+    code_2 = models.CharField(max_length=32)</p>
+<pre><code>class Meta:
+    constraints = [
+        UniqueConstraint(
+            Lower('code_1'),
+            Lower('code_2').desc(),
+            name='code_1_2_unique',
+        ),
+    ]
+</code></pre>
+<p>```</p>
+<p>発行されるSQL
+<code>sql
+CREATE UNIQUE INDEX "code_1_2_unique" ON "common_testmodel" ((LOWER("code_1")), (LOWER("code_2")) DESC);</code></p>
+<h3>QuerySet.contains</h3>
+<p>QuerySetの中に該当のモデルが存在するかチェックすることができます。</p>
+<p><code>python
+TestModel.objects.contains(TestModel(id=1))</code>
+<code>sql
 SELECT (1) AS "a"
   FROM "common_testmodel"
  WHERE "common_testmodel"."id" = 1
- LIMIT 1
-```
-
-実行されるクエリはexists()と変わらないようです。（この程度の処理であれば）
-
-
-続きは次回
-
-今回作成したソースコードは[こちら](https://github.com/kemu3007/django_4_0) <hr /> meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/5', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/5/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/5/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/5/events', 'html_url': 'https://github.com/kemu3007/portal/issues/5', 'id': 1160542944, 'node_id': 'I_kwDOG7qoq85FLHrg', 'number': 5, 'title': 'Django4.0がリリースされたので適当に試してみる', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3900075763, 'node_id': 'LA_kwDOG7qoq87odm7z', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/Django', 'name': 'Django', 'color': '5FC353', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': 0, 'created_at': '2022-03-06T07:44:51Z', 'updated_at': '2022-03-12T07:52:04Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': '[release notes](https://docs.djangoproject.com/en/dev/releases/4.0/)\r\n\r\n### 依存ライブラリ\r\n- Django 3.2\r\n```\r\nasgiref==3.4.1\r\npytz==2021.3\r\nsqlparse==0.4.2\r\n```\r\n- Django4.0\r\n```\r\nasgiref==3.4.1\r\nbackports.zoneinfo==0.2.1\r\nsqlparse==0.4.2\r\n```\r\npytzに依存しなくなり、標準のzoneinfoモジュールに変更された形になります。\r\n`backports.zoneinfo`は3.9以前をサポートするための依存です。\r\n\r\n[backports.zoneinfo](https://pypi.org/project/backports.zoneinfo/)\r\n\r\n### UniqueConstraint Expression\r\n\r\nUniqueConstraintを設定する際に`desc()`, `asc()`を指定してインデックスを張ることができるようになりました。\r\n\r\n```python\r\nclass TestModel(models.Model):\r\n    code_1 = models.CharField(max_length=32)\r\n    code_2 = models.CharField(max_length=32)\r\n\r\n    class Meta:\r\n        constraints = [\r\n            UniqueConstraint(\r\n                Lower(\'code_1\'),\r\n                Lower(\'code_2\').desc(),\r\n                name=\'code_1_2_unique\',\r\n            ),\r\n        ]\r\n```\r\n\r\n発行されるSQL\r\n```sql\r\nCREATE UNIQUE INDEX "code_1_2_unique" ON "common_testmodel" ((LOWER("code_1")), (LOWER("code_2")) DESC);\r\n```\r\n\r\n\r\n### QuerySet.contains\r\nQuerySetの中に該当のモデルが存在するかチェックすることができます。\r\n\r\n```python\r\nTestModel.objects.contains(TestModel(id=1))\r\n```\r\n```sql\r\nSELECT (1) AS "a"\r\n  FROM "common_testmodel"\r\n WHERE "common_testmodel"."id" = 1\r\n LIMIT 1\r\n```\r\n\r\n実行されるクエリはexists()と変わらないようです。（この程度の処理であれば）\r\n\r\n\r\n続きは次回\r\n\r\n今回作成したソースコードは[こちら](https://github.com/kemu3007/django_4_0)', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/5/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/5/timeline', 'performed_via_github_app': None}
+ LIMIT 1</code></p>
+<p>実行されるクエリはexists()と変わらないようです。（この程度の処理であれば）</p>
+<p>続きは次回</p>
+<p>今回作成したソースコードは<a href="https://github.com/kemu3007/django_4_0">こちら</a></p>
+            <hr /> 
+            meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/5', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/5/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/5/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/5/events', 'html_url': 'https://github.com/kemu3007/portal/issues/5', 'id': 1160542944, 'node_id': 'I_kwDOG7qoq85FLHrg', 'number': 5, 'title': 'Django4.0がリリースされたので適当に試してみる', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3900075763, 'node_id': 'LA_kwDOG7qoq87odm7z', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/Django', 'name': 'Django', 'color': '5FC353', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': 0, 'created_at': '2022-03-06T07:44:51Z', 'updated_at': '2022-03-12T07:52:04Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': '[release notes](https://docs.djangoproject.com/en/dev/releases/4.0/)\r\n\r\n### 依存ライブラリ\r\n- Django 3.2\r\n```\r\nasgiref==3.4.1\r\npytz==2021.3\r\nsqlparse==0.4.2\r\n```\r\n- Django4.0\r\n```\r\nasgiref==3.4.1\r\nbackports.zoneinfo==0.2.1\r\nsqlparse==0.4.2\r\n```\r\npytzに依存しなくなり、標準のzoneinfoモジュールに変更された形になります。\r\n`backports.zoneinfo`は3.9以前をサポートするための依存です。\r\n\r\n[backports.zoneinfo](https://pypi.org/project/backports.zoneinfo/)\r\n\r\n### UniqueConstraint Expression\r\n\r\nUniqueConstraintを設定する際に`desc()`, `asc()`を指定してインデックスを張ることができるようになりました。\r\n\r\n```python\r\nclass TestModel(models.Model):\r\n    code_1 = models.CharField(max_length=32)\r\n    code_2 = models.CharField(max_length=32)\r\n\r\n    class Meta:\r\n        constraints = [\r\n            UniqueConstraint(\r\n                Lower(\'code_1\'),\r\n                Lower(\'code_2\').desc(),\r\n                name=\'code_1_2_unique\',\r\n            ),\r\n        ]\r\n```\r\n\r\n発行されるSQL\r\n```sql\r\nCREATE UNIQUE INDEX "code_1_2_unique" ON "common_testmodel" ((LOWER("code_1")), (LOWER("code_2")) DESC);\r\n```\r\n\r\n\r\n### QuerySet.contains\r\nQuerySetの中に該当のモデルが存在するかチェックすることができます。\r\n\r\n```python\r\nTestModel.objects.contains(TestModel(id=1))\r\n```\r\n```sql\r\nSELECT (1) AS "a"\r\n  FROM "common_testmodel"\r\n WHERE "common_testmodel"."id" = 1\r\n LIMIT 1\r\n```\r\n\r\n実行されるクエリはexists()と変わらないようです。（この程度の処理であれば）\r\n\r\n\r\n続きは次回\r\n\r\n今回作成したソースコードは[こちら](https://github.com/kemu3007/django_4_0)', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/5/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/5/timeline', 'performed_via_github_app': None}
+            
     <hr />
     <a href="/tools/base64/">Base64 Encoder/Decoder</a>
     <a href="/tools/jsonFormatter/">JSON Formatter</a>
