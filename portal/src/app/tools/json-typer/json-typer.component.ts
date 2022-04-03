@@ -21,6 +21,7 @@ export class JsonTyperComponent implements OnInit {
     rootType: new FormControl('Root', Validators.required),
     space: new FormControl(String.raw`\t`, Validators.required),
   });
+  escapeString = /\-|\+/g;
 
   ngOnInit() {
     persistControl(this.form, 'jsonTyper', {}).subscribe();
@@ -59,7 +60,7 @@ export class JsonTyperComponent implements OnInit {
           this.typer(dict[key], typeName, space);
         }
       }
-      if (key.includes('-')) {
+      if (key.match(this.escapeString)) {
         keyName = `['${key}']`;
       }
       result += `${space}${keyName}: ${typeName};\n`;
