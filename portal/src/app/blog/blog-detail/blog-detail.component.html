@@ -11,13 +11,13 @@
       <hr class="mt-5" />
       <h3 id="comments">comments</h3>
       <div class="card" *ngFor="let comment of comments">
-        <div class="card-body">
-          <div class="row">
-            <img [src]="comment.user.avatar_url" style="width: 50px" />
-            <a style="display: contents" [href]="comment.user.html_url">{{ comment.user.login }}</a
+        <div class="card-body pt-1 ps-1">
+          <div class="d-flex">
+            <img width="24" [src]="comment.user.avatar_url" />
+            <a class="ms-2" [href]="comment.user.html_url">{{ comment.user.login }}</a
             ><br />
           </div>
-          <hr class="mt-0 mb-1" />
+          <hr class="mt-1 mb-1" />
           {{ comment.body }}
         </div>
       </div>
