@@ -14,7 +14,7 @@ def export_comments():
     for issue in issues:
         # APIの制限にかかることが増えているためスケジュール実行のみ行う
         res = requests.get(f"https://api.github.com/repos/kemu3007/portal/issues/{issue['number']}/comments")
-        (comments_dir / f"{issue['id']}.json").write_text(json.dumps(json.loads(res.content)))
+        (comments_dir / f"{issue['id']}.json").write_bytes(res.content)
     return issues
 
 

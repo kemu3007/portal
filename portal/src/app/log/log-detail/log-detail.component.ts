@@ -6,6 +6,7 @@ import { MessageService } from '@app/shared/message/message.service';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { MarkedService } from '@app/shared/markdown/marked.service';
 import { interval, take } from 'rxjs';
+import { Comment } from '@app/shared/interfaces/comment';
 
 @Component({
   selector: 'app-blog-detail',
@@ -16,6 +17,7 @@ export class LogDetailComponent implements OnInit {
   marked = this.markedService.marked;
   html: SafeHtml = '';
   article?: LogDetail;
+  comments: Comment[] = [];
 
   constructor(
     private titleService: Title,
@@ -41,6 +43,12 @@ export class LogDetailComponent implements OnInit {
               `${window.location.origin}${window.location.pathname}#${this.route.snapshot.fragment}`
             );
           });
+      }
+    });
+    /** jsonのリストをimportした際、Moduleオブジェクトとして解釈され、Listのような構造を持っているがiterableでない型となるためその対応 */
+    this.comments$.then((comments) => {
+      for (let i = 0; i < comments.length; i++) {
+        this.comments.push(comments[i]);
       }
     });
   }
