@@ -35,7 +35,7 @@ export class MarkedService {
     renderer.image = (href) => `<img src=${href} loading=lazy />`;
     renderer.link = (href, title, text) =>
       `<a href=${href} class="text-muted">${text}<i class="bi bi-link-45deg"></i></a>`;
-    renderer.table = (header, body) => `<table class="table table-bordered">${header}${body}</table>`;
+    renderer.table = (header, body) => `<table class="table table-bordered table-striped">${header}${body}</table>`;
     this.marked.setOptions({
       renderer,
       highlight: function (code, lang) {
