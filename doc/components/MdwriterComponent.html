@@ -142,6 +142,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#close" >close</a>
+                            </li>
+                            <li>
                                 <a href="#copy" >copy</a>
                             </li>
                             <li>
@@ -149,6 +152,9 @@
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#open" >open</a>
                             </li>
                         </ul>
                     </td>
@@ -185,12 +191,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, markedService: <a href="../injectables/MarkedService.html" target="_self">MarkedService</a>, domSanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>)</code>
+<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, markedService: <a href="../injectables/MarkedService.html" target="_self">MarkedService</a>, domSanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, modal: NgbModal)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -255,6 +261,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>modal</td>
+                                                  
+                                                        <td>
+                                                                    <code>NgbModal</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -277,6 +295,43 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="close"></a>
+                    <span class="name">
+                        <span ><b>close</b></span>
+                        <a href="#close"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>close()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="copy"></a>
                     <span class="name">
                         <span ><b>copy</b></span>
@@ -293,8 +348,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:41</a></div>
                 </td>
             </tr>
 
@@ -362,8 +417,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:46</a></div>
                 </td>
             </tr>
 
@@ -443,8 +498,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:27</a></div>
                 </td>
             </tr>
 
@@ -455,6 +510,75 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="open"></a>
+                    <span class="name">
+                        <span ><b>open</b></span>
+                        <a href="#open"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>open(content: TemplateRef<any>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>content</td>
+                                    <td>
+                                            <code>TemplateRef&lt;any&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -486,7 +610,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -515,7 +639,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:31</a></div>
                                 </td>
                             </tr>
 
@@ -537,7 +661,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:35</a></div>
                                 </td>
                             </tr>
 
@@ -548,10 +672,11 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, TemplateRef } from &#x27;@angular/core&#x27;;
 import { DomSanitizer, Title } from &#x27;@angular/platform-browser&#x27;;
 import { MarkedService } from &#x27;@app/shared/markdown/marked.service&#x27;;
 import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
+import { NgbModal } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
 import { FormControl, FormGroup, persistControl } from &#x27;@ngneat/reactive-forms&#x27;;
 
 @Component({
@@ -567,7 +692,8 @@ export class MdwriterComponent implements OnInit {
     title: Title,
     private markedService: MarkedService,
     private domSanitizer: DomSanitizer,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private modal: NgbModal
   ) {
     title.setTitle(&#x27;GitHub Flavored Markdown Writer | kemu tools&#x27;);
   }
@@ -601,13 +727,24 @@ export class MdwriterComponent implements OnInit {
       mdInput.selectionEnd &#x3D; defaultLocation + 1;
     }
   }
+
+  open(content: TemplateRef&lt;any&gt;) {
+    this.modal.open(content, { centered: true, size: &#x27;fullscreen&#x27; });
+  }
+
+  close() {
+    this.modal.dismissAll();
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
-  &lt;h2 class&#x3D;&quot;mb-0&quot;&gt;GitHub Flavored Markdown Writer&lt;/h2&gt;
+  &lt;div class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
+    &lt;h2 class&#x3D;&quot;mb-0&quot;&gt;GitHub Flavored Markdown Writer&lt;/h2&gt;
+    &lt;button matRipple class&#x3D;&quot;btn btn-sm btn-secondary&quot; (click)&#x3D;&quot;open(content)&quot;&gt;see fullscreen&lt;/button&gt;
+  &lt;/div&gt;
   &lt;div class&#x3D;&quot;row&quot;&gt;
     &lt;div class&#x3D;&quot;col-6&quot;&gt;
       Markdown&lt;button matRipple class&#x3D;&quot;ms-1 btn btn-sm&quot; (click)&#x3D;&quot;copy(form.controls.markdown.value)&quot;&gt;
@@ -636,6 +773,13 @@ export class MdwriterComponent implements OnInit {
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
+
+&lt;ng-template #content let-modal&gt;
+  &lt;div class&#x3D;&quot;modal-header py-1 d-flex justify-content-end&quot;&gt;
+    &lt;button class&#x3D;&quot;btn btn-sm&quot; (click)&#x3D;&quot;close()&quot;&gt;&amp;times;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;modal-body&quot; [innerHTML]&#x3D;&quot;generatedHTML&quot;&gt;&lt;/div&gt;
+&lt;/ng-template&gt;
 </code></pre>
     </div>
 
@@ -665,7 +809,7 @@ export class MdwriterComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <h2 class="mb-0">GitHub Flavored Markdown Writer</h2>  <div class="row">    <div class="col-6">      Markdown<button matRipple class="ms-1 btn btn-sm" (click)="copy(form.controls.markdown.value)">        <i class="bi bi-stickies"></i>      </button>    </div>    <div class="col-6">      HTML<button matRipple class="ms-1 btn btn-sm" (click)="copy(rawHTML)"><i class="bi bi-stickies"></i></button>    </div>  </div>  <hr class="my-0" />  <div class="row">    <div class="col-6">      <form [formGroup]="form">        <textarea          #mdInput          class="form-control overflow-auto"          (keydown)="handleKeyDown($event, mdInput)"          formControlName="markdown"          style="height: calc(100vh - 120px); tab-size: 2"        ></textarea>      </form>    </div>    <div class="col-6">      <div class="overflow-auto" style="height: calc(100vh - 120px)" [innerHTML]="generatedHTML"></div>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="d-flex justify-content-between">    <h2 class="mb-0">GitHub Flavored Markdown Writer</h2>    <button matRipple class="btn btn-sm btn-secondary" (click)="open(content)">see fullscreen</button>  </div>  <div class="row">    <div class="col-6">      Markdown<button matRipple class="ms-1 btn btn-sm" (click)="copy(form.controls.markdown.value)">        <i class="bi bi-stickies"></i>      </button>    </div>    <div class="col-6">      HTML<button matRipple class="ms-1 btn btn-sm" (click)="copy(rawHTML)"><i class="bi bi-stickies"></i></button>    </div>  </div>  <hr class="my-0" />  <div class="row">    <div class="col-6">      <form [formGroup]="form">        <textarea          #mdInput          class="form-control overflow-auto"          (keydown)="handleKeyDown($event, mdInput)"          formControlName="markdown"          style="height: calc(100vh - 120px); tab-size: 2"        ></textarea>      </form>    </div>    <div class="col-6">      <div class="overflow-auto" style="height: calc(100vh - 120px)" [innerHTML]="generatedHTML"></div>    </div>  </div></div><ng-template #content let-modal>  <div class="modal-header py-1 d-flex justify-content-end">    <button class="btn btn-sm" (click)="close()">&times;</button>  </div>  <div class="modal-body" [innerHTML]="generatedHTML"></div></ng-template></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MdwriterComponent'};
