@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <script>
+      if (!window.navigator.userAgent.includes("Googlebot")) {
+        window.location.href=window.location.origin + '?to=' + window.location.pathname + window.location.hash
+      }
+    </script>
+    <meta charset="utf-8" />
+    <title><textarea></textarea>内部のTabキーの動作を管理する | kemu tech blog</title>
+    <base href="/" />
+    <meta name="description" content="Textarea内でのTabキーの動作を変更する方法のメモです。通常、Textarea内部でTabキーを利用した場合次の入力要素にフォーカスが動く挙動をします。そのためkeydownイベントを受け取り、指定した位置に\tを挿入するようにします。 実際のコード app.component.htmlht" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="<textarea></textarea>内部のTabキーの動作を管理する | kemu tech blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Textarea内でのTabキーの動作を変更する方法のメモです。通常、Textarea内部でTabキーを利用した場合次の入力要素にフォーカスが動く挙動をします。そのためkeydownイベントを受け取り、指定した位置に\tを挿入するようにします。 実際のコード app.component.htmlht" />
+    <meta property="og:url" content="https://portal.kemu.site" />
+    <meta
+      property="og:image"
+      content="https://portal.kemu.site/assets/images/1191408274.png"
+    />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://portal.kemu.site/assets/images/1191408274.png"
+    />
+    <meta name="twitter:description" content="Textarea内でのTabキーの動作を変更する方法のメモです。通常、Textarea内部でTabキーを利用した場合次の入力要素にフォーカスが動く挙動をします。そのためkeydownイベントを受け取り、指定した位置に\tを挿入するようにします。 実際のコード app.component.htmlht" />
+    <meta name="twitter:title" content="<textarea></textarea>内部のTabキーの動作を管理する | kemu tech blog" />
+    <meta name="twitter:url" content="https://twitter.com/kemu43" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://avatars.githubusercontent.com/u/29157528?v=4"
+    />
+    <style type="text/css">
+      img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/">home</a>
+    <a href="/blog/">blog</a>
+    <a href="/log/">log</a>
+    <a href="/tools/">tools</a>
+    <a href="/contact/">contact</a>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <hr />
+    
+            <h2><textarea></textarea>内部のTabキーの動作を管理する</h2> 
+            <hr />
+            <p>Textarea内でのTabキーの動作を変更する方法のメモです。</p>
+<p>通常、Textarea内部でTabキーを利用した場合次の入力要素にフォーカスが動く挙動をします。そのためkeydownイベントを受け取り、指定した位置に<code>\t</code>を挿入するようにします。</p>
+<h3>実際のコード</h3>
+<h4>app.component.html</h4>
+<p>```html</p>
+<form [formGroup]="form">
+    <textarea
+        #mdInput
+        formControlName="markdown"
+        (keydown)="handleKeyDown($event, mdInput)"
+    ></textarea>
+</form>
+<p>```</p>
+<h4>app.component.ts</h4>
+<p>```ts
+export class AppComponent {
+    form = new FormGroup({
+        markdown: new FormControl('')
+    })</p>
+<pre><code>handleKeyDown(event: KeyboardEvent, mdInput: HTMLTextAreaElement) {
+    if (event.key === 'Tab') {
+        /** Tabキー押下時のフォーカス遷移をなくす */
+        event.preventDefault();
+        /** HTMLTextAreaElementから現在のカーソル位置を取得 */
+        const defaultLocation = mdInput.selectionStart;
+        const left = this.form.controls.markdown.value.slice(0, mdInput.selectionStart);
+        const right = this.form.controls.markdown.value.slice(mdInput.selectionStart);
+        this.form.controls.markdown.setValue(left + '\t' + right);
+        /** テキストエリア内のカーソルをtabの後に移動 */
+        mdInput.selectionEnd = defaultLocation + 1;
+    }
+}
+</code></pre>
+<p>}
+```</p>
+<h4>app.component.scss</h4>
+<p><code>\t</code>の表示幅に関しては以下のcssで管理可能です。</p>
+<p>```scss</p>
+<h1>mdInput  {</h1>
+<pre><code>tab-size: 2;
+</code></pre>
+<p>}
+```</p>
+<p>以下の画面でこのコードが実際に動いている様子を確認することができます。</p>
+<p><a href="/tools/mdwriter/">GitHub Flavored Markdown Writer</a></p>
+            <hr /> 
+            meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/29', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/29/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/29/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/29/events', 'html_url': 'https://github.com/kemu3007/portal/issues/29', 'id': 1191408274, 'node_id': 'I_kwDOG7qoq85HA3KS', 'number': 29, 'title': '<textarea></textarea>内部のTabキーの動作を管理する', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3900074882, 'node_id': 'LA_kwDOG7qoq87odmuC', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/Angular', 'name': 'Angular', 'color': 'D93F0B', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': 0, 'created_at': '2022-04-04T08:04:13Z', 'updated_at': '2022-04-04T08:04:24Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': 'Textarea内でのTabキーの動作を変更する方法のメモです。\r\n\r\n通常、Textarea内部でTabキーを利用した場合次の入力要素にフォーカスが動く挙動をします。そのためkeydownイベントを受け取り、指定した位置に`\\t`を挿入するようにします。\r\n\r\n### 実際のコード\r\n\r\n#### app.component.html\r\n\r\n```html\r\n<form [formGroup]="form">\r\n\t<textarea\r\n\t\t#mdInput\r\n\t\tformControlName="markdown"\r\n\t\t(keydown)="handleKeyDown($event, mdInput)"\r\n\t></textarea>\r\n</form>\r\n```\r\n\r\n#### app.component.ts\r\n\r\n```ts\r\nexport class AppComponent {\r\n\tform = new FormGroup({\r\n\t\tmarkdown: new FormControl(\'\')\r\n\t})\r\n\r\n\thandleKeyDown(event: KeyboardEvent, mdInput: HTMLTextAreaElement) {\r\n\t\tif (event.key === \'Tab\') {\r\n\t\t\t/** Tabキー押下時のフォーカス遷移をなくす */\r\n\t\t\tevent.preventDefault();\r\n\t\t\t/** HTMLTextAreaElementから現在のカーソル位置を取得 */\r\n\t\t\tconst defaultLocation = mdInput.selectionStart;\r\n\t\t\tconst left = this.form.controls.markdown.value.slice(0, mdInput.selectionStart);\r\n\t\t\tconst right = this.form.controls.markdown.value.slice(mdInput.selectionStart);\r\n\t\t\tthis.form.controls.markdown.setValue(left + \'\\t\' + right);\r\n\t\t\t/** テキストエリア内のカーソルをtabの後に移動 */\r\n\t\t\tmdInput.selectionEnd = defaultLocation + 1;\r\n\t\t}\r\n\t}\r\n}\r\n```\r\n\r\n#### app.component.scss\r\n\r\n`\\t`の表示幅に関しては以下のcssで管理可能です。\r\n\r\n```scss\r\n#mdInput  {\r\n\ttab-size: 2;\r\n}\r\n```\r\n\r\n以下の画面でこのコードが実際に動いている様子を確認することができます。\r\n\r\n[GitHub Flavored Markdown Writer](/tools/mdwriter/)', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/29/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/29/timeline', 'performed_via_github_app': None}
+            
+    <hr />
+    <a href="/tools/base64/">Base64 Encoder/Decoder</a>
+    <a href="/tools/jsonFormatter/">JSON Formatter</a>
+    <a href="/tools/realtime/">REALTIME</a>
+    <a href="/tools/jsonTyper/">JSON Typer</a>
+    <a href="/tools/userInfo/">IP Addreass Checker</a>
+  
+    <footer class="my-5 footer">
+      <div class="d-flex justify-content-end">
+        <span style="font-size: 24px">
+          <a href="https://github.com/kemu3007"><i class="bi bi-github"></i></a>
+          <a class="ms-2" href="https://twitter.com/kemu43"><i class="bi bi-twitter"></i></a>
+          <a class="mx-2" href="https://portal.kemu.site/doc/"><i class="bi bi-book"></i></a>
+        </span>
+      </div>
+      <div class="d-flex justify-content-center">
+        <span class="text-muted">Copyright ©️ 2017-2022 kemu All Rights Reserved.</span>
+      </div>
+    </footer>
+  </body>
+</html>
