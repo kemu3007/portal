@@ -10,6 +10,7 @@ import { JsonTyperComponent } from './json-typer/json-typer.component';
 import { RealtimeComponent } from './realtime/realtime.component';
 import { JsonFormatterComponent } from './json-formatter/json-formatter.component';
 import { Base64Component } from './base64/base64.component';
+import { MdwriterComponent } from './mdwriter/mdwriter.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { Base64Component } from './base64/base64.component';
     RealtimeComponent,
     JsonFormatterComponent,
     Base64Component,
+    MdwriterComponent,
   ],
   imports: [CommonModule, SharedModule, ToolsRoutingModule],
 })

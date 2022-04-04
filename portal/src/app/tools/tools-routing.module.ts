@@ -5,6 +5,7 @@ import { AmazonAssociateComponent } from './amazon-associate/amazon-associate.co
 import { Base64Component } from './base64/base64.component';
 import { JsonFormatterComponent } from './json-formatter/json-formatter.component';
 import { JsonTyperComponent } from './json-typer/json-typer.component';
+import { MdwriterComponent } from './mdwriter/mdwriter.component';
 import { RealtimeComponent } from './realtime/realtime.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
 import { UserInfoComponent } from './user-info/user-info.component';
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'base64',
     component: Base64Component,
+  },
+  {
+    path: 'mdwriter',
+    component: MdwriterComponent,
   },
 ];
 

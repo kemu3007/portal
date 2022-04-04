@@ -34,6 +34,7 @@ if __name__ == "__main__":
     add_url_element("https://portal.kemu.site/tools/realtime/")
     add_url_element("https://portal.kemu.site/tools/jsonFormatter/")
     add_url_element("https://portal.kemu.site/tools/base64/")
+    add_url_element("https://portal.kemu.site/tools/mdwriter/")
 
     for article_id in articles_list.keys():
         add_url_element(f"https://portal.kemu.site/blog/{article_id}/")

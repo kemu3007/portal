@@ -281,6 +281,35 @@ if __name__ == "__main__":
     path = Path("portal/src/tools/base64")
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(base64_html)
+
+    # GitHub Flavored Markdown Writer
+    mdwriter_html = (
+        base_html.replace("page_image", "https://portal.kemu.site/assets/images/mdwriter.png")
+        .replace("page_title", "GitHub Flavored Markdown Writer | kemu tools")
+        .replace(
+            "page_description",
+            """
+            GitHub Flavored MarkdownをHTMLに変換します。変換データ及び元のMarkdwonデータをワンクリックでコピー可能です。
+            """,
+        )
+    )
+    mdwriter_html = mdwriter_html.replace(
+        "page_contents",
+        """
+        <h2>GitHub Flavored Markdown Writer</h2> 
+        markdwon / HTML
+        <hr />
+        markdown<button>copy</button>
+        <textarea></textarea>
+        <hr />
+        html 
+        ............................
+    """,
+    )
+    path = Path("portal/src/tools/mdwriter")
+    path.mkdir(exist_ok=True)
+    (path / "index.html").write_text(mdwriter_html)
+
     # contact
     contact_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/contact.png")

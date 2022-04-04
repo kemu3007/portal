@@ -64,4 +64,5 @@ if __name__ == "__main__":
     write_portal_image("REALTIME", "realtime")
     write_portal_image("JSON Formatter", "json-formatter")
     write_portal_image("Base64 Encoder/Decoder", "base64")
+    write_portal_image("GitHub Flavored Markdown Writer", "mdwriter")
     write_weed_image()
