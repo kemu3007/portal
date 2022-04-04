@@ -35,7 +35,7 @@ export class BlogDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.article$.then((article) => {
-      this.titleService.setTitle(`kemu tech blog | ${article.title}`);
+      this.titleService.setTitle(`${article.title} | kemu tech blog`);
       this.article = article;
       this.breadcrumbService.breadcrumb = `/blog/${article.title}`;
       this.html = this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));

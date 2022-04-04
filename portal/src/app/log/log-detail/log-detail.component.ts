@@ -31,7 +31,7 @@ export class LogDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.article$.then((article) => {
-      this.titleService.setTitle(`kemu logs | ${article.title}`);
+      this.titleService.setTitle(`${article.title} | kemu logs`);
       this.article = article;
       this.breadcrumbService.breadcrumb = `/log/${article.title}`;
       this.html = this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));
