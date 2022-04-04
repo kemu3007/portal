@@ -1,5 +1,8 @@
 <div class="container-fluid">
-  <h2 class="mb-0">GitHub Flavored Markdown Writer</h2>
+  <div class="d-flex justify-content-between">
+    <h2 class="mb-0">GitHub Flavored Markdown Writer</h2>
+    <button matRipple class="btn btn-sm btn-secondary" (click)="open(content)">see fullscreen</button>
+  </div>
   <div class="row">
     <div class="col-6">
       Markdown<button matRipple class="ms-1 btn btn-sm" (click)="copy(form.controls.markdown.value)">
@@ -28,3 +31,10 @@
     </div>
   </div>
 </div>
+
+<ng-template #content let-modal>
+  <div class="modal-header py-1 d-flex justify-content-end">
+    <button class="btn btn-sm" (click)="close()">&times;</button>
+  </div>
+  <div class="modal-body" [innerHTML]="generatedHTML"></div>
+</ng-template>

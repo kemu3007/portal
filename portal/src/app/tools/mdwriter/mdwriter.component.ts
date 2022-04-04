@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { DomSanitizer, Title } from '@angular/platform-browser';
 import { MarkedService } from '@app/shared/markdown/marked.service';
 import { MessageService } from '@app/shared/message/message.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
 
 @Component({
@@ -17,7 +18,8 @@ export class MdwriterComponent implements OnInit {
     title: Title,
     private markedService: MarkedService,
     private domSanitizer: DomSanitizer,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private modal: NgbModal
   ) {
     title.setTitle('GitHub Flavored Markdown Writer | kemu tools');
   }
@@ -50,5 +52,13 @@ export class MdwriterComponent implements OnInit {
       this.form.controls.markdown.setValue(left + '\t' + right);
       mdInput.selectionEnd = defaultLocation + 1;
     }
+  }
+
+  open(content: TemplateRef<any>) {
+    this.modal.open(content, { centered: true, size: 'fullscreen' });
+  }
+
+  close() {
+    this.modal.dismissAll();
   }
 }
