@@ -11,7 +11,7 @@ export class RealtimeComponent implements OnInit {
   ms = 0;
 
   constructor(title: Title) {
-    title.setTitle('kemu tools | REALTIME');
+    title.setTitle('REALTIME | kemu tools');
   }
 
   ngOnInit() {

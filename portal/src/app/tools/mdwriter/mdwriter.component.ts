@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, Title } from '@angular/platform-browser';
 import { MarkedService } from '@app/shared/markdown/marked.service';
 import { MessageService } from '@app/shared/message/message.service';
 import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
@@ -14,10 +14,13 @@ export class MdwriterComponent implements OnInit {
   });
 
   constructor(
+    title: Title,
     private markedService: MarkedService,
     private domSanitizer: DomSanitizer,
     private messageService: MessageService
-  ) {}
+  ) {
+    title.setTitle('GitHub Flavored Markdown Writer | kemu tools');
+  }
 
   ngOnInit() {
     persistControl(this.form, 'mdwriter', {}).subscribe();

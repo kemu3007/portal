@@ -11,7 +11,7 @@ import { FormGroup, FormControl, persistControl } from '@ngneat/reactive-forms';
 })
 export class JsonTyperComponent implements OnInit {
   constructor(private messageService: MessageService, title: Title, breadcrumbService: BreadcrumbService) {
-    title.setTitle('kemu tools | JSON Typer');
+    title.setTitle('JSON Typer | kemu tools');
     breadcrumbService.breadcrumb = '/tools/JSON Typer';
   }
   results: string[] = [];

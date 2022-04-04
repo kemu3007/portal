@@ -23,7 +23,7 @@ export class UserInfoComponent implements OnInit {
     title: Title,
     breadCrumbService: BreadcrumbService
   ) {
-    title.setTitle('kemu tools | IP Address Checker');
+    title.setTitle('IP Address Checker | kemu tools');
     breadCrumbService.breadcrumb = '/tools/IP Address Checker';
   }
 

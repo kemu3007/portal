@@ -16,7 +16,7 @@ export class AmazonAssociateComponent implements OnInit {
   });
   result = '';
   constructor(private messageService: MessageService, title: Title, breadCrumbService: BreadcrumbService) {
-    title.setTitle('kemu tools | Amazon Associate Linker');
+    title.setTitle('Amazon Associate Linker | kemu tools');
     breadCrumbService.breadcrumb = '/tools/Amazon Associate Linker';
   }
 

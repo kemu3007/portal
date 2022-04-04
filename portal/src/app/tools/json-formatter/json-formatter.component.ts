@@ -12,7 +12,7 @@ import { distinctUntilChanged } from 'rxjs';
 })
 export class JsonFormatterComponent implements OnInit {
   constructor(private messageService: MessageService, title: Title, breadcrumbService: BreadcrumbService) {
-    title.setTitle('kemu tools | JSON Formatter');
+    title.setTitle('JSON Formatter | kemu tools');
     breadcrumbService.breadcrumb = 'tools/JSON Formatter';
   }
   form = new FormGroup({
