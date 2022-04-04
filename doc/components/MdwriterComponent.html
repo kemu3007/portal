@@ -592,7 +592,7 @@ export class MdwriterComponent implements OnInit {
     &lt;div class&#x3D;&quot;col-6&quot;&gt;
       &lt;form [formGroup]&#x3D;&quot;form&quot;&gt;
         &lt;textarea
-          class&#x3D;&quot;form-control&quot;
+          class&#x3D;&quot;form-control overflow-auto&quot;
           (keydown)&#x3D;&quot;handleKeyDown($event)&quot;
           formControlName&#x3D;&quot;markdown&quot;
           style&#x3D;&quot;height: calc(100vh - 120px)&quot;
@@ -600,7 +600,7 @@ export class MdwriterComponent implements OnInit {
       &lt;/form&gt;
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;col-6&quot;&gt;
-      &lt;div [innerHTML]&#x3D;&quot;generatedHTML&quot;&gt;&lt;/div&gt;
+      &lt;div class&#x3D;&quot;overflow-auto&quot; style&#x3D;&quot;height: calc(100vh - 120px)&quot; [innerHTML]&#x3D;&quot;generatedHTML&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -633,7 +633,7 @@ export class MdwriterComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <h2 class="mb-0">GitHub Flavored Markdown Writer</h2>  <div class="row">    <div class="col-6">      Markdown<button matRipple class="ms-1 btn btn-sm" (click)="copy(form.controls.markdown.value)">        <i class="bi bi-stickies"></i>      </button>    </div>    <div class="col-6">      HTML<button matRipple class="ms-1 btn btn-sm" (click)="copy(rawHTML)"><i class="bi bi-stickies"></i></button>    </div>  </div>  <hr class="my-0" />  <div class="row">    <div class="col-6">      <form [formGroup]="form">        <textarea          class="form-control"          (keydown)="handleKeyDown($event)"          formControlName="markdown"          style="height: calc(100vh - 120px)"        ></textarea>      </form>    </div>    <div class="col-6">      <div [innerHTML]="generatedHTML"></div>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <h2 class="mb-0">GitHub Flavored Markdown Writer</h2>  <div class="row">    <div class="col-6">      Markdown<button matRipple class="ms-1 btn btn-sm" (click)="copy(form.controls.markdown.value)">        <i class="bi bi-stickies"></i>      </button>    </div>    <div class="col-6">      HTML<button matRipple class="ms-1 btn btn-sm" (click)="copy(rawHTML)"><i class="bi bi-stickies"></i></button>    </div>  </div>  <hr class="my-0" />  <div class="row">    <div class="col-6">      <form [formGroup]="form">        <textarea          class="form-control overflow-auto"          (keydown)="handleKeyDown($event)"          formControlName="markdown"          style="height: calc(100vh - 120px)"        ></textarea>      </form>    </div>    <div class="col-6">      <div class="overflow-auto" style="height: calc(100vh - 120px)" [innerHTML]="generatedHTML"></div>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MdwriterComponent'};
