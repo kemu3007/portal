@@ -343,7 +343,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>handleKeyDown(event: KeyboardEvent)</code>
+<code>handleKeyDown(event: KeyboardEvent, mdInput: HTMLTextAreaElement)</code>
                 </td>
             </tr>
 
@@ -375,6 +375,18 @@
                                     <td>event</td>
                                     <td>
                                             <code>KeyboardEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>mdInput</td>
+                                    <td>
+                                            <code>HTMLTextAreaElement</code>
                                     </td>
 
                                     <td>
@@ -564,10 +576,14 @@ export class MdwriterComponent implements OnInit {
     this.messageService.pushMessage({ type: &#x27;info&#x27;, body: &#x27;クリップボードにコピーしました。&#x27; });
   }
 
-  handleKeyDown(event: KeyboardEvent) {
+  handleKeyDown(event: KeyboardEvent, mdInput: HTMLTextAreaElement) {
     if (event.key &#x3D;&#x3D;&#x3D; &#x27;Tab&#x27;) {
       event.preventDefault();
-      this.form.controls.markdown.patchValue(this.form.controls.markdown.value + &#x27;  &#x27;);
+      const defaultLocation &#x3D; mdInput.selectionStart;
+      const left &#x3D; this.form.controls.markdown.value.slice(0, mdInput.selectionStart);
+      const right &#x3D; this.form.controls.markdown.value.slice(mdInput.selectionStart);
+      this.form.controls.markdown.setValue(left + &#x27;\t&#x27; + right);
+      mdInput.selectionEnd &#x3D; defaultLocation + 1;
     }
   }
 }
@@ -592,10 +608,11 @@ export class MdwriterComponent implements OnInit {
     &lt;div class&#x3D;&quot;col-6&quot;&gt;
       &lt;form [formGroup]&#x3D;&quot;form&quot;&gt;
         &lt;textarea
+          #mdInput
           class&#x3D;&quot;form-control overflow-auto&quot;
-          (keydown)&#x3D;&quot;handleKeyDown($event)&quot;
+          (keydown)&#x3D;&quot;handleKeyDown($event, mdInput)&quot;
           formControlName&#x3D;&quot;markdown&quot;
-          style&#x3D;&quot;height: calc(100vh - 120px)&quot;
+          style&#x3D;&quot;height: calc(100vh - 120px); tab-size: 2&quot;
         &gt;&lt;/textarea&gt;
       &lt;/form&gt;
     &lt;/div&gt;
@@ -633,7 +650,7 @@ export class MdwriterComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <h2 class="mb-0">GitHub Flavored Markdown Writer</h2>  <div class="row">    <div class="col-6">      Markdown<button matRipple class="ms-1 btn btn-sm" (click)="copy(form.controls.markdown.value)">        <i class="bi bi-stickies"></i>      </button>    </div>    <div class="col-6">      HTML<button matRipple class="ms-1 btn btn-sm" (click)="copy(rawHTML)"><i class="bi bi-stickies"></i></button>    </div>  </div>  <hr class="my-0" />  <div class="row">    <div class="col-6">      <form [formGroup]="form">        <textarea          class="form-control overflow-auto"          (keydown)="handleKeyDown($event)"          formControlName="markdown"          style="height: calc(100vh - 120px)"        ></textarea>      </form>    </div>    <div class="col-6">      <div class="overflow-auto" style="height: calc(100vh - 120px)" [innerHTML]="generatedHTML"></div>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <h2 class="mb-0">GitHub Flavored Markdown Writer</h2>  <div class="row">    <div class="col-6">      Markdown<button matRipple class="ms-1 btn btn-sm" (click)="copy(form.controls.markdown.value)">        <i class="bi bi-stickies"></i>      </button>    </div>    <div class="col-6">      HTML<button matRipple class="ms-1 btn btn-sm" (click)="copy(rawHTML)"><i class="bi bi-stickies"></i></button>    </div>  </div>  <hr class="my-0" />  <div class="row">    <div class="col-6">      <form [formGroup]="form">        <textarea          #mdInput          class="form-control overflow-auto"          (keydown)="handleKeyDown($event, mdInput)"          formControlName="markdown"          style="height: calc(100vh - 120px); tab-size: 2"        ></textarea>      </form>    </div>    <div class="col-6">      <div class="overflow-auto" style="height: calc(100vh - 120px)" [innerHTML]="generatedHTML"></div>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MdwriterComponent'};
