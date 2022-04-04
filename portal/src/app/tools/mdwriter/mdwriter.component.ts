@@ -38,10 +38,14 @@ export class MdwriterComponent implements OnInit {
     this.messageService.pushMessage({ type: 'info', body: 'クリップボードにコピーしました。' });
   }
 
-  handleKeyDown(event: KeyboardEvent) {
+  handleKeyDown(event: KeyboardEvent, mdInput: HTMLTextAreaElement) {
     if (event.key === 'Tab') {
       event.preventDefault();
-      this.form.controls.markdown.patchValue(this.form.controls.markdown.value + '  ');
+      const defaultLocation = mdInput.selectionStart;
+      const left = this.form.controls.markdown.value.slice(0, mdInput.selectionStart);
+      const right = this.form.controls.markdown.value.slice(mdInput.selectionStart);
+      this.form.controls.markdown.setValue(left + '\t' + right);
+      mdInput.selectionEnd = defaultLocation + 1;
     }
   }
 }

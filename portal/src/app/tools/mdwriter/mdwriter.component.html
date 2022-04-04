@@ -15,10 +15,11 @@
     <div class="col-6">
       <form [formGroup]="form">
         <textarea
+          #mdInput
           class="form-control overflow-auto"
-          (keydown)="handleKeyDown($event)"
+          (keydown)="handleKeyDown($event, mdInput)"
           formControlName="markdown"
-          style="height: calc(100vh - 120px)"
+          style="height: calc(100vh - 120px); tab-size: 2"
         ></textarea>
       </form>
     </div>
