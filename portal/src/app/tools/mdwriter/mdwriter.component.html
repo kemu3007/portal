@@ -15,7 +15,7 @@
     <div class="col-6">
       <form [formGroup]="form">
         <textarea
-          class="form-control"
+          class="form-control overflow-auto"
           (keydown)="handleKeyDown($event)"
           formControlName="markdown"
           style="height: calc(100vh - 120px)"
@@ -23,7 +23,7 @@
       </form>
     </div>
     <div class="col-6">
-      <div [innerHTML]="generatedHTML"></div>
+      <div class="overflow-auto" style="height: calc(100vh - 120px)" [innerHTML]="generatedHTML"></div>
     </div>
   </div>
 </div>
