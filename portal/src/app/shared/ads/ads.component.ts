@@ -6,15 +6,22 @@ import { environment } from '@environments/environment';
   templateUrl: './ads.component.html',
 })
 export class AdsComponent {
-  @Input() type!: 'list' | 'box';
+  @Input() type!: 'list' | 'box' | 'auto';
   @Input() count = 1;
   constructor() {}
+
+  get displayType(): 'list' | 'box' {
+    if (this.type !== 'auto') {
+      return this.type;
+    }
+    return window.screen.width >= 768 ? 'list' : 'box';
+  }
 
   get useGoogleAdsense() {
     return environment.adsenseProvider === 'google';
   }
 
   get isList() {
-    return this.type === 'list';
+    return this.displayType === 'list';
   }
 }
