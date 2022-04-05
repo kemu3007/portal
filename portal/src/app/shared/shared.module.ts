@@ -16,6 +16,7 @@ import { AdsComponent } from './ads/ads.component';
 import { AdsModalComponent } from './ads-modal/ads-modal.component';
 import { MatRippleModule } from '@angular/material/core';
 import { MatTabsModule } from '@angular/material/tabs';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MdescapePipe,
     AdsComponent,
     AdsModalComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
