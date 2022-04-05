@@ -23,15 +23,7 @@ weed_iframe_base = """
 
 
 def write_weeds_iframe():
-    weed_svg = BeautifulSoup(urlopen("https://github.com/kemu3007"), features="html.parser").find(
-        class_="js-calendar-graph-svg"
-    )
-    html = weed_iframe_base % weed_svg
-    (iframes_dir / "weed.html").write_text(html)
-
-
-def write_past_weeds_iframe():
-    years = [2017, 2018, 2019, 2020, 2021]
+    years = [2017, 2018, 2019, 2020, 2022]
     for year in years:
         weed_svg = BeautifulSoup(
             urlopen(f"https://github.com/kemu3007?tab=overview&from={year}-12-01&to={year}-12-31"),
@@ -97,4 +89,3 @@ if __name__ == "__main__":
     write_tools_image("Base64 Encoder/Decoder", "base64")
     write_tools_image("GitHub Flavored Markdown Writer", "mdwriter")
     write_weeds_iframe()
-    write_past_weeds_iframe()
