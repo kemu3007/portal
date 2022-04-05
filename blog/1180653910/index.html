@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <script>
-      if (!window.navigator.userAgent.includes("Googlebot")) {
+      if (!window.navigator.userAgent.match(/Googlebot|Chrome-Lighthouse/g) ) {
         window.location.href=window.location.origin + '?to=' + window.location.pathname + window.location.hash
       }
     </script>
