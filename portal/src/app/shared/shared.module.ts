@@ -15,6 +15,7 @@ import { MdescapePipe } from './pipes/mdescape.pipe';
 import { AdsComponent } from './ads/ads.component';
 import { AdsModalComponent } from './ads-modal/ads-modal.component';
 import { MatRippleModule } from '@angular/material/core';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatRippleModule } from '@angular/material/core';
     ReactiveFormsModule,
     NgbNavModule,
     MatRippleModule,
+    MatTabsModule,
   ],
   exports: [
     TweetBtnComponent,
@@ -51,6 +53,7 @@ import { MatRippleModule } from '@angular/material/core';
     AdsComponent,
     AdsModalComponent,
     MatRippleModule,
+    MatTabsModule,
   ],
 })
 export class SharedModule {}

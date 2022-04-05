@@ -14,19 +14,31 @@ white = (255, 255, 255)
 black = (0, 0, 0)
 save_dir = Path("portal/src/assets/images")
 iframes_dir = Path("portal/src/assets/iframes")
+weed_iframe_base = """
+<html>
+    <head><link rel="stylesheet" href="./weed.css" /></head>
+    <body>%s</body>
+</html>
+"""
 
 
-def write_weed_iframe():
+def write_weeds_iframe():
     weed_svg = BeautifulSoup(urlopen("https://github.com/kemu3007"), features="html.parser").find(
         class_="js-calendar-graph-svg"
     )
-    html = f"""
-    <html>
-        <head><link rel="stylesheet" href="./weed.css" /></head>
-        <body>{weed_svg}</body>
-    </html>
-    """
+    html = weed_iframe_base % weed_svg
     (iframes_dir / "weed.html").write_text(html)
+
+
+def write_past_weeds_iframe():
+    years = [2017, 2018, 2019, 2020, 2021]
+    for year in years:
+        weed_svg = BeautifulSoup(
+            urlopen(f"https://github.com/kemu3007?tab=overview&from={year}-12-01&to={year}-12-31"),
+            features="html.parser",
+        ).find(class_="js-calendar-graph-svg")
+        html = weed_iframe_base % weed_svg
+        (iframes_dir / f"weed_{year}.html").write_text(html)
 
 
 def write_blog_image(title: str, output: str):
@@ -84,4 +96,5 @@ if __name__ == "__main__":
     write_tools_image("JSON Formatter", "json-formatter")
     write_tools_image("Base64 Encoder/Decoder", "base64")
     write_tools_image("GitHub Flavored Markdown Writer", "mdwriter")
-    write_weed_iframe()
+    write_weeds_iframe()
+    write_past_weeds_iframe()
