@@ -25,9 +25,9 @@ export class RouterService {
       tap((event) => {
         if (event instanceof NavigationStart) {
           this.loadingService.loading = true;
+          this.breadcrumbService.breadcrumb = event.url;
         } else if (event instanceof NavigationEnd) {
           this.loadingService.loading = false;
-          this.breadcrumbService.breadcrumb = event.url;
           this.displayOrWaitAds();
         } else if (event instanceof NavigationCancel || event instanceof NavigationError) {
           this.messageService.pushMessage({
