@@ -1,0 +1,27 @@
+body {
+  text-align: center;
+}
+
+.ContributionCalendar-label {
+  font-size: 12px;
+}
+
+.ContributionCalendar-day[data-level='0'] {
+  fill: #ebedf0;
+}
+
+.ContributionCalendar-day[data-level='1'] {
+  fill: #9be9a8;
+}
+
+.ContributionCalendar-day[data-level='2'] {
+  fill: #40c463;
+}
+
+.ContributionCalendar-day[data-level='3'] {
+  fill: #30a14e;
+}
+
+.ContributionCalendar-day[data-level='4'] {
+  fill: #216e39;
+}
