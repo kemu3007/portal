@@ -356,9 +356,9 @@ export class RouterService {
       tap((event) &#x3D;&gt; {
         if (event instanceof NavigationStart) {
           this.loadingService.loading &#x3D; true;
+          this.breadcrumbService.breadcrumb &#x3D; event.url;
         } else if (event instanceof NavigationEnd) {
           this.loadingService.loading &#x3D; false;
-          this.breadcrumbService.breadcrumb &#x3D; event.url;
           this.displayOrWaitAds();
         } else if (event instanceof NavigationCancel || event instanceof NavigationError) {
           this.messageService.pushMessage({
