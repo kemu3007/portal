@@ -56,13 +56,13 @@
 <title>cluster_SharedModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-230.8 1186,-230.8 1186,-32.8 8,-32.8"/>
 </g>
-<g id="clust12" class="cluster">
-<title>cluster_SharedModule_exports</title>
-<polygon fill="none" stroke="black" points="16,-170.8 16,-222.8 1178,-222.8 1178,-170.8 16,-170.8"/>
-</g>
 <g id="clust2" class="cluster">
 <title>cluster_SharedModule_declarations</title>
 <polygon fill="none" stroke="black" points="32,-40.8 32,-92.8 1167,-92.8 1167,-40.8 32,-40.8"/>
+</g>
+<g id="clust12" class="cluster">
+<title>cluster_SharedModule_exports</title>
+<polygon fill="none" stroke="black" points="16,-170.8 16,-222.8 1178,-222.8 1178,-170.8 16,-170.8"/>
 </g>
 <!-- AdsComponent -->
 <g id="node1" class="node">
@@ -386,6 +386,7 @@ import { MdescapePipe } from &#x27;./pipes/mdescape.pipe&#x27;;
 import { AdsComponent } from &#x27;./ads/ads.component&#x27;;
 import { AdsModalComponent } from &#x27;./ads-modal/ads-modal.component&#x27;;
 import { MatRippleModule } from &#x27;@angular/material/core&#x27;;
+import { MatTabsModule } from &#x27;@angular/material/tabs&#x27;;
 
 @NgModule({
   declarations: [
@@ -407,6 +408,7 @@ import { MatRippleModule } from &#x27;@angular/material/core&#x27;;
     ReactiveFormsModule,
     NgbNavModule,
     MatRippleModule,
+    MatTabsModule,
   ],
   exports: [
     TweetBtnComponent,
@@ -422,6 +424,7 @@ import { MatRippleModule } from &#x27;@angular/material/core&#x27;;
     AdsComponent,
     AdsModalComponent,
     MatRippleModule,
+    MatTabsModule,
   ],
 })
 export class SharedModule {}
