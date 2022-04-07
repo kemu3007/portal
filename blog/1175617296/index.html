@@ -28,6 +28,9 @@
     <meta name="twitter:description" content="サイトをAWS上に置いている場合、ロードバランサにSSL証明書を置き、ターゲットグループにEC2を指定するといった構成がよくある構成として挙げられます。この構成の場合、ドメインのDNSレコードに通常CNAMEレコードを追加し、ロードバランサのDNS名を記載します。<img width="644" a" />
     <meta name="twitter:title" content="AWS Apex Domainとうまく付き合う | kemu tech blog" />
     <meta name="twitter:url" content="https://twitter.com/kemu43" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link
       rel="icon"
       type="image/x-icon"
@@ -39,15 +42,38 @@
       }
     </style>
   </head>
-  <body style="overflow-x: auto;">
-    <a href="/">home</a>
-    <a href="/blog/">blog</a>
-    <a href="/log/">log</a>
-    <a href="/tools/">tools</a>
-    <a href="/contact/">contact</a>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <hr />
-    
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">kemu portal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/blog/">blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/log/">log</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/tools/">tools</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/contact/">contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <hr />
+      
             <h2>AWS Apex Domainとうまく付き合う</h2> 
             <hr />
             <p>サイトをAWS上に置いている場合、ロードバランサにSSL証明書を置き、ターゲットグループにEC2を指定するといった構成がよくある構成として挙げられます。</p>
@@ -89,13 +115,15 @@ kemu.site.              60      IN      A       13.231.15.68</p>
             <hr /> 
             meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/22', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/22/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/22/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/22/events', 'html_url': 'https://github.com/kemu3007/portal/issues/22', 'id': 1175617296, 'node_id': 'I_kwDOG7qoq85GEn8Q', 'number': 22, 'title': 'AWS Apex Domainとうまく付き合う', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3951278401, 'node_id': 'LA_kwDOG7qoq87rg7lB', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/AWS', 'name': 'AWS', 'color': 'EE0471', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': 0, 'created_at': '2022-03-21T16:14:23Z', 'updated_at': '2022-03-21T16:34:46Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': 'サイトをAWS上に置いている場合、ロードバランサにSSL証明書を置き、ターゲットグループにEC2を指定するといった構成がよくある構成として挙げられます。\r\n\r\nこの構成の場合、ドメインのDNSレコードに通常CNAMEレコードを追加し、ロードバランサのDNS名を記載します。\r\n\r\n<img width="644" alt="スクリーンショット 2022-03-22 0 46 54" src="https://user-images.githubusercontent.com/29157528/159298430-54508ca4-4ecb-4259-aea9-b370c3bca531.png">\r\n\r\nしかし、Apex Domain(このサイトであれば `kemu.site`)に対してロードバランサを設定したい場合CNAMEレコードを追加することができません。\r\n\r\nロードバランサのIPは可変であり、再起動などにより変更される可能性が存在する行為は推奨されておらず、ロードバランサのIPを固定する方法もあるにはあるのですが費用がかかります。\r\n\r\n> [AWS Global Accelerator](https://aws.amazon.com/jp/global-accelerator/?blogs-global-accelerator.sort-by=item.additionalFields.createdDate&blogs-global-accelerator.sort-order=desc&aws-global-accelerator-wn.sort-by=item.additionalFields.postDateTime&aws-global-accelerator-wn.sort-order=desc)\r\n\r\nそのため、Route53のAレコードエイリアスの機能を利用します。\r\n\r\n<img width="875" alt="スクリーンショット 2022-03-22 0 53 49" src="https://user-images.githubusercontent.com/29157528/159300049-8f1490f8-a882-4330-81ec-000fe7c45172.png">\r\n\r\n<img width="885" alt="スクリーンショット 2022-03-22 0 56 09" src="https://user-images.githubusercontent.com/29157528/159300239-65a7fb63-d71a-4a5a-9503-bf0c3a180a19.png">\r\n\r\n以上の形でエンドポイントのエイリアスを設定可能です。\r\n\r\nもし現在Route53を利用していない場合はRoute53でホストゾーンを作成し、そのドメインのNSレコードの値をNSとするようにお名前ドットコムやGoogle Domainの管理画面から設定する必要があります。(変更の反映には少し時間がかかります。この時は確か1時間くらいで反映された。)\r\n\r\nこれにより可変なロードバランサのエンドポイントをApex Domainに指定することができました。\r\n\r\n実際に登録される値としては2件のレコードが登録されていました。\r\n\r\n```zsh\r\n$ dig kemu.site\r\n\r\n; <<>> DiG 9.10.6 <<>> kemu.site\r\n;; global options: +cmd\r\n;; Got answer:\r\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 7482\r\n;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1\r\n\r\n;; OPT PSEUDOSECTION:\r\n; EDNS: version: 0, flags:; udp: 512\r\n;; QUESTION SECTION:\r\n;kemu.site.                     IN      A\r\n\r\n;; ANSWER SECTION:\r\nkemu.site.              60      IN      A       54.178.253.199\r\nkemu.site.              60      IN      A       13.231.15.68\r\n\r\n;; Query time: 103 msec\r\n;; SERVER: 2404:1a8:7f01:b::3#53(2404:1a8:7f01:b::3)\r\n;; WHEN: Tue Mar 22 00:36:06 JST 2022\r\n;; MSG SIZE  rcvd: 70\r\n```\r\n\r\n内部的にどのようにIPを割り振っているのかは少しわからないのですがこのように設定すればいいようにAレコードを挿入してルーティングしてくれるようです。\r\n\r\n\r\n※IPアドレスによる直リンを防ぐのであればAWS WAFを利用する必要があります。（ろくな情報を置いていないので何も設定していないですが）\r\n\r\n', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/22/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/22/timeline', 'performed_via_github_app': None}
             
-    <hr />
-    <a href="/tools/base64/">Base64 Encoder/Decoder</a>
-    <a href="/tools/jsonFormatter/">JSON Formatter</a>
-    <a href="/tools/realtime/">REALTIME</a>
-    <a href="/tools/jsonTyper/">JSON Typer</a>
-    <a href="/tools/userInfo/">IP Addreass Checker</a>
-  
+      <hr />
+      tools
+      <hr />
+      <a href="/tools/base64/">Base64 Encoder/Decoder</a><hr />
+      <a href="/tools/jsonFormatter/">JSON Formatter</a><hr />
+      <a href="/tools/realtime/">REALTIME</a><hr />
+      <a href="/tools/jsonTyper/">JSON Typer</a><hr />
+      <a href="/tools/userInfo/">IP Addreass Checker</a><hr />
+    </div>
     <footer class="my-5 footer">
       <div class="d-flex justify-content-end">
         <span style="font-size: 24px">

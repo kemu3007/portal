@@ -28,6 +28,9 @@
     <meta name="twitter:description" content=" 環境- npm v8.3.1- node: v16.14.0- Angular: v13.2.5- @ng-bootstrap/ng-bootstrap: 12.0.0※ npm run ng add @ng-bootstrap/ng-bootstrap が失敗する場合は一旦 npm config" />
     <meta name="twitter:title" content="GitHub ActionとPagesでブログを作る | kemu tech blog" />
     <meta name="twitter:url" content="https://twitter.com/kemu43" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link
       rel="icon"
       type="image/x-icon"
@@ -39,15 +42,38 @@
       }
     </style>
   </head>
-  <body style="overflow-x: auto;">
-    <a href="/">home</a>
-    <a href="/blog/">blog</a>
-    <a href="/log/">log</a>
-    <a href="/tools/">tools</a>
-    <a href="/contact/">contact</a>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <hr />
-    
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">kemu portal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/blog/">blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/log/">log</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/tools/">tools</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/contact/">contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <hr />
+      
             <h2>GitHub ActionとPagesでブログを作る</h2> 
             <hr />
             <h2>環境</h2>
@@ -94,13 +120,15 @@ from pathlib import Path</p>
             <hr /> 
             meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/12', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/12/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/12/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/12/events', 'html_url': 'https://github.com/kemu3007/portal/issues/12', 'id': 1160653032, 'node_id': 'I_kwDOG7qoq85FLijo', 'number': 12, 'title': 'GitHub ActionとPagesでブログを作る', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3900074882, 'node_id': 'LA_kwDOG7qoq87odmuC', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/Angular', 'name': 'Angular', 'color': 'D93F0B', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': 0, 'created_at': '2022-03-06T16:25:06Z', 'updated_at': '2022-03-06T23:44:03Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': '## 環境\r\n- npm v8.3.1\r\n- node: v16.14.0\r\n- Angular: v13.2.5\r\n- @ng-bootstrap/ng-bootstrap: 12.0.0\r\n\r\n※ `npm run ng add @ng-bootstrap/ng-bootstrap` が失敗する場合は一旦 `npm config set legacy-peer-deps true` としてから行なってください。\r\n\r\n## 動作概要\r\n\r\n行なったことは以下の通りです。 `.github/workflows/deploy.yml` あたりを見てもらえればわかるんじゃないかなと思います。\r\n\r\n1. GitHubのissueが作成/更新されたタイミングでGitHub Actionを走らせ`article`ラベルのついているissueを収集\r\n\r\n```python\r\nimport requests\r\nimport json\r\nfrom pathlib import Path\r\n\r\nif __name__ == "__main__":\r\n    Path("articles/list.json").unlink(missing_ok=True)\r\n    res = requests.get("https://api.github.com/repos/kemu3007/portal/issues?labels=article")\r\n    articles = json.loads(res.content)\r\n    with open("articles/list.json", "x") as f:\r\n        f.write(json.dumps(articles))\r\n```\r\n\r\n2. 収集されたissueをjson形式で保存し、Angularが記事を表示する際に参照するように設定\r\n3. ビルドしたAngularプロジェクトをGitHub Pagesで配信\r\n\r\nOctokitを利用してGitHub Rest APIを利用することも考えたのですが手元で遊んでいる際にレート制限になってしまい面倒だったのでこの形式にしました。\r\n\r\nデプロイには `angular-cli-ghpages` を利用しました。`/` 以外でリダイレクト処理を行なった際に404 -> 目的のパスへの遷移を自動的に行なってくれます。`--base-href`, `--cname` のどちらかの引数を利用する必要があるのでそこだけ忘れないようにしてください。\r\n\r\n- 初期のドメインを利用する場合はbasehrefを指定(--base-href={repo_name})\r\n- カスタムドメインを利用する場合はcnameを指定(--cname=portal.kemu.site)\r\n\r\n\r\nhttpsの証明書も自動で発行してくれるためあまり気にする必要もありません。(カスタムドメインを利用する場合はCNAMEレコードを作成して{user_id}/github/ioに向ける必要があります。)\r\n\r\n\r\nブログのためだけにEC2借りてバックエンドとフロントエンド用意するのはちょっとなーとなっていたのでしばらくこれで行こうと思います。\r\n\r\n\r\n## 参考リンク\r\n\r\n- [angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages)\r\n- [カスタムドメインとGitHub Pagesについて](https://docs.github.com/ja/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages)', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/12/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/12/timeline', 'performed_via_github_app': None}
             
-    <hr />
-    <a href="/tools/base64/">Base64 Encoder/Decoder</a>
-    <a href="/tools/jsonFormatter/">JSON Formatter</a>
-    <a href="/tools/realtime/">REALTIME</a>
-    <a href="/tools/jsonTyper/">JSON Typer</a>
-    <a href="/tools/userInfo/">IP Addreass Checker</a>
-  
+      <hr />
+      tools
+      <hr />
+      <a href="/tools/base64/">Base64 Encoder/Decoder</a><hr />
+      <a href="/tools/jsonFormatter/">JSON Formatter</a><hr />
+      <a href="/tools/realtime/">REALTIME</a><hr />
+      <a href="/tools/jsonTyper/">JSON Typer</a><hr />
+      <a href="/tools/userInfo/">IP Addreass Checker</a><hr />
+    </div>
     <footer class="my-5 footer">
       <div class="d-flex justify-content-end">
         <span style="font-size: 24px">

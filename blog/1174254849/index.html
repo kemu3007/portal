@@ -28,6 +28,9 @@
     <meta name="twitter:description" content="[@datorama/akita]を確認してねという以下の記載があったので動作確認Elf, a newer state management solution, has been published. We recommend checking it out 🚀--- インストール今回はセッションス" />
     <meta name="twitter:title" content="Angular 状態管理を行う @ngneat/elf  | kemu tech blog" />
     <meta name="twitter:url" content="https://twitter.com/kemu43" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link
       rel="icon"
       type="image/x-icon"
@@ -39,15 +42,38 @@
       }
     </style>
   </head>
-  <body style="overflow-x: auto;">
-    <a href="/">home</a>
-    <a href="/blog/">blog</a>
-    <a href="/log/">log</a>
-    <a href="/tools/">tools</a>
-    <a href="/contact/">contact</a>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <hr />
-    
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">kemu portal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/blog/">blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/log/">log</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/tools/">tools</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/contact/">contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <hr />
+      
             <h2>Angular 状態管理を行う @ngneat/elf </h2> 
             <hr />
             <p><a href="https://github.com/datorama/akita">@datorama/akita</a>のページに<a href="https://github.com/ngneat/elf">@ngneat/elf</a>を確認してねという以下の記載があったので動作確認</p>
@@ -89,13 +115,15 @@ import { persistState, sessionStorageStrategy } from '@ngneat/elf-persist-state'
             <hr /> 
             meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/19', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/19/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/19/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/19/events', 'html_url': 'https://github.com/kemu3007/portal/issues/19', 'id': 1174254849, 'node_id': 'I_kwDOG7qoq85F_bUB', 'number': 19, 'title': 'Angular 状態管理を行う @ngneat/elf ', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3900074882, 'node_id': 'LA_kwDOG7qoq87odmuC', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/Angular', 'name': 'Angular', 'color': 'D93F0B', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': 0, 'created_at': '2022-03-19T12:29:12Z', 'updated_at': '2022-03-21T14:07:38Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': "[@datorama/akita](https://github.com/datorama/akita)のページに[@ngneat/elf](https://github.com/ngneat/elf)を確認してねという以下の記載があったので動作確認\r\n\r\n`Elf, a newer state management solution, has been published. We recommend checking it out 🚀`\r\n\r\n---\r\n\r\n#### インストール\r\n\r\n今回はセッションストレージにデータを保存するため `@ngneat/elf-persist-state` もインストールします。\r\n\r\n```zsh\r\n$ npm i @ngneat/elf @ngneat/elf-persist-state\r\n```\r\n\r\n---\r\n\r\n#### 実装\r\n\r\nakitaと異なり、cliを利用してファイルを生成して利用する際にinjectする形ではなく、以下の記述のみで動かすことが可能です。\r\n\r\n- `shared/page.repository.ts`\r\n\r\n```ts\r\nimport { createStore, withProps } from '@ngneat/elf';\r\nimport { persistState, sessionStorageStrategy } from '@ngneat/elf-persist-state';\r\n\r\ninterface state {\r\n  location: number;\r\n}\r\n\r\nconst pageStore = createStore({ name: 'pageStore' }, withProps<state>({ location: 0 }));\r\n\r\npersistState(pageStore, { key: 'page', storage: sessionStorageStrategy });\r\n\r\nexport class PageState {\r\n  location = pageStore.getValue().location;\r\n\r\n  update(key: keyof state, value: any) {\r\n    pageStore.update((state) => ({\r\n      ...state,\r\n      [key]: value,\r\n    }));\r\n  }\r\n}\r\n```\r\n\r\n---\r\n\r\n#### 感想\r\n\r\nakitaの構造(service, store, query)がわかりやすい代わりに複雑であるのに対してelfについては手軽で扱いやすいという印象を受けました。\r\n\r\n今度httpリクエスト回りに関してもテストを行う予定です。\r\n\r\nelfに完全移行してしまうのかと今までのプロジェクトの移行についてちょっと辛いかもしれないなと思ったのですが[この辺り](https://github.com/datorama/akita/discussions/770#discussioncomment-1620967)を見る限りでは維持はされるようです。", 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/19/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/19/timeline', 'performed_via_github_app': None}
             
-    <hr />
-    <a href="/tools/base64/">Base64 Encoder/Decoder</a>
-    <a href="/tools/jsonFormatter/">JSON Formatter</a>
-    <a href="/tools/realtime/">REALTIME</a>
-    <a href="/tools/jsonTyper/">JSON Typer</a>
-    <a href="/tools/userInfo/">IP Addreass Checker</a>
-  
+      <hr />
+      tools
+      <hr />
+      <a href="/tools/base64/">Base64 Encoder/Decoder</a><hr />
+      <a href="/tools/jsonFormatter/">JSON Formatter</a><hr />
+      <a href="/tools/realtime/">REALTIME</a><hr />
+      <a href="/tools/jsonTyper/">JSON Typer</a><hr />
+      <a href="/tools/userInfo/">IP Addreass Checker</a><hr />
+    </div>
     <footer class="my-5 footer">
       <div class="d-flex justify-content-end">
         <span style="font-size: 24px">
