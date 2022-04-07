@@ -8,7 +8,7 @@ import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
 })
 export class YearCheckComponent implements OnInit {
   form = new FormGroup({
-    birthday: new FormControl(''),
+    birthday: new FormControl('2000-01-01'),
     highschoolRyunen: new FormControl(0),
     collegeEnterRonin: new FormControl(0),
     collegeRyunen: new FormControl(0),
