@@ -311,7 +311,7 @@ if __name__ == "__main__":
     (path / "index.html").write_text(mdwriter_html)
 
     # Regex Checker
-    mdwriter_html = (
+    regex_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/regex.png")
         .replace("page_title", "Regex Checker | kemu tools")
         .replace(
@@ -321,7 +321,7 @@ if __name__ == "__main__":
             """,
         )
     )
-    mdwriter_html = mdwriter_html.replace(
+    regex_html = regex_html.replace(
         "page_contents",
         """
         <h2>Regex Checker</h2> 
@@ -341,7 +341,50 @@ if __name__ == "__main__":
     )
     path = Path("portal/src/tools/regex")
     path.mkdir(exist_ok=True)
-    (path / "index.html").write_text(mdwriter_html)
+    (path / "index.html").write_text(regex_html)
+
+    # Year Checker
+    year_html = (
+        base_html.replace("page_image", "https://portal.kemu.site/assets/images/year.png")
+        .replace("page_title", "Year Checker | kemu tools")
+        .replace(
+            "page_description",
+            """
+            誕生日をもとに各種卒業年度/厄年といった年月日を計算します。
+            """,
+        )
+    )
+    year_html = year_html.replace(
+        "page_contents",
+        """
+        <h2>Year Checker</h2> <hr />
+        誕生日をもとに各種卒業年度/厄年といった年月日を計算します。
+        誕生日<br />
+        <input type="date" class="form-control" />
+        <hr />
+        留年/浪人などの特記事項
+        <hr />
+        高校留年年数
+        <input type="date" class="form-control" />
+        大学浪人回数
+        <input type="date" class="form-control" />
+        大学留年年数
+        <input type="date" class="form-control" />
+        就職浪人年数
+        <input type="date" class="form-control" />
+        <hr />
+        <table>
+            <tr><th>#</th><th>年</th><th>出来事</th></tr>
+            <tr><td>1</td><td>1</td><td>..........</td></tr>
+            <tr><td>2</td><td>10</td><td>..........</td></tr>
+        </table>
+        ............................
+    """,
+    )
+    path = Path("portal/src/tools/year")
+    path.mkdir(exist_ok=True)
+    (path / "index.html").write_text(year_html)
+
     # contact
     contact_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/contact.png")

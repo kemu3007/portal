@@ -1,5 +1,11 @@
 [
   {
+    "label": "Year Checker",
+    "link": "/tools/year",
+    "description": "誕生日をもとに各種卒業年度/厄年といった年月日を計算します。",
+    "external": false
+  },
+  {
     "label": "Regex Checker",
     "link": "/tools/regex",
     "description": "正規表現とテキストを入力することでテキストを対象とした正規表現のテストを行い、index, マッチ文字列を返却します。",

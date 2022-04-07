@@ -10,6 +10,7 @@ import { RealtimeComponent } from './realtime/realtime.component';
 import { RegexComponent } from './regex/regex.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
 import { UserInfoComponent } from './user-info/user-info.component';
+import { YearCheckComponent } from './year-check/year-check.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'regex',
     component: RegexComponent,
+  },
+  {
+    path: 'year',
+    component: YearCheckComponent,
   },
 ];
 

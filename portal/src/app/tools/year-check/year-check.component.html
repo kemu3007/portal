@@ -1,0 +1,134 @@
+<div class="mt-3 container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+      <h2 class="mb-0">Year Checker</h2>
+      <div class="d-flex justify-content-end"><app-tweet-btn></app-tweet-btn></div>
+      <div class="mt-3">誕生日をもとに各種卒業年度/厄年といった年月日を計算します。</div>
+      <hr />
+      <form [formGroup]="form">
+        <div class="mb-3">
+          <label for="birthday" class="form-label">誕生日</label>
+          <input formControlName="birthday" class="form-control" [matDatepicker]="picker" (click)="picker.open()" />
+          <mat-datepicker #picker></mat-datepicker>
+        </div>
+        <ngb-accordion #acc="ngbAccordion">
+          <ngb-panel title="留年/浪人などの特記事項">
+            <ng-template ngbPanelContent>
+              <div class="mt-3">
+                <label for="birthday" class="form-label">高校留年年数</label>
+                <input formControlName="highschoolRyunen" class="form-control" type="number" />
+              </div>
+              <div class="mt-3">
+                <label for="birthday" class="form-label">大学浪人回数</label>
+                <input formControlName="collegeEnterRonin" class="form-control" type="number" />
+              </div>
+              <div class="mt-3">
+                <label for="birthday" class="form-label">大学留年年数</label>
+                <input formControlName="collegeRyunen" class="form-control" type="number" />
+              </div>
+              <div class="mt-3">
+                <label for="birthday" class="form-label">就職浪人年数</label>
+                <input formControlName="shushokuRonin" class="form-control" type="number" />
+              </div>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </form>
+      <hr />
+      <h3>現在: {{ age }} 歳</h3>
+      <ul ngbNav #nav="ngbNav" class="nav-tabs">
+        <li ngbNavItem>
+          <a ngbNavLink>各種卒業年度</a>
+          <ng-template ngbNavContent>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>年</th>
+                  <th>出来事</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ highschoolSotugyou }}</td>
+                  <td>高校卒業</td>
+                </tr>
+                <tr>
+                  <td>{{ collegeEnter }}</td>
+                  <td>大学入学</td>
+                </tr>
+                <tr>
+                  <td>{{ collegeSotugyou }}</td>
+                  <td>大学卒業</td>
+                </tr>
+                <tr>
+                  <td>{{ companyEnter }}</td>
+                  <td>入社</td>
+                </tr>
+              </tbody>
+            </table>
+          </ng-template>
+        </li>
+
+        <li ngbNavItem>
+          <a ngbNavLink>厄年</a>
+          <ng-template ngbNavContent>
+            前後一年が前厄/後厄として扱われます。
+            <hr />
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>年</th>
+                  <th>性別</th>
+                  <th>名称</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ birthday.getFullYear() + 3 }}</td>
+                  <td>-</td>
+                  <td>厄年</td>
+                </tr>
+                <tr>
+                  <td>{{ birthday.getFullYear() + 18 }}</td>
+                  <td>女性</td>
+                  <td>厄年</td>
+                </tr>
+                <tr>
+                  <td>{{ birthday.getFullYear() + 24 }}</td>
+                  <td>男性</td>
+                  <td>厄年</td>
+                </tr>
+                <tr>
+                  <td>{{ birthday.getFullYear() + 32 }}</td>
+                  <td>女性</td>
+                  <td>大厄</td>
+                </tr>
+                <tr>
+                  <td>{{ birthday.getFullYear() + 36 }}</td>
+                  <td>女性</td>
+                  <td>小厄</td>
+                </tr>
+                <tr>
+                  <td>{{ birthday.getFullYear() + 41 }}</td>
+                  <td>男性</td>
+                  <td>大厄</td>
+                </tr>
+                <tr>
+                  <td>{{ birthday.getFullYear() + 60 }}</td>
+                  <td>-</td>
+                  <td>厄年</td>
+                </tr>
+              </tbody>
+            </table>
+          </ng-template>
+        </li>
+      </ul>
+      <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+      <app-ads type="auto"></app-ads>
+    </div>
+    <div class="col-md-4">
+      <app-ads type="box" [count]="3"></app-ads>
+    </div>
+  </div>
+</div>

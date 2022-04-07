@@ -12,6 +12,7 @@ import { JsonFormatterComponent } from './json-formatter/json-formatter.componen
 import { Base64Component } from './base64/base64.component';
 import { MdwriterComponent } from './mdwriter/mdwriter.component';
 import { RegexComponent } from './regex/regex.component';
+import { YearCheckComponent } from './year-check/year-check.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RegexComponent } from './regex/regex.component';
     Base64Component,
     MdwriterComponent,
     RegexComponent,
+    YearCheckComponent,
   ],
   imports: [CommonModule, SharedModule, ToolsRoutingModule],
 })
