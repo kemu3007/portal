@@ -7,6 +7,7 @@ import { JsonFormatterComponent } from './json-formatter/json-formatter.componen
 import { JsonTyperComponent } from './json-typer/json-typer.component';
 import { MdwriterComponent } from './mdwriter/mdwriter.component';
 import { RealtimeComponent } from './realtime/realtime.component';
+import { RegexComponent } from './regex/regex.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'mdwriter',
     component: MdwriterComponent,
+  },
+  {
+    path: 'regex',
+    component: RegexComponent,
   },
 ];
 

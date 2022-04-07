@@ -310,6 +310,38 @@ if __name__ == "__main__":
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(mdwriter_html)
 
+    # Regex Checker
+    mdwriter_html = (
+        base_html.replace("page_image", "https://portal.kemu.site/assets/images/regex.png")
+        .replace("page_title", "Regex Checker | kemu tools")
+        .replace(
+            "page_description",
+            """
+            正規表現とテキストを入力することでテキストを対象とした正規表現のテストを行い、index, マッチ文字列を返却します。
+            """,
+        )
+    )
+    mdwriter_html = mdwriter_html.replace(
+        "page_contents",
+        """
+        <h2>Regex Checker</h2> 
+        正規表現<br />
+        <input />
+        <hr />
+        テスト対象<br />
+        <textarea></textarea>
+        <hr />
+        <table>
+            <tr><th>#</th><th>index</th><th>matched text</th></tr>
+            <tr><td>1</td><td>1</td><td>..........</td></tr>
+            <tr><td>2</td><td>10</td><td>..........</td></tr>
+        </table>
+        ............................
+    """,
+    )
+    path = Path("portal/src/tools/regex")
+    path.mkdir(exist_ok=True)
+    (path / "index.html").write_text(mdwriter_html)
     # contact
     contact_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/contact.png")

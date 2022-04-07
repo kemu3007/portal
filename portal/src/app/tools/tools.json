@@ -1,5 +1,11 @@
 [
   {
+    "label": "Regex Checker",
+    "link": "/tools/regex",
+    "description": "正規表現とテキストを入力することでテキストを対象とした正規表現のテストを行い、index, マッチ文字列を返却します。",
+    "external": false
+  },
+  {
     "label": "GitHub Flavored Markdown Writer",
     "link": "/tools/mdwriter",
     "description": "GitHub Flavored Markdown形式のMarkdownを記載することができ、HTMLに変換可能です。",

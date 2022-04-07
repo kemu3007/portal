@@ -88,4 +88,5 @@ if __name__ == "__main__":
     write_tools_image("JSON Formatter", "json-formatter")
     write_tools_image("Base64 Encoder/Decoder", "base64")
     write_tools_image("GitHub Flavored Markdown Writer", "mdwriter")
+    write_tools_image("Regex Checker", "regex")
     write_weeds_iframe()
