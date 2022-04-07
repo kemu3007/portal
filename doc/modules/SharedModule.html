@@ -56,13 +56,13 @@
 <title>cluster_SharedModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-230.8 1296,-230.8 1296,-32.8 8,-32.8"/>
 </g>
-<g id="clust13" class="cluster">
-<title>cluster_SharedModule_exports</title>
-<polygon fill="none" stroke="black" points="71,-170.8 71,-222.8 1233,-222.8 1233,-170.8 71,-170.8"/>
-</g>
 <g id="clust2" class="cluster">
 <title>cluster_SharedModule_declarations</title>
 <polygon fill="none" stroke="black" points="16,-40.8 16,-92.8 1288,-92.8 1288,-40.8 16,-40.8"/>
+</g>
+<g id="clust13" class="cluster">
+<title>cluster_SharedModule_exports</title>
+<polygon fill="none" stroke="black" points="71,-170.8 71,-222.8 1233,-222.8 1233,-170.8 71,-170.8"/>
 </g>
 <!-- AdsComponent -->
 <g id="node1" class="node">
@@ -400,9 +400,11 @@ import { ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
 import { MdescapePipe } from &#x27;./pipes/mdescape.pipe&#x27;;
 import { AdsComponent } from &#x27;./ads/ads.component&#x27;;
 import { AdsModalComponent } from &#x27;./ads-modal/ads-modal.component&#x27;;
-import { MatRippleModule } from &#x27;@angular/material/core&#x27;;
+import { MatNativeDateModule, MatRippleModule } from &#x27;@angular/material/core&#x27;;
 import { MatTabsModule } from &#x27;@angular/material/tabs&#x27;;
 import { ProfileComponent } from &#x27;./profile/profile.component&#x27;;
+import { MatDatepickerModule } from &#x27;@angular/material/datepicker&#x27;;
+import { MatInputModule } from &#x27;@angular/material/input&#x27;;
 
 @NgModule({
   declarations: [
@@ -426,6 +428,8 @@ import { ProfileComponent } from &#x27;./profile/profile.component&#x27;;
     NgbNavModule,
     MatRippleModule,
     MatTabsModule,
+    MatDatepickerModule,
+    MatInputModule,
   ],
   exports: [
     TweetBtnComponent,
@@ -442,6 +446,9 @@ import { ProfileComponent } from &#x27;./profile/profile.component&#x27;;
     AdsModalComponent,
     MatRippleModule,
     MatTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
   ],
 })
 export class SharedModule {}

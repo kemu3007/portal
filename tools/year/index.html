@@ -7,20 +7,26 @@
       }
     </script>
     <meta charset="utf-8" />
-    <title>kemu tools</title>
+    <title>Year Checker | kemu tools</title>
     <base href="/" />
-    <meta name="description" content="自作ツール置き場" />
+    <meta name="description" content="
+            誕生日をもとに各種卒業年度/厄年といった年月日を計算します。
+            " />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:title" content="kemu tools" />
+    <meta property="og:title" content="Year Checker | kemu tools" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="自作ツール置き場" />
+    <meta property="og:description" content="
+            誕生日をもとに各種卒業年度/厄年といった年月日を計算します。
+            " />
     <meta property="og:url" content="https://portal.kemu.site" />
-    <meta property="og:image" content="https://portal.kemu.site/assets/images/tools.png" />
+    <meta property="og:image" content="https://portal.kemu.site/assets/images/year.png" />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://portal.kemu.site/assets/images/tools.png" />
-    <meta name="twitter:description" content="自作ツール置き場" />
-    <meta name="twitter:title" content="kemu tools" />
+    <meta name="twitter:image" content="https://portal.kemu.site/assets/images/year.png" />
+    <meta name="twitter:description" content="
+            誕生日をもとに各種卒業年度/厄年といった年月日を計算します。
+            " />
+    <meta name="twitter:title" content="Year Checker | kemu tools" />
     <meta name="twitter:url" content="https://twitter.com/kemu43" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -63,7 +69,30 @@
     <div class="container">
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       <hr />
-      <h2><a href='/tools/year'>Year Checker</a></h2><hr /> 誕生日をもとに各種卒業年度/厄年といった年月日を計算します。<hr /><h2><a href='/tools/regex'>Regex Checker</a></h2><hr /> 正規表現とテキストを入力することでテキストを対象とした正規表現のテストを行い、index, マッチ文字列を返却します。<hr /><h2><a href='/tools/mdwriter'>GitHub Flavored Markdown Writer</a></h2><hr /> GitHub Flavored Markdown形式のMarkdownを記載することができ、HTMLに変換可能です。<hr /><h2><a href='/tools/base64'>Base64 Encoder/Decoder</a></h2><hr /> Base64フォーマットのデータをエンコード/デコードします。<hr /><h2><a href='/tools/jsonFormatter'>JSON Formatter</a></h2><hr /> 未整形のJSONデータを整形します。<hr /><h2><a href='/tools/realtime'>REALTIME</a></h2><hr /> 現在時刻を100ms単位で更新し、正確な日時をお知らせします。<hr /><h2><a href='/tools/jsonTyper'>JSON Typer</a></h2><hr /> JSONの値をTypeScriptのinterface型に変換します。<hr /><h2><a href='/tools/amazonAssociate'>Amazon Associate Linker</a></h2><hr /> Amazonリンクにアソシエイト情報を付与します。<hr /><h2><a href='/tools/userInfo'>IP Address Checker</a></h2><hr /> IPアドレス等のデータを表示します。過去の履歴も表示可能です。<hr /><h2><a href='https://kemu.site/utils/qrcode/'>QRコードジェネレータ</a></h2><hr /> 任意の文字列をQRコードに変換します。<hr /><h2><a href='https://kemu.site/utils/markdown/'>Markdown Editor</a></h2><hr /> markdown記法で書かれた文字列をHTMLで表示します。<hr /><h2><a href='https://kemu.site/utils/csv_to_md/'>CSV to MD table</a></h2><hr /> コンマ区切りで入力されたcsvをMarkdownテーブル形式に変換します。
+      
+        <h2>Year Checker</h2> <hr />
+        誕生日をもとに各種卒業年度/厄年といった年月日を計算します。
+        誕生日<br />
+        <input type="date" class="form-control" />
+        <hr />
+        留年/浪人などの特記事項
+        <hr />
+        高校留年年数
+        <input type="date" class="form-control" />
+        大学浪人回数
+        <input type="date" class="form-control" />
+        大学留年年数
+        <input type="date" class="form-control" />
+        就職浪人年数
+        <input type="date" class="form-control" />
+        <hr />
+        <table>
+            <tr><th>#</th><th>年</th><th>出来事</th></tr>
+            <tr><td>1</td><td>1</td><td>..........</td></tr>
+            <tr><td>2</td><td>10</td><td>..........</td></tr>
+        </table>
+        ............................
+    
       <hr />
       tools
       <hr />
