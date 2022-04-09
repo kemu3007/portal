@@ -19,8 +19,8 @@ export class OpenapiComponent implements OnInit {
   error: string = '';
 
   constructor(private modalService: NgbModal, title: Title, breadcrumbService: BreadcrumbService) {
-    title.setTitle('Swagger Viewer | kemu tools');
-    breadcrumbService.breadcrumb = 'tools/Swagger Viewer';
+    title.setTitle('OpenApi Viewer | kemu tools');
+    breadcrumbService.breadcrumb = 'tools/OpenApi Viewer';
   }
 
   ngOnInit(): void {

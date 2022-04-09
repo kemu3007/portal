@@ -90,5 +90,5 @@ if __name__ == "__main__":
     write_tools_image("GitHub Flavored Markdown Writer", "mdwriter")
     write_tools_image("Regex Checker", "regex")
     write_tools_image("Year Checker", "year")
-    write_tools_image("Swagger Viewer", "openapi")
+    write_tools_image("OpenApi Viewer", "openapi")
     write_weeds_iframe()

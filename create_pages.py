@@ -385,10 +385,10 @@ if __name__ == "__main__":
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(year_html)
 
-    # Swagger Viewer
+    # OpenApi Viewer
     swagger_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/openapi.png")
-        .replace("page_title", "Swagger Viewer | kemu tools")
+        .replace("page_title", "OpenApi Viewer | kemu tools")
         .replace(
             "page_description",
             """
