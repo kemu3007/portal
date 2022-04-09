@@ -203,13 +203,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/ToolsModule.html" data-type="entity-link" >ToolsModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-ToolsModule-1c17d4488f39767c03e57515c70f3451fc7b702bfafdc71ecd2767425c4c07d5647f610c96912cabd8c49aa38d3b71504410959e9b0d8f066a737a2b641c9873"' : 'data-target="#xs-components-links-module-ToolsModule-1c17d4488f39767c03e57515c70f3451fc7b702bfafdc71ecd2767425c4c07d5647f610c96912cabd8c49aa38d3b71504410959e9b0d8f066a737a2b641c9873"' }>
+                                            'data-target="#components-links-module-ToolsModule-8dadde8153dc81f97df1421a91499030e57a9e30a1e2df911a82857a4107fb6f282a9889cd6c0a8a2cc04ee52b759b865537fb7298d71759967bf2f6537d7b51"' : 'data-target="#xs-components-links-module-ToolsModule-8dadde8153dc81f97df1421a91499030e57a9e30a1e2df911a82857a4107fb6f282a9889cd6c0a8a2cc04ee52b759b865537fb7298d71759967bf2f6537d7b51"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ToolsModule-1c17d4488f39767c03e57515c70f3451fc7b702bfafdc71ecd2767425c4c07d5647f610c96912cabd8c49aa38d3b71504410959e9b0d8f066a737a2b641c9873"' :
-                                            'id="xs-components-links-module-ToolsModule-1c17d4488f39767c03e57515c70f3451fc7b702bfafdc71ecd2767425c4c07d5647f610c96912cabd8c49aa38d3b71504410959e9b0d8f066a737a2b641c9873"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ToolsModule-8dadde8153dc81f97df1421a91499030e57a9e30a1e2df911a82857a4107fb6f282a9889cd6c0a8a2cc04ee52b759b865537fb7298d71759967bf2f6537d7b51"' :
+                                            'id="xs-components-links-module-ToolsModule-8dadde8153dc81f97df1421a91499030e57a9e30a1e2df911a82857a4107fb6f282a9889cd6c0a8a2cc04ee52b759b865537fb7298d71759967bf2f6537d7b51"' }>
                                             <li class="link">
                                                 <a href="components/AmazonAssociateComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AmazonAssociateComponent</a>
                                             </li>
@@ -224,6 +224,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             </li>
                                             <li class="link">
                                                 <a href="components/MdwriterComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >MdwriterComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/OpenapiComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >OpenapiComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/RealtimeComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >RealtimeComponent</a>
