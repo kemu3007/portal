@@ -1,5 +1,11 @@
 [
   {
+    "label": "OpenApi Viewer",
+    "link": "/tools/openapi",
+    "description": "OpenApi JSON/YAMLをSwagger-UIで表示します。",
+    "external": false
+  },
+  {
     "label": "Year Checker",
     "link": "/tools/year",
     "description": "誕生日をもとに各種卒業年度/厄年といった年月日を計算します。",

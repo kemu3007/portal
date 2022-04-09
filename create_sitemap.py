@@ -37,6 +37,7 @@ if __name__ == "__main__":
     add_url_element("https://portal.kemu.site/tools/mdwriter/")
     add_url_element("https://portal.kemu.site/tools/regex/")
     add_url_element("https://portal.kemu.site/tools/year/")
+    add_url_element("https://portal.kemu.site/tools/openapi/")
 
     for article_id in articles_list.keys():
         add_url_element(f"https://portal.kemu.site/blog/{article_id}/")

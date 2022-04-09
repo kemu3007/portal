@@ -385,6 +385,38 @@ if __name__ == "__main__":
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(year_html)
 
+    # Swagger Viewer
+    swagger_html = (
+        base_html.replace("page_image", "https://portal.kemu.site/assets/images/openapi.png")
+        .replace("page_title", "Swagger Viewer | kemu tools")
+        .replace(
+            "page_description",
+            """
+            OpenApi JSON/YAMLをSwagger-UIで表示します。
+            """,
+        )
+    )
+    swagger_html = swagger_html.replace(
+        "page_contents",
+        """
+        <h2>Year Checker</h2> <hr />
+        OpenApi JSON/YAMLをSwagger-UIで表示します。<br />
+        入力した値はローカルストレージにのみ記録され、サーバ等には記録していないため安心して利用可能です。<br />
+        Spec Type<br />
+        <input type="radio" class="form-control" />
+        <input type="radio" class="form-control" />
+        <hr />
+        Swagger Spec
+        <textarea class="form-control"></textarea>
+        <hr />
+        <button class="btn btn-secondary">Check Swagger UI</button>
+        ............................
+    """,
+    )
+    path = Path("portal/src/tools/openapi")
+    path.mkdir(exist_ok=True)
+    (path / "index.html").write_text(swagger_html)
+
     # contact
     contact_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/contact.png")

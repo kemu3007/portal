@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { ToolsRoutingModule } from './tools-routing.module';
 import { SharedModule } from '@app/shared/shared.module';
 import { ToolsListComponent } from './tools-list/tools-list.component';
@@ -13,8 +12,10 @@ import { Base64Component } from './base64/base64.component';
 import { MdwriterComponent } from './mdwriter/mdwriter.component';
 import { RegexComponent } from './regex/regex.component';
 import { YearCheckComponent } from './year-check/year-check.component';
+import { OpenapiComponent } from './openapi/openapi.component';
 
 @NgModule({
+  schemas: [NO_ERRORS_SCHEMA],
   declarations: [
     ToolsListComponent,
     UserInfoComponent,
@@ -26,6 +27,7 @@ import { YearCheckComponent } from './year-check/year-check.component';
     MdwriterComponent,
     RegexComponent,
     YearCheckComponent,
+    OpenapiComponent,
   ],
   imports: [CommonModule, SharedModule, ToolsRoutingModule],
 })
