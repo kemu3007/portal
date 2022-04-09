@@ -15,9 +15,7 @@ export class YearCheckComponent implements OnInit {
     shushokuRonin: new FormControl(0),
   });
 
-  constructor(dateAdapter: DateAdapter<NativeDateAdapter>) {
-    dateAdapter.setLocale('ja');
-  }
+  constructor() {}
 
   ngOnInit() {
     persistControl(this.form, 'year-check', {}).subscribe();
