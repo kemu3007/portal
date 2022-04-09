@@ -31,7 +31,7 @@ export class OpenapiComponent implements OnInit {
     try {
       const spec = this.form.value.isYaml ? jsYaml.load(this.form.value.openapi) : JSON.parse(this.form.value.openapi);
       this.modalService.open(content, { centered: true, size: 'fullscreen' });
-      swaggerUI({ dom_id: '#swagger', spec });
+      swaggerUI({ dom_id: '#swagger', spec, tryItOutEnabled: false, supportedSubmitMethods: [] });
     } catch (err: any) {
       this.error = err.toString();
     }
