@@ -2,7 +2,7 @@
   {
     "label": "OpenApi Viewer",
     "link": "/tools/openapi",
-    "description": "OpenApi JSON/YAMLをSwagger-UIで表示します。",
+    "description": "OpenApi JSON/YAMLをSwagger-UI / Redoc形式で表示します。",
     "external": false
   },
   {

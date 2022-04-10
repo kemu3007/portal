@@ -400,7 +400,7 @@ if __name__ == "__main__":
         "page_contents",
         """
         <h2>Year Checker</h2> <hr />
-        OpenApi JSON/YAMLをSwagger-UIで表示します。<br />
+        OpenApi JSON/YAMLをSwagger-UI / Redoc形式で表示します。<br />
         入力した値はローカルストレージにのみ記録され、サーバ等には記録していないため安心して利用可能です。<br />
         Spec Type<br />
         <input type="radio" class="form-control" />
