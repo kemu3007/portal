@@ -26,7 +26,12 @@
     <div class="col-md-6">
       <h2>Tools</h2>
       <ol class="list-group">
-        <a class="list-group-item d-flex" *ngFor="let tool of tools" (click)="transitTool(tool)">
+        <a
+          class="list-group-item d-flex"
+          style="cursor: pointer"
+          *ngFor="let tool of tools"
+          (click)="transitTool(tool)"
+        >
           <div class="text-start">
             <div class="fw-bold">{{ tool.label }}</div>
             {{ tool.description }}
