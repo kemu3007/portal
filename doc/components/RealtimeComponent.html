@@ -361,7 +361,15 @@ export class RealtimeComponent implements OnInit {
   ngOnInit() {
     interval(100).subscribe((_) &#x3D;&gt; {
       const now &#x3D; new Date();
-      this.datetime &#x3D; now.toLocaleString();
+      this.datetime &#x3D; new Intl.DateTimeFormat(&#x27;ja-JP-u-ca-japanese&#x27;, {
+        era: &#x27;long&#x27;,
+        year: &#x27;numeric&#x27;,
+        month: &#x27;long&#x27;,
+        day: &#x27;numeric&#x27;,
+        hour: &#x27;numeric&#x27;,
+        minute: &#x27;2-digit&#x27;,
+        second: &#x27;2-digit&#x27;,
+      }).format(now);
       this.ms &#x3D; now.getMilliseconds();
     });
   }
