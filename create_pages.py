@@ -19,7 +19,7 @@ if __name__ == "__main__":
         )
     )
     blog_home_html = [
-        f"<h2><a href='/blog/{key}'>{article['title']}</a></h2><hr /> {article['body']}"
+        f"<h1><a href='/blog/{key}'>{article['title']}</a></h1><hr /> {article['body']}"
         for key, article in articles.items()
     ]
     blog_home = blog_home.replace("page_contents", "<hr />".join(blog_home_html))
@@ -37,7 +37,7 @@ if __name__ == "__main__":
         blog = blog.replace(
             "page_contents",
             f"""
-            <h2>{data['title']}</h2> 
+            <h1>{data['title']}</h1> 
             <hr />
             {body}
             <hr /> 
@@ -61,7 +61,7 @@ if __name__ == "__main__":
         )
     )
     log_home_html = [
-        f"<h2><a href='/log/{key}'>{log['title']}</a></h2><hr /> {log['body']}" for key, log in logs.items()
+        f"<h1><a href='/log/{key}'>{log['title']}</a></h1><hr /> {log['body']}" for key, log in logs.items()
     ]
     log_home = log_home.replace("page_contents", "<hr />".join(log_home_html) + f"meta: {logs}")
     path = Path("portal/src/log")
@@ -81,7 +81,7 @@ if __name__ == "__main__":
         log = log.replace(
             "page_contents",
             f"""
-            <h2>{data['title']}</h2>
+            <h1>{data['title']}</h1>
             <hr />
             {body}
             <hr /> 
@@ -120,7 +120,7 @@ if __name__ == "__main__":
     user_info_html = user_info_html.replace(
         "page_contents",
         """
-        <h2>IP Address Checker</h2>
+        <h1>IP Address Checker</h1>
         IPアドレス等の情報を確認します。 あなたのIPアドレス ..........
         <table>
             <tr>
@@ -155,7 +155,7 @@ if __name__ == "__main__":
     associate_html = associate_html.replace(
         "page_contents",
         """
-        <h2>Amazon Associate Linker</h2>
+        <h1>Amazon Associate Linker</h1>
         Amazon Associate Linkを生成します。<br />
         アソシエイトID 
         <input /> 
@@ -182,7 +182,7 @@ if __name__ == "__main__":
     typer_html = typer_html.replace(
         "page_contents",
         """
-        <h2>JSON Typer</h2>
+        <h1>JSON Typer</h1>
         JSONの値をTypeScriptのinterface型に変換します。List Typeには非対応です。any[]と出力されます。<br />
         またJSONキーにスラッシュなどの値が含まれている場合正しく出力されないケースがあります。<br />
         RootTypeName<input />
@@ -209,7 +209,7 @@ if __name__ == "__main__":
     realtime_html = realtime_html.replace(
         "page_contents",
         """
-        <h2>REALTIME</h2> 
+        <h1>REALTIME</h1> 
         現在時刻を100ms単位で更新し、正確な日時をお知らせします。<br />
         <pre>
             <h2> 2000/00/00 00:00:00 </h2>
@@ -235,7 +235,7 @@ if __name__ == "__main__":
     formatter_html = formatter_html.replace(
         "page_contents",
         """
-        <h2>JSON Formatter</h2> 
+        <h1>JSON Formatter</h1> 
         未整形のJSONデータを整形します。 <br />
         <input /> 
         <button>format</button>
@@ -262,7 +262,7 @@ if __name__ == "__main__":
     base64_html = base64_html.replace(
         "page_contents",
         """
-        <h2>Base64 Encoder/Decoder</h2> 
+        <h1>Base64 Encoder/Decoder</h1> 
         文字列データをBase64に、Base64データを文字列に変換します。 
         base64 <br />
         <textarea></textarea>
@@ -296,7 +296,7 @@ if __name__ == "__main__":
     mdwriter_html = mdwriter_html.replace(
         "page_contents",
         """
-        <h2>GitHub Flavored Markdown Writer</h2> 
+        <h1>GitHub Flavored Markdown Writer</h1> 
         markdwon / HTML
         <hr />
         markdown<button>copy</button>
@@ -324,7 +324,7 @@ if __name__ == "__main__":
     regex_html = regex_html.replace(
         "page_contents",
         """
-        <h2>Regex Checker</h2> 
+        <h1>Regex Checker</h1> 
         正規表現<br />
         <input />
         <hr />
@@ -357,7 +357,7 @@ if __name__ == "__main__":
     year_html = year_html.replace(
         "page_contents",
         """
-        <h2>Year Checker</h2> <hr />
+        <h1>Year Checker</h1> <hr />
         誕生日をもとに各種卒業年度/厄年といった年月日を計算します。
         誕生日<br />
         <input type="date" class="form-control" />
@@ -399,7 +399,7 @@ if __name__ == "__main__":
     swagger_html = swagger_html.replace(
         "page_contents",
         """
-        <h2>Year Checker</h2> <hr />
+        <h1>Year Checker</h1> <hr />
         OpenApi JSON/YAMLをSwagger-UI / Redoc形式で表示します。<br />
         入力した値はローカルストレージにのみ記録され、サーバ等には記録していないため安心して利用可能です。<br />
         Spec Type<br />
@@ -426,7 +426,7 @@ if __name__ == "__main__":
     contact_html = contact_html.replace(
         "page_contents",
         """
-        <h2> Contact Me </h2>
+        <h1> Contact Me </h1>
         仕事の依頼などは以下のメールアドレスにお願いします。セールスメールはお控えください。<br />
         TwitterのDMも可能ですが返信が遅くなってしまう可能性があるためできる限りメールでお願いいたします。<br />
         セールスメールを送信した場合メールアドレスをブロックするため以降のメールは全て受信拒否を行います。ご了承ください。<br />
