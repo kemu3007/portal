@@ -19,6 +19,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ProfileComponent } from './profile/profile.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
+import { YearPipe } from './pipes/year.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MatInputModule } from '@angular/material/input';
     AdsComponent,
     AdsModalComponent,
     ProfileComponent,
+    YearPipe,
   ],
   imports: [
     CommonModule,
@@ -63,6 +65,7 @@ import { MatInputModule } from '@angular/material/input';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
+    YearPipe,
   ],
 })
 export class SharedModule {}
