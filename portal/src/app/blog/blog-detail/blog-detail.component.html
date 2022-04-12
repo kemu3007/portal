@@ -1,7 +1,9 @@
 <div class="container-fluid">
   <div class="row mt-3" *ngIf="article">
     <div class="col-md-8">
-      <h2>{{ article.title }}</h2>
+      <div class="d-flex justify-content-center">
+        <img [src]="'/assets/images/' + article.id + '.png'" [alt]="article.title" [title]="article.title" />
+      </div>
       <div class="d-flex justify-content-between">
         <p>{{ article.created_at | date: 'yyyy.MM.dd hh:mm' }}</p>
         <app-tweet-btn></app-tweet-btn>
@@ -9,7 +11,10 @@
       <hr />
       <div [innerHTML]="html"></div>
       <hr class="mt-5" />
-      <h3 id="comments">comments</h3>
+      <div class="d-flex justify-content-between">
+        <h3 id="comments">comments</h3>
+        <app-tweet-btn></app-tweet-btn>
+      </div>
       <div class="card" *ngFor="let comment of comments">
         <div class="card-body pt-1 ps-1">
           <div class="d-flex">
