@@ -144,9 +144,6 @@
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
-                            <li>
-                                <a href="#transitTool" >transitTool</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -170,7 +167,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/home/index/index.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/home/index/index.component.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -261,8 +258,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/home/index/index.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/home/index/index.component.ts:17</a></div>
                 </td>
             </tr>
 
@@ -273,75 +270,6 @@
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="transitTool"></a>
-                    <span class="name">
-                        <span ><b>transitTool</b></span>
-                        <a href="#transitTool"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>transitTool(tool: <a href="../interfaces/Tool.html" target="_self">Tool</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/home/index/index.component.ts:25</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>tool</td>
-                                    <td>
-                                                <code><a href="../interfaces/Tool.html" target="_self" >Tool</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
@@ -371,7 +299,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/home/index/index.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/home/index/index.component.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -387,7 +315,6 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
 import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
-import { Tool } from &#x27;@app/tools/tools&#x27;;
 import tools from &#x27;@app/tools/tools.json&#x27;;
 
 @Component({
@@ -407,22 +334,14 @@ export class IndexComponent implements OnInit {
       this.router.navigate([redirectTo], { fragment: this.route.snapshot.fragment ?? undefined });
     }
   }
-
-  transitTool(tool: Tool) {
-    if (tool.external) {
-      window.location.href &#x3D; tool.link;
-    } else {
-      this.router.navigate([tool.link]);
-    }
-  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!-- &lt;ngb-alert type&#x3D;&quot;warning&quot; class&#x3D;&quot;my-0 py-1&quot; [dismissible]&#x3D;&quot;false&quot;
-  &gt;このサイトは広告収益で成り立っています。広告ブロックツールは停止してください。(▽◕ ᴥ ◕▽)
-&lt;/ngb-alert&gt; --&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;ngb-alert type&#x3D;&quot;warning&quot; class&#x3D;&quot;my-0 py-1&quot; [dismissible]&#x3D;&quot;false&quot;
+  &gt;このサイトは広告収益で成り立っています。広告ブロックツールは停止してください。
+&lt;/ngb-alert&gt;
 &lt;div class&#x3D;&quot;container text-center mt-3&quot;&gt;
   &lt;div&gt;
     &lt;h2&gt;Contributions&lt;/h2&gt;
@@ -459,19 +378,9 @@ export class IndexComponent implements OnInit {
     &lt;/div&gt;
     &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
       &lt;h2&gt;Tools&lt;/h2&gt;
-      &lt;ol class&#x3D;&quot;list-group&quot;&gt;
-        &lt;a
-          class&#x3D;&quot;list-group-item d-flex&quot;
-          style&#x3D;&quot;cursor: pointer&quot;
-          *ngFor&#x3D;&quot;let tool of tools&quot;
-          (click)&#x3D;&quot;transitTool(tool)&quot;
-        &gt;
-          &lt;div class&#x3D;&quot;text-start&quot;&gt;
-            &lt;div class&#x3D;&quot;fw-bold&quot;&gt;{{ tool.label }}&lt;/div&gt;
-            {{ tool.description }}
-          &lt;/div&gt;
-        &lt;/a&gt;
-      &lt;/ol&gt;
+      &lt;div class&#x3D;&quot;border border-light rounded&quot;&gt;
+        &lt;app-tools-list&gt;&lt;/app-tools-list&gt;
+      &lt;/div&gt;
       &lt;h2 class&#x3D;&quot;mt-2&quot;&gt;Links&lt;/h2&gt;
       &lt;ol class&#x3D;&quot;list-group&quot;&gt;
         &lt;a class&#x3D;&quot;list-group-item d-flex&quot; href&#x3D;&quot;https://kemu.site&quot;&gt;
@@ -517,8 +426,8 @@ export class IndexComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- <ngb-alert type="warning" class="my-0 py-1" [dismissible]="false"  >このサイトは広告収益で成り立っています。広告ブロックツールは停止してください。(▽◕ ᴥ ◕▽)</ngb-alert> --><div class="container text-center mt-3">  <div>    <h2>Contributions</h2>    <div class="overflow-auto">      <mat-tab-group>        <mat-tab label="2022">          <iframe width="100%" src="/assets/iframes/weed_2022.html"></iframe>        </mat-tab>        <mat-tab label="2021">          <iframe width="100%" src="/assets/iframes/weed_2021.html"></iframe>        </mat-tab>        <mat-tab label="2020">          <iframe width="100%" src="/assets/iframes/weed_2020.html"></iframe>        </mat-tab>        <mat-tab label="2019">          <iframe width="100%" src="/assets/iframes/weed_2019.html"></iframe>        </mat-tab>        <mat-tab label="2018">          <iframe width="100%" src="/assets/iframes/weed_2018.html"></iframe>        </mat-tab>        <mat-tab label="2017">          <iframe width="100%" src="/assets/iframes/weed_2017.html"></iframe>        </mat-tab>      </mat-tab-group>    </div>    <hr />  </div>  <div class="row">    <div class="col-md-6">      <h2>News</h2>      <div class="border border-light rounded">        <app-news></app-news>      </div>    </div>    <div class="col-md-6">      <h2>Tools</h2>      <ol class="list-group">        <a          class="list-group-item d-flex"          style="cursor: pointer"          *ngFor="let tool of tools"          (click)="transitTool(tool)"        >          <div class="text-start">            <div class="fw-bold">{{ tool.label }}</div>            {{ tool.description }}          </div>        </a>      </ol>      <h2 class="mt-2">Links</h2>      <ol class="list-group">        <a class="list-group-item d-flex" href="https://kemu.site">          <div class="text-start">            <div class="fw-bold">旧ブログ</div>            2022-03以前に管理していたブログ、頃合いを見て停止予定です。          </div>        </a>      </ol>    </div>  </div></div><div class="mt-5 d-flex justify-content-center">  <app-ads type="auto"></app-ads></div></div>'
-    var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
+        var COMPONENT_TEMPLATE = '<div><ngb-alert type="warning" class="my-0 py-1" [dismissible]="false"  >このサイトは広告収益で成り立っています。広告ブロックツールは停止してください。</ngb-alert><div class="container text-center mt-3">  <div>    <h2>Contributions</h2>    <div class="overflow-auto">      <mat-tab-group>        <mat-tab label="2022">          <iframe width="100%" src="/assets/iframes/weed_2022.html"></iframe>        </mat-tab>        <mat-tab label="2021">          <iframe width="100%" src="/assets/iframes/weed_2021.html"></iframe>        </mat-tab>        <mat-tab label="2020">          <iframe width="100%" src="/assets/iframes/weed_2020.html"></iframe>        </mat-tab>        <mat-tab label="2019">          <iframe width="100%" src="/assets/iframes/weed_2019.html"></iframe>        </mat-tab>        <mat-tab label="2018">          <iframe width="100%" src="/assets/iframes/weed_2018.html"></iframe>        </mat-tab>        <mat-tab label="2017">          <iframe width="100%" src="/assets/iframes/weed_2017.html"></iframe>        </mat-tab>      </mat-tab-group>    </div>    <hr />  </div>  <div class="row">    <div class="col-md-6">      <h2>News</h2>      <div class="border border-light rounded">        <app-news></app-news>      </div>    </div>    <div class="col-md-6">      <h2>Tools</h2>      <div class="border border-light rounded">        <app-tools-list></app-tools-list>      </div>      <h2 class="mt-2">Links</h2>      <ol class="list-group">        <a class="list-group-item d-flex" href="https://kemu.site">          <div class="text-start">            <div class="fw-bold">旧ブログ</div>            2022-03以前に管理していたブログ、頃合いを見て停止予定です。          </div>        </a>      </ol>    </div>  </div></div><div class="mt-5 d-flex justify-content-center">  <app-ads type="auto"></app-ads></div></div>'
+    var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'IndexComponent'};
 </script>
