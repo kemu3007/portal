@@ -40,8 +40,10 @@ if __name__ == "__main__":
             <h1>{data['title']}</h1> 
             <hr />
             {body}
-            <hr /> 
-            meta: {blog_details}
+            <hr />
+            <div style="overflow-x: scroll;">
+                meta: {blog_details}
+            </div>
             """,
         )
         path = Path("portal/src/blog") / key
@@ -85,7 +87,9 @@ if __name__ == "__main__":
             <hr />
             {body}
             <hr /> 
-            meta: {log_details}
+            <div style="overflow-x: scroll;">
+                meta: {log_details}
+            </div>
             """,
         )
         path = Path("portal/src/log") / key
