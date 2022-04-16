@@ -9,7 +9,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ContactComponent {
   constructor(private modalService: NgbModal, private messageService: MessageService, title: Title) {
-    title.setTitle('kemu contact');
+    title.setTitle('Contact | Kemu Portal');
   }
 
   isShowed = false;
