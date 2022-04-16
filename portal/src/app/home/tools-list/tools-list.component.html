@@ -1,0 +1,8 @@
+<div id="tools" class="list-group">
+  <a class="list-group-item d-flex" style="cursor: pointer" *ngFor="let tool of tools" (click)="transitTool(tool)">
+    <div class="text-start">
+      <div class="fw-bold">{{ tool.label }}</div>
+      {{ tool.description }}
+    </div>
+  </a>
+</div>
