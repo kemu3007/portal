@@ -12,7 +12,7 @@ import { Article, Label } from '../models';
 })
 export class BlogListComponent {
   constructor(titleService: Title, private router: Router) {
-    titleService.setTitle('kemu tech blog');
+    titleService.setTitle('Kemu Tech Blog');
   }
 
   get articles(): Record<string, Article> {

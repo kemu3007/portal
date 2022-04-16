@@ -9,7 +9,7 @@ if __name__ == "__main__":
     base_html = Path("./base.html").read_text()
     blog_home = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/blog.png")
-        .replace("page_title", "kemu tech blog")
+        .replace("page_title", "Kemu Tech Blog")
         .replace(
             "page_description",
             """
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     for key, data in articles.items():
         blog = (
             base_html.replace("page_image", f"https://portal.kemu.site/assets/images/{key}.png")
-            .replace("page_title", f"{data['title']} | kemu tech blog")
+            .replace("page_title", f"{data['title']} | Kemu Tech Blog")
             .replace("page_description", data["body"])
         )
         blog_details = json.loads((Path() / f"portal/src/assets/articles/{key}.json").read_text())
@@ -53,7 +53,7 @@ if __name__ == "__main__":
     logs = json.loads((Path() / "portal/src/assets/logs/list.json").read_text())
     log_home = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/log.png")
-        .replace("page_title", "kemu 旅行記録など雑記 | kemu logs")
+        .replace("page_title", "kemu 旅行記録など雑記 | Kemu Log")
         .replace(
             "page_description",
             """
@@ -75,7 +75,7 @@ if __name__ == "__main__":
                 "page_image",
                 data["photo"] or f"https://portal.kemu.site/assets/images/{key}.png",
             )
-            .replace("page_title", f"{data['title']} | kemu logs")
+            .replace("page_title", f"{data['title']} | Kemu Log")
             .replace("page_description", data["body"])
         )
         log_details = json.loads((Path() / f"portal/src/assets/logs/{key}.json").read_text())

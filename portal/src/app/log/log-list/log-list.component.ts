@@ -10,7 +10,7 @@ import { Log, Label } from '../models';
 })
 export class LogListComponent {
   constructor(titleService: Title, private router: Router) {
-    titleService.setTitle('kemu logs');
+    titleService.setTitle('Kemu Log');
   }
 
   get articles(): Record<string, Log> {

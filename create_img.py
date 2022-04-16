@@ -37,7 +37,7 @@ def write_blog_image(title: str, output: str):
     image = Image.new("RGB", ogp_size, (255, 255, 255))
     draw = ImageDraw.Draw(image)
     draw.text((30, 315 - 50), title, black, font=font)
-    draw.text((880, 315 + 2), "kemu tech blog", black, font=font)
+    draw.text((880, 315 + 2), "Kemu Tech Blog", black, font=font)
     draw.line([(0, 315), (1200, 315)], black, width=2)
     image.save(save_dir / f"{output}.png")
 
@@ -46,7 +46,7 @@ def write_log_image(title: str, output: str):
     image = Image.new("RGB", ogp_size, (255, 255, 255))
     draw = ImageDraw.Draw(image)
     draw.text((30, 315 - 50), title, black, font=font)
-    draw.text((1000, 315 + 2), "kemu log", black, font=font)
+    draw.text((1000, 315 + 2), "Kemu Log", black, font=font)
     draw.line([(0, 315), (1200, 315)], black, width=2)
     image.save(save_dir / f"{output}.png")
 
