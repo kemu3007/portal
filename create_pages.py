@@ -13,8 +13,8 @@ if __name__ == "__main__":
         .replace(
             "page_description",
             """
-            Angular / Djangoがメインのtech blogです。このページはAngularで作成後Github Actionsでビルド、GitHub Pagesで配信されています。
-            メモ書きのような記事が中心ではありますがつまりどころっぽいのを寄せ集めています。転職先/個人での仕事の依頼など可能です。contactより連絡を行なってください。
+            Angular / DjangoがメインのTech Noteです。
+            転職先/個人での仕事の依頼など可能です。Contactページより連絡を行なってください。
             """,
         )
     )
