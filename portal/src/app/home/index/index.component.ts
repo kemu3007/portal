@@ -12,7 +12,7 @@ export class IndexComponent implements OnInit {
   tools = tools;
 
   constructor(title: Title, private route: ActivatedRoute, private router: Router) {
-    title.setTitle('kemu portal');
+    title.setTitle('Kemu Portal');
   }
 
   ngOnInit(): void {

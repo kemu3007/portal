@@ -424,7 +424,7 @@ if __name__ == "__main__":
     # contact
     contact_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/contact.png")
-        .replace("page_title", "Contact | kemu portal")
+        .replace("page_title", "Contact | Kemu Portal")
         .replace("page_description", """仕事の依頼/転職の誘いなどはこちらからお願いします。セールスメールはお控えください。""")
     )
     contact_html = contact_html.replace(

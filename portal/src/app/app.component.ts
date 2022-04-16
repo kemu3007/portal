@@ -19,7 +19,7 @@ export class AppComponent {
   adsCount = 0;
 
   constructor(titleService: Title, private loadingService: LoadingService, routerService: RouterService) {
-    titleService.setTitle('kemu portal');
+    titleService.setTitle('Kemu Portal');
     routerService.watchNavigation().subscribe();
     console.log('%c 👀 why are you seeing this?', 'background: black; color: white;');
   }

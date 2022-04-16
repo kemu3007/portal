@@ -55,7 +55,7 @@ def write_portal_image(title: str, output: str):
     image = Image.new("RGB", ogp_size, (255, 255, 255))
     draw = ImageDraw.Draw(image)
     draw.text((30, 315 - 50), title, black, font=font)
-    draw.text((950, 315 + 2), "kemu portal", black, font=font)
+    draw.text((950, 315 + 2), "Kemu Portal", black, font=font)
     draw.line([(0, 315), (1200, 315)], black, width=2)
     image.save(save_dir / f"{output}.png")
 
