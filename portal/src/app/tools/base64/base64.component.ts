@@ -16,7 +16,7 @@ export class Base64Component implements OnInit {
   });
 
   constructor(title: Title, breadCrumbService: BreadcrumbService, private messageService: MessageService) {
-    title.setTitle('Base64 Encoder/Decoder | kemu tools');
+    title.setTitle('Base64 Encoder/Decoder | Kemu Tools');
     breadCrumbService.breadcrumb = '/tools/Base64 Encoder/Decoder';
   }
 

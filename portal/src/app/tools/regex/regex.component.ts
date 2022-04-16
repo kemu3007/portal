@@ -17,7 +17,7 @@ export class RegexComponent implements OnInit {
   matches: RegExpMatchArray[] = [];
 
   constructor(title: Title, breadcrumbService: BreadcrumbService) {
-    title.setTitle('Regex Checker | kemu tools');
+    title.setTitle('Regex Checker | Kemu Tools');
     breadcrumbService.breadcrumb = 'tools/Regex Checker';
   }
 

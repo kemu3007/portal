@@ -17,19 +17,23 @@ iframes_dir = Path("portal/src/assets/iframes")
 weed_iframe_base = """
 <html>
     <head><link rel="stylesheet" href="./weed.css" /></head>
-    <body>%s</body>
+    <body>
+        {svg}
+        <br />
+        <a style="font-size: 12px;" target="_top" href="https://skyline.github.com/kemu3007/{year}">View On 3D</a>
+    </body>
 </html>
 """
 
 
 def write_weeds_iframe():
-    years = [2017, 2018, 2019, 2020, 2022]
+    years = [2017, 2018, 2019, 2020, 2021, 2022]
     for year in years:
         weed_svg = BeautifulSoup(
             urlopen(f"https://github.com/kemu3007?tab=overview&from={year}-12-01&to={year}-12-31"),
             features="html.parser",
         ).find(class_="js-calendar-graph-svg")
-        html = weed_iframe_base % weed_svg
+        html = weed_iframe_base.format(svg=weed_svg, year=year)
         (iframes_dir / f"weed_{year}.html").write_text(html)
 
 
@@ -64,7 +68,7 @@ def write_tools_image(title: str, output: str):
     image = Image.new("RGB", ogp_size, (255, 255, 255))
     draw = ImageDraw.Draw(image)
     draw.text((30, 315 - 50), title, black, font=font)
-    draw.text((970, 315 + 2), "kemu tools", black, font=font)
+    draw.text((970, 315 + 2), "Kemu Tools", black, font=font)
     draw.line([(0, 315), (1200, 315)], black, width=2)
     image.save(save_dir / f"{output}.png")
 

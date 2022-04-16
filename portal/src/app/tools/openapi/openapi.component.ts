@@ -21,7 +21,7 @@ export class OpenapiComponent implements OnInit, AfterViewInit {
   spec = {};
 
   constructor(private modalService: NgbModal, title: Title, breadcrumbService: BreadcrumbService) {
-    title.setTitle('OpenApi Viewer | kemu tools');
+    title.setTitle('OpenApi Viewer | Kemu Tools');
     breadcrumbService.breadcrumb = 'tools/OpenApi Viewer';
   }
 

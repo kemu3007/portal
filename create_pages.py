@@ -100,7 +100,7 @@ if __name__ == "__main__":
     tools = json.loads((Path() / "portal/src/app/tools/tools.json").read_text())
     tools_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/tools.png")
-        .replace("page_title", "kemu tools")
+        .replace("page_title", "Kemu Tools")
         .replace("page_description", "自作ツール置き場")
     )
     tools_base = [
@@ -113,7 +113,7 @@ if __name__ == "__main__":
     # ip address checker
     user_info_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/user-info.png")
-        .replace("page_title", "IP Address Checker | kemu tools")
+        .replace("page_title", "IP Address Checker | Kemu Tools")
         .replace(
             "page_description",
             """
@@ -147,7 +147,7 @@ if __name__ == "__main__":
     # associate link maker
     associate_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/associate.png")
-        .replace("page_title", "Amazon Associate Linker | kemu tools")
+        .replace("page_title", "Amazon Associate Linker | Kemu Tools")
         .replace(
             "page_description",
             """
@@ -174,7 +174,7 @@ if __name__ == "__main__":
     # JSON Typer
     typer_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/json-typer.png")
-        .replace("page_title", "JSON Typer | kemu tools")
+        .replace("page_title", "JSON Typer | Kemu Tools")
         .replace(
             "page_description",
             """
@@ -201,7 +201,7 @@ if __name__ == "__main__":
     # realtime
     realtime_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/realtime.png")
-        .replace("page_title", "REALTIME | kemu tools")
+        .replace("page_title", "REALTIME | Kemu Tools")
         .replace(
             "page_description",
             """
@@ -227,7 +227,7 @@ if __name__ == "__main__":
     # JSON Formatter
     formatter_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/json-formatter.png")
-        .replace("page_title", "JSON Formatter | kemu tools")
+        .replace("page_title", "JSON Formatter | Kemu Tools")
         .replace(
             "page_description",
             """
@@ -254,7 +254,7 @@ if __name__ == "__main__":
     # Base64 Encoder/Decoder
     base64_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/base64.png")
-        .replace("page_title", "Base64 Encoder/Decoder | kemu tools")
+        .replace("page_title", "Base64 Encoder/Decoder | Kemu Tools")
         .replace(
             "page_description",
             """
@@ -289,7 +289,7 @@ if __name__ == "__main__":
     # GitHub Flavored Markdown Writer
     mdwriter_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/mdwriter.png")
-        .replace("page_title", "GitHub Flavored Markdown Writer | kemu tools")
+        .replace("page_title", "GitHub Flavored Markdown Writer | Kemu Tools")
         .replace(
             "page_description",
             """
@@ -317,7 +317,7 @@ if __name__ == "__main__":
     # Regex Checker
     regex_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/regex.png")
-        .replace("page_title", "Regex Checker | kemu tools")
+        .replace("page_title", "Regex Checker | Kemu Tools")
         .replace(
             "page_description",
             """
@@ -350,7 +350,7 @@ if __name__ == "__main__":
     # Year Checker
     year_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/year.png")
-        .replace("page_title", "Year Checker | kemu tools")
+        .replace("page_title", "Year Checker | Kemu Tools")
         .replace(
             "page_description",
             """
@@ -392,7 +392,7 @@ if __name__ == "__main__":
     # OpenApi Viewer
     swagger_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/openapi.png")
-        .replace("page_title", "OpenApi Viewer | kemu tools")
+        .replace("page_title", "OpenApi Viewer | Kemu Tools")
         .replace(
             "page_description",
             """

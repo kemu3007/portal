@@ -12,7 +12,7 @@ export class RealtimeComponent implements OnInit {
   ms = 0;
 
   constructor(title: Title, breadcrumbService: BreadcrumbService) {
-    title.setTitle('REALTIME | kemu tools');
+    title.setTitle('REALTIME | Kemu Tools');
     breadcrumbService.breadcrumb = 'tools/REALTIME';
   }
 

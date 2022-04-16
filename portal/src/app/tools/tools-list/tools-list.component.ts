@@ -12,7 +12,7 @@ export class ToolsListComponent {
   tools: Tool[] = tools;
 
   constructor(private router: Router, title: Title) {
-    title.setTitle('kemu tools');
+    title.setTitle('Kemu Tools');
   }
 
   transitLink(tool: Tool) {

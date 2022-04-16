@@ -23,7 +23,7 @@ export class MdwriterComponent implements OnInit {
     private messageService: MessageService,
     private modal: NgbModal
   ) {
-    title.setTitle('GitHub Flavored Markdown Writer | kemu tools');
+    title.setTitle('GitHub Flavored Markdown Writer | Kemu Tools');
     breadcrumbService.breadcrumb = 'tools/GitHub Flavored Markdown Writer';
   }
 
