@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <script>
+      if (!window.navigator.userAgent.match(/Googlebot|Chrome-Lighthouse/g) ) {
+        window.location.href=window.location.origin + '?to=' + window.location.pathname + window.location.hash
+      }
+    </script>
+    <meta charset="utf-8" />
+    <title>GitHub ActionsとGitHub Pagesで健康管理アプリを作成する | Kemu Tech Blog</title>
+    <base href="/" />
+    <meta name="description" content=" 元々の構想- オンラインでどの端末でも確認できる形式にしたいがEC2などを立ててデプロイまではちょっとしたくない。- データの入力は一日一回。- 登録するデータは最低血圧, 最高血圧, 脈拍, 脈圧, 体重。- 日々のデータをチャートでわかりやすく表示。 アプリケーション仕様- データは一日一回 " />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="GitHub ActionsとGitHub Pagesで健康管理アプリを作成する | Kemu Tech Blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content=" 元々の構想- オンラインでどの端末でも確認できる形式にしたいがEC2などを立ててデプロイまではちょっとしたくない。- データの入力は一日一回。- 登録するデータは最低血圧, 最高血圧, 脈拍, 脈圧, 体重。- 日々のデータをチャートでわかりやすく表示。 アプリケーション仕様- データは一日一回 " />
+    <meta property="og:url" content="https://portal.kemu.site" />
+    <meta property="og:image" content="https://portal.kemu.site/assets/images/1206271863.png" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://portal.kemu.site/assets/images/1206271863.png" />
+    <meta name="twitter:description" content=" 元々の構想- オンラインでどの端末でも確認できる形式にしたいがEC2などを立ててデプロイまではちょっとしたくない。- データの入力は一日一回。- 登録するデータは最低血圧, 最高血圧, 脈拍, 脈圧, 体重。- 日々のデータをチャートでわかりやすく表示。 アプリケーション仕様- データは一日一回 " />
+    <meta name="twitter:title" content="GitHub ActionsとGitHub Pagesで健康管理アプリを作成する | Kemu Tech Blog" />
+    <meta name="twitter:url" content="https://twitter.com/kemu43" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/29157528?v=4" />
+    <style type="text/css">
+      img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Kemu Portal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/blog/">blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/log/">log</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/tools/">tools</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/contact/">contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <hr />
+      
+            <h1>GitHub ActionsとGitHub Pagesで健康管理アプリを作成する</h1> 
+            <hr />
+            <h2>元々の構想</h2>
+<ul>
+<li>オンラインでどの端末でも確認できる形式にしたいがEC2などを立ててデプロイまではちょっとしたくない。</li>
+<li>データの入力は一日一回。</li>
+<li>登録するデータは最低血圧, 最高血圧, 脈拍, 脈圧, 体重。</li>
+<li>日々のデータをチャートでわかりやすく表示。</li>
+</ul>
+<h2>アプリケーション仕様</h2>
+<ul>
+<li>データは一日一回 GitHub Actionsを利用して入力する。</li>
+<li>GitHub Actions上でデータをJSON形式で保存し、レポジトリにpushする。</li>
+<li>配信はGitHub Pagesを利用し、Chart.jsでデータを可視化する。</li>
+</ul>
+<h2>アプリケーション構成</h2>
+<p><img width="752" alt="スクリーンショット 2022-04-17 12 17 04" src="https://user-images.githubusercontent.com/29157528/163698719-2141b3d6-b45f-435a-bab0-8e92e5bc6cc2.png"></p>
+<h2>GitHub Actionsでデータを入力する</h2>
+<p>以下のyml形式でGitHub Actionsに任意の値を入れることができます。</p>
+<p>```yml
+name: write-data</p>
+<p>on:
+  workflow_dispatch:
+    inputs:
+      blood_min:
+        default: 0
+        required: true
+      blood_max:
+        default: 0
+        required: true
+      heart_rate:
+        default: 0
+        required: true
+      heart_pulse:
+        default: 0
+        required: true
+      weight:
+        default: 0
+        required: true
+```
+実際のUIは以下の通り</p>
+<p><img width="257" alt="スクリーンショット 2022-04-17 12 25 14" src="https://user-images.githubusercontent.com/29157528/163698957-6fc1b74e-f799-4823-ad85-68f96edc211d.png"></p>
+<h2>データをJSON形式で保存する</h2>
+<p>データをJavaScriptで読みやすくするため、GitHub Actionsに渡した値をPythonスクリプトで加工します。(サンプルコードはZoneInfoを利用しているため、Python3.9以降を利用する必要があります。)</p>
+<p>```python
+import argparse
+from datetime import datetime
+import json
+from pathlib import Path
+from zoneinfo import ZoneInfo</p>
+<p>parser = argparse.ArgumentParser()</p>
+<p>parser.add_argument("blood_min", type=int)
+parser.add_argument("blood_max", type=int)
+parser.add_argument("heart_rate", type=int)
+parser.add_argument("heart_pulse", type=int)
+parser.add_argument("weight", type=float)</p>
+<p>blood_json = Path("docs/blood.json")
+weight_json = Path("docs/weight.json")</p>
+<p>if <strong>name</strong> == "<strong>main</strong>":
+    today = datetime.now(ZoneInfo("Asia/Tokyo")).date()
+    arguments = parser.parse_args()
+    blood = json.loads(blood_json.read_text())
+    blood[str(today)] = {
+        "min": arguments.blood_min,
+        "max": arguments.blood_max,
+        "heart_rate": arguments.heart_rate,
+        "heart_pulse": arguments.heart_pulse,
+    }
+    blood_json.write_text(json.dumps(blood))
+    weight = json.loads(weight_json.read_text())
+    weight[str(today)] = {"weight": arguments.weight}
+    weight_json.write_text(json.dumps(weight))
+``` </p>
+<p>今回はレポジトリmainブランチの <code>docs/</code> を配信するため、<code>docs/blood.json</code>, <code>docs/weight.json</code> を用意し、JSONデータを保存します。</p>
+<p>これにより、日付と身体データを持ったJSONファイルを配信する準備ができました。</p>
+<h2>JSONデータを可視化する</h2>
+<p>JSONそのままの形式では人間が読む際に不都合があるため、グラフ形式に可視化します。</p>
+<p>利用したライブラリは<a href="https://www.chartjs.org/">Chart.js</a>です。</p>
+<h3>index.html</h3>
+<p>```html</p>
+<!DOCTYPE html>
+<p><html lang="ja">
+  <head>
+    <title>Health Logger</title>
+    <meta name="robots" content="noindex">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+<br />
+<body>
+    <div class="container mt-5">
+      <h2>Blood</h2>
+      <canvas id="blood" height="80px"></canvas>
+      <h2>Weight</h2>
+      <canvas id="weight" height="80px"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+      const bloodCtx = document.getElementById("blood").getContext('2d');
+      fetch("blood.json").then(response => {
+        response.json().then(blood => {
+          console.log(blood)
+          const bloodChart = new Chart(bloodCtx, {
+            type: 'line',
+            data: {
+              datasets: [
+                {
+                  label: "最高血圧",
+                  data: Object.values(blood).map(item => item.max),
+                  borderColor: 'rgb(255, 0, 0)'
+                },
+                {
+                  label: "最低血圧",
+                  data: Object.values(blood).map(item => item.min),
+                  borderColor: 'rgb(0, 0, 255)'
+                },
+                {
+                  label: "脈拍",
+                  data: Object.values(blood).map(item => item.heart_rate),
+                  borderColor: 'rgb(255, 0, 255)'
+                },
+                {
+                  label: "脈圧",
+                  data: Object.values(blood).map(item => item.heart_pulse),
+                  borderColor: 'rgb(128, 128, 128)'
+                },
+              ],
+              labels: Object.keys(blood)
+            }
+          })
+        })
+      })
+      const weightCtx = document.getElementById("weight").getContext('2d');
+      fetch("weight.json").then(response => {
+        response.json().then(weight => {
+          const weightChart = new Chart(weightCtx, {
+            type: 'line',
+            data: {
+              datasets: [{
+                label: "体重",
+                data: Object.values(weight).map(item => item.weight),
+                borderColor: 'rgb(0, 0, 0)'
+              }],
+              labels: Object.keys(weight)
+            }
+          })
+        })
+      })
+    </script>
+  </body></p>
+<p></html>
+```</p>
+<p>同一階層に存在しているJSONファイルを <code>fetch</code> で取得します。この際、ローカルで動かす場合CORSで失敗するため、以下のコマンドライン引数を与える必要があります。</p>
+<p><code>--allow-file-access-from-files</code></p>
+<p>mac OSの場合は以下のコマンドでChromeを終了させてから起動させてください。(Windowsでこの引数の動作確認は行なっていません。)</p>
+<p>動作確認を行ったChrome version: 100.0.4896.127</p>
+<p><code>zsh
+$ open "/Applications/Google Chrome.app" --args --allow-file-access-from-files</code></p>
+<h2>結果</h2>
+<p>このようにデータの可視化を行うことができます。</p>
+<p><img width="841" alt="スクリーンショット 2022-04-17 12 40 16" src="https://user-images.githubusercontent.com/29157528/163699318-74bcb2b4-951f-4efd-ace8-57bcc1228745.png"></p>
+<h2>問題点</h2>
+<p>GitHub Pagesを利用する場合、GitHub EnterpriseでなければGitHub Pagesに対する閲覧制限を付与することができません。そのため、全世界に公開することになってしまうため、URLの煩雑化、数値以外の個人と紐付ける要素をアップロードしない、Googleにインデックス登録されないようにnoindexメタを追加するなどといった対応が必要です。</p>
+            <hr />
+            <div style="overflow-x: scroll;">
+                meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/31', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/31/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/31/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/31/events', 'html_url': 'https://github.com/kemu3007/portal/issues/31', 'id': 1206271863, 'node_id': 'I_kwDOG7qoq85H5j93', 'number': 31, 'title': 'GitHub ActionsとGitHub Pagesで健康管理アプリを作成する', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3972772995, 'node_id': 'LA_kwDOG7qoq87sy7SD', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/GitHub', 'name': 'GitHub', 'color': '5866BF', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': 0, 'created_at': '2022-04-17T03:44:20Z', 'updated_at': '2022-04-17T03:44:20Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': '## 元々の構想\r\n\r\n- オンラインでどの端末でも確認できる形式にしたいがEC2などを立ててデプロイまではちょっとしたくない。\r\n- データの入力は一日一回。\r\n- 登録するデータは最低血圧, 最高血圧, 脈拍, 脈圧, 体重。\r\n- 日々のデータをチャートでわかりやすく表示。\r\n\r\n## アプリケーション仕様\r\n\r\n- データは一日一回 GitHub Actionsを利用して入力する。\r\n- GitHub Actions上でデータをJSON形式で保存し、レポジトリにpushする。\r\n- 配信はGitHub Pagesを利用し、Chart.jsでデータを可視化する。\r\n\r\n## アプリケーション構成\r\n<img width="752" alt="スクリーンショット 2022-04-17 12 17 04" src="https://user-images.githubusercontent.com/29157528/163698719-2141b3d6-b45f-435a-bab0-8e92e5bc6cc2.png">\r\n\r\n## GitHub Actionsでデータを入力する\r\n\r\n以下のyml形式でGitHub Actionsに任意の値を入れることができます。\r\n\r\n```yml\r\nname: write-data\r\n\r\non:\r\n  workflow_dispatch:\r\n    inputs:\r\n      blood_min:\r\n        default: 0\r\n        required: true\r\n      blood_max:\r\n        default: 0\r\n        required: true\r\n      heart_rate:\r\n        default: 0\r\n        required: true\r\n      heart_pulse:\r\n        default: 0\r\n        required: true\r\n      weight:\r\n        default: 0\r\n        required: true\r\n```\r\n実際のUIは以下の通り\r\n\r\n<img width="257" alt="スクリーンショット 2022-04-17 12 25 14" src="https://user-images.githubusercontent.com/29157528/163698957-6fc1b74e-f799-4823-ad85-68f96edc211d.png">\r\n\r\n## データをJSON形式で保存する\r\n\r\nデータをJavaScriptで読みやすくするため、GitHub Actionsに渡した値をPythonスクリプトで加工します。(サンプルコードはZoneInfoを利用しているため、Python3.9以降を利用する必要があります。)\r\n\r\n```python\r\nimport argparse\r\nfrom datetime import datetime\r\nimport json\r\nfrom pathlib import Path\r\nfrom zoneinfo import ZoneInfo\r\n\r\n\r\nparser = argparse.ArgumentParser()\r\n\r\nparser.add_argument("blood_min", type=int)\r\nparser.add_argument("blood_max", type=int)\r\nparser.add_argument("heart_rate", type=int)\r\nparser.add_argument("heart_pulse", type=int)\r\nparser.add_argument("weight", type=float)\r\n\r\n\r\nblood_json = Path("docs/blood.json")\r\nweight_json = Path("docs/weight.json")\r\n\r\n\r\nif __name__ == "__main__":\r\n    today = datetime.now(ZoneInfo("Asia/Tokyo")).date()\r\n    arguments = parser.parse_args()\r\n    blood = json.loads(blood_json.read_text())\r\n    blood[str(today)] = {\r\n        "min": arguments.blood_min,\r\n        "max": arguments.blood_max,\r\n        "heart_rate": arguments.heart_rate,\r\n        "heart_pulse": arguments.heart_pulse,\r\n    }\r\n    blood_json.write_text(json.dumps(blood))\r\n    weight = json.loads(weight_json.read_text())\r\n    weight[str(today)] = {"weight": arguments.weight}\r\n    weight_json.write_text(json.dumps(weight))\r\n``` \r\n\r\n今回はレポジトリmainブランチの `docs/` を配信するため、`docs/blood.json`, `docs/weight.json` を用意し、JSONデータを保存します。\r\n\r\nこれにより、日付と身体データを持ったJSONファイルを配信する準備ができました。\r\n\r\n## JSONデータを可視化する\r\n\r\nJSONそのままの形式では人間が読む際に不都合があるため、グラフ形式に可視化します。\r\n\r\n利用したライブラリは[Chart.js](https://www.chartjs.org/)です。\r\n\r\n### index.html\r\n\r\n```html\r\n<!DOCTYPE html>\r\n<html lang="ja">\r\n  <head>\r\n    <title>Health Logger</title>\r\n    <meta name="robots" content="noindex">\r\n    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">\r\n  </head>\r\n  <body>\r\n    <div class="container mt-5">\r\n      <h2>Blood</h2>\r\n      <canvas id="blood" height="80px"></canvas>\r\n      <h2>Weight</h2>\r\n      <canvas id="weight" height="80px"></canvas>\r\n    </div>\r\n    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>\r\n    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>\r\n    <script>\r\n      const bloodCtx = document.getElementById("blood").getContext(\'2d\');\r\n      fetch("blood.json").then(response => {\r\n        response.json().then(blood => {\r\n          console.log(blood)\r\n          const bloodChart = new Chart(bloodCtx, {\r\n            type: \'line\',\r\n            data: {\r\n              datasets: [\r\n                {\r\n                  label: "最高血圧",\r\n                  data: Object.values(blood).map(item => item.max),\r\n                  borderColor: \'rgb(255, 0, 0)\'\r\n                },\r\n                {\r\n                  label: "最低血圧",\r\n                  data: Object.values(blood).map(item => item.min),\r\n                  borderColor: \'rgb(0, 0, 255)\'\r\n                },\r\n                {\r\n                  label: "脈拍",\r\n                  data: Object.values(blood).map(item => item.heart_rate),\r\n                  borderColor: \'rgb(255, 0, 255)\'\r\n                },\r\n                {\r\n                  label: "脈圧",\r\n                  data: Object.values(blood).map(item => item.heart_pulse),\r\n                  borderColor: \'rgb(128, 128, 128)\'\r\n                },\r\n              ],\r\n              labels: Object.keys(blood)\r\n            }\r\n          })\r\n        })\r\n      })\r\n      const weightCtx = document.getElementById("weight").getContext(\'2d\');\r\n      fetch("weight.json").then(response => {\r\n        response.json().then(weight => {\r\n          const weightChart = new Chart(weightCtx, {\r\n            type: \'line\',\r\n            data: {\r\n              datasets: [{\r\n                label: "体重",\r\n                data: Object.values(weight).map(item => item.weight),\r\n                borderColor: \'rgb(0, 0, 0)\'\r\n              }],\r\n              labels: Object.keys(weight)\r\n            }\r\n          })\r\n        })\r\n      })\r\n    </script>\r\n  </body>\r\n</html>\r\n```\r\n\r\n同一階層に存在しているJSONファイルを `fetch` で取得します。この際、ローカルで動かす場合CORSで失敗するため、以下のコマンドライン引数を与える必要があります。\r\n\r\n`--allow-file-access-from-files`\r\n\r\nmac OSの場合は以下のコマンドでChromeを終了させてから起動させてください。(Windowsでこの引数の動作確認は行なっていません。)\r\n\r\n動作確認を行ったChrome version: 100.0.4896.127\r\n\r\n```zsh\r\n$ open "/Applications/Google Chrome.app" --args --allow-file-access-from-files\r\n```\r\n\r\n## 結果\r\n\r\nこのようにデータの可視化を行うことができます。\r\n\r\n<img width="841" alt="スクリーンショット 2022-04-17 12 40 16" src="https://user-images.githubusercontent.com/29157528/163699318-74bcb2b4-951f-4efd-ace8-57bcc1228745.png">\r\n\r\n## 問題点\r\n\r\nGitHub Pagesを利用する場合、GitHub EnterpriseでなければGitHub Pagesに対する閲覧制限を付与することができません。そのため、全世界に公開することになってしまうため、URLの煩雑化、数値以外の個人と紐付ける要素をアップロードしない、Googleにインデックス登録されないようにnoindexメタを追加するなどといった対応が必要です。\r\n\r\n', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/31/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/31/timeline', 'performed_via_github_app': None}
+            </div>
+            
+      <hr />
+      <h2>TOOLS</h2>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a href="/tools/openapi/">OpenApi Viewer</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/year/">Year Checker</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/regex/">Regex Checker</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/mdwriter/">GitHub Flavored Markdown Writer</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/jsonFormatter/">JSON Formatter</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/realtime/">REALTIME</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/jsonTyper/">JSON Typer</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/userInfo/">IP Addreass Checker</a>
+        </li>
+      </ul>
+    </div>
+    <footer class="my-5 footer">
+      <div class="d-flex justify-content-end">
+        <span style="font-size: 24px">
+          <a href="https://github.com/kemu3007"><i class="bi bi-github"></i></a>
+          <a class="ms-2" href="https://twitter.com/kemu43"><i class="bi bi-twitter"></i></a>
+          <a class="mx-2" href="https://portal.kemu.site/doc/"><i class="bi bi-book"></i></a>
+        </span>
+      </div>
+      <div class="d-flex justify-content-center">
+        <span class="text-muted">Copyright ©️ 2017-2022 kemu All Rights Reserved.</span>
+      </div>
+    </footer>
+  </body>
+</html>
