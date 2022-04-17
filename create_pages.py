@@ -19,7 +19,7 @@ if __name__ == "__main__":
         )
     )
     blog_home_html = [
-        f"<h1><a href='/blog/{key}'>{article['title']}</a></h1><hr /> {article['body']}"
+        f"<h1><a href='/blog/{key}/'>{article['title']}</a></h1><hr /> {article['body']}"
         for key, article in articles.items()
     ]
     blog_home = blog_home.replace("page_contents", "<hr />".join(blog_home_html))
@@ -38,7 +38,7 @@ if __name__ == "__main__":
             "page_contents",
             f"""
             <h1>{data['title']}</h1> 
-            <hr />
+            <img src="https://portal.kemu.site/assets/images/{key}.png" />
             {body}
             <hr />
             <div style="overflow-x: scroll;">
@@ -63,7 +63,7 @@ if __name__ == "__main__":
         )
     )
     log_home_html = [
-        f"<h1><a href='/log/{key}'>{log['title']}</a></h1><hr /> {log['body']}" for key, log in logs.items()
+        f"<h1><a href='/log/{key}/'>{log['title']}</a></h1><hr /> {log['body']}" for key, log in logs.items()
     ]
     log_home = log_home.replace("page_contents", "<hr />".join(log_home_html) + f"meta: {logs}")
     path = Path("portal/src/log")
@@ -84,6 +84,7 @@ if __name__ == "__main__":
             "page_contents",
             f"""
             <h1>{data['title']}</h1>
+            <img src="https://portal.kemu.site/assets/images/{key}.png" />
             <hr />
             {body}
             <hr /> 
@@ -104,7 +105,7 @@ if __name__ == "__main__":
         .replace("page_description", "自作ツール置き場")
     )
     tools_base = [
-        f"<h2><a href='{tool['link']}'>{tool['label']}</a></h2><hr /> {tool['description']}" for tool in tools
+        f"<h2><a href='{tool['link']}/'>{tool['label']}</a></h2><hr /> {tool['description']}" for tool in tools
     ]
     tools_html = tools_html.replace("page_contents", "<hr />".join(tools_base))
     path = Path("portal/src/tools")
@@ -125,6 +126,7 @@ if __name__ == "__main__":
         "page_contents",
         """
         <h1>IP Address Checker</h1>
+        <img src="https://portal.kemu.site/assets/images/user-info.png" />
         IPアドレス等の情報を確認します。 あなたのIPアドレス ..........
         <table>
             <tr>
@@ -160,6 +162,7 @@ if __name__ == "__main__":
         "page_contents",
         """
         <h1>Amazon Associate Linker</h1>
+        <img src="https://portal.kemu.site/assets/images/associate.png" />
         Amazon Associate Linkを生成します。<br />
         アソシエイトID 
         <input /> 
@@ -187,6 +190,7 @@ if __name__ == "__main__":
         "page_contents",
         """
         <h1>JSON Typer</h1>
+        <img src="https://portal.kemu.site/assets/images/json-typer.png" />
         JSONの値をTypeScriptのinterface型に変換します。List Typeには非対応です。any[]と出力されます。<br />
         またJSONキーにスラッシュなどの値が含まれている場合正しく出力されないケースがあります。<br />
         RootTypeName<input />
@@ -214,6 +218,7 @@ if __name__ == "__main__":
         "page_contents",
         """
         <h1>REALTIME</h1> 
+        <img src="https://portal.kemu.site/assets/images/realtime.png" />
         現在時刻を100ms単位で更新し、正確な日時をお知らせします。<br />
         <pre>
             <h2> 2000/00/00 00:00:00 </h2>
@@ -240,6 +245,7 @@ if __name__ == "__main__":
         "page_contents",
         """
         <h1>JSON Formatter</h1> 
+        <img src="https://portal.kemu.site/assets/images/json-formatter.png" />
         未整形のJSONデータを整形します。 <br />
         <input /> 
         <button>format</button>
@@ -267,6 +273,7 @@ if __name__ == "__main__":
         "page_contents",
         """
         <h1>Base64 Encoder/Decoder</h1> 
+        <img src="https://portal.kemu.site/assets/images/base64.png" />
         文字列データをBase64に、Base64データを文字列に変換します。 
         base64 <br />
         <textarea></textarea>
@@ -301,6 +308,7 @@ if __name__ == "__main__":
         "page_contents",
         """
         <h1>GitHub Flavored Markdown Writer</h1> 
+        <img src="https://portal.kemu.site/assets/images/mdwriter.png" />
         markdwon / HTML
         <hr />
         markdown<button>copy</button>
@@ -329,6 +337,7 @@ if __name__ == "__main__":
         "page_contents",
         """
         <h1>Regex Checker</h1> 
+        <img src="https://portal.kemu.site/assets/images/regex.png" />
         正規表現<br />
         <input />
         <hr />
@@ -361,7 +370,8 @@ if __name__ == "__main__":
     year_html = year_html.replace(
         "page_contents",
         """
-        <h1>Year Checker</h1> <hr />
+        <h1>Year Checker</h1>
+        <img src="https://portal.kemu.site/assets/images/year.png" />
         誕生日をもとに各種卒業年度/厄年といった年月日を計算します。
         誕生日<br />
         <input type="date" class="form-control" />
@@ -403,7 +413,8 @@ if __name__ == "__main__":
     swagger_html = swagger_html.replace(
         "page_contents",
         """
-        <h1>Year Checker</h1> <hr />
+        <h1>Year Checker</h1>
+        <img src="https://portal.kemu.site/assets/images/openapi.png" />
         OpenApi JSON/YAMLをSwagger-UI / Redoc形式で表示します。<br />
         入力した値はローカルストレージにのみ記録され、サーバ等には記録していないため安心して利用可能です。<br />
         Spec Type<br />
@@ -431,6 +442,7 @@ if __name__ == "__main__":
         "page_contents",
         """
         <h1> Contact Me </h1>
+        <img src="https://portal.kemu.site/assets/images/contact.png" />
         仕事の依頼などは以下のメールアドレスにお願いします。セールスメールはお控えください。<br />
         TwitterのDMも可能ですが返信が遅くなってしまう可能性があるためできる限りメールでお願いいたします。<br />
         セールスメールを送信した場合メールアドレスをブロックするため以降のメールは全て受信拒否を行います。ご了承ください。<br />
