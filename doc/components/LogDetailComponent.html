@@ -135,16 +135,10 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Optional</span>
-                                <a href="#article" >article</a>
-                            </li>
-                            <li>
-                                <a href="#article$" >article$</a>
+                                <a href="#_article" >_article</a>
                             </li>
                             <li>
                                 <a href="#comments" >comments</a>
-                            </li>
-                            <li>
-                                <a href="#comments$" >comments$</a>
                             </li>
                             <li>
                                 <a href="#html" >html</a>
@@ -184,6 +178,9 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
+                                    <a href="#article" >article</a>
+                                </li>
+                                <li>
                                     <a href="#issueId" >issueId</a>
                                 </li>
                                 <li>
@@ -202,7 +199,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>, markedService: <a href="../injectables/MarkedService.html" target="_self">MarkedService</a>, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>)</code>
+<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>, markedService: <a href="../injectables/MarkedService.html" target="_self">MarkedService</a>, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, articlesService: <a href="../injectables/ArticlesService.html" target="_self">ArticlesService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -249,30 +246,6 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>router</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>messageService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
                                                         <td>breadcrumbService</td>
                                                   
                                                         <td>
@@ -301,6 +274,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>articlesService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ArticlesService.html" target="_self" >ArticlesService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -346,8 +331,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:53</a></div>
                 </td>
             </tr>
 
@@ -373,55 +358,23 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="article"></a>
+                    <a name="_article"></a>
                     <span class="name">
                             <span class="modifier">Optional</span>
-                        <span ><b>article</b></span>
-                        <a href="#article"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>_article</b></span>
+                        <a href="#_article"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/LogDetail.html" target="_self" >LogDetail</a></code>
+                        <i>Type : </i>        <code><a href="../interfaces/ArticleDetail.html" target="_self" >ArticleDetail</a></code>
 
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
                                 <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:19</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="article$"></a>
-                    <span class="name">
-                        <span ><b>article$</b></span>
-                        <a href="#article$"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>import(&#x60;../../../assets/logs/${this.issueId}.json&#x60;).catch((_) &#x3D;&gt;
-    this.router.navigate([&#x27;/log&#x27;]).then((_) &#x3D;&gt;
-      this.messageService.pushMessage({
-        type: &#x27;warning&#x27;,
-        body: &#x27;記事が存在していません&#x27;,
-      })
-    )
-  )</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:62</a></div>
                         </td>
                     </tr>
 
@@ -453,37 +406,6 @@
                     <tr>
                         <td class="col-md-4">
                                 <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:20</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="comments$"></a>
-                    <span class="name">
-                        <span ><b>comments$</b></span>
-                        <a href="#comments$"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>    <code>Promise&lt;any[]&gt;</code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>import(&#x60;../../../assets/comments/${this.issueId}.json&#x60;).catch((_) &#x3D;&gt; {})</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:60</a></div>
                         </td>
                     </tr>
 
@@ -556,6 +478,75 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="article"></a>
+                        <span class="name"><b>article</b><a href="#article"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>article()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:31</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>article(article: ArticleDetail | undefined)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:35</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>article</td>
+                                                    
+                                                            <td>
+                                                                        <code>ArticleDetail | undefined</code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="issueId"></a>
                         <span class="name"><b>issueId</b><a href="#issueId"><span class="icon ion-ios-link"></span></a></span>
                     </td>
@@ -568,7 +559,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:56</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:60</a></div>
                                 </td>
                             </tr>
 
@@ -590,7 +581,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:71</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:64</a></div>
                                 </td>
                             </tr>
 
@@ -602,14 +593,14 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 import { DomSanitizer, SafeHtml, Title } from &#x27;@angular/platform-browser&#x27;;
-import { LogDetail } from &#x27;../models&#x27;;
-import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
 import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
 import { MarkedService } from &#x27;@app/shared/markdown/marked.service&#x27;;
 import { interval, take } from &#x27;rxjs&#x27;;
-import { Comment } from &#x27;@app/shared/interfaces/comment&#x27;;
+import { Comment } from &#x27;@app/shared/articles/comments&#x27;;
+import { ArticleDetail } from &#x27;@app/shared/articles/articles&#x27;;
+import { ArticlesService } from &#x27;@app/shared/articles/articles.service&#x27;;
 
 @Component({
   selector: &#x27;app-blog-detail&#x27;,
@@ -619,24 +610,27 @@ import { Comment } from &#x27;@app/shared/interfaces/comment&#x27;;
 export class LogDetailComponent implements OnInit {
   marked &#x3D; this.markedService.marked;
   html: SafeHtml &#x3D; &#x27;&#x27;;
-  article?: LogDetail;
+  _article?: ArticleDetail;
   comments: Comment[] &#x3D; [];
 
   constructor(
     private titleService: Title,
     private route: ActivatedRoute,
-    private router: Router,
-    private messageService: MessageService,
     private breadcrumbService: BreadcrumbService,
     private markedService: MarkedService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private articlesService: ArticlesService
   ) {}
 
-  ngOnInit(): void {
-    this.article$.then((article) &#x3D;&gt; {
+  get article() {
+    return this._article;
+  }
+
+  set article(article: ArticleDetail | undefined) {
+    if (article) {
       this.titleService.setTitle(&#x60;${article.title} | Kemu Log&#x60;);
-      this.article &#x3D; article;
-      this.breadcrumbService.breadcrumb &#x3D; &#x60;/log/${article.title}&#x60;;
+      this._article &#x3D; article;
+      this.breadcrumbService.breadcrumb &#x3D; &#x60;/blog/${article.title}&#x60;;
       this.html &#x3D; this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));
       if (this.route.snapshot.fragment) {
         interval(100)
@@ -647,29 +641,19 @@ export class LogDetailComponent implements OnInit {
             );
           });
       }
-    });
-    /** jsonのリストをimportした際、Moduleオブジェクトとして解釈され、Listのような構造を持っているがiterableでない型となるためその対応 */
-    this.comments$.then((comments) &#x3D;&gt; {
-      for (let i &#x3D; 0; i &lt; comments.length; i++) {
-        this.comments.push(comments[i]);
-      }
-    });
+    }
+  }
+
+  ngOnInit(): void {
+    this.articlesService.get(&#x60;/assets/logs/${this.issueId}.json&#x60;).subscribe((article) &#x3D;&gt; (this.article &#x3D; article));
+    this.articlesService
+      .getComments(&#x60;/assets/comments/${this.issueId}.json&#x60;)
+      .subscribe((comments) &#x3D;&gt; (this.comments &#x3D; comments));
   }
 
   get issueId() {
     return this.route.snapshot.paramMap.get(&#x27;id&#x27;);
   }
-
-  comments$: Promise&lt;any[]&gt; &#x3D; import(&#x60;../../../assets/comments/${this.issueId}.json&#x60;).catch((_) &#x3D;&gt; {});
-
-  article$ &#x3D; import(&#x60;../../../assets/logs/${this.issueId}.json&#x60;).catch((_) &#x3D;&gt;
-    this.router.navigate([&#x27;/log&#x27;]).then((_) &#x3D;&gt;
-      this.messageService.pushMessage({
-        type: &#x27;warning&#x27;,
-        body: &#x27;記事が存在していません&#x27;,
-      })
-    )
-  );
 
   get adsLength(): number {
     const hasMd &#x3D; window.screen.width &gt;&#x3D; 768;

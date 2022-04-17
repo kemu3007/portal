@@ -292,6 +292,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/AdsModalService.html" data-type="entity-link" >AdsModalService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/ArticlesService.html" data-type="entity-link" >ArticlesService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/BreadcrumbService.html" data-type="entity-link" >BreadcrumbService</a>
                                 </li>
                                 <li class="link">
@@ -344,28 +347,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/Label.html" data-type="entity-link" >Label</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/Label-1.html" data-type="entity-link" >Label</a>
-                            </li>
-                            <li class="link">
                                 <a href="interfaces/LabelDetail.html" data-type="entity-link" >LabelDetail</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/LabelDetail-1.html" data-type="entity-link" >LabelDetail</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/Log.html" data-type="entity-link" >Log</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/LogDetail.html" data-type="entity-link" >LogDetail</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/Reactions.html" data-type="entity-link" >Reactions</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/Reactions-1.html" data-type="entity-link" >Reactions</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/Reactions-2.html" data-type="entity-link" >Reactions</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/RequestContext.html" data-type="entity-link" >RequestContext</a>
@@ -381,9 +369,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/User-1.html" data-type="entity-link" >User</a>
-                            </li>
-                            <li class="link">
-                                <a href="interfaces/User-2.html" data-type="entity-link" >User</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/UserInfo.html" data-type="entity-link" >UserInfo</a>
