@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <script>
+      if (!window.navigator.userAgent.match(/Googlebot|Chrome-Lighthouse/g) ) {
+        window.location.href=window.location.origin + '?to=' + window.location.pathname + window.location.hash
+      }
+    </script>
+    <meta charset="utf-8" />
+    <title>Djangoプロジェクトをカスタムテンプレートから作成する | Kemu Tech Blog</title>
+    <base href="/" />
+    <meta name="description" content=" Django レポジトリテンプレートGitHubのレポジトリテンプレート機能を利用し、[Django Project Template]を作成したのでその説明と導入手順です。 テンプレートからレポジトリを作成する。[Django Project Template]<img width="767" " />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Djangoプロジェクトをカスタムテンプレートから作成する | Kemu Tech Blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content=" Django レポジトリテンプレートGitHubのレポジトリテンプレート機能を利用し、[Django Project Template]を作成したのでその説明と導入手順です。 テンプレートからレポジトリを作成する。[Django Project Template]<img width="767" " />
+    <meta property="og:url" content="https://portal.kemu.site" />
+    <meta property="og:image" content="https://portal.kemu.site/assets/images/1206344475.png" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://portal.kemu.site/assets/images/1206344475.png" />
+    <meta name="twitter:description" content=" Django レポジトリテンプレートGitHubのレポジトリテンプレート機能を利用し、[Django Project Template]を作成したのでその説明と導入手順です。 テンプレートからレポジトリを作成する。[Django Project Template]<img width="767" " />
+    <meta name="twitter:title" content="Djangoプロジェクトをカスタムテンプレートから作成する | Kemu Tech Blog" />
+    <meta name="twitter:url" content="https://twitter.com/kemu43" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/29157528?v=4" />
+    <style type="text/css">
+      img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Kemu Portal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/blog/">blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/log/">log</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/tools/">tools</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/contact/">contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <hr />
+      
+            <h1>Djangoプロジェクトをカスタムテンプレートから作成する</h1> 
+            <hr />
+            <h2>Django レポジトリテンプレート</h2>
+<p>GitHubのレポジトリテンプレート機能を利用し、<a href="https://github.com/kemu3007/django-project-template">Django Project Template</a>を作成したのでその説明と導入手順です。</p>
+<h2>テンプレートからレポジトリを作成する。</h2>
+<p><a href="https://github.com/kemu3007/django-project-template">Django Project Template</a>
+<img width="767" alt="スクリーンショット 2022-04-17 19 24 23" src="https://user-images.githubusercontent.com/29157528/163710493-d37e3276-356d-4bc1-9b03-b7596201caec.png"></p>
+<hr />
+<p>画面右上 <code>Use this template</code> ボタンをクリックし、新規レポジトリを作成することでテンプレートを利用したレポジトリが作成されます。</p>
+<h2>テンプレートの内容</h2>
+<h3>.github/workflows,  Makefile</h3>
+<p>mainにpush, pull_requestをcreate / syncしたタイミングで自動的にCIを発火するようにしています。</p>
+<p>CIではMakefileに定義している<code>lint</code>, <code>test</code> コマンドを実行しています。Djangoデフォルトのテストフレームワークを利用する形で定義しているのでpytestに切り替える場合はMakefile内の<code>test</code>コマンドを修正することで自動的に適用されます。</p>
+<p>linterの設定内容は <code>setup.cfg</code>, <code>pyproject.toml</code> を確認してください。</p>
+<p>black, isortがバージョン問題でフォーマット結果が変わるタイミングがあったりするので<code>requirements.dev.txt</code>でバージョン管理を行なっています。</p>
+<h3>docker-compose.yml</h3>
+<p>python:3.10イメージをベースにしたrequirements.txtの内容をインストールするようにしたカスタムイメージを立ち上げ、<code>python src/manage.py runserver</code> を実行しています。</p>
+<h2>動作確認</h2>
+<p>docker-compose v2を利用しています。</p>
+<p><code>zsh
+$ docker compose up -d</code>
+デフォルトで8000番ポートで起動するようにしているのでブラウザで<code>localhost:8000</code>にアクセスし、以下の画面が表示されればOKです。</p>
+<p><img width="992" alt="スクリーンショット 2022-04-17 19 57 09" src="https://user-images.githubusercontent.com/29157528/163711499-f65880da-9222-46a7-8e36-791bbfdc77ca.png"></p>
+            <hr />
+            <div style="overflow-x: scroll;">
+                meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/32', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/32/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/32/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/32/events', 'html_url': 'https://github.com/kemu3007/portal/issues/32', 'id': 1206344475, 'node_id': 'I_kwDOG7qoq85H51sb', 'number': 32, 'title': 'Djangoプロジェクトをカスタムテンプレートから作成する', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3900075763, 'node_id': 'LA_kwDOG7qoq87odm7z', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/Django', 'name': 'Django', 'color': '5FC353', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': 0, 'created_at': '2022-04-17T10:58:05Z', 'updated_at': '2022-04-17T10:58:30Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': '## Django レポジトリテンプレート\r\n\r\nGitHubのレポジトリテンプレート機能を利用し、[Django Project Template](https://github.com/kemu3007/django-project-template)を作成したのでその説明と導入手順です。\r\n\r\n\r\n## テンプレートからレポジトリを作成する。\r\n[Django Project Template](https://github.com/kemu3007/django-project-template)\r\n<img width="767" alt="スクリーンショット 2022-04-17 19 24 23" src="https://user-images.githubusercontent.com/29157528/163710493-d37e3276-356d-4bc1-9b03-b7596201caec.png">\r\n\r\n-----\r\n\r\n画面右上 `Use this template` ボタンをクリックし、新規レポジトリを作成することでテンプレートを利用したレポジトリが作成されます。\r\n\r\n## テンプレートの内容\r\n\r\n### .github/workflows,  Makefile\r\n\r\nmainにpush, pull_requestをcreate / syncしたタイミングで自動的にCIを発火するようにしています。\r\n\r\nCIではMakefileに定義している`lint`, `test` コマンドを実行しています。Djangoデフォルトのテストフレームワークを利用する形で定義しているのでpytestに切り替える場合はMakefile内の`test`コマンドを修正することで自動的に適用されます。\r\n\r\nlinterの設定内容は `setup.cfg`, `pyproject.toml` を確認してください。\r\n\r\nblack, isortがバージョン問題でフォーマット結果が変わるタイミングがあったりするので`requirements.dev.txt`でバージョン管理を行なっています。\r\n\r\n\r\n### docker-compose.yml\r\n\r\npython:3.10イメージをベースにしたrequirements.txtの内容をインストールするようにしたカスタムイメージを立ち上げ、`python src/manage.py runserver` を実行しています。\r\n\r\n\r\n## 動作確認\r\ndocker-compose v2を利用しています。\r\n\r\n```zsh\r\n$ docker compose up -d\r\n```\r\nデフォルトで8000番ポートで起動するようにしているのでブラウザで`localhost:8000`にアクセスし、以下の画面が表示されればOKです。\r\n\r\n<img width="992" alt="スクリーンショット 2022-04-17 19 57 09" src="https://user-images.githubusercontent.com/29157528/163711499-f65880da-9222-46a7-8e36-791bbfdc77ca.png">\r\n', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/32/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/32/timeline', 'performed_via_github_app': None}
+            </div>
+            
+      <hr />
+      <h2>TOOLS</h2>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a href="/tools/openapi/">OpenApi Viewer</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/year/">Year Checker</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/regex/">Regex Checker</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/mdwriter/">GitHub Flavored Markdown Writer</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/jsonFormatter/">JSON Formatter</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/realtime/">REALTIME</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/jsonTyper/">JSON Typer</a>
+        </li>
+        <li class="list-group-item">
+          <a href="/tools/userInfo/">IP Addreass Checker</a>
+        </li>
+      </ul>
+    </div>
+    <footer class="my-5 footer">
+      <div class="d-flex justify-content-end">
+        <span style="font-size: 24px">
+          <a href="https://github.com/kemu3007"><i class="bi bi-github"></i></a>
+          <a class="ms-2" href="https://twitter.com/kemu43"><i class="bi bi-twitter"></i></a>
+          <a class="mx-2" href="https://portal.kemu.site/doc/"><i class="bi bi-book"></i></a>
+        </span>
+      </div>
+      <div class="d-flex justify-content-center">
+        <span class="text-muted">Copyright ©️ 2017-2022 kemu All Rights Reserved.</span>
+      </div>
+    </footer>
+  </body>
+</html>
