@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml, Title } from '@angular/platform-browser';
-import { LogDetail } from '../models';
-import { MessageService } from '@app/shared/message/message.service';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { MarkedService } from '@app/shared/markdown/marked.service';
 import { interval, take } from 'rxjs';
-import { Comment } from '@app/shared/interfaces/comment';
+import { Comment } from '@app/shared/articles/comments';
+import { ArticleDetail } from '@app/shared/articles/articles';
+import { ArticlesService } from '@app/shared/articles/articles.service';
 
 @Component({
   selector: 'app-blog-detail',
@@ -16,24 +16,27 @@ import { Comment } from '@app/shared/interfaces/comment';
 export class LogDetailComponent implements OnInit {
   marked = this.markedService.marked;
   html: SafeHtml = '';
-  article?: LogDetail;
+  _article?: ArticleDetail;
   comments: Comment[] = [];
 
   constructor(
     private titleService: Title,
     private route: ActivatedRoute,
-    private router: Router,
-    private messageService: MessageService,
     private breadcrumbService: BreadcrumbService,
     private markedService: MarkedService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private articlesService: ArticlesService
   ) {}
 
-  ngOnInit(): void {
-    this.article$.then((article) => {
+  get article() {
+    return this._article;
+  }
+
+  set article(article: ArticleDetail | undefined) {
+    if (article) {
       this.titleService.setTitle(`${article.title} | Kemu Log`);
-      this.article = article;
-      this.breadcrumbService.breadcrumb = `/log/${article.title}`;
+      this._article = article;
+      this.breadcrumbService.breadcrumb = `/blog/${article.title}`;
       this.html = this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));
       if (this.route.snapshot.fragment) {
         interval(100)
@@ -44,29 +47,19 @@ export class LogDetailComponent implements OnInit {
             );
           });
       }
-    });
-    /** jsonのリストをimportした際、Moduleオブジェクトとして解釈され、Listのような構造を持っているがiterableでない型となるためその対応 */
-    this.comments$.then((comments) => {
-      for (let i = 0; i < comments.length; i++) {
-        this.comments.push(comments[i]);
-      }
-    });
+    }
+  }
+
+  ngOnInit(): void {
+    this.articlesService.get(`/assets/logs/${this.issueId}.json`).subscribe((article) => (this.article = article));
+    this.articlesService
+      .getComments(`/assets/comments/${this.issueId}.json`)
+      .subscribe((comments) => (this.comments = comments));
   }
 
   get issueId() {
     return this.route.snapshot.paramMap.get('id');
   }
-
-  comments$: Promise<any[]> = import(`../../../assets/comments/${this.issueId}.json`).catch((_) => {});
-
-  article$ = import(`../../../assets/logs/${this.issueId}.json`).catch((_) =>
-    this.router.navigate(['/log']).then((_) =>
-      this.messageService.pushMessage({
-        type: 'warning',
-        body: '記事が存在していません',
-      })
-    )
-  );
 
   get adsLength(): number {
     const hasMd = window.screen.width >= 768;

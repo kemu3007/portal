@@ -1,22 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import articles from '@assets/articles/list.json';
+import { ArticlesService } from '@app/shared/articles/articles.service';
 import { NgbTypeaheadSelectItemEvent } from '@ng-bootstrap/ng-bootstrap';
 import { debounceTime, distinctUntilChanged, map, Observable, OperatorFunction } from 'rxjs';
-import { Article, Label } from '../models';
+import { Article, Label } from '@app/shared/articles/articles';
 
 @Component({
   selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
 })
-export class BlogListComponent {
-  constructor(titleService: Title, private router: Router) {
+export class BlogListComponent implements OnInit {
+  articles: Record<string, Article> = {};
+
+  constructor(titleService: Title, private router: Router, private articleService: ArticlesService) {
     titleService.setTitle('Kemu Tech Blog');
   }
 
-  get articles(): Record<string, Article> {
-    return articles;
+  ngOnInit() {
+    this.articleService.getList('/assets/articles/list.json').subscribe((articles) => (this.articles = articles));
   }
 
   get articleKeys(): string[] {

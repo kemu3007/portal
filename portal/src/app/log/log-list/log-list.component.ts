@@ -1,20 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
-import articles from '@assets/logs/list.json';
-import { Log, Label } from '../models';
+import { Article, Label } from '@app/shared/articles/articles';
+import { ArticlesService } from '@app/shared/articles/articles.service';
 
 @Component({
   selector: 'app-blog-list',
   templateUrl: './log-list.component.html',
 })
-export class LogListComponent {
-  constructor(titleService: Title, private router: Router) {
+export class LogListComponent implements OnInit {
+  articles: Record<string, Article> = {};
+
+  constructor(titleService: Title, private articleService: ArticlesService) {
     titleService.setTitle('Kemu Log');
   }
 
-  get articles(): Record<string, Log> {
-    return articles;
+  ngOnInit() {
+    this.articleService.getList('/assets/logs/list.json').subscribe((articles) => (this.articles = articles));
   }
 
   get articleKeys(): string[] {
@@ -26,7 +27,7 @@ export class LogListComponent {
     return hasMd ? Math.floor(Object.keys(this.articles).length / 3) || 1 : 1;
   }
 
-  getLabels(article: Log): Label[] {
+  getLabels(article: Article): Label[] {
     return article.labels.filter((label) => label.name !== 'log');
   }
 }
