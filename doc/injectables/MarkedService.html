@@ -177,7 +177,7 @@ export class MarkedService {
           &quot;
         &gt;
           ${text}
-          &lt;button class&#x3D;&quot;btn btn-sm bi bi-clipboard&quot; onclick&#x3D;&quot;window.navigator.clipboard.writeText(&#x27;${window.location.origin}${window.location.pathname}#${hash}&#x27;)&quot;&gt;&lt;/button&gt;
+          &lt;button title&#x3D;&quot;アンカー付きリンクをコピー&quot; class&#x3D;&quot;btn btn-sm bi bi-clipboard&quot; onclick&#x3D;&quot;window.navigator.clipboard.writeText(&#x27;${window.location.origin}${window.location.pathname}#${hash}&#x27;)&quot;&gt;&lt;/button&gt;
         &lt;/h${lebel}&gt;
       &lt;/div&gt;
       &lt;hr class&#x3D;&quot;mt-0&quot; /&gt;
@@ -185,7 +185,7 @@ export class MarkedService {
     };
     renderer.image &#x3D; (href) &#x3D;&gt; &#x60;&lt;img src&#x3D;${href} loading&#x3D;lazy /&gt;&#x60;;
     renderer.link &#x3D; (href, title, text) &#x3D;&gt;
-      &#x60;&lt;a href&#x3D;${href} class&#x3D;&quot;text-muted&quot;&gt;${text}&lt;i class&#x3D;&quot;bi bi-link-45deg&quot;&gt;&lt;/i&gt;&lt;/a&gt;&#x60;;
+      &#x60;&lt;a href&#x3D;${href} class&#x3D;&quot;text-muted&quot; title&#x3D;${href}&gt;${text}&lt;i class&#x3D;&quot;bi bi-link-45deg&quot;&gt;&lt;/i&gt;&lt;/a&gt;&#x60;;
     renderer.table &#x3D; (header, body) &#x3D;&gt; &#x60;&lt;table class&#x3D;&quot;table table-bordered table-striped&quot;&gt;${header}${body}&lt;/table&gt;&#x60;;
     this.marked.setOptions({
       renderer,
