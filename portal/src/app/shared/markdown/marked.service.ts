@@ -26,7 +26,7 @@ export class MarkedService {
           "
         >
           ${text}
-          <button class="btn btn-sm bi bi-clipboard" onclick="window.navigator.clipboard.writeText('${window.location.origin}${window.location.pathname}#${hash}')"></button>
+          <button title="アンカー付きリンクをコピー" class="btn btn-sm bi bi-clipboard" onclick="window.navigator.clipboard.writeText('${window.location.origin}${window.location.pathname}#${hash}')"></button>
         </h${lebel}>
       </div>
       <hr class="mt-0" />
@@ -34,7 +34,7 @@ export class MarkedService {
     };
     renderer.image = (href) => `<img src=${href} loading=lazy />`;
     renderer.link = (href, title, text) =>
-      `<a href=${href} class="text-muted">${text}<i class="bi bi-link-45deg"></i></a>`;
+      `<a href=${href} class="text-muted" title=${href}>${text}<i class="bi bi-link-45deg"></i></a>`;
     renderer.table = (header, body) => `<table class="table table-bordered table-striped">${header}${body}</table>`;
     this.marked.setOptions({
       renderer,
