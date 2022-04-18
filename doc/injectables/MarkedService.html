@@ -187,7 +187,7 @@ export class MarkedService {
       &lt;hr class&#x3D;&quot;mt-0&quot; /&gt;
       &#x60;;
     };
-    renderer.image &#x3D; (href) &#x3D;&gt; &#x60;&lt;img class&#x3D;&quot;border mb-1&quot; src&#x3D;${href} loading&#x3D;lazy /&gt;&#x60;;
+    renderer.image &#x3D; (href) &#x3D;&gt; &#x60;&lt;img class&#x3D;&quot;img-thumbnail img-fluid mb-1&quot; src&#x3D;${href} loading&#x3D;lazy /&gt;&#x60;;
     renderer.link &#x3D; (href, title, text) &#x3D;&gt;
       &#x60;&lt;a href&#x3D;${href} class&#x3D;&quot;text-muted&quot; title&#x3D;${href}&gt;${text}&lt;i class&#x3D;&quot;bi bi-link-45deg&quot;&gt;&lt;/i&gt;&lt;/a&gt;&#x60;;
     renderer.table &#x3D; (header, body) &#x3D;&gt; &#x60;&lt;table class&#x3D;&quot;table table-bordered table-striped&quot;&gt;${header}${body}&lt;/table&gt;&#x60;;
