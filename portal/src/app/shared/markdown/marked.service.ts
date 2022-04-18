@@ -36,7 +36,7 @@ export class MarkedService {
       <hr class="mt-0" />
       `;
     };
-    renderer.image = (href) => `<img src=${href} loading=lazy />`;
+    renderer.image = (href) => `<img class="border mb-1" src=${href} loading=lazy />`;
     renderer.link = (href, title, text) =>
       `<a href=${href} class="text-muted" title=${href}>${text}<i class="bi bi-link-45deg"></i></a>`;
     renderer.table = (header, body) => `<table class="table table-bordered table-striped">${header}${body}</table>`;
