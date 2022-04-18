@@ -162,12 +162,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, toolsService: <a href="../injectables/ToolsService.html" target="_self">ToolsService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/home/index/index.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/home/index/index.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -220,6 +220,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>toolsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToolsService.html" target="_self" >ToolsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -258,8 +270,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/home/index/index.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/home/index/index.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -294,12 +306,18 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>tools</code>
+                        <i>Type : </i>        <code><a href="../interfaces/Tool.html" target="_self" >Tool[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/home/index/index.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/home/index/index.component.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -315,20 +333,27 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
 import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
-import tools from &#x27;@app/tools/tools.json&#x27;;
+import { Tool } from &#x27;@app/shared/tools/tools&#x27;;
+import { ToolsService } from &#x27;@app/shared/tools/tools.service&#x27;;
 
 @Component({
   selector: &#x27;app-index&#x27;,
   templateUrl: &#x27;./index.component.html&#x27;,
 })
 export class IndexComponent implements OnInit {
-  tools &#x3D; tools;
+  tools: Tool[] &#x3D; [];
 
-  constructor(title: Title, private route: ActivatedRoute, private router: Router) {
+  constructor(
+    title: Title,
+    private route: ActivatedRoute,
+    private router: Router,
+    private toolsService: ToolsService
+  ) {
     title.setTitle(&#x27;Kemu Portal&#x27;);
   }
 
   ngOnInit(): void {
+    this.toolsService.get().subscribe((tools) &#x3D;&gt; (this.tools &#x3D; tools));
     const redirectTo &#x3D; this.route.snapshot.queryParamMap.get(&#x27;to&#x27;);
     if (redirectTo) {
       this.router.navigate([redirectTo], { fragment: this.route.snapshot.fragment ?? undefined });

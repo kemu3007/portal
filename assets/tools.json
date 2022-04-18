@@ -1,0 +1,80 @@
+[
+  {
+    "label": "OpenApi Viewer",
+    "link": "/tools/openapi",
+    "description": "OpenApi JSON/YAMLをSwagger-UI / Redoc形式で表示します。",
+    "external": false
+  },
+  {
+    "label": "Year Checker",
+    "link": "/tools/year",
+    "description": "誕生日をもとに各種卒業年度/厄年といった年月日を計算します。",
+    "external": false
+  },
+  {
+    "label": "Regex Checker",
+    "link": "/tools/regex",
+    "description": "正規表現とテキストを入力することでテキストを対象とした正規表現のテストを行い、index, マッチ文字列を返却します。",
+    "external": false
+  },
+  {
+    "label": "GitHub Flavored Markdown Writer",
+    "link": "/tools/mdwriter",
+    "description": "GitHub Flavored Markdown形式のMarkdownを記載することができ、HTMLに変換可能です。",
+    "external": false
+  },
+  {
+    "label": "Base64 Encoder/Decoder",
+    "link": "/tools/base64",
+    "description": "Base64フォーマットのデータをエンコード/デコードします。",
+    "external": false
+  },
+  {
+    "label": "JSON Formatter",
+    "link": "/tools/jsonFormatter",
+    "description": "未整形のJSONデータを整形します。",
+    "external": false
+  },
+  {
+    "label": "REALTIME",
+    "link": "/tools/realtime",
+    "description": "現在時刻を100ms単位で更新し、正確な日時をお知らせします。",
+    "external": false
+  },
+  {
+    "label": "JSON Typer",
+    "link": "/tools/jsonTyper",
+    "description": "JSONの値をTypeScriptのinterface型に変換します。",
+    "external": false
+  },
+  {
+    "label": "Amazon Associate Linker",
+    "link": "/tools/amazonAssociate",
+    "description": "Amazonリンクにアソシエイト情報を付与します。",
+    "external": false
+  },
+  {
+    "label": "IP Address Checker",
+    "link": "/tools/userInfo",
+    "description": "IPアドレス等のデータを表示します。過去の履歴も表示可能です。",
+    "external": false
+  },
+  {
+    "label": "QRコードジェネレータ",
+    "link": "https://kemu.site/utils/qrcode/",
+    "description": "任意の文字列をQRコードに変換します。",
+    "external": true
+  },
+  {
+    "label": "Markdown Editor",
+    "link": "https://kemu.site/utils/markdown/",
+    "description": "markdown記法で書かれた文字列をHTMLで表示します。",
+    "external": true
+  },
+  {
+    "label": "CSV to MD table",
+    "link": "https://kemu.site/utils/csv_to_md/",
+    "description": "コンマ区切りで入力されたcsvをMarkdownテーブル形式に変換します。",
+    "external": true
+  }
+]

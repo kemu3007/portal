@@ -67,6 +67,12 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -136,6 +142,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
                                 <a href="#transitLink" >transitLink</a>
                             </li>
                         </ul>
@@ -170,7 +179,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>)</code>
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, toolsService: <a href="../injectables/ToolsService.html" target="_self">ToolsService</a>, title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -197,6 +206,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toolsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ToolsService.html" target="_self" >ToolsService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -238,6 +259,43 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:18</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="transitLink"></a>
                     <span class="name">
                         <span ><b>transitLink</b></span>
@@ -254,8 +312,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:22</a></div>
                 </td>
             </tr>
 
@@ -328,7 +386,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>tools</code>
+                        <i>Default value : </i><code>[]</code>
                     </td>
                 </tr>
                     <tr>
@@ -362,7 +420,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:30</a></div>
                                 </td>
                             </tr>
 
@@ -373,21 +431,25 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Title } from &#x27;@angular/platform-browser&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
-import { Tool } from &#x27;../tools&#x27;;
-import tools from &#x27;../tools.json&#x27;;
+import { ToolsService } from &#x27;@app/shared/tools/tools.service&#x27;;
+import { Tool } from &#x27;@app/shared/tools/tools&#x27;;
 
 @Component({
   selector: &#x27;app-tools-list&#x27;,
   templateUrl: &#x27;./tools-list.component.html&#x27;,
 })
-export class ToolsListComponent {
-  tools: Tool[] &#x3D; tools;
+export class ToolsListComponent implements OnInit {
+  tools: Tool[] &#x3D; [];
 
-  constructor(private router: Router, title: Title) {
+  constructor(private router: Router, private toolsService: ToolsService, title: Title) {
     title.setTitle(&#x27;Kemu Tools&#x27;);
+  }
+
+  ngOnInit() {
+    this.toolsService.get().subscribe((tools) &#x3D;&gt; (this.tools &#x3D; tools));
   }
 
   transitLink(tool: Tool) {
@@ -400,7 +462,7 @@ export class ToolsListComponent {
 
   get adsLength(): number {
     const hasMd &#x3D; window.screen.width &gt;&#x3D; 768;
-    return hasMd ? Math.floor(tools.length / 3) : 1;
+    return hasMd ? Math.floor(this.tools.length / 3) : 1;
   }
 }
 </code></pre>
