@@ -1,17 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Tool } from '@app/tools/tools';
-import tools from '@app/tools/tools.json';
+import { Tool } from '@app/shared/tools/tools';
+import { ToolsService } from '@app/shared/tools/tools.service';
 
 @Component({
   selector: 'app-tools-list',
   templateUrl: './tools-list.component.html',
   styleUrls: ['./tools-list.component.scss'],
 })
-export class ToolsListComponent {
-  tools = tools;
+export class ToolsListComponent implements OnInit {
+  tools: Tool[] = [];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private toolsService: ToolsService) {}
+
+  ngOnInit() {
+    this.toolsService.get().subscribe((tools) => (this.tools = tools));
+  }
 
   transitTool(tool: Tool) {
     if (tool.external) {
