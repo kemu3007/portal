@@ -13,6 +13,7 @@ export class MarkedService {
     const renderer = new Renderer();
     renderer.html = (html) => {
       html = html.replace('</summary>', `<i class="bi bi-file-earmark-code"></i></summary>`);
+      html = html.replace('<img', '<img class="img-thumbnail img-fluid mb-1" loading="lazy"')
       return html;
     };
     renderer.heading = (text, lebel) => {
@@ -36,7 +37,6 @@ export class MarkedService {
       <hr class="mt-0" />
       `;
     };
-    renderer.image = (href) => `<img class="img-thumbnail img-fluid mb-1" src=${href} loading=lazy />`;
     renderer.link = (href, title, text) =>
       `<a href=${href} class="text-muted" title=${href}>${text}<i class="bi bi-link-45deg"></i></a>`;
     renderer.table = (header, body) => `<table class="table table-bordered table-striped">${header}${body}</table>`;
