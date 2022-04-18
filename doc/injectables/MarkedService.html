@@ -162,6 +162,10 @@ export class MarkedService {
 
   constructor() {
     const renderer &#x3D; new Renderer();
+    renderer.html &#x3D; (html) &#x3D;&gt; {
+      html &#x3D; html.replace(&#x27;&lt;/summary&gt;&#x27;, &#x60;&lt;i class&#x3D;&quot;bi bi-file-earmark-code&quot;&gt;&lt;/i&gt;&lt;/summary&gt;&#x60;);
+      return html;
+    };
     renderer.heading &#x3D; (text, lebel) &#x3D;&gt; {
       const hash &#x3D; crypt.MD5(text);
       return &#x60;
