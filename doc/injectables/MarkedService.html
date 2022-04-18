@@ -164,6 +164,7 @@ export class MarkedService {
     const renderer &#x3D; new Renderer();
     renderer.html &#x3D; (html) &#x3D;&gt; {
       html &#x3D; html.replace(&#x27;&lt;/summary&gt;&#x27;, &#x60;&lt;i class&#x3D;&quot;bi bi-file-earmark-code&quot;&gt;&lt;/i&gt;&lt;/summary&gt;&#x60;);
+      html &#x3D; html.replace(&#x27;&lt;img&#x27;, &#x27;&lt;img class&#x3D;&quot;img-thumbnail img-fluid mb-1&quot; loading&#x3D;&quot;lazy&quot;&#x27;)
       return html;
     };
     renderer.heading &#x3D; (text, lebel) &#x3D;&gt; {
@@ -187,7 +188,6 @@ export class MarkedService {
       &lt;hr class&#x3D;&quot;mt-0&quot; /&gt;
       &#x60;;
     };
-    renderer.image &#x3D; (href) &#x3D;&gt; &#x60;&lt;img class&#x3D;&quot;img-thumbnail img-fluid mb-1&quot; src&#x3D;${href} loading&#x3D;lazy /&gt;&#x60;;
     renderer.link &#x3D; (href, title, text) &#x3D;&gt;
       &#x60;&lt;a href&#x3D;${href} class&#x3D;&quot;text-muted&quot; title&#x3D;${href}&gt;${text}&lt;i class&#x3D;&quot;bi bi-link-45deg&quot;&gt;&lt;/i&gt;&lt;/a&gt;&#x60;;
     renderer.table &#x3D; (header, body) &#x3D;&gt; &#x60;&lt;table class&#x3D;&quot;table table-bordered table-striped&quot;&gt;${header}${body}&lt;/table&gt;&#x60;;
