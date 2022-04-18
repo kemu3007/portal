@@ -2,33 +2,21 @@
   <div class="row mt-3">
     <div class="col-md-8">
       <div *ngFor="let key of articleKeys; index as i">
-        <a class="card mt-1 text-decoration-none text-muted" [routerLink]="['/log', key]" style="cursor: pointer">
-          <div class="row g-0">
-            <div class="col-3">
-              <img class="img-thumbnail img-fluid" [src]="articles[key].photo" alt="no image" />
-            </div>
-            <div class="col-9">
+        <div class="col-md-4">
+          <a class="card mt-1 text-decoration-none text-muted" [routerLink]="['/log', key]" style="cursor: pointer">
+            <div class="row g-0">
+              <img class="card-img-top img-fluid" [src]="articles[key].photo" alt="no image" />
               <div class="card-body">
                 <div class="row">
-                  <h3 class="col-9 card-link text-black">
+                  <h3 class="card-title text-black">
                     {{ articles[key].title }}
                   </h3>
-                  <div class="col-3 text-end">
-                    <p
-                      class="badge rounded-pill"
-                      *ngFor="let label of getLabels(articles[key])"
-                      [ngStyle]="{ 'background-color': '#' + label.color }"
-                    >
-                      {{ label.name }}
-                    </p>
-                  </div>
+                  <p class="card-text">{{ articles[key].body | mdescape }}</p>
                 </div>
-                <hr class="mt-0" />
-                <p class="card-text">{{ articles[key].body | mdescape }}</p>
               </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
         <div class="card mt-1">
           <app-ads type="auto"></app-ads>
         </div>

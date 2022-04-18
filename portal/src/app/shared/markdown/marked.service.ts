@@ -13,7 +13,7 @@ export class MarkedService {
     const renderer = new Renderer();
     renderer.html = (html) => {
       html = html.replace('</summary>', `<i class="bi bi-file-earmark-code"></i></summary>`);
-      html = html.replace('<img', '<img class="img-thumbnail img-fluid mb-1" loading="lazy"')
+      html = html.replace('<img', '<img class="img-thumbnail img-fluid mb-1" loading="lazy"');
       return html;
     };
     renderer.heading = (text, lebel) => {
