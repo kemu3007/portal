@@ -98,7 +98,7 @@ if __name__ == "__main__":
         (path / "index.html").write_text(log)
 
     # tools
-    tools = json.loads((Path() / "portal/src/app/tools/tools.json").read_text())
+    tools = json.loads(Path("portal/src/assets/tools.json").read_text())
     tools_html = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/tools.png")
         .replace("page_title", "Kemu Tools")
