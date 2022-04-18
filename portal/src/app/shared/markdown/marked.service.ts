@@ -11,6 +11,10 @@ export class MarkedService {
 
   constructor() {
     const renderer = new Renderer();
+    renderer.html = (html) => {
+      html = html.replace('</summary>', `<i class="bi bi-file-earmark-code"></i></summary>`);
+      return html;
+    };
     renderer.heading = (text, lebel) => {
       const hash = crypt.MD5(text);
       return `
