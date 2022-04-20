@@ -69,3 +69,11 @@ portal/src/log/
 portal/src/tools/
 portal/src/contact/
 portal/src/sitemap.xml
+
+
+portal/src/assets/articles/
+portal/src/assets/logs/
+portal/src/assets/comments/
+portal/src/assets/iframes/*.html
+portal/src/assets/images/
+portal/src/assets/count.json
