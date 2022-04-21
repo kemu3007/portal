@@ -6,7 +6,7 @@ import { Env } from './interface';
 export const environment: Env = {
   production: false,
   googleAdClient: '',
-  adsenseProvider: 'amazon',
+  adsenseProvider: 'google',
 };
 
 /*
