@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer, SafeHtml, Title } from '@angular/platform-browser';
 import { Article, ArticleDetail } from '@app/shared/articles/articles';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
@@ -26,7 +26,8 @@ export class BlogDetailComponent implements OnInit {
     private breadcrumbService: BreadcrumbService,
     private markedService: MarkedService,
     private sanitizer: DomSanitizer,
-    private articlesService: ArticlesService
+    private articlesService: ArticlesService,
+    private router: Router
   ) {}
 
   get article() {
@@ -70,6 +71,11 @@ export class BlogDetailComponent implements OnInit {
 
   get articleIds(): string[] {
     return Object.keys(this.articles);
+  }
+
+  navigateByIssueId(issueId: string) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.navigate(['/blog/', issueId]);
   }
 
   get nextArticleId(): string | null {

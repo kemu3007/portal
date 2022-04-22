@@ -44,7 +44,9 @@
             <div class="card">
               <div class="card-header">次の記事</div>
               <div class="card-body">
-                <a [href]="'/blog/' + nextArticleId">{{ articles[nextArticleId!].title }}</a>
+                <span class="link-primary" style="cursor: pointer" (click)="navigateByIssueId(nextArticleId)">{{
+                  articles[nextArticleId!].title
+                }}</span>
               </div>
             </div>
           </ng-container>
@@ -54,7 +56,9 @@
             <div class="card">
               <div class="card-header">前の記事</div>
               <div class="card-body">
-                <a [href]="'/blog/' + pastArticleId">{{ articles[pastArticleId!].title }}</a>
+                <span class="link-primary" style="cursor: pointer" (click)="navigateByIssueId(pastArticleId)">{{
+                  articles[pastArticleId!].title
+                }}</span>
               </div>
             </div>
           </ng-container>
