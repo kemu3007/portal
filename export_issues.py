@@ -15,10 +15,14 @@ def export_issues(label: str, dir: Path, extract_photo: bool = False):
     issues = json.loads(res.content)
     issue_dict = {}
     for issue in reversed(issues):
+        if match := re.search(r'summary: .*\n', issue["body"]):
+            summary = match.group()[9:]
+        else:
+            summary = re.sub(r"#|\n|\r|\(http.*\)|image|```.*?```|`|[|]|!", " ", issue["body"])[:150]
         issue_dict[issue["id"]] = {
             "title": issue["title"],
             "created_at": issue["created_at"],
-            "body": re.sub(r"#|\n|\r|\(http.*\)|image|```.*?```|`|[|]|!", " ", issue["body"])[:150],
+            "body": summary,
             "labels": [{"name": label["name"], "color": label["color"]} for label in issue["labels"]],
         }
         if extract_photo:
