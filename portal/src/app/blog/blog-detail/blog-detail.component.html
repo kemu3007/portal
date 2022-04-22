@@ -17,7 +17,7 @@
       <div [innerHTML]="html"></div>
       <hr class="mt-5" />
       <div class="d-flex justify-content-between">
-        <h3 id="comments">comments</h3>
+        <h2 id="comments">Comments</h2>
         <app-tweet-btn></app-tweet-btn>
       </div>
       <div class="card" *ngFor="let comment of comments">
@@ -41,14 +41,22 @@
       <div class="row">
         <div class="col-md-6">
           <ng-container *ngIf="nextArticleId">
-            <h4>次の記事</h4>
-            <a [href]="'/blog/' + nextArticleId">{{ articles[nextArticleId!].title }}</a>
+            <div class="card">
+              <div class="card-header">次の記事</div>
+              <div class="card-body">
+                <a [href]="'/blog/' + nextArticleId">{{ articles[nextArticleId!].title }}</a>
+              </div>
+            </div>
           </ng-container>
         </div>
         <div class="col-md-6">
           <ng-container *ngIf="pastArticleId">
-            <h4>前の記事</h4>
-            <a [href]="'/blog/' + pastArticleId">{{ articles[pastArticleId!].title }}</a>
+            <div class="card">
+              <div class="card-header">前の記事</div>
+              <div class="card-body">
+                <a [href]="'/blog/' + pastArticleId">{{ articles[pastArticleId!].title }}</a>
+              </div>
+            </div>
           </ng-container>
         </div>
       </div>
