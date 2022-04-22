@@ -824,7 +824,7 @@ export class BlogDetailComponent implements OnInit {
       &lt;div [innerHTML]&#x3D;&quot;html&quot;&gt;&lt;/div&gt;
       &lt;hr class&#x3D;&quot;mt-5&quot; /&gt;
       &lt;div class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
-        &lt;h3 id&#x3D;&quot;comments&quot;&gt;comments&lt;/h3&gt;
+        &lt;h2 id&#x3D;&quot;comments&quot;&gt;Comments&lt;/h2&gt;
         &lt;app-tweet-btn&gt;&lt;/app-tweet-btn&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;card&quot; *ngFor&#x3D;&quot;let comment of comments&quot;&gt;
@@ -848,14 +848,22 @@ export class BlogDetailComponent implements OnInit {
       &lt;div class&#x3D;&quot;row&quot;&gt;
         &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
           &lt;ng-container *ngIf&#x3D;&quot;nextArticleId&quot;&gt;
-            &lt;h4&gt;次の記事&lt;/h4&gt;
-            &lt;a [href]&#x3D;&quot;&#x27;/blog/&#x27; + nextArticleId&quot;&gt;{{ articles[nextArticleId!].title }}&lt;/a&gt;
+            &lt;div class&#x3D;&quot;card&quot;&gt;
+              &lt;div class&#x3D;&quot;card-header&quot;&gt;次の記事&lt;/div&gt;
+              &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                &lt;a [href]&#x3D;&quot;&#x27;/blog/&#x27; + nextArticleId&quot;&gt;{{ articles[nextArticleId!].title }}&lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
           &lt;/ng-container&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
           &lt;ng-container *ngIf&#x3D;&quot;pastArticleId&quot;&gt;
-            &lt;h4&gt;前の記事&lt;/h4&gt;
-            &lt;a [href]&#x3D;&quot;&#x27;/blog/&#x27; + pastArticleId&quot;&gt;{{ articles[pastArticleId!].title }}&lt;/a&gt;
+            &lt;div class&#x3D;&quot;card&quot;&gt;
+              &lt;div class&#x3D;&quot;card-header&quot;&gt;前の記事&lt;/div&gt;
+              &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                &lt;a [href]&#x3D;&quot;&#x27;/blog/&#x27; + pastArticleId&quot;&gt;{{ articles[pastArticleId!].title }}&lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
           &lt;/ng-container&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -907,7 +915,7 @@ export class BlogDetailComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row mt-3" *ngIf="article">    <div class="col-md-8">      <div class="d-flex justify-content-center">        <img          class="img-thumbnail img-fluid mb-2"          [src]="\'/assets/images/\' + article.id + \'.png\'"          [alt]="article.title"          [title]="article.title"        />      </div>      <div class="d-flex justify-content-between">        <p>{{ article.created_at | date: \'yyyy.MM.dd hh:mm\' }}</p>        <app-tweet-btn></app-tweet-btn>      </div>      <hr />      <div [innerHTML]="html"></div>      <hr class="mt-5" />      <div class="d-flex justify-content-between">        <h3 id="comments">comments</h3>        <app-tweet-btn></app-tweet-btn>      </div>      <div class="card" *ngFor="let comment of comments">        <div class="card-body pt-1 ps-1">          <div class="d-flex">            <img width="24" [src]="comment.user.avatar_url" />            <a class="ms-2" [href]="comment.user.html_url">{{ comment.user.login }}</a            ><br />          </div>          <hr class="mt-1 mb-1" />          {{ comment.body }}        </div>      </div>      <p class="mt-3">        コメントは<a [href]="article.html_url">こちら<i class="bi bi-link-45deg"></i></a>から        <br />        ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。      </p>      <hr />      <h3>別の記事を見る</h3>      <div class="row">        <div class="col-md-6">          <ng-container *ngIf="nextArticleId">            <h4>次の記事</h4>            <a [href]="\'/blog/\' + nextArticleId">{{ articles[nextArticleId!].title }}</a>          </ng-container>        </div>        <div class="col-md-6">          <ng-container *ngIf="pastArticleId">            <h4>前の記事</h4>            <a [href]="\'/blog/\' + pastArticleId">{{ articles[pastArticleId!].title }}</a>          </ng-container>        </div>      </div>    </div>    <div class="col-md-4">      <app-ads [count]="adsLength" type="box"></app-ads>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row mt-3" *ngIf="article">    <div class="col-md-8">      <div class="d-flex justify-content-center">        <img          class="img-thumbnail img-fluid mb-2"          [src]="\'/assets/images/\' + article.id + \'.png\'"          [alt]="article.title"          [title]="article.title"        />      </div>      <div class="d-flex justify-content-between">        <p>{{ article.created_at | date: \'yyyy.MM.dd hh:mm\' }}</p>        <app-tweet-btn></app-tweet-btn>      </div>      <hr />      <div [innerHTML]="html"></div>      <hr class="mt-5" />      <div class="d-flex justify-content-between">        <h2 id="comments">Comments</h2>        <app-tweet-btn></app-tweet-btn>      </div>      <div class="card" *ngFor="let comment of comments">        <div class="card-body pt-1 ps-1">          <div class="d-flex">            <img width="24" [src]="comment.user.avatar_url" />            <a class="ms-2" [href]="comment.user.html_url">{{ comment.user.login }}</a            ><br />          </div>          <hr class="mt-1 mb-1" />          {{ comment.body }}        </div>      </div>      <p class="mt-3">        コメントは<a [href]="article.html_url">こちら<i class="bi bi-link-45deg"></i></a>から        <br />        ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。      </p>      <hr />      <h3>別の記事を見る</h3>      <div class="row">        <div class="col-md-6">          <ng-container *ngIf="nextArticleId">            <div class="card">              <div class="card-header">次の記事</div>              <div class="card-body">                <a [href]="\'/blog/\' + nextArticleId">{{ articles[nextArticleId!].title }}</a>              </div>            </div>          </ng-container>        </div>        <div class="col-md-6">          <ng-container *ngIf="pastArticleId">            <div class="card">              <div class="card-header">前の記事</div>              <div class="card-body">                <a [href]="\'/blog/\' + pastArticleId">{{ articles[pastArticleId!].title }}</a>              </div>            </div>          </ng-container>        </div>      </div>    </div>    <div class="col-md-4">      <app-ads [count]="adsLength" type="box"></app-ads>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BlogDetailComponent'};

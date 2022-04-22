@@ -65,7 +65,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/shared/articles/articles.ts</code>
+            <code>src/app/shared/articles/comments.ts</code>
         </p>
 
 
@@ -801,20 +801,35 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface Label {
-  name: string;
-  color: string;
-}
-
-export interface Article {
-  title: string;
-  body: string;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface Comment {
+  url: string;
+  html_url: string;
+  issue_url: string;
+  id: number;
+  node_id: string;
+  user: User;
   created_at: string;
-  photo?: string;
-  labels: Label[];
+  updated_at: string;
+  author_association: string;
+  body: string;
+  reactions: Reactions;
+  performed_via_github_app: null;
 }
 
-export interface User {
+interface Reactions {
+  url: string;
+  total_count: number;
+  [&#x27;+1&#x27;]: number;
+  [&#x27;-1&#x27;]: number;
+  laugh: number;
+  hooray: number;
+  confused: number;
+  heart: number;
+  rocket: number;
+  eyes: number;
+}
+
+interface User {
   login: string;
   id: number;
   node_id: string;
@@ -833,59 +848,6 @@ export interface User {
   received_events_url: string;
   type: string;
   site_admin: boolean;
-}
-
-export interface LabelDetail {
-  id: number;
-  node_id: string;
-  url: string;
-  name: string;
-  color: string;
-  default: boolean;
-  description: string;
-}
-
-export interface Reactions {
-  url: string;
-  total_count: number;
-  [+1]: number;
-  [-1]: number;
-  laugh: number;
-  hooray: number;
-  confused: number;
-  heart: number;
-  rocket: number;
-  eyes: number;
-}
-
-export interface ArticleDetail {
-  url: string;
-  repository_url: string;
-  labels_url: string;
-  comments_url: string;
-  events_url: string;
-  html_url: string;
-  id: number;
-  node_id: string;
-  number: number;
-  title: string;
-  user: User;
-  labels: LabelDetail[];
-  state: string;
-  locked: boolean;
-  assignee?: any;
-  assignees: any[];
-  milestone?: any;
-  comments: any[];
-  created_at: Date;
-  updated_at: Date;
-  closed_at?: any;
-  author_association: string;
-  active_lock_reason?: any;
-  body: string;
-  reactions: Reactions;
-  timeline_url: string;
-  performed_via_github_app?: any;
 }
 </code></pre>
     </div>
