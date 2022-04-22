@@ -36,6 +36,22 @@
         <br />
         ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。
       </p>
+      <hr />
+      <h3>別の記事を見る</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <ng-container *ngIf="nextArticleId">
+            <h4>次の記事</h4>
+            <a [href]="'/blog/' + nextArticleId">{{ articles[nextArticleId!].title }}</a>
+          </ng-container>
+        </div>
+        <div class="col-md-6">
+          <ng-container *ngIf="pastArticleId">
+            <h4>前の記事</h4>
+            <a [href]="'/blog/' + pastArticleId">{{ articles[pastArticleId!].title }}</a>
+          </ng-container>
+        </div>
+      </div>
     </div>
     <div class="col-md-4">
       <app-ads [count]="adsLength" type="box"></app-ads>

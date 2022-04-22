@@ -247,6 +247,7 @@ if __name__ == "__main__":
         <h1>JSON Formatter</h1> 
         <img src="https://portal.kemu.site/assets/images/json-formatter.png" />
         未整形のJSONデータを整形します。 <br />
+        入力した値はサーバに送信されず、ローカルストレージにのみ保存されます。 <br />
         <input /> 
         <button>format</button>
         <hr />
@@ -275,6 +276,9 @@ if __name__ == "__main__":
         <h1>Base64 Encoder/Decoder</h1> 
         <img src="https://portal.kemu.site/assets/images/base64.png" />
         文字列データをBase64に、Base64データを文字列に変換します。 
+        入力した値はサーバに送信されず、ローカルストレージにのみ保存されます。
+        <hr />
+
         base64 <br />
         <textarea></textarea>
         string <br />
@@ -309,6 +313,13 @@ if __name__ == "__main__":
         """
         <h1>GitHub Flavored Markdown Writer</h1> 
         <img src="https://portal.kemu.site/assets/images/mdwriter.png" />
+        GitHub Flavored Markdownの入力補助を行います。入力値の表示にはhighlight.js, bootstrapなどのcssが自動的に付与されています。
+        入力した値はサーバに送信されず、ローカルストレージにのみ保存されます。
+        <br />
+        jsでGitHub Flavored Markdownを扱うやり方については以下のページを参照してください。
+        <br />
+        <a href="https://portal.kemu.site/blog/1189790754/">marked.jsとhighlight.jsでGitHub Flavored Markdownを扱う</a>
+        <hr />
         markdwon / HTML
         <hr />
         markdown<button>copy</button>
@@ -338,6 +349,11 @@ if __name__ == "__main__":
         """
         <h1>Regex Checker</h1> 
         <img src="https://portal.kemu.site/assets/images/regex.png" />
+
+        正規表現と評価対象のテキストを入力することで自動的にマッチする文字列を探索します。
+        探索に利用した値はサーバに送信されず、ローカルストレージにのみ保存されます。
+
+
         正規表現<br />
         <input />
         <hr />
@@ -373,6 +389,8 @@ if __name__ == "__main__":
         <h1>Year Checker</h1>
         <img src="https://portal.kemu.site/assets/images/year.png" />
         誕生日をもとに各種卒業年度/厄年といった年月日を計算します。
+        計算に利用した値はサーバに送信されず、ローカルストレージにのみ保存されます。
+
         誕生日<br />
         <input type="date" class="form-control" />
         <hr />
@@ -417,6 +435,9 @@ if __name__ == "__main__":
         <img src="https://portal.kemu.site/assets/images/openapi.png" />
         OpenApi JSON/YAMLをSwagger-UI / Redoc形式で表示します。<br />
         入力した値はローカルストレージにのみ記録され、サーバ等には記録していないため安心して利用可能です。<br />
+        
+        利用例の参照: <a href="https://portal.kemu.site/blog/1198885661/">OpenApiドキュメントを可視化する</a>
+
         Spec Type<br />
         <input type="radio" class="form-control" />
         <input type="radio" class="form-control" />
@@ -425,6 +446,7 @@ if __name__ == "__main__":
         <textarea class="form-control"></textarea>
         <hr />
         <button class="btn btn-secondary">Check Swagger UI</button>
+        <button class="btn btn-secondary">Redoc UI</button>
         ............................
     """,
     )

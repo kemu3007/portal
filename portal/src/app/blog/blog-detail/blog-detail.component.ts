@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml, Title } from '@angular/platform-browser';
-import { ArticleDetail } from '@app/shared/articles/articles';
+import { Article, ArticleDetail } from '@app/shared/articles/articles';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { MarkedService } from '@app/shared/markdown/marked.service';
 import { interval, take } from 'rxjs';
@@ -15,6 +15,7 @@ import { ArticlesService } from '@app/shared/articles/articles.service';
 })
 export class BlogDetailComponent implements OnInit {
   marked = this.markedService.marked;
+  articles: Record<string, Article> = {};
   _article?: ArticleDetail;
   comments: Comment[] = [];
   html: SafeHtml = '';
@@ -55,6 +56,7 @@ export class BlogDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.articlesService.getList('/assets/articles/list.json').subscribe((articles) => (this.articles = articles));
     this.articlesService.get(`/assets/articles/${this.issueId}.json`).subscribe((article) => (this.article = article));
     this.articlesService
       .getComments(`/assets/comments/${this.issueId}.json`)
@@ -64,5 +66,35 @@ export class BlogDetailComponent implements OnInit {
   get adsLength(): number {
     const hasMd = window.screen.width >= 768;
     return hasMd ? 4 : 1;
+  }
+
+  get articleIds(): string[] {
+    return Object.keys(this.articles);
+  }
+
+  get nextArticleId(): string | null {
+    if (this.articleIds.length) {
+      const nextIds = this.articleIds
+        .map((issueId) => Number(issueId))
+        .filter((issueId) => issueId > Number(this.issueId));
+      if (nextIds.length) {
+        return Math.min(...nextIds).toString();
+      }
+      return null;
+    }
+    return null;
+  }
+
+  get pastArticleId(): string | null {
+    if (this.articleIds.length) {
+      const pastIds = this.articleIds
+        .map((issueId) => Number(issueId))
+        .filter((issueId) => issueId < Number(this.issueId));
+      if (pastIds.length) {
+        return Math.max(...pastIds).toString();
+      }
+      return null;
+    }
+    return null;
   }
 }
