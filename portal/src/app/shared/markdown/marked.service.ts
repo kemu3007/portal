@@ -40,13 +40,12 @@ export class MarkedService {
     renderer.link = (href, title, text) =>
       `<a href=${href} class="text-muted" title=${href}>${text}<i class="bi bi-link-45deg"></i></a>`;
     renderer.table = (header, body) => `<table class="table table-bordered table-striped">${header}${body}</table>`;
+    renderer.code = (code, lang) => {
+      const language = hljs.getLanguage(lang ?? '')?.name?.toLowerCase() ?? 'plaintext';
+      return `<pre class="prettyprint linenums language-${language}">${code}</pre>`;
+    };
     this.marked.setOptions({
       renderer,
-      highlight: function (code, lang) {
-        const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-        return hljs.highlight(code, { language }).value;
-      },
-      langPrefix: 'hljs language-',
       gfm: true,
       breaks: true,
     });

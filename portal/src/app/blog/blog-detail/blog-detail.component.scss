@@ -2,6 +2,19 @@
   max-width: 100%;
 }
 
-:host ::ng-deep pre > code {
+:host ::ng-deep pre {
   border-radius: 10px;
+}
+
+:host ::ng-deep pre > ol > li {
+  list-style-type: decimal !important;
+  width: 100%;
+}
+
+:host ::ng-deep pre > ol > li::marker {
+  color: grey;
+}
+
+:host ::ng-deep pre > ol {
+  display: grid;
 }
