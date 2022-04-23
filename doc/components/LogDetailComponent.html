@@ -720,6 +720,7 @@ export class LogDetailComponent implements OnInit {
 }
 
 :host ::ng-deep pre {
+  border: solid 1px grey;
   border-radius: 10px;
 }
 
@@ -731,16 +732,16 @@ export class LogDetailComponent implements OnInit {
   list-style-type: circle;
 }
 
-:host ::ng-deep pre &gt; ol &gt; li {
-  list-style-type: decimal !important;
+:host ::ng-deep pre &gt; code &gt; ol &gt; li {
+  list-style-type: decimal;
   width: 100%;
 }
 
-:host ::ng-deep pre &gt; ol &gt; li::marker {
+:host ::ng-deep pre &gt; code &gt; ol &gt; li::marker {
   color: grey;
 }
 
-:host ::ng-deep pre &gt; ol {
+:host ::ng-deep pre &gt; code &gt; ol {
   display: grid;
 }
 </code></pre>

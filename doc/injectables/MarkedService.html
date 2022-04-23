@@ -191,12 +191,9 @@ export class MarkedService {
     renderer.link &#x3D; (href, title, text) &#x3D;&gt;
       &#x60;&lt;a href&#x3D;${href} class&#x3D;&quot;text-muted&quot; title&#x3D;${href}&gt;${text}&lt;i class&#x3D;&quot;bi bi-link-45deg&quot;&gt;&lt;/i&gt;&lt;/a&gt;&#x60;;
     renderer.table &#x3D; (header, body) &#x3D;&gt; &#x60;&lt;table class&#x3D;&quot;table table-bordered table-striped&quot;&gt;${header}${body}&lt;/table&gt;&#x60;;
-    renderer.code &#x3D; (code, lang) &#x3D;&gt; {
-      const language &#x3D; hljs.getLanguage(lang ?? &#x27;&#x27;)?.name?.toLowerCase() ?? &#x27;plaintext&#x27;;
-      return &#x60;&lt;pre class&#x3D;&quot;prettyprint linenums language-${language}&quot;&gt;${code}&lt;/pre&gt;&#x60;;
-    };
     this.marked.setOptions({
       renderer,
+      langPrefix: &#x27;prettyprint linenums language-&#x27;,
       gfm: true,
       breaks: true,
     });
