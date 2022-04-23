@@ -75,6 +75,7 @@
     </p>
     <p class="comment">
                     <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
     </p>
 
 
@@ -158,6 +159,9 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
@@ -311,6 +315,43 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -559,7 +600,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:60</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:67</a></div>
                                 </td>
                             </tr>
 
@@ -581,7 +622,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:64</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:71</a></div>
                                 </td>
                             </tr>
 
@@ -592,7 +633,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 import { DomSanitizer, SafeHtml, Title } from &#x27;@angular/platform-browser&#x27;;
 import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
@@ -607,7 +648,7 @@ import { ArticlesService } from &#x27;@app/shared/articles/articles.service&#x27
   templateUrl: &#x27;./log-detail.component.html&#x27;,
   styleUrls: [&#x27;./log-detail.component.scss&#x27;],
 })
-export class LogDetailComponent implements OnInit {
+export class LogDetailComponent implements OnInit, AfterViewInit {
   marked &#x3D; this.markedService.marked;
   html: SafeHtml &#x3D; &#x27;&#x27;;
   _article?: ArticleDetail;
@@ -649,6 +690,13 @@ export class LogDetailComponent implements OnInit {
     this.articlesService
       .getComments(&#x60;/assets/comments/${this.issueId}.json&#x60;)
       .subscribe((comments) &#x3D;&gt; (this.comments &#x3D; comments));
+  }
+
+  ngAfterViewInit(): void {
+    const script &#x3D; document.createElement(&#x27;script&#x27;);
+    script.src &#x3D; &#x27;https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js&#x27;;
+    const container &#x3D; document.getElementById(&#x27;container&#x27;)!;
+    container.insertAdjacentElement(&#x27;afterend&#x27;, script);
   }
 
   get issueId() {
