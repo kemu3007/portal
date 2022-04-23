@@ -1030,6 +1030,14 @@ export class BlogDetailComponent implements OnInit, AfterViewInit {
   border-radius: 10px;
 }
 
+:host ::ng-deep ul {
+  padding-left: 15px;
+}
+
+:host ::ng-deep li {
+  list-style-type: circle;
+}
+
 :host ::ng-deep pre &gt; ol &gt; li {
   list-style-type: decimal !important;
   width: 100%;
