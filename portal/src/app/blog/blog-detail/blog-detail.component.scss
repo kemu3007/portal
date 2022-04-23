@@ -3,6 +3,7 @@
 }
 
 :host ::ng-deep pre {
+  border: solid 1px grey;
   border-radius: 10px;
 }
 
@@ -14,15 +15,15 @@
   list-style-type: circle;
 }
 
-:host ::ng-deep pre > ol > li {
-  list-style-type: decimal !important;
+:host ::ng-deep pre > code > ol > li {
+  list-style-type: decimal;
   width: 100%;
 }
 
-:host ::ng-deep pre > ol > li::marker {
+:host ::ng-deep pre > code > ol > li::marker {
   color: grey;
 }
 
-:host ::ng-deep pre > ol {
+:host ::ng-deep pre > code > ol {
   display: grid;
 }
