@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeHtml, Title } from '@angular/platform-browser';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
@@ -13,7 +13,7 @@ import { ArticlesService } from '@app/shared/articles/articles.service';
   templateUrl: './log-detail.component.html',
   styleUrls: ['./log-detail.component.scss'],
 })
-export class LogDetailComponent implements OnInit {
+export class LogDetailComponent implements OnInit, AfterViewInit {
   marked = this.markedService.marked;
   html: SafeHtml = '';
   _article?: ArticleDetail;
@@ -55,6 +55,13 @@ export class LogDetailComponent implements OnInit {
     this.articlesService
       .getComments(`/assets/comments/${this.issueId}.json`)
       .subscribe((comments) => (this.comments = comments));
+  }
+
+  ngAfterViewInit(): void {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js';
+    const container = document.getElementById('container')!;
+    container.insertAdjacentElement('afterend', script);
   }
 
   get issueId() {
