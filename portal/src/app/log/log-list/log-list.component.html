@@ -3,7 +3,11 @@
     <div class="col-md-8">
       <div *ngFor="let key of articleKeys; index as i">
         <div class="col-md-4">
-          <a class="card mt-1 text-decoration-none text-muted" [routerLink]="['/log', key]" style="cursor: pointer">
+          <a
+            class="card shadow mt-1 text-decoration-none text-muted"
+            [routerLink]="['/log', key]"
+            style="cursor: pointer"
+          >
             <div class="row g-0">
               <img class="card-img-top img-fluid" [src]="articles[key].photo" alt="no image" />
               <div class="card-body">

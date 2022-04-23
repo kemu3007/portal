@@ -19,7 +19,7 @@ export class MarkedService {
     renderer.heading = (text, lebel) => {
       const hash = crypt.MD5(text);
       return `
-      <div class="d-flex">
+      <div class="d-flex mt-3 shadow-sm">
         <h${lebel}
           id=${hash}
           class="mb-0"

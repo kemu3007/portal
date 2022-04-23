@@ -11,7 +11,11 @@
         (blur)="instance.dismissPopup()"
       />
       <div *ngFor="let key of articleKeys; index as i">
-        <a class="card mt-1 text-decoration-none text-muted" [routerLink]="['/blog', key]" style="cursor: pointer">
+        <a
+          class="card shadow mt-1 text-decoration-none text-muted"
+          [routerLink]="['/blog', key]"
+          style="cursor: pointer"
+        >
           <div class="card-body">
             <div class="row">
               <h3 class="col-9 card-link text-black mb-0">
@@ -32,7 +36,7 @@
             <p class="card-text">{{ articles[key].body }}</p>
           </div>
         </a>
-        <div class="card mt-1" *ngIf="(i + 1) % 3 === 0">
+        <div class="card shadow mt-1" *ngIf="(i + 1) % 3 === 0">
           <app-ads type="auto"></app-ads>
         </div>
       </div>
