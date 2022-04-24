@@ -1,11 +1,13 @@
 :host ::ng-deep img {
   max-width: 100%;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
 }
 
 :host ::ng-deep pre {
   border: solid 1px grey;
   border-radius: 0.25rem;
   box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
+  padding-bottom: 10px;
 }
 
 :host ::ng-deep ul {
