@@ -894,7 +894,7 @@ export class BlogDetailComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const script &#x3D; document.createElement(&#x27;script&#x27;);
-    script.defer &#x3D; true;
+    script.async &#x3D; true;
     script.src &#x3D; &#x27;https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js&#x27;;
     const container &#x3D; document.getElementById(&#x27;container&#x27;)!;
     container.insertAdjacentElement(&#x27;afterend&#x27;, script);
