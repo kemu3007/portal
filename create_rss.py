@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict
 from xml.etree import ElementTree
@@ -31,6 +32,10 @@ if __name__ == "__main__":
         append_child(item, "title", article["title"])
         append_child(item, "link", f"https://portal.kemu.site/blog/{id}/")
         append_child(item, "description", article["body"])
-        append_child(item, "pubDate", article["created_at"])
+        append_child(
+            item,
+            "pubDate",
+            datetime.strptime(article["created_at"], "%Y-%m-%dT%H:%M:%SZ").strftime("%a, %d %b %Y %H:%M:%S GMT"),
+        )
 
     ElementTree.ElementTree(element=rss).write("portal/src/rss.xml", encoding="utf-8", xml_declaration=True)
