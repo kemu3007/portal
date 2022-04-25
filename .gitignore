@@ -69,6 +69,7 @@ portal/src/log/
 portal/src/tools/
 portal/src/contact/
 portal/src/sitemap.xml
+portal/src/rss.xml
 
 
 portal/src/assets/articles/
