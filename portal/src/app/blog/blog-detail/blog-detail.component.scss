@@ -31,3 +31,9 @@
 :host ::ng-deep pre > code > ol {
   display: grid;
 }
+
+:host ::ng-deep code {
+  color: #f39c12;
+  font-style: oblique;
+  font-weight: bolder;
+}
