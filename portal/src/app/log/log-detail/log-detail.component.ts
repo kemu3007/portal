@@ -58,10 +58,14 @@ export class LogDetailComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js';
-    const container = document.getElementById('container')!;
-    container.insertAdjacentElement('afterend', script);
+    interval(500)
+      .pipe(take(1))
+      .subscribe((_) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js';
+        const container = document.getElementById('container')!;
+        container.insertAdjacentElement('afterend', script);
+      });
   }
 
   get issueId() {
