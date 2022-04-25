@@ -18,7 +18,7 @@ export class MarkedService {
     renderer.image = (href, title, text) => {
       return `<div class="text-center"><img src="${href}" title="${text}" class="img-thumbnail img-fluid mb-1" loading="lazy"></div>`;
     };
-
+    renderer.codespan = (code) => `<code class="codespan">${code}</code>`;
     renderer.heading = (text, lebel) => {
       const hash = crypt.MD5(text);
       return `
