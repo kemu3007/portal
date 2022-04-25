@@ -362,8 +362,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="84"
-                            class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:84</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:87</a></div>
                 </td>
             </tr>
 
@@ -749,7 +749,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:75</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:78</a></div>
                                 </td>
                             </tr>
 
@@ -771,7 +771,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:80</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:83</a></div>
                                 </td>
                             </tr>
 
@@ -793,7 +793,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:89</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:92</a></div>
                                 </td>
                             </tr>
 
@@ -815,7 +815,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:102</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:105</a></div>
                                 </td>
                             </tr>
 
@@ -893,11 +893,14 @@ export class BlogDetailComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const script &#x3D; document.createElement(&#x27;script&#x27;);
-    script.async &#x3D; true;
-    script.src &#x3D; &#x27;https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js&#x27;;
-    const container &#x3D; document.getElementById(&#x27;container&#x27;)!;
-    container.insertAdjacentElement(&#x27;afterend&#x27;, script);
+    interval(500)
+      .pipe(take(1))
+      .subscribe((_) &#x3D;&gt; {
+        const script &#x3D; document.createElement(&#x27;script&#x27;);
+        script.src &#x3D; &#x27;https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js&#x27;;
+        const container &#x3D; document.getElementById(&#x27;container&#x27;)!;
+        container.insertAdjacentElement(&#x27;afterend&#x27;, script);
+      });
   }
 
   get adsLength(): number {

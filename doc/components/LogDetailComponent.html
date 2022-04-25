@@ -600,7 +600,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:67</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:71</a></div>
                                 </td>
                             </tr>
 
@@ -622,7 +622,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:71</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:75</a></div>
                                 </td>
                             </tr>
 
@@ -693,10 +693,14 @@ export class LogDetailComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const script &#x3D; document.createElement(&#x27;script&#x27;);
-    script.src &#x3D; &#x27;https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js&#x27;;
-    const container &#x3D; document.getElementById(&#x27;container&#x27;)!;
-    container.insertAdjacentElement(&#x27;afterend&#x27;, script);
+    interval(500)
+      .pipe(take(1))
+      .subscribe((_) &#x3D;&gt; {
+        const script &#x3D; document.createElement(&#x27;script&#x27;);
+        script.src &#x3D; &#x27;https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js&#x27;;
+        const container &#x3D; document.getElementById(&#x27;container&#x27;)!;
+        container.insertAdjacentElement(&#x27;afterend&#x27;, script);
+      });
   }
 
   get issueId() {
