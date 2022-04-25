@@ -169,7 +169,7 @@ export class MarkedService {
     renderer.image &#x3D; (href, title, text) &#x3D;&gt; {
       return &#x60;&lt;div class&#x3D;&quot;text-center&quot;&gt;&lt;img src&#x3D;&quot;${href}&quot; title&#x3D;&quot;${text}&quot; class&#x3D;&quot;img-thumbnail img-fluid mb-1&quot; loading&#x3D;&quot;lazy&quot;&gt;&lt;/div&gt;&#x60;;
     };
-
+    renderer.codespan &#x3D; (code) &#x3D;&gt; &#x60;&lt;code class&#x3D;&quot;codespan&quot;&gt;${code}&lt;/code&gt;&#x60;;
     renderer.heading &#x3D; (text, lebel) &#x3D;&gt; {
       const hash &#x3D; crypt.MD5(text);
       return &#x60;
