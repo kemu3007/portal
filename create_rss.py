@@ -35,7 +35,7 @@ if __name__ == "__main__":
         append_child(
             item,
             "pubDate",
-            datetime.strptime(article["created_at"], "%Y-%m-%dT%H:%M:%SZ").strftime("%a, %d %b %Y %H:%M:%S GMT"),
+            datetime.strptime(article["created_at"], "%Y-%m-%dT%H:%M:%SZ").strftime("%a, %d %b %Y %H:%M:%S +0900"),
         )
 
     ElementTree.ElementTree(element=rss).write("portal/src/rss.xml", encoding="utf-8", xml_declaration=True)
