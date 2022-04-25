@@ -164,9 +164,12 @@ export class MarkedService {
     const renderer &#x3D; new Renderer();
     renderer.html &#x3D; (html) &#x3D;&gt; {
       html &#x3D; html.replace(&#x27;&lt;/summary&gt;&#x27;, &#x60;&lt;i class&#x3D;&quot;bi bi-file-earmark-code&quot;&gt;&lt;/i&gt;&lt;/summary&gt;&#x60;);
-      html &#x3D; html.replace(&#x27;&lt;img&#x27;, &#x27;&lt;img class&#x3D;&quot;img-thumbnail img-fluid mb-1&quot; loading&#x3D;&quot;lazy&quot;&#x27;);
       return html;
     };
+    renderer.image &#x3D; (href, title, text) &#x3D;&gt; {
+      return &#x60;&lt;div class&#x3D;&quot;text-center&quot;&gt;&lt;img src&#x3D;&quot;${href}&quot; title&#x3D;&quot;${text}&quot; class&#x3D;&quot;img-thumbnail img-fluid mb-1&quot; loading&#x3D;&quot;lazy&quot;&gt;&lt;/div&gt;&#x60;;
+    };
+
     renderer.heading &#x3D; (text, lebel) &#x3D;&gt; {
       const hash &#x3D; crypt.MD5(text);
       return &#x60;
