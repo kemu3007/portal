@@ -362,8 +362,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="87"
-                            class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:87</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:88</a></div>
                 </td>
             </tr>
 
@@ -749,7 +749,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:78</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:79</a></div>
                                 </td>
                             </tr>
 
@@ -771,7 +771,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:83</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:84</a></div>
                                 </td>
                             </tr>
 
@@ -793,7 +793,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:92</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:93</a></div>
                                 </td>
                             </tr>
 
@@ -815,7 +815,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:105</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/app/blog/blog-detail/blog-detail.component.ts:106</a></div>
                                 </td>
                             </tr>
 
@@ -897,7 +897,8 @@ export class BlogDetailComponent implements OnInit, AfterViewInit {
       .pipe(take(1))
       .subscribe((_) &#x3D;&gt; {
         const script &#x3D; document.createElement(&#x27;script&#x27;);
-        script.src &#x3D; &#x27;https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js&#x27;;
+        script.src &#x3D;
+          &#x27;https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin&#x3D;sons-of-obsidian&#x27;;
         const container &#x3D; document.getElementById(&#x27;container&#x27;)!;
         container.insertAdjacentElement(&#x27;afterend&#x27;, script);
       });
@@ -1038,6 +1039,7 @@ export class BlogDetailComponent implements OnInit, AfterViewInit {
 
 :host ::ng-deep pre {
   border: solid 1px grey;
+  background-color: black;
   border-radius: 0.25rem;
   box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
   padding-bottom: 10px;
