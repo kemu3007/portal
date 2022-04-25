@@ -13,9 +13,12 @@ export class MarkedService {
     const renderer = new Renderer();
     renderer.html = (html) => {
       html = html.replace('</summary>', `<i class="bi bi-file-earmark-code"></i></summary>`);
-      html = html.replace('<img', '<img class="img-thumbnail img-fluid mb-1" loading="lazy"');
       return html;
     };
+    renderer.image = (href, title, text) => {
+      return `<div class="text-center"><img src="${href}" title="${text}" class="img-thumbnail img-fluid mb-1" loading="lazy"></div>`;
+    };
+
     renderer.heading = (text, lebel) => {
       const hash = crypt.MD5(text);
       return `
