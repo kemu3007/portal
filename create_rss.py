@@ -25,7 +25,7 @@ if __name__ == "__main__":
     append_child(channel, "managingEditor", "kemu430113@gmail.com(kemu)")
     append_child(channel, "webMaster", "kemu430113@gmail.com(kemu)")
 
-    for id in list(reversed(articles_list.keys()))[:15]:
+    for id in list(reversed(articles_list.keys())):
         item = ElementTree.SubElement(channel, "item")
         article = articles_list[id]
 
