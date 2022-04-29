@@ -1,32 +1,25 @@
 <div class="container-fluid">
   <div class="row mt-3">
-    <div class="col-md-8">
-      <div *ngFor="let key of articleKeys; index as i">
-        <div class="col-md-4">
-          <a
-            class="card shadow mt-1 text-decoration-none text-muted"
-            [routerLink]="['/log', key]"
-            style="cursor: pointer"
-          >
-            <div class="row g-0">
-              <img class="card-img-top img-fluid" [src]="articles[key].photo" alt="no image" />
-              <div class="card-body">
-                <div class="row">
-                  <h3 class="card-title text-black">
-                    {{ articles[key].title }}
-                  </h3>
-                  <p class="card-text">{{ articles[key].body }}</p>
-                </div>
-              </div>
+    <div class="col-md-9 row mx-0">
+      <div class="col-md-4 px-0 mx-0" *ngFor="let key of articleKeys; index as i">
+        <a
+          class="card shadow mt-1 text-decoration-none text-muted h-100"
+          [routerLink]="['/log', key]"
+          style="cursor: pointer"
+        >
+          <img class="img-fluid img-thumbnail" [src]="articles[key].photo" alt="no image" />
+          <div class="card-body">
+            <div class="row">
+              <h3 class="card-title text-black">
+                {{ articles[key].title }}
+              </h3>
+              <p class="card-text">{{ articles[key].body }}</p>
             </div>
-          </a>
-        </div>
-        <div class="card mt-1">
-          <app-ads type="auto"></app-ads>
-        </div>
+          </div>
+        </a>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <app-ads type="box" [count]="adsLength"></app-ads>
     </div>
   </div>
