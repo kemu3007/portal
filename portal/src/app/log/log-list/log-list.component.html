@@ -7,7 +7,9 @@
           [routerLink]="['/log', key]"
           style="cursor: pointer"
         >
-          <img class="img-fluid img-thumbnail" [src]="articles[key].photo" alt="no image" />
+          <div id="thumbnail" class="img-thumbnail">
+            <img class="img-fluid" [src]="articles[key].photo" alt="no image" />
+          </div>
           <div class="card-body">
             <div class="row">
               <h3 class="card-title text-black">

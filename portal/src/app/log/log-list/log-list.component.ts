@@ -6,6 +6,7 @@ import { ArticlesService } from '@app/shared/articles/articles.service';
 @Component({
   selector: 'app-blog-list',
   templateUrl: './log-list.component.html',
+  styleUrls: ['./log-list.component.scss'],
 })
 export class LogListComponent implements OnInit {
   articles: Record<string, Article> = {};
