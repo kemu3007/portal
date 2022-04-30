@@ -49,7 +49,7 @@ export class BlogListComponent implements OnInit {
 
   get adsLength(): number {
     const hasMd = window.screen.width >= 768;
-    return hasMd ? 3 : 1;
+    return hasMd ? 5 : 1;
   }
 
   getLabels(article: Article): Label[] {
