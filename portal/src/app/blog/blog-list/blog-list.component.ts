@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticlesService } from '@app/shared/articles/articles.service';
 import { NgbTypeaheadSelectItemEvent } from '@ng-bootstrap/ng-bootstrap';
 import { debounceTime, distinctUntilChanged, map, Observable, OperatorFunction } from 'rxjs';
 import { Article, Label } from '@app/shared/articles/articles';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-blog-list',
@@ -13,12 +14,24 @@ import { Article, Label } from '@app/shared/articles/articles';
 export class BlogListComponent implements OnInit {
   articles: Record<string, Article> = {};
 
-  constructor(titleService: Title, private router: Router, private articleService: ArticlesService) {
+  pageSize = 10;
+  pageIndex = 0;
+
+  constructor(
+    titleService: Title,
+    private router: Router,
+    private articleService: ArticlesService,
+    private route: ActivatedRoute
+  ) {
     titleService.setTitle('Kemu Tech Blog');
   }
 
   ngOnInit() {
     this.articleService.getList('/assets/articles/list.json').subscribe((articles) => (this.articles = articles));
+    const page = this.route.snapshot.queryParamMap.get('page');
+    if (page) {
+      this.pageIndex = Number(page);
+    }
   }
 
   get articleKeys(): string[] {
@@ -53,5 +66,15 @@ export class BlogListComponent implements OnInit {
 
   selectArticle(event: NgbTypeaheadSelectItemEvent) {
     this.router.navigate(['/blog', this.searchData[event.item]]);
+  }
+
+  switchPage(event: PageEvent) {
+    this.pageIndex = event.pageIndex;
+    this.router.navigate([], { queryParams: { page: this.pageIndex } });
+  }
+
+  get displayArticles() {
+    const startIndex = this.pageIndex * this.pageSize;
+    return this.articleKeys.slice(startIndex, startIndex + this.pageSize);
   }
 }

@@ -20,6 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { YearPipe } from './pipes/year.pipe';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { YearPipe } from './pipes/year.pipe';
     MatTabsModule,
     MatDatepickerModule,
     MatInputModule,
+    MatPaginatorModule,
   ],
   exports: [
     TweetBtnComponent,
@@ -66,6 +68,7 @@ import { YearPipe } from './pipes/year.pipe';
     MatNativeDateModule,
     MatInputModule,
     YearPipe,
+    MatPaginatorModule,
   ],
 })
 export class SharedModule {}

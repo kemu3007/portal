@@ -10,7 +10,17 @@
         #instance="ngbTypeahead"
         (blur)="instance.dismissPopup()"
       />
-      <div *ngFor="let key of articleKeys; index as i">
+      <div class="d-flex justify-content-center">
+        <mat-paginator
+          hidePageSize
+          showFirstLastButtons
+          (page)="switchPage($event)"
+          [length]="articleKeys.length"
+          [pageSize]="10"
+          [pageIndex]="pageIndex"
+        ></mat-paginator>
+      </div>
+      <div *ngFor="let key of displayArticles; index as i">
         <a
           class="card shadow mt-1 text-decoration-none text-muted"
           [routerLink]="['/blog', key]"
@@ -39,6 +49,16 @@
         <div class="card shadow mt-1" *ngIf="(i + 1) % 3 === 0">
           <app-ads type="auto"></app-ads>
         </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <mat-paginator
+          hidePageSize
+          showFirstLastButtons
+          (page)="switchPage($event)"
+          [length]="articleKeys.length"
+          [pageSize]="10"
+          [pageIndex]="pageIndex"
+        ></mat-paginator>
       </div>
     </div>
     <div class="col-md-4">
