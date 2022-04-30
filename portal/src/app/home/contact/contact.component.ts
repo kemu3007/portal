@@ -15,20 +15,10 @@ export class ContactComponent {
   isShowed = false;
 
   open(content: TemplateRef<any>) {
-    this.modalService.open(content, { centered: true });
+    this.modalService.open(content, { centered: true, size: 'lg' });
   }
 
   resolveReCaptcha() {
     this.isShowed = true;
-  }
-
-  copyAddress() {
-    navigator.clipboard
-      .writeText('kemu430113+portal@gmail.com')
-      .then(() =>
-        this.messageService.pushMessage({ type: 'info', body: 'copied email address to your clipboard (*ゝω・)ﾉ' })
-      )
-      .catch(() => this.messageService.pushMessage({ type: 'danger', body: "we can't access your clipboard (◇´Д｀ﾟ" }))
-      .finally(() => this.modalService.dismissAll());
   }
 }

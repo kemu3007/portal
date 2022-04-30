@@ -1,10 +1,12 @@
 <div class="container mt-3">
   <h2>Contact</h2>
   <hr />
-  <div>仕事の依頼などは以下のメールアドレスにお願いします。<br />セールスメールはお控えください。</div>
-  <div>Please use the following e-mail address for work requests.<br />Please refrain from sales emails.</div>
+  <div>仕事の依頼などは以下のフォームよりお願いします。<br />セールスメールはお控えください。</div>
+  <div>Please use the following form for work requests.<br />Please refrain from sales emails.</div>
   <div class="mt-3 d-flex justify-content-center">
-    <button class="btn btn-secondary mt-3" (click)="open(content)">メールアドレスを入手する</button>
+    <button matRipple class="btn btn-secondary mt-3" (click)="open(content)">
+      フォームに入力する / Fill out the form
+    </button>
   </div>
 </div>
 
@@ -19,9 +21,17 @@
         (resolved)="resolveReCaptcha()"
         siteKey="6LeCx-4eAAAAAM4bOC4sVLZB0uYrfBNE59Rlvz52"
       ></re-captcha>
-      <button *ngIf="isShowed" class="btn btn-secondary" (click)="copyAddress()">
-        クリップボードにコピー / copy email address
-      </button>
+      <ng-container *ngIf="isShowed">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeEw2fPgmvruDNQC3UK62PUOZbCXGzoKgtvYL4CIP1DO7wAag/viewform?embedded=true"
+          width="640"
+          height="677"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          >読み込んでいます…</iframe
+        >
+      </ng-container>
     </div>
   </div>
 </ng-template>
