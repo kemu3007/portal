@@ -36,7 +36,7 @@ export class LogDetailComponent implements OnInit, AfterViewInit {
     if (article) {
       this.titleService.setTitle(`${article.title} | Kemu Log`);
       this._article = article;
-      this.breadcrumbService.breadcrumb = `/blog/${article.title}`;
+      this.breadcrumbService.breadcrumb = `/log/${article.title}`;
       this.html = this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));
       if (this.route.snapshot.fragment) {
         interval(100)
