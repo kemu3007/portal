@@ -4,8 +4,8 @@ from pathlib import Path
 from typing import Any, Dict
 from xml.etree import ElementTree
 
-articles_list: Dict[str, Any] = json.loads(Path("portal/src/assets/articles/list.json").read_text())
-logs_list: Dict[str, Any] = json.loads(Path("portal/src/assets/logs/list.json").read_text())
+articles: Dict[str, Any] = json.loads(Path("portal/src/assets/articles/list.json").read_text())
+logs: Dict[str, Any] = json.loads(Path("portal/src/assets/logs/list.json").read_text())
 
 
 def append_child(parent: ElementTree.Element, tag: str, text: str):
@@ -26,19 +26,19 @@ if __name__ == "__main__":
     append_child(channel, "managingEditor", "kemu430113@gmail.com(kemu)")
     append_child(channel, "webMaster", "kemu430113@gmail.com(kemu)")
 
-    articles_list.update(logs_list)
+    all_articles = articles | logs
 
-    for id in sorted(articles_list.keys(), reverse=True):
+    for id in sorted(all_articles.keys(), reverse=True):
         item = ElementTree.SubElement(channel, "item")
 
         guid = ElementTree.SubElement(item, "guid")
         guid.set("isPermaLink", "false")
         guid.text = id
 
-        article = articles_list[id]
+        article = all_articles[id]
 
         append_child(item, "title", article["title"])
-        if id in logs_list:
+        if id in logs:
             append_child(item, "link", f"https://portal.kemu.site/log/{id}/")
         else:
             append_child(item, "link", f"https://portal.kemu.site/blog/{id}/")
