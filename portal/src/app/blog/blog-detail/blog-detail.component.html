@@ -13,9 +13,10 @@
         <div class="col-md-8">
           <h2>{{ article.title }}</h2>
           <div class="d-flex justify-content-between">
-            <p>作成日: {{ article.created_at | date: 'yyyy.MM.dd hh:mm' }}</p>
+            <p class="text-muted">発行日時: {{ article.created_at | date: 'yyyy.MM.dd hh:mm' }}</p>
             <app-tweet-btn></app-tweet-btn>
           </div>
+          <p class="text-muted">最終更新日: {{ article.updated_at | date: 'yyyy.MM.dd hh:mm' }}</p>
         </div>
       </div>
       <hr />

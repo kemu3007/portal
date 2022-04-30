@@ -7,6 +7,7 @@ export interface Article {
   title: string;
   body: string;
   created_at: string;
+  updated_at: string;
   photo?: string;
   labels: Label[];
 }
