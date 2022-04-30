@@ -815,7 +815,7 @@ export class BlogListComponent implements OnInit {
 
   get adsLength(): number {
     const hasMd &#x3D; window.screen.width &gt;&#x3D; 768;
-    return hasMd ? Math.floor(Object.keys(this.articles).length / 3) : 1;
+    return hasMd ? 3 : 1;
   }
 
   getLabels(article: Article): Label[] {
