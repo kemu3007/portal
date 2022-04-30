@@ -30,6 +30,11 @@ if __name__ == "__main__":
 
     for id in sorted(articles_list.keys(), reverse=True):
         item = ElementTree.SubElement(channel, "item")
+
+        guid = ElementTree.SubElement(item, "guid")
+        guid.set("isPermaLink", "false")
+        guid.text = id
+
         article = articles_list[id]
 
         append_child(item, "title", article["title"])
@@ -38,6 +43,7 @@ if __name__ == "__main__":
         else:
             append_child(item, "link", f"https://portal.kemu.site/blog/{id}/")
         append_child(item, "description", article["body"])
+
         append_child(
             item,
             "pubDate",
