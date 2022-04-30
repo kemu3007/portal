@@ -5,6 +5,7 @@ from typing import Any, Dict
 from xml.etree import ElementTree
 
 articles_list: Dict[str, Any] = json.loads(Path("portal/src/assets/articles/list.json").read_text())
+logs_list: Dict[str, Any] = json.loads(Path("portal/src/assets/logs/list.json").read_text())
 
 
 def append_child(parent: ElementTree.Element, tag: str, text: str):
@@ -18,19 +19,24 @@ if __name__ == "__main__":
     channel = ElementTree.SubElement(rss, "channel")
 
     append_child(channel, "title", "Kemu Tech Blog")
-    append_child(channel, "link", "https://portal.kemu.site/blog/")
+    append_child(channel, "link", "https://portal.kemu.site/")
     append_child(channel, "description", "Kemu Tech Blogでは主にDjango / Angularに関する技術的な知見のメモ、共有を行っています。")
     append_child(channel, "language", "ja")
     append_child(channel, "copyright", "©️ 2017-2022 kemu All Rights Reserved.")
     append_child(channel, "managingEditor", "kemu430113@gmail.com(kemu)")
     append_child(channel, "webMaster", "kemu430113@gmail.com(kemu)")
 
-    for id in list(reversed(articles_list.keys())):
+    articles_list.update(logs_list)
+
+    for id in sorted(articles_list.keys(), reverse=True):
         item = ElementTree.SubElement(channel, "item")
         article = articles_list[id]
 
         append_child(item, "title", article["title"])
-        append_child(item, "link", f"https://portal.kemu.site/blog/{id}/")
+        if id in logs_list:
+            append_child(item, "link", f"https://portal.kemu.site/log/{id}/")
+        else:
+            append_child(item, "link", f"https://portal.kemu.site/blog/{id}/")
         append_child(item, "description", article["body"])
         append_child(
             item,
