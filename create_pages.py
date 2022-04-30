@@ -1,7 +1,7 @@
 import json
+from html import escape
 from pathlib import Path
 from typing import Dict, List, Optional, TypedDict
-from html import escape
 
 import markdown
 
