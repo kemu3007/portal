@@ -70,6 +70,12 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -119,7 +125,41 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#articles" >articles</a>
+                            </li>
+                            <li>
+                                <a href="#logs" >logs</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#navigateArticles" >navigateArticles</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -134,7 +174,7 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#articles" >articles</a>
+                                    <a href="#news" >news</a>
                                 </li>
                             </ul>
                         </td>
@@ -149,12 +189,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(keyValuePipe: <a href="https://angular.io/api/common/KeyValuePipe" target="_blank">KeyValuePipe</a>)</code>
+<code>constructor(keyValuePipe: <a href="https://angular.io/api/common/KeyValuePipe" target="_blank">KeyValuePipe</a>, articlesService: <a href="../injectables/ArticlesService.html" target="_self">ArticlesService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/home/news/news.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/home/news/news.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -183,6 +223,30 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>articlesService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ArticlesService.html" target="_self" >ArticlesService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -196,7 +260,186 @@
 
 
 
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="navigateArticles"></a>
+                    <span class="name">
+                        <span ><b>navigateArticles</b></span>
+                        <a href="#navigateArticles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>navigateArticles(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/home/news/news.component.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/home/news/news.component.ts:18</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="articles"></a>
+                    <span class="name">
+                        <span ><b>articles</b></span>
+                        <a href="#articles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Article.html" target="_self" >Record&lt;string | Article&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/home/news/news.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logs"></a>
+                    <span class="name">
+                        <span ><b>logs</b></span>
+                        <a href="#logs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Article.html" target="_self" >Record&lt;string | Article&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/home/news/news.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
 
     <section>
     <h3 id="accessors">
@@ -206,19 +449,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="articles"></a>
-                        <span class="name"><b>articles</b><a href="#articles"><span class="icon ion-ios-link"></span></a></span>
+                        <a name="news"></a>
+                        <span class="name"><b>news</b><a href="#news"><span class="icon ion-ios-link"></span></a></span>
                     </td>
                 </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>articles()</code></span>
+                        <span class="accessor"><b>get</b><code>news()</code></span>
                     </td>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/home/news/news.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/home/news/news.component.ts:23</a></div>
                                 </td>
                             </tr>
 
@@ -230,19 +473,39 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { KeyValuePipe } from &#x27;@angular/common&#x27;;
-import { Component } from &#x27;@angular/core&#x27;;
-import articles from &#x27;@assets/articles/list.json&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { Article } from &#x27;@app/shared/articles/articles&#x27;;
+import { ArticlesService } from &#x27;@app/shared/articles/articles.service&#x27;;
 
 @Component({
   selector: &#x27;app-news&#x27;,
   templateUrl: &#x27;./news.component.html&#x27;,
   styleUrls: [&#x27;./news.component.scss&#x27;],
 })
-export class NewsComponent {
-  constructor(private keyValuePipe: KeyValuePipe) {}
+export class NewsComponent implements OnInit {
+  constructor(private keyValuePipe: KeyValuePipe, private articlesService: ArticlesService, private router: Router) {}
 
-  get articles() {
-    return this.keyValuePipe.transform(articles).sort((a, b) &#x3D;&gt; Number(b.key) - Number(a.key));
+  articles: Record&lt;string, Article&gt; &#x3D; {};
+  logs: Record&lt;string, Article&gt; &#x3D; {};
+
+  ngOnInit(): void {
+    this.articlesService.getList(&#x27;/assets/articles/list.json&#x27;).subscribe((articles) &#x3D;&gt; (this.articles &#x3D; articles));
+    this.articlesService.getList(&#x27;/assets/logs/list.json&#x27;).subscribe((logs) &#x3D;&gt; (this.logs &#x3D; logs));
+  }
+
+  get news() {
+    return this.keyValuePipe
+      .transform(Object.assign({}, this.articles, this.logs))
+      .sort((a, b) &#x3D;&gt; Number(b.key) - Number(a.key));
+  }
+
+  navigateArticles(id: string) {
+    if (Object.keys(this.articles).includes(id)) {
+      this.router.navigate([&#x27;/blog/&#x27;, id]);
+    } else {
+      this.router.navigate([&#x27;/log/&#x27;, id]);
+    }
   }
 }
 </code></pre>
@@ -250,11 +513,11 @@ export class NewsComponent {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;list-group border&quot; id&#x3D;&quot;news&quot;&gt;
-  &lt;div *ngFor&#x3D;&quot;let item of articles; index as i&quot; class&#x3D;&quot;text-start mt-1 ms-1&quot;&gt;
+  &lt;div *ngFor&#x3D;&quot;let item of news; index as i&quot; class&#x3D;&quot;text-start mt-1 ms-1&quot;&gt;
     &lt;span class&#x3D;&quot;text-muted&quot;&gt;{{ item.value.created_at | date: &#x27;yyyy.MM.dd&#x27; }}&lt;/span&gt;
-    &lt;a class&#x3D;&quot;list-group-item border-0&quot; [routerLink]&#x3D;&quot;[&#x27;/blog&#x27;, item.key]&quot;&gt;
+    &lt;div style&#x3D;&quot;cursor: pointer&quot; matRipple class&#x3D;&quot;list-group-item border-0&quot; (click)&#x3D;&quot;navigateArticles(item.key)&quot;&gt;
       &lt;span *ngIf&#x3D;&quot;i &#x3D;&#x3D;&#x3D; 0&quot; class&#x3D;&quot;badge bg-danger me-1&quot;&gt;New&lt;/span&gt;{{ item.value.title }}
-    &lt;/a&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -296,7 +559,7 @@ export class NewsComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="list-group border" id="news">  <div *ngFor="let item of articles; index as i" class="text-start mt-1 ms-1">    <span class="text-muted">{{ item.value.created_at | date: \'yyyy.MM.dd\' }}</span>    <a class="list-group-item border-0" [routerLink]="[\'/blog\', item.key]">      <span *ngIf="i === 0" class="badge bg-danger me-1">New</span>{{ item.value.title }}    </a>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="list-group border" id="news">  <div *ngFor="let item of news; index as i" class="text-start mt-1 ms-1">    <span class="text-muted">{{ item.value.created_at | date: \'yyyy.MM.dd\' }}</span>    <div style="cursor: pointer" matRipple class="list-group-item border-0" (click)="navigateArticles(item.key)">      <span *ngIf="i === 0" class="badge bg-danger me-1">New</span>{{ item.value.title }}    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NewsComponent'};
