@@ -23,6 +23,7 @@ def export_issues(label: str, dir: Path, extract_photo: bool = False):
         issue_dict[issue["id"]] = {
             "title": issue["title"],
             "created_at": issue["created_at"],
+            "updated_at": issue["updated_at"],
             "body": summary,
             "labels": [{"name": label["name"], "color": label["color"]} for label in issue["labels"]],
         }
