@@ -1,12 +1,37 @@
 import json
 from pathlib import Path
+from typing import Dict, List, Optional, TypedDict
+from html import escape
 
 import markdown
 
+Label = TypedDict("Label", {"name": str, "color": str})
+
+Article = TypedDict(
+    "Article", {"title": str, "body": str, "created_at": str, "photo": Optional[str], "labels": List[Label]}
+)
+
 if __name__ == "__main__":
     # blog
-    articles = json.loads((Path() / "portal/src/assets/articles/list.json").read_text())
+    articles: Dict[str, Article] = json.loads((Path() / "portal/src/assets/articles/list.json").read_text())
+    logs: Dict[str, Article] = json.loads((Path() / "portal/src/assets/logs/list.json").read_text())
+
     base_html = Path("./base.html").read_text()
+
+    all_articles = articles | logs
+
+    articles_reference = ""
+
+    for id, value in sorted(all_articles.items(), key=lambda x: x[0], reverse=True):
+        link = f"/blog/{id}/" if id in articles else f"/log/{id}"
+        articles_reference += f"""
+        <a class="card mt-1" href="{link}">
+            <h3 class="card-title">{escape(value["title"])}</h3>
+            <div class="card-body">{escape(value["body"])}</div>
+        </a>
+        """
+    base_html = base_html.replace("articles_reference", articles_reference)
+
     blog_home = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/blog.png")
         .replace("page_title", "Kemu Tech Blog")
@@ -50,7 +75,6 @@ if __name__ == "__main__":
         path.mkdir(exist_ok=True)
         (path / "index.html").write_text(blog)
     # log
-    logs = json.loads((Path() / "portal/src/assets/logs/list.json").read_text())
     log_home = (
         base_html.replace("page_image", "https://portal.kemu.site/assets/images/log.png")
         .replace("page_title", "kemu 旅行記録など雑記 | Kemu Log")
