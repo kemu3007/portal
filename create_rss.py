@@ -1,11 +1,17 @@
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict
+from typing import Dict, List, Optional, TypedDict
 from xml.etree import ElementTree
 
-articles: Dict[str, Any] = json.loads(Path("portal/src/assets/articles/list.json").read_text())
-logs: Dict[str, Any] = json.loads(Path("portal/src/assets/logs/list.json").read_text())
+Label = TypedDict("Label", {"name": str, "color": str})
+
+Article = TypedDict(
+    "Article", {"title": str, "body": str, "created_at": str, "photo": Optional[str], "labels": List[Label]}
+)
+
+articles: Dict[str, Article] = json.loads(Path("portal/src/assets/articles/list.json").read_text())
+logs: Dict[str, Article] = json.loads(Path("portal/src/assets/logs/list.json").read_text())
 
 
 def append_child(parent: ElementTree.Element, tag: str, text: str):
