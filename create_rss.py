@@ -3,6 +3,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, TypedDict
 from xml.etree import ElementTree
+from xml.sax.saxutils import escape
 
 Label = TypedDict("Label", {"name": str, "color": str})
 
@@ -43,12 +44,15 @@ if __name__ == "__main__":
 
         article = all_articles[id]
 
-        append_child(item, "title", article["title"])
+        append_child(item, "title", escape(article["title"]))
         if id in logs:
             append_child(item, "link", f"https://portal.kemu.site/log/{id}/")
         else:
             append_child(item, "link", f"https://portal.kemu.site/blog/{id}/")
-        append_child(item, "description", article["body"])
+
+        append_child(item, "description", escape(article["body"]))
+
+        append_child(item, "category", ", ".join([label["name"] for label in article["labels"]]))
 
         append_child(
             item,
