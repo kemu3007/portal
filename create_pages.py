@@ -1,15 +1,24 @@
 import json
+from dataclasses import dataclass
 from html import escape
 from pathlib import Path
-from typing import Dict, List, Optional, TypedDict
+from typing import Dict, List, Optional, TypedDict, get_type_hints
 
 import markdown
 
-Label = TypedDict("Label", {"name": str, "color": str})
 
-Article = TypedDict(
-    "Article", {"title": str, "body": str, "created_at": str, "photo": Optional[str], "labels": List[Label]}
-)
+class Label(TypedDict):
+    name: str
+    color: str
+
+
+class Article(TypedDict):
+    title: str
+    body: str
+    created_at: str
+    photo: Optional[str]
+    labels: Label
+
 
 if __name__ == "__main__":
     # blog
