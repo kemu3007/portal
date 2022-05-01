@@ -15,10 +15,6 @@
   padding-left: 15px;
 }
 
-:host ::ng-deep li {
-  list-style-type: circle;
-}
-
 :host ::ng-deep pre > code > ol > li {
   list-style-type: decimal;
   width: 100%;
