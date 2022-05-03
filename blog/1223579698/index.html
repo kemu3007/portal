@@ -7,20 +7,23 @@
       }
     </script>
     <meta charset="utf-8" />
-    <title>Django4.0がリリースされたので適当に試してみる | Kemu Tech Blog</title>
+    <title>Pyodide 動作確認 | Kemu Tech Blog</title>
     <base href="/" />
-    <meta name="description" content="[release notes]         依存ライブラリ  - Django 3.2       asgiref==3.4.1  pytz==2021.3  sqlparse==0.4.2       - Django4.0       asgiref==3.4.1  backports.zo" />
+    <meta name="description" content="PyCon US 2022でPyScriptについての発表があったため、とりあえずPyodideを手元で触ってみたので紹介します。
+" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:title" content="Django4.0がリリースされたので適当に試してみる | Kemu Tech Blog" />
+    <meta property="og:title" content="Pyodide 動作確認 | Kemu Tech Blog" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="[release notes]         依存ライブラリ  - Django 3.2       asgiref==3.4.1  pytz==2021.3  sqlparse==0.4.2       - Django4.0       asgiref==3.4.1  backports.zo" />
+    <meta property="og:description" content="PyCon US 2022でPyScriptについての発表があったため、とりあえずPyodideを手元で触ってみたので紹介します。
+" />
     <meta property="og:url" content="https://portal.kemu.site" />
-    <meta property="og:image" content="https://portal.kemu.site/assets/images/1160542944.png" />
+    <meta property="og:image" content="https://portal.kemu.site/assets/images/1223579698.png" />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://portal.kemu.site/assets/images/1160542944.png" />
-    <meta name="twitter:description" content="[release notes]         依存ライブラリ  - Django 3.2       asgiref==3.4.1  pytz==2021.3  sqlparse==0.4.2       - Django4.0       asgiref==3.4.1  backports.zo" />
-    <meta name="twitter:title" content="Django4.0がリリースされたので適当に試してみる | Kemu Tech Blog" />
+    <meta name="twitter:image" content="https://portal.kemu.site/assets/images/1223579698.png" />
+    <meta name="twitter:description" content="PyCon US 2022でPyScriptについての発表があったため、とりあえずPyodideを手元で触ってみたので紹介します。
+" />
+    <meta name="twitter:title" content="Pyodide 動作確認 | Kemu Tech Blog" />
     <meta name="twitter:url" content="https://twitter.com/kemu43" />
     <meta name="author" content="kemu">
     <meta name="keywords" content="Python, TypeScript, Angular, Django, Nuxt, Docker, AWS">
@@ -67,57 +70,70 @@
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       <hr />
       
-            <h1>Django4.0がリリースされたので適当に試してみる</h1> 
-            <img src="https://portal.kemu.site/assets/images/1160542944.png" />
-            <p><a href="https://docs.djangoproject.com/en/dev/releases/4.0/">release notes</a></p>
-<h3>依存ライブラリ</h3>
+            <h1>Pyodide 動作確認</h1> 
+            <img src="https://portal.kemu.site/assets/images/1223579698.png" />
+            <p><a href="https://www.anaconda.com/blog/pyscript-python-in-the-browser">New from Anaconda: Python in the Browser</a></p>
+<h2>PyodideをCDN経由でインポート</h2>
+<p><code>html
+&lt;head&gt;
+    &lt;script src="https://cdn.jsdelivr.net/pyodide/v0.20.0/full/pyodide.js"&gt;&lt;/script&gt;
+&lt;/head&gt;</code></p>
+<h2>Pythonスクリプトの実行</h2>
+<p><code>const pyodide = await loadPyodide();</code> で初期化処理を行なっており、<code>pyodide.runPython</code> でスクリプトの実行を行う。</p>
+<p>パッケージのインポートに関しては動作確認中</p>
 <ul>
-<li>Django 3.2
-<code>asgiref==3.4.1
-pytz==2021.3
-sqlparse==0.4.2</code></li>
-<li>Django4.0
-<code>asgiref==3.4.1
-backports.zoneinfo==0.2.1
-sqlparse==0.4.2</code>
-pytzに依存しなくなり、標準のzoneinfoモジュールに変更された形になります。
-<code>backports.zoneinfo</code>は3.9以前をサポートするための依存です。</li>
+<li>ファイル構成</li>
 </ul>
-<p><a href="https://pypi.org/project/backports.zoneinfo/">backports.zoneinfo</a></p>
-<h3>UniqueConstraint Expression</h3>
-<p>UniqueConstraintを設定する際に<code>desc()</code>, <code>asc()</code>を指定してインデックスを張ることができるようになりました。</p>
-<p>```python
-class TestModel(models.Model):
-    code_1 = models.CharField(max_length=32)
-    code_2 = models.CharField(max_length=32)</p>
-<pre><code>class Meta:
-    constraints = [
-        UniqueConstraint(
-            Lower('code_1'),
-            Lower('code_2').desc(),
-            name='code_1_2_unique',
-        ),
-    ]
-</code></pre>
+<p><code>- index.html
+- scripts/
+  - get_version.py
+  - get_zen.py</code></p>
+<ul>
+<li><code>index.html</code></li>
+</ul>
+<p>```html</p>
+<h2>Python: <span id="python-version"></span></h2>
+<hr />
+<div id="python-zen"></div>
+
+<script type="text/javascript">
+async function setScriptValue(pyodide, dir, tag) {
+  const script = await (await fetch(dir)).text()
+  document.getElementById(tag).innerText = pyodide.runPython(script)
+}
+async function main(){
+    const pyodide = await loadPyodide();
+    setScriptValue(pyodide, "scripts/get_zen.py", "python-zen")
+    setScriptValue(pyodide, "scripts/get_version.py", "python-version")
+}
+main();
+</script>
 <p>```</p>
-<p>発行されるSQL
-<code>sql
-CREATE UNIQUE INDEX "code_1_2_unique" ON "common_testmodel" ((LOWER("code_1")), (LOWER("code_2")) DESC);</code></p>
-<h3>QuerySet.contains</h3>
-<p>QuerySetの中に該当のモデルが存在するかチェックすることができます。</p>
-<p><code>python
-TestModel.objects.contains(TestModel(id=1))</code>
-<code>sql
-SELECT (1) AS "a"
-  FROM "common_testmodel"
- WHERE "common_testmodel"."id" = 1
- LIMIT 1</code></p>
-<p>実行されるクエリはexists()と変わらないようです。（この程度の処理であれば）</p>
-<p>続きは次回</p>
-<p>今回作成したソースコードは<a href="https://github.com/kemu3007/django_4_0">こちら</a></p>
+<ul>
+<li><code>scripts/get_zen.py</code></li>
+</ul>
+<p>```python
+import io
+from contextlib import redirect_stdout</p>
+<p>stdout = io.StringIO()</p>
+<p>with redirect_stdout(stdout):
+    import this</p>
+<p>stdout.getvalue()
+```</p>
+<ul>
+<li><code>scripts/get_version.py</code></li>
+</ul>
+<p>```python
+import sys</p>
+<p>f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}"
+```</p>
+<h2>...(TBD)</h2>
+<p>今後確認次第追記します。</p>
+<h2>コードとテストページ</h2>
+<p>今回利用したコードは<a href="https://github.com/kemu3007/pyodide-sample">こちら</a>、作成したページは<a href="https://kemu3007.github.io/pyodide-sample/">こちら</a>から確認することができます。</p>
             <hr />
             <div style="overflow-x: scroll;">
-                meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/5', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/5/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/5/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/5/events', 'html_url': 'https://github.com/kemu3007/portal/issues/5', 'id': 1160542944, 'node_id': 'I_kwDOG7qoq85FLHrg', 'number': 5, 'title': 'Django4.0がリリースされたので適当に試してみる', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3900075763, 'node_id': 'LA_kwDOG7qoq87odm7z', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/Django', 'name': 'Django', 'color': '5FC353', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': None, 'assignees': [], 'milestone': None, 'comments': 0, 'created_at': '2022-03-06T07:44:51Z', 'updated_at': '2022-03-12T07:52:04Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': '[release notes](https://docs.djangoproject.com/en/dev/releases/4.0/)\r\n\r\n### 依存ライブラリ\r\n- Django 3.2\r\n```\r\nasgiref==3.4.1\r\npytz==2021.3\r\nsqlparse==0.4.2\r\n```\r\n- Django4.0\r\n```\r\nasgiref==3.4.1\r\nbackports.zoneinfo==0.2.1\r\nsqlparse==0.4.2\r\n```\r\npytzに依存しなくなり、標準のzoneinfoモジュールに変更された形になります。\r\n`backports.zoneinfo`は3.9以前をサポートするための依存です。\r\n\r\n[backports.zoneinfo](https://pypi.org/project/backports.zoneinfo/)\r\n\r\n### UniqueConstraint Expression\r\n\r\nUniqueConstraintを設定する際に`desc()`, `asc()`を指定してインデックスを張ることができるようになりました。\r\n\r\n```python\r\nclass TestModel(models.Model):\r\n    code_1 = models.CharField(max_length=32)\r\n    code_2 = models.CharField(max_length=32)\r\n\r\n    class Meta:\r\n        constraints = [\r\n            UniqueConstraint(\r\n                Lower(\'code_1\'),\r\n                Lower(\'code_2\').desc(),\r\n                name=\'code_1_2_unique\',\r\n            ),\r\n        ]\r\n```\r\n\r\n発行されるSQL\r\n```sql\r\nCREATE UNIQUE INDEX "code_1_2_unique" ON "common_testmodel" ((LOWER("code_1")), (LOWER("code_2")) DESC);\r\n```\r\n\r\n\r\n### QuerySet.contains\r\nQuerySetの中に該当のモデルが存在するかチェックすることができます。\r\n\r\n```python\r\nTestModel.objects.contains(TestModel(id=1))\r\n```\r\n```sql\r\nSELECT (1) AS "a"\r\n  FROM "common_testmodel"\r\n WHERE "common_testmodel"."id" = 1\r\n LIMIT 1\r\n```\r\n\r\n実行されるクエリはexists()と変わらないようです。（この程度の処理であれば）\r\n\r\n\r\n続きは次回\r\n\r\n今回作成したソースコードは[こちら](https://github.com/kemu3007/django_4_0)', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/5/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/5/timeline', 'performed_via_github_app': None}
+                meta: {'url': 'https://api.github.com/repos/kemu3007/portal/issues/40', 'repository_url': 'https://api.github.com/repos/kemu3007/portal', 'labels_url': 'https://api.github.com/repos/kemu3007/portal/issues/40/labels{/name}', 'comments_url': 'https://api.github.com/repos/kemu3007/portal/issues/40/comments', 'events_url': 'https://api.github.com/repos/kemu3007/portal/issues/40/events', 'html_url': 'https://github.com/kemu3007/portal/issues/40', 'id': 1223579698, 'node_id': 'I_kwDOG7qoq85I7lgy', 'number': 40, 'title': 'Pyodide 動作確認', 'user': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'labels': [{'id': 3898939400, 'node_id': 'LA_kwDOG7qoq87oZRgI', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/article', 'name': 'article', 'color': 'C200E5', 'default': False, 'description': ''}, {'id': 3900078597, 'node_id': 'LA_kwDOG7qoq87odnoF', 'url': 'https://api.github.com/repos/kemu3007/portal/labels/Python', 'name': 'Python', 'color': '1D76DB', 'default': False, 'description': ''}], 'state': 'open', 'locked': False, 'assignee': {'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}, 'assignees': [{'login': 'kemu3007', 'id': 29157528, 'node_id': 'MDQ6VXNlcjI5MTU3NTI4', 'avatar_url': 'https://avatars.githubusercontent.com/u/29157528?v=4', 'gravatar_id': '', 'url': 'https://api.github.com/users/kemu3007', 'html_url': 'https://github.com/kemu3007', 'followers_url': 'https://api.github.com/users/kemu3007/followers', 'following_url': 'https://api.github.com/users/kemu3007/following{/other_user}', 'gists_url': 'https://api.github.com/users/kemu3007/gists{/gist_id}', 'starred_url': 'https://api.github.com/users/kemu3007/starred{/owner}{/repo}', 'subscriptions_url': 'https://api.github.com/users/kemu3007/subscriptions', 'organizations_url': 'https://api.github.com/users/kemu3007/orgs', 'repos_url': 'https://api.github.com/users/kemu3007/repos', 'events_url': 'https://api.github.com/users/kemu3007/events{/privacy}', 'received_events_url': 'https://api.github.com/users/kemu3007/received_events', 'type': 'User', 'site_admin': False}], 'milestone': None, 'comments': 0, 'created_at': '2022-05-03T02:57:37Z', 'updated_at': '2022-05-03T02:57:37Z', 'closed_at': None, 'author_association': 'OWNER', 'active_lock_reason': None, 'body': '\r\n[New from Anaconda: Python in the Browser](https://www.anaconda.com/blog/pyscript-python-in-the-browser)\r\n\r\n## PyodideをCDN経由でインポート\r\n\r\n```html\r\n<head>\r\n    <script src="https://cdn.jsdelivr.net/pyodide/v0.20.0/full/pyodide.js"></script>\r\n</head>\r\n```\r\n\r\n## Pythonスクリプトの実行\r\n\r\n`const pyodide = await loadPyodide();` で初期化処理を行なっており、`pyodide.runPython` でスクリプトの実行を行う。\r\n\r\nパッケージのインポートに関しては動作確認中\r\n\r\n- ファイル構成\r\n\r\n```\r\n- index.html\r\n- scripts/\r\n  - get_version.py\r\n  - get_zen.py \r\n```\r\n\r\n- `index.html`\r\n\r\n```html\r\n<h2>Python: <span id="python-version"></span></h2>\r\n<hr />\r\n<div id="python-zen"></div>\r\n\r\n<script type="text/javascript">\r\nasync function setScriptValue(pyodide, dir, tag) {\r\n  const script = await (await fetch(dir)).text()\r\n  document.getElementById(tag).innerText = pyodide.runPython(script)\r\n}\r\nasync function main(){\r\n    const pyodide = await loadPyodide();\r\n    setScriptValue(pyodide, "scripts/get_zen.py", "python-zen")\r\n    setScriptValue(pyodide, "scripts/get_version.py", "python-version")\r\n}\r\nmain();\r\n</script>\r\n```\r\n\r\n- `scripts/get_zen.py`\r\n\r\n```python\r\nimport io\r\nfrom contextlib import redirect_stdout\r\n\r\nstdout = io.StringIO()\r\n\r\nwith redirect_stdout(stdout):\r\n    import this\r\n\r\nstdout.getvalue()\r\n```\r\n\r\n- `scripts/get_version.py`\r\n\r\n```python\r\nimport sys\r\n\r\nf"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}"\r\n```\r\n\r\n## ...(TBD)\r\n\r\n今後確認次第追記します。\r\n\r\n## コードとテストページ\r\n\r\n今回利用したコードは[こちら](https://github.com/kemu3007/pyodide-sample)、作成したページは[こちら](https://kemu3007.github.io/pyodide-sample/)から確認することができます。', 'reactions': {'url': 'https://api.github.com/repos/kemu3007/portal/issues/40/reactions', 'total_count': 0, '+1': 0, '-1': 0, 'laugh': 0, 'hooray': 0, 'confused': 0, 'heart': 0, 'rocket': 0, 'eyes': 0}, 'timeline_url': 'https://api.github.com/repos/kemu3007/portal/issues/40/timeline', 'performed_via_github_app': None}
             </div>
             
       <hr />
