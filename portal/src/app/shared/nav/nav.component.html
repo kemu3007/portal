@@ -1,6 +1,11 @@
 <nav ngbNav #nav="ngbNav" [activeId]="activeTab" class="navbar navbar-expand-md navbar-light bg-light pb-1">
   <div class="container-fluid shadow">
-    <img height="30px" class="rounded-circle me-3" src="https://avatars.githubusercontent.com/u/29157528?v=4" />
+    <img
+      height="30px"
+      width="30px"
+      class="rounded-circle me-3"
+      src="https://avatars.githubusercontent.com/u/29157528?v=4"
+    />
     <a [routerLink]="['/']" class="navbar-brand"> Kemu Portal </a>
     <button matRipple class="navbar-toggler" type="button" (click)="menu.toggle()">&#9776;</button>
     <div [ngbCollapse]="true" #menu="ngbCollapse" class="collapse navbar-collapse">
