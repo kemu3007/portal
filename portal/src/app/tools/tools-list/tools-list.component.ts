@@ -10,6 +10,7 @@ import { Tool } from '@app/shared/tools/tools';
 })
 export class ToolsListComponent implements OnInit {
   tools: Tool[] = [];
+  pinned: string[] = ['GitHub Flavored Markdown Writer', 'Regex Checker', 'JSON Typer'];
 
   constructor(private router: Router, private toolsService: ToolsService, title: Title) {
     title.setTitle('Kemu Tools');
@@ -17,6 +18,10 @@ export class ToolsListComponent implements OnInit {
 
   ngOnInit() {
     this.toolsService.get().subscribe((tools) => (this.tools = tools));
+  }
+
+  get pinnedTools() {
+    return this.tools.filter((tool) => this.pinned.includes(tool.label));
   }
 
   transitLink(tool: Tool) {
