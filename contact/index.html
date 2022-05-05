@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <script>
-      if (!window.navigator.userAgent.match(/Googlebot|Chrome-Lighthouse/g) ) {
+      if (!window.navigator.userAgent.match(/Googlebot/g) ) {
         window.location.href = window.location.origin + '?to=' + window.location.pathname + window.location.hash + '&search=' + window.location.search 
       }
     </script>
@@ -59,6 +59,9 @@
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="/contact/">contact</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/rss.xml">RSS</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -73,10 +76,18 @@
         TwitterのDMも可能ですが返信が遅くなってしまう可能性があるためできる限りメールでお願いいたします。<br />
         セールスメールを送信した場合メールアドレスをブロックするため以降のメールは全て受信拒否を行います。ご了承ください。<br />
         <hr />
-        *********@*****.***
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeEw2fPgmvruDNQC3UK62PUOZbCXGzoKgtvYL4CIP1DO7wAag/viewform?embedded=true"
+          width="640"
+          height="677"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          >読み込んでいます…</iframe
+        >
     
       <hr />
-      <h2>Articles</h2>
+      <h2>Articles Reference</h2>
       
         <a class="card mt-1" href="/blog/1223579698/">
             <h3 class="card-title">Pyodide 動作確認</h3>
@@ -281,7 +292,7 @@
             <div class="card-body">このサイトの構成は     お名前ドットコム -&gt; Route 53 -&gt; AWS ALB - &gt; AWS EC2     という形になっています。実装当初は     お名前ドットコム -&gt; AWS ALB - &gt; AWS EC2     となっていたのですがadsenseに登録する&amp;ALBの仕様上</div>
         </a>
         
-      <h2>TOOLS</h2>
+      <h2>Tools Reference</h2>
       <ul class="list-group">
         <li class="list-group-item">
           <a href="/tools/openapi/">OpenApi Viewer</a>

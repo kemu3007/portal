@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <script>
-      if (!window.navigator.userAgent.match(/Googlebot|Chrome-Lighthouse/g) ) {
+      if (!window.navigator.userAgent.match(/Googlebot/g) ) {
         window.location.href = window.location.origin + '?to=' + window.location.pathname + window.location.hash + '&search=' + window.location.search 
       }
     </script>
@@ -10,13 +10,13 @@
     <title>OpenApi Viewer | Kemu Tools</title>
     <base href="/" />
     <meta name="description" content="
-            OpenApi JSON/YAMLをSwagger-UIで表示します。
+            OpenApi JSON/YAMLをSwagger-UI / Redoc UIで表示します。
             " />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:title" content="OpenApi Viewer | Kemu Tools" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="
-            OpenApi JSON/YAMLをSwagger-UIで表示します。
+            OpenApi JSON/YAMLをSwagger-UI / Redoc UIで表示します。
             " />
     <meta property="og:url" content="https://portal.kemu.site" />
     <meta property="og:image" content="https://portal.kemu.site/assets/images/openapi.png" />
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://portal.kemu.site/assets/images/openapi.png" />
     <meta name="twitter:description" content="
-            OpenApi JSON/YAMLをSwagger-UIで表示します。
+            OpenApi JSON/YAMLをSwagger-UI / Redoc UIで表示します。
             " />
     <meta name="twitter:title" content="OpenApi Viewer | Kemu Tools" />
     <meta name="twitter:url" content="https://twitter.com/kemu43" />
@@ -65,6 +65,9 @@
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="/contact/">contact</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/rss.xml">RSS</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -73,7 +76,7 @@
       <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       <hr />
       
-        <h1>Year Checker</h1>
+        <h1>OpenApi Viewer</h1>
         <img src="https://portal.kemu.site/assets/images/openapi.png" />
         OpenApi JSON/YAMLをSwagger-UI / Redoc形式で表示します。<br />
         入力した値はローカルストレージにのみ記録され、サーバ等には記録していないため安心して利用可能です。<br />
@@ -92,7 +95,7 @@
         ............................
     
       <hr />
-      <h2>Articles</h2>
+      <h2>Articles Reference</h2>
       
         <a class="card mt-1" href="/blog/1223579698/">
             <h3 class="card-title">Pyodide 動作確認</h3>
@@ -297,7 +300,7 @@
             <div class="card-body">このサイトの構成は     お名前ドットコム -&gt; Route 53 -&gt; AWS ALB - &gt; AWS EC2     という形になっています。実装当初は     お名前ドットコム -&gt; AWS ALB - &gt; AWS EC2     となっていたのですがadsenseに登録する&amp;ALBの仕様上</div>
         </a>
         
-      <h2>TOOLS</h2>
+      <h2>Tools Reference</h2>
       <ul class="list-group">
         <li class="list-group-item">
           <a href="/tools/openapi/">OpenApi Viewer</a>

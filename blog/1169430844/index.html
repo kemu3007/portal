@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <script>
-      if (!window.navigator.userAgent.match(/Googlebot|Chrome-Lighthouse/g) ) {
+      if (!window.navigator.userAgent.match(/Googlebot/g) ) {
         window.location.href = window.location.origin + '?to=' + window.location.pathname + window.location.hash + '&search=' + window.location.search 
       }
     </script>
@@ -58,6 +58,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="/contact/">contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/rss.xml">RSS</a>
             </li>
           </ul>
         </div>
@@ -354,7 +357,7 @@ githubにも導入されてほしいなー(最近gitlab機能の取り込みみ�
             </div>
             
       <hr />
-      <h2>Articles</h2>
+      <h2>Articles Reference</h2>
       
         <a class="card mt-1" href="/blog/1223579698/">
             <h3 class="card-title">Pyodide 動作確認</h3>
@@ -559,7 +562,7 @@ githubにも導入されてほしいなー(最近gitlab機能の取り込みみ�
             <div class="card-body">このサイトの構成は     お名前ドットコム -&gt; Route 53 -&gt; AWS ALB - &gt; AWS EC2     という形になっています。実装当初は     お名前ドットコム -&gt; AWS ALB - &gt; AWS EC2     となっていたのですがadsenseに登録する&amp;ALBの仕様上</div>
         </a>
         
-      <h2>TOOLS</h2>
+      <h2>Tools Reference</h2>
       <ul class="list-group">
         <li class="list-group-item">
           <a href="/tools/openapi/">OpenApi Viewer</a>
