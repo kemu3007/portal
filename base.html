@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <script>
-      if (!window.navigator.userAgent.match(/Googlebot|Chrome-Lighthouse/g) ) {
+      if (!window.navigator.userAgent.match(/Googlebot/g) ) {
         window.location.href = window.location.origin + '?to=' + window.location.pathname + window.location.hash + '&search=' + window.location.search 
       }
     </script>
@@ -59,6 +59,9 @@
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="/contact/">contact</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/rss.xml">RSS</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -68,9 +71,9 @@
       <hr />
       page_contents
       <hr />
-      <h2>Articles</h2>
+      <h2>Articles Reference</h2>
       articles_reference
-      <h2>TOOLS</h2>
+      <h2>Tools Reference</h2>
       <ul class="list-group">
         <li class="list-group-item">
           <a href="/tools/openapi/">OpenApi Viewer</a>

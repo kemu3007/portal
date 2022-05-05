@@ -1,8 +1,7 @@
 import json
-from dataclasses import dataclass
 from html import escape
 from pathlib import Path
-from typing import Dict, List, Optional, TypedDict, get_type_hints
+from typing import Dict, Optional, TypedDict
 
 import markdown
 
@@ -457,14 +456,14 @@ if __name__ == "__main__":
         .replace(
             "page_description",
             """
-            OpenApi JSON/YAMLをSwagger-UIで表示します。
+            OpenApi JSON/YAMLをSwagger-UI / Redoc UIで表示します。
             """,
         )
     )
     swagger_html = swagger_html.replace(
         "page_contents",
         """
-        <h1>Year Checker</h1>
+        <h1>OpenApi Viewer</h1>
         <img src="https://portal.kemu.site/assets/images/openapi.png" />
         OpenApi JSON/YAMLをSwagger-UI / Redoc形式で表示します。<br />
         入力した値はローカルストレージにのみ記録され、サーバ等には記録していないため安心して利用可能です。<br />
@@ -502,7 +501,15 @@ if __name__ == "__main__":
         TwitterのDMも可能ですが返信が遅くなってしまう可能性があるためできる限りメールでお願いいたします。<br />
         セールスメールを送信した場合メールアドレスをブロックするため以降のメールは全て受信拒否を行います。ご了承ください。<br />
         <hr />
-        *********@*****.***
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeEw2fPgmvruDNQC3UK62PUOZbCXGzoKgtvYL4CIP1DO7wAag/viewform?embedded=true"
+          width="640"
+          height="677"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          >読み込んでいます…</iframe
+        >
     """,
     )
     path = Path("portal/src/contact")
