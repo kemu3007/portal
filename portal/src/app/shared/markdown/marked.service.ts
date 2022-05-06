@@ -34,7 +34,6 @@ export class MarkedService {
           "
         >
           ${text}
-          <button title="アンカー付きリンクをコピー" class="btn btn-sm bi bi-clipboard" onclick="window.navigator.clipboard.writeText('${window.location.origin}${window.location.pathname}#${hash}')"></button>
         </h${lebel}>
       </div>
       <hr class="mt-0" />

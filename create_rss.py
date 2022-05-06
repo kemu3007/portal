@@ -26,7 +26,7 @@ if __name__ == "__main__":
     channel = ElementTree.SubElement(rss, "channel")
 
     append_child(channel, "title", "Kemu Tech Blog")
-    append_child(channel, "link", "https://portal.kemu.site/")
+    append_child(channel, "link", "https://portal.kemu.site/#/")
     append_child(channel, "description", "Kemu Tech Blogでは主にDjango / Angularに関する技術的な知見のメモ、共有を行っています。")
     append_child(channel, "language", "ja")
     append_child(channel, "copyright", "©️ 2017-2022 kemu All Rights Reserved.")

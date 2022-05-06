@@ -22,29 +22,31 @@ if __name__ == "__main__":
     urlset = ElementTree.Element("urlset")
     urlset.set("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
 
-    add_url_element(urlset, "https://portal.kemu.site/")
+    add_url_element(urlset, "https://portal.kemu.site/#/")
     add_url_element(urlset, "https://portal.kemu.site/robots.txt")
     add_url_element(urlset, "https://portal.kemu.site/sitemap.xml")
-    add_url_element(urlset, "https://portal.kemu.site/blog/")
-    add_url_element(urlset, "https://portal.kemu.site/log/")
-    add_url_element(urlset, "https://portal.kemu.site/contact/")
+    add_url_element(urlset, "https://portal.kemu.site/#/blog/")
+    add_url_element(urlset, "https://portal.kemu.site/#/log/")
+    add_url_element(urlset, "https://portal.kemu.site/#/contact/")
 
-    add_url_element(urlset, "https://portal.kemu.site/tools/")
-    add_url_element(urlset, "https://portal.kemu.site/tools/userInfo/")
-    add_url_element(urlset, "https://portal.kemu.site/tools/amazonAssociate/")
-    add_url_element(urlset, "https://portal.kemu.site/tools/jsonTyper/")
-    add_url_element(urlset, "https://portal.kemu.site/tools/realtime/")
-    add_url_element(urlset, "https://portal.kemu.site/tools/jsonFormatter/")
-    add_url_element(urlset, "https://portal.kemu.site/tools/base64/")
-    add_url_element(urlset, "https://portal.kemu.site/tools/mdwriter/")
-    add_url_element(urlset, "https://portal.kemu.site/tools/regex/")
-    add_url_element(urlset, "https://portal.kemu.site/tools/year/")
-    add_url_element(urlset, "https://portal.kemu.site/tools/openapi/")
+    add_url_element(urlset, "https://portal.kemu.site/#/tools/")
+    add_url_element(urlset, "https://portal.kemu.site/#/tools/userInfo/")
+    add_url_element(urlset, "https://portal.kemu.site/#/tools/amazonAssociate/")
+    add_url_element(urlset, "https://portal.kemu.site/#/tools/jsonTyper/")
+    add_url_element(urlset, "https://portal.kemu.site/#/tools/realtime/")
+    add_url_element(urlset, "https://portal.kemu.site/#/tools/jsonFormatter/")
+    add_url_element(urlset, "https://portal.kemu.site/#/tools/base64/")
+    add_url_element(urlset, "https://portal.kemu.site/#/tools/mdwriter/")
+    add_url_element(urlset, "https://portal.kemu.site/#/tools/regex/")
+    add_url_element(urlset, "https://portal.kemu.site/#/tools/year/")
+    add_url_element(urlset, "https://portal.kemu.site/#/tools/openapi/")
     add_url_element(urlset, "https://portal.kemu.site/doc/")
 
     for article_id in articles_list.keys():
-        add_url_element(urlset, f"https://portal.kemu.site/blog/{article_id}/", articles_list[article_id]["updated_at"])
+        add_url_element(
+            urlset, f"https://portal.kemu.site/#/blog/{article_id}/", articles_list[article_id]["updated_at"]
+        )
     for log_id in logs_list.keys():
-        add_url_element(urlset, f"https://portal.kemu.site/log/{log_id}/", articles_list[article_id]["updated_at"])
+        add_url_element(urlset, f"https://portal.kemu.site/#/log/{log_id}/", articles_list[article_id]["updated_at"])
 
     ElementTree.ElementTree(element=urlset).write("portal/src/sitemap.xml", encoding="utf-8", xml_declaration=True)

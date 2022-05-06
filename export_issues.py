@@ -15,8 +15,7 @@ def export_issues(label: str, dir: Path, extract_photo: bool = False):
     issues = json.loads(res.content)
     issue_dict = {}
     for issue in reversed(issues):
-        match = re.search(r"summary: .*\n", issue["body"])
-        if match:
+        if match := re.search(r"summary: .*\n", issue["body"]):
             summary = match.group()[9:]
             issue["body"] = re.sub(r"summary: .*\n", "", issue["body"])
         else:
