@@ -525,7 +525,7 @@ export class ToolsListComponent implements OnInit {
   &lt;div class&#x3D;&quot;row mt-3&quot;&gt;
     &lt;div class&#x3D;&quot;col-md-9 row mx-0 border-end border-2&quot;&gt;
       &lt;h2&gt;PINNED&lt;/h2&gt;
-      &lt;div class&#x3D;&quot;col-md-4 px-0 mx-0 mt-1&quot; *ngFor&#x3D;&quot;let tool of pinnedTools; index as i&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-4 bg-light px-0 mx-0 mt-1&quot; *ngFor&#x3D;&quot;let tool of pinnedTools; index as i&quot;&gt;
         &lt;div
           class&#x3D;&quot;card shadow mt-1 text-decoration-none text-muted h-100&quot;
           (click)&#x3D;&quot;transitLink(tool)&quot;
@@ -543,7 +543,7 @@ export class ToolsListComponent implements OnInit {
         &lt;app-ads type&#x3D;&quot;auto&quot; [count]&#x3D;&quot;adsLength&quot;&gt;&lt;/app-ads&gt;
       &lt;/div&gt;
       &lt;h2 class&#x3D;&quot;mt-3&quot;&gt;TOOLS&lt;/h2&gt;
-      &lt;div class&#x3D;&quot;col-md-4 px-0 mx-0 mt-1&quot; *ngFor&#x3D;&quot;let tool of tools; index as i&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-4 bg-light px-0 mx-0 mt-1&quot; *ngFor&#x3D;&quot;let tool of tools; index as i&quot;&gt;
         &lt;div
           class&#x3D;&quot;card shadow mt-1 text-decoration-none text-muted h-100&quot;
           (click)&#x3D;&quot;transitLink(tool)&quot;
@@ -563,7 +563,7 @@ export class ToolsListComponent implements OnInit {
         &lt;app-ads type&#x3D;&quot;auto&quot; [count]&#x3D;&quot;adsLength&quot;&gt;&lt;/app-ads&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-3 bg-light&quot;&gt;
       &lt;app-ads type&#x3D;&quot;box&quot; [count]&#x3D;&quot;adsLength&quot;&gt;&lt;/app-ads&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -597,7 +597,7 @@ export class ToolsListComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="mt-3">    <h2>個人的に使ったりする自作ツール置き場（不定期更新）</h2>  </div>  <div class="row mt-3">    <div class="col-md-9 row mx-0 border-end border-2">      <h2>PINNED</h2>      <div class="col-md-4 px-0 mx-0 mt-1" *ngFor="let tool of pinnedTools; index as i">        <div          class="card shadow mt-1 text-decoration-none text-muted h-100"          (click)="transitLink(tool)"          style="cursor: pointer"        >          <div class="card-body">            <div class="row">              <h3 class="card-title text-black">{{ tool.label }} <i class="bi bi-pin-angle"></i></h3>              <p class="card-text">{{ tool.description }}</p>            </div>          </div>        </div>      </div>      <div class="card mt-1">        <app-ads type="auto" [count]="adsLength"></app-ads>      </div>      <h2 class="mt-3">TOOLS</h2>      <div class="col-md-4 px-0 mx-0 mt-1" *ngFor="let tool of tools; index as i">        <div          class="card shadow mt-1 text-decoration-none text-muted h-100"          (click)="transitLink(tool)"          style="cursor: pointer"        >          <div class="card-body">            <div class="row">              <h3 class="card-title text-black">                {{ tool.label }} <i *ngIf="pinned.includes(tool.label)" class="bi bi-pin-angle"></i>              </h3>              <p class="card-text">{{ tool.description }}</p>            </div>          </div>        </div>      </div>      <div class="card mt-1">        <app-ads type="auto" [count]="adsLength"></app-ads>      </div>    </div>    <div class="col-md-3">      <app-ads type="box" [count]="adsLength"></app-ads>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="mt-3">    <h2>個人的に使ったりする自作ツール置き場（不定期更新）</h2>  </div>  <div class="row mt-3">    <div class="col-md-9 row mx-0 border-end border-2">      <h2>PINNED</h2>      <div class="col-md-4 bg-light px-0 mx-0 mt-1" *ngFor="let tool of pinnedTools; index as i">        <div          class="card shadow mt-1 text-decoration-none text-muted h-100"          (click)="transitLink(tool)"          style="cursor: pointer"        >          <div class="card-body">            <div class="row">              <h3 class="card-title text-black">{{ tool.label }} <i class="bi bi-pin-angle"></i></h3>              <p class="card-text">{{ tool.description }}</p>            </div>          </div>        </div>      </div>      <div class="card mt-1">        <app-ads type="auto" [count]="adsLength"></app-ads>      </div>      <h2 class="mt-3">TOOLS</h2>      <div class="col-md-4 bg-light px-0 mx-0 mt-1" *ngFor="let tool of tools; index as i">        <div          class="card shadow mt-1 text-decoration-none text-muted h-100"          (click)="transitLink(tool)"          style="cursor: pointer"        >          <div class="card-body">            <div class="row">              <h3 class="card-title text-black">                {{ tool.label }} <i *ngIf="pinned.includes(tool.label)" class="bi bi-pin-angle"></i>              </h3>              <p class="card-text">{{ tool.description }}</p>            </div>          </div>        </div>      </div>      <div class="card mt-1">        <app-ads type="auto" [count]="adsLength"></app-ads>      </div>    </div>    <div class="col-md-3 bg-light">      <app-ads type="box" [count]="adsLength"></app-ads>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ToolsListComponent-1'};
