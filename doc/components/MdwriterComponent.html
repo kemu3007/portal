@@ -191,7 +191,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>, markedService: <a href="../injectables/MarkedService.html" target="_self">MarkedService</a>, domSanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, modal: NgbModal)</code>
+<code>constructor(breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>, markedService: <a href="../injectables/MarkedService.html" target="_self">MarkedService</a>, domSanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, modal: NgbModal)</code>
                     </td>
                 </tr>
                         <tr>
@@ -213,18 +213,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                        <td>title</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
                                                 <tr>
                                                         <td>breadcrumbService</td>
                                                   
@@ -323,8 +311,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="64"
-                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:64</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:62</a></div>
                 </td>
             </tr>
 
@@ -360,8 +348,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:42</a></div>
                 </td>
             </tr>
 
@@ -429,8 +417,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:47</a></div>
                 </td>
             </tr>
 
@@ -510,8 +498,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:28</a></div>
                 </td>
             </tr>
 
@@ -547,8 +535,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:58</a></div>
                 </td>
             </tr>
 
@@ -651,7 +639,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:32</a></div>
                                 </td>
                             </tr>
 
@@ -673,7 +661,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/tools/mdwriter/mdwriter.component.ts:36</a></div>
                                 </td>
                             </tr>
 
@@ -685,7 +673,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, TemplateRef } from &#x27;@angular/core&#x27;;
-import { DomSanitizer, Title } from &#x27;@angular/platform-browser&#x27;;
+import { DomSanitizer } from &#x27;@angular/platform-browser&#x27;;
 import { MarkedService } from &#x27;@app/shared/markdown/marked.service&#x27;;
 import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
 import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
@@ -702,14 +690,12 @@ export class MdwriterComponent implements OnInit {
   });
 
   constructor(
-    title: Title,
     breadcrumbService: BreadcrumbService,
     private markedService: MarkedService,
     private domSanitizer: DomSanitizer,
     private messageService: MessageService,
     private modal: NgbModal
   ) {
-    title.setTitle(&#x27;GitHub Flavored Markdown Writer | Kemu Tools&#x27;);
     breadcrumbService.breadcrumb &#x3D; &#x27;tools/GitHub Flavored Markdown Writer&#x27;;
   }
 

@@ -203,7 +203,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>, markedService: <a href="../injectables/MarkedService.html" target="_self">MarkedService</a>, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, articlesService: <a href="../injectables/ArticlesService.html" target="_self">ArticlesService</a>)</code>
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>, markedService: <a href="../injectables/MarkedService.html" target="_self">MarkedService</a>, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, articlesService: <a href="../injectables/ArticlesService.html" target="_self">ArticlesService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -225,18 +225,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                        <td>titleService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
                                                 <tr>
                                                         <td>route</td>
                                                   
@@ -335,8 +323,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:58</a></div>
                 </td>
             </tr>
 
@@ -372,8 +360,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:51</a></div>
                 </td>
             </tr>
 
@@ -531,7 +519,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:30</a></div>
                                 </td>
                             </tr>
 
@@ -542,7 +530,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:34</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -600,7 +588,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:71</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:69</a></div>
                                 </td>
                             </tr>
 
@@ -622,7 +610,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:75</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/log/log-detail/log-detail.component.ts:73</a></div>
                                 </td>
                             </tr>
 
@@ -635,7 +623,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, OnInit } from &#x27;@angular/core&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
-import { DomSanitizer, SafeHtml, Title } from &#x27;@angular/platform-browser&#x27;;
+import { DomSanitizer, SafeHtml } from &#x27;@angular/platform-browser&#x27;;
 import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
 import { MarkedService } from &#x27;@app/shared/markdown/marked.service&#x27;;
 import { interval, take } from &#x27;rxjs&#x27;;
@@ -655,7 +643,6 @@ export class LogDetailComponent implements OnInit, AfterViewInit {
   comments: Comment[] &#x3D; [];
 
   constructor(
-    private titleService: Title,
     private route: ActivatedRoute,
     private breadcrumbService: BreadcrumbService,
     private markedService: MarkedService,
@@ -669,7 +656,6 @@ export class LogDetailComponent implements OnInit, AfterViewInit {
 
   set article(article: ArticleDetail | undefined) {
     if (article) {
-      this.titleService.setTitle(&#x60;${article.title} | Kemu Log&#x60;);
       this._article &#x3D; article;
       this.breadcrumbService.breadcrumb &#x3D; &#x60;/log/${article.title}&#x60;;
       this.html &#x3D; this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));

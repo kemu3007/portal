@@ -189,12 +189,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, articleService: <a href="../injectables/ArticlesService.html" target="_self">ArticlesService</a>)</code>
+<code>constructor(articleService: <a href="../injectables/ArticlesService.html" target="_self">ArticlesService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/log/log-list/log-list.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/log/log-list/log-list.component.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -211,18 +211,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                        <td>titleService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/platform-browser/Title" target="_blank" >Title</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
                                                 <tr>
                                                         <td>articleService</td>
                                                   
@@ -273,8 +261,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/log/log-list/log-list.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/log/log-list/log-list.component.ts:28</a></div>
                 </td>
             </tr>
 
@@ -342,8 +330,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/log/log-list/log-list.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="15"
+                            class="link-to-prism">src/app/log/log-list/log-list.component.ts:15</a></div>
                 </td>
             </tr>
 
@@ -389,7 +377,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/log/log-list/log-list.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/log/log-list/log-list.component.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -418,7 +406,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/log/log-list/log-list.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/log/log-list/log-list.component.ts:19</a></div>
                                 </td>
                             </tr>
 
@@ -440,7 +428,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/log/log-list/log-list.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/log/log-list/log-list.component.ts:23</a></div>
                                 </td>
                             </tr>
 
@@ -452,7 +440,6 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { Title } from &#x27;@angular/platform-browser&#x27;;
 import { Article, Label } from &#x27;@app/shared/articles/articles&#x27;;
 import { ArticlesService } from &#x27;@app/shared/articles/articles.service&#x27;;
 
@@ -464,9 +451,7 @@ import { ArticlesService } from &#x27;@app/shared/articles/articles.service&#x27
 export class LogListComponent implements OnInit {
   articles: Record&lt;string, Article&gt; &#x3D; {};
 
-  constructor(titleService: Title, private articleService: ArticlesService) {
-    titleService.setTitle(&#x27;Kemu Log&#x27;);
-  }
+  constructor(private articleService: ArticlesService) {}
 
   ngOnInit() {
     this.articleService.getList(&#x27;/assets/logs/list.json&#x27;).subscribe((articles) &#x3D;&gt; (this.articles &#x3D; articles));
