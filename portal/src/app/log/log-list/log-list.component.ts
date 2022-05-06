@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Article, Label } from '@app/shared/articles/articles';
 import { ArticlesService } from '@app/shared/articles/articles.service';
 
@@ -11,9 +10,7 @@ import { ArticlesService } from '@app/shared/articles/articles.service';
 export class LogListComponent implements OnInit {
   articles: Record<string, Article> = {};
 
-  constructor(titleService: Title, private articleService: ArticlesService) {
-    titleService.setTitle('Kemu Log');
-  }
+  constructor(private articleService: ArticlesService) {}
 
   ngOnInit() {
     this.articleService.getList('/assets/logs/list.json').subscribe((articles) => (this.articles = articles));

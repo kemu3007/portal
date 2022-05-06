@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { Title } from '@angular/platform-browser';
 import { MessageService } from '@app/shared/message/message.service';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { FormGroup, FormControl, persistControl } from '@ngneat/reactive-forms';
@@ -15,8 +14,7 @@ export class AmazonAssociateComponent implements OnInit {
     product: new FormControl('', [Validators.required]),
   });
   result = '';
-  constructor(private messageService: MessageService, title: Title, breadCrumbService: BreadcrumbService) {
-    title.setTitle('Amazon Associate Linker | Kemu Tools');
+  constructor(private messageService: MessageService, breadCrumbService: BreadcrumbService) {
     breadCrumbService.breadcrumb = '/tools/Amazon Associate Linker';
   }
 

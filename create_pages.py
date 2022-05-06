@@ -16,10 +16,16 @@ class Article(TypedDict):
     labels: Label
 
 
+meta = {"#/": {"title": "Kemu Portal", "description": "kemuのポータルサイト Angular/Djangoについての記事を主に書いているブログ, 旅行記録など置いてます。"}}
+
+
 def create_page(html: str, img: str, title: str, description: str, path: Path):
     html = html.replace("page_image", img).replace("page_title", title).replace("page_description", description)
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(html)
+
+    url = "#" + str(path).replace("portal/src", "")
+    meta[url] = {"title": title, "description": description}
 
 
 if __name__ == "__main__":
@@ -72,7 +78,7 @@ if __name__ == "__main__":
         base_html,
         f"https://portal.kemu.site/assets/images/tools.png",
         "Kemu Tools",
-        "自作ツール置き場",
+        "自作ツール置き場 / Markdown Writer, QrCode Maker, JSON Typer, JSON Formatter, Base64 Translator...",
         Path(f"portal/src/tools"),
     )
     # ip address checker
@@ -204,7 +210,9 @@ if __name__ == "__main__":
         """
         仕事の依頼/転職の誘いなどはこちらからお願いします。セールスメールはお控えください。
         """,
-        Path(f"portal/src/tools/contact"),
+        Path(f"portal/src/contact"),
     )
     # nav count
     Path("portal/src/assets/count.json").write_text(json.dumps({"blog": len(articles.keys()), "log": len(logs.keys())}))
+
+    Path("portal/src/assets/meta.json").write_text(json.dumps(meta, ensure_ascii=False))

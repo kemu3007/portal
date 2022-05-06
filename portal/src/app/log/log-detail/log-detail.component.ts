@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DomSanitizer, SafeHtml, Title } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { MarkedService } from '@app/shared/markdown/marked.service';
 import { interval, take } from 'rxjs';
@@ -20,7 +20,6 @@ export class LogDetailComponent implements OnInit, AfterViewInit {
   comments: Comment[] = [];
 
   constructor(
-    private titleService: Title,
     private route: ActivatedRoute,
     private breadcrumbService: BreadcrumbService,
     private markedService: MarkedService,
@@ -34,7 +33,6 @@ export class LogDetailComponent implements OnInit, AfterViewInit {
 
   set article(article: ArticleDetail | undefined) {
     if (article) {
-      this.titleService.setTitle(`${article.title} | Kemu Log`);
       this._article = article;
       this.breadcrumbService.breadcrumb = `/log/${article.title}`;
       this.html = this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));

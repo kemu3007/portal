@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { Title } from '@angular/platform-browser';
 import { MessageService } from '@app/shared/message/message.service';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { FormGroup, FormControl, persistControl } from '@ngneat/reactive-forms';
@@ -11,8 +10,7 @@ import { distinctUntilChanged } from 'rxjs';
   templateUrl: './json-formatter.component.html',
 })
 export class JsonFormatterComponent implements OnInit {
-  constructor(private messageService: MessageService, title: Title, breadcrumbService: BreadcrumbService) {
-    title.setTitle('JSON Formatter | Kemu Tools');
+  constructor(private messageService: MessageService, breadcrumbService: BreadcrumbService) {
     breadcrumbService.breadcrumb = 'tools/JSON Formatter';
   }
   form = new FormGroup({

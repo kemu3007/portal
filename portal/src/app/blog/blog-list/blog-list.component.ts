@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ArticlesService } from '@app/shared/articles/articles.service';
 import { NgbTypeaheadSelectItemEvent } from '@ng-bootstrap/ng-bootstrap';
@@ -17,14 +16,7 @@ export class BlogListComponent implements OnInit {
   pageSize = 10;
   pageIndex = 0;
 
-  constructor(
-    titleService: Title,
-    private router: Router,
-    private articleService: ArticlesService,
-    private route: ActivatedRoute
-  ) {
-    titleService.setTitle('Kemu Tech Blog');
-  }
+  constructor(private router: Router, private articleService: ArticlesService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.articleService.getList('/assets/articles/list.json').subscribe((articles) => (this.articles = articles));

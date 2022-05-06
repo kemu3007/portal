@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { Title } from '@angular/platform-browser';
 import { MessageService } from '@app/shared/message/message.service';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { FormGroup, FormControl, persistControl } from '@ngneat/reactive-forms';
@@ -10,8 +9,7 @@ import { FormGroup, FormControl, persistControl } from '@ngneat/reactive-forms';
   templateUrl: './json-typer.component.html',
 })
 export class JsonTyperComponent implements OnInit {
-  constructor(private messageService: MessageService, title: Title, breadcrumbService: BreadcrumbService) {
-    title.setTitle('JSON Typer | Kemu Tools');
+  constructor(private messageService: MessageService, breadcrumbService: BreadcrumbService) {
     breadcrumbService.breadcrumb = '/tools/JSON Typer';
   }
   results: string[] = [];

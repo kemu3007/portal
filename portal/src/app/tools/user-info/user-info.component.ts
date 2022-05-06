@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { MessageService } from '@app/shared/message/message.service';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
@@ -20,10 +19,8 @@ export class UserInfoComponent implements OnInit {
     private userInfoService: UserInfoService,
     private messageService: MessageService,
     private router: Router,
-    title: Title,
     breadCrumbService: BreadcrumbService
   ) {
-    title.setTitle('IP Address Checker | Kemu Tools');
     breadCrumbService.breadcrumb = '/tools/IP Address Checker';
   }
 

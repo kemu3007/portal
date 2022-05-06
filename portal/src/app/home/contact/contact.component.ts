@@ -1,5 +1,4 @@
 import { Component, TemplateRef } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { MessageService } from '@app/shared/message/message.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -8,9 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './contact.component.html',
 })
 export class ContactComponent {
-  constructor(private modalService: NgbModal, private messageService: MessageService, title: Title) {
-    title.setTitle('Contact | Kemu Portal');
-  }
+  constructor(private modalService: NgbModal) {}
 
   isShowed = false;
 

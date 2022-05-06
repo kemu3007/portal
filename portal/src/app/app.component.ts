@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { LoadingService } from './shared/loading/loading.service';
 import version from '@assets/version.json';
 import { RouterService } from './router.service';
@@ -18,8 +17,7 @@ export class AppComponent {
   ];
   adsCount = 0;
 
-  constructor(titleService: Title, private loadingService: LoadingService, routerService: RouterService) {
-    titleService.setTitle('Kemu Portal');
+  constructor(private loadingService: LoadingService, routerService: RouterService) {
     routerService.watchNavigation().subscribe();
     console.log('%c 👀 why are you seeing this?', 'background: black; color: white;');
   }

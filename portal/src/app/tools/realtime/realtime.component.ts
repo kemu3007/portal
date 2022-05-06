@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { interval } from 'rxjs';
 
@@ -11,8 +10,7 @@ export class RealtimeComponent implements OnInit {
   datetime = '';
   ms = 0;
 
-  constructor(title: Title, breadcrumbService: BreadcrumbService) {
-    title.setTitle('REALTIME | Kemu Tools');
+  constructor(breadcrumbService: BreadcrumbService) {
     breadcrumbService.breadcrumb = 'tools/REALTIME';
   }
 

@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DomSanitizer, SafeHtml, Title } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Article, ArticleDetail } from '@app/shared/articles/articles';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { MarkedService } from '@app/shared/markdown/marked.service';
@@ -21,7 +21,6 @@ export class BlogDetailComponent implements OnInit, AfterViewInit {
   html: SafeHtml = '';
 
   constructor(
-    private titleService: Title,
     private route: ActivatedRoute,
     private breadcrumbService: BreadcrumbService,
     private markedService: MarkedService,
@@ -36,7 +35,6 @@ export class BlogDetailComponent implements OnInit, AfterViewInit {
 
   set article(article: ArticleDetail | undefined) {
     if (article) {
-      this.titleService.setTitle(`${article.title} | Kemu Tech Blog`);
       this._article = article;
       this.breadcrumbService.breadcrumb = `/blog/${article.title}`;
       this.html = this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));

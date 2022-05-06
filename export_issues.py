@@ -31,8 +31,8 @@ def export_issues(label: str, dir: Path, extract_photo: bool = False):
             issue_dict[issue["id"]]["photo"] = (
                 re.search("https:\/\/user-images.githubusercontent.com.*\.png", issue["body"]).group() or ""
             )
-        (dir / f"{issue['id']}.json").write_text(json.dumps(issue))
-    (dir / "list.json").write_text(json.dumps(issue_dict))
+        (dir / f"{issue['id']}.json").write_text(json.dumps(issue, ensure_ascii=False))
+    (dir / "list.json").write_text(json.dumps(issue_dict, ensure_ascii=False))
     return issues
 
 

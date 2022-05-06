@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ToolsService } from '@app/shared/tools/tools.service';
 import { Tool } from '@app/shared/tools/tools';
@@ -12,9 +11,7 @@ export class ToolsListComponent implements OnInit {
   tools: Tool[] = [];
   pinned: string[] = ['GitHub Flavored Markdown Writer', 'Regex Checker', 'JSON Typer'];
 
-  constructor(private router: Router, private toolsService: ToolsService, title: Title) {
-    title.setTitle('Kemu Tools');
-  }
+  constructor(private router: Router, private toolsService: ToolsService) {}
 
   ngOnInit() {
     this.toolsService.get().subscribe((tools) => (this.tools = tools));

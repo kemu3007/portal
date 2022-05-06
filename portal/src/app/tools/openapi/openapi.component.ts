@@ -2,7 +2,6 @@ import { AfterViewInit, Component, OnInit, TemplateRef } from '@angular/core';
 import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
 import jsYaml from 'js-yaml';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Title } from '@angular/platform-browser';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 
 @Component({
@@ -20,8 +19,7 @@ export class OpenapiComponent implements OnInit, AfterViewInit {
   redocEnabled = false;
   spec = {};
 
-  constructor(private modalService: NgbModal, title: Title, breadcrumbService: BreadcrumbService) {
-    title.setTitle('OpenApi Viewer | Kemu Tools');
+  constructor(private modalService: NgbModal, breadcrumbService: BreadcrumbService) {
     breadcrumbService.breadcrumb = 'tools/OpenApi Viewer';
   }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { DomSanitizer, Title } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import { MarkedService } from '@app/shared/markdown/marked.service';
 import { MessageService } from '@app/shared/message/message.service';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
@@ -16,14 +16,12 @@ export class MdwriterComponent implements OnInit {
   });
 
   constructor(
-    title: Title,
     breadcrumbService: BreadcrumbService,
     private markedService: MarkedService,
     private domSanitizer: DomSanitizer,
     private messageService: MessageService,
     private modal: NgbModal
   ) {
-    title.setTitle('GitHub Flavored Markdown Writer | Kemu Tools');
     breadcrumbService.breadcrumb = 'tools/GitHub Flavored Markdown Writer';
   }
 

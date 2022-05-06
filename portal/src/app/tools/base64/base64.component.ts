@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { MessageService } from '@app/shared/message/message.service';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
@@ -15,8 +14,7 @@ export class Base64Component implements OnInit {
     base64Data: new FormControl(''),
   });
 
-  constructor(title: Title, breadCrumbService: BreadcrumbService, private messageService: MessageService) {
-    title.setTitle('Base64 Encoder/Decoder | Kemu Tools');
+  constructor(breadCrumbService: BreadcrumbService, private messageService: MessageService) {
     breadCrumbService.breadcrumb = '/tools/Base64 Encoder/Decoder';
   }
 

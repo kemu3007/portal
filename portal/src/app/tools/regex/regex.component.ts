@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { Title } from '@angular/platform-browser';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
 
@@ -16,8 +15,7 @@ export class RegexComponent implements OnInit {
 
   matches: RegExpMatchArray[] = [];
 
-  constructor(title: Title, breadcrumbService: BreadcrumbService) {
-    title.setTitle('Regex Checker | Kemu Tools');
+  constructor(breadcrumbService: BreadcrumbService) {
     breadcrumbService.breadcrumb = 'tools/Regex Checker';
   }
 
