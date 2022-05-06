@@ -22,13 +22,5 @@ export class IndexComponent implements OnInit {
 
   ngOnInit(): void {
     this.toolsService.get().subscribe((tools) => (this.tools = tools));
-    const redirectTo = this.route.snapshot.queryParamMap.get('to');
-    const queryParams = new URLSearchParams(this.route.snapshot.queryParamMap.get('search') ?? '');
-    if (redirectTo) {
-      this.router.navigate([redirectTo], {
-        fragment: this.route.snapshot.fragment ?? undefined,
-        queryParams: Object.fromEntries(queryParams),
-      });
-    }
   }
 }
