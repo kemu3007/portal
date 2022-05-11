@@ -1,0 +1,4 @@
+<img class="img-fluid" [src]="src" [alt]="alt" [ngClass]="{ loading: !isLoaded }" (load)="imgOnLoad()" />
+<div class="spinner-grow text-secondary" *ngIf="!isLoaded" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>

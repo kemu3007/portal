@@ -21,6 +21,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { YearPipe } from './pipes/year.pipe';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { LazyImgComponent } from './lazy-img/lazy-img.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AdsModalComponent,
     ProfileComponent,
     YearPipe,
+    LazyImgComponent,
   ],
   imports: [
     CommonModule,
@@ -69,6 +71,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatInputModule,
     YearPipe,
     MatPaginatorModule,
+    LazyImgComponent,
   ],
 })
 export class SharedModule {}
