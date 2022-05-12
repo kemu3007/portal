@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class LazyImgComponent {
   @Input() src!: string;
   @Input() alt: string = 'no image';
+  @Input() title: string | null = null;
 
   isLoaded = false;
 
