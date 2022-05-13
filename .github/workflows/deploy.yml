@@ -59,10 +59,10 @@ jobs:
           npm run compodoc
           npm run build
       - name: deploy cloudflare
+        working-directory: ./portal/dist/portal
         uses: cloudflare/pages-action@v1.0.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: portal
-          directory: portal/dist/portal/**
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
