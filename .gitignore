@@ -64,13 +64,9 @@ venv/
 
 articles.json
 
-portal/src/blog/
-portal/src/log/
-portal/src/tools/
-portal/src/contact/
+portal/src/$/
 portal/src/sitemap.xml
 portal/src/rss.xml
-
 
 portal/src/assets/articles/
 portal/src/assets/logs/

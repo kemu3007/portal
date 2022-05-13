@@ -28,11 +28,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets",
-              "src/blog",
-              "src/doc",
-              "src/log",
-              "src/tools",
-              "src/contact",
+              "src/$",
               "src/robots.txt",
               "src/sitemap.xml",
               "src/rss.xml"

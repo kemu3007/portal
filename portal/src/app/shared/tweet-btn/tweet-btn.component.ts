@@ -18,6 +18,6 @@ export class TweetBtnComponent implements AfterViewInit {
   }
 
   get url() {
-    return window.location.toString().replace('#/', '') + '/';
+    return window.location.origin + '/$' + window.location.pathname + window.location.search;
   }
 }

@@ -16,16 +16,14 @@ class Article(TypedDict):
     labels: Label
 
 
-meta = {"#/": {"title": "Kemu Portal", "description": "kemuのポータルサイト Angular/Djangoについての記事を主に書いているブログ, 旅行記録など置いてます。"}}
+meta = {}
 
 
 def create_page(html: str, img: str, title: str, description: str, path: Path):
     html = html.replace("page_image", img).replace("page_title", title).replace("page_description", description)
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(html)
-
-    url = "#" + str(path).replace("portal/src", "")
-    meta[url] = {"title": title, "description": description}
+    meta[str(path)] = {"title": title, "description": description}
 
 
 if __name__ == "__main__":
@@ -34,6 +32,16 @@ if __name__ == "__main__":
     logs: Dict[str, Article] = json.loads((Path() / "portal/src/assets/logs/list.json").read_text())
 
     base_html = Path("./base.html").read_text()
+    base_folder = Path("portal/src/$/").mkdir(exist_ok=True)
+    create_page(
+        base_html,
+        "https://portal.kemu.site/assets/images/home.png",
+        "Kemu Portal",
+        """
+        Angular / DjangoがメインのTech Note, 旅行ログなどを掲載しています。
+        """,
+        Path("portal/src/$/"),
+    )
 
     create_page(
         base_html,
@@ -43,7 +51,7 @@ if __name__ == "__main__":
         Angular / DjangoがメインのTech Noteです。
         転職先/個人での仕事の依頼など可能です。Contactページより連絡を行なってください。
         """,
-        Path("portal/src/blog"),
+        Path("portal/src/$/blog"),
     )
     for key, data in articles.items():
         create_page(
@@ -51,7 +59,7 @@ if __name__ == "__main__":
             f"https://portal.kemu.site/assets/images/{key}.png",
             f"{data['title']} | Kemu Tech Blog",
             data["body"],
-            Path(f"portal/src/blog/{key}"),
+            Path(f"portal/src/$/blog/{key}"),
         )
     # log
     create_page(
@@ -62,7 +70,7 @@ if __name__ == "__main__":
         旅行ログなど雑記置き場、日ごろは東京にいたり淡路島にいたり大阪にいたり。
         淡路島のログが多めになるかと思います(写真が撮りやすいということもあるので)
         """,
-        Path("portal/src/log"),
+        Path("portal/src/$/log"),
     )
     for key, data in logs.items():
         create_page(
@@ -70,7 +78,7 @@ if __name__ == "__main__":
             f"https://portal.kemu.site/assets/images/{key}.png",
             f"{data['title']} | Kemu Log",
             data["body"],
-            Path(f"portal/src/log/{key}"),
+            Path(f"portal/src/$/log/{key}"),
         )
 
     # tools
@@ -79,7 +87,7 @@ if __name__ == "__main__":
         f"https://portal.kemu.site/assets/images/tools.png",
         "Kemu Tools",
         "自作ツール置き場 / Markdown Writer, QrCode Maker, JSON Typer, JSON Formatter, Base64 Translator...",
-        Path(f"portal/src/tools"),
+        Path(f"portal/src/$/tools"),
     )
     # ip address checker
     create_page(
@@ -89,7 +97,7 @@ if __name__ == "__main__":
         """
         IP Address, User Agentなどの端末情報を確認することができ、結果を自動的にローカルストレージに保存することで、過去データとの称号を可能にしています。
         """,
-        Path(f"portal/src/tools/userInfo"),
+        Path(f"portal/src/$/tools/userInfo"),
     )
     # associate link maker
     create_page(
@@ -100,7 +108,7 @@ if __name__ == "__main__":
         Amazon Associate IDと商品URLを入力することで商品リンクにアソシエイトIDの紐付けを可能にしています。
         ローカルストレージ上に前回入力したデータを保存することで再入力の手間を削減しています。
         """,
-        Path(f"portal/src/tools/amazonAssociate"),
+        Path(f"portal/src/$/tools/amazonAssociate"),
     )
     # JSON Typer
     create_page(
@@ -111,7 +119,7 @@ if __name__ == "__main__":
         任意のJSONの値をTypeScriptのinterface型に変換します。
         ローカルストレージ上に前回入力されたデータを保存することで利便性を高めており、ワンクリックで結果をコピーすることが可能です。
         """,
-        Path(f"portal/src/tools/jsonTyper"),
+        Path(f"portal/src/$/tools/jsonTyper"),
     )
 
     # realtime
@@ -124,7 +132,7 @@ if __name__ == "__main__":
         現在時刻を100ms単位で更新し、正確な日時をお知らせします。
         指定した時刻に指定したワードを呟きたいTwitterのmeme / 先着順の申し込みカウントダウンのようなケースでお使いください。
         """,
-        Path(f"portal/src/tools/realtime"),
+        Path(f"portal/src/$/tools/realtime"),
     )
 
     # JSON Formatter
@@ -137,7 +145,7 @@ if __name__ == "__main__":
         未整形のJSONデータを整形します。
         ローカルストレージ上に前回入力されたデータを保存することで利便性を高めており、ワンクリックで結果をコピーすることが可能です。
         """,
-        Path(f"portal/src/tools/jsonFormatter"),
+        Path(f"portal/src/$/tools/jsonFormatter"),
     )
 
     # Base64 Encoder/Decoder
@@ -150,7 +158,7 @@ if __name__ == "__main__":
         文字列データをBase64に、Base64データを文字列に変換します。
         マルチバイト文字にも対応しており、フロントエンドからバックエンドにJSON形式でファイルを送信する場合のダミーデータ作成などに便利です。
         """,
-        Path(f"portal/src/tools/base64"),
+        Path(f"portal/src/$/tools/base64"),
     )
 
     # GitHub Flavored Markdown Writer
@@ -162,7 +170,7 @@ if __name__ == "__main__":
         """
         GitHub Flavored MarkdownをHTMLに変換します。変換データ及び元のMarkdwonデータをワンクリックでコピー可能です。
         """,
-        Path(f"portal/src/tools/mdwriter"),
+        Path(f"portal/src/$/tools/mdwriter"),
     )
 
     # Regex Checker
@@ -174,7 +182,7 @@ if __name__ == "__main__":
         """
         正規表現とテキストを入力することでテキストを対象とした正規表現のテストを行い、index, マッチ文字列を返却します。
         """,
-        Path(f"portal/src/tools/regex"),
+        Path(f"portal/src/$/tools/regex"),
     )
 
     # Year Checker
@@ -186,7 +194,7 @@ if __name__ == "__main__":
         """
         誕生日をもとに各種卒業年度/厄年といった年月日を計算します。
         """,
-        Path(f"portal/src/tools/year"),
+        Path(f"portal/src/$/tools/year"),
     )
 
     # OpenApi Viewer
@@ -198,7 +206,7 @@ if __name__ == "__main__":
         """
         OpenApi JSON/YAMLをSwagger-UI / Redoc UIで表示します。
         """,
-        Path(f"portal/src/tools/openapi"),
+        Path(f"portal/src/$/tools/openapi"),
     )
 
     # contact
@@ -210,7 +218,7 @@ if __name__ == "__main__":
         """
         仕事の依頼/転職の誘いなどはこちらからお願いします。セールスメールはお控えください。
         """,
-        Path(f"portal/src/contact"),
+        Path(f"portal/src/$/contact"),
     )
     # nav count
     Path("portal/src/assets/count.json").write_text(json.dumps({"blog": len(articles.keys()), "log": len(logs.keys())}))
