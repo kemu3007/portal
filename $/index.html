@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <script>
+      let path = window.location.pathname
+      if (!path.endsWith("/")) {
+        path += "/"
+      }
+      path = path.replace("$/", "")
+      window.location.href = window.location.origin + path + window.location.search 
+    </script>
+    <meta charset="utf-8" />
+    <title>Kemu Portal</title>
+    <base href="/" />
+    <meta name="description" content="
+        Angular / DjangoがメインのTech Note, 旅行ログなどを掲載しています。
+        " />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Kemu Portal" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="
+        Angular / DjangoがメインのTech Note, 旅行ログなどを掲載しています。
+        " />
+    <meta property="og:url" content="https://portal.kemu.site" />
+    <meta property="og:image" content="https://portal.kemu.site/assets/images/home.png" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://portal.kemu.site/assets/images/home.png" />
+    <meta name="twitter:description" content="
+        Angular / DjangoがメインのTech Note, 旅行ログなどを掲載しています。
+        " />
+    <meta name="twitter:title" content="Kemu Portal" />
+    <meta name="twitter:url" content="https://twitter.com/kemu43" />
+    <meta name="author" content="kemu">
+    <meta name="keywords" content="Python, TypeScript, Angular, Django, Nuxt, Docker, AWS">
+    <link rel="alternate" type="application/rss+xml" title="Kemu Tech Blog RSS" href="https://portal.kemu.site/rss.xml" />
+    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/29157528?v=4" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6219032039771696" crossorigin="anonymous"></script>
+  </head>
+</html>
