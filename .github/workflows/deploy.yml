@@ -59,7 +59,7 @@ jobs:
           npm run compodoc
           npm run ng deploy -- --cname=portal.kemu.site
       - name: deploy cloudflare
-        uses: cloudflare/pages-action@1
+        uses: cloudflare/pages-action@v1.0.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
