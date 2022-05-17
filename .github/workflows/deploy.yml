@@ -54,6 +54,9 @@ jobs:
           npm run compodoc
           npm run ng build
           cp dist/portal/index.html dist/portal/404.html
+      - name: resolve directory
+        - run: |
+          python resolve_directory.py
       - name: deploy gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
