@@ -54,12 +54,12 @@ jobs:
           npm run compodoc
           npm run ng build
           cp dist/portal/index.html dist/portal/404.html
-          echo "portal.kemu.site" >> CNAME
       - name: deploy gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./portal/dist/portal
+          cname: portal.kemu.site
       - name: deploy cloudflare
         uses: cloudflare/pages-action@v1.0.0
         with:
