@@ -33,8 +33,8 @@ export class RouterService {
         } else if (event instanceof NavigationEnd) {
           this.loadingService.loading = false;
           this.displayOrWaitAds();
-          if (window.location.hash.toString() in metaJson) {
-            const meta = (metaJson as any)[window.location.hash.toString()];
+          const meta = (metaJson as any)[window.location.pathname];
+          if (meta) {
             this.title.setTitle(meta.title);
             this.meta.updateTag({ name: 'description', content: meta.title });
             this.meta.updateTag({ property: 'og:description', content: meta.description });

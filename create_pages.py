@@ -23,7 +23,10 @@ def create_page(html: str, img: str, title: str, description: str, path: Path):
     html = html.replace("page_image", img).replace("page_title", title).replace("page_description", description)
     path.mkdir(exist_ok=True)
     (path / "index.html").write_text(html)
-    meta[str(path)] = {"title": title, "description": description}
+    meta[str(path).replace("$/", "").strip("$").replace("portal/src", "")] = {
+        "title": title,
+        "description": description.strip(),
+    }
 
 
 if __name__ == "__main__":
