@@ -53,18 +53,23 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-      - name: deploy
-        working-directory: ./portal
+      - name: build
         run: |
           npm run compodoc
-          npm run ng deploy -- --cname=portal.kemu.site
+          npm run ng build
+          cp ./portal/dist/portal/index.html ./portal/dist/portal/404.html
+      - name: deploy gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./portal/dist/portal
       - name: deploy cloudflare
         uses: cloudflare/pages-action@v1.0.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: portal
-          directory: portal/dist/portal/
+          directory: portal/dist/portal
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v2
         with:
