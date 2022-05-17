@@ -63,15 +63,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./portal/dist/portal
           cname: portal.kemu.site
-      - name: deploy cloudflare
-        uses: cloudflare/pages-action@v1.0.0
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: portal
-          directory: portal/dist/portal
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/upload-artifact@v2
-        with:
-          name: artifacts
-          path: ./portal/dist/portal/
