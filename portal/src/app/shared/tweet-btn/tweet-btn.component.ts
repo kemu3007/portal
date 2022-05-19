@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   `,
 })
 export class TweetBtnComponent {
-  btnText = ""
+  btnText = '';
 
   get href() {
     const href = new URL('https://twitter.com/share');
@@ -20,11 +20,11 @@ export class TweetBtnComponent {
   }
 
   mouseOver() {
-    this.btnText = "Share This Page"
+    this.btnText = 'Share This Page';
   }
 
   mouseOut() {
-    this.btnText = ""
+    this.btnText = '';
   }
 
   get url() {
