@@ -29,6 +29,9 @@ if __name__ == "__main__":
     atom_link.set("href", "https://portal.kemu.site/rss.xml")
     atom_link.set("rel", "self")
     atom_link.set("type", "application/rss+xml")
+
+    append_child(channel, "lastBuildDate", datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0900"))
+    append_child(channel, "category", "Python/TypeScript/Django/Angular/Nuxt/Vue/Docker/GitHub Pages")
     append_child(channel, "title", "Kemu Tech Blog")
     append_child(channel, "link", "https://portal.kemu.site/")
     append_child(channel, "description", "Kemu Tech Blogでは主にDjango / Angularに関する技術的な知見のメモ、共有を行っています。")
@@ -36,6 +39,7 @@ if __name__ == "__main__":
     append_child(channel, "copyright", "©️ 2017-2022 kemu All Rights Reserved.")
     append_child(channel, "managingEditor", "kemu430113@gmail.com(kemu)")
     append_child(channel, "webMaster", "kemu430113@gmail.com(kemu)")
+    append_child(channel, "generator", "https://github.com/kemu3007/portal/blob/master/create_rss.py")
 
     all_articles = articles | logs
 
@@ -53,6 +57,10 @@ if __name__ == "__main__":
             append_child(item, "link", f"https://portal.kemu.site/$/log/{id}/")
         else:
             append_child(item, "link", f"https://portal.kemu.site/$/blog/{id}/")
+
+        append_child(item, "enclosure", article.get("photo") or f"https://portal.kemu.site/assets/images/{id}.png")
+
+        append_child(item, "category", "/".join([label["name"] for label in article["labels"]]))
 
         append_child(item, "description", escape(article["body"]))
 
