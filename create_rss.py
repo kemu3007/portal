@@ -23,8 +23,12 @@ def append_child(parent: ElementTree.Element, tag: str, text: str):
 if __name__ == "__main__":
     rss = ElementTree.Element("rss")
     rss.set("version", "2.0")
+    rss.set("xmlns:atom", "http://www.w3.org/2005/Atom")
     channel = ElementTree.SubElement(rss, "channel")
-
+    atom_link = ElementTree.SubElement(channel, "atom:link")
+    atom_link.set("href", "https://portal.kemu.site/rss.xml")
+    atom_link.set("rel", "self")
+    atom_link.set("type", "application/rss+xml")
     append_child(channel, "title", "Kemu Tech Blog")
     append_child(channel, "link", "https://portal.kemu.site/")
     append_child(channel, "description", "Kemu Tech Blogでは主にDjango / Angularに関する技術的な知見のメモ、共有を行っています。")
