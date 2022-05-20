@@ -58,8 +58,6 @@ if __name__ == "__main__":
         else:
             append_child(item, "link", f"https://portal.kemu.site/$/blog/{id}/")
 
-        append_child(item, "enclosure", article.get("photo") or f"https://portal.kemu.site/assets/images/{id}.png")
-
         append_child(item, "category", "/".join([label["name"] for label in article["labels"]]))
 
         append_child(item, "description", escape(article["body"]))
