@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from '@ngneat/reactive-forms';
 import { MessageService } from '@app/shared/message/message.service';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
@@ -10,7 +10,7 @@ import mermaid from 'mermaid';
   selector: 'app-mermaid',
   templateUrl: './mermaid.component.html',
 })
-export class MermaidComponent implements OnInit {
+export class MermaidComponent implements OnInit, AfterViewInit {
   @ViewChild('mermaid') mermaidDiv!: ElementRef<HTMLDivElement>;
 
   form = new FormGroup({
@@ -23,6 +23,9 @@ export class MermaidComponent implements OnInit {
 
   ngOnInit() {
     persistControl(this.form, 'mermaid', {}).subscribe();
+  }
+
+  ngAfterViewInit() {
     mermaid.initialize({ startOnLoad: true });
   }
 
