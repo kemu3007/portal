@@ -5,6 +5,7 @@ import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { persistControl } from '@ngneat/reactive-forms';
 import mermaid from 'mermaid';
+import { interval, take } from 'rxjs';
 
 @Component({
   selector: 'app-mermaid',
@@ -26,7 +27,9 @@ export class MermaidComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    mermaid.initialize({ startOnLoad: true });
+    this.mermaidDiv.nativeElement.removeAttribute('data-processed');
+    this.mermaidDiv.nativeElement.innerHTML = this.form.controls.mermaid.value;
+    mermaid.init('#mermaid');
   }
 
   copy(text: string) {
