@@ -1,8 +1,8 @@
+import { Article, ArticleDetail } from './articles';
+import { Comment } from './comments';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
-import { Comment } from './comments';
-import { Article, ArticleDetail } from './articles';
 
 @Injectable({
   providedIn: 'root',

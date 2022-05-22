@@ -1,6 +1,6 @@
+import { UserInfo } from './user-info';
 import { createStore, withProps, select } from '@ngneat/elf';
 import { localStorageStrategy, persistState } from '@ngneat/elf-persist-state';
-import { UserInfo } from './user-info';
 
 interface state {
   histories: UserInfo[];
@@ -22,7 +22,7 @@ export class UserInfoState {
       }
     }
     histories.push(history);
-    store.update((state) => (state = { histories: histories }));
+    store.update((_) => ({ histories: histories }));
   }
 
   reset() {

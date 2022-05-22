@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToolsService } from '@app/shared/tools/tools.service';
 import { Tool } from '@app/shared/tools/tools';
+import { ToolsService } from '@app/shared/tools/tools.service';
 
 @Component({
   selector: 'app-tools-list',

@@ -1,4 +1,5 @@
 {
     "singleQuote": true,
-    "printWidth": 119
-}
+    "printWidth": 119,
+    "importOrderParserPlugins" : ["typescript", "decorators-legacy"]
+  }

@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, TemplateRef, ViewChild } from '@angular/core';
 import { AdsModalService } from './ads-modal.service';
+import { AfterViewInit, Component, TemplateRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-ads-modal',

@@ -1,6 +1,3 @@
-import { DecimalPipe } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { AmazonAssociateComponent } from './amazon-associate/amazon-associate.component';
 import { Base64Component } from './base64/base64.component';
 import { JsonFormatterComponent } from './json-formatter/json-formatter.component';
@@ -13,6 +10,9 @@ import { RegexComponent } from './regex/regex.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { YearCheckComponent } from './year-check/year-check.component';
+import { DecimalPipe } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {

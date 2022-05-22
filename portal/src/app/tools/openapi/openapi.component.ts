@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, OnInit, TemplateRef } from '@angular/core';
+import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
 import jsYaml from 'js-yaml';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 
 @Component({
   selector: 'app-openapi',

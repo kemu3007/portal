@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { interval, take, timer } from 'rxjs';
+import { interval, take } from 'rxjs';
 
 export interface AlertMessage {
   type: string;

@@ -1,12 +1,12 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
-import { MarkedService } from '@app/shared/markdown/marked.service';
-import { interval, take } from 'rxjs';
-import { Comment } from '@app/shared/articles/comments';
+import { ActivatedRoute } from '@angular/router';
 import { ArticleDetail } from '@app/shared/articles/articles';
 import { ArticlesService } from '@app/shared/articles/articles.service';
+import { Comment } from '@app/shared/articles/comments';
+import { MarkedService } from '@app/shared/markdown/marked.service';
+import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
+import { interval, take } from 'rxjs';
 
 @Component({
   selector: 'app-blog-detail',

@@ -21,7 +21,7 @@ export class JsonFormatterComponent implements OnInit {
 
   ngOnInit() {
     persistControl(this.form, 'json-formatter', {}).subscribe();
-    this.form.value$.pipe(distinctUntilChanged()).subscribe((data) => this.submit());
+    this.form.value$.pipe(distinctUntilChanged()).subscribe((_) => this.submit());
   }
 
   submit() {

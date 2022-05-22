@@ -1,5 +1,4 @@
 import { Component, TemplateRef } from '@angular/core';
-import { MessageService } from '@app/shared/message/message.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({

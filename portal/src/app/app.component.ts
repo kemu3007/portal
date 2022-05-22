@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { LoadingService } from './shared/loading/loading.service';
-import version from '@assets/version.json';
 import { RouterService } from './router.service';
+import { LoadingService } from './shared/loading/loading.service';
+import { Component } from '@angular/core';
+import version from '@assets/version.json';
 
 @Component({
   selector: 'app-root',

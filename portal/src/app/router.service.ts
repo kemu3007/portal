@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
-import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
-import { tap } from 'rxjs';
 import { AdsModalService } from './shared/ads-modal/ads-modal.service';
 import { LoadingService } from './shared/loading/loading.service';
 import { MessageService } from './shared/message/message.service';
 import { BreadcrumbService } from './shared/nav/breadcrumb.service';
+import { Injectable } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 import metaJson from '@assets/meta.json';
+import { tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { marked, Renderer } from 'marked';
-import crypt from 'crypto-es';
 //@ts-ignore
 import prism from '@assets/prism';
+import crypt from 'crypto-es';
+import { marked, Renderer } from 'marked';
 
 @Injectable({
   providedIn: 'root',

@@ -1,11 +1,11 @@
+import { UserInfo } from './user-info';
+import { UserInfoState } from './user-info.repository';
+import { UserInfoService } from './user-info.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from '@app/shared/message/message.service';
 import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { catchError, NEVER } from 'rxjs';
-import { UserInfo } from './user-info';
-import { UserInfoState } from './user-info.repository';
-import { UserInfoService } from './user-info.service';
 
 @Component({
   selector: 'app-user-info',

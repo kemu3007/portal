@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class MdescapePipe implements PipeTransform {
   removeSeed = ['\n', '\r', '\t', ' ', '[', ']', '-', /(http.*)/g, /(<img.*)/g];
 
-  transform(text: string, ...args: unknown[]): string {
+  transform(text: string, ..._: unknown[]): string {
     this.removeSeed.forEach((seed) => (text = text.replaceAll(seed, '')));
     return text + '...';
   }

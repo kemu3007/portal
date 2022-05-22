@@ -1,27 +1,27 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TweetBtnComponent } from './tweet-btn/tweet-btn.component';
-import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
-import { MessageComponent } from './message/message.component';
-import { LoadingComponent } from './loading/loading.component';
-import { AdsenseModule } from 'ng2-adsense';
-import { RouterModule } from '@angular/router';
-import { NavComponent } from './nav/nav.component';
-import { environment } from '@environments/environment';
-import { HttpClientModule } from '@angular/common/http';
-import { AmazonAdsComponent } from './amazon-ads/amazon-ads.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MdescapePipe } from './pipes/mdescape.pipe';
-import { AdsComponent } from './ads/ads.component';
 import { AdsModalComponent } from './ads-modal/ads-modal.component';
-import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
-import { MatTabsModule } from '@angular/material/tabs';
+import { AdsComponent } from './ads/ads.component';
+import { AmazonAdsComponent } from './amazon-ads/amazon-ads.component';
+import { LazyImgComponent } from './lazy-img/lazy-img.component';
+import { LoadingComponent } from './loading/loading.component';
+import { MessageComponent } from './message/message.component';
+import { NavComponent } from './nav/nav.component';
+import { MdescapePipe } from './pipes/mdescape.pipe';
+import { YearPipe } from './pipes/year.pipe';
 import { ProfileComponent } from './profile/profile.component';
+import { TweetBtnComponent } from './tweet-btn/tweet-btn.component';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
-import { YearPipe } from './pipes/year.pipe';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { LazyImgComponent } from './lazy-img/lazy-img.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { RouterModule } from '@angular/router';
+import { environment } from '@environments/environment';
+import { NgbModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdsenseModule } from 'ng2-adsense';
 
 @NgModule({
   declarations: [
