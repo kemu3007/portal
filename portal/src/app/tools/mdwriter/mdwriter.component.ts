@@ -9,6 +9,7 @@ import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
 @Component({
   selector: 'app-mdwriter',
   templateUrl: './mdwriter.component.html',
+  styleUrls: ['./mdwriter.component.scss'],
 })
 export class MdwriterComponent implements OnInit {
   form = new FormGroup({

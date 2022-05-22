@@ -13,7 +13,7 @@ import { ArticlesService } from '@app/shared/articles/articles.service';
   templateUrl: './log-detail.component.html',
   styleUrls: ['./log-detail.component.scss'],
 })
-export class LogDetailComponent implements OnInit, AfterViewInit {
+export class LogDetailComponent implements OnInit {
   marked = this.markedService.marked;
   html: SafeHtml = '';
   _article?: ArticleDetail;
@@ -53,17 +53,6 @@ export class LogDetailComponent implements OnInit, AfterViewInit {
     this.articlesService
       .getComments(`/assets/comments/${this.issueId}.json`)
       .subscribe((comments) => (this.comments = comments));
-  }
-
-  ngAfterViewInit(): void {
-    interval(500)
-      .pipe(take(1))
-      .subscribe((_) => {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js';
-        const container = document.getElementById('container')!;
-        container.insertAdjacentElement('afterend', script);
-      });
   }
 
   get issueId() {

@@ -13,7 +13,7 @@ import { ArticlesService } from '@app/shared/articles/articles.service';
   templateUrl: './blog-detail.component.html',
   styleUrls: ['./blog-detail.component.scss'],
 })
-export class BlogDetailComponent implements OnInit, AfterViewInit {
+export class BlogDetailComponent implements OnInit {
   marked = this.markedService.marked;
   articles: Record<string, Article> = {};
   _article?: ArticleDetail;
@@ -60,18 +60,6 @@ export class BlogDetailComponent implements OnInit, AfterViewInit {
     this.articlesService
       .getComments(`/assets/comments/${this.issueId}.json`)
       .subscribe((comments) => (this.comments = comments));
-  }
-
-  ngAfterViewInit(): void {
-    interval(500)
-      .pipe(take(1))
-      .subscribe((_) => {
-        const script = document.createElement('script');
-        script.src =
-          'https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sons-of-obsidian';
-        const container = document.getElementById('container')!;
-        container.insertAdjacentElement('afterend', script);
-      });
   }
 
   get adsLength(): number {

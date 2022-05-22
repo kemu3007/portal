@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { marked, Renderer } from 'marked';
 import crypt from 'crypto-es';
-import hljs from 'highlight.js';
+//@ts-ignore
+import prism from '@assets/prism';
 
 @Injectable({
   providedIn: 'root',
@@ -44,9 +45,12 @@ export class MarkedService {
     renderer.table = (header, body) => `<table class="table table-bordered table-striped">${header}${body}</table>`;
     this.marked.setOptions({
       renderer,
-      langPrefix: 'prettyprint linenums language-',
       gfm: true,
       breaks: true,
+      langPrefix: 'language-',
+      highlight: (code, lang) => {
+        return lang ? prism.highlight(code, prism.languages[lang] ?? prism.languages['javascript'], lang) : code;
+      },
     });
   }
 }
