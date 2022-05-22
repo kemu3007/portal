@@ -24,4 +24,4 @@ jobs:
           pip install -r requirements.lock.txt
       - name: lint
         run: |
-          make lint |& -a $GITHUB_STEP_SUMMARY
+          make lint |& tee -a $GITHUB_STEP_SUMMARY

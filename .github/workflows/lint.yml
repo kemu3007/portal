@@ -29,4 +29,4 @@ jobs:
       - name: lint
         working-directory: ./portal
         run: |
-          npm run lint |& -a $GITHUB_STEP_SUMMARY
+          npm run lint |& tee -a $GITHUB_STEP_SUMMARY

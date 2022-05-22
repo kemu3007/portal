@@ -52,7 +52,7 @@ jobs:
         working-directory: ./portal
         run: |
           npm run compodoc |& tee -a $GITHUB_STEP_SUMMARY
-          npm run ng build |& -a $GITHUB_STEP_SUMMARY
+          npm run ng build |& tee -a $GITHUB_STEP_SUMMARY
           cp dist/portal/index.html dist/portal/404.html
       - name: resolve directory
         run: |
