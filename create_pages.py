@@ -212,6 +212,18 @@ if __name__ == "__main__":
         Path(f"portal/src/$/tools/openapi"),
     )
 
+    # Mermaid Live Editor
+
+    create_page(
+        base_html,
+        f"https://portal.kemu.site/assets/images/mermaid.png",
+        "Mermaid Live Editor | Kemu Tools",
+        """
+        Mermaidをリアルタイムで描画し、記述を支援します。
+        """,
+        Path(f"portal/src/$/tools/mermaid"),
+    )
+
     # contact
 
     create_page(

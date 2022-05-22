@@ -9,7 +9,7 @@ import { Tool } from '@app/shared/tools/tools';
 })
 export class ToolsListComponent implements OnInit {
   tools: Tool[] = [];
-  pinned: string[] = ['GitHub Flavored Markdown Writer', 'Regex Checker', 'JSON Typer'];
+  pinned: string[] = ['GitHub Flavored Markdown Writer', 'Regex Checker', 'JSON Typer', 'Mermaid Live Editor'];
 
   constructor(private router: Router, private toolsService: ToolsService) {}
 

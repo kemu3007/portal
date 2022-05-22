@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-between">
+    <h2 class="mb-0">Mermaid Live Editor</h2>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      Mermaid
+      <button matRipple class="ms-1 btn btn-sm" (click)="copy(form.controls.mermaid.value)">
+        <i class="bi bi-stickies"></i>
+      </button>
+    </div>
+    <div class="col-6">Image</div>
+  </div>
+  <hr class="my-0" />
+  <div class="row">
+    <div class="col-6">
+      <form [formGroup]="form">
+        <textarea
+          #mdInput
+          class="form-control overflow-auto"
+          (keydown)="handleKeyDown($event, mdInput)"
+          (input)="handleInput()"
+          formControlName="mermaid"
+          style="height: calc(100vh - 120px); tab-size: 2"
+        ></textarea>
+      </form>
+    </div>
+    <div class="col-6">
+      <div class="overflow-auto" style="height: calc(100vh - 120px)">
+        <div class="mermaid" #mermaid id="mermaid">{{ form.controls.mermaid.value }}</div>
+      </div>
+    </div>
+  </div>
+  <hr class="my-0" />
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header py-1 d-flex justify-content-end">
+    <button class="btn btn-sm" (click)="close()">&times;</button>
+  </div>
+  <div class="modal-body"></div>
+</ng-template>

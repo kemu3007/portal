@@ -1,5 +1,11 @@
 [
   {
+    "label": "Mermaid Live Editor",
+    "link": "/tools/mermaid",
+    "description": "Mermaidをリアルタイムで描画し、記述を支援します。",
+    "external": false
+  },
+  {
     "label": "OpenApi Viewer",
     "link": "/tools/openapi",
     "description": "OpenApi JSON/YAMLをSwagger-UI / Redoc形式で表示します。",

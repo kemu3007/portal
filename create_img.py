@@ -95,4 +95,5 @@ if __name__ == "__main__":
     write_tools_image("Regex Checker", "regex")
     write_tools_image("Year Checker", "year")
     write_tools_image("OpenApi Viewer", "openapi")
+    write_tools_image("Mermaid Live Editor", "mermaid")
     write_weeds_iframe()

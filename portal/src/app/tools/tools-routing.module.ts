@@ -6,6 +6,7 @@ import { Base64Component } from './base64/base64.component';
 import { JsonFormatterComponent } from './json-formatter/json-formatter.component';
 import { JsonTyperComponent } from './json-typer/json-typer.component';
 import { MdwriterComponent } from './mdwriter/mdwriter.component';
+import { MermaidComponent } from './mermaid/mermaid.component';
 import { OpenapiComponent } from './openapi/openapi.component';
 import { RealtimeComponent } from './realtime/realtime.component';
 import { RegexComponent } from './regex/regex.component';
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path: 'openapi',
     component: OpenapiComponent,
+  },
+  {
+    path: 'mermaid',
+    component: MermaidComponent,
   },
 ];
 

@@ -40,6 +40,7 @@ if __name__ == "__main__":
     add_url_element(urlset, "https://portal.kemu.site/tools/regex/")
     add_url_element(urlset, "https://portal.kemu.site/tools/year/")
     add_url_element(urlset, "https://portal.kemu.site/tools/openapi/")
+    add_url_element(urlset, "https://portal.kemu.site/tools/mermaid/")
     add_url_element(urlset, "https://portal.kemu.site/doc/")
 
     for article_id in articles_list.keys():

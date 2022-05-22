@@ -13,6 +13,7 @@ import { MdwriterComponent } from './mdwriter/mdwriter.component';
 import { RegexComponent } from './regex/regex.component';
 import { YearCheckComponent } from './year-check/year-check.component';
 import { OpenapiComponent } from './openapi/openapi.component';
+import { MermaidComponent } from './mermaid/mermaid.component';
 
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
@@ -28,6 +29,7 @@ import { OpenapiComponent } from './openapi/openapi.component';
     RegexComponent,
     YearCheckComponent,
     OpenapiComponent,
+    MermaidComponent,
   ],
   imports: [CommonModule, SharedModule, ToolsRoutingModule],
 })
