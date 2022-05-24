@@ -1,0 +1,864 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>portal documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">portal documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  JsonTyperComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/tools/json-typer/json-typer.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-json-typer</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./json-typer.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#error" >error</a>
+                            </li>
+                            <li>
+                                <a href="#escapeString" >escapeString</a>
+                            </li>
+                            <li>
+                                <a href="#form" >form</a>
+                            </li>
+                            <li>
+                                <a href="#results" >results</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#copy" >copy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#submit" >submit</a>
+                            </li>
+                            <li>
+                                <a href="#typer" >typer</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#resultText" >resultText</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/tools/json-typer/json-typer.component.ts:11</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>messageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>breadcrumbService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BreadcrumbService.html" target="_self" >BreadcrumbService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="copy"></a>
+                    <span class="name">
+                        <span ><b>copy</b></span>
+                        <a href="#copy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>copy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/tools/json-typer/json-typer.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/tools/json-typer/json-typer.component.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submit"></a>
+                    <span class="name">
+                        <span ><b>submit</b></span>
+                        <a href="#submit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/tools/json-typer/json-typer.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="typer"></a>
+                    <span class="name">
+                        <span ><b>typer</b></span>
+                        <a href="#typer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>typer(dict: Record<string | any>, clsName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, space: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/tools/json-typer/json-typer.component.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dict</td>
+                                    <td>
+                                            <code>Record&lt;string | any&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>clsName</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&#x27;Root&#x27;</code>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>space</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>&#x27;\t&#x27;</code>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="error"></a>
+                    <span class="name">
+                        <span ><b>error</b></span>
+                        <a href="#error"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/tools/json-typer/json-typer.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="escapeString"></a>
+                    <span class="name">
+                        <span ><b>escapeString</b></span>
+                        <a href="#escapeString"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>/\-|\+/g</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/tools/json-typer/json-typer.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="form"></a>
+                    <span class="name">
+                        <span ><b>form</b></span>
+                        <a href="#form"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormGroup({
+    json: new FormControl(&#x27;&#x27;, Validators.required),
+    rootType: new FormControl(&#x27;Root&#x27;, Validators.required),
+    space: new FormControl(String.raw&#x60;\t&#x60;, Validators.required),
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/tools/json-typer/json-typer.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="results"></a>
+                    <span class="name">
+                        <span ><b>results</b></span>
+                        <a href="#results"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/tools/json-typer/json-typer.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="resultText"></a>
+                        <span class="name"><b>resultText</b><a href="#resultText"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>resultText()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/tools/json-typer/json-typer.component.ts:75</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Validators } from &#x27;@angular/forms&#x27;;
+import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
+import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
+import { FormGroup, FormControl, persistControl } from &#x27;@ngneat/reactive-forms&#x27;;
+
+@Component({
+  selector: &#x27;app-json-typer&#x27;,
+  templateUrl: &#x27;./json-typer.component.html&#x27;,
+})
+export class JsonTyperComponent implements OnInit {
+  constructor(private messageService: MessageService, breadcrumbService: BreadcrumbService) {
+    breadcrumbService.breadcrumb &#x3D; &#x27;/tools/JSON Typer&#x27;;
+  }
+  results: string[] &#x3D; [];
+  error: any;
+  form &#x3D; new FormGroup({
+    json: new FormControl(&#x27;&#x27;, Validators.required),
+    rootType: new FormControl(&#x27;Root&#x27;, Validators.required),
+    space: new FormControl(String.raw&#x60;\t&#x60;, Validators.required),
+  });
+  escapeString &#x3D; /\-|\+/g;
+
+  ngOnInit() {
+    persistControl(this.form, &#x27;jsonTyper&#x27;, {}).subscribe();
+    if (this.form.valid) {
+      this.submit();
+    }
+  }
+
+  submit() {
+    this.results &#x3D; [];
+    this.error &#x3D; null;
+    let spaceValue &#x3D; this.form.controls.space.value;
+    if (spaceValue &#x3D;&#x3D;&#x3D; String.raw&#x60;\t&#x60;) {
+      spaceValue &#x3D; &#x27;\t&#x27;;
+    }
+    try {
+      this.typer(JSON.parse(this.form.controls.json.value), this.form.controls.rootType.value, spaceValue);
+    } catch (error) {
+      this.error &#x3D; error;
+    }
+  }
+
+  typer(dict: Record&lt;string, any&gt;, clsName &#x3D; &#x27;Root&#x27;, space &#x3D; &#x27;\t&#x27;) {
+    let result &#x3D; &#x60;interface ${clsName} {\n&#x60;;
+    Object.keys(dict).forEach((key) &#x3D;&gt; {
+      let typeName: string &#x3D; typeof dict[key];
+      let keyName &#x3D; key;
+      if (typeof dict[key] &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+        if (Array.isArray(dict[key])) {
+          typeName &#x3D; &#x27;any[]&#x27;;
+        } else if (dict[key] &#x3D;&#x3D;&#x3D; null) {
+          typeName &#x3D; &#x27;null&#x27;;
+        } else {
+          typeName &#x3D; key.charAt(0).toUpperCase() + key.slice(1);
+          typeName &#x3D; typeName.replaceAll(&#x27;-&#x27;, &#x27;&#x27;);
+          this.typer(dict[key], typeName, space);
+        }
+      }
+      if (key.match(this.escapeString)) {
+        keyName &#x3D; &#x60;[&#x27;${key}&#x27;]&#x60;;
+      }
+      result +&#x3D; &#x60;${space}${keyName}: ${typeName};\n&#x60;;
+    });
+    result +&#x3D; &#x60;}\n&#x60;;
+    this.results.push(result);
+  }
+
+  copy() {
+    window.navigator.clipboard.writeText(this.resultText);
+    this.messageService.pushMessage({ type: &#x27;info&#x27;, body: &#x27;型情報をコピーしました。&#x27; });
+  }
+
+  get resultText() {
+    return [...this.results].reverse().join(&#x27;\n&#x27;);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;mt-3 container-fluid&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-8 border-end border-2&quot;&gt;
+      &lt;h2&gt;JSON Typer&lt;app-tweet-btn class&#x3D;&quot;ms-3&quot;&gt;&lt;/app-tweet-btn&gt;&lt;/h2&gt;
+      &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+        JSONの値をTypeScript interface定義に変換します。List Typeには非対応です。any[]と出力されます。&lt;br /&gt;&lt;br /&gt;
+        またJSONキーにスラッシュなどの値が含まれている場合正しく出力されないケースがあります。
+      &lt;/div&gt;
+      &lt;hr /&gt;
+      &lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;submit()&quot;&gt;
+        &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+          &lt;label for&#x3D;&quot;rootType&quot; class&#x3D;&quot;form-label&quot;&gt;RootTypeName&lt;/label&gt;
+          &lt;input id&#x3D;&quot;rootType&quot; class&#x3D;&quot;form-control&quot; formControlName&#x3D;&quot;rootType&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+          &lt;label class&#x3D;&quot;form-label&quot;&gt;Space&lt;/label&gt;&lt;br /&gt;
+          &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+            &lt;input class&#x3D;&quot;form-check-input&quot; name&#x3D;&quot;space&quot; type&#x3D;&quot;radio&quot; id&#x3D;&quot;tab&quot; formControlName&#x3D;&quot;space&quot; value&#x3D;&quot;\t&quot; /&gt;
+            &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;tab&quot;&gt;tab&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+            &lt;input class&#x3D;&quot;form-check-input&quot; name&#x3D;&quot;space&quot; type&#x3D;&quot;radio&quot; id&#x3D;&quot;two&quot; formControlName&#x3D;&quot;space&quot; value&#x3D;&quot;  &quot; /&gt;
+            &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;two&quot;&gt;two space&lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+            &lt;input class&#x3D;&quot;form-check-input&quot; name&#x3D;&quot;space&quot; type&#x3D;&quot;radio&quot; id&#x3D;&quot;four&quot; formControlName&#x3D;&quot;space&quot; value&#x3D;&quot;    &quot; /&gt;
+            &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;four&quot;&gt;four space&lt;/label&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+          &lt;label for&#x3D;&quot;json&quot; class&#x3D;&quot;form-label&quot;&gt;JSON&lt;/label&gt;
+          &lt;textarea id&#x3D;&quot;json&quot; class&#x3D;&quot;form-control&quot; rows&#x3D;&quot;10&quot; formControlName&#x3D;&quot;json&quot;&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;mt-3&quot;&gt;
+          &lt;button matRipple class&#x3D;&quot;btn btn-secondary&quot; [disabled]&#x3D;&quot;!form.valid&quot;&gt;TYPE&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+      &lt;hr /&gt;
+      RESULT &lt;button matRipple class&#x3D;&quot;ms-1 btn btn-sm&quot; (click)&#x3D;&quot;copy()&quot;&gt;&lt;i class&#x3D;&quot;bi bi-stickies&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+      &lt;p class&#x3D;&quot;text-danger&quot;&gt;{{ error }}&lt;/p&gt;
+      &lt;pre class&#x3D;&quot;mt-3&quot; style&#x3D;&quot;background-color: #f6f8fa; border-radius: 10px&quot;&gt;{{ resultText }}&lt;/pre&gt;
+      &lt;app-ads type&#x3D;&quot;list&quot;&gt;&lt;/app-ads&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-4 bg-light&quot;&gt;
+      &lt;app-ads type&#x3D;&quot;box&quot; [count]&#x3D;&quot;3&quot;&gt;&lt;/app-ads&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="mt-3 container-fluid">  <div class="row">    <div class="col-md-8 border-end border-2">      <h2>JSON Typer<app-tweet-btn class="ms-3"></app-tweet-btn></h2>      <div class="mt-3">        JSONの値をTypeScript interface定義に変換します。List Typeには非対応です。any[]と出力されます。<br /><br />        またJSONキーにスラッシュなどの値が含まれている場合正しく出力されないケースがあります。      </div>      <hr />      <form [formGroup]="form" (ngSubmit)="submit()">        <div class="mt-3">          <label for="rootType" class="form-label">RootTypeName</label>          <input id="rootType" class="form-control" formControlName="rootType" />        </div>        <div class="mt-3">          <label class="form-label">Space</label><br />          <div class="form-check form-check-inline">            <input class="form-check-input" name="space" type="radio" id="tab" formControlName="space" value="\t" />            <label class="form-check-label" for="tab">tab</label>          </div>          <div class="form-check form-check-inline">            <input class="form-check-input" name="space" type="radio" id="two" formControlName="space" value="  " />            <label class="form-check-label" for="two">two space</label>          </div>          <div class="form-check form-check-inline">            <input class="form-check-input" name="space" type="radio" id="four" formControlName="space" value="    " />            <label class="form-check-label" for="four">four space</label>          </div>        </div>        <div class="mt-3">          <label for="json" class="form-label">JSON</label>          <textarea id="json" class="form-control" rows="10" formControlName="json"></textarea>        </div>        <div class="mt-3">          <button matRipple class="btn btn-secondary" [disabled]="!form.valid">TYPE</button>        </div>      </form>      <hr />      RESULT <button matRipple class="ms-1 btn btn-sm" (click)="copy()"><i class="bi bi-stickies"></i></button>      <p class="text-danger">{{ error }}</p>      <pre class="mt-3" style="background-color: #f6f8fa; border-radius: 10px">{{ resultText }}</pre>      <app-ads type="list"></app-ads>    </div>    <div class="col-md-4 bg-light">      <app-ads type="box" [count]="3"></app-ads>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LazyImgComponent', 'selector': 'app-lazy-img'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MermaidComponent', 'selector': 'app-mermaid'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'JsonTyperComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'JsonTyperComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
