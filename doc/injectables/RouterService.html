@@ -256,8 +256,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="55"
-                            class="link-to-prism">src/app/router.service.ts:55</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/router.service.ts:58</a></div>
                 </td>
             </tr>
 
@@ -393,8 +393,11 @@ export class RouterService {
             this.title.setTitle(meta.title);
             this.meta.updateTag({ name: &#x27;description&#x27;, content: meta.title });
             this.meta.updateTag({ property: &#x27;og:description&#x27;, content: meta.description });
-            this.meta.updateTag({ name: &#x27;twitter:title&#x27;, content: meta.title });
             this.meta.updateTag({ name: &#x27;twitter:description&#x27;, content: meta.description });
+            this.meta.updateTag({ property: &#x27;og:title&#x27;, content: meta.title });
+            this.meta.updateTag({ name: &#x27;twitter:title&#x27;, content: meta.title });
+            this.meta.updateTag({ property: &#x27;og:image&#x27;, content: meta.img });
+            this.meta.updateTag({ name: &#x27;twitter:image&#x27;, content: meta.img });
           }
         } else if (event instanceof NavigationCancel || event instanceof NavigationError) {
           this.messageService.pushMessage({
