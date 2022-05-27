@@ -54,9 +54,9 @@ if __name__ == "__main__":
 
         append_child(item, "title", escape(article["title"]))
         if id in logs:
-            append_child(item, "link", f"https://portal.kemu.site/$/log/{id}/")
+            append_child(item, "link", f"https://portal.kemu.site/log/{id}/")
         else:
-            append_child(item, "link", f"https://portal.kemu.site/$/blog/{id}/")
+            append_child(item, "link", f"https://portal.kemu.site/blog/{id}/")
 
         append_child(item, "category", "/".join([label["name"] for label in article["labels"]]))
 

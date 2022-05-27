@@ -40,7 +40,7 @@ jobs:
           pip install -r requirements.lock.txt
           python export_issues.py
           python create_img.py
-          python create_pages.py
+          python create_meta.py
           python create_version.py
           python create_sitemap.py
           python create_rss.py
@@ -51,7 +51,7 @@ jobs:
       - name: build
         working-directory: ./portal
         run: |
-          npm run compodoc |& tee -a $GITHUB_STEP_SUMMARY
+          npm run compodoc
           npm run ng build |& tee -a $GITHUB_STEP_SUMMARY
           npm run scully |& tee -a $GITHUB_STEP_SUMMARY
       - name: deploy gh-pages

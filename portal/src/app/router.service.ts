@@ -38,8 +38,11 @@ export class RouterService {
             this.title.setTitle(meta.title);
             this.meta.updateTag({ name: 'description', content: meta.title });
             this.meta.updateTag({ property: 'og:description', content: meta.description });
-            this.meta.updateTag({ name: 'twitter:title', content: meta.title });
             this.meta.updateTag({ name: 'twitter:description', content: meta.description });
+            this.meta.updateTag({ property: 'og:title', content: meta.title });
+            this.meta.updateTag({ name: 'twitter:title', content: meta.title });
+            this.meta.updateTag({ property: 'og:image', content: meta.img });
+            this.meta.updateTag({ name: 'twitter:image', content: meta.img });
           }
         } else if (event instanceof NavigationCancel || event instanceof NavigationError) {
           this.messageService.pushMessage({

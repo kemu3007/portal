@@ -28,7 +28,7 @@ export class TweetBtnComponent {
   }
 
   get url() {
-    return window.location.origin + '/$' + window.location.pathname + window.location.search;
+    return window.location.origin + window.location.pathname + window.location.search;
   }
 
   get text() {
