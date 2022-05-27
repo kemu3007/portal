@@ -216,11 +216,12 @@ import { MAT_DATE_LOCALE } from &#x27;@angular/material/core&#x27;;
 import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
 import { BrowserAnimationsModule } from &#x27;@angular/platform-browser/animations&#x27;;
 import { NgbModule } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
+import { ScullyLibModule } from &#x27;@scullyio/ng-lib&#x27;;
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, SharedModule, BrowserAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, SharedModule, BrowserAnimationsModule, ScullyLibModule],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: &#x27;ja&#x27; }],
   bootstrap: [AppComponent],
 })

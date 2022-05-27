@@ -1,24 +1,24 @@
-<!DOCTYPE html><html lang="ja"><head>
+<!DOCTYPE html><html lang="ja"><head><meta name="generator" content="Scully 0.0.0">
     <meta charset="utf-8">
-    <title>Kemu Portal</title>
-    <meta name="description" content="kemuのポータルサイト Angular/Djangoについての記事を主に書いているブログ, 旅行記録など置いてます。">
+    <title>Angular よく書くコード/ライブラリ置き場 | Kemu Tech Blog</title>
+    <meta name="description" content="Angular よく書くコード/ライブラリ置き場 | Kemu Tech Blog">
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title" content="Kemu Portal">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="kemuのポータルサイト Angular/Djangoについての記事を主に書いているブログ, 旅行記録など置いてます。">
+    <meta property="og:description" content="ライブラリ  - [@ngneat/reactive-forms]     - 型安全にformGroupを記載    - フォームの入力内容をsession storageに保存しリロードされたタイミング等で保存/ロード    - [@datorama/akita]     - 状態管理ラ">
     <meta property="og:url" content="https://portal.kemu.site">
     <meta property="og:image" content="https://portal.kemu.site/assets/images/home.png">
     <meta property="og:locale" content="ja_JP">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://portal.kemu.site/assets/images/home.png">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:title" content="kemuのポータルサイト Angular/Djangoについての記事を主に書いているブログ, 旅行記録など置いてます。">
+    <meta name="twitter:description" content="ライブラリ  - [@ngneat/reactive-forms]     - 型安全にformGroupを記載    - フォームの入力内容をsession storageに保存しリロードされたタイミング等で保存/ロード    - [@datorama/akita]     - 状態管理ラ">
+    <meta name="twitter:title" content="Angular よく書くコード/ライブラリ置き場 | Kemu Tech Blog">
     <meta name="twitter:url" content="https://twitter.com/kemu43">
     <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/29157528?v=4">
     <link rel="alternate" type="application/rss+xml" title="Kemu Tech Blog RSS" href="https://portal.kemu.site/rss.xml">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-C3JC83Z1J0"></script>
+    <script src="https://partner.googleadservices.com/gampad/cookie.js?domain=localhost&amp;callback=_gfp_s_&amp;client=ca-pub-6219032039771696&amp;cookie=ID%3Dcd52d40b263c2f94-2297be780ed30050%3AT%3D1653619174%3ART%3D1653619174%3AS%3DALNI_Ma9Wx3X8GAnG8fgnI8tj0bRX0dYmg&amp;gpic=UID%3D000005c12fcfe90a%3AT%3D1653619174%3ART%3D1653619174%3AS%3DALNI_MZM_rR_C3XDuXnv2tuSr293FaIThw&amp;gpid_exp=1"></script><script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202205230101/show_ads_impl.js?client=ca-pub-6219032039771696&amp;plah=localhost%3A1864&amp;ama_t=adsense&amp;asntp=100&amp;asntpv=10&amp;asntpl=10&amp;asntpm=10&amp;asntpc=0&amp;asna=5&amp;asnd=5&amp;asnp=5&amp;asns=5&amp;asmat=0.9&amp;asptt=-1&amp;easpi=true&amp;asro=true&amp;easai=false" id="google_shimpl"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-C3JC83Z1J0"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -31,10 +31,210 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <style type="text/css">@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
     <style type="text/css">@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v129/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
-    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6219032039771696" crossorigin="anonymous"></script>
-  <style>.mat-typography{font:400 14px/20px Roboto,Helvetica Neue,sans-serif;letter-spacing:normal}@charset "UTF-8";:root{--bs-blue:#0d6efd;--bs-indigo:#6610f2;--bs-purple:#6f42c1;--bs-pink:#d63384;--bs-red:#dc3545;--bs-orange:#fd7e14;--bs-yellow:#ffc107;--bs-green:#198754;--bs-teal:#20c997;--bs-cyan:#0dcaf0;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-gray-100:#f8f9fa;--bs-gray-200:#e9ecef;--bs-gray-300:#dee2e6;--bs-gray-400:#ced4da;--bs-gray-500:#adb5bd;--bs-gray-600:#6c757d;--bs-gray-700:#495057;--bs-gray-800:#343a40;--bs-gray-900:#212529;--bs-primary:#0d6efd;--bs-secondary:#6c757d;--bs-success:#198754;--bs-info:#0dcaf0;--bs-warning:#ffc107;--bs-danger:#dc3545;--bs-light:#f8f9fa;--bs-dark:#212529;--bs-primary-rgb:13, 110, 253;--bs-secondary-rgb:108, 117, 125;--bs-success-rgb:25, 135, 84;--bs-info-rgb:13, 202, 240;--bs-warning-rgb:255, 193, 7;--bs-danger-rgb:220, 53, 69;--bs-light-rgb:248, 249, 250;--bs-dark-rgb:33, 37, 41;--bs-white-rgb:255, 255, 255;--bs-black-rgb:0, 0, 0;--bs-body-color-rgb:33, 37, 41;--bs-body-bg-rgb:255, 255, 255;--bs-font-sans-serif:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--bs-font-monospace:SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;--bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));--bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#212529;--bs-body-bg:#fff}*,*:before,*:after{box-sizing:border-box}@media (prefers-reduced-motion: no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:var(--bs-body-font-family);font-size:var(--bs-body-font-size);font-weight:var(--bs-body-font-weight);line-height:var(--bs-body-line-height);color:var(--bs-body-color);text-align:var(--bs-body-text-align);background-color:var(--bs-body-bg);-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{height:100%}body{margin:0;font-family:Roboto,Helvetica Neue,sans-serif}</style><link rel="stylesheet" href="styles.f29ca25ceaceb473.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.f29ca25ceaceb473.css"></noscript></head>
-  <body class="mat-typography">
-    <app-root></app-root>
-  <script src="runtime.6a2d941944c8d9dd.js" type="module"></script><script src="polyfills.960806c0f3fc3f66.js" type="module"></script><script src="main.8d821ff13a0d283a.js" type="module"></script>
+    <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6219032039771696" crossorigin="anonymous" data-checked-head="true"></script>
+  <style>.mat-typography{font:400 14px/20px Roboto,Helvetica Neue,sans-serif;letter-spacing:normal}@charset "UTF-8";:root{--bs-blue:#0d6efd;--bs-indigo:#6610f2;--bs-purple:#6f42c1;--bs-pink:#d63384;--bs-red:#dc3545;--bs-orange:#fd7e14;--bs-yellow:#ffc107;--bs-green:#198754;--bs-teal:#20c997;--bs-cyan:#0dcaf0;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-gray-100:#f8f9fa;--bs-gray-200:#e9ecef;--bs-gray-300:#dee2e6;--bs-gray-400:#ced4da;--bs-gray-500:#adb5bd;--bs-gray-600:#6c757d;--bs-gray-700:#495057;--bs-gray-800:#343a40;--bs-gray-900:#212529;--bs-primary:#0d6efd;--bs-secondary:#6c757d;--bs-success:#198754;--bs-info:#0dcaf0;--bs-warning:#ffc107;--bs-danger:#dc3545;--bs-light:#f8f9fa;--bs-dark:#212529;--bs-primary-rgb:13, 110, 253;--bs-secondary-rgb:108, 117, 125;--bs-success-rgb:25, 135, 84;--bs-info-rgb:13, 202, 240;--bs-warning-rgb:255, 193, 7;--bs-danger-rgb:220, 53, 69;--bs-light-rgb:248, 249, 250;--bs-dark-rgb:33, 37, 41;--bs-white-rgb:255, 255, 255;--bs-black-rgb:0, 0, 0;--bs-body-color-rgb:33, 37, 41;--bs-body-bg-rgb:255, 255, 255;--bs-font-sans-serif:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--bs-font-monospace:SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;--bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));--bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#212529;--bs-body-bg:#fff}*,*:before,*:after{box-sizing:border-box}@media (prefers-reduced-motion: no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:var(--bs-body-font-family);font-size:var(--bs-body-font-size);font-weight:var(--bs-body-font-weight);line-height:var(--bs-body-line-height);color:var(--bs-body-color);text-align:var(--bs-body-text-align);background-color:var(--bs-body-bg);-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{height:100%}body{margin:0;font-family:Roboto,Helvetica Neue,sans-serif}</style><link rel="stylesheet" href="styles.f29ca25ceaceb473.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.f29ca25ceaceb473.css"></noscript><meta http-equiv="origin-trial" content="AzoawhTRDevLR66Y6MROu167EDncFPBvcKOaQispTo9ouEt5LvcBjnRFqiAByRT+2cDHG1Yj4dXwpLeIhc98/gIAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A6+nc62kbJgC46ypOwRsNW6RkDn2x7tgRh0wp7jb3DtFF7oEhu1hhm4rdZHZ6zXvnKZLlYcBlQUImC4d3kKihAcAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A/9La288e7MDEU2ifusFnMg1C2Ij6uoa/Z/ylwJIXSsWfK37oESIPbxbt4IU86OGqDEPnNVruUiMjfKo65H/CQwAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjYxMjk5MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><style>.version[_ngcontent-axc-c60]{font-size:10px}</style><style>#fs[_ngcontent-axc-c58]{position:absolute;height:100vh;width:100vw;background-color:#ffffffb3;z-index:9999;top:0px;left:0px}</style><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=localhost" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=localhost"></script><style>[_nghost-axc-c105]     img{max-width:100%;box-shadow:0 .125rem .25rem #00000014!important}[_nghost-axc-c105]     pre{background-color:#2d2d2d;border-radius:5px;padding:10px}[_nghost-axc-c105]     ul{padding-left:15px}[_nghost-axc-c105]     li{list-style-type:circle}[_nghost-axc-c105]     pre>code>ol>li{list-style-type:decimal;width:100%}[_nghost-axc-c105]     pre>code>ol>li::marker{color:gray}[_nghost-axc-c105]     pre>code>ol{display:grid}[_nghost-axc-c105]     .codespan{color:#f39c12;font-style:oblique;font-weight:bolder}</style><style>.loading[_ngcontent-axc-c104]{display:none}</style><script>window['ScullyIO']='generated';</script></head>
+  <body class="mat-typography" scully-version="0.0.0">
+    <app-root _nghost-axc-c60="" ng-version="13.2.4"><app-nav _ngcontent-axc-c60=""><nav ngbnav="" class="navbar navbar-expand-md navbar-light bg-light pb-1 nav" role="tablist"><div class="container-fluid shadow"><img height="30px" width="30px" src="https://avatars.githubusercontent.com/u/29157528?v=4" class="rounded-circle me-3"><a class="navbar-brand" href="/"> Kemu Portal </a><button matripple="" type="button" class="mat-ripple navbar-toggler">☰</button><div class="collapse navbar-collapse"><ul class="navbar-nav"><li class="nav-item"><a matripple="" class="mat-ripple nav-link" href="/">home<!----></a></li><li class="nav-item"><a matripple="" class="mat-ripple nav-link active" href="/blog">blog<span class="ms-1 badge rounded-pill bg-success">40</span><!----></a></li><li class="nav-item"><a matripple="" class="mat-ripple nav-link" href="/log">log<span class="ms-1 badge rounded-pill bg-success">4</span><!----></a></li><li class="nav-item"><a matripple="" class="mat-ripple nav-link" href="/tools">tools<!----></a></li><li class="nav-item"><a matripple="" class="mat-ripple nav-link" href="/contact">contact<!----></a></li><!----><li><app-profile><!----><a matripple="" class="mat-ripple nav-link" style="cursor: pointer;">profile</a></app-profile></li></ul><div class="ms-auto ps-0 text-muted mb-0 nav-link"> /blog/Angular よく書くコード/ライブラリ置き場 <a href="/rss.xml" class="ms-1 text-muted">RSS <i class="bi bi-rss"></i></a></div></div></div></nav></app-nav><app-message _ngcontent-axc-c60=""><!----></app-message><app-ads-modal _ngcontent-axc-c60=""><!----></app-ads-modal><div _ngcontent-axc-c60="" style="min-height: calc(100vh - 200px);"><router-outlet _ngcontent-axc-c60=""></router-outlet><app-blog-detail _nghost-axc-c105=""><div _ngcontent-axc-c105="" id="container" class="container-fluid"><div _ngcontent-axc-c105="" class="row mt-3"><div _ngcontent-axc-c105="" class="col-md-8 border-end border-2"><div _ngcontent-axc-c105="" class="row"><div _ngcontent-axc-c105="" class="col-md-4"><app-lazy-img _ngcontent-axc-c105="" _nghost-axc-c104=""><img _ngcontent-axc-c104="" class="img-thumbnail img-fluid" src="/assets/images/1170873471.png" alt="Angular よく書くコード/ライブラリ置き場" title="Angular よく書くコード/ライブラリ置き場"><!----></app-lazy-img></div><div _ngcontent-axc-c105="" class="col-md-8"><h2 _ngcontent-axc-c105="">Angular よく書くコード/ライブラリ置き場</h2><p _ngcontent-axc-c105="" class="text-muted mb-1">発行日時: 2022.03.16 11:09</p><p _ngcontent-axc-c105="" class="text-muted">最終更新日: 2022.04.03 10:02</p><div _ngcontent-axc-c105="" class="d-flex justify-content-end"><app-tweet-btn _ngcontent-axc-c105=""><button class="btn btn-light border rounded-pill"><a id="btn" target="_blank" href="https://twitter.com/share?url=http%3A%2F%2Flocalhost%3A1864%2F%24%2Fblog%2F1170873471&amp;text=Angular+%E3%82%88%E3%81%8F%E6%9B%B8%E3%81%8F%E3%82%B3%E3%83%BC%E3%83%89%2F%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E7%BD%AE%E3%81%8D%E5%A0%B4+%7C+Kemu+Tech+Blog&amp;via=kemu43"><i class="bi bi-twitter"></i></a></button></app-tweet-btn></div></div></div><hr _ngcontent-axc-c105=""><div _ngcontent-axc-c105="">
+      <div class="d-flex mt-3 shadow-sm">
+        <h3 id="e94804129a22cb41ea32d223d6c9e5ae" class="mb-0" style="
+            border-left: solid 3px;
+            border-color: darkturquoise;
+            border-radius: 2px;
+            padding-left: 5px;
+          ">
+          ライブラリ
+        </h3>
+      </div>
+      <hr class="mt-0">
+      <ul>
+<li><p><a href="https://github.com/ngneat/reactive-forms" class="text-muted" title="https://github.com/ngneat/reactive-forms">@ngneat/reactive-forms<i class="bi bi-link-45deg"></i></a></p>
+<ul>
+<li>型安全にformGroupを記載</li>
+<li>フォームの入力内容をsession storageに保存しリロードされたタイミング等で保存/ロード</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/datorama/akita" class="text-muted" title="https://github.com/datorama/akita">@datorama/akita<i class="bi bi-link-45deg"></i></a></p>
+<ul>
+<li>状態管理ライブラリ、リクエストの結果を非同期で処理する際にsubscribeのネストが深くなりにくいためコードが読みやすくなる</li>
+<li>ngOnInitでhttpRequest().subscribe()と記載し、ストアから非同期的に値を取得する処理を楽にかける</li>
+<li>現在いるページ情報などリロード時に保持してほしい情報をストアに保存し、ロード処理の記載を楽に記載可能</li>
+<li>※今サイトを見ると<a href="https://github.com/ngneat/elf" class="text-muted" title="https://github.com/ngneat/elf">@ngneat/elf<i class="bi bi-link-45deg"></i></a>について記載されていたので今度試す</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/scttcper/ng2-adsense" class="text-muted" title="https://github.com/scttcper/ng2-adsense">ng2-adsense<i class="bi bi-link-45deg"></i></a></p>
+<ul>
+<li>scriptタグをAngularがエスケープするため自前実装するのであればdom操作する必要があるところをやってくれる</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/DethAriel/ng-recaptcha" class="text-muted" title="https://github.com/DethAriel/ng-recaptcha">ng-recaptcha<i class="bi bi-link-45deg"></i></a></p>
+<ul>
+<li>botには見てほしくない情報、アクセスを防ぎたい場合に使えるreCAPTCHAを設置可能（サイトキーについてはGCPで作成する必要あり）</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/ng-bootstrap/ng-bootstrap" class="text-muted" title="https://github.com/ng-bootstrap/ng-bootstrap">@ng-bootstrap/ng-bootstrap<i class="bi bi-link-45deg"></i></a></p>
+<ul>
+<li>Angular向けbootstrapライブラリ</li>
+</ul>
+</li>
+<li><p><a href="https://github.com/compodoc/compodoc" class="text-muted" title="https://github.com/compodoc/compodoc">@compodoc/compodoc<i class="bi bi-link-45deg"></i></a></p>
+<ul>
+<li>Angularアプリケーションのドキュメントを自動生成してくれる。</li>
+<li>利用する際は以下のような設定ファイルを追加し、<code class="codespan">npx @compodoc/compodoc -p ./tsconfig.doc.json -d src/doc</code></li>
+<li>作成されるドキュメント -&gt; <a href="https://portal.kemu.site/doc/" class="text-muted" title="https://portal.kemu.site/doc/">サンプル<i class="bi bi-link-45deg"></i></a></li>
+</ul>
+</li>
+</ul>
+<p><code class="codespan">tsconfig.doc.json</code></p>
+<pre><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/**/*.ts"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/test.ts"</span><span class="token punctuation">,</span> <span class="token string">"src/**/*.spec.ts"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
 
-</body></html>
+      <div class="d-flex mt-3 shadow-sm">
+        <h3 id="50ee8225648ee46d162d9cdabaf48e11" class="mb-0" style="
+            border-left: solid 3px;
+            border-color: darkturquoise;
+            border-radius: 2px;
+            padding-left: 5px;
+          ">
+          コード
+        </h3>
+      </div>
+      <hr class="mt-0">
+      
+      <div class="d-flex mt-3 shadow-sm">
+        <h4 id="7169c65dab7669d5f59287b5f777a128" class="mb-0" style="
+            border-left: solid 3px;
+            border-color: darkturquoise;
+            border-radius: 2px;
+            padding-left: 5px;
+          ">
+          メッセージを表示 -&gt; 5秒後に削除
+        </h4>
+      </div>
+      <hr class="mt-0">
+      <pre><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> Injectable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> interval <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'rxjs'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">AlertMessage</span> <span class="token punctuation">{</span>
+  type<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  body<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">Injectable</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  providedIn<span class="token operator">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">MessageService</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">private</span> _messages<span class="token operator">:</span> AlertMessage<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">get</span> <span class="token function">messages</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_messages<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">pushMessage</span><span class="token punctuation">(</span>message<span class="token operator">:</span> AlertMessage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>_messages<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">interval</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">take</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">(</span>_<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_messages<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <div class="d-flex mt-3 shadow-sm">
+        <h4 id="ad7a6b88c44799febd723c67d3aee552" class="mb-0" style="
+            border-left: solid 3px;
+            border-color: darkturquoise;
+            border-radius: 2px;
+            padding-left: 5px;
+          ">
+          画面遷移時にローディングを表示させる
+        </h4>
+      </div>
+      <hr class="mt-0">
+      <pre><code class="language-ts"><span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span>events<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>event <span class="token keyword">instanceof</span> <span class="token class-name">NavigationStart</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>loading <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>
+    event <span class="token keyword">instanceof</span> <span class="token class-name">NavigationEnd</span> <span class="token operator">||</span>
+    event <span class="token keyword">instanceof</span> <span class="token class-name">NavigationCancel</span> <span class="token operator">||</span>
+    event <span class="token keyword">instanceof</span> <span class="token class-name">NavigationError</span>
+  <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>loading <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <div class="d-flex mt-3 shadow-sm">
+        <h4 id="d68064a39428499c7f7a6a7a377c2371" class="mb-0" style="
+            border-left: solid 3px;
+            border-color: darkturquoise;
+            border-radius: 2px;
+            padding-left: 5px;
+          ">
+          インクリメンタルサーチ
+        </h4>
+      </div>
+      <hr class="mt-0">
+      <ul>
+<li>doc: <a href="https://ng-bootstrap.github.io/#/components/typeahead/examples" class="text-muted" title="https://ng-bootstrap.github.io/#/components/typeahead/examples">https://ng-bootstrap.github.io/#/components/typeahead/examples<i class="bi bi-link-45deg"></i></a></li>
+</ul>
+<pre><code class="language-ts"><span class="token punctuation">{</span>
+  search<span class="token operator">:</span> OperatorFunction<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token keyword">readonly</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">(</span>text$<span class="token operator">:</span> Observable<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> text$
+      <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">debounceTime</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">distinctUntilChanged</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>
+        <span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>searchData<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> title<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>text<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-control<span class="token punctuation">"</span></span>
+  <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span>
+  <span class="token attr-name">NgbTypeahead</span>
+  <span class="token attr-name">[ngbTypeahead]</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span>
+  <span class="token attr-name">(selectItem)</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selectArticle($event)<span class="token punctuation">"</span></span>
+  <span class="token attr-name">#instance</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ngbTypeahead<span class="token punctuation">"</span></span>
+  <span class="token attr-name">(blur)</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>instance.dismissPopup()<span class="token punctuation">"</span></span>
+<span class="token punctuation">/&gt;</span></span>
+</code></pre>
+
+      <div class="d-flex mt-3 shadow-sm">
+        <h4 id="ec107567309e7b7a49ea149937647330" class="mb-0" style="
+            border-left: solid 3px;
+            border-color: darkturquoise;
+            border-radius: 2px;
+            padding-left: 5px;
+          ">
+          リロード前に処理を挟み込む
+        </h4>
+      </div>
+      <hr class="mt-0">
+      <pre><code class="language-ts"><span class="token function">constoractor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  window<span class="token punctuation">.</span><span class="token function-variable function">onbeforeunload</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">ngOnDestroy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <div class="d-flex mt-3 shadow-sm">
+        <h4 id="9e0acb3b22020afd7c4193f4f885a940" class="mb-0" style="
+            border-left: solid 3px;
+            border-color: darkturquoise;
+            border-radius: 2px;
+            padding-left: 5px;
+          ">
+          bootstrap-icons導入
+        </h4>
+      </div>
+      <hr class="mt-0">
+      <pre><code class="language-zsh">$ npm i bootstrap<span class="token operator">-</span>icons
+</code></pre>
+<p><code class="codespan">src/style.scss</code></p>
+<pre><code>...
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+...
+</code></pre>
+<p>他思い出し次第追記</p>
+</div><hr _ngcontent-axc-c105="" class="mt-5"><div _ngcontent-axc-c105="" class="d-flex justify-content-between"><h2 _ngcontent-axc-c105="" id="comments">Comments</h2><app-tweet-btn _ngcontent-axc-c105=""><button class="btn btn-light border rounded-pill"><a id="btn" target="_blank" href="https://twitter.com/share?url=http%3A%2F%2Flocalhost%3A1864%2F%24%2Fblog%2F1170873471&amp;text=Angular+%E3%82%88%E3%81%8F%E6%9B%B8%E3%81%8F%E3%82%B3%E3%83%BC%E3%83%89%2F%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E7%BD%AE%E3%81%8D%E5%A0%B4+%7C+Kemu+Tech+Blog&amp;via=kemu43"><i class="bi bi-twitter"></i></a></button></app-tweet-btn></div><!----><p _ngcontent-axc-c105="" class="mt-3"> コメントは<a _ngcontent-axc-c105="" href="https://github.com/kemu3007/portal/issues/18">こちら<i _ngcontent-axc-c105="" class="bi bi-link-45deg"></i></a>から <br _ngcontent-axc-c105=""> ※リリースタイミングの問題上ページに反映されないことがありますが確認してます。 </p><hr _ngcontent-axc-c105=""><h3 _ngcontent-axc-c105="">別の記事を見る</h3><div _ngcontent-axc-c105="" class="row"><div _ngcontent-axc-c105="" class="col-md-6"><div _ngcontent-axc-c105="" class="card"><div _ngcontent-axc-c105="" class="card-header">次の記事</div><div _ngcontent-axc-c105="" class="card-body"><span _ngcontent-axc-c105="" class="link-primary" style="cursor: pointer;">Angular 状態管理を行う @ngneat/elf </span></div></div><!----><!----></div><div _ngcontent-axc-c105="" class="col-md-6"><div _ngcontent-axc-c105="" class="card"><div _ngcontent-axc-c105="" class="card-header">前の記事</div><div _ngcontent-axc-c105="" class="card-body"><span _ngcontent-axc-c105="" class="link-primary" style="cursor: pointer;">Angular component内にscriptタグを設置する</span></div></div><!----><!----></div></div></div><div _ngcontent-axc-c105="" class="col-md-4 bg-light"><app-ads _ngcontent-axc-c105="" type="box"><ng2-adsense adformat="fluid" slot="9091938102" layoutkey="-ef+6k-30-ac+ty" style="display: block;"><ins class="adsbygoogle" data-ad-client="ca-pub-6219032039771696" data-ad-format="fluid" data-ad-region="page-67811" data-layout-key="-ef+6k-30-ac+ty" style="display: block;" data-adsbygoogle-status="done"></ins></ng2-adsense><ng2-adsense adformat="fluid" slot="9091938102" layoutkey="-ef+6k-30-ac+ty" style="display: block;"><ins class="adsbygoogle" data-ad-client="ca-pub-6219032039771696" data-ad-format="fluid" data-ad-region="page-48941" data-layout-key="-ef+6k-30-ac+ty" style="display: block;" data-adsbygoogle-status="done"></ins></ng2-adsense><ng2-adsense adformat="fluid" slot="9091938102" layoutkey="-ef+6k-30-ac+ty" style="display: block;"><ins class="adsbygoogle" data-ad-client="ca-pub-6219032039771696" data-ad-format="fluid" data-ad-region="page-40801" data-layout-key="-ef+6k-30-ac+ty" style="display: block;" data-adsbygoogle-status="done"></ins></ng2-adsense><ng2-adsense adformat="fluid" slot="9091938102" layoutkey="-ef+6k-30-ac+ty" style="display: block;"><ins class="adsbygoogle" data-ad-client="ca-pub-6219032039771696" data-ad-format="fluid" data-ad-region="page-4251" data-layout-key="-ef+6k-30-ac+ty" style="display: block;" data-adsbygoogle-status="done"></ins></ng2-adsense><!----><!----><!----><!----><!----><!----></app-ads></div></div><!----></div></app-blog-detail><!----><!----><!----></div><div _ngcontent-axc-c60="" style="position: fixed; bottom: 5px; right: 5px;"><app-tweet-btn _ngcontent-axc-c60=""><button class="btn btn-light border rounded-pill"><a id="btn" target="_blank" href="https://twitter.com/share?url=http%3A%2F%2Flocalhost%3A1864%2F%24%2Fblog%2F1170873471&amp;text=Angular+%E3%82%88%E3%81%8F%E6%9B%B8%E3%81%8F%E3%82%B3%E3%83%BC%E3%83%89%2F%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E7%BD%AE%E3%81%8D%E5%A0%B4+%7C+Kemu+Tech+Blog&amp;via=kemu43"><i class="bi bi-twitter"></i></a></button></app-tweet-btn></div><footer _ngcontent-axc-c60="" class="bg-light py-3 footer"><div _ngcontent-axc-c60="" class="d-flex justify-content-center"><span _ngcontent-axc-c60="" class="text-muted">Amazonのアソシエイトとして、kemuは適格販売により収入を得ています。</span><br _ngcontent-axc-c60=""></div><div _ngcontent-axc-c60="" class="d-flex justify-content-end"><span _ngcontent-axc-c60="" style="font-size: 24px;"><a _ngcontent-axc-c60="" href="https://github.com/kemu3007"><i _ngcontent-axc-c60="" class="bi bi-github"></i></a><a _ngcontent-axc-c60="" href="https://twitter.com/kemu43" class="ms-2"><i _ngcontent-axc-c60="" class="bi bi-twitter"></i></a><a _ngcontent-axc-c60="" href="https://portal.kemu.site/doc/" class="mx-2"><i _ngcontent-axc-c60="" class="bi bi-book"></i></a></span></div><div _ngcontent-axc-c60="" class="d-flex justify-content-center"><span _ngcontent-axc-c60="" class="text-muted">Copyright ©️ 2017-2022 kemu All Rights Reserved.</span></div><div _ngcontent-axc-c60="" class="d-flex justify-content-center"><a _ngcontent-axc-c60="" href="/" class="text-muted">home</a><a _ngcontent-axc-c60="" href="/blog/" class="text-muted ms-2">blog</a><a _ngcontent-axc-c60="" href="/log/" class="text-muted ms-2">log</a><a _ngcontent-axc-c60="" href="/tools/" class="text-muted ms-2">tools</a><a _ngcontent-axc-c60="" href="/contact/" class="text-muted ms-2">contact</a></div><div _ngcontent-axc-c60="" class="d-flex justify-content-center"><div _ngcontent-axc-c60="" class="mb-3 text-muted">Last Release: 2022/05/27 11:37:50(JST)</div></div></footer></app-root>
+  <script src="runtime.7445a327b8213000.js" type="module"></script><script src="polyfills.2d10ca394666a471.js" type="module"></script><script src="main.21154ac16c336d16.js" type="module"></script>
+
+<script id="ScullyIO-transfer-state"></script><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins id="aswift_0_expand" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;"><ins id="aswift_0_anchor" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-6219032039771696&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1653619160&amp;plat=1%3A8%2C2%3A8%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1048576%2C32%3A32&amp;format=0x0&amp;url=http%3A%2F%2Flocalhost%3A1864%2Fblog%2F1170873471&amp;ea=0&amp;pra=5&amp;wgl=1&amp;uach=WyIiLCIiLCIiLCIiLCIiLFtdLG51bGwsbnVsbCwiIixbXSxmYWxzZV0.&amp;dt=1653619187889&amp;bpp=3&amp;bdt=191&amp;idt=210&amp;shv=r20220525&amp;mjsv=m202205230101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3Dcd52d40b263c2f94-2297be780ed30050%3AT%3D1653619174%3ART%3D1653619174%3AS%3DALNI_Ma9Wx3X8GAnG8fgnI8tj0bRX0dYmg&amp;gpic=UID%3D000005c12fcfe90a%3AT%3D1653619174%3ART%3D1653619174%3AS%3DALNI_MZM_rR_C3XDuXnv2tuSr293FaIThw&amp;nras=1&amp;correlator=7911277444590&amp;frm=20&amp;pv=2&amp;ga_vid=1785796135.1653619174&amp;ga_sid=1653619188&amp;ga_hid=983023727&amp;ga_fc=1&amp;u_tz=0&amp;u_his=2&amp;u_h=600&amp;u_w=800&amp;u_ah=600&amp;u_aw=800&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=800&amp;bih=600&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759842%2C42531556%2C44761043%2C44765406&amp;oid=2&amp;pvsid=496764881231438&amp;pem=252&amp;tmod=1919103220&amp;uas=0&amp;nvt=1&amp;eae=2&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C800%2C0%2C800%2C600%2C800%2C600&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=257" data-google-container-id="a!1" data-load-complete="true"></iframe></ins></ins></ins><iframe src="https://tpc.googlesyndication.com/sodar/sodar2/225/runner.html" width="0" height="0" style="display: none;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20220525/r20190131/zrt_lookup.html" style="display: none;"></iframe></html>
