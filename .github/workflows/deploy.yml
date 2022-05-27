@@ -53,13 +53,10 @@ jobs:
         run: |
           npm run compodoc |& tee -a $GITHUB_STEP_SUMMARY
           npm run ng build |& tee -a $GITHUB_STEP_SUMMARY
-          cp dist/portal/index.html dist/portal/404.html
-      - name: resolve directory
-        run: |
-          python resolve_directory.py
+          npm run scully |& tee -a $GITHUB_STEP_SUMMARY
       - name: deploy gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./portal/dist/portal
+          publish_dir: ./portal/dist/static/
           cname: portal.kemu.site

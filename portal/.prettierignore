@@ -2,3 +2,4 @@ src/blog/**/*.html
 src/log/**/*.html
 src/tools/**/*.html
 src/contact/**/*.html
+src/doc/
