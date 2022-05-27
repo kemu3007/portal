@@ -23,8 +23,6 @@ if __name__ == "__main__":
     urlset.set("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
 
     add_url_element(urlset, "https://portal.kemu.site/")
-    add_url_element(urlset, "https://portal.kemu.site/robots.txt")
-    add_url_element(urlset, "https://portal.kemu.site/sitemap.xml")
     add_url_element(urlset, "https://portal.kemu.site/blog/")
     add_url_element(urlset, "https://portal.kemu.site/log/")
     add_url_element(urlset, "https://portal.kemu.site/contact/")
