@@ -63,7 +63,7 @@ if __name__ == "__main__":
             f"https://portal.kemu.site/assets/images/{key}.png",
             f"{data['title']} | Kemu Log",
             data["body"],
-            "/log/{key}",
+            f"/log/{key}",
         )
 
     # tools
