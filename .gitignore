@@ -81,3 +81,4 @@ portal/src/assets/scully-routes.json
 
 portal/scully/plugins/plugin.js
 portal/scully/plugins/plugin.js.map
+portal/scully.portal.config.js
