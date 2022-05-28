@@ -152,7 +152,7 @@
                                 <a href="#copy" >copy</a>
                             </li>
                             <li>
-                                <a href="#handleInput" >handleInput</a>
+                                <a href="#drawMermaid" >drawMermaid</a>
                             </li>
                             <li>
                                 <a href="#handleKeyDown" >handleKeyDown</a>
@@ -268,8 +268,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/app/tools/mermaid/mermaid.component.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/tools/mermaid/mermaid.component.ts:58</a></div>
                 </td>
             </tr>
 
@@ -305,8 +305,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/tools/mermaid/mermaid.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/tools/mermaid/mermaid.component.ts:32</a></div>
                 </td>
             </tr>
 
@@ -358,24 +358,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="handleInput"></a>
+                    <a name="drawMermaid"></a>
                     <span class="name">
-                        <span ><b>handleInput</b></span>
-                        <a href="#handleInput"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>drawMermaid</b></span>
+                        <a href="#drawMermaid"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>handleInput()</code>
+<code>drawMermaid(text: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/app/tools/mermaid/mermaid.component.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/tools/mermaid/mermaid.component.ts:48</a></div>
                 </td>
             </tr>
 
@@ -384,8 +384,40 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>text</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -411,8 +443,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/tools/mermaid/mermaid.component.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/tools/mermaid/mermaid.component.ts:37</a></div>
                 </td>
             </tr>
 
@@ -492,8 +524,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/tools/mermaid/mermaid.component.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/tools/mermaid/mermaid.component.ts:26</a></div>
                 </td>
             </tr>
 
@@ -566,8 +598,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/tools/mermaid/mermaid.component.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/tools/mermaid/mermaid.component.ts:54</a></div>
                 </td>
             </tr>
 
@@ -711,6 +743,7 @@ export class MermaidComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     persistControl(this.form, &#x27;mermaid&#x27;, {}).subscribe();
+    this.form.value$.subscribe((value) &#x3D;&gt; this.drawMermaid(value.mermaid));
   }
 
   ngAfterViewInit() {
@@ -735,9 +768,9 @@ export class MermaidComponent implements OnInit, AfterViewInit {
     }
   }
 
-  handleInput() {
+  drawMermaid(text: string) {
     this.mermaidDiv.nativeElement.removeAttribute(&#x27;data-processed&#x27;);
-    this.mermaidDiv.nativeElement.innerHTML &#x3D; this.form.controls.mermaid.value;
+    this.mermaidDiv.nativeElement.innerHTML &#x3D; text;
     mermaid.init(&#x27;#mermaid&#x27;);
   }
 
@@ -774,7 +807,6 @@ export class MermaidComponent implements OnInit, AfterViewInit {
           #mdInput
           class&#x3D;&quot;form-control overflow-auto&quot;
           (keydown)&#x3D;&quot;handleKeyDown($event, mdInput)&quot;
-          (input)&#x3D;&quot;handleInput()&quot;
           formControlName&#x3D;&quot;mermaid&quot;
           style&#x3D;&quot;height: calc(100vh - 120px); tab-size: 2&quot;
         &gt;&lt;/textarea&gt;
@@ -824,7 +856,7 @@ export class MermaidComponent implements OnInit, AfterViewInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="d-flex justify-content-between">    <h2 class="mb-0">Mermaid Live Editor<app-tweet-btn class="ms-3"></app-tweet-btn></h2>  </div>  <div class="row">    <div class="col-6">      Mermaid      <button matRipple class="ms-1 btn btn-sm" (click)="copy(form.controls.mermaid.value)">        <i class="bi bi-stickies"></i>      </button>    </div>    <div class="col-6">Image</div>  </div>  <hr class="my-0" />  <div class="row">    <div class="col-6">      <form [formGroup]="form">        <textarea          #mdInput          class="form-control overflow-auto"          (keydown)="handleKeyDown($event, mdInput)"          (input)="handleInput()"          formControlName="mermaid"          style="height: calc(100vh - 120px); tab-size: 2"        ></textarea>      </form>    </div>    <div class="col-6">      <div class="overflow-auto" style="height: calc(100vh - 120px)">        <div class="mermaid" #mermaid id="mermaid">{{ form.controls.mermaid.value }}</div>      </div>    </div>  </div>  <hr class="my-0" /></div><ng-template #content let-modal>  <div class="modal-header py-1 d-flex justify-content-end">    <button class="btn btn-sm" (click)="close()">&times;</button>  </div>  <div class="modal-body"></div></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="d-flex justify-content-between">    <h2 class="mb-0">Mermaid Live Editor<app-tweet-btn class="ms-3"></app-tweet-btn></h2>  </div>  <div class="row">    <div class="col-6">      Mermaid      <button matRipple class="ms-1 btn btn-sm" (click)="copy(form.controls.mermaid.value)">        <i class="bi bi-stickies"></i>      </button>    </div>    <div class="col-6">Image</div>  </div>  <hr class="my-0" />  <div class="row">    <div class="col-6">      <form [formGroup]="form">        <textarea          #mdInput          class="form-control overflow-auto"          (keydown)="handleKeyDown($event, mdInput)"          formControlName="mermaid"          style="height: calc(100vh - 120px); tab-size: 2"        ></textarea>      </form>    </div>    <div class="col-6">      <div class="overflow-auto" style="height: calc(100vh - 120px)">        <div class="mermaid" #mermaid id="mermaid">{{ form.controls.mermaid.value }}</div>      </div>    </div>  </div>  <hr class="my-0" /></div><ng-template #content let-modal>  <div class="modal-header py-1 d-flex justify-content-end">    <button class="btn btn-sm" (click)="close()">&times;</button>  </div>  <div class="modal-body"></div></ng-template></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LazyImgComponent', 'selector': 'app-lazy-img'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MermaidComponent', 'selector': 'app-mermaid'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MermaidComponent'};
