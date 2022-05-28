@@ -1,16 +1,17 @@
-import { Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MessageService } from '@app/shared/message/message.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl } from '@ngneat/reactive-forms';
 import { persistControl } from '@ngneat/reactive-forms';
 import mermaid from 'mermaid';
+import { interval, take } from 'rxjs';
 
 @Component({
   selector: 'app-mermaid',
   templateUrl: './mermaid.component.html',
 })
-export class MermaidComponent implements OnInit {
+export class MermaidComponent implements OnInit, AfterViewInit {
   @ViewChild('mermaid') mermaidDiv!: ElementRef<HTMLDivElement>;
 
   form = new FormGroup({
@@ -21,6 +22,9 @@ export class MermaidComponent implements OnInit {
 
   ngOnInit() {
     persistControl(this.form, 'mermaid', {}).subscribe();
+  }
+
+  ngAfterViewInit() {
     this.form.value$.subscribe((value) => this.drawMermaid(value.mermaid));
   }
 
@@ -41,11 +45,9 @@ export class MermaidComponent implements OnInit {
   }
 
   drawMermaid(text: string) {
-    if (this.mermaidDiv) {
-      this.mermaidDiv.nativeElement.removeAttribute('data-processed');
-      this.mermaidDiv.nativeElement.innerHTML = text;
-      mermaid.init('#mermaid');
-    }
+    this.mermaidDiv.nativeElement.removeAttribute('data-processed');
+    this.mermaidDiv.nativeElement.innerHTML = text;
+    mermaid.init('#mermaid');
   }
 
   open(content: TemplateRef<any>) {

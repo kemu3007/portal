@@ -34,7 +34,8 @@
 </div>
 
 <ng-template #content let-modal>
-  <div class="modal-header py-1 d-flex justify-content-end">
+  <div class="modal-header py-1 d-flex justify-content-between">
+    <span>Mermaid Live Editor</span>
     <button class="btn btn-sm" (click)="close()">&times;</button>
   </div>
   <div class="modal-body d-flex justify-content-center" [innerHTML]="mermaidSVG"></div>
