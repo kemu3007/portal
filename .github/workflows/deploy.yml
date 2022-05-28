@@ -53,6 +53,15 @@ jobs:
         run: |
           npm run compodoc
           npm run ng build -- --sourceMap=true |& tee -a $GITHUB_STEP_SUMMARY
+      - uses: getsentry/action-release@v1
+        with:
+          environment: 'production'
+          sourcemaps: './portal/dist/portal/'
+      - name: remove sourcemap
+        run: |
+          rm portal/dist/portal/*.map
+      - name: SSG
+        working-directory: ./portal
           npm run scully |& tee -a $GITHUB_STEP_SUMMARY
       - name: deploy gh-pages
         uses: peaceiris/actions-gh-pages@v3
