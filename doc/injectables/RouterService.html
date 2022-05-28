@@ -116,12 +116,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>, adsModalService: <a href="../injectables/AdsModalService.html" target="_self">AdsModalService</a>, loadingService: <a href="../injectables/LoadingService.html" target="_self">LoadingService</a>, title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, meta: <a href="https://angular.io/api/platform-browser/Meta" target="_blank">Meta</a>)</code>
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, adsModalService: <a href="../injectables/AdsModalService.html" target="_self">AdsModalService</a>, loadingService: <a href="../injectables/LoadingService.html" target="_self">LoadingService</a>, title: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, meta: <a href="https://angular.io/api/platform-browser/Meta" target="_blank">Meta</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/router.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/router.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -155,18 +155,6 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>breadcrumbService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/BreadcrumbService.html" target="_self" >BreadcrumbService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -256,8 +244,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="58"
-                            class="link-to-prism">src/app/router.service.ts:58</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/router.service.ts:55</a></div>
                 </td>
             </tr>
 
@@ -293,8 +281,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/router.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/router.service.ts:25</a></div>
                 </td>
             </tr>
 
@@ -340,7 +328,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/router.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/router.service.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -356,7 +344,6 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AdsModalService } from &#x27;./shared/ads-modal/ads-modal.service&#x27;;
 import { LoadingService } from &#x27;./shared/loading/loading.service&#x27;;
 import { MessageService } from &#x27;./shared/message/message.service&#x27;;
-import { BreadcrumbService } from &#x27;./shared/nav/breadcrumb.service&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 import { Meta, Title } from &#x27;@angular/platform-browser&#x27;;
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from &#x27;@angular/router&#x27;;
@@ -372,7 +359,6 @@ export class RouterService {
   constructor(
     private router: Router,
     private messageService: MessageService,
-    private breadcrumbService: BreadcrumbService,
     private adsModalService: AdsModalService,
     private loadingService: LoadingService,
     private title: Title,
@@ -384,7 +370,6 @@ export class RouterService {
       tap((event) &#x3D;&gt; {
         if (event instanceof NavigationStart) {
           this.loadingService.loading &#x3D; true;
-          this.breadcrumbService.breadcrumb &#x3D; event.url;
         } else if (event instanceof NavigationEnd) {
           this.loadingService.loading &#x3D; false;
           this.displayOrWaitAds();

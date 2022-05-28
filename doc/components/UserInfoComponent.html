@@ -183,12 +183,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(userInfoService: <a href="../injectables/UserInfoService.html" target="_self">UserInfoService</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, breadCrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>)</code>
+<code>constructor(userInfoService: <a href="../injectables/UserInfoService.html" target="_self">UserInfoService</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -241,18 +241,6 @@
                                                     </td>
                                                     
                                                 </tr>
-                                                <tr>
-                                                        <td>breadCrumbService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/BreadcrumbService.html" target="_self" >BreadcrumbService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -291,8 +279,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:44</a></div>
                 </td>
             </tr>
 
@@ -360,8 +348,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/tools/user-info/user-info.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -403,7 +391,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -428,7 +416,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -457,7 +445,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:43</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/tools/user-info/user-info.component.ts:39</a></div>
                                 </td>
                             </tr>
 
@@ -474,7 +462,6 @@ import { UserInfoService } from &#x27;./user-info.service&#x27;;
 import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
 import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
-import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
 import { catchError, NEVER } from &#x27;rxjs&#x27;;
 
 @Component({
@@ -488,11 +475,8 @@ export class UserInfoComponent implements OnInit {
   constructor(
     private userInfoService: UserInfoService,
     private messageService: MessageService,
-    private router: Router,
-    breadCrumbService: BreadcrumbService
-  ) {
-    breadCrumbService.breadcrumb &#x3D; &#x27;/tools/IP Address Checker&#x27;;
-  }
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.userInfoService

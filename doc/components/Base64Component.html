@@ -192,12 +192,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(breadCrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>, messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>)</code>
+<code>constructor(messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/tools/base64/base64.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/tools/base64/base64.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -214,18 +214,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                        <td>breadCrumbService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/BreadcrumbService.html" target="_self" >BreadcrumbService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
                                                 <tr>
                                                         <td>messageService</td>
                                                   
@@ -276,8 +264,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/tools/base64/base64.component.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/tools/base64/base64.component.ts:22</a></div>
                 </td>
             </tr>
 
@@ -345,8 +333,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/tools/base64/base64.component.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/tools/base64/base64.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -389,7 +377,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/tools/base64/base64.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/tools/base64/base64.component.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -418,7 +406,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/tools/base64/base64.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/tools/base64/base64.component.ts:27</a></div>
                                 </td>
                             </tr>
 
@@ -440,7 +428,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/tools/base64/base64.component.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/tools/base64/base64.component.ts:39</a></div>
                                 </td>
                             </tr>
 
@@ -462,7 +450,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/tools/base64/base64.component.ts:50</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/tools/base64/base64.component.ts:47</a></div>
                                 </td>
                             </tr>
 
@@ -475,7 +463,6 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
-import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
 import { FormControl, FormGroup, persistControl } from &#x27;@ngneat/reactive-forms&#x27;;
 
 @Component({
@@ -489,9 +476,7 @@ export class Base64Component implements OnInit {
     base64Data: new FormControl(&#x27;&#x27;),
   });
 
-  constructor(breadCrumbService: BreadcrumbService, private messageService: MessageService) {
-    breadCrumbService.breadcrumb &#x3D; &#x27;/tools/Base64 Encoder/Decoder&#x27;;
-  }
+  constructor(private messageService: MessageService) {}
 
   ngOnInit() {
     persistControl(this.form, &#x27;base64&#x27;, {}).subscribe();

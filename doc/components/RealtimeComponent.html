@@ -165,45 +165,15 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(breadcrumbService: <a href="../injectables/BreadcrumbService.html" target="_self">BreadcrumbService</a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/tools/realtime/realtime.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/tools/realtime/realtime.component.ts:10</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>breadcrumbService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/BreadcrumbService.html" target="_self" >BreadcrumbService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -237,8 +207,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/tools/realtime/realtime.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/app/tools/realtime/realtime.component.ts:14</a></div>
                 </td>
             </tr>
 
@@ -284,7 +254,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/tools/realtime/realtime.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/tools/realtime/realtime.component.ts:9</a></div>
                         </td>
                     </tr>
 
@@ -315,7 +285,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/tools/realtime/realtime.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/tools/realtime/realtime.component.ts:10</a></div>
                         </td>
                     </tr>
 
@@ -329,7 +299,6 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { BreadcrumbService } from &#x27;@app/shared/nav/breadcrumb.service&#x27;;
 import { interval } from &#x27;rxjs&#x27;;
 
 @Component({
@@ -340,9 +309,7 @@ export class RealtimeComponent implements OnInit {
   datetime &#x3D; &#x27;&#x27;;
   ms &#x3D; 0;
 
-  constructor(breadcrumbService: BreadcrumbService) {
-    breadcrumbService.breadcrumb &#x3D; &#x27;tools/REALTIME&#x27;;
-  }
+  constructor() {}
 
   ngOnInit() {
     interval(100).subscribe((_) &#x3D;&gt; {
