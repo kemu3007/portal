@@ -8,7 +8,7 @@ logs_dir = Path("portal/src/assets/logs")
 
 
 def export_comments():
-    res = requests.get(f"https://api.github.com/repos/kemu3007/portal/issues")
+    res = requests.get("https://api.github.com/repos/kemu3007/portal/issues&per_page=100")
     issues = json.loads(res.content)
     comments_dir.mkdir(exist_ok=True)
     for issue in issues:
