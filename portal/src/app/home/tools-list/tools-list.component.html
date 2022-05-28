@@ -1,8 +1,8 @@
 <div id="tools" class="list-group">
-  <div class="list-group-item d-flex" style="cursor: pointer" *ngFor="let tool of tools" (click)="transitTool(tool)">
+  <a class="list-group-item d-flex" style="cursor: pointer" *ngFor="let tool of tools" [href]="tool.link">
     <div matRipple class="text-start">
       <div class="fw-bold">{{ tool.label }}</div>
       {{ tool.description }}
     </div>
-  </div>
+  </a>
 </div>
