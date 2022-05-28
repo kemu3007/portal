@@ -45,6 +45,7 @@ jobs:
           python create_sitemap.py
           python create_rss.py
       - name: collect comments
+        if: ${{ github.event_name == 'schedule' }}
         run: |
           python export_comments.py
       - name: build
