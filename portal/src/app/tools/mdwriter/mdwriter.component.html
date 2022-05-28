@@ -1,16 +1,17 @@
 <div class="container-fluid">
   <div class="d-flex justify-content-between">
     <h2 class="mb-0">GitHub Flavored Markdown Writer<app-tweet-btn class="ms-3"></app-tweet-btn></h2>
-    <button matRipple class="btn btn-sm btn-secondary" (click)="open(content)">see fullscreen</button>
   </div>
   <div class="row">
     <div class="col-6">
-      Markdown<button matRipple class="ms-1 btn btn-sm" (click)="copy(form.controls.markdown.value)">
+      Markdown
+      <button matRipple class="ms-1 btn btn-sm" (click)="copy(form.controls.markdown.value)">
         <i class="bi bi-stickies"></i>
       </button>
     </div>
     <div class="col-6">
-      HTML<button matRipple class="ms-1 btn btn-sm" (click)="copy(rawHTML)"><i class="bi bi-stickies"></i></button>
+      <button matRipple class="ms-1 btn btn-sm" (click)="copy(rawHTML)"><i class="bi bi-stickies"></i></button>
+      <i class="btn btn-sm bi bi-fullscreen" (click)="open(content)"></i>
     </div>
   </div>
   <hr class="my-0" />

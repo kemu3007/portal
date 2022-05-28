@@ -1,36 +1,36 @@
-:host ::ng-deep img {
+::ng-deep img {
   max-width: 100%;
   box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
 }
 
-:host ::ng-deep pre {
+::ng-deep pre {
   background-color: #2d2d2d;
   border-radius: 5px;
   padding: 10px;
 }
 
-:host ::ng-deep ul {
+::ng-deep ul {
   padding-left: 15px;
 }
 
-:host ::ng-deep li {
+::ng-deep li {
   list-style-type: circle;
 }
 
-:host ::ng-deep pre > code > ol > li {
+::ng-deep pre > code > ol > li {
   list-style-type: decimal;
   width: 100%;
 }
 
-:host ::ng-deep pre > code > ol > li::marker {
+::ng-deep pre > code > ol > li::marker {
   color: grey;
 }
 
-:host ::ng-deep pre > code > ol {
+::ng-deep pre > code > ol {
   display: grid;
 }
 
-:host ::ng-deep .codespan {
+::ng-deep .codespan {
   color: #f39c12;
   font-style: oblique;
   font-weight: bolder;
