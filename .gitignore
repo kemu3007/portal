@@ -78,3 +78,6 @@ portal/src/assets/meta.json
 portal/src/doc/
 
 portal/src/assets/scully-routes.json
+
+portal/scully/plugins/plugin.js
+portal/scully/plugins/plugin.js.map
