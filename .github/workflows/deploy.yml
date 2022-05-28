@@ -54,6 +54,10 @@ jobs:
           npm run compodoc
           npm run ng build -- --sourceMap=true |& tee -a $GITHUB_STEP_SUMMARY
       - uses: getsentry/action-release@v1
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
         with:
           environment: 'production'
           sourcemaps: './portal/dist/portal/'
