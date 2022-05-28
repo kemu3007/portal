@@ -62,6 +62,7 @@ jobs:
           rm portal/dist/portal/*.map
       - name: SSG
         working-directory: ./portal
+        run: |
           npm run scully |& tee -a $GITHUB_STEP_SUMMARY
       - name: deploy gh-pages
         uses: peaceiris/actions-gh-pages@v3
