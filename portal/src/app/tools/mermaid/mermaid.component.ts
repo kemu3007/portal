@@ -5,7 +5,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl } from '@ngneat/reactive-forms';
 import { persistControl } from '@ngneat/reactive-forms';
 import mermaid from 'mermaid';
-import { interval, take } from 'rxjs';
 
 @Component({
   selector: 'app-mermaid',

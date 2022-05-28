@@ -29,8 +29,8 @@ jobs:
           cache-dependency-path: portal/package-lock.json
       - uses: actions/cache@v2
         with:
-          key: 'assets-2022-04-01'
-          path: ./portal/src/assets/
+          key: 'assets-2022-05-28'
+          path: ./portal/src/assets/comments/
       - name: install deps
         working-directory: ./portal
         run: |
@@ -39,6 +39,7 @@ jobs:
         run: |
           pip install -r requirements.lock.txt
           python export_issues.py
+          python export_comments.py
           python create_img.py
           python create_meta.py
           python create_version.py
