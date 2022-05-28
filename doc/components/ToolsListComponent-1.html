@@ -52,6 +52,9 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -95,6 +98,10 @@
                 <td class="col-md-9"><code>app-tools-list</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./tools-list.component.scss</code></td>
+            </tr>
 
 
 
@@ -190,7 +197,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -269,8 +276,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:16</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:17</a></div>
                 </td>
             </tr>
 
@@ -306,8 +313,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -385,7 +392,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -416,7 +423,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -445,7 +452,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:21</a></div>
                                 </td>
                             </tr>
 
@@ -467,7 +474,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:33</a></div>
                                 </td>
                             </tr>
 
@@ -486,6 +493,7 @@ import { ToolsService } from &#x27;@app/shared/tools/tools.service&#x27;;
 @Component({
   selector: &#x27;app-tools-list&#x27;,
   templateUrl: &#x27;./tools-list.component.html&#x27;,
+  styleUrls: [&#x27;./tools-list.component.scss&#x27;],
 })
 export class ToolsListComponent implements OnInit {
   tools: Tool[] &#x3D; [];
@@ -520,7 +528,11 @@ export class ToolsListComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
   &lt;div class&#x3D;&quot;mt-3&quot;&gt;
-    &lt;h2&gt;個人的に使ったりする自作ツール置き場（不定期更新）&lt;app-tweet-btn class&#x3D;&quot;ms-3&quot;&gt;&lt;/app-tweet-btn&gt;&lt;/h2&gt;
+    &lt;h2&gt;
+      &lt;i class&#x3D;&quot;bi bi-hammer&quot;&gt;&lt;/i&gt; 個人的に使ったりする自作ツール置き場（不定期更新）&lt;app-tweet-btn
+        class&#x3D;&quot;ms-3&quot;
+      &gt;&lt;/app-tweet-btn&gt;
+    &lt;/h2&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;row mt-3&quot;&gt;
     &lt;div class&#x3D;&quot;col-md-9 row mx-0 border-end border-2&quot;&gt;
@@ -533,7 +545,9 @@ export class ToolsListComponent implements OnInit {
         &gt;
           &lt;div class&#x3D;&quot;card-body&quot;&gt;
             &lt;div class&#x3D;&quot;row&quot;&gt;
-              &lt;h3 class&#x3D;&quot;card-title text-black&quot;&gt;{{ tool.label }} &lt;i class&#x3D;&quot;bi bi-pin-angle&quot;&gt;&lt;/i&gt;&lt;/h3&gt;
+              &lt;h3 class&#x3D;&quot;card-title text-black text-decoration-underline&quot;&gt;
+                {{ tool.label }} &lt;i class&#x3D;&quot;bi bi-pin-angle&quot;&gt;&lt;/i&gt;
+              &lt;/h3&gt;
               &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ tool.description }}&lt;/p&gt;
             &lt;/div&gt;
           &lt;/div&gt;
@@ -551,7 +565,7 @@ export class ToolsListComponent implements OnInit {
         &gt;
           &lt;div class&#x3D;&quot;card-body&quot;&gt;
             &lt;div class&#x3D;&quot;row&quot;&gt;
-              &lt;h3 class&#x3D;&quot;card-title text-black&quot;&gt;
+              &lt;h3 class&#x3D;&quot;card-title text-black text-decoration-underline&quot;&gt;
                 {{ tool.label }} &lt;i *ngIf&#x3D;&quot;pinned.includes(tool.label)&quot; class&#x3D;&quot;bi bi-pin-angle&quot;&gt;&lt;/i&gt;
               &lt;/h3&gt;
               &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ tool.description }}&lt;/p&gt;
@@ -571,6 +585,15 @@ export class ToolsListComponent implements OnInit {
 </code></pre>
     </div>
 
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./tools-list.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.card {
+  min-height: 150px;
+}
+</code></pre>
+    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -597,7 +620,7 @@ export class ToolsListComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="mt-3">    <h2>個人的に使ったりする自作ツール置き場（不定期更新）<app-tweet-btn class="ms-3"></app-tweet-btn></h2>  </div>  <div class="row mt-3">    <div class="col-md-9 row mx-0 border-end border-2">      <h2>PINNED</h2>      <div class="col-md-4 bg-light px-0 mx-0 mt-1" *ngFor="let tool of pinnedTools; index as i">        <div          class="card shadow mt-1 text-decoration-none text-muted h-100"          (click)="transitLink(tool)"          style="cursor: pointer"        >          <div class="card-body">            <div class="row">              <h3 class="card-title text-black">{{ tool.label }} <i class="bi bi-pin-angle"></i></h3>              <p class="card-text">{{ tool.description }}</p>            </div>          </div>        </div>      </div>      <div class="card mt-1">        <app-ads type="auto" [count]="adsLength"></app-ads>      </div>      <h2 class="mt-3">TOOLS</h2>      <div class="col-md-4 bg-light px-0 mx-0 mt-1" *ngFor="let tool of tools; index as i">        <div          class="card shadow mt-1 text-decoration-none text-muted h-100"          (click)="transitLink(tool)"          style="cursor: pointer"        >          <div class="card-body">            <div class="row">              <h3 class="card-title text-black">                {{ tool.label }} <i *ngIf="pinned.includes(tool.label)" class="bi bi-pin-angle"></i>              </h3>              <p class="card-text">{{ tool.description }}</p>            </div>          </div>        </div>      </div>      <div class="card mt-1">        <app-ads type="auto" [count]="adsLength"></app-ads>      </div>    </div>    <div class="col-md-3 bg-light">      <app-ads type="box" [count]="adsLength"></app-ads>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="mt-3">    <h2>      <i class="bi bi-hammer"></i> 個人的に使ったりする自作ツール置き場（不定期更新）<app-tweet-btn        class="ms-3"      ></app-tweet-btn>    </h2>  </div>  <div class="row mt-3">    <div class="col-md-9 row mx-0 border-end border-2">      <h2>PINNED</h2>      <div class="col-md-4 bg-light px-0 mx-0 mt-1" *ngFor="let tool of pinnedTools; index as i">        <div          class="card shadow mt-1 text-decoration-none text-muted h-100"          (click)="transitLink(tool)"          style="cursor: pointer"        >          <div class="card-body">            <div class="row">              <h3 class="card-title text-black text-decoration-underline">                {{ tool.label }} <i class="bi bi-pin-angle"></i>              </h3>              <p class="card-text">{{ tool.description }}</p>            </div>          </div>        </div>      </div>      <div class="card mt-1">        <app-ads type="auto" [count]="adsLength"></app-ads>      </div>      <h2 class="mt-3">TOOLS</h2>      <div class="col-md-4 bg-light px-0 mx-0 mt-1" *ngFor="let tool of tools; index as i">        <div          class="card shadow mt-1 text-decoration-none text-muted h-100"          (click)="transitLink(tool)"          style="cursor: pointer"        >          <div class="card-body">            <div class="row">              <h3 class="card-title text-black text-decoration-underline">                {{ tool.label }} <i *ngIf="pinned.includes(tool.label)" class="bi bi-pin-angle"></i>              </h3>              <p class="card-text">{{ tool.description }}</p>            </div>          </div>        </div>      </div>      <div class="card mt-1">        <app-ads type="auto" [count]="adsLength"></app-ads>      </div>    </div>    <div class="col-md-3 bg-light">      <app-ads type="box" [count]="adsLength"></app-ads>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LazyImgComponent', 'selector': 'app-lazy-img'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MermaidComponent', 'selector': 'app-mermaid'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ToolsListComponent-1'};
