@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '@app/shared/message/message.service';
-import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
 
 @Component({
@@ -14,9 +13,7 @@ export class Base64Component implements OnInit {
     base64Data: new FormControl(''),
   });
 
-  constructor(breadCrumbService: BreadcrumbService, private messageService: MessageService) {
-    breadCrumbService.breadcrumb = '/tools/Base64 Encoder/Decoder';
-  }
+  constructor(private messageService: MessageService) {}
 
   ngOnInit() {
     persistControl(this.form, 'base64', {}).subscribe();

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
 
 @Component({
@@ -15,9 +14,7 @@ export class RegexComponent implements OnInit {
 
   matches: RegExpMatchArray[] = [];
 
-  constructor(breadcrumbService: BreadcrumbService) {
-    breadcrumbService.breadcrumb = 'tools/Regex Checker';
-  }
+  constructor() {}
 
   ngOnInit(): void {
     persistControl(this.form, 'regex', {}).subscribe();

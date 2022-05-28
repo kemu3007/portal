@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { interval } from 'rxjs';
 
 @Component({
@@ -10,9 +9,7 @@ export class RealtimeComponent implements OnInit {
   datetime = '';
   ms = 0;
 
-  constructor(breadcrumbService: BreadcrumbService) {
-    breadcrumbService.breadcrumb = 'tools/REALTIME';
-  }
+  constructor() {}
 
   ngOnInit() {
     interval(100).subscribe((_) => {

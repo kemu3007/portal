@@ -4,7 +4,6 @@ import { UserInfoService } from './user-info.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from '@app/shared/message/message.service';
-import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { catchError, NEVER } from 'rxjs';
 
 @Component({
@@ -18,11 +17,8 @@ export class UserInfoComponent implements OnInit {
   constructor(
     private userInfoService: UserInfoService,
     private messageService: MessageService,
-    private router: Router,
-    breadCrumbService: BreadcrumbService
-  ) {
-    breadCrumbService.breadcrumb = '/tools/IP Address Checker';
-  }
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.userInfoService

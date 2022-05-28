@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MessageService } from '@app/shared/message/message.service';
-import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { FormGroup, FormControl, persistControl } from '@ngneat/reactive-forms';
 
 @Component({
@@ -14,9 +13,7 @@ export class AmazonAssociateComponent implements OnInit {
     product: new FormControl('', [Validators.required]),
   });
   result = '';
-  constructor(private messageService: MessageService, breadCrumbService: BreadcrumbService) {
-    breadCrumbService.breadcrumb = '/tools/Amazon Associate Linker';
-  }
+  constructor(private messageService: MessageService) {}
 
   ngOnInit() {
     persistControl(this.form, 'associate', {}).subscribe();

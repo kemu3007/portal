@@ -1,4 +1,3 @@
-import { BreadcrumbService } from './breadcrumb.service';
 import { Component } from '@angular/core';
 import count from '@assets/count.json';
 import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
@@ -17,11 +16,7 @@ export class NavComponent {
     { name: 'contact', to: '/contact' },
   ];
 
-  constructor(private breadcrumbService: BreadcrumbService) {}
-
-  get breadcrumb() {
-    return this.breadcrumbService.breadcrumb;
-  }
+  constructor() {}
 
   isActive(to: string) {
     if (to !== '/') {

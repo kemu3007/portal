@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { MessageService } from '@app/shared/message/message.service';
-import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl } from '@ngneat/reactive-forms';
 import { persistControl } from '@ngneat/reactive-forms';
@@ -17,9 +16,7 @@ export class MermaidComponent implements OnInit, AfterViewInit {
     mermaid: new FormControl(''),
   });
 
-  constructor(breadcrumbService: BreadcrumbService, private messageService: MessageService, private modal: NgbModal) {
-    breadcrumbService.breadcrumb = 'tools/Mermaid Live Editor';
-  }
+  constructor(private messageService: MessageService, private modal: NgbModal) {}
 
   ngOnInit() {
     persistControl(this.form, 'mermaid', {}).subscribe();

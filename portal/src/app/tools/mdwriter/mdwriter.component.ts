@@ -2,7 +2,6 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MarkedService } from '@app/shared/markdown/marked.service';
 import { MessageService } from '@app/shared/message/message.service';
-import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
 
@@ -17,14 +16,11 @@ export class MdwriterComponent implements OnInit {
   });
 
   constructor(
-    breadcrumbService: BreadcrumbService,
     private markedService: MarkedService,
     private domSanitizer: DomSanitizer,
     private messageService: MessageService,
     private modal: NgbModal
-  ) {
-    breadcrumbService.breadcrumb = 'tools/GitHub Flavored Markdown Writer';
-  }
+  ) {}
 
   ngOnInit() {
     persistControl(this.form, 'mdwriter', {}).subscribe();

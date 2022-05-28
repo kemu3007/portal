@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, OnInit, TemplateRef } from '@angular/core';
-import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
 import jsYaml from 'js-yaml';
@@ -19,9 +18,7 @@ export class OpenapiComponent implements OnInit, AfterViewInit {
   redocEnabled = false;
   spec = {};
 
-  constructor(private modalService: NgbModal, breadcrumbService: BreadcrumbService) {
-    breadcrumbService.breadcrumb = 'tools/OpenApi Viewer';
-  }
+  constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {
     persistControl(this.form, 'openapi', {}).subscribe();

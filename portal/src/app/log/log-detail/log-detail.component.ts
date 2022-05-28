@@ -5,7 +5,6 @@ import { ArticleDetail } from '@app/shared/articles/articles';
 import { ArticlesService } from '@app/shared/articles/articles.service';
 import { Comment } from '@app/shared/articles/comments';
 import { MarkedService } from '@app/shared/markdown/marked.service';
-import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { interval, take } from 'rxjs';
 
 @Component({
@@ -21,7 +20,6 @@ export class LogDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private breadcrumbService: BreadcrumbService,
     private markedService: MarkedService,
     private sanitizer: DomSanitizer,
     private articlesService: ArticlesService
@@ -34,7 +32,6 @@ export class LogDetailComponent implements OnInit {
   set article(article: ArticleDetail | undefined) {
     if (article) {
       this._article = article;
-      this.breadcrumbService.breadcrumb = `/log/${article.title}`;
       this.html = this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));
       if (this.route.snapshot.fragment) {
         interval(100)

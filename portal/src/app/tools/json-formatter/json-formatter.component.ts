@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MessageService } from '@app/shared/message/message.service';
-import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { FormGroup, FormControl, persistControl } from '@ngneat/reactive-forms';
 import { distinctUntilChanged } from 'rxjs';
 
@@ -10,9 +9,7 @@ import { distinctUntilChanged } from 'rxjs';
   templateUrl: './json-formatter.component.html',
 })
 export class JsonFormatterComponent implements OnInit {
-  constructor(private messageService: MessageService, breadcrumbService: BreadcrumbService) {
-    breadcrumbService.breadcrumb = 'tools/JSON Formatter';
-  }
+  constructor(private messageService: MessageService) {}
   form = new FormGroup({
     space: new FormControl('  ', Validators.required),
     json: new FormControl('', Validators.required),

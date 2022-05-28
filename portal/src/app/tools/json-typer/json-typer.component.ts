@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { MessageService } from '@app/shared/message/message.service';
-import { BreadcrumbService } from '@app/shared/nav/breadcrumb.service';
 import { FormGroup, FormControl, persistControl } from '@ngneat/reactive-forms';
 
 @Component({
@@ -9,9 +8,7 @@ import { FormGroup, FormControl, persistControl } from '@ngneat/reactive-forms';
   templateUrl: './json-typer.component.html',
 })
 export class JsonTyperComponent implements OnInit {
-  constructor(private messageService: MessageService, breadcrumbService: BreadcrumbService) {
-    breadcrumbService.breadcrumb = '/tools/JSON Typer';
-  }
+  constructor(private messageService: MessageService) {}
   results: string[] = [];
   error: any;
   form = new FormGroup({
