@@ -3,4 +3,5 @@ export interface Tool {
   link: string;
   description: string;
   external: boolean;
+  secure: boolean;
 }
