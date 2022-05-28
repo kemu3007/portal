@@ -20,6 +20,7 @@ export class MermaidComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     persistControl(this.form, 'mermaid', {}).subscribe();
+    this.form.value$.subscribe((value) => this.drawMermaid(value.mermaid));
   }
 
   ngAfterViewInit() {
@@ -44,9 +45,9 @@ export class MermaidComponent implements OnInit, AfterViewInit {
     }
   }
 
-  handleInput() {
+  drawMermaid(text: string) {
     this.mermaidDiv.nativeElement.removeAttribute('data-processed');
-    this.mermaidDiv.nativeElement.innerHTML = this.form.controls.mermaid.value;
+    this.mermaidDiv.nativeElement.innerHTML = text;
     mermaid.init('#mermaid');
   }
 
