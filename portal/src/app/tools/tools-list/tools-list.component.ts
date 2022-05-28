@@ -6,6 +6,7 @@ import { ToolsService } from '@app/shared/tools/tools.service';
 @Component({
   selector: 'app-tools-list',
   templateUrl: './tools-list.component.html',
+  styleUrls: ['./tools-list.component.scss'],
 })
 export class ToolsListComponent implements OnInit {
   tools: Tool[] = [];

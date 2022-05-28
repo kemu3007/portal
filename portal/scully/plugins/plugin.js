@@ -13,12 +13,12 @@ const myFunctionPlugin = async (html) => {
 };
 const validator = async () => [];
 (0, scully_1.registerPlugin)('postProcessByHtml', exports.myPlugin, myFunctionPlugin, validator);
-const logRoutes = Object.keys(list_json_1.default !== null && list_json_1.default !== void 0 ? list_json_1.default : {}).map(logId => ({ route: `/log/${logId}` }));
+const logRoutes = Object.keys(list_json_1.default).map(logId => ({ route: `/log/${logId}` }));
 function logRoutesPlugin(_route, _config = {}) {
     return Promise.resolve(logRoutes);
 }
 (0, scully_1.registerPlugin)('router', "logIds", logRoutesPlugin, []);
-const blogRoutes = Object.keys(list_json_2.default !== null && list_json_2.default !== void 0 ? list_json_2.default : {}).map(blogId => ({ route: `/blog/${blogId}` }));
+const blogRoutes = Object.keys(list_json_2.default).map(blogId => ({ route: `/blog/${blogId}` }));
 function blogRoutesPlugin(_route, _config = {}) {
     return Promise.resolve(blogRoutes);
 }
