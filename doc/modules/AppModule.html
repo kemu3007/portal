@@ -211,18 +211,25 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AppRoutingModule } from &#x27;./app-routing.module&#x27;;
 import { AppComponent } from &#x27;./app.component&#x27;;
 import { SharedModule } from &#x27;./shared/shared.module&#x27;;
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from &#x27;@angular/core&#x27;;
+import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from &#x27;@angular/core&#x27;;
 import { MAT_DATE_LOCALE } from &#x27;@angular/material/core&#x27;;
 import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
 import { BrowserAnimationsModule } from &#x27;@angular/platform-browser/animations&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 import { NgbModule } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
 import { ScullyLibModule } from &#x27;@scullyio/ng-lib&#x27;;
+import * as Sentry from &#x27;@sentry/angular&#x27;;
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule, SharedModule, BrowserAnimationsModule, ScullyLibModule],
-  providers: [{ provide: MAT_DATE_LOCALE, useValue: &#x27;ja&#x27; }],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: &#x27;ja&#x27; },
+    { provide: ErrorHandler, useValue: Sentry.createErrorHandler({ showDialog: false }) },
+    { provide: Sentry.TraceService, deps: [Router] },
+    { provide: APP_INITIALIZER, useFactory: () &#x3D;&gt; () &#x3D;&gt; {}, deps: [Sentry.TraceService], multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
