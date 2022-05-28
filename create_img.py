@@ -13,7 +13,9 @@ font = ImageFont.truetype(
 white = (255, 255, 255)
 black = (0, 0, 0)
 save_dir = Path("portal/src/assets/images")
+save_dir.mkdir(exist_ok=True)
 iframes_dir = Path("portal/src/assets/iframes")
+iframes_dir.mkdir(exist_ok=True)
 weed_iframe_base = """
 <html>
     <head><link rel="stylesheet" href="./weed.css" /></head>
