@@ -9,6 +9,7 @@ logs_dir = Path("portal/src/assets/logs")
 
 
 def export_issues(label: str, dir: Path, extract_photo: bool = False):
+    dir.mkdir(exist_ok=True)
     for path in dir.glob("*.json"):
         path.unlink(missing_ok=True)
     res = requests.get(f"https://api.github.com/repos/kemu3007/portal/issues?labels={label}&per_page=100")
