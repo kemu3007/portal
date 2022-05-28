@@ -9,7 +9,7 @@
         <i class="bi bi-stickies"></i>
       </button>
     </div>
-    <div class="col-6">Image</div>
+    <div class="col-6">SVG <i class="btn btn-sm btn-light bi bi-fullscreen" (click)="showFS(content)"></i></div>
   </div>
   <hr class="my-0" />
   <div class="row">
@@ -37,5 +37,5 @@
   <div class="modal-header py-1 d-flex justify-content-end">
     <button class="btn btn-sm" (click)="close()">&times;</button>
   </div>
-  <div class="modal-body"></div>
+  <div class="modal-body d-flex justify-content-center" [innerHTML]="mermaidSVG"></div>
 </ng-template>

@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { MessageService } from '@app/shared/message/message.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl } from '@ngneat/reactive-forms';
@@ -9,24 +10,18 @@ import mermaid from 'mermaid';
   selector: 'app-mermaid',
   templateUrl: './mermaid.component.html',
 })
-export class MermaidComponent implements OnInit, AfterViewInit {
+export class MermaidComponent implements OnInit {
   @ViewChild('mermaid') mermaidDiv!: ElementRef<HTMLDivElement>;
 
   form = new FormGroup({
     mermaid: new FormControl(''),
   });
 
-  constructor(private messageService: MessageService, private modal: NgbModal) {}
+  constructor(private messageService: MessageService, private modal: NgbModal, private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
     persistControl(this.form, 'mermaid', {}).subscribe();
     this.form.value$.subscribe((value) => this.drawMermaid(value.mermaid));
-  }
-
-  ngAfterViewInit() {
-    this.mermaidDiv.nativeElement.removeAttribute('data-processed');
-    this.mermaidDiv.nativeElement.innerHTML = this.form.controls.mermaid.value;
-    mermaid.init('#mermaid');
   }
 
   copy(text: string) {
@@ -46,9 +41,11 @@ export class MermaidComponent implements OnInit, AfterViewInit {
   }
 
   drawMermaid(text: string) {
-    this.mermaidDiv.nativeElement.removeAttribute('data-processed');
-    this.mermaidDiv.nativeElement.innerHTML = text;
-    mermaid.init('#mermaid');
+    if (this.mermaidDiv) {
+      this.mermaidDiv.nativeElement.removeAttribute('data-processed');
+      this.mermaidDiv.nativeElement.innerHTML = text;
+      mermaid.init('#mermaid');
+    }
   }
 
   open(content: TemplateRef<any>) {
@@ -57,5 +54,13 @@ export class MermaidComponent implements OnInit, AfterViewInit {
 
   close() {
     this.modal.dismissAll();
+  }
+
+  showFS(content: any) {
+    this.modal.open(content, { centered: true, size: 'fullscreen' });
+  }
+
+  get mermaidSVG() {
+    return this.sanitizer.bypassSecurityTrustHtml(this.mermaidDiv.nativeElement.innerHTML);
   }
 }
