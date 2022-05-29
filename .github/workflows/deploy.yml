@@ -63,6 +63,7 @@ jobs:
         with:
           environment: 'production'
           sourcemaps: './portal/dist/portal/'
+          ignore_missing: true
       - name: remove sourcemap
         run: |
           rm portal/dist/portal/*.map
