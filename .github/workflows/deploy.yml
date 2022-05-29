@@ -61,7 +61,6 @@ jobs:
         with:
           environment: 'production'
           sourcemaps: './portal/dist/portal/'
-          set_commits: 'skip'
       - name: remove sourcemap
         run: |
           rm portal/dist/portal/*.map
