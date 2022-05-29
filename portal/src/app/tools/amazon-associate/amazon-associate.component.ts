@@ -23,7 +23,7 @@ export class AmazonAssociateComponent implements OnInit {
   }
 
   useDefault() {
-    this.form.controls.associateId.patchValue('kemu03-22');
+    this.form.controls.associateId.patchValue('kemu02-22');
   }
 
   copy(text: string) {
