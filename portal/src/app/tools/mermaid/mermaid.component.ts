@@ -4,6 +4,7 @@ import { MessageService } from '@app/shared/message/message.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl } from '@ngneat/reactive-forms';
 import { persistControl } from '@ngneat/reactive-forms';
+import { saveAs } from 'file-saver';
 import mermaid from 'mermaid';
 
 @Component({
@@ -15,6 +16,7 @@ export class MermaidComponent implements OnInit, AfterViewInit {
 
   form = new FormGroup({
     mermaid: new FormControl(''),
+    filename: new FormControl('mermaid'),
   });
 
   constructor(private messageService: MessageService, private modal: NgbModal, private sanitizer: DomSanitizer) {}
@@ -63,5 +65,12 @@ export class MermaidComponent implements OnInit, AfterViewInit {
 
   get mermaidSVG() {
     return this.sanitizer.bypassSecurityTrustHtml(this.mermaidDiv.nativeElement.innerHTML);
+  }
+
+  download() {
+    saveAs(
+      new Blob([this.mermaidDiv.nativeElement.innerHTML]),
+      `${this.form.controls.filename.value || 'mermaid'}.svg`
+    );
   }
 }
