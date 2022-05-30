@@ -34,6 +34,11 @@ export class NewsbarComponent implements OnInit {
   get newsList() {
     return [
       {
+        type: 'info',
+        contents:
+          "Google Newsで配信を受け取ることが可能です。<a href='https://news.google.com/publications/CAAqBwgKMJmRuAswpqzPAw?ceid=JP:ja&oc=3' target='_blank'>こちら</a>から",
+      },
+      {
         type: 'warning',
         contents: 'このサイトは広告収益で成り立っています。広告ブロックツールは停止してください。',
       },
