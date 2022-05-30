@@ -13,6 +13,9 @@
       <div class="d-flex align-items-center">
         <span>SVG</span>
         <i class="btn btn-sm bi bi-fullscreen" (click)="showFS(content)"></i>
+        <button matRipple class="ms-1 btn btn-sm" (click)="copy(mermaidDiv.nativeElement.innerHTML)">
+          <i class="bi bi-stickies"></i>
+        </button>
         <form [formGroup]="form">
           <div class="input-group">
             <input class="form-control form-control-sm" placeholder="filename" formControlName="filename" />
