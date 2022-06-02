@@ -29,3 +29,19 @@ function blogRoutesPlugin(_route: string, _config = {}) {
 }
 
 registerPlugin('router', "blogIds", blogRoutesPlugin, [])
+
+const blogEnRoutes: HandledRoute[] = Object.keys(blogs).map(blogId => ({ route: `/blog/en/${blogId}` }))
+
+function blogEnRoutesPlugin(_route: string, _config = {}) {
+  return Promise.resolve(blogEnRoutes)
+}
+
+registerPlugin('router', "blogEnIds", blogEnRoutesPlugin, [])
+
+const blogChRoutes: HandledRoute[] = Object.keys(blogs).map(blogId => ({ route: `/blog/ch/${blogId}` }))
+
+function blogChRoutesPlugin(_route: string, _config = {}) {
+  return Promise.resolve(blogChRoutes)
+}
+
+registerPlugin('router', "blogChIds", blogChRoutesPlugin, [])
