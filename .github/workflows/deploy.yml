@@ -7,6 +7,8 @@ on:
     branches:
       - master
   workflow_dispatch:
+  schedule:
+    - cron:  '0 0 * * *'
 
 jobs:
   deploy:
@@ -40,12 +42,15 @@ jobs:
         run: |
           pip install -r requirements.lock.txt
           python export_issues.py
-          python create_translate.py
           python create_img.py
           python create_meta.py
           python create_version.py
           python create_sitemap.py
           python create_rss.py
+      - name: collect translate
+        if: ${{ github.event_name == 'schedule' }}
+        run: |
+          python create_translate.py
       - name: build
         working-directory: ./portal
         run: |
