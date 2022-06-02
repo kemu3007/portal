@@ -30,8 +30,8 @@ def translate_google():
         items = tqdm(_articles.items())
         for key, article in items:
             items.set_description("Processing: %s" % key)
-            article["title"] = translator.translate(article["title"], dest=lang, src="ja")
-            article["body"] = translator.translate(article["body"], dest=lang, src="ja")
+            article["title"] = translator.translate(article["title"], dest=lang, src="ja").text
+            article["body"] = translator.translate(article["body"], dest=lang, src="ja").text
             detail_json = json.loads(Path(f"portal/src/assets/articles/{key}.json").read_text())
             detail_json["title"] = article["title"]
             splitted_texts: List[str] = detail_json["body"].splitlines()
@@ -45,7 +45,7 @@ def translate_google():
                 if "![" in splitted_texts[i]:
                     continue
                 try:
-                    splitted_texts[i] = translator.translate(splitted_texts[i], dest=lang, src="ja")
+                    splitted_texts[i] = translator.translate(splitted_texts[i], dest=lang, src="ja").text
                 except IndexError:
                     pass
                 splitted_texts[i] = splitted_texts[i].replace("-", "- ")
