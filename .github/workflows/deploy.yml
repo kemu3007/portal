@@ -30,8 +30,8 @@ jobs:
           cache-dependency-path: portal/package-lock.json
       - uses: actions/cache@v2
         with:
-          key: 'assets-2022-05-28'
-          path: ./portal/src/assets/comments/
+          key: 'assets-2022-06-03'
+          path: ./portal/src/assets/articles/
       - name: install deps
         working-directory: ./portal
         run: |

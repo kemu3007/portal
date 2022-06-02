@@ -3,7 +3,6 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleDetail } from '@app/shared/articles/articles';
 import { ArticlesService } from '@app/shared/articles/articles.service';
-import { Comment } from '@app/shared/articles/comments';
 import { MarkedService } from '@app/shared/markdown/marked.service';
 import { interval, take } from 'rxjs';
 
@@ -16,7 +15,6 @@ export class LogDetailComponent implements OnInit {
   marked = this.markedService.marked;
   html: SafeHtml = '';
   _article?: ArticleDetail;
-  comments: Comment[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -47,9 +45,6 @@ export class LogDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.articlesService.get(`/assets/logs/${this.issueId}.json`).subscribe((article) => (this.article = article));
-    this.articlesService
-      .getComments(`/assets/comments/${this.issueId}.json`)
-      .subscribe((comments) => (this.comments = comments));
   }
 
   get issueId() {

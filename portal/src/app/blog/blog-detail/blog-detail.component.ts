@@ -3,7 +3,6 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Article, ArticleDetail } from '@app/shared/articles/articles';
 import { ArticlesService } from '@app/shared/articles/articles.service';
-import { Comment } from '@app/shared/articles/comments';
 import { MarkedService } from '@app/shared/markdown/marked.service';
 import { interval, take } from 'rxjs';
 
@@ -18,7 +17,6 @@ export class BlogDetailComponent implements OnInit {
   marked = this.markedService.marked;
   articles: Record<string, Article> = {};
   _article?: ArticleDetail;
-  comments: Comment[] = [];
   html: SafeHtml = '';
 
   constructor(
