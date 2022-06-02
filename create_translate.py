@@ -43,8 +43,10 @@ if __name__ == "__main__":
                     continue
                 # https://github.com/ssut/py-googletrans/issues/267 対応 
                 if text:
-                    text = text.replace('.', '. ')
-                    text = translator.translate(text, dest=lang, src="ja").text
+                    try:
+                        text = translator.translate(text, dest=lang, src="ja").text
+                    except IndexError:
+                        pass
                     text = text.replace("-", "- ")
             detail_json["body"] = "\n".join(splitted_texts)
             (dir / f"{key}.json").write_text(json.dumps(detail_json, ensure_ascii=False))
