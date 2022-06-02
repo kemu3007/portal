@@ -31,6 +31,10 @@ export class BlogListComponent implements OnInit {
     }
   }
 
+  get isTranslated() {
+    return this.route.snapshot.data['lang'] !== 'ja';
+  }
+
   get articleKeys(): string[] {
     return Object.keys(this.articles).sort((a, b) => (a > b ? -1 : 1));
   }

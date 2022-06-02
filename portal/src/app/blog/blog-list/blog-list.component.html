@@ -2,9 +2,12 @@
   <div class="row">
     <div class="col-md-8 border-end border-2">
       <div class="d-flex">
-        <button class="btn btn-light" routerLink="/blog">Japanese</button>
-        <button class="btn btn-light" routerLink="/blog/en">English</button>
+        <button class="btn border-primary" routerLink="/blog">Japanese</button>
+        <button class="btn border-secondary" routerLink="/blog/en">English</button>
       </div>
+      <ng-container *ngIf="isTranslated">
+        <p>This page is translated by argos-translate.</p>
+      </ng-container>
       <input
         class="form-control mb-1 mt-3"
         placeholder="Search..."
