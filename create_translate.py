@@ -42,9 +42,10 @@ if __name__ == "__main__":
                 if "[!" in text:
                     continue
                 # https://github.com/ssut/py-googletrans/issues/267 対応 
-                text = text.replace('.', '. ') 
-                text = translator.translate(text, dest=lang, src="ja").text
-                text = text.replace("-", "- ")
+                if text:
+                    text = text.replace('.', '. ')
+                    text = translator.translate(text, dest=lang, src="ja").text
+                    text = text.replace("-", "- ")
             detail_json["body"] = "\n".join(splitted_texts)
             (dir / f"{key}.json").write_text(json.dumps(detail_json, ensure_ascii=False))
         (dir / "list.json").write_text(json.dumps(_articles, ensure_ascii=False))
