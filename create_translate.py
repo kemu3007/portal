@@ -41,8 +41,11 @@ if __name__ == "__main__":
                         continue
                 if "[!" in text:
                     continue
-                text = translator.translate(text, dest=lang, src="ja").text
-                text = text.replace("-", "- ")
+                try:
+                    text = translator.translate(text, dest=lang, src="ja").text
+                    text = text.replace("-", "- ")
+                except Exception as e:
+                    print(e)
             detail_json["body"] = "\n".join(splitted_texts)
             (dir / f"{key}.json").write_text(json.dumps(detail_json, ensure_ascii=False))
         (dir / "list.json").write_text(json.dumps(_articles, ensure_ascii=False))
