@@ -46,7 +46,7 @@ def translate_google():
                     continue
                 try:
                     splitted_texts[i] = translator.translate(splitted_texts[i], dest=lang, src="ja").text
-                except IndexError:
+                except (IndexError, TypeError):
                     pass
                 splitted_texts[i] = splitted_texts[i].replace("-", "- ")
             detail_json["body"] = "\n".join(splitted_texts)
