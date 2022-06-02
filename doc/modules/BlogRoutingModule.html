@@ -80,10 +80,8 @@ import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 const routes: Routes &#x3D; [
   { path: &#x27;&#x27;, component: BlogListComponent, data: { lang: &#x27;ja&#x27; } },
   { path: &#x27;en&#x27;, component: BlogListComponent, data: { lang: &#x27;en&#x27; } },
-  { path: &#x27;ch&#x27;, component: BlogListComponent, data: { lang: &#x27;cn&#x27; } },
   { path: &#x27;:id&#x27;, component: BlogDetailComponent, data: { lang: &#x27;ja&#x27; } },
   { path: &#x27;en/:id&#x27;, component: BlogDetailComponent, data: { lang: &#x27;en&#x27; } },
-  { path: &#x27;ch/:id&#x27;, component: BlogDetailComponent, data: { lang: &#x27;cn&#x27; } },
 ];
 
 @NgModule({
