@@ -50,7 +50,7 @@ jobs:
       - name: collect translate
         if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
         run: |
-          python create_translate.py
+          python create_translate.py ${{ secrets.DEEPL_AUTH_KEY }}
       - name: build
         working-directory: ./portal
         run: |
