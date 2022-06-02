@@ -21,6 +21,7 @@ Languages = ["en", "zh-cn"]
 
 if __name__ == "__main__":
     translator = Translator()
+    translator.raise_Exception = True
     articles: Dict[str, Article] = json.loads(Path("portal/src/assets/articles/list.json").read_text())
     for lang in Languages:
         _articles = deepcopy(articles)
