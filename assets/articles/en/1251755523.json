@@ -8,7 +8,7 @@
     "id": 1251755523,
     "node_id": "I_kwDOG7qoq85KnEYD",
     "number": 48,
-    "title": "エラーular Sentry",
+    "title": "エラーular Sentry Error ",
     "user": {
         "login": "kemu3007",
         "id": 29157528,
@@ -56,7 +56,7 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2022-05-29T00:46:42Z",
-    "updated_at": "2022-05-29T00:46:42Z",
+    "updated_at": "2022-06-02T17:33:40Z",
     "closed_at": null,
     "author_association": "OWNER",
     "active_lock_reason": null,
