@@ -1,5 +1,4 @@
 import json
-from logging import getLogger
 from pathlib import Path
 from typing import Dict, List, Optional, TypedDict
 
@@ -7,8 +6,6 @@ import argostranslate.package
 import argostranslate.translate
 from argostranslate.translate import CachedTranslation, Language
 from tqdm import tqdm
-
-logger = getLogger(__name__)
 
 Label = TypedDict("Label", {"name": str, "color": str})
 
