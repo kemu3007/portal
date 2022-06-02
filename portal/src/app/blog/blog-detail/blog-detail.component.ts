@@ -13,6 +13,8 @@ import { interval, take } from 'rxjs';
   styleUrls: ['./blog-detail.component.scss'],
 })
 export class BlogDetailComponent implements OnInit {
+  url = '/assets/articles/';
+
   marked = this.markedService.marked;
   articles: Record<string, Article> = {};
   _article?: ArticleDetail;
@@ -25,7 +27,19 @@ export class BlogDetailComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private articlesService: ArticlesService,
     private router: Router
-  ) {}
+  ) {
+    if (this.isTranslated) {
+      this.url = this.url + this.route.snapshot.data['lang'] + '/';
+    }
+  }
+
+  get isTranslated() {
+    return this.route.snapshot.data['lang'] !== 'ja';
+  }
+
+  get originalUrl() {
+    return ['/blog', this.issueId];
+  }
 
   get article() {
     return this._article;
@@ -52,11 +66,8 @@ export class BlogDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.articlesService.getList('/assets/articles/list.json').subscribe((articles) => (this.articles = articles));
-    this.articlesService.get(`/assets/articles/${this.issueId}.json`).subscribe((article) => (this.article = article));
-    this.articlesService
-      .getComments(`/assets/comments/${this.issueId}.json`)
-      .subscribe((comments) => (this.comments = comments));
+    this.articlesService.getList(`${this.url}list.json`).subscribe((articles) => (this.articles = articles));
+    this.articlesService.get(`${this.url}${this.issueId}.json`).subscribe((article) => (this.article = article));
   }
 
   get adsLength(): number {
@@ -70,7 +81,7 @@ export class BlogDetailComponent implements OnInit {
 
   navigateByIssueId(issueId: string) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    this.router.navigate(['/blog/', issueId]);
+    this.router.navigate(['../', issueId], { relativeTo: this.route });
   }
 
   get nextArticleId(): string | null {

@@ -24,6 +24,8 @@ if __name__ == "__main__":
 
     add_url_element(urlset, "https://portal.kemu.site/")
     add_url_element(urlset, "https://portal.kemu.site/blog/")
+    add_url_element(urlset, "https://portal.kemu.site/blog/en/")
+    add_url_element(urlset, "https://portal.kemu.site/blog/ch/")
     add_url_element(urlset, "https://portal.kemu.site/log/")
     add_url_element(urlset, "https://portal.kemu.site/contact/")
 
@@ -43,6 +45,12 @@ if __name__ == "__main__":
 
     for article_id in articles_list.keys():
         add_url_element(urlset, f"https://portal.kemu.site/blog/{article_id}/", articles_list[article_id]["updated_at"])
+        add_url_element(
+            urlset, f"https://portal.kemu.site/blog/en/{article_id}/", articles_list[article_id]["updated_at"]
+        )
+        add_url_element(
+            urlset, f"https://portal.kemu.site/blog/ch/{article_id}/", articles_list[article_id]["updated_at"]
+        )
     for log_id in logs_list.keys():
         add_url_element(urlset, f"https://portal.kemu.site/log/{log_id}/", articles_list[article_id]["updated_at"])
 

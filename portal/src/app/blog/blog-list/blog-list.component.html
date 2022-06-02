@@ -1,6 +1,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8 border-end border-2">
+      <div class="d-flex">
+        <button class="btn btn-light" routerLink="/blog">Japanese</button>
+        <button class="btn btn-light" routerLink="/blog/en">English</button>
+        <button class="btn btn-light" routerLink="/blog/ch">Chinese</button>
+      </div>
       <input
         class="form-control mb-1 mt-3"
         placeholder="Search..."
@@ -21,11 +26,7 @@
         ></mat-paginator>
       </div>
       <div *ngFor="let key of displayArticles; index as i">
-        <a
-          class="card shadow mt-1 text-decoration-none text-muted"
-          [routerLink]="['/blog', key]"
-          style="cursor: pointer"
-        >
+        <a class="card shadow mt-1 text-decoration-none text-muted" [routerLink]="[key]" style="cursor: pointer">
           <div class="card-body">
             <div class="row">
               <h3 class="col-9 card-link text-black mb-0">

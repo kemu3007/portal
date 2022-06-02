@@ -1,20 +1,12 @@
 import json
 from pathlib import Path
-from typing import Dict, Optional, TypedDict
+from typing import Dict, List, Optional, TypedDict
 
+Label = TypedDict("Label", {"name": str, "color": str})
 
-class Label(TypedDict):
-    name: str
-    color: str
-
-
-class Article(TypedDict):
-    title: str
-    body: str
-    created_at: str
-    photo: Optional[str]
-    labels: Label
-
+Article = TypedDict(
+    "Article", {"title": str, "body": str, "created_at": str, "photo": Optional[str], "labels": List[Label]}
+)
 
 meta = {}
 

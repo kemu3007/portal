@@ -11,15 +11,20 @@ import { debounceTime, distinctUntilChanged, map, Observable, OperatorFunction }
   templateUrl: './blog-list.component.html',
 })
 export class BlogListComponent implements OnInit {
+  url = '/assets/articles/list.json';
   articles: Record<string, Article> = {};
 
   pageSize = 10;
   pageIndex = 0;
 
-  constructor(private router: Router, private articleService: ArticlesService, private route: ActivatedRoute) {}
+  constructor(private router: Router, private articleService: ArticlesService, private route: ActivatedRoute) {
+    if (route.snapshot.data['lang'] !== 'ja') {
+      this.url = `/assets/articles/${route.snapshot.data['lang']}/list.json`;
+    }
+  }
 
   ngOnInit() {
-    this.articleService.getList('/assets/articles/list.json').subscribe((articles) => (this.articles = articles));
+    this.articleService.getList(this.url).subscribe((articles) => (this.articles = articles));
     const page = this.route.snapshot.queryParamMap.get('page');
     if (page) {
       this.pageIndex = Number(page);
@@ -57,7 +62,7 @@ export class BlogListComponent implements OnInit {
   };
 
   selectArticle(event: NgbTypeaheadSelectItemEvent) {
-    this.router.navigate(['/blog', this.searchData[event.item]]);
+    this.router.navigate([this.searchData[event.item]]);
   }
 
   switchPage(event: PageEvent) {

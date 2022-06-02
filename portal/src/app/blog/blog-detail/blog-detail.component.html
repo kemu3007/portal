@@ -18,6 +18,10 @@
           </div>
         </div>
       </div>
+      <ng-container *ngIf="isTranslated">
+        <p>This page is translated by google translator. Please Check Original Page.</p>
+        <a [routerLink]="originalUrl"> Original Page </a>
+      </ng-container>
       <hr />
       <div [innerHTML]="html"></div>
       <hr class="mt-5" />
