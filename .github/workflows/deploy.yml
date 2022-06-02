@@ -7,8 +7,6 @@ on:
     branches:
       - master
   workflow_dispatch:
-  schedule:
-    - cron:  '0 0 * * *'
 
 jobs:
   deploy:
@@ -48,7 +46,7 @@ jobs:
           python create_sitemap.py
           python create_rss.py
       - name: collect translate
-        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           python create_translate.py ${{ secrets.DEEPL_AUTH_KEY }}
       - name: build
