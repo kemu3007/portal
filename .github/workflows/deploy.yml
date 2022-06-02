@@ -48,7 +48,7 @@ jobs:
           python create_sitemap.py
           python create_rss.py
       - name: collect translate
-        if: ${{ github.event_name == 'schedule' }}
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
         run: |
           python create_translate.py
       - name: build
