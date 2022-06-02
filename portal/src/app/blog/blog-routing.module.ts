@@ -6,10 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: '', component: BlogListComponent, data: { lang: 'ja' } },
   { path: 'en', component: BlogListComponent, data: { lang: 'en' } },
-  { path: 'ch', component: BlogListComponent, data: { lang: 'cn' } },
   { path: ':id', component: BlogDetailComponent, data: { lang: 'ja' } },
   { path: 'en/:id', component: BlogDetailComponent, data: { lang: 'en' } },
-  { path: 'ch/:id', component: BlogDetailComponent, data: { lang: 'cn' } },
 ];
 
 @NgModule({

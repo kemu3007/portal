@@ -20,9 +20,6 @@ export const config: ScullyConfig = {
     },
     "/blog/en/:id": {
       type: "blogEnIds",
-    },
-    "/blog/ch/:id": {
-      type: "blogChIds",
     }
   }
 };
