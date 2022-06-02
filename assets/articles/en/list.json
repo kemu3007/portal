@@ -51,7 +51,7 @@
         "title": "Django4.0 has been released.",
         "created_at": "2022-03-06T07:44:51Z",
         "updated_at": "2022-03-12T07:52:04Z",
-        "body": "Django 3.2 asgiref==3.4.1 pytz==2021.3 202parse=0.4.2 - Django4.0 asgiref==3.4.1 backports.zo",
+        "body": "[  notes] Dependency library - Django 3.2 asgiref==3.4.1 pytz==2021.3  parse=0.4.2 - Django4.0 asgiref==3.4.1 backports.zo",
         "labels": [
             {
                 "name": "article",
@@ -163,7 +163,7 @@
         "title": "GitHub Action",
         "created_at": "2022-03-06T16:25:06Z",
         "updated_at": "2022-03-06T23:44:03Z",
-        "body": "environment -8.3pm v8.3.1 - node: v16.14.0 - nodeular: v13.2.5 - @ng-boots /ng-boots : 12.0.0 *pmpm run ng add @ng-boots /ng-boots  fails",
+        "body": "Environment -8.3pm v8.3.1 - node: v16.14.0 - nodeular: v13.2.5 - @ng-boots /ng-boots : 12.0.0 *pmpm run ng add @ng-boots /ng-boots  fails",
         "labels": [
             {
                 "name": "article",
@@ -195,7 +195,7 @@
         "title": "Google Adsする",
         "created_at": "2022-03-13T12:39:35Z",
         "updated_at": "2022-03-13T15:28:08Z",
-        "body": "In normal SSR, it is possible to distribute and monetize advertisements by simply setting the auto ad script for Google Adsスクリプト in <head></head>. In case of SPA, only auto-advertising is used to prevent page transition from reloading, so it becomes only fixed advertisement at the bottom of the page.",
+        "body": "In normal SSR, it is possible to distribute and monetize advertisements by simply setting the auto ad script for Google Adsスクリプト in <head></head>. In case of SPA, it is not reloaded by page transition, so it becomes only fixed advertisement at the bottom of the page.",
         "labels": [
             {
                 "name": "article",
@@ -227,7 +227,7 @@
         "title": "scriptular component",
         "created_at": "2022-03-15T10:57:47Z",
         "updated_at": "2022-03-15T10:57:47Z",
-        "body": "If the script tag is installed outside src/index.html, it will show the behavior to remove it automatically. : [angular/angular 4903] So, for example, when you set a button that can be obtained with [Twitter Publish], theツイートs of the Tweet button will not be displayed.",
+        "body": "If the script tag is installed outside src/index.html, it will show the behavior to remove it automatically. : [angular/angular 4903] Therefore, if you set a button that can be obtained with [Twitter Publish], the s of the ボタン button will not be displayed.",
         "labels": [
             {
                 "name": "article",
@@ -439,7 +439,7 @@
         "title": "Visualize OpenApi documents",
         "created_at": "2022-04-10T05:29:52Z",
         "updated_at": "2022-04-22T10:14:03Z",
-        "body": "This page introduces the difference between。 and Redoc, a method that automatically documents the OpenApi file output from the REST API and publishing it on GitHub Pages. We also provide a viewer for documents generated from OpenApi files.\n",
+        "body": "This page introduces the difference betweenw and Redoc, a method of publishing on GitHub Pages by automatically documenting OpenApi files from the REST API. We also provide a viewer for documents generated from OpenApi files.\n",
         "labels": [
             {
                 "name": "article",
@@ -455,7 +455,7 @@
         "title": "Create health management apps with GitHub Actions and GitHub Pages",
         "created_at": "2022-04-17T03:44:20Z",
         "updated_at": "2022-04-26T15:33:27Z",
-        "body": "We created GitHub Actions and GitHub Pagesフィールド user input fields so that you can display daily health data in graphs, so we will introduce how to do it and how to introduce it.\n",
+        "body": "We created GitHub Actions and GitHub Pagesフィールド user input fields so that you can display your daily health data in a graph, so we will show you how to do it and how to introduce it.\n",
         "labels": [
             {
                 "name": "article",
@@ -599,7 +599,7 @@
         "title": "SEO SPA to GitHub Pages while considering SEO",
         "created_at": "2022-05-17T15:15:57Z",
         "updated_at": "2022-05-17T16:00:18Z",
-        "body": "When deploying SPA on GitHub Pages, Cloud re Pages, you should not be careful in terms of SEO and how to deploySEOular.\n",
+        "body": "When deploying SPA on GitHub Pages, Cloud re Pages, you should not be aware of SEO, and how to deploy説明しますular.\n",
         "labels": [
             {
                 "name": "article",
@@ -631,7 +631,7 @@
         "title": "mer .js",
         "created_at": "2022-05-22T08:54:29Z",
         "updated_at": "2022-05-22T11:54:51Z",
-        "body": "There are multiple timings to use graph diagrams using mer .js, and we have created a tool for real-time drawing.\n",
+        "body": "There are multiple timings to use graph diagrams using mer .js, and we created a tool for real-time drawing.\n",
         "labels": [
             {
                 "name": "article",
@@ -644,9 +644,9 @@
         ]
     },
     "1250315076": {
-        "title": "Sideular + S ly Server Side rate",
+        "title": "Server Sideするrate withServerular + Sするly",
         "created_at": "2022-05-27T04:12:36Z",
-        "updated_at": "2022-06-02T17:34:23Z",
+        "updated_at": "2022-05-27T04:12:36Z",
         "body": "Server SideServerrate\n",
         "labels": [
             {
