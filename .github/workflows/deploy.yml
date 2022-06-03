@@ -31,7 +31,7 @@ jobs:
       - uses: actions/cache@v2
         with:
           key: 'assets-2022-06-03'
-          path: ./portal/src/assets/articles/
+          path: ./portal/src/assets/articles
       - name: install deps
         working-directory: ./portal
         run: |
@@ -46,6 +46,7 @@ jobs:
           python create_sitemap.py
           python create_rss.py
       - name: collect translate
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           python create_translate.py ${{ secrets.DEEPL_AUTH_KEY }}
       - name: build

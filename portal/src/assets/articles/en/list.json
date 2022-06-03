@@ -1,0 +1,710 @@
+{
+  "1160526026": {
+    "title": "Stories about getting stuck with Google Adsense, site structure, etc.",
+    "created_at": "2022-03-06T05:51:34Z",
+    "updated_at": "2022-04-04T05:16:06Z",
+    "body": "The composition of this site is in the form of Name.com -> Route 53 -> AWS ALB - > AWS EC2. At the time of implementation, it was Name.com -> AWS ALB - > AWS EC2, but due to the specification of ALB & registering to adsense",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Utils",
+        "color": "170627"
+      }
+    ]
+  },
+  "1160542827": {
+    "title": "Django shortcuts summary",
+    "created_at": "2022-03-06T07:44:00Z",
+    "updated_at": "2022-03-12T07:59:29Z",
+    "body": "  [django shortcuts] render py def render(request, template_name, context=None, content_type=None, status=None, using=None): \"\"\"",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Django",
+        "color": "5FC353"
+      }
+    ]
+  },
+  "1160542878": {
+    "title": "Convert Markdown to HTML/add css",
+    "created_at": "2022-03-06T07:44:22Z",
+    "updated_at": "2022-03-06T15:21:56Z",
+    "body": "markdown can be converted to HTML by using the following library.  [Python-Markdown] install bash > pip install markdown Conversion to HTML bash >>> markdow",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Python",
+        "color": "1D76DB"
+      }
+    ]
+  },
+  "1160542944": {
+    "title": "Django 4.0 has been released and I'll try it out as I see fit.",
+    "created_at": "2022-03-06T07:44:51Z",
+    "updated_at": "2022-03-12T07:52:04Z",
+    "body": "[release notes] Dependent libraries - Django 3.2 asgiref==3.4.1 pytz==2021.3 sqlparse=0.4.2 - Django4.0 asgiref==3.4.1 backports.zo",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Django",
+        "color": "5FC353"
+      }
+    ]
+  },
+  "1160543028": {
+    "title": "Automatic generation of Django Admin",
+    "created_at": "2022-03-06T07:45:18Z",
+    "updated_at": "2022-03-06T15:21:16Z",
+    "body": "I forgot to register admin and it was a hassle, so I'm leaving this as a note.         Useful timing - I don't want to put too much effort into Django Admin, but I want at least some functionality - I forget to admin.site.register when I add a model and I want to do something about it.",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Django",
+        "color": "5FC353"
+      }
+    ]
+  },
+  "1160543074": {
+    "title": "Handling Angular forms in Type safe",
+    "created_at": "2022-03-06T07:45:35Z",
+    "updated_at": "2022-03-26T09:31:18Z",
+    "body": "You can use @ngneat/reactive-forms to write forms in type safe.    --- normal Angular form ts import { FormBuilder } from '@angular/forms'; construc",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1160543248": {
+    "title": "Limit the number of DRF-linked models displayed",
+    "created_at": "2022-03-06T07:46:40Z",
+    "updated_at": "2022-03-06T15:20:58Z",
+    "body": "In django, there is a feature called prefetch_related that can be used to suppress the SQL issued by stating the following       python Article.objects.prefetch_related(\"tags\") to suppress the SQL issued by ManyT",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Django",
+        "color": "5FC353"
+      }
+    ]
+  },
+  "1160543297": {
+    "title": "Writing front-end tests (snapshot test section)",
+    "created_at": "2022-03-06T07:47:02Z",
+    "updated_at": "2022-03-06T15:20:21Z",
+    "body": "    Environment Angular 13, node 16 Remove Karma which is included by default since we will use jest sh npm run ng add @briebug/jest-schematic Reference: https://github.com/brie",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1160543378": {
+    "title": "Using Gmail API push notification",
+    "created_at": "2022-03-06T07:47:32Z",
+    "updated_at": "2022-03-06T15:19:57Z",
+    "body": "You will be able to hook into the email and interject the process.        Environment - Python 3.10 - google-api-python-client==2.36.0 - google_auth_oauthlib=0.4.6 - google-cloud-pubsub==2.9.0",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "GCP",
+        "color": "FBCA04"
+      }
+    ]
+  },
+  "1160543419": {
+    "title": "Doing well with cache in Nuxt",
+    "created_at": "2022-03-06T07:47:51Z",
+    "updated_at": "2022-03-06T15:19:29Z",
+    "body": "Automatically checks if the current code is up-to-date and updates the cache.         Validation Environment - Nuxt: 2.15.8 - @nuxtjs/pwa: 3.3.5 Code nuxt.config.js js { plugins: ['plugi",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Nuxt",
+        "color": "0E8A16"
+      }
+    ]
+  },
+  "1160653032": {
+    "title": "Blogging with GitHub Action and Pages",
+    "created_at": "2022-03-06T16:25:06Z",
+    "updated_at": "2022-03-06T23:44:03Z",
+    "body": "   Environment - npm v8.3.1 - node: v16.14.0 - Angular: v13.2.5 - @ng-bootstrap/ng-bootstrap: 12.0.0 * npm run ng add @ng-bootstrap/ng-bootstrap fails",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1167241988": {
+    "title": "Display OGP in SPA deployed with GitHub Pages (spirited)",
+    "created_at": "2022-03-12T09:56:24Z",
+    "updated_at": "2022-03-12T14:33:09Z",
+    "body": "Normally, when an SPA is deployed, the OGP is not displayed on twitter and other sites.    This is due to the fact that the bot that acquires the OGP does not execute the js, and because it is an SPA, there is no static HTML file for the corresponding link.    Therefore, we usually use lambda, etc. to display the page for the bot, and then use",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1167568913": {
+    "title": "Using Google Adsense with Angular",
+    "created_at": "2022-03-13T12:39:35Z",
+    "updated_at": "2022-03-13T15:28:08Z",
+    "body": "In a normal SSR, it is possible to distribute and monetize advertisements simply by placing an automatic ad script for Google Adsense in the <head></head>.    However, in the case of SPA, if only automatic ads are used, reloading does not occur due to page transitions, so only fixed ads at the bottom of the page will be served.",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1169430844": {
+    "title": "Wake up Django Rest Framework OpenAPI documentation",
+    "created_at": "2022-03-15T09:53:45Z",
+    "updated_at": "2022-03-28T12:45:19Z",
+    "body": "I had a chance to generate OpenAPI documentation from the API, so I took note of it.",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Django",
+        "color": "5FC353"
+      }
+    ]
+  },
+  "1169514542": {
+    "title": "Place script tags within Angular component",
+    "created_at": "2022-03-15T10:57:47Z",
+    "updated_at": "2022-03-15T10:57:47Z",
+    "body": "If a script tag is placed outside of src/index.html, it will be automatically removed.    Reference: [angular/angular 4903] So, for example, if you place a button that can be retrieved by [Twitter Publish], the css for the tweet button will not be hit.",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1170873471": {
+    "title": "Angular Frequently written code/library repository",
+    "created_at": "2022-03-16T11:09:50Z",
+    "updated_at": "2022-04-03T10:02:58Z",
+    "body": "    library - [@ngneat/reactive-forms] - type safe with formGroup - store form inputs in session storage and save/load when reloaded etc - [@datorama/akita] - state management la",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1174254849": {
+    "title": "Angular State Management @ngneat/elf",
+    "created_at": "2022-03-19T12:29:12Z",
+    "updated_at": "2022-03-21T14:07:38Z",
+    "body": "[We recommend checking it out 🚀 🚀. --- [@datorama/akita",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1174435949": {
+    "title": "About the structure of the site",
+    "created_at": "2022-03-20T04:20:38Z",
+    "updated_at": "2022-03-20T13:42:25Z",
+    "body": "     Old site [kemu.site] <img width=\"834\" alt=\"screenshot 2022-03-20 13 11 44\" src=\"https://user- s.githubusercontent.com/29157528/159147797-67a49372-2bf",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      },
+      {
+        "name": "Django",
+        "color": "5FC353"
+      }
+    ]
+  },
+  "1174533240": {
+    "title": "Use Angular reCAPTCHA",
+    "created_at": "2022-03-20T12:34:43Z",
+    "updated_at": "2022-03-21T12:36:22Z",
+    "body": "You can use reCAPTCHA to prevent access from bots.    Normally, when using reCAPTCHA, a script tag must be placed in the HTML. However, since the script tag in index.html is escaped and erased, you can use [ng-recaptcha] to remove it.",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1175617296": {
+    "title": "Getting along with AWS Apex Domain",
+    "created_at": "2022-03-21T16:14:23Z",
+    "updated_at": "2022-03-21T16:34:46Z",
+    "body": "If your site is located on AWS, a common configuration is to place an SSL certificate on the load balancer and specify EC2 as the target group.    In this configuration, a CNAME record is usually added to the DNS record for the domain, and the DNS name of the load balancer.    <img width",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "AWS",
+        "color": "EE0471"
+      }
+    ]
+  },
+  "1176713310": {
+    "title": "IP Address Checker is released.",
+    "created_at": "2022-03-22T12:29:14Z",
+    "updated_at": "2022-03-24T00:44:53Z",
+    "body": "We have released a function that allows you to check the IP addresses of browsing users.    Please be assured that we do not collect IP addresses, but only keep a record of previous visits in local storage.    The internal configuration is as follows    <img width=\"555\" alt=\"Screenshot 2022",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "AWS",
+        "color": "EE0471"
+      }
+    ]
+  },
+  "1180653910": {
+    "title": "JSON Typer is released.",
+    "created_at": "2022-03-25T11:06:44Z",
+    "updated_at": "2022-03-25T11:06:44Z",
+    "body": "We have added a function that allows TypeScript types to be automatically generated by loading JSON data.    The type is generated by inputting JSON data as shown in the example below.    The problem is escaping list types and JSON keys, but I think it is easy to use when you want to generate types easily.    [U",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "TypeScript",
+        "color": "bfdadc"
+      }
+    ]
+  },
+  "1182698916": {
+    "title": "GitHub Actions summary of frequently used settings",
+    "created_at": "2022-03-27T23:23:38Z",
+    "updated_at": "2022-04-03T10:29:02Z",
+    "body": "   Running Tests at Arbitrary Timings If tests are fired in both push and pull requests in all cases, tests with the same content will be fired twice on the pull request. Therefore, the test will fire twice on the pull request when the pull request is created, when the pull request is updated, and when the test is merged (ma",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "GitHub",
+        "color": "5866BF"
+      }
+    ]
+  },
+  "1183289291": {
+    "title": "Automatic type generation from OpenApi documentation",
+    "created_at": "2022-03-28T11:22:17Z",
+    "updated_at": "2022-03-28T14:15:49Z",
+    "body": "Generate types from previously generated OpenApi documents. [Previous] Use [@openapitools/openapi-generator-cli] to generate types.       zsh $ npx @openapitools/openapi-generator-cli genera",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "TypeScript",
+        "color": "bfdadc"
+      }
+    ]
+  },
+  "1189790754": {
+    "title": "Handling GitHub Flavored Markdown with marked.js and highlight.js",
+    "created_at": "2022-04-01T13:22:10Z",
+    "updated_at": "2022-04-03T05:01:14Z",
+    "body": "The official name of Markdown handled on GitHub is called GitHub Flavored Markdown, which is a self-explanatory notation that extends the default Markdown.    This time, we will apply GitHub css of highlight.js to convert Markdown text to HTML.",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "TypeScript",
+        "color": "bfdadc"
+      }
+    ]
+  },
+  "1189843692": {
+    "title": "Use Pillow Japanese font",
+    "created_at": "2022-04-01T14:03:37Z",
+    "updated_at": "2022-04-22T10:18:01Z",
+    "body": "We will show you how to implement Pillow's Japanese fonts, which tend to be dependent on the host OS font, in a way that does not require font downloading in other environments/runners.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Python",
+        "color": "1D76DB"
+      }
+    ]
+  },
+  "1191408274": {
+    "title": "Manage Tab key behavior inside textarea tags",
+    "created_at": "2022-04-04T08:04:13Z",
+    "updated_at": "2022-04-22T10:16:15Z",
+    "body": "This section introduces a type-based writing method for managing the behavior of the Tab key inside the text area, which is a common use case when creating applications, because it was found on other sites that the method of holding on to the Any type was used.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1198885661": {
+    "title": "Visualizing OpenApi Documents",
+    "created_at": "2022-04-10T05:29:52Z",
+    "updated_at": "2022-04-22T10:14:03Z",
+    "body": "It introduces the differences between Swagger, Redoc, and the method of automatically documenting with CI based on OpenApi files output from REST API and publishing them on GitHub Pages. It also provides a viewer for documentation generated from OpenApi files.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Utils",
+        "color": "170627"
+      }
+    ]
+  },
+  "1206271863": {
+    "title": "Create a health care application with GitHub Actions and GitHub Pages",
+    "created_at": "2022-04-17T03:44:20Z",
+    "updated_at": "2022-04-26T15:33:27Z",
+    "body": "We have combined GitHub Actions and GitHub Pages to create a user input field to display daily health data in a graph, and we will show you how to do this and how to implement it.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "GitHub",
+        "color": "5866BF"
+      }
+    ]
+  },
+  "1206344475": {
+    "title": "Creating a Django project from a custom template",
+    "created_at": "2022-04-17T10:58:05Z",
+    "updated_at": "2022-04-22T09:47:41Z",
+    "body": "I have created a template repository of Django configurations that I use all the time and I would like to show you how to use it. It is configured by default with flake8, mypy, black, isort, and CI to perform static checks of the code and run tests.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Django",
+        "color": "5FC353"
+      }
+    ]
+  },
+  "1206789196": {
+    "title": "Generate Graphene Django Graphql documentation",
+    "created_at": "2022-04-18T07:59:27Z",
+    "updated_at": "2022-04-25T13:58:19Z",
+    "body": "The project using Grapnene-Django outputs a Graphql schema, checks the information output, and automatically generates documentation from the output schema. The generated documents are deployed from CI to GitHub Pages.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Django",
+        "color": "5FC353"
+      }
+    ]
+  },
+  "1210913643": {
+    "title": "Using Django JWT Authentication",
+    "created_at": "2022-04-21T11:40:05Z",
+    "updated_at": "2022-04-22T09:48:26Z",
+    "body": "Django Rest Framework, note on the SimpleJWT library operation checks. Token creation -> Token validation -> Token re-issue process -> Checking how to access pages that require login using tokens.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Django",
+        "color": "5FC353"
+      }
+    ]
+  },
+  "1215117235": {
+    "title": "Creating RSS / Checking the operation of Chrome Web Feeder",
+    "created_at": "2022-04-25T22:32:58Z",
+    "updated_at": "2022-04-25T22:41:11Z",
+    "body": "The RSS Feeder function returned to Chrome 94~ on Android before we knew it, so we created RSS feeds, distributed them, and tested how they looked.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Python",
+        "color": "1D76DB"
+      }
+    ]
+  },
+  "1217467340": {
+    "title": "Creating MacOS Windows Installation Media",
+    "created_at": "2022-04-27T14:46:54Z",
+    "updated_at": "2022-04-28T06:23:51Z",
+    "body": " I had a chance to make windows 10 boot media on my M1 Mac, so I will show you how to make it.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Utils",
+        "color": "170627"
+      }
+    ]
+  },
+  "1223579698": {
+    "title": "Pyodide Run Python scripts from JavaScript",
+    "created_at": "2022-05-03T02:57:37Z",
+    "updated_at": "2022-05-05T01:04:38Z",
+    "body": "I went with the flow after the presentation on PyScript at PyCon US 2022 and introduced Pyodide, which I have touched at hand for now.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Python",
+        "color": "1D76DB"
+      }
+    ]
+  },
+  "1227975608": {
+    "title": "Cloudflare Pages Display pages only to authenticated users",
+    "created_at": "2022-05-06T14:59:25Z",
+    "updated_at": "2022-05-06T15:19:57Z",
+    "body": "If you host a static site on GitHub Pages and do not maintain a backend, you cannot authenticate users, so deploy the site on Cloudflare Pages and use Cloudflare Access to authenticate users and allow them to view the site only after they pass.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Utils",
+        "color": "170627"
+      }
+    ]
+  },
+  "1228774700": {
+    "title": "Perform virus scanning in MacOS Clamav",
+    "created_at": "2022-05-08T02:31:49Z",
+    "updated_at": "2022-05-08T03:19:55Z",
+    "body": "I don't want to keep Clamav resident, but I would like to do a full scan periodically to ensure safety, so I'll show you how to do it.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Utils",
+        "color": "170627"
+      }
+    ]
+  },
+  "1238798339": {
+    "title": "Deploy SPA to GitHub Pages with SEO in mind",
+    "created_at": "2022-05-17T15:15:57Z",
+    "updated_at": "2022-05-17T16:00:18Z",
+    "body": "We will also explain what you need to pay attention to from an SEO perspective when deploying SPAs to services on GitHub Pages, Cloudflare Pages, and how to do Angular deployments.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1239705698": {
+    "title": "Try Django 4.1 Async View, Async ORM",
+    "created_at": "2022-05-18T09:48:28Z",
+    "updated_at": "2022-05-18T13:36:03Z",
+    "body": "Django 4.1alpha1 was released and we checked the new features & operation.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Django",
+        "color": "5FC353"
+      }
+    ]
+  },
+  "1244192476": {
+    "title": "Real-time rendering of mermaid.js",
+    "created_at": "2022-05-22T08:54:29Z",
+    "updated_at": "2022-05-22T11:54:51Z",
+    "body": "There were multiple times when we wanted to use graph diagrams using mermaid.js, so we put together a real-time drawing method and created a tool to perform real-time drawing.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1250315076": {
+    "title": "Try Angular + Scully Server Side Generate",
+    "created_at": "2022-05-27T04:12:36Z",
+    "updated_at": "2022-06-02T17:34:23Z",
+    "body": "I have done Server Side Generate with Angular + Scully and will share how to do it.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1251755523": {
+    "title": "Perform Angular Sentry error tracking.",
+    "created_at": "2022-05-29T00:46:42Z",
+    "updated_at": "2022-06-02T17:33:40Z",
+    "body": "We have done error tracking for Angular Application and automatic source map upload and release creation with GitHub Actions, and we will show you how to do it.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Angular",
+        "color": "D93F0B"
+      }
+    ]
+  },
+  "1251907198": {
+    "title": "IOS Safari 15.4 released, try new CSS elements svh, lvh, dvh",
+    "created_at": "2022-05-29T14:40:47Z",
+    "updated_at": "2022-06-02T17:34:04Z",
+    "body": "The URL bar height issue that has plagued the iPhone seems to have been resolved, so check out the new elements.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Utils",
+        "color": "170627"
+      }
+    ]
+  },
+  "1258346492": {
+    "title": "Python offline translation argostranslate",
+    "created_at": "2022-06-02T15:27:08Z",
+    "updated_at": "2022-06-02T15:27:08Z",
+    "body": "We have been using argostranslate for offline translation of our blog in multiple languages, and we would like to share how we did it.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Python",
+        "color": "1D76DB"
+      }
+    ]
+  }
+}

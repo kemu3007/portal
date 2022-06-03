@@ -68,7 +68,7 @@ portal/src/$/
 portal/src/sitemap.xml
 portal/src/rss.xml
 
-portal/src/assets/articles/
+# portal/src/assets/articles/
 portal/src/assets/logs/
 portal/src/assets/comments/
 portal/src/assets/iframes/*.html
