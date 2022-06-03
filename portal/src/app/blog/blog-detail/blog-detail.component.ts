@@ -3,8 +3,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Article, ArticleDetail } from '@app/shared/articles/articles';
 import { ArticlesService } from '@app/shared/articles/articles.service';
+import { LoadingService } from '@app/shared/loading/loading.service';
 import { MarkedService } from '@app/shared/markdown/marked.service';
-import { interval, take } from 'rxjs';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-blog-detail',
@@ -24,7 +25,8 @@ export class BlogDetailComponent implements OnInit {
     private markedService: MarkedService,
     private sanitizer: DomSanitizer,
     private articlesService: ArticlesService,
-    private router: Router
+    private router: Router,
+    private loadingService: LoadingService
   ) {
     if (this.isTranslated) {
       this.url = this.url + this.route.snapshot.data['lang'] + '/';
@@ -54,15 +56,6 @@ export class BlogDetailComponent implements OnInit {
     if (article) {
       this._article = article;
       this.html = this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));
-      if (this.route.snapshot.fragment) {
-        interval(100)
-          .pipe(take(1))
-          .subscribe((_) => {
-            window.location.replace(
-              `${window.location.origin}${window.location.pathname}#${this.route.snapshot.fragment}`
-            );
-          });
-      }
     }
   }
 
@@ -71,7 +64,11 @@ export class BlogDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.articlesService.getList(`${this.url}list.json`).subscribe((articles) => (this.articles = articles));
+    this.loadingService.loading = true;
+    this.articlesService.getList(`${this.url}list.json`).subscribe((articles) => {
+      this.articles = articles;
+      interval(100).subscribe((_) => (this.loadingService.loading = false));
+    });
     this.articlesService.get(`${this.url}${this.issueId}.json`).subscribe((article) => (this.article = article));
   }
 

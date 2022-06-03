@@ -3,8 +3,9 @@ import { PageEvent } from '@angular/material/paginator';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Article, Label } from '@app/shared/articles/articles';
 import { ArticlesService } from '@app/shared/articles/articles.service';
+import { LoadingService } from '@app/shared/loading/loading.service';
 import { NgbTypeaheadSelectItemEvent } from '@ng-bootstrap/ng-bootstrap';
-import { debounceTime, distinctUntilChanged, map, Observable, OperatorFunction } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map, Observable, OperatorFunction, timer } from 'rxjs';
 
 @Component({
   selector: 'app-blog-list',
@@ -17,14 +18,23 @@ export class BlogListComponent implements OnInit {
   pageSize = 10;
   pageIndex = 0;
 
-  constructor(private router: Router, private articleService: ArticlesService, private route: ActivatedRoute) {
+  constructor(
+    private router: Router,
+    private articleService: ArticlesService,
+    private route: ActivatedRoute,
+    private loadingService: LoadingService
+  ) {
     if (route.snapshot.data['lang'] !== 'ja') {
       this.url = `/assets/articles/${route.snapshot.data['lang']}/list.json`;
     }
   }
 
   ngOnInit() {
-    this.articleService.getList(this.url).subscribe((articles) => (this.articles = articles));
+    this.loadingService.loading = true;
+    this.articleService.getList(this.url).subscribe((articles) => {
+      this.articles = articles;
+      timer(100).subscribe((_) => (this.loadingService.loading = false));
+    });
     const page = this.route.snapshot.queryParamMap.get('page');
     if (page) {
       this.pageIndex = Number(page);

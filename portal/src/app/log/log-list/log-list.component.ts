@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Article, Label } from '@app/shared/articles/articles';
 import { ArticlesService } from '@app/shared/articles/articles.service';
+import { LoadingService } from '@app/shared/loading/loading.service';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-blog-list',
@@ -10,10 +12,14 @@ import { ArticlesService } from '@app/shared/articles/articles.service';
 export class LogListComponent implements OnInit {
   articles: Record<string, Article> = {};
 
-  constructor(private articleService: ArticlesService) {}
+  constructor(private articleService: ArticlesService, private loadingService: LoadingService) {}
 
   ngOnInit() {
-    this.articleService.getList('/assets/logs/list.json').subscribe((articles) => (this.articles = articles));
+    this.loadingService.loading = true;
+    this.articleService.getList('/assets/logs/list.json').subscribe((articles) => {
+      this.articles = articles;
+      timer(100).subscribe((_) => (this.loadingService.loading = false));
+    });
   }
 
   get articleKeys(): string[] {

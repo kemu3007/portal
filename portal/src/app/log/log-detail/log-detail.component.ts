@@ -3,8 +3,9 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleDetail } from '@app/shared/articles/articles';
 import { ArticlesService } from '@app/shared/articles/articles.service';
+import { LoadingService } from '@app/shared/loading/loading.service';
 import { MarkedService } from '@app/shared/markdown/marked.service';
-import { interval, take } from 'rxjs';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-blog-detail',
@@ -20,7 +21,8 @@ export class LogDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private markedService: MarkedService,
     private sanitizer: DomSanitizer,
-    private articlesService: ArticlesService
+    private articlesService: ArticlesService,
+    private loadingService: LoadingService
   ) {}
 
   get article() {
@@ -31,20 +33,15 @@ export class LogDetailComponent implements OnInit {
     if (article) {
       this._article = article;
       this.html = this.sanitizer.bypassSecurityTrustHtml(this.marked.parse(article.body));
-      if (this.route.snapshot.fragment) {
-        interval(100)
-          .pipe(take(1))
-          .subscribe((_) => {
-            window.location.replace(
-              `${window.location.origin}${window.location.pathname}#${this.route.snapshot.fragment}`
-            );
-          });
-      }
     }
   }
 
   ngOnInit(): void {
-    this.articlesService.get(`/assets/logs/${this.issueId}.json`).subscribe((article) => (this.article = article));
+    this.loadingService.loading = true;
+    this.articlesService.get(`/assets/logs/${this.issueId}.json`).subscribe((article) => {
+      this.article = article;
+      timer(100).subscribe((_) => (this.loadingService.loading = false));
+    });
   }
 
   get issueId() {

@@ -3,12 +3,12 @@
 <app-message></app-message>
 <app-ads-modal></app-ads-modal>
 <div style="min-height: calc(100vh - 200px)">
-  <ng-container *ngIf="loading; else contents">
+  <div [ngClass]="{ 'd-none': !loading }">
     <app-loading></app-loading>
-  </ng-container>
-  <ng-template #contents>
+  </div>
+  <div [ngClass]="{ 'd-none': loading }">
     <router-outlet></router-outlet>
-  </ng-template>
+  </div>
 </div>
 <div style="position: fixed; bottom: 5px; right: 5px">
   <app-tweet-btn></app-tweet-btn>
