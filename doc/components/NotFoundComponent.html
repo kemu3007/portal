@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  MessageComponent</li>
+  NotFoundComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/shared/message/message.component.ts</code>
+    <code>src/app/not-found/not-found.component.ts</code>
 </p>
 
 
@@ -86,7 +86,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-message</code></td>
+                <td class="col-md-9"><code>app-not-found</code></td>
             </tr>
 
 
@@ -94,7 +94,7 @@
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./message.component.html</code></td>
+                <td class="col-md-9"><code>./not-found.component.html</code></td>
             </tr>
 
 
@@ -127,7 +127,7 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#messages" >messages</a>
+                                    <a href="#url" >url</a>
                                 </li>
                             </ul>
                         </td>
@@ -142,45 +142,15 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/shared/message/message.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/not-found/not-found.component.ts:7</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>messageService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/MessageService.html" target="_self" >MessageService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -199,19 +169,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="messages"></a>
-                        <span class="name"><b>messages</b><a href="#messages"><span class="icon ion-ios-link"></span></a></span>
+                        <a name="url"></a>
+                        <span class="name"><b>url</b><a href="#url"><span class="icon ion-ios-link"></span></a></span>
                     </td>
                 </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>messages()</code></span>
+                        <span class="accessor"><b>get</b><code>url()</code></span>
                     </td>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/message/message.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/not-found/not-found.component.ts:10</a></div>
                                 </td>
                             </tr>
 
@@ -222,29 +192,36 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { MessageService } from &#x27;./message.service&#x27;;
-import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 
 @Component({
-  selector: &#x27;app-message&#x27;,
-  templateUrl: &#x27;./message.component.html&#x27;,
+  selector: &#x27;app-not-found&#x27;,
+  templateUrl: &#x27;./not-found.component.html&#x27;,
 })
-export class MessageComponent {
-  constructor(private messageService: MessageService) {}
+export class NotFoundComponent {
+  constructor() {}
 
-  get messages() {
-    return this.messageService.messages;
+  get url() {
+    return window.location.href;
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;messages.length&quot;&gt;
-  &lt;ngb-alert class&#x3D;&quot;my-0 py-1&quot; [type]&#x3D;&quot;message.type&quot; *ngFor&#x3D;&quot;let message of messages&quot; [dismissible]&#x3D;&quot;false&quot;&gt;
-    {{ message.body }}
-  &lt;/ngb-alert&gt;
-&lt;/ng-container&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-3&quot;&gt;
+  &lt;h2&gt;404 Not Found ページが見つかりませんでした。&lt;/h2&gt;
+  &lt;hr /&gt;
+  &lt;p&gt;アクセスしたページはまだ翻訳サイトが作られていない、もしくは不正なページ遷移が行われた可能性があります。&lt;/p&gt;
+  &lt;p&gt;翻訳サイトの容易には最長1ヶ月程度かかります。後日再アクセスしてください。&lt;/p&gt;
+  &lt;p&gt;
+    要求されたリクエスト: &lt;a href&#x3D;&quot;url&quot;&gt;{{ url }}&lt;/a&gt;
+  &lt;/p&gt;
+  &lt;hr /&gt;
+
+  &lt;p&gt;サイトマップ: &lt;a href&#x3D;&quot;/sitemap.xml&quot;&gt;sitemap.xml&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;RSS: &lt;a href&#x3D;&quot;/rss.xml&quot;&gt;rss.xml&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -274,10 +251,10 @@ export class MessageComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="messages.length">  <ngb-alert class="my-0 py-1" [type]="message.type" *ngFor="let message of messages" [dismissible]="false">    {{ message.body }}  </ngb-alert></ng-container></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-3">  <h2>404 Not Found ページが見つかりませんでした。</h2>  <hr />  <p>アクセスしたページはまだ翻訳サイトが作られていない、もしくは不正なページ遷移が行われた可能性があります。</p>  <p>翻訳サイトの容易には最長1ヶ月程度かかります。後日再アクセスしてください。</p>  <p>    要求されたリクエスト: <a href="url">{{ url }}</a>  </p>  <hr />  <p>サイトマップ: <a href="/sitemap.xml">sitemap.xml</a></p>  <p>RSS: <a href="/rss.xml">rss.xml</a></p></div></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LazyImgComponent', 'selector': 'app-lazy-img'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MermaidComponent', 'selector': 'app-mermaid'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsbarComponent', 'selector': 'app-newsbar'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'MessageComponent'};
+    var ACTUAL_COMPONENT = {'name': 'NotFoundComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -323,7 +300,7 @@ export class MessageComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'MessageComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'NotFoundComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
