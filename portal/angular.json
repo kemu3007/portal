@@ -28,10 +28,11 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets",
-              "src/$",
               "src/robots.txt",
               "src/sitemap.xml",
               "src/rss.xml",
+              "src/rss_en.xml",
+              "src/rss_zh.xml",
               "src/doc"
             ],
             "styles": [
