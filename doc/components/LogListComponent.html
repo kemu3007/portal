@@ -189,12 +189,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(articleService: <a href="../injectables/ArticlesService.html" target="_self">ArticlesService</a>)</code>
+<code>constructor(articleService: <a href="../injectables/ArticlesService.html" target="_self">ArticlesService</a>, loadingService: <a href="../injectables/LoadingService.html" target="_self">LoadingService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/log/log-list/log-list.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/log/log-list/log-list.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -216,6 +216,18 @@
                                                   
                                                         <td>
                                                                         <code><a href="../injectables/ArticlesService.html" target="_self" >ArticlesService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>loadingService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LoadingService.html" target="_self" >LoadingService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -261,8 +273,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/log/log-list/log-list.component.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/log/log-list/log-list.component.ts:34</a></div>
                 </td>
             </tr>
 
@@ -330,8 +342,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="15"
-                            class="link-to-prism">src/app/log/log-list/log-list.component.ts:15</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="17"
+                            class="link-to-prism">src/app/log/log-list/log-list.component.ts:17</a></div>
                 </td>
             </tr>
 
@@ -377,7 +389,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/log/log-list/log-list.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/log/log-list/log-list.component.ts:13</a></div>
                         </td>
                     </tr>
 
@@ -406,7 +418,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/log/log-list/log-list.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/log/log-list/log-list.component.ts:25</a></div>
                                 </td>
                             </tr>
 
@@ -428,7 +440,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/log/log-list/log-list.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/log/log-list/log-list.component.ts:29</a></div>
                                 </td>
                             </tr>
 
@@ -442,6 +454,8 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Article, Label } from &#x27;@app/shared/articles/articles&#x27;;
 import { ArticlesService } from &#x27;@app/shared/articles/articles.service&#x27;;
+import { LoadingService } from &#x27;@app/shared/loading/loading.service&#x27;;
+import { timer } from &#x27;rxjs&#x27;;
 
 @Component({
   selector: &#x27;app-blog-list&#x27;,
@@ -451,10 +465,14 @@ import { ArticlesService } from &#x27;@app/shared/articles/articles.service&#x27
 export class LogListComponent implements OnInit {
   articles: Record&lt;string, Article&gt; &#x3D; {};
 
-  constructor(private articleService: ArticlesService) {}
+  constructor(private articleService: ArticlesService, private loadingService: LoadingService) {}
 
   ngOnInit() {
-    this.articleService.getList(&#x27;/assets/logs/list.json&#x27;).subscribe((articles) &#x3D;&gt; (this.articles &#x3D; articles));
+    this.loadingService.loading &#x3D; true;
+    this.articleService.getList(&#x27;/assets/logs/list.json&#x27;).subscribe((articles) &#x3D;&gt; {
+      this.articles &#x3D; articles;
+      timer(100).subscribe((_) &#x3D;&gt; (this.loadingService.loading &#x3D; false));
+    });
   }
 
   get articleKeys(): string[] {
