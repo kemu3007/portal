@@ -35,6 +35,13 @@ export class BlogDetailComponent implements OnInit {
     return this.route.snapshot.data['lang'] !== 'ja';
   }
 
+  get imageUrl() {
+    if (this.isTranslated) {
+      return `/assets/images/en/${this.issueId}.png`;
+    }
+    return `/assets/images/${this.issueId}.png`;
+  }
+
   get originalUrl() {
     return ['/blog', this.issueId];
   }

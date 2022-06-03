@@ -1,13 +1,14 @@
 <div class="container-fluid" id="container">
   <div class="row" *ngIf="article">
     <div class="col-md-8 border-end border-2 pb-5">
+      <div class="d-flex mb-3">
+        <button class="btn border-primary" [routerLink]="['/blog', issueId]">Japanese</button>
+        <button class="btn border-secondary" [routerLink]="['/blog/en', issueId]">English</button>
+        <button class="btn border-secondary" [routerLink]="['/blog/zh', issueId]">Chinese</button>
+      </div>
       <div class="row">
         <div class="col-md-4">
-          <app-lazy-img
-            [src]="'/assets/images/' + article.id + '.png'"
-            [alt]="article.title"
-            [title]="article.title"
-          ></app-lazy-img>
+          <app-lazy-img [src]="imageUrl" [alt]="article.title" [title]="article.title"></app-lazy-img>
         </div>
         <div class="col-md-8">
           <h2>{{ article.title }}</h2>
