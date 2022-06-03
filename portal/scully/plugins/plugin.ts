@@ -37,3 +37,11 @@ function blogEnRoutesPlugin(_route: string, _config = {}) {
 }
 
 registerPlugin('router', "blogEnIds", blogEnRoutesPlugin, [])
+
+const blogZhRoutes: HandledRoute[] = Object.keys(blogs).map(blogId => ({ route: `/blog/zh/${blogId}` }))
+
+function blogZhRoutesPlugin(_route: string, _config = {}) {
+  return Promise.resolve(blogZhRoutes)
+}
+
+registerPlugin('router', "blogZhIds", blogZhRoutesPlugin, [])

@@ -54,7 +54,7 @@ def translate_google():
                 splitted_texts[i] = splitted_texts[i].replace("-", "- ")
             detail_json["body"] = "\n".join(splitted_texts)
             (dir / f"{key}.json").write_text(json.dumps(detail_json, ensure_ascii=False, indent=4))
-        (dir / "list.json").write_text(json.dumps(articles, ensure_ascii=False, indent=4))
+        (dir / "list.json").write_text(json.dumps(_articles, ensure_ascii=False, indent=4))
 
 
 def translate_argos():
