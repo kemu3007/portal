@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Article, Label } from '@app/shared/articles/articles';
@@ -22,11 +23,13 @@ export class BlogListComponent implements OnInit {
     private router: Router,
     private articleService: ArticlesService,
     private route: ActivatedRoute,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    @Inject(DOCUMENT) document: Document
   ) {
     if (route.snapshot.data['lang'] !== 'ja') {
       this.url = `/assets/articles/${route.snapshot.data['lang']}/list.json`;
     }
+    document.documentElement.lang = route.snapshot.data['lang'];
   }
 
   ngOnInit() {
