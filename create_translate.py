@@ -110,28 +110,28 @@ def translate_deepl(auth_key: str):
             items.set_description("Processing: %s" % key)
             article["title"] = translator.translate_text(article["title"], source_lang="ja", target_lang=lang).text
             article["body"] = translator.translate_text(article["body"], source_lang="ja", target_lang=lang).text
-            detail_json = json.loads(Path(f"portal/src/assets/articles/{key}.json").read_text())
-            detail_json["title"] = article["title"]
-            splitted_texts: List[str] = detail_json["body"].splitlines()
-            is_codeblock = False
-            for i in range(len(splitted_texts)):
-                if "```" in splitted_texts[i]:
-                    is_codeblock = not is_codeblock
-                    continue
-                if is_codeblock:
-                    continue
-                if "![" in splitted_texts[i]:
-                    continue
-                try:
-                    splitted_texts[i] = translator.translate_text(
-                        splitted_texts[i], source_lang="ja", target_lang=lang
-                    ).text
-                except (ValueError):
-                    pass
-                splitted_texts[i] = splitted_texts[i].replace("-", "- ")
-            detail_json["body"] = "\n".join(splitted_texts)
-            (dir / f"{key}.json").write_text(json.dumps(detail_json, ensure_ascii=False, indent=4))
-        (dir / "list.json").write_text(json.dumps(articles, ensure_ascii=False, indent=4))
+            # detail_json = json.loads(Path(f"portal/src/assets/articles/{key}.json").read_text())
+            # detail_json["title"] = article["title"]
+            # splitted_texts: List[str] = detail_json["body"].splitlines()
+            # is_codeblock = False
+            # for i in range(len(splitted_texts)):
+            #     if "```" in splitted_texts[i]:
+            #         is_codeblock = not is_codeblock
+            #         continue
+            #     if is_codeblock:
+            #         continue
+            #     if "![" in splitted_texts[i]:
+            #         continue
+            #     try:
+            #         splitted_texts[i] = translator.translate_text(
+            #             splitted_texts[i], source_lang="ja", target_lang=lang
+            #         ).text
+            #     except (ValueError):
+            #         pass
+            #     splitted_texts[i] = splitted_texts[i].replace("-", "- ")
+            # detail_json["body"] = "\n".join(splitted_texts)
+            # (dir / f"{key}.json").write_text(json.dumps(detail_json, ensure_ascii=False, indent=4))
+        (dir / "list.json").write_text(json.dumps(_articles, ensure_ascii=False, indent=4))
 
 
 if __name__ == "__main__":
