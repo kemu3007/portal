@@ -1,13 +1,16 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8 border-end border-2">
-      <div class="d-flex">
-        <button class="btn border-primary" routerLink="/blog">Japanese</button>
-        <button class="btn border-secondary" routerLink="/blog/en">English</button>
-        <button class="btn border-secondary" routerLink="/blog/zh">Chinese</button>
-      </div>
+      <select [value]="langage" class="mt-1 form-select" #select (change)="routeLangPage(select.value)">
+        <option disabled selected>Select Your Language (ja, en, zh)</option>
+        <option value="ja">Japanese</option>
+        <option value="en">English</option>
+        <option value="zh">Chinese</option>
+      </select>
       <ng-container *ngIf="isTranslated">
-        <p>This page is translated by google.</p>
+        <div class="d-flex justify-content-end">
+          <p class="text-muted">This page is translated by deepl.</p>
+        </div>
       </ng-container>
       <input
         class="form-control mb-1 mt-3"
@@ -18,16 +21,6 @@
         #instance="ngbTypeahead"
         (blur)="instance.dismissPopup()"
       />
-      <div class="d-flex justify-content-center">
-        <mat-paginator
-          hidePageSize
-          showFirstLastButtons
-          (page)="switchPage($event)"
-          [length]="articleKeys.length"
-          [pageSize]="10"
-          [pageIndex]="pageIndex"
-        ></mat-paginator>
-      </div>
       <div *ngFor="let key of displayArticles; index as i">
         <a class="card shadow mt-1 text-decoration-none text-muted" [routerLink]="[key]" style="cursor: pointer">
           <div class="card-body">

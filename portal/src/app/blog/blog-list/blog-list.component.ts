@@ -45,6 +45,18 @@ export class BlogListComponent implements OnInit {
     return this.route.snapshot.data['lang'] !== 'ja';
   }
 
+  get langage() {
+    return this.route.snapshot.data['lang'];
+  }
+
+  routeLangPage(lang: string) {
+    if (lang === 'ja') {
+      this.router.navigate(['/blog']);
+    } else {
+      this.router.navigate(['/blog', lang]);
+    }
+  }
+
   get articleKeys(): string[] {
     return Object.keys(this.articles).sort((a, b) => (a > b ? -1 : 1));
   }

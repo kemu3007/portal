@@ -1,12 +1,18 @@
 <div class="container-fluid" id="container">
   <div class="row" *ngIf="article">
     <div class="col-md-8 border-end border-2 pb-5">
-      <div class="d-flex mb-3">
-        <button class="btn border-primary" [routerLink]="['/blog', issueId]">Japanese</button>
-        <button class="btn border-secondary" [routerLink]="['/blog/en', issueId]">English</button>
-        <button class="btn border-secondary" [routerLink]="['/blog/zh', issueId]">Chinese</button>
-      </div>
-      <div class="row">
+      <select [value]="langage" class="mt-1 form-select" #select (change)="routeLangPage(select.value)">
+        <option disabled selected>Select Your Language (ja, en, zh)</option>
+        <option value="ja">Japanese</option>
+        <option value="en">English</option>
+        <option value="zh">Chinese</option>
+      </select>
+      <ng-container *ngIf="isTranslated">
+        <div class="d-flex justify-content-end">
+          <p class="text-muted">This page is translated by deepl.</p>
+        </div>
+      </ng-container>
+      <div class="row mt-3">
         <div class="col-md-4">
           <app-lazy-img [src]="imageUrl" [alt]="article.title" [title]="article.title"></app-lazy-img>
         </div>
@@ -19,10 +25,6 @@
           </div>
         </div>
       </div>
-      <ng-container *ngIf="isTranslated">
-        <p>This page is translated by google. Please Check Original Page.</p>
-        <a [routerLink]="originalUrl"> Original Page </a>
-      </ng-container>
       <hr />
       <div [innerHTML]="html"></div>
       <hr class="mt-5" />

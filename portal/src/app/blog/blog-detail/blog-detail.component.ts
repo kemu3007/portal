@@ -63,6 +63,18 @@ export class BlogDetailComponent implements OnInit {
     return this.route.snapshot.paramMap.get('id');
   }
 
+  get langage() {
+    return this.route.snapshot.data['lang'];
+  }
+
+  routeLangPage(lang: string) {
+    if (lang === 'ja') {
+      this.router.navigate(['/blog', this.issueId]);
+    } else {
+      this.router.navigate(['/blog', lang, this.issueId]);
+    }
+  }
+
   ngOnInit(): void {
     this.loadingService.loading = true;
     this.articlesService.getList(`${this.url}list.json`).subscribe((articles) => {
