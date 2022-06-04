@@ -439,5 +439,15 @@
       { "name": "article", "color": "C200E5" },
       { "name": "Python", "color": "1D76DB" }
     ]
+  },
+  "1260904707": {
+    "title": "GraphQL graphene-django n+1問題の対策を行う",
+    "created_at": "2022-06-04T22:26:18Z",
+    "updated_at": "2022-06-04T22:29:44Z",
+    "body": "GraphQLクエリを単純に実装してしまうと他モデルへの参照をフロント側が書いた際にn+1問題が発生してしまいます。その際の対応を記載します。\r\n",
+    "labels": [
+      { "name": "article", "color": "C200E5" },
+      { "name": "Django", "color": "5FC353" }
+    ]
   }
 }

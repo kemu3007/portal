@@ -706,5 +706,23 @@
         "color": "1D76DB"
       }
     ]
+  },
+  "title": "GraphQL graphene-django n+1问题有待解决。",
+  "body": "如果简单地实现GraphQL查询，当前端写入对其他模型的引用时，会出现n+1的问题。本节介绍了如何处理这个问题。\r\n",
+  "1260904707": {
+    "title": "GraphQL graphene-django n+1问题有待解决。",
+    "created_at": "2022-06-04T22:26:18Z",
+    "updated_at": "2022-06-04T22:29:44Z",
+    "body": "如果简单地实现GraphQL查询，当前端写入对其他模型的引用时，会出现n+1的问题。本节介绍了如何处理这个问题。\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Django",
+        "color": "5FC353"
+      }
+    ]
   }
 }

@@ -706,5 +706,21 @@
         "color": "1D76DB"
       }
     ]
+  },
+  "1260904707": {
+    "title": "GraphQL graphene-django n+1问题有待解决。",
+    "created_at": "2022-06-04T22:26:18Z",
+    "updated_at": "2022-06-04T22:29:44Z",
+    "body": "If you want to check GraphQL easily, you may encounter n+1 questions when you quote from other models. This section describes how to handle this problem.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Django",
+        "color": "5FC353"
+      }
+    ]
   }
 }
