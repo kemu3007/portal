@@ -96,7 +96,7 @@ def create_another_lang_rss(lang: str, articles: Dict[str, Article]) -> ElementT
 
         guid = ElementTree.SubElement(item, "guid")
         guid.set("isPermaLink", "false")
-        guid.text = id
+        guid.text = f"{lang}-{id}"
 
         article = articles[id]
 
