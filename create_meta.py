@@ -37,7 +37,7 @@ if __name__ == "__main__":
     )
     for key, data in articles.items():
         create_meta(
-            f"https://portal.kemu.site/assets/images/en/{key}.png",
+            f"https://portal.kemu.site/assets/images/{key}.png",
             f"{data['title']} | Kemu Tech Blog",
             data["body"],
             f"/blog/{key}",

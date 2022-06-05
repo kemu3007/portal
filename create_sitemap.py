@@ -1,11 +1,22 @@
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Optional
+from typing import Dict, List, Optional, TypedDict
 from xml.etree import ElementTree
 
-articles_list = json.loads(Path("portal/src/assets/articles/list.json").read_text())
-logs_list = json.loads(Path("portal/src/assets/logs/list.json").read_text())
+Label = TypedDict("Label", {"name": str, "color": str})
+
+Article = TypedDict(
+    "Article", {"title": str, "body": str, "created_at": str, "photo": Optional[str], "labels": List[Label]}
+)
+
+articles: Dict[str, Article] = json.loads(Path("portal/src/assets/articles/list.json").read_text())
+
+logs: Dict[str, Article] = json.loads(Path("portal/src/assets/logs/list.json").read_text())
+
+articles_en: Dict[str, Article] = json.loads(Path("portal/src/assets/articles/en/list.json").read_text())
+
+articles_zh: Dict[str, Article] = json.loads(Path("portal/src/assets/articles/zh/list.json").read_text())
 
 urlset = ElementTree.Element("urlset")
 
@@ -43,15 +54,14 @@ if __name__ == "__main__":
     add_url_element(urlset, "https://portal.kemu.site/tools/mermaid/")
     add_url_element(urlset, "https://portal.kemu.site/doc/")
 
-    for article_id in articles_list.keys():
-        add_url_element(urlset, f"https://portal.kemu.site/blog/{article_id}/", articles_list[article_id]["updated_at"])
-        add_url_element(
-            urlset, f"https://portal.kemu.site/blog/en/{article_id}/", articles_list[article_id]["updated_at"]
-        )
-        add_url_element(
-            urlset, f"https://portal.kemu.site/blog/zh/{article_id}/", articles_list[article_id]["updated_at"]
-        )
-    for log_id in logs_list.keys():
-        add_url_element(urlset, f"https://portal.kemu.site/log/{log_id}/", articles_list[article_id]["updated_at"])
+    for id, value in articles.items():
+        add_url_element(urlset, f"https://portal.kemu.site/blog/{id}/", value["updated_at"])
+    for id, value in articles_en.items():
+        add_url_element(urlset, f"https://portal.kemu.site/blog/en/{id}/", value["updated_at"])
+    for id, value in articles_zh.items():
+        add_url_element(urlset, f"https://portal.kemu.site/blog/zh/{id}/", value["updated_at"])
+
+    for id, value in logs.items():
+        add_url_element(urlset, f"https://portal.kemu.site/log/{id}/", value["updated_at"])
 
     ElementTree.ElementTree(element=urlset).write("portal/src/sitemap.xml", encoding="utf-8", xml_declaration=True)
