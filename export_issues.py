@@ -1,11 +1,13 @@
 import json
 import re
 from pathlib import Path
+from typing import Any, Dict
 
 import requests
 
 articles_dir = Path("portal/src/assets/articles")
 logs_dir = Path("portal/src/assets/logs")
+future_dir = Path("portal/src/assets/")
 
 
 def export_issues(label: str, dir: Path, extract_photo: bool = False):
@@ -37,6 +39,15 @@ def export_issues(label: str, dir: Path, extract_photo: bool = False):
     return issues
 
 
+def extract_furure():
+    res = requests.get(f"https://api.github.com/repos/kemu3007/portal/issues?labels=future&per_page=100")
+    titles: str = json.loads(res.content)[0]["body"].split()
+    (future_dir / "future.json").write_text(
+        json.dumps([title.strip() for title in titles], indent=4, ensure_ascii=False)
+    )
+
+
 if __name__ == "__main__":
     export_issues("article", articles_dir)
     export_issues("log", logs_dir, extract_photo=True)
+    extract_furure()

@@ -76,6 +76,7 @@ portal/src/assets/iframes/*.html
 portal/src/assets/images/
 portal/src/assets/count.json
 portal/src/assets/meta.json
+portal/src/assets/future.json
 portal/src/doc/
 
 portal/src/assets/scully-routes.json
