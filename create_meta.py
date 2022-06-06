@@ -188,6 +188,17 @@ if __name__ == "__main__":
     # Year Checker
 
     create_meta(
+        "https://portal.kemu.site/assets/images/fx-calc.png",
+        "FX Calculator | Kemu Tools",
+        """
+        FXに利用する証拠金率、ロスカット値、購入可能の最大ロット数などの値を計算します。
+        """,
+        "/tools/fx-calc",
+    )
+
+    # Year Checker
+
+    create_meta(
         "https://portal.kemu.site/assets/images/year.png",
         "Year Checker | Kemu Tools",
         """

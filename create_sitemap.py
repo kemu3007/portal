@@ -52,6 +52,7 @@ if __name__ == "__main__":
     add_url_element(urlset, "https://portal.kemu.site/tools/year/")
     add_url_element(urlset, "https://portal.kemu.site/tools/openapi/")
     add_url_element(urlset, "https://portal.kemu.site/tools/mermaid/")
+    add_url_element(urlset, "https://portal.kemu.site/tools/fx-calc/")
     add_url_element(urlset, "https://portal.kemu.site/doc/")
 
     for id, value in articles.items():

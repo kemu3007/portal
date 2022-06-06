@@ -10,7 +10,6 @@ import { ToolsService } from '@app/shared/tools/tools.service';
 })
 export class ToolsListComponent implements OnInit {
   _tools: Tool[] = [];
-  pinned: string[] = ['GitHub Flavored Markdown Writer', 'Regex Checker', 'JSON Typer', 'Mermaid Live Editor'];
 
   constructor(private router: Router, private toolsService: ToolsService) {}
 
@@ -19,7 +18,7 @@ export class ToolsListComponent implements OnInit {
   }
 
   get pinnedTools() {
-    return this._tools.filter((tool) => this.pinned.includes(tool.label));
+    return this._tools.filter((tool) => tool.pinned);
   }
 
   get tools() {

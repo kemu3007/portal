@@ -1,114 +1,138 @@
 [
   {
+    "label": "FX Caluculator",
+    "link": "/tools/fx-calc",
+    "description": "FXに利用する証拠金率、ロスカット値、購入可能の最大ロット数などの値を計算します。",
+    "external": false,
+    "secure": false,
+    "pinned": true
+  },
+  {
     "label": "Mermaid Live Editor",
     "link": "/tools/mermaid",
     "description": "Mermaidをリアルタイムで描画し、記述を支援します。",
     "external": false,
-    "secure": false
+    "secure": false,
+    "pinned": true
   },
   {
     "label": "OpenApi Viewer",
     "link": "/tools/openapi",
     "description": "OpenApi JSON/YAMLをSwagger-UI / Redoc形式で表示します。",
     "external": false,
-    "secure": false
+    "secure": false,
+    "pinned": false
   },
   {
     "label": "Year Checker",
     "link": "/tools/year",
     "description": "誕生日をもとに各種卒業年度/厄年といった年月日を計算します。",
     "external": false,
-    "secure": false
+    "secure": false,
+    "pinned": false
   },
   {
     "label": "Regex Checker",
     "link": "/tools/regex",
     "description": "正規表現とテキストを入力することでテキストを対象とした正規表現のテストを行い、index, マッチ文字列を返却します。",
     "external": false,
-    "secure": false
+    "secure": false,
+    "pinned": true
   },
   {
     "label": "GitHub Flavored Markdown Writer",
     "link": "/tools/mdwriter",
     "description": "GitHub Flavored Markdown形式のMarkdownを記載することができ、HTMLに変換可能です。",
     "external": false,
-    "secure": false
+    "secure": false,
+    "pinned": true
   },
   {
     "label": "Base64 Encoder/Decoder",
     "link": "/tools/base64",
     "description": "Base64フォーマットのデータをエンコード/デコードします。",
     "external": false,
-    "secure": false
+    "secure": false,
+    "pinned": false
   },
   {
     "label": "JSON Formatter",
     "link": "/tools/jsonFormatter",
     "description": "未整形のJSONデータを整形します。",
     "external": false,
-    "secure": false
+    "secure": false,
+    "pinned": false
   },
   {
     "label": "REALTIME",
     "link": "/tools/realtime",
     "description": "現在時刻を100ms単位で更新し、正確な日時をお知らせします。",
     "external": false,
-    "secure": false
+    "secure": false,
+    "pinned": false
   },
   {
     "label": "JSON Typer",
     "link": "/tools/jsonTyper",
     "description": "JSONの値をTypeScriptのinterface型に変換します。",
     "external": false,
-    "secure": false
+    "secure": false,
+    "pinned": true
   },
   {
     "label": "Amazon Associate Linker",
     "link": "/tools/amazonAssociate",
     "description": "Amazonリンクにアソシエイト情報を付与します。",
     "external": false,
-    "secure": false
+    "secure": false,
+    "pinned": false
   },
   {
     "label": "IP Address Checker",
     "link": "/tools/userInfo",
     "description": "IPアドレス等のデータを表示します。過去の履歴も表示可能です。",
     "external": false,
-    "secure": false
+    "secure": false,
+    "pinned": false
   },
   {
     "label": "QRコードジェネレータ",
     "link": "https://kemu.site/utils/qrcode/",
     "description": "任意の文字列をQRコードに変換します。",
     "external": true,
-    "secure": false
+    "secure": false,
+    "pinned": false
   },
   {
     "label": "Markdown Editor",
     "link": "https://kemu.site/utils/markdown/",
     "description": "markdown記法で書かれた文字列をHTMLで表示します。",
     "external": true,
-    "secure": false
+    "secure": false,
+    "pinned": false
   },
   {
     "label": "CSV to MD table",
     "link": "https://kemu.site/utils/csv_to_md/",
     "description": "コンマ区切りで入力されたcsvをMarkdownテーブル形式に変換します。",
     "external": true,
-    "secure": false
+    "secure": false,
+    "pinned": false
   },
   {
     "label": "楽天カード履歴変換",
     "link": "https://kemu.site/utils/rakuten/",
     "description": "楽天カードの利用履歴PDFからデータを抽出し、csvに変換します。",
     "external": true,
-    "secure": true
+    "secure": true,
+    "pinned": false
   },
   {
     "label": "MUFJ Debit履歴変換",
     "link": "https://kemu.site/utils/mufj_debit/",
     "description": "MUFJ Debitカードの利用履歴PDFからデータを抽出し、csvに変換します。",
     "external": true,
-    "secure": true
+    "secure": true,
+    "pinned": false
   }
 ]

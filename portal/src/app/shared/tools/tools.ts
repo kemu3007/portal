@@ -4,4 +4,5 @@ export interface Tool {
   description: string;
   external: boolean;
   secure: boolean;
+  pinned: boolean;
 }

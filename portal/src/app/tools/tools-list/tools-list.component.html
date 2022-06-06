@@ -36,7 +36,7 @@
           <div class="card-body">
             <div class="row">
               <h3 class="card-title text-black text-decoration-underline">
-                {{ tool.label }} <i *ngIf="pinned.includes(tool.label)" class="bi bi-pin-angle"></i>
+                {{ tool.label }} <i *ngIf="tool.pinned" class="bi bi-pin-angle"></i>
               </h3>
               <p class="card-text">{{ tool.description }}</p>
             </div>

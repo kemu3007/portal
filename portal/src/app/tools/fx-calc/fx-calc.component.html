@@ -1,0 +1,80 @@
+<div class="mt-3 container-fluid">
+  <div class="row">
+    <div class="col-md-8 border-end border-2">
+      <h2>FX Calculator<app-tweet-btn class="ms-3"></app-tweet-btn></h2>
+      FXに利用する証拠金率、ロスカット値、購入可能の最大ロット数などの値を計算します。
+      <hr />
+      <form [formGroup]="form">
+        <h2>基本情報</h2>
+        <div class="row">
+          <div class="col-sm-6">
+            <label class="form-label" for="lot">ロット 最小単位</label>
+            <input class="form-control" id="lot" formControlName="lot" type="number" />
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label" for="leverage">レバレッジ</label>
+            <input class="form-control" id="leverage" formControlName="leverage" type="number" />
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-sm-6">
+            <label class="form-label" for="lossCut">ロスカット時の証拠金率(%)</label>
+            <input class="form-control" id="lossCut" formControlName="lossCut" type="number" />
+          </div>
+        </div>
+        <hr />
+        <h2>商品情報</h2>
+        <div class="row">
+          <div class="col-sm-6">
+            <label class="form-label" for="money">資金</label>
+            <input class="form-control" id="money" formControlName="money" type="number" />
+          </div>
+          <div class="col-sm-6">
+            <label class="form-label" for="rate">レート</label>
+            <input class="form-control" id="rate" formControlName="rate" type="number" />
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-sm-6">
+            <label class="form-label" for="lotAmount">購入ロット数</label>
+            <input class="form-control" id="lotAmount" formControlName="lotAmount" type="number" />
+          </div>
+        </div>
+      </form>
+      <hr />
+      <h2>計算結果</h2>
+      <table class="table mb-3">
+        <tbody>
+          <tr>
+            <th>必要証拠金</th>
+            <td>{{ depositAmount | number }}</td>
+          </tr>
+          <tr>
+            <th>証拠金率</th>
+            <td>{{ depositRate | number }}%</td>
+          </tr>
+          <tr>
+            <th>ロスカット時のレート(買い)</th>
+            <td>{{ lossCutMin | number }}</td>
+          </tr>
+          <tr>
+            <th>ロスカット時のレート(売り)</th>
+            <td>{{ lossCutMax | number }}</td>
+          </tr>
+          <tr>
+            <th>上限ロット(証拠金率100%の際のロット数)</th>
+            <td>{{ maxLot | number }}</td>
+          </tr>
+          <tr>
+            <th>上限購入時の価格</th>
+            <td>{{ maxLotPrice | number }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <app-ads type="auto"></app-ads>
+    </div>
+    <div class="col-md-4">
+      <app-ads type="box" [count]="2"></app-ads>
+    </div>
+  </div>
+</div>

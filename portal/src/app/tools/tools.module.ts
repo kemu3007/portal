@@ -1,5 +1,6 @@
 import { AmazonAssociateComponent } from './amazon-associate/amazon-associate.component';
 import { Base64Component } from './base64/base64.component';
+import { FxCalcComponent } from './fx-calc/fx-calc.component';
 import { JsonFormatterComponent } from './json-formatter/json-formatter.component';
 import { JsonTyperComponent } from './json-typer/json-typer.component';
 import { MdwriterComponent } from './mdwriter/mdwriter.component';
@@ -30,6 +31,7 @@ import { SharedModule } from '@app/shared/shared.module';
     YearCheckComponent,
     OpenapiComponent,
     MermaidComponent,
+    FxCalcComponent,
   ],
   imports: [CommonModule, SharedModule, ToolsRoutingModule],
 })
