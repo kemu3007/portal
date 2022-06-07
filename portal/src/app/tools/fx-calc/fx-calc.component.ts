@@ -7,7 +7,7 @@ import { FormControl, FormGroup, persistControl } from '@ngneat/reactive-forms';
 })
 export class FxCalcComponent implements OnInit {
   form = new FormGroup({
-    lot: new FormControl(10000),
+    lot: new FormControl(100000),
     leverage: new FormControl(500),
     lossCut: new FormControl(20),
     money: new FormControl(100000),
