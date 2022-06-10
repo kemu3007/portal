@@ -34,7 +34,7 @@ jobs:
       - name: install deps
         working-directory: ./portal
         run: |
-          npm install
+          npm install --legacy-peer-deps
       - name: collect article / prepare page, image, version, sitemap
         run: |
           pip install -r requirements.lock.txt
