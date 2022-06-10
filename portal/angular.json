@@ -33,6 +33,7 @@
               "src/rss.xml",
               "src/rss_en.xml",
               "src/rss_zh.xml",
+              "src/tools_rss.xml",
               "src/doc"
             ],
             "styles": [
