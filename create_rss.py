@@ -145,7 +145,7 @@ def create_tools_rss() -> ElementTree.Element:
         guid.text = tool["link"]
 
         append_child(item, "title", tool["label"])
-        append_child(item, "link", f"https://portal.kemu.site{tool['link']}")
+        append_child(item, "link", f"https://portal.kemu.site{tool['link']}/")
         append_child(item, "category", "Tech Tool")
         append_child(item, "description", tool["description"])
         append_child(item, "pubDate", datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0900"))
