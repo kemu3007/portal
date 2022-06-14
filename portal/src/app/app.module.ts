@@ -1,6 +1,5 @@
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
 import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
@@ -13,7 +12,7 @@ import * as Sentry from '@sentry/angular';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  declarations: [AppComponent, NotFoundComponent],
+  declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule, SharedModule, BrowserAnimationsModule, ScullyLibModule],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'ja' },

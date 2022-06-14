@@ -6,6 +6,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { MessageComponent } from './message/message.component';
 import { NavComponent } from './nav/nav.component';
 import { NewsbarComponent } from './newsbar/newsbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { MdescapePipe } from './pipes/mdescape.pipe';
 import { YearPipe } from './pipes/year.pipe';
 import { ProfileComponent } from './profile/profile.component';
@@ -38,6 +39,7 @@ import { AdsenseModule } from 'ng2-adsense';
     YearPipe,
     LazyImgComponent,
     NewsbarComponent,
+    NotFoundComponent,
   ],
   imports: [
     CommonModule,
@@ -75,6 +77,7 @@ import { AdsenseModule } from 'ng2-adsense';
     MatPaginatorModule,
     LazyImgComponent,
     NewsbarComponent,
+    NotFoundComponent,
   ],
 })
 export class SharedModule {}

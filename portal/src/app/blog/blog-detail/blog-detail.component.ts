@@ -6,7 +6,7 @@ import { Article, ArticleDetail } from '@app/shared/articles/articles';
 import { ArticlesService } from '@app/shared/articles/articles.service';
 import { LoadingService } from '@app/shared/loading/loading.service';
 import { MarkedService } from '@app/shared/markdown/marked.service';
-import { interval } from 'rxjs';
+import { catchError, interval, NEVER } from 'rxjs';
 
 @Component({
   selector: 'app-blog-detail',
@@ -20,6 +20,7 @@ export class BlogDetailComponent implements OnInit {
   articles: Record<string, Article> = {};
   _article?: ArticleDetail;
   html: SafeHtml = '';
+  isNotFound = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -84,7 +85,19 @@ export class BlogDetailComponent implements OnInit {
       this.articles = articles;
       interval(100).subscribe((_) => (this.loadingService.loading = false));
     });
-    this.articlesService.get(`${this.url}${this.issueId}.json`).subscribe((article) => (this.article = article));
+    this.articlesService
+      .get(`${this.url}${this.issueId}.json`)
+      .pipe(
+        catchError((_) => {
+          this.isNotFound = true;
+          this.loadingService.loading = false;
+          return NEVER;
+        })
+      )
+      .subscribe((article) => {
+        this.article = article;
+        this.loadingService.loading = false;
+      });
   }
 
   get adsLength(): number {
