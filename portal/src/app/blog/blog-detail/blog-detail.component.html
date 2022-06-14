@@ -1,5 +1,17 @@
-<app-not-found *ngIf="isNotFound"></app-not-found>
 <div class="container-fluid" id="container">
+  <div class="col-md-8 border-end border-2 pb-5" *ngIf="isNotFound">
+    <select [value]="langage" class="mt-1 form-select" #select (change)="routeLangPage(select.value)">
+      <option disabled selected>Select Your Language (ja, en, zh)</option>
+      <option value="ja">Japanese</option>
+      <option value="en">English</option>
+      <option value="zh">Chinese</option>
+    </select>
+    <app-not-found *ngIf="isNotFound"></app-not-found>
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-secondary" (click)="routeLangPage('ja')">元のページに戻る</button>
+    </div>
+  </div>
+
   <div class="row" *ngIf="article">
     <div class="col-md-8 border-end border-2 pb-5">
       <select [value]="langage" class="mt-1 form-select" #select (change)="routeLangPage(select.value)">
