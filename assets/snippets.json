@@ -1,0 +1,10 @@
+[
+    {
+        "title": "ローカルのバージョンに依存せずにAngularプロジェクトを作成する",
+        "contents": "npx -p @angular/cli ng new sample --directory ./"
+    },
+    {
+        "title": "Ubuntuコンテナでpythonコマンドが使えるようシンボリックリンクを作成する",
+        "contents": "ln -s /usr/bin/python3 /usr/bin/python"
+    }
+]

@@ -215,6 +215,26 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                             </li>
                             <li class="link">
+                                <a href="modules/SnippetModule.html" data-type="entity-link" >SnippetModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-SnippetModule-89381208e9079c341805347d6c6e5e38b6c948d3eafbf3e5d8f8a543133b13446a75035674ac2886e6132a1556dde563c93b7a6d1b52aec267683bfe91deec20"' : 'data-target="#xs-components-links-module-SnippetModule-89381208e9079c341805347d6c6e5e38b6c948d3eafbf3e5d8f8a543133b13446a75035674ac2886e6132a1556dde563c93b7a6d1b52aec267683bfe91deec20"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-SnippetModule-89381208e9079c341805347d6c6e5e38b6c948d3eafbf3e5d8f8a543133b13446a75035674ac2886e6132a1556dde563c93b7a6d1b52aec267683bfe91deec20"' :
+                                            'id="xs-components-links-module-SnippetModule-89381208e9079c341805347d6c6e5e38b6c948d3eafbf3e5d8f8a543133b13446a75035674ac2886e6132a1556dde563c93b7a6d1b52aec267683bfe91deec20"' }>
+                                            <li class="link">
+                                                <a href="components/SnippetListComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >SnippetListComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/SnippetRoutingModule.html" data-type="entity-link" >SnippetRoutingModule</a>
+                            </li>
+                            <li class="link">
                                 <a href="modules/ToolsModule.html" data-type="entity-link" >ToolsModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
@@ -322,6 +342,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/RouterService.html" data-type="entity-link" >RouterService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/SnippetService.html" data-type="entity-link" >SnippetService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/ToolsService.html" data-type="entity-link" >ToolsService</a>
                                 </li>
                                 <li class="link">
@@ -372,6 +395,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/RequestContext.html" data-type="entity-link" >RequestContext</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Snippet.html" data-type="entity-link" >Snippet</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/state.html" data-type="entity-link" >state</a>
