@@ -13,6 +13,7 @@ export class NavComponent {
     { name: 'blog', to: '/blog', count: count.blog },
     { name: 'log', to: '/log', count: count.log },
     { name: 'tools', to: '/tools' },
+    { name: 'snippets', to: '/snippets' },
     { name: 'contact', to: '/contact' },
   ];
 

@@ -443,11 +443,31 @@
   "1260904707": {
     "title": "GraphQL graphene-django n+1問題の対策を行う",
     "created_at": "2022-06-04T22:26:18Z",
-    "updated_at": "2022-06-04T22:29:44Z",
+    "updated_at": "2022-06-05T01:32:47Z",
     "body": "GraphQLクエリを単純に実装してしまうと他モデルへの参照をフロント側が書いた際にn+1問題が発生してしまいます。その際の対応を記載します。\r\n",
     "labels": [
       { "name": "article", "color": "C200E5" },
       { "name": "Django", "color": "5FC353" }
+    ]
+  },
+  "1260993418": {
+    "title": "GitHub Actions 小技 (1)",
+    "created_at": "2022-06-05T08:32:36Z",
+    "updated_at": "2022-06-05T08:32:36Z",
+    "body": "複数回Pushした際の前のJobの自動キャンセル、Job Summaryへの情報書き込み方を紹介します。\r\n",
+    "labels": [
+      { "name": "article", "color": "C200E5" },
+      { "name": "Utils", "color": "170627" }
+    ]
+  },
+  "1268342824": {
+    "title": "AWS CodePipelineとGitHubを連携させてECRにイメージをPushする",
+    "created_at": "2022-06-11T18:19:06Z",
+    "updated_at": "2022-06-12T09:33:32Z",
+    "body": "GitHubのOAuth認証を利用しAWS CodePipelineと連携させ、トリガされたCodeBuildを用いたECRへのAuto Pushを行ったのでやり方を紹介します。\r\n",
+    "labels": [
+      { "name": "article", "color": "C200E5" },
+      { "name": "AWS", "color": "EE0471" }
     ]
   }
 }

@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./tools/tools.module').then((m) => m.ToolsModule),
   },
   {
+    path: 'snippets',
+    loadChildren: () => import('./snippet/snippet.module').then((m) => m.SnippetModule),
+  },
+  {
     path: '**',
     pathMatch: 'full',
     component: NotFoundComponent,

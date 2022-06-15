@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="col-md-8 mt-2">
+    <div class="card mt-1" *ngFor="let snippet of snippets">
+      <div class="card-header">
+        {{ snippet.title }}
+        <button mat-ripple class="btn btn-sm bi-clipboard" (click)="copy(snippet.contents)"></button>
+      </div>
+      <div class="card-body p-0">
+        <pre class="language-bash">$ {{ snippet.contents }}</pre>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <app-ads type="auto"></app-ads>
+  </div>
+</div>
