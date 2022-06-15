@@ -435,19 +435,21 @@ export class SnippetListComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
-  &lt;div class&#x3D;&quot;col-md-8 mt-2&quot;&gt;
-    &lt;div class&#x3D;&quot;card mt-1&quot; *ngFor&#x3D;&quot;let snippet of snippets&quot;&gt;
-      &lt;div class&#x3D;&quot;card-header&quot;&gt;
-        {{ snippet.title }}
-        &lt;button mat-ripple class&#x3D;&quot;btn btn-sm bi-clipboard&quot; (click)&#x3D;&quot;copy(snippet.contents)&quot;&gt;&lt;/button&gt;
-      &lt;/div&gt;
-      &lt;div class&#x3D;&quot;card-body p-0&quot;&gt;
-        &lt;pre class&#x3D;&quot;language-bash&quot;&gt;$ {{ snippet.contents }}&lt;/pre&gt;
+  &lt;div class&#x3D;&quot;row mt-2&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+      &lt;div class&#x3D;&quot;card mt-1&quot; *ngFor&#x3D;&quot;let snippet of snippets&quot;&gt;
+        &lt;div class&#x3D;&quot;card-header&quot;&gt;
+          {{ snippet.title }}
+          &lt;button mat-ripple class&#x3D;&quot;btn btn-sm bi-clipboard&quot; (click)&#x3D;&quot;copy(snippet.contents)&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;card-body p-0&quot;&gt;
+          &lt;pre class&#x3D;&quot;language-bash&quot;&gt;$ {{ snippet.contents }}&lt;/pre&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
-    &lt;app-ads type&#x3D;&quot;auto&quot;&gt;&lt;/app-ads&gt;
+    &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+      &lt;app-ads type&#x3D;&quot;auto&quot;&gt;&lt;/app-ads&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -486,7 +488,7 @@ export class SnippetListComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="col-md-8 mt-2">    <div class="card mt-1" *ngFor="let snippet of snippets">      <div class="card-header">        {{ snippet.title }}        <button mat-ripple class="btn btn-sm bi-clipboard" (click)="copy(snippet.contents)"></button>      </div>      <div class="card-body p-0">        <pre class="language-bash">$ {{ snippet.contents }}</pre>      </div>    </div>  </div>  <div class="col-md-4">    <app-ads type="auto"></app-ads>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row mt-2">    <div class="col-md-8">      <div class="card mt-1" *ngFor="let snippet of snippets">        <div class="card-header">          {{ snippet.title }}          <button mat-ripple class="btn btn-sm bi-clipboard" (click)="copy(snippet.contents)"></button>        </div>        <div class="card-body p-0">          <pre class="language-bash">$ {{ snippet.contents }}</pre>        </div>      </div>    </div>    <div class="col-md-4">      <app-ads type="auto"></app-ads>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FxCalcComponent', 'selector': 'app-fx-calc'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LazyImgComponent', 'selector': 'app-lazy-img'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MermaidComponent', 'selector': 'app-mermaid'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsbarComponent', 'selector': 'app-newsbar'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'SnippetListComponent', 'selector': 'app-snippet-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SnippetListComponent'};
