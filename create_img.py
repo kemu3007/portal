@@ -91,6 +91,7 @@ if __name__ == "__main__":
     write_log_image("Log Articles", "log")
     write_portal_image("Tools", "tools")
     write_portal_image("Contact", "contact")
+    write_portal_image("Snippets", "snippets")
     write_tools_image("IP Address Checker", "user-info")
     write_tools_image("Amazon Associate Linker", "associate")
     write_tools_image("JSON Typer", "json-typer")

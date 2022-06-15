@@ -239,6 +239,17 @@ if __name__ == "__main__":
         """,
         "/contact",
     )
+
+    # snippets
+
+    create_meta(
+        "https://portal.kemu.site/assets/images/snippets.png",
+        "Snippets | Kemu Portal",
+        """
+        開発時によく利用するスニペット置き場
+        """,
+        "/snippets",
+    )
     # nav count
     Path("portal/src/assets/count.json").write_text(json.dumps({"blog": len(articles.keys()), "log": len(logs.keys())}))
 
