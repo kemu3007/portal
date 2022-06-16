@@ -17,4 +17,9 @@ export class ContactComponent {
   resolveReCaptcha() {
     this.isShowed = true;
   }
+
+  get adsLength(): number {
+    const hasMd = window.screen.width >= 768;
+    return hasMd ? 4 : 1;
+  }
 }

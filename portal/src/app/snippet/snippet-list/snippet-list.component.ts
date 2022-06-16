@@ -30,4 +30,9 @@ export class SnippetListComponent implements OnInit {
     window.navigator.clipboard.writeText(text);
     this.messageService.pushMessage({ type: 'info', body: 'クリップボードにコピーしました' });
   }
+
+  get adsLength(): number {
+    const hasMd = window.screen.width >= 768;
+    return hasMd ? 4 : 1;
+  }
 }
