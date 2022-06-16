@@ -6,5 +6,9 @@
     {
         "title": "Ubuntuコンテナでpythonコマンドが使えるようシンボリックリンクを作成する",
         "contents": "ln -s /usr/bin/python3 /usr/bin/python"
+    },
+    {
+        "title": "docker build時に標準出力にログを出力させる",
+        "contents": "docker compose build --progress plain"
     }
 ]
