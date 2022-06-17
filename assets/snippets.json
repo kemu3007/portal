@@ -10,5 +10,13 @@
     {
         "title": "docker build時に標準出力にログを出力させる",
         "contents": "docker compose build --progress plain"
+    },
+    {
+        "title": "Apache設定ファイルディレクトリ",
+        "contents": "/usr/local/apache2/conf/httpd.conf"
+    },
+    {
+        "title": "Nginx設定ファイルディレクトリ",
+        "contents": "/etc/nginx/conf.d/default.conf"
     }
 ]
