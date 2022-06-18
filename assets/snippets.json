@@ -18,5 +18,9 @@
     {
         "title": "Nginx設定ファイルディレクトリ",
         "contents": "/etc/nginx/conf.d/default.conf"
+    },
+    {
+        "title": "PostgreSQLデータディレクトリ",
+        "contents": "/var/lib/postgresql/data"
     }
 ]
