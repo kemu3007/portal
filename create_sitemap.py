@@ -36,7 +36,7 @@ if __name__ == "__main__":
     add_url_element(urlset, "https://portal.kemu.site/")
     add_url_element(urlset, "https://portal.kemu.site/blog/")
     add_url_element(urlset, "https://portal.kemu.site/blog/en/")
-    add_url_element(urlset, "https://portal.kemu.site/blog/ch/")
+    add_url_element(urlset, "https://portal.kemu.site/blog/zh/")
     add_url_element(urlset, "https://portal.kemu.site/log/")
     add_url_element(urlset, "https://portal.kemu.site/contact/")
 
