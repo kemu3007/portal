@@ -48,6 +48,10 @@ export class BlogListComponent implements OnInit {
     return this.route.snapshot.data['lang'] !== 'ja';
   }
 
+  get isLoading() {
+    return this.loadingService.loading
+  }
+
   get langage() {
     return this.route.snapshot.data['lang'];
   }
