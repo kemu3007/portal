@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from urllib.request import urlopen
+from urllib.request import urlopen, urlretrieve
 
 from bs4 import BeautifulSoup
 from PIL import Image, ImageDraw, ImageFont
@@ -37,6 +37,10 @@ def write_weeds_iframe():
         ).find(class_="js-calendar-graph-svg")
         html = weed_iframe_base.format(svg=weed_svg, year=year)
         (iframes_dir / f"weed_{year}.html").write_text(html)
+
+
+def get_icon():
+    urlretrieve("https://avatars.githubusercontent.com/u/29157528", "portal/src/assets/icon.png")
 
 
 def write_blog_image(title: str, output: str):
@@ -76,6 +80,8 @@ def write_tools_image(title: str, output: str):
 
 
 if __name__ == "__main__":
+    get_icon()
+
     articles = json.loads((Path() / "portal/src/assets/articles/list.json").read_text())
     for key in articles.keys():
         write_blog_image(articles[key]["title"], key)
