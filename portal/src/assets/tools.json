@@ -1,5 +1,13 @@
 [
   {
+    "label": "STAR Note",
+    "link": "/tools/star-note",
+    "description": "面接の際のネタ帳です。Situation, Task, Action, Resultに分類して複数記載することが可能です。",
+    "external": false,
+    "secure": false,
+    "pinned": true
+  },
+  {
     "label": "FX Caluculator",
     "link": "/tools/fx-calc",
     "description": "FXに利用する証拠金率、ロスカット値、購入可能の最大ロット数などの値を計算します。",

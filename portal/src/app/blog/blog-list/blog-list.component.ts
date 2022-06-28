@@ -49,7 +49,7 @@ export class BlogListComponent implements OnInit {
   }
 
   get isLoading() {
-    return this.loadingService.loading
+    return this.loadingService.loading;
   }
 
   get langage() {

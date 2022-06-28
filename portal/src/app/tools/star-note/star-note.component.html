@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <h2>STAR Note</h2>
+  <p>面接の際のネタ帳です。Situation, Task, Action, Resultに分類して複数記載することが可能です。</p>
+  <ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem *ngFor="let form of forms.controls.notes.controls; index as i">
+      <a ngbNavLink [ngbTooltip]="form.value.situation">{{ i }}</a>
+      <ng-template ngbNavContent>
+        <form [formGroup]="form">
+          <label [for]="'s' + i">Situation</label>
+          <textarea class="form-control" [id]="'s' + i" formControlName="situation" rows="5"></textarea>
+          <label [for]="'t' + i">Task</label>
+          <textarea class="form-control" [id]="'t' + i" formControlName="task" rows="5"></textarea>
+          <label [for]="'a' + i">Action</label>
+          <textarea class="form-control" [id]="'a' + i" formControlName="action" rows="5"></textarea>
+          <label [for]="'r' + i">Result</label>
+          <textarea class="form-control" [id]="'r' + i" formControlName="result" rows="5"></textarea>
+        </form>
+      </ng-template>
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>
+  <button class="btn btn-light border" matRipple (click)="addForm()">フォームを追加</button>
+  <button class="btn btn-light border" matRipple (click)="deleteForm()">入力していないフォームを削除</button>
+</div>

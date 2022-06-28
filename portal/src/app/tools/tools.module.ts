@@ -8,6 +8,7 @@ import { MermaidComponent } from './mermaid/mermaid.component';
 import { OpenapiComponent } from './openapi/openapi.component';
 import { RealtimeComponent } from './realtime/realtime.component';
 import { RegexComponent } from './regex/regex.component';
+import { StarNoteComponent } from './star-note/star-note.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
 import { ToolsRoutingModule } from './tools-routing.module';
 import { UserInfoComponent } from './user-info/user-info.component';
@@ -32,6 +33,7 @@ import { SharedModule } from '@app/shared/shared.module';
     OpenapiComponent,
     MermaidComponent,
     FxCalcComponent,
+    StarNoteComponent,
   ],
   imports: [CommonModule, SharedModule, ToolsRoutingModule],
 })
