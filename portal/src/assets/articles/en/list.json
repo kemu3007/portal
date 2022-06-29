@@ -67,7 +67,7 @@
     "title": "Automatic generation of Django Admin",
     "created_at": "2022-03-06T07:45:18Z",
     "updated_at": "2022-03-06T15:21:16Z",
-    "body": "I forgot to register admin and it was a hassle, so I'm leaving this as a note.         Useful timing - I don't want to put too much effort into Django Admin, but I want at least some functionality - I forget to admin.site.register when I add a model and I want to do something about it.",
+    "body": "I forgot to register admin and it was a hassle, so I'm leaving this as a note.         Useful timing - I don't want to put too much effort into Django Admin, but I want at least some functionality - I forget to admin.site.register when adding a model and I want to do something about it.",
     "labels": [
       {
         "name": "article",
@@ -131,7 +131,7 @@
     "title": "Using Gmail API push notification",
     "created_at": "2022-03-06T07:47:32Z",
     "updated_at": "2022-03-06T15:19:57Z",
-    "body": "You will be able to hook into the email and interject the process.        Environment - Python 3.10 - google-api-python-client==2.36.0 - google_auth_oauthlib=0.4.6 - google-cloud-pubsub==2.9.0",
+    "body": "You will be able to hook into the email and interleave the process.        Environment - Python 3.10 - google-api-python-client==2.36.0 - google_auth_oauthlib=0.4.6 - google-cloud-pubsub==2.9.0",
     "labels": [
       {
         "name": "article",
@@ -259,7 +259,7 @@
     "title": "Angular State Management @ngneat/elf",
     "created_at": "2022-03-19T12:29:12Z",
     "updated_at": "2022-03-21T14:07:38Z",
-    "body": "[We recommend checking it out 🚀 🚀. --- [@datorama/akita",
+    "body": "[We recommend checking it out 🚀 🚀. ---Elf, a newer state management solution, has been published.",
     "labels": [
       {
         "name": "article",
@@ -359,7 +359,7 @@
     "title": "GitHub Actions summary of frequently used settings",
     "created_at": "2022-03-27T23:23:38Z",
     "updated_at": "2022-04-03T10:29:02Z",
-    "body": "   Running Tests at Arbitrary Timings If tests are fired in both push and pull requests in all cases, tests with the same content will be fired twice on the pull request. Therefore, the test will fire twice on the pull request when the pull request is created, when the pull request is updated, and when the test is merged (ma",
+    "body": "   Running Tests at Arbitrary Timings If tests are fired in both push and pull requests in all cases, tests with the same contents will be fired twice on the pull request. Therefore, the test will fire twice on the pull request when the pull request is created, when the pull request is updated, and when the test is merged (ma",
     "labels": [
       {
         "name": "article",
@@ -407,7 +407,7 @@
     "title": "Use Pillow Japanese font",
     "created_at": "2022-04-01T14:03:37Z",
     "updated_at": "2022-04-22T10:18:01Z",
-    "body": "We will show you how to implement Pillow's Japanese fonts, which tend to be dependent on the host OS font, in a way that does not require font downloading in other environments/runners.\r\n",
+    "body": "We will show you how to implement Pillow's Japanese fonts, which tend to be dependent on the host OS font, in a way that does not require font downloads in other environments/runners.\r\n",
     "labels": [
       {
         "name": "article",
@@ -471,7 +471,7 @@
     "title": "Creating a Django project from a custom template",
     "created_at": "2022-04-17T10:58:05Z",
     "updated_at": "2022-04-22T09:47:41Z",
-    "body": "I have created a template repository of Django configurations that I use all the time and I would like to show you how to use it. It is configured by default with flake8, mypy, black, isort, and CI to perform static checks of the code and run tests.\r\n",
+    "body": "I have created a template repository of Django configurations that I use all the time and I'd like to show you how to use it. It is configured by default with flake8, mypy, black, isort, and CI to perform static checks of the code and run tests.\r\n",
     "labels": [
       {
         "name": "article",
@@ -710,7 +710,7 @@
   "1260904707": {
     "title": "GraphQL graphene-django n+1 problem to be addressed",
     "created_at": "2022-06-04T22:26:18Z",
-    "updated_at": "2022-06-04T22:29:44Z",
+    "updated_at": "2022-06-05T01:32:47Z",
     "body": "If GraphQL queries are simply implemented, the n+1 problem will occur when the front side writes references to other models. This section describes how to deal with this problem.\r\n",
     "labels": [
       {
@@ -720,6 +720,66 @@
       {
         "name": "Django",
         "color": "5FC353"
+      }
+    ]
+  },
+  "1260993418": {
+    "title": "GitHub Actions (1)",
+    "created_at": "2022-06-05T08:32:36Z",
+    "updated_at": "2022-06-05T08:32:36Z",
+    "body": "This section introduces how to automatically cancel the previous job when multiple pushes are performed and how to write information in the Job Summary.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Utils",
+        "color": "170627"
+      }
+    ]
+  },
+  "1268342824": {
+    "title": "Linking AWS CodePipeline and GitHub to push images to ECR",
+    "created_at": "2022-06-11T18:19:06Z",
+    "updated_at": "2022-06-12T09:33:32Z",
+    "body": "We used GitHub's OAuth authentication to link with AWS CodePipeline and performed Auto Push to ECR using triggered CodeBuild, and we will show you how to do it.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "AWS",
+        "color": "EE0471"
+      }
+    ]
+  },
+  "1276252097": {
+    "title": "Python Typehint new / deprecated",
+    "created_at": "2022-06-20T01:47:30Z",
+    "updated_at": "2022-06-20T01:47:30Z",
+    "body": "Some items have been added or deprecated without being noticed. Since there are many deprecated items, only the most frequently used items are listed.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Python",
+        "color": "1D76DB"
+      }
+    ]
+  },
+  "1288639392": {
+    "title": "[M1 Mac] A story about npm install failing with chromium error and how to deal with it.",
+    "created_at": "2022-06-29T12:18:38Z",
+    "updated_at": "2022-06-29T12:38:06Z",
+    "body": "M1 I got a chromium error when I did npm install on my Mac, so a note on how to handle that.\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
       }
     ]
   }

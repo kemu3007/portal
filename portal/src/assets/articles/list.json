@@ -469,5 +469,22 @@
       { "name": "article", "color": "C200E5" },
       { "name": "AWS", "color": "EE0471" }
     ]
+  },
+  "1276252097": {
+    "title": "Python Typehint new / deprecated",
+    "created_at": "2022-06-20T01:47:30Z",
+    "updated_at": "2022-06-20T01:47:30Z",
+    "body": "気がつかないうちに追加 / 非推奨になっていた項目があったため紹介します。非推奨項目が多いのでよく利用されるもののみ記載しています。\r\n",
+    "labels": [
+      { "name": "article", "color": "C200E5" },
+      { "name": "Python", "color": "1D76DB" }
+    ]
+  },
+  "1288639392": {
+    "title": "[M1 Mac] chromiumのエラーで npm install に失敗した話とその対応",
+    "created_at": "2022-06-29T12:18:38Z",
+    "updated_at": "2022-06-29T12:38:06Z",
+    "body": "M1 Macでnpm installした際chromiumのエラーが出たのでその対応方法のメモ\r\n",
+    "labels": [{ "name": "article", "color": "C200E5" }]
   }
 }

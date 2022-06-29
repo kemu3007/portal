@@ -32,7 +32,7 @@
     ]
   },
   "1160542878": {
-    "title": "将Markdown转换为HTML/给出css",
+    "title": "将Markdown转换为HTML/给予css",
     "created_at": "2022-03-06T07:44:22Z",
     "updated_at": "2022-03-06T15:21:56Z",
     "body": "Markdown可以通过使用以下库转换为HTML。  [Python-Markdown] 安装bash > pip install markdown 转换为HTML bash >> markdow",
@@ -99,7 +99,7 @@
     "title": "DRF 限制显示与DRF绑定的模型数量。",
     "created_at": "2022-03-06T07:46:40Z",
     "updated_at": "2022-03-06T15:20:58Z",
-    "body": "Django有一个叫做prefetch_related的功能，可以用来抑制发出的SQL，具体说明如下       python Article.objects.prefetch_related(\"tags\")来抑制ManyT发出的SQL。",
+    "body": "Django有一个叫做prefetch_related的功能，可以用来抑制发出的SQL，说明如下       python Article.objects.prefetch_related(\"tags\")来抑制ManyT发出的SQL。",
     "labels": [
       {
         "name": "article",
@@ -115,7 +115,7 @@
     "title": "编写前端测试（快照测试部分）。",
     "created_at": "2022-03-06T07:47:02Z",
     "updated_at": "2022-03-06T15:20:21Z",
-    "body": "    环境 Angular 13, node 16 移除默认包含的Karma，因为我们将使用jest sh npm run ng add @briebug/jest-schematic 参考资料: https://github.com/brie",
+    "body": "    环境 Angular 13, node 16 移除默认包含的Karma，因为我们将使用jest sh npm run ng add @briebug/jest-schematic 参考资料： https://github.com/brie",
     "labels": [
       {
         "name": "article",
@@ -179,7 +179,7 @@
     "title": "在用GitHub页面部署的SPA中显示OGPs(spirited)。",
     "created_at": "2022-03-12T09:56:24Z",
     "updated_at": "2022-03-12T14:33:09Z",
-    "body": "通常情况下，在部署SPA时，OGP不会在twitter和其他网站上显示。    这是由于获得OGP的机器人并不执行js，而且因为是SPA，所以没有相关链接的静态HTML文件。    因此，通常可以使用lambda等来显示机器人的页面，或显示其他页面的OGP。",
+    "body": "通常情况下，在部署SPA时，OGP不会在twitter和其他网站上显示。    这是由于获取OGP的机器人并不执行js，而且因为是SPA，所以没有相关链接的静态HTML文件。    因此，通常可以使用lambda等来显示机器人的页面，或者显示其他页面的OGP。",
     "labels": [
       {
         "name": "article",
@@ -227,7 +227,7 @@
     "title": "在Angular组件中放置脚本标签。",
     "created_at": "2022-03-15T10:57:47Z",
     "updated_at": "2022-03-15T10:57:47Z",
-    "body": "如果一个脚本标签被放在src/index.html之外，其行为是自动删除它。    参考：[angular/angular 4903]所以，例如，如果你放置一个可以通过[Twitter Publish]检索的按钮，那么推特按钮的css就不会被打到。",
+    "body": "如果一个脚本标签被放在src/index.html之外，其行为是自动删除它。    参考：[angular/angular 4903]所以，例如，如果你放置了一个可以通过[Twitter Publish]检索的按钮，那么推特按钮的css将不会被击中。",
     "labels": [
       {
         "name": "article",
@@ -295,7 +295,7 @@
     "title": "使用Angular reCAPTCHA。",
     "created_at": "2022-03-20T12:34:43Z",
     "updated_at": "2022-03-21T12:36:22Z",
-    "body": "你可以使用reCAPTCHA来防止来自机器人的访问。    通常情况下，在使用reCAPTCHA时，必须在HTML中放置一个脚本标签。然而，index.html上的脚本标签会被转义和删除，所以[ng-recaptcha]可以用来防止机器人访问你的网站。",
+    "body": "你可以使用reCAPTCHA来防止来自机器人的访问。    通常情况下，在使用reCAPTCHA时，需要在HTML中放置一个脚本标签。然而，index.html上的脚本标签会被转义和删除，所以[ng-recaptcha]可以用来防止机器人访问你的网站。",
     "labels": [
       {
         "name": "article",
@@ -359,7 +359,7 @@
     "title": "GitHub行动的常用设置摘要",
     "created_at": "2022-03-27T23:23:38Z",
     "updated_at": "2022-04-03T10:29:02Z",
-    "body": "   在任意时间运行测试 如果在所有情况下推送和拉动请求的测试都被触发，那么在拉动请求中，相同内容的测试将被触发两次。因此，当拉动请求被创建时/当拉动请求被更新时/当测试被合并时，测试将启动两次（ma",
+    "body": "   在任意时间运行测试 如果在所有情况下推送和拉动请求的测试都被触发，那么具有相同内容的测试将在拉动请求中触发两次。因此，当拉动请求被创建时/当拉动请求被更新时/当测试被合并时，测试将启动两次（ma",
     "labels": [
       {
         "name": "article",
@@ -375,7 +375,7 @@
     "title": "从OpenApi文档中自动生成类型。",
     "created_at": "2022-03-28T11:22:17Z",
     "updated_at": "2022-03-28T14:15:49Z",
-    "body": "从以前生成的OpenApi文件中生成类型。[上一篇] 使用[@openapitools/openapi-generator-cli]来生成类型。       zsh $ npx @openapitools/openapi-generator-li genera",
+    "body": "从以前生成的OpenApi文档中生成类型。[上一篇] 使用[@openapitools/openapi-generator-cli]来生成类型。       zsh $ npx @openapitools/openapi-generator-li genera",
     "labels": [
       {
         "name": "article",
@@ -391,7 +391,7 @@
     "title": "用marked.js和highlight.js处理GitHub风味的Markdown",
     "created_at": "2022-04-01T13:22:10Z",
     "updated_at": "2022-04-03T05:01:14Z",
-    "body": "在GitHub上处理的Markdown的官方名称叫做GitHub Flavored Markdown，这是一个不言而喻的符号，它扩展了默认的Markdown。    这一次，GitHub css的highlight.js被应用于将Markdown文本转换为HTML。",
+    "body": "在GitHub上处理的Markdown的官方名称叫做GitHub Flavored Markdown，这是一个不言自明的符号，扩展了默认的Markdown。    这一次，GitHub css的highlight.js被应用于将Markdown文本转换为HTML。",
     "labels": [
       {
         "name": "article",
@@ -439,7 +439,7 @@
     "title": "视觉化OpenApi文件。",
     "created_at": "2022-04-10T05:29:52Z",
     "updated_at": "2022-04-22T10:14:03Z",
-    "body": "它介绍了Swagger、Redoc之间的区别，以及根据REST API输出的OpenApi文件，用CI自动记录并发布到GitHub页面的方法。它还为从OpenApi文件生成的文档提供了一个查看器。\r\n",
+    "body": "它介绍了Swagger、Redoc之间的区别，以及根据REST API输出的OpenApi文件，用CI自动编写文档并发布到GitHub页面的方法。它还为从OpenApi文件生成的文档提供了一个查看器。\r\n",
     "labels": [
       {
         "name": "article",
@@ -487,7 +487,7 @@
     "title": "Graphene生成Django Graphql文档",
     "created_at": "2022-04-18T07:59:27Z",
     "updated_at": "2022-04-25T13:58:19Z",
-    "body": "在一个项目中使用Grapnen-Django输出Graphql模式，检查输出的信息，并从输出模式中自动生成文档。生成的文档会从CI部署到GitHub页面。\r\n",
+    "body": "在一个项目中使用Grapnen-Django输出Graphql模式，检查信息输出，并从输出的模式中自动生成文档。生成的文档会从CI部署到GitHub页面。\r\n",
     "labels": [
       {
         "name": "article",
@@ -519,7 +519,7 @@
     "title": "创建RSS/检查Chrome Web Feeder是否工作",
     "created_at": "2022-04-25T22:32:58Z",
     "updated_at": "2022-04-25T22:41:11Z",
-    "body": "不久之后，RSS Feeder功能又回到了Android上的Chrome 94~，因此我们创建并分发了RSS feeds，以测试它们的外观如何。\r\n",
+    "body": "RSS馈线功能在某个时候回到了安卓的Chrome 94~，所以RSS被创建并分发，以测试可见性。\r\n",
     "labels": [
       {
         "name": "article",
@@ -567,7 +567,7 @@
     "title": "Cloudflare Pages 只向已认证的用户显示页面。",
     "created_at": "2022-05-06T14:59:25Z",
     "updated_at": "2022-05-06T15:19:57Z",
-    "body": "如果你在GitHub Pages上托管一个静态网站，并且不维护一个后台，你就无法对用户进行认证，因此你在Cloudflare Pages上部署，并使用Cloudflare Access进行认证，只允许通过的用户查看网站。\r\n",
+    "body": "如果你在GitHub Pages上托管一个静态网站，并且不维护一个后台，你就无法对用户进行认证，因此你在Cloudflare Pages上部署，只允许已经认证并通过Cloudflare Access的用户查看网站。\r\n",
     "labels": [
       {
         "name": "article",
@@ -599,7 +599,7 @@
     "title": "将SPA部署到GitHub页面并考虑到SEO。",
     "created_at": "2022-05-17T15:15:57Z",
     "updated_at": "2022-05-17T16:00:18Z",
-    "body": "本节还介绍了在GitHub Pages、Cloudflare Pages上部署SPA的服务时，从SEO角度需要注意的事项，以及如何进行Angular部署。\r\n",
+    "body": "本节还解释了在GitHub Pages、Cloudflare Pages上部署SPA的服务时，从SEO角度需要注意的事项，以及如何进行Angular部署。\r\n",
     "labels": [
       {
         "name": "article",
@@ -710,7 +710,7 @@
   "1260904707": {
     "title": "GraphQL graphene-django n+1问题有待解决。",
     "created_at": "2022-06-04T22:26:18Z",
-    "updated_at": "2022-06-04T22:29:44Z",
+    "updated_at": "2022-06-05T01:32:47Z",
     "body": "如果简单地实现GraphQL查询，当前端写入对其他模型的引用时，会出现n+1的问题。本节介绍了如何处理这个问题。\r\n",
     "labels": [
       {
@@ -720,6 +720,66 @@
       {
         "name": "Django",
         "color": "5FC353"
+      }
+    ]
+  },
+  "1260993418": {
+    "title": "GitHub行动的次要性 (1)",
+    "created_at": "2022-06-05T08:32:36Z",
+    "updated_at": "2022-06-05T08:32:36Z",
+    "body": "多次推送时自动取消以前的作业，以及如何将信息写入作业摘要。\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Utils",
+        "color": "170627"
+      }
+    ]
+  },
+  "1268342824": {
+    "title": "链接AWS CodePipeline和GitHub以推送图像到ECR。",
+    "created_at": "2022-06-11T18:19:06Z",
+    "updated_at": "2022-06-12T09:33:32Z",
+    "body": "我们使用GitHub的OAuth认证与AWS CodePipeline链接，并使用触发的CodeBuild执行自动推送到ECR，并向你展示如何做到这一点。\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "AWS",
+        "color": "EE0471"
+      }
+    ]
+  },
+  "1276252097": {
+    "title": "Python Typehint new / deprecated",
+    "created_at": "2022-06-20T01:47:30Z",
+    "updated_at": "2022-06-20T01:47:30Z",
+    "body": "有些项目在没有被注意到的情况下被添加/废弃，在此介绍。由于有许多被废弃的项目，所以只列出了最经常使用的项目。\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
+      },
+      {
+        "name": "Python",
+        "color": "1D76DB"
+      }
+    ]
+  },
+  "1288639392": {
+    "title": "[M1 Mac] 一个关于npm安装失败并出现chromium错误以及如何处理的故事。",
+    "created_at": "2022-06-29T12:18:38Z",
+    "updated_at": "2022-06-29T12:38:06Z",
+    "body": "M1 关于如何处理在Mac上进行npm安装时出现的chromium错误的说明。\r\n",
+    "labels": [
+      {
+        "name": "article",
+        "color": "C200E5"
       }
     ]
   }
