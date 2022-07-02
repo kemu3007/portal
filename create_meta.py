@@ -250,6 +250,17 @@ if __name__ == "__main__":
         """,
         "/snippets",
     )
+
+    # projects
+
+    create_meta(
+        "https://portal.kemu.site/assets/images/projects.png",
+        "Projects | Kemu Portal",
+        """
+        開発したアプリケーション / テストに利用したレポジトリ一覧
+        """,
+        "/projects",
+    )
     # nav count
     Path("portal/src/assets/count.json").write_text(json.dumps({"blog": len(articles.keys()), "log": len(logs.keys())}))
 

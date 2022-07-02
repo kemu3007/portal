@@ -93,6 +93,7 @@ if __name__ == "__main__":
     for key in logs.keys():
         write_log_image(logs[key]["title"], key)
     write_portal_image("Home", "home")
+    write_portal_image("Projects", "projects")
     write_blog_image("Tech Articles", "blog")
     write_log_image("Log Articles", "log")
     write_portal_image("Tools", "tools")
