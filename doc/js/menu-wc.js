@@ -151,6 +151,26 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/LogRoutingModule.html" data-type="entity-link" >LogRoutingModule</a>
                             </li>
                             <li class="link">
+                                <a href="modules/ProjectsModule.html" data-type="entity-link" >ProjectsModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-ProjectsModule-d27cd4341cdfeb6893d888423f984c3606657907fdb977060286cf546ffadfe21d0baf4516fcd22662a5b2a7ed5870b922c6faf47aa6121df0974ca9a700834f"' : 'data-target="#xs-components-links-module-ProjectsModule-d27cd4341cdfeb6893d888423f984c3606657907fdb977060286cf546ffadfe21d0baf4516fcd22662a5b2a7ed5870b922c6faf47aa6121df0974ca9a700834f"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ProjectsModule-d27cd4341cdfeb6893d888423f984c3606657907fdb977060286cf546ffadfe21d0baf4516fcd22662a5b2a7ed5870b922c6faf47aa6121df0974ca9a700834f"' :
+                                            'id="xs-components-links-module-ProjectsModule-d27cd4341cdfeb6893d888423f984c3606657907fdb977060286cf546ffadfe21d0baf4516fcd22662a5b2a7ed5870b922c6faf47aa6121df0974ca9a700834f"' }>
+                                            <li class="link">
+                                                <a href="components/ProjectListComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ProjectListComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/ProjectsRoutingModule.html" data-type="entity-link" >ProjectsRoutingModule</a>
+                            </li>
+                            <li class="link">
                                 <a href="modules/SharedModule.html" data-type="entity-link" >SharedModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
@@ -342,6 +362,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/MessageService.html" data-type="entity-link" >MessageService</a>
                                 </li>
                                 <li class="link">
+                                    <a href="injectables/ProjectsService.html" data-type="entity-link" >ProjectsService</a>
+                                </li>
+                                <li class="link">
                                     <a href="injectables/RouterService.html" data-type="entity-link" >RouterService</a>
                                 </li>
                                 <li class="link">
@@ -389,6 +412,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/LabelDetail.html" data-type="entity-link" >LabelDetail</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Owner.html" data-type="entity-link" >Owner</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Project.html" data-type="entity-link" >Project</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/Reactions.html" data-type="entity-link" >Reactions</a>
