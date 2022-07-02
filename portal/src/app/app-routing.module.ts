@@ -24,6 +24,10 @@ const routes: Routes = [
     loadChildren: () => import('./snippet/snippet.module').then((m) => m.SnippetModule),
   },
   {
+    path: 'projects',
+    loadChildren: () => import('./projects/projects.module').then((m) => m.ProjectsModule),
+  },
+  {
     path: '**',
     pathMatch: 'full',
     component: NotFoundComponent,

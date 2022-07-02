@@ -39,6 +39,7 @@ jobs:
         run: |
           pip install -r requirements.lock.txt
           python export_issues.py
+          python export_projects.py
           python create_img.py
           python create_meta.py
           python create_version.py

@@ -14,6 +14,7 @@ export class NavComponent {
     { name: 'log', to: '/log', count: count.log },
     { name: 'tools', to: '/tools' },
     { name: 'snippets', to: '/snippets' },
+    { name: 'projects', to: '/projects' },
     { name: 'contact', to: '/contact' },
   ];
 
