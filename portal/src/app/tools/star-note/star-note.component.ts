@@ -13,6 +13,7 @@ export class StarNoteComponent implements OnInit {
 
   getForm() {
     return new FormGroup({
+      title: new FormControl(''),
       situation: new FormControl(''),
       task: new FormControl(''),
       action: new FormControl(''),

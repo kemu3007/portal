@@ -3,9 +3,11 @@
   <p>面接の際のネタ帳です。Situation, Task, Action, Resultに分類して複数記載することが可能です。</p>
   <ul ngbNav #nav="ngbNav" class="nav-tabs">
     <li ngbNavItem *ngFor="let form of forms.controls.notes.controls; index as i">
-      <a ngbNavLink [ngbTooltip]="form.value.situation">{{ i }}</a>
+      <a ngbNavLink [ngbTooltip]="form.value.title">{{ i }}</a>
       <ng-template ngbNavContent>
         <form [formGroup]="form">
+          <label [for]="'title' + i">Title</label>
+          <input class="form-control" [id]="'title' + i" formControlName="title" />
           <label [for]="'s' + i">Situation</label>
           <textarea class="form-control" [id]="'s' + i" formControlName="situation" rows="5"></textarea>
           <label [for]="'t' + i">Task</label>
