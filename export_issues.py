@@ -30,9 +30,10 @@ def export_issues(label: str, dir: Path, extract_photo: bool = False):
             "labels": [{"name": label["name"], "color": label["color"]} for label in issue["labels"]],
         }
         if extract_photo:
-            issue_dict[issue["id"]]["photo"] = (
-                re.search("https:\/\/user-images.githubusercontent.com.*\.png", issue["body"]).group() or ""
-            )
+            if search := re.search("https:\/\/user-images.githubusercontent.com.*\.png", issue["body"]):
+                issue_dict[issue["id"]]["photo"] = search.group()
+            else:
+                issue_dict[issue["id"]]["photo"] = ""
         (dir / f"{issue['id']}.json").write_text(json.dumps(issue, ensure_ascii=False))
     (dir / "list.json").write_text(json.dumps(issue_dict, ensure_ascii=False))
     return issues
