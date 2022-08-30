@@ -33,7 +33,7 @@ def export_issues(label: str, dir: Path, extract_photo: bool = False):
             if search := re.search("https:\/\/user-images.githubusercontent.com.*\.png", issue["body"]):
                 issue_dict[issue["id"]]["photo"] = search.group()
             else:
-                issue_dict[issue["id"]]["photo"] = ""
+                issue_dict[issue["id"]]["photo"] = f"https://portal.kemu.site/assets/images/{issue['id']}.png"
         (dir / f"{issue['id']}.json").write_text(json.dumps(issue, ensure_ascii=False))
     (dir / "list.json").write_text(json.dumps(issue_dict, ensure_ascii=False))
     return issues
