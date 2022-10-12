@@ -8,12 +8,12 @@ export class LoadingService {
   _loading = false;
 
   set loading(value: boolean) {
-    if (!value) {
+    if (value) {
+      this._loading = value;
+    } else {
       interval(500)
         .pipe(take(1))
         .subscribe((_) => (this._loading = value));
-    } else {
-      this._loading = value;
     }
   }
 
