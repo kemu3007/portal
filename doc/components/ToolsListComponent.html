@@ -64,7 +64,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/home/tools-list/tools-list.component.ts</code>
+    <code>src/app/tools/tools-list/tools-list.component.ts</code>
 </p>
 
 
@@ -168,7 +168,16 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
+                                    <a href="#pinnedTools" >pinnedTools</a>
+                                </li>
+                                <li>
                                     <a href="#tools" >tools</a>
+                                </li>
+                                <li>
+                                    <a href="#externalTools" >externalTools</a>
+                                </li>
+                                <li>
+                                    <a href="#adsLength" >adsLength</a>
                                 </li>
                             </ul>
                         </td>
@@ -188,7 +197,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/home/tools-list/tools-list.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -268,7 +277,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="16"
-                            class="link-to-prism">src/app/home/tools-list/tools-list.component.ts:16</a></div>
+                            class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:16</a></div>
                 </td>
             </tr>
 
@@ -314,7 +323,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/home/tools-list/tools-list.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -331,6 +340,28 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="pinnedTools"></a>
+                        <span class="name"><b>pinnedTools</b><a href="#pinnedTools"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>pinnedTools()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:20</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="tools"></a>
                         <span class="name"><b>tools</b><a href="#tools"><span class="icon ion-ios-link"></span></a></span>
                     </td>
@@ -343,7 +374,51 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/home/tools-list/tools-list.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:24</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="externalTools"></a>
+                        <span class="name"><b>externalTools</b><a href="#externalTools"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>externalTools()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:30</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="adsLength"></a>
+                        <span class="name"><b>adsLength</b><a href="#adsLength"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>adsLength()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/tools/tools-list/tools-list.component.ts:36</a></div>
                                 </td>
                             </tr>
 
@@ -373,21 +448,100 @@ export class ToolsListComponent implements OnInit {
     this.toolsService.get().subscribe((tools) &#x3D;&gt; (this._tools &#x3D; tools));
   }
 
+  get pinnedTools() {
+    return this._tools.filter((tool) &#x3D;&gt; tool.pinned);
+  }
+
   get tools() {
-    return this._tools.filter((tool) &#x3D;&gt; !tool.external);
+    return this._tools
+      .filter((tool) &#x3D;&gt; !tool.external)
+      .sort((a, b) &#x3D;&gt; (a.label.toUpperCase() &gt; b.label.toUpperCase() ? 1 : -1));
+  }
+
+  get externalTools() {
+    return this._tools
+      .filter((tool) &#x3D;&gt; tool.external)
+      .sort((a, b) &#x3D;&gt; (a.label.toUpperCase() &gt; b.label.toUpperCase() ? 1 : -1));
+  }
+
+  get adsLength(): number {
+    const hasMd &#x3D; window.screen.width &gt;&#x3D; 768;
+    return hasMd ? Math.floor(this.tools.length / 3) : 1;
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div id&#x3D;&quot;tools&quot; class&#x3D;&quot;list-group&quot;&gt;
-  &lt;a class&#x3D;&quot;list-group-item d-flex&quot; style&#x3D;&quot;cursor: pointer&quot; *ngFor&#x3D;&quot;let tool of tools&quot; [href]&#x3D;&quot;tool.link&quot;&gt;
-    &lt;div matRipple class&#x3D;&quot;text-start&quot;&gt;
-      &lt;div class&#x3D;&quot;fw-bold&quot;&gt;{{ tool.label }}&lt;/div&gt;
-      {{ tool.description }}
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-9 row mx-0 border-end border-2&quot;&gt;
+      &lt;h2&gt;
+        &lt;i class&#x3D;&quot;bi bi-hammer&quot;&gt;&lt;/i&gt; 個人的に使ったりする自作ツール置き場（不定期更新）&lt;app-tweet-btn
+          class&#x3D;&quot;ms-3&quot;
+        &gt;&lt;/app-tweet-btn&gt;
+      &lt;/h2&gt;
+      &lt;h2&gt;Pinned Tools&lt;/h2&gt;
+      &lt;div class&#x3D;&quot;col-md-4 bg-light px-0 mx-0 mt-1&quot; *ngFor&#x3D;&quot;let tool of pinnedTools; index as i&quot;&gt;
+        &lt;a
+          class&#x3D;&quot;card shadow mt-1 text-decoration-none text-muted h-100&quot;
+          [routerLink]&#x3D;&quot;tool.link&quot;
+          style&#x3D;&quot;cursor: pointer&quot;
+        &gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;h3 class&#x3D;&quot;card-title text-black text-decoration-underline&quot;&gt;
+                {{ tool.label }} &lt;i class&#x3D;&quot;bi bi-pin-angle&quot;&gt;&lt;/i&gt;
+              &lt;/h3&gt;
+              &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ tool.description }}&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;card mt-3&quot;&gt;
+        &lt;app-ads type&#x3D;&quot;auto&quot; [count]&#x3D;&quot;adsLength&quot;&gt;&lt;/app-ads&gt;
+      &lt;/div&gt;
+      &lt;h2 class&#x3D;&quot;mt-3&quot;&gt;Tools&lt;/h2&gt;
+      &lt;div class&#x3D;&quot;col-md-4 bg-light px-0 mx-0 mt-1&quot; *ngFor&#x3D;&quot;let tool of tools; index as i&quot;&gt;
+        &lt;a
+          class&#x3D;&quot;card shadow mt-1 text-decoration-none text-muted h-100&quot;
+          [routerLink]&#x3D;&quot;tool.link&quot;
+          style&#x3D;&quot;cursor: pointer&quot;
+        &gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;h3 class&#x3D;&quot;card-title text-black text-decoration-underline&quot;&gt;
+                {{ tool.label }} &lt;i *ngIf&#x3D;&quot;tool.pinned&quot; class&#x3D;&quot;bi bi-pin-angle&quot;&gt;&lt;/i&gt;
+              &lt;/h3&gt;
+              &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ tool.description }}&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;card mt-3&quot;&gt;
+        &lt;app-ads type&#x3D;&quot;auto&quot;&gt;&lt;/app-ads&gt;
+      &lt;/div&gt;
+      &lt;h2 class&#x3D;&quot;mt-3&quot;&gt;External Tools&lt;/h2&gt;
+      &lt;div class&#x3D;&quot;col-md-4 bg-light px-0 mx-0 mt-1&quot; *ngFor&#x3D;&quot;let tool of externalTools; index as i&quot;&gt;
+        &lt;a class&#x3D;&quot;card shadow mt-1 text-decoration-none text-muted h-100&quot; [href]&#x3D;&quot;tool.link&quot; style&#x3D;&quot;cursor: pointer&quot;&gt;
+          &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;div class&#x3D;&quot;row&quot;&gt;
+              &lt;h3 class&#x3D;&quot;card-title text-black text-decoration-underline&quot;&gt;
+                {{ tool.label }} &lt;i *ngIf&#x3D;&quot;tool.secure&quot; class&#x3D;&quot;bi bi-lock&quot;&gt;&lt;/i&gt;
+              &lt;/h3&gt;
+              &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ tool.description }}&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;card mt-3&quot;&gt;
+        &lt;app-ads type&#x3D;&quot;auto&quot;&gt;&lt;/app-ads&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/a&gt;
+    &lt;div class&#x3D;&quot;col-md-3 bg-light&quot;&gt;
+      &lt;app-ads type&#x3D;&quot;box&quot; [count]&#x3D;&quot;adsLength&quot;&gt;&lt;/app-ads&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
     </div>
@@ -396,9 +550,8 @@ export class ToolsListComponent implements OnInit {
                 <p class="comment">
                     <code>./tools-list.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">#tools {
-  overflow-y: scroll;
-  max-height: 500px;
+                <pre class="line-numbers"><code class="language-scss">.card {
+  min-height: 150px;
 }
 </code></pre>
     </div>
@@ -428,7 +581,7 @@ export class ToolsListComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div id="tools" class="list-group">  <a class="list-group-item d-flex" style="cursor: pointer" *ngFor="let tool of tools" [href]="tool.link">    <div matRipple class="text-start">      <div class="fw-bold">{{ tool.label }}</div>      {{ tool.description }}    </div>  </a></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row">    <div class="col-md-9 row mx-0 border-end border-2">      <h2>        <i class="bi bi-hammer"></i> 個人的に使ったりする自作ツール置き場（不定期更新）<app-tweet-btn          class="ms-3"        ></app-tweet-btn>      </h2>      <h2>Pinned Tools</h2>      <div class="col-md-4 bg-light px-0 mx-0 mt-1" *ngFor="let tool of pinnedTools; index as i">        <a          class="card shadow mt-1 text-decoration-none text-muted h-100"          [routerLink]="tool.link"          style="cursor: pointer"        >          <div class="card-body">            <div class="row">              <h3 class="card-title text-black text-decoration-underline">                {{ tool.label }} <i class="bi bi-pin-angle"></i>              </h3>              <p class="card-text">{{ tool.description }}</p>            </div>          </div>        </a>      </div>      <div class="card mt-3">        <app-ads type="auto" [count]="adsLength"></app-ads>      </div>      <h2 class="mt-3">Tools</h2>      <div class="col-md-4 bg-light px-0 mx-0 mt-1" *ngFor="let tool of tools; index as i">        <a          class="card shadow mt-1 text-decoration-none text-muted h-100"          [routerLink]="tool.link"          style="cursor: pointer"        >          <div class="card-body">            <div class="row">              <h3 class="card-title text-black text-decoration-underline">                {{ tool.label }} <i *ngIf="tool.pinned" class="bi bi-pin-angle"></i>              </h3>              <p class="card-text">{{ tool.description }}</p>            </div>          </div>        </a>      </div>      <div class="card mt-3">        <app-ads type="auto"></app-ads>      </div>      <h2 class="mt-3">External Tools</h2>      <div class="col-md-4 bg-light px-0 mx-0 mt-1" *ngFor="let tool of externalTools; index as i">        <a class="card shadow mt-1 text-decoration-none text-muted h-100" [href]="tool.link" style="cursor: pointer">          <div class="card-body">            <div class="row">              <h3 class="card-title text-black text-decoration-underline">                {{ tool.label }} <i *ngIf="tool.secure" class="bi bi-lock"></i>              </h3>              <p class="card-text">{{ tool.description }}</p>            </div>          </div>        </a>      </div>      <div class="card mt-3">        <app-ads type="auto"></app-ads>      </div>    </div>    <div class="col-md-3 bg-light">      <app-ads type="box" [count]="adsLength"></app-ads>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AmazonAssociateComponent', 'selector': 'app-amazon-associate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'FxCalcComponent', 'selector': 'app-fx-calc'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LazyImgComponent', 'selector': 'app-lazy-img'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'LogListComponent', 'selector': 'app-blog-list'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MermaidComponent', 'selector': 'app-mermaid'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsbarComponent', 'selector': 'app-newsbar'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'ProjectListComponent', 'selector': 'app-project-list'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'SnippetListComponent', 'selector': 'app-snippet-list'},{'name': 'StarNoteComponent', 'selector': 'app-star-note'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'UserInfoComponent', 'selector': 'app-user-info'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ToolsListComponent'};
