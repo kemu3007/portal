@@ -17,12 +17,6 @@ export const config: ScullyConfig = {
     },
     "/blog/:id": {
       type: "blogIds",
-    },
-    "/blog/en/:id": {
-      type: "blogEnIds",
-    },
-    "/blog/zh/:id": {
-      type: "blogZhIds",
     }
   }
 };

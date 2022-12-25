@@ -22,8 +22,6 @@ def create_meta(img: str, title: str, description: str, path: str):
 if __name__ == "__main__":
     # blog
     articles: Dict[str, Article] = json.loads((Path() / "portal/src/assets/articles/list.json").read_text())
-    en_articles: Dict[str, Article] = json.loads((Path() / "portal/src/assets/articles/en/list.json").read_text())
-    zh_articles: Dict[str, Article] = json.loads((Path() / "portal/src/assets/articles/zh/list.json").read_text())
     logs: Dict[str, Article] = json.loads((Path() / "portal/src/assets/logs/list.json").read_text())
 
     create_meta(
@@ -35,43 +33,6 @@ if __name__ == "__main__":
         """,
         "/blog",
     )
-    for key, data in articles.items():
-        create_meta(
-            f"https://portal.kemu.site/assets/images/{key}.png",
-            f"{data['title']} | Kemu Tech Blog",
-            data["body"],
-            f"/blog/{key}",
-        )
-    create_meta(
-        "https://portal.kemu.site/assets/images/blog.png",
-        "Kemu Tech Blog ~English~",
-        """
-        Kemu's Tech Note about Angular / Django / etc...
-        """,
-        "/blog/en",
-    )
-    for key, data in en_articles.items():
-        create_meta(
-            f"https://portal.kemu.site/assets/images/en/{key}.png",
-            f"{data['title']} | Kemu Tech Blog",
-            data["body"],
-            f"/blog/en/{key}",
-        )
-    create_meta(
-        "https://portal.kemu.site/assets/images/zh/blog.png",
-        "Kemu Tech Blog ~Chinese~",
-        """
-        Kemu's Tech Note about Angular / Django / etc...
-        """,
-        "/blog/zh",
-    )
-    for key, data in zh_articles.items():
-        create_meta(
-            f"https://portal.kemu.site/assets/images/en/{key}.png",
-            f"{data['title']} | Kemu Tech Blog",
-            data["body"],
-            f"/blog/zh/{key}",
-        )
     # log
     create_meta(
         "https://portal.kemu.site/assets/images/log.png",

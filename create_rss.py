@@ -15,10 +15,6 @@ Tool = TypedDict("Tool", {"label": str, "link": str, "description": bool, "exter
 
 articles: Dict[str, Article] = json.loads(Path("portal/src/assets/articles/list.json").read_text())
 
-articles_en: Dict[str, Article] = json.loads(Path("portal/src/assets/articles/en/list.json").read_text())
-
-articles_zh: Dict[str, Article] = json.loads(Path("portal/src/assets/articles/zh/list.json").read_text())
-
 logs: Dict[str, Article] = json.loads(Path("portal/src/assets/logs/list.json").read_text())
 
 tools: List[Tool] = json.loads(Path("portal/src/assets/tools.json").read_text())
@@ -159,12 +155,6 @@ def append_child(parent: ElementTree.Element, tag: str, text: str):
 
 if __name__ == "__main__":
     ElementTree.ElementTree(element=create_ja_rss()).write("portal/src/rss.xml", encoding="utf-8", xml_declaration=True)
-    ElementTree.ElementTree(element=create_another_lang_rss("en", articles_en)).write(
-        "portal/src/rss_en.xml", encoding="utf-8", xml_declaration=True
-    )
-    ElementTree.ElementTree(element=create_another_lang_rss("zh", articles_zh)).write(
-        "portal/src/rss_zh.xml", encoding="utf-8", xml_declaration=True
-    )
     ElementTree.ElementTree(element=create_tools_rss()).write(
         "portal/src/tools_rss.xml", encoding="utf-8", xml_declaration=True
     )

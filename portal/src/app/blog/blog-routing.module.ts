@@ -8,8 +8,6 @@ const routes: Routes = [
   { path: 'en', component: BlogListComponent, data: { lang: 'en' } },
   { path: 'zh', component: BlogListComponent, data: { lang: 'zh' } },
   { path: ':id', component: BlogDetailComponent, data: { lang: 'ja' } },
-  { path: 'en/:id', component: BlogDetailComponent, data: { lang: 'en' } },
-  { path: 'zh/:id', component: BlogDetailComponent, data: { lang: 'zh' } },
 ];
 
 @NgModule({

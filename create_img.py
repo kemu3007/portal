@@ -85,10 +85,6 @@ if __name__ == "__main__":
     articles = json.loads((Path() / "portal/src/assets/articles/list.json").read_text())
     for key in articles.keys():
         write_blog_image(articles[key]["title"], key)
-    Path("portal/src/assets/images/en").mkdir(exist_ok=True)
-    en_articles = json.loads((Path() / "portal/src/assets/articles/en/list.json").read_text())
-    for key in en_articles.keys():
-        write_blog_image(en_articles[key]["title"], f"en/{key}")
     logs = json.loads((Path() / "portal/src/assets/logs/list.json").read_text())
     for key in logs.keys():
         write_log_image(logs[key]["title"], key)

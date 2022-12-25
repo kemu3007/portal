@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Article, ArticleDetail } from '@app/shared/articles/articles';
@@ -29,12 +28,7 @@ export class BlogDetailComponent implements OnInit {
     private articlesService: ArticlesService,
     private router: Router,
     private loadingService: LoadingService,
-    @Inject(DOCUMENT) document: Document
   ) {
-    if (this.isTranslated) {
-      this.url = this.url + this.route.snapshot.data['lang'] + '/';
-    }
-    document.documentElement.lang = this.route.snapshot.data['lang'];
   }
 
   get isTranslated() {
@@ -42,9 +36,6 @@ export class BlogDetailComponent implements OnInit {
   }
 
   get imageUrl() {
-    if (this.isTranslated) {
-      return `/assets/images/en/${this.issueId}.png`;
-    }
     return `/assets/images/${this.issueId}.png`;
   }
 
