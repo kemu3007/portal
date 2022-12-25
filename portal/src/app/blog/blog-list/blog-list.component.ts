@@ -95,7 +95,7 @@ export class BlogListComponent implements OnInit {
   };
 
   selectArticle(event: NgbTypeaheadSelectItemEvent) {
-    this.router.navigate([this.searchData[event.item]]);
+    this.router.navigate(['blog', this.searchData[event.item]]);
   }
 
   switchPage(event: PageEvent) {
