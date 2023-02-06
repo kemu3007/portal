@@ -1,5 +1,0 @@
-User-Agent: *
-
-Allow: /
-
-Sitemap: https://tech.trash.dev/sitemap.xml
