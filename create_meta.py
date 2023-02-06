@@ -194,7 +194,7 @@ if __name__ == "__main__":
 
     create_meta(
         "https://tech.trash.dev/assets/images/contact.png",
-        "Contact | Kemu Portal",
+        "Contact | Trash Box",
         """
         仕事の依頼/転職の誘いなどはこちらからお願いします。セールスメールはお控えください。
         """,
@@ -205,7 +205,7 @@ if __name__ == "__main__":
 
     create_meta(
         "https://tech.trash.dev/assets/images/snippets.png",
-        "Snippets | Kemu Portal",
+        "Snippets | Trash Box",
         """
         開発時によく利用するスニペット置き場
         """,
@@ -216,7 +216,7 @@ if __name__ == "__main__":
 
     create_meta(
         "https://tech.trash.dev/assets/images/projects.png",
-        "Projects | Kemu Portal",
+        "Projects | Trash Box",
         """
         開発したアプリケーション / テストに利用したレポジトリ一覧
         """,
