@@ -27,7 +27,7 @@ weed_iframe_base = """
 
 
 def write_weeds_iframe():
-    years = [2017, 2018, 2019, 2020, 2021, 2022]
+    years = [2017, 2018, 2019, 2020, 2021, 2022, 2023]
     for year in years:
         weed_svg = BeautifulSoup(
             urlopen(f"https://github.com/kemu3007?tab=overview&from={year}-12-01&to={year}-12-31"),
