@@ -37,10 +37,6 @@ def write_weeds_iframe():
         (iframes_dir / f"weed_{year}.html").write_text(html)
 
 
-def get_icon():
-    urlretrieve("https://avatars.githubusercontent.com/u/29157528", "portal/src/assets/icon.png")
-
-
 def write_blog_image(title: str, output: str):
     image = Image.new("RGB", ogp_size, (255, 255, 255))
     draw = ImageDraw.Draw(image)
@@ -69,8 +65,6 @@ def write_tools_image(title: str, output: str):
 
 
 if __name__ == "__main__":
-    get_icon()
-
     articles = json.loads((Path() / "portal/src/assets/articles/list.json").read_text())
     for key in articles.keys():
         write_blog_image(articles[key]["title"], key)
