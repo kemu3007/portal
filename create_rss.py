@@ -30,14 +30,11 @@ def create_ja_rss() -> ElementTree.Element:
 
     append_child(channel, "lastBuildDate", datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0900"))
     append_child(channel, "category", "Python/TypeScript/Django/Angular/Nuxt/Vue/Docker/GitHub Pages")
-    append_child(channel, "title", "Tech Trash Box")
+    append_child(channel, "title", "Tech Blog | Trash Box")
     append_child(channel, "link", "https://tech.trash-box.dev/")
-    append_child(channel, "description", "Tech Trash Boxでは主にDjango / Angularに関する技術的な知見のメモ、共有を行っています。")
+    append_child(channel, "description", "Tech Blog | Trash Box では主にDjango / Angularに関する技術的な知見のメモ、共有を行っています。")
     append_child(channel, "language", "ja")
-    append_child(channel, "copyright", "©️ 2017-2022 kemu All Rights Reserved.")
-    append_child(channel, "managingEditor", "kemu430113@gmail.com(kemu)")
-    append_child(channel, "webMaster", "kemu430113@gmail.com(kemu)")
-    append_child(channel, "generator", "https://github.com/kemu3007/portal/blob/master/create_rss.py")
+    append_child(channel, "copyright", "©️ 2017-2022 All Rights Reserved.")
 
     for id in sorted(articles.keys(), reverse=True):
         item = ElementTree.SubElement(channel, "item")
@@ -75,14 +72,11 @@ def create_tools_rss() -> ElementTree.Element:
 
     append_child(channel, "lastBuildDate", datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0900"))
     append_child(channel, "category", "Python/TypeScript/Django/Angular/Nuxt/Vue/Docker/GitHub Pages")
-    append_child(channel, "title", "Kemu Tools")
+    append_child(channel, "title", "Tools | Trash Box")
     append_child(channel, "link", "https://tech.trash-box.dev/")
     append_child(channel, "description", "Mermaid Live Editor, GitHub Flavored Markdown, Regex Checker, JSON Typer...")
     append_child(channel, "language", "ja")
-    append_child(channel, "copyright", "©️ 2017-2022 kemu All Rights Reserved.")
-    append_child(channel, "managingEditor", "kemu430113@gmail.com(kemu)")
-    append_child(channel, "webMaster", "kemu430113@gmail.com(kemu)")
-    append_child(channel, "generator", "https://github.com/kemu3007/portal/blob/master/create_rss.py")
+    append_child(channel, "copyright", "©️ 2017-2022 All Rights Reserved.")
 
     for tool in filter(lambda x: not x["external"], tools):
         item = ElementTree.SubElement(channel, "item")

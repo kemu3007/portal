@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     create_meta(
         "https://tech.trash-box.dev/assets/images/blog.png",
-        "Tech Trash Box",
+        "Tech Blog | Trash Box",
         """
         Angular / Djangoがメインのログゴミ置き場です。
         """,
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     for key, data in articles.items():
         create_meta(
             f"https://tech.trash-box.dev/assets/images/{key}.png",
-            f"{data['title']} | Tech Trash Box",
+            f"{data['title']} | Tech Blog | Trash Box",
             data["body"],
             f"/blog/{key}",
         )
@@ -43,14 +43,14 @@ if __name__ == "__main__":
     # tools
     create_meta(
         "https://tech.trash-box.dev/assets/images/tools.png",
-        "Kemu Tools",
+        "Tools | Trash Box",
         "自作ツール置き場 / Markdown Writer, QrCode Maker, JSON Typer, JSON Formatter, Base64 Translator...",
         "/tools",
     )
     # JSON Typer
     create_meta(
         "https://tech.trash-box.dev/assets/images/json-typer.png",
-        "JSON Typer | Kemu Tools",
+        "JSON Typer | Tools | Trash Box",
         """
         任意のJSONの値をTypeScriptのinterface型に変換します。
         ローカルストレージ上に前回入力されたデータを保存することで利便性を高めており、ワンクリックで結果をコピーすることが可能です。
@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
     create_meta(
         "https://tech.trash-box.dev/assets/images/realtime.png",
-        "REALTIME | Kemu Tools",
+        "REALTIME | Tools | Trash Box",
         """
         現在時刻を100ms単位で更新し、正確な日時をお知らせします。
         指定した時刻に指定したワードを呟きたいTwitterのmeme / 先着順の申し込みカウントダウンのようなケースでお使いください。
@@ -74,7 +74,7 @@ if __name__ == "__main__":
 
     create_meta(
         "https://tech.trash-box.dev/assets/images/json-formatter.png",
-        "JSON Formatter | Kemu Tools",
+        "JSON Formatter | Tools | Trash Box",
         """
         未整形のJSONデータを整形します。
         ローカルストレージ上に前回入力されたデータを保存することで利便性を高めており、ワンクリックで結果をコピーすることが可能です。
@@ -86,7 +86,7 @@ if __name__ == "__main__":
 
     create_meta(
         "https://tech.trash-box.dev/assets/images/base64.png",
-        "Base64 Encoder/Decoder | Kemu Tools",
+        "Base64 Encoder/Decoder | Tools | Trash Box",
         """
         文字列データをBase64に、Base64データを文字列に変換します。
         マルチバイト文字にも対応しており、フロントエンドからバックエンドにJSON形式でファイルを送信する場合のダミーデータ作成などに便利です。
@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     create_meta(
         "https://tech.trash-box.dev/assets/images/mdwriter.png",
-        "GitHub Flavored Markdown Writer | Kemu Tools",
+        "GitHub Flavored Markdown Writer | Tools | Trash Box",
         """
         GitHub Flavored MarkdownをHTMLに変換します。変換データ及び元のMarkdwonデータをワンクリックでコピー可能です。
         """,
@@ -109,7 +109,7 @@ if __name__ == "__main__":
 
     create_meta(
         "https://tech.trash-box.dev/assets/images/regex.png",
-        "Regex Checker | Kemu Tools",
+        "Regex Checker | Tools | Trash Box",
         """
         正規表現とテキストを入力することでテキストを対象とした正規表現のテストを行い、index, マッチ文字列を返却します。
         """,
@@ -120,7 +120,7 @@ if __name__ == "__main__":
 
     create_meta(
         "https://tech.trash-box.dev/assets/images/fx-calc.png",
-        "FX Calculator | Kemu Tools",
+        "FX Calculator | Tools | Trash Box",
         """
         FXに利用する証拠金率、ロスカット値、購入可能の最大ロット数などの値を計算します。
         """,
@@ -131,7 +131,7 @@ if __name__ == "__main__":
 
     create_meta(
         "https://tech.trash-box.dev/assets/images/year.png",
-        "Year Checker | Kemu Tools",
+        "Year Checker | Tools | Trash Box",
         """
         誕生日をもとに各種卒業年度/厄年といった年月日を計算します。
         """,
@@ -142,7 +142,7 @@ if __name__ == "__main__":
 
     create_meta(
         "https://tech.trash-box.dev/assets/images/openapi.png",
-        "OpenApi Viewer | Kemu Tools",
+        "OpenApi Viewer | Tools | Trash Box",
         """
         OpenApi JSON/YAMLをSwagger-UI / Redoc UIで表示します。
         """,
@@ -153,7 +153,7 @@ if __name__ == "__main__":
 
     create_meta(
         "https://tech.trash-box.dev/assets/images/mermaid.png",
-        "Mermaid Live Editor | Kemu Tools",
+        "Mermaid Live Editor | Tools | Trash Box",
         """
         Mermaidをリアルタイムで描画し、記述を支援します。
         """,
