@@ -2,4 +2,4 @@ User-Agent: *
 
 Allow: /
 
-Sitemap: https://portal.kemu.site/sitemap.xml
+Sitemap: https://tech.trash.dev/sitemap.xml
