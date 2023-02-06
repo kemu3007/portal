@@ -1,10 +1,10 @@
-# portal.kemu.site
+# tech.trash.dev
 
 - npm v8.3.1
 - node: v16.14.0
 - python: 3.10
-- url: https://portal.kemu.site/
-- doc: https://portal.kemu.site/doc/
+- url: https://tech.trash.dev/
+- doc: https://tech.trash.dev/doc/
 
 ```mermaid
 graph LR;

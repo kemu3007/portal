@@ -73,7 +73,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./portal/dist/static/
-          cname: portal.kemu.site
+          cname: tech.trash.dev
       - uses: actions/upload-artifact@v3
         with:
           name: articles

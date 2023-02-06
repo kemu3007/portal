@@ -9,7 +9,7 @@ Sentry.init({
   dsn: environment.sentryDSN,
   integrations: [
     new BrowserTracing({
-      tracingOrigins: ['localhost', 'https://portal.kemu.site'],
+      tracingOrigins: ['localhost', 'https://tech.trash.dev'],
       routingInstrumentation: Sentry.routingInstrumentation,
     }),
   ],

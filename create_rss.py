@@ -26,14 +26,14 @@ def create_ja_rss() -> ElementTree.Element:
     rss.set("xmlns:atom", "http://www.w3.org/2005/Atom")
     channel = ElementTree.SubElement(rss, "channel")
     atom_link = ElementTree.SubElement(channel, "atom:link")
-    atom_link.set("href", "https://portal.kemu.site/rss.xml")
+    atom_link.set("href", "https://tech.trash.dev/rss.xml")
     atom_link.set("rel", "self")
     atom_link.set("type", "application/rss+xml")
 
     append_child(channel, "lastBuildDate", datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0900"))
     append_child(channel, "category", "Python/TypeScript/Django/Angular/Nuxt/Vue/Docker/GitHub Pages")
     append_child(channel, "title", "Kemu Tech Blog")
-    append_child(channel, "link", "https://portal.kemu.site/")
+    append_child(channel, "link", "https://tech.trash.dev/")
     append_child(channel, "description", "Kemu Tech Blogでは主にDjango / Angularに関する技術的な知見のメモ、共有を行っています。")
     append_child(channel, "language", "ja")
     append_child(channel, "copyright", "©️ 2017-2022 kemu All Rights Reserved.")
@@ -54,9 +54,9 @@ def create_ja_rss() -> ElementTree.Element:
 
         append_child(item, "title", escape(article["title"]))
         if id in logs:
-            append_child(item, "link", f"https://portal.kemu.site/log/{id}/")
+            append_child(item, "link", f"https://tech.trash.dev/log/{id}/")
         else:
-            append_child(item, "link", f"https://portal.kemu.site/blog/{id}/")
+            append_child(item, "link", f"https://tech.trash.dev/blog/{id}/")
 
         append_child(item, "category", "/".join([label["name"] for label in article["labels"]]))
 
@@ -76,14 +76,14 @@ def create_another_lang_rss(lang: str, articles: Dict[str, Article]) -> ElementT
     rss.set("xmlns:atom", "http://www.w3.org/2005/Atom")
     channel = ElementTree.SubElement(rss, "channel")
     atom_link = ElementTree.SubElement(channel, "atom:link")
-    atom_link.set("href", f"https://portal.kemu.site/rss_{lang}.xml")
+    atom_link.set("href", f"https://tech.trash.dev/rss_{lang}.xml")
     atom_link.set("rel", "self")
     atom_link.set("type", "application/rss+xml")
 
     append_child(channel, "lastBuildDate", datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0900"))
     append_child(channel, "category", "Python/TypeScript/Django/Angular/Nuxt/Vue/Docker/GitHub Pages")
     append_child(channel, "title", "Kemu Tech Blog")
-    append_child(channel, "link", "https://portal.kemu.site/")
+    append_child(channel, "link", "https://tech.trash.dev/")
     append_child(channel, "description", "Kemu's Tech Note about Angular / Django / etc...")
     append_child(channel, "language", lang)
     append_child(channel, "copyright", "©️ 2017-2022 kemu All Rights Reserved.")
@@ -101,7 +101,7 @@ def create_another_lang_rss(lang: str, articles: Dict[str, Article]) -> ElementT
         article = articles[id]
 
         append_child(item, "title", escape(article["title"]))
-        append_child(item, "link", f"https://portal.kemu.site/blog/{lang}/{id}/")
+        append_child(item, "link", f"https://tech.trash.dev/blog/{lang}/{id}/")
         append_child(item, "category", "/".join([label["name"] for label in article["labels"]]))
         append_child(item, "description", escape(article["body"]))
         append_child(
@@ -118,14 +118,14 @@ def create_tools_rss() -> ElementTree.Element:
     rss.set("xmlns:atom", "http://www.w3.org/2005/Atom")
     channel = ElementTree.SubElement(rss, "channel")
     atom_link = ElementTree.SubElement(channel, "atom:link")
-    atom_link.set("href", f"https://portal.kemu.site/tools_rss.xml")
+    atom_link.set("href", f"https://tech.trash.dev/tools_rss.xml")
     atom_link.set("rel", "self")
     atom_link.set("type", "application/rss+xml")
 
     append_child(channel, "lastBuildDate", datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0900"))
     append_child(channel, "category", "Python/TypeScript/Django/Angular/Nuxt/Vue/Docker/GitHub Pages")
     append_child(channel, "title", "Kemu Tools")
-    append_child(channel, "link", "https://portal.kemu.site/")
+    append_child(channel, "link", "https://tech.trash.dev/")
     append_child(channel, "description", "Mermaid Live Editor, GitHub Flavored Markdown, Regex Checker, JSON Typer...")
     append_child(channel, "language", "ja")
     append_child(channel, "copyright", "©️ 2017-2022 kemu All Rights Reserved.")
@@ -141,7 +141,7 @@ def create_tools_rss() -> ElementTree.Element:
         guid.text = tool["link"]
 
         append_child(item, "title", tool["label"])
-        append_child(item, "link", f"https://portal.kemu.site{tool['link']}/")
+        append_child(item, "link", f"https://tech.trash.dev{tool['link']}/")
         append_child(item, "category", "Tech Tool")
         append_child(item, "description", tool["description"])
         append_child(item, "pubDate", datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0900"))

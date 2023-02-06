@@ -25,7 +25,7 @@ if __name__ == "__main__":
     logs: Dict[str, Article] = json.loads((Path() / "portal/src/assets/logs/list.json").read_text())
 
     create_meta(
-        "https://portal.kemu.site/assets/images/blog.png",
+        "https://tech.trash.dev/assets/images/blog.png",
         "Kemu Tech Blog",
         """
         Angular / DjangoがメインのTech Noteです。
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     )
     # log
     create_meta(
-        "https://portal.kemu.site/assets/images/log.png",
+        "https://tech.trash.dev/assets/images/log.png",
         "kemu 旅行記録など雑記 | Kemu Log",
         """
         旅行ログなど雑記置き場、日ごろは東京にいたり淡路島にいたり大阪にいたり。
@@ -45,7 +45,7 @@ if __name__ == "__main__":
     )
     for key, data in logs.items():
         create_meta(
-            f"https://portal.kemu.site/assets/images/{key}.png",
+            f"https://tech.trash.dev/assets/images/{key}.png",
             f"{data['title']} | Kemu Log",
             data["body"],
             f"/log/{key}",
@@ -53,14 +53,14 @@ if __name__ == "__main__":
 
     # tools
     create_meta(
-        "https://portal.kemu.site/assets/images/tools.png",
+        "https://tech.trash.dev/assets/images/tools.png",
         "Kemu Tools",
         "自作ツール置き場 / Markdown Writer, QrCode Maker, JSON Typer, JSON Formatter, Base64 Translator...",
         "/tools",
     )
     # ip address checker
     create_meta(
-        "https://portal.kemu.site/assets/images/user-info.png",
+        "https://tech.trash.dev/assets/images/user-info.png",
         "IP Address Checker | Kemu Tools",
         """
         IP Address, User Agentなどの端末情報を確認することができ、結果を自動的にローカルストレージに保存することで、過去データとの称号を可能にしています。
@@ -69,7 +69,7 @@ if __name__ == "__main__":
     )
     # associate link maker
     create_meta(
-        "https://portal.kemu.site/assets/images/associate.png",
+        "https://tech.trash.dev/assets/images/associate.png",
         "Amazon Associate Linker | Kemu Tools",
         """
         Amazon Associate IDと商品URLを入力することで商品リンクにアソシエイトIDの紐付けを可能にしています。
@@ -79,7 +79,7 @@ if __name__ == "__main__":
     )
     # JSON Typer
     create_meta(
-        "https://portal.kemu.site/assets/images/json-typer.png",
+        "https://tech.trash.dev/assets/images/json-typer.png",
         "JSON Typer | Kemu Tools",
         """
         任意のJSONの値をTypeScriptのinterface型に変換します。
@@ -91,7 +91,7 @@ if __name__ == "__main__":
     # realtime
 
     create_meta(
-        "https://portal.kemu.site/assets/images/realtime.png",
+        "https://tech.trash.dev/assets/images/realtime.png",
         "REALTIME | Kemu Tools",
         """
         現在時刻を100ms単位で更新し、正確な日時をお知らせします。
@@ -103,7 +103,7 @@ if __name__ == "__main__":
     # JSON Formatter
 
     create_meta(
-        "https://portal.kemu.site/assets/images/json-formatter.png",
+        "https://tech.trash.dev/assets/images/json-formatter.png",
         "JSON Formatter | Kemu Tools",
         """
         未整形のJSONデータを整形します。
@@ -115,7 +115,7 @@ if __name__ == "__main__":
     # Base64 Encoder/Decoder
 
     create_meta(
-        "https://portal.kemu.site/assets/images/base64.png",
+        "https://tech.trash.dev/assets/images/base64.png",
         "Base64 Encoder/Decoder | Kemu Tools",
         """
         文字列データをBase64に、Base64データを文字列に変換します。
@@ -127,7 +127,7 @@ if __name__ == "__main__":
     # GitHub Flavored Markdown Writer
 
     create_meta(
-        "https://portal.kemu.site/assets/images/mdwriter.png",
+        "https://tech.trash.dev/assets/images/mdwriter.png",
         "GitHub Flavored Markdown Writer | Kemu Tools",
         """
         GitHub Flavored MarkdownをHTMLに変換します。変換データ及び元のMarkdwonデータをワンクリックでコピー可能です。
@@ -138,7 +138,7 @@ if __name__ == "__main__":
     # Regex Checker
 
     create_meta(
-        "https://portal.kemu.site/assets/images/regex.png",
+        "https://tech.trash.dev/assets/images/regex.png",
         "Regex Checker | Kemu Tools",
         """
         正規表現とテキストを入力することでテキストを対象とした正規表現のテストを行い、index, マッチ文字列を返却します。
@@ -149,7 +149,7 @@ if __name__ == "__main__":
     # Year Checker
 
     create_meta(
-        "https://portal.kemu.site/assets/images/fx-calc.png",
+        "https://tech.trash.dev/assets/images/fx-calc.png",
         "FX Calculator | Kemu Tools",
         """
         FXに利用する証拠金率、ロスカット値、購入可能の最大ロット数などの値を計算します。
@@ -160,7 +160,7 @@ if __name__ == "__main__":
     # Year Checker
 
     create_meta(
-        "https://portal.kemu.site/assets/images/year.png",
+        "https://tech.trash.dev/assets/images/year.png",
         "Year Checker | Kemu Tools",
         """
         誕生日をもとに各種卒業年度/厄年といった年月日を計算します。
@@ -171,7 +171,7 @@ if __name__ == "__main__":
     # OpenApi Viewer
 
     create_meta(
-        "https://portal.kemu.site/assets/images/openapi.png",
+        "https://tech.trash.dev/assets/images/openapi.png",
         "OpenApi Viewer | Kemu Tools",
         """
         OpenApi JSON/YAMLをSwagger-UI / Redoc UIで表示します。
@@ -182,7 +182,7 @@ if __name__ == "__main__":
     # Mermaid Live Editor
 
     create_meta(
-        "https://portal.kemu.site/assets/images/mermaid.png",
+        "https://tech.trash.dev/assets/images/mermaid.png",
         "Mermaid Live Editor | Kemu Tools",
         """
         Mermaidをリアルタイムで描画し、記述を支援します。
@@ -193,7 +193,7 @@ if __name__ == "__main__":
     # contact
 
     create_meta(
-        "https://portal.kemu.site/assets/images/contact.png",
+        "https://tech.trash.dev/assets/images/contact.png",
         "Contact | Kemu Portal",
         """
         仕事の依頼/転職の誘いなどはこちらからお願いします。セールスメールはお控えください。
@@ -204,7 +204,7 @@ if __name__ == "__main__":
     # snippets
 
     create_meta(
-        "https://portal.kemu.site/assets/images/snippets.png",
+        "https://tech.trash.dev/assets/images/snippets.png",
         "Snippets | Kemu Portal",
         """
         開発時によく利用するスニペット置き場
@@ -215,7 +215,7 @@ if __name__ == "__main__":
     # projects
 
     create_meta(
-        "https://portal.kemu.site/assets/images/projects.png",
+        "https://tech.trash.dev/assets/images/projects.png",
         "Projects | Kemu Portal",
         """
         開発したアプリケーション / テストに利用したレポジトリ一覧

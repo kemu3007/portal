@@ -27,9 +27,8 @@ export class BlogDetailComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private articlesService: ArticlesService,
     private router: Router,
-    private loadingService: LoadingService,
-  ) {
-  }
+    private loadingService: LoadingService
+  ) {}
 
   get isTranslated() {
     return this.route.snapshot.data['lang'] !== 'ja';
