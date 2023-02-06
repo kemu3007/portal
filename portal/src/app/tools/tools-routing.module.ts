@@ -1,4 +1,3 @@
-import { AmazonAssociateComponent } from './amazon-associate/amazon-associate.component';
 import { Base64Component } from './base64/base64.component';
 import { FxCalcComponent } from './fx-calc/fx-calc.component';
 import { JsonFormatterComponent } from './json-formatter/json-formatter.component';
@@ -10,7 +9,6 @@ import { RealtimeComponent } from './realtime/realtime.component';
 import { RegexComponent } from './regex/regex.component';
 import { StarNoteComponent } from './star-note/star-note.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
-import { UserInfoComponent } from './user-info/user-info.component';
 import { YearCheckComponent } from './year-check/year-check.component';
 import { DecimalPipe } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -20,14 +18,6 @@ const routes: Routes = [
   {
     path: '',
     component: ToolsListComponent,
-  },
-  {
-    path: 'userInfo',
-    component: UserInfoComponent,
-  },
-  {
-    path: 'amazonAssociate',
-    component: AmazonAssociateComponent,
   },
   {
     path: 'jsonTyper',

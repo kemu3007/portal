@@ -9,7 +9,6 @@ import { NewsbarComponent } from './newsbar/newsbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MdescapePipe } from './pipes/mdescape.pipe';
 import { YearPipe } from './pipes/year.pipe';
-import { ProfileComponent } from './profile/profile.component';
 import { TweetBtnComponent } from './tweet-btn/tweet-btn.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -35,7 +34,6 @@ import { AdsenseModule } from 'ng2-adsense';
     MdescapePipe,
     AdsComponent,
     AdsModalComponent,
-    ProfileComponent,
     YearPipe,
     LazyImgComponent,
     NewsbarComponent,

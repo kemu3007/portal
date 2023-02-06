@@ -46,19 +46,6 @@
       <div class="card mt-3">
         <app-ads type="auto"></app-ads>
       </div>
-      <h2 class="mt-3">External Tools</h2>
-      <div class="col-md-4 bg-light px-0 mx-0 mt-1" *ngFor="let tool of externalTools; index as i">
-        <a class="card shadow mt-1 text-decoration-none text-muted h-100" [href]="tool.link" style="cursor: pointer">
-          <div class="card-body">
-            <div class="row">
-              <h3 class="card-title text-black text-decoration-underline">
-                {{ tool.label }} <i *ngIf="tool.secure" class="bi bi-lock"></i>
-              </h3>
-              <p class="card-text">{{ tool.description }}</p>
-            </div>
-          </div>
-        </a>
-      </div>
       <div class="card mt-3">
         <app-ads type="auto"></app-ads>
       </div>

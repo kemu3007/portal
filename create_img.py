@@ -21,8 +21,6 @@ weed_iframe_base = """
     <head><link rel="stylesheet" href="./weed.css" /></head>
     <body>
         {svg}
-        <br />
-        <a style="font-size: 12px;" target="_top" href="https://skyline.github.com/kemu3007/{year}">View On 3D</a>
     </body>
 </html>
 """
@@ -47,16 +45,7 @@ def write_blog_image(title: str, output: str):
     image = Image.new("RGB", ogp_size, (255, 255, 255))
     draw = ImageDraw.Draw(image)
     draw.text((30, 315 - 50), title, black, font=font)
-    draw.text((880, 315 + 2), "Kemu Tech Blog", black, font=font)
-    draw.line([(0, 315), (1200, 315)], black, width=2)
-    image.save(save_dir / f"{output}.png")
-
-
-def write_log_image(title: str, output: str):
-    image = Image.new("RGB", ogp_size, (255, 255, 255))
-    draw = ImageDraw.Draw(image)
-    draw.text((30, 315 - 50), title, black, font=font)
-    draw.text((1000, 315 + 2), "Kemu Log", black, font=font)
+    draw.text((880, 315 + 2), "Tech Trash Box", black, font=font)
     draw.line([(0, 315), (1200, 315)], black, width=2)
     image.save(save_dir / f"{output}.png")
 
@@ -85,18 +74,11 @@ if __name__ == "__main__":
     articles = json.loads((Path() / "portal/src/assets/articles/list.json").read_text())
     for key in articles.keys():
         write_blog_image(articles[key]["title"], key)
-    logs = json.loads((Path() / "portal/src/assets/logs/list.json").read_text())
-    for key in logs.keys():
-        write_log_image(logs[key]["title"], key)
     write_portal_image("Home", "home")
     write_portal_image("Projects", "projects")
     write_blog_image("Tech Articles", "blog")
-    write_log_image("Log Articles", "log")
     write_portal_image("Tools", "tools")
-    write_portal_image("Contact", "contact")
     write_portal_image("Snippets", "snippets")
-    write_tools_image("IP Address Checker", "user-info")
-    write_tools_image("Amazon Associate Linker", "associate")
     write_tools_image("JSON Typer", "json-typer")
     write_tools_image("REALTIME", "realtime")
     write_tools_image("JSON Formatter", "json-formatter")

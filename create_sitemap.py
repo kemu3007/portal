@@ -12,8 +12,6 @@ Article = TypedDict(
 
 articles: Dict[str, Article] = json.loads(Path("portal/src/assets/articles/list.json").read_text())
 
-logs: Dict[str, Article] = json.loads(Path("portal/src/assets/logs/list.json").read_text())
-
 urlset = ElementTree.Element("urlset")
 
 
@@ -29,31 +27,26 @@ if __name__ == "__main__":
     urlset = ElementTree.Element("urlset")
     urlset.set("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
 
-    add_url_element(urlset, "https://tech.trash.dev/")
-    add_url_element(urlset, "https://tech.trash.dev/blog/")
-    add_url_element(urlset, "https://tech.trash.dev/log/")
-    add_url_element(urlset, "https://tech.trash.dev/contact/")
-    add_url_element(urlset, "https://tech.trash.dev/snippets/")
-    add_url_element(urlset, "https://tech.trash.dev/projects/")
+    add_url_element(urlset, "https://tech.trash-box.dev/")
+    add_url_element(urlset, "https://tech.trash-box.dev/blog/")
+    add_url_element(urlset, "https://tech.trash-box.dev/log/")
+    add_url_element(urlset, "https://tech.trash-box.dev/snippets/")
+    add_url_element(urlset, "https://tech.trash-box.dev/projects/")
 
-    add_url_element(urlset, "https://tech.trash.dev/tools/")
-    add_url_element(urlset, "https://tech.trash.dev/tools/userInfo/")
-    add_url_element(urlset, "https://tech.trash.dev/tools/amazonAssociate/")
-    add_url_element(urlset, "https://tech.trash.dev/tools/jsonTyper/")
-    add_url_element(urlset, "https://tech.trash.dev/tools/realtime/")
-    add_url_element(urlset, "https://tech.trash.dev/tools/jsonFormatter/")
-    add_url_element(urlset, "https://tech.trash.dev/tools/base64/")
-    add_url_element(urlset, "https://tech.trash.dev/tools/mdwriter/")
-    add_url_element(urlset, "https://tech.trash.dev/tools/regex/")
-    add_url_element(urlset, "https://tech.trash.dev/tools/year/")
-    add_url_element(urlset, "https://tech.trash.dev/tools/openapi/")
-    add_url_element(urlset, "https://tech.trash.dev/tools/mermaid/")
-    add_url_element(urlset, "https://tech.trash.dev/tools/fx-calc/")
-    add_url_element(urlset, "https://tech.trash.dev/doc/")
+    add_url_element(urlset, "https://tech.trash-box.dev/tools/")
+    add_url_element(urlset, "https://tech.trash-box.dev/tools/jsonTyper/")
+    add_url_element(urlset, "https://tech.trash-box.dev/tools/realtime/")
+    add_url_element(urlset, "https://tech.trash-box.dev/tools/jsonFormatter/")
+    add_url_element(urlset, "https://tech.trash-box.dev/tools/base64/")
+    add_url_element(urlset, "https://tech.trash-box.dev/tools/mdwriter/")
+    add_url_element(urlset, "https://tech.trash-box.dev/tools/regex/")
+    add_url_element(urlset, "https://tech.trash-box.dev/tools/year/")
+    add_url_element(urlset, "https://tech.trash-box.dev/tools/openapi/")
+    add_url_element(urlset, "https://tech.trash-box.dev/tools/mermaid/")
+    add_url_element(urlset, "https://tech.trash-box.dev/tools/fx-calc/")
+    add_url_element(urlset, "https://tech.trash-box.dev/doc/")
 
     for id, value in articles.items():
-        add_url_element(urlset, f"https://tech.trash.dev/blog/{id}/", value["updated_at"])
-    for id, value in logs.items():
-        add_url_element(urlset, f"https://tech.trash.dev/log/{id}/", value["updated_at"])
+        add_url_element(urlset, f"https://tech.trash-box.dev/blog/{id}/", value["updated_at"])
 
     ElementTree.ElementTree(element=urlset).write("portal/src/sitemap.xml", encoding="utf-8", xml_declaration=True)

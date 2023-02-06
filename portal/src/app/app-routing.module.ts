@@ -12,20 +12,12 @@ const routes: Routes = [
     loadChildren: () => import('./blog/blog.module').then((m) => m.BlogModule),
   },
   {
-    path: 'log',
-    loadChildren: () => import('./log/log.module').then((m) => m.LogModule),
-  },
-  {
     path: 'tools',
     loadChildren: () => import('./tools/tools.module').then((m) => m.ToolsModule),
   },
   {
     path: 'snippets',
     loadChildren: () => import('./snippet/snippet.module').then((m) => m.SnippetModule),
-  },
-  {
-    path: 'projects',
-    loadChildren: () => import('./projects/projects.module').then((m) => m.ProjectsModule),
   },
   {
     path: '**',

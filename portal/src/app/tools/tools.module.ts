@@ -1,4 +1,3 @@
-import { AmazonAssociateComponent } from './amazon-associate/amazon-associate.component';
 import { Base64Component } from './base64/base64.component';
 import { FxCalcComponent } from './fx-calc/fx-calc.component';
 import { JsonFormatterComponent } from './json-formatter/json-formatter.component';
@@ -11,7 +10,6 @@ import { RegexComponent } from './regex/regex.component';
 import { StarNoteComponent } from './star-note/star-note.component';
 import { ToolsListComponent } from './tools-list/tools-list.component';
 import { ToolsRoutingModule } from './tools-routing.module';
-import { UserInfoComponent } from './user-info/user-info.component';
 import { YearCheckComponent } from './year-check/year-check.component';
 import { CommonModule } from '@angular/common';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
@@ -21,8 +19,6 @@ import { SharedModule } from '@app/shared/shared.module';
   schemas: [NO_ERRORS_SCHEMA],
   declarations: [
     ToolsListComponent,
-    UserInfoComponent,
-    AmazonAssociateComponent,
     JsonTyperComponent,
     RealtimeComponent,
     JsonFormatterComponent,

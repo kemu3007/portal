@@ -88,22 +88,6 @@
     "pinned": true
   },
   {
-    "label": "Amazon Associate Linker",
-    "link": "/tools/amazonAssociate",
-    "description": "Amazonリンクにアソシエイト情報を付与します。",
-    "external": false,
-    "secure": false,
-    "pinned": false
-  },
-  {
-    "label": "IP Address Checker",
-    "link": "/tools/userInfo",
-    "description": "IPアドレス等のデータを表示します。過去の履歴も表示可能です。",
-    "external": false,
-    "secure": false,
-    "pinned": false
-  },
-  {
     "label": "QRコードジェネレータ",
     "link": "https://kemu.site/utils/qrcode/",
     "description": "任意の文字列をQRコードに変換します。",

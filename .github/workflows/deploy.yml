@@ -73,7 +73,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./portal/dist/static/
-          cname: tech.trash.dev
+          cname: tech.trash-box.dev
       - uses: actions/upload-artifact@v3
         with:
           name: articles

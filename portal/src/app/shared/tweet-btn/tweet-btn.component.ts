@@ -15,7 +15,6 @@ export class TweetBtnComponent {
     const href = new URL('https://twitter.com/share');
     href.searchParams.set('url', this.url);
     href.searchParams.set('text', this.text);
-    href.searchParams.set('via', 'kemu43');
     return href;
   }
 

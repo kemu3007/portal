@@ -5,7 +5,6 @@ from pathlib import Path
 import requests
 
 articles_dir = Path("portal/src/assets/articles")
-logs_dir = Path("portal/src/assets/logs")
 assets_dir = Path("portal/src/assets/")
 
 
@@ -33,7 +32,7 @@ def export_issues(label: str, dir: Path, extract_photo: bool = False):
             if search := re.search("https:\/\/user-images.githubusercontent.com.*\.png", issue["body"]):
                 issue_dict[issue["id"]]["photo"] = search.group()
             else:
-                issue_dict[issue["id"]]["photo"] = f"https://tech.trash.dev/assets/images/{issue['id']}.png"
+                issue_dict[issue["id"]]["photo"] = f"https://tech.trash-box.dev/assets/images/{issue['id']}.png"
         (dir / f"{issue['id']}.json").write_text(json.dumps(issue, ensure_ascii=False))
     (dir / "list.json").write_text(json.dumps(issue_dict, ensure_ascii=False))
     return issues
@@ -62,6 +61,5 @@ def extract_snippets():
 
 if __name__ == "__main__":
     export_issues("article", articles_dir)
-    export_issues("log", logs_dir, extract_photo=True)
     extract_future()
     extract_snippets()
