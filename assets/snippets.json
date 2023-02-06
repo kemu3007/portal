@@ -1,0 +1,26 @@
+[
+    {
+        "title": "ローカルのバージョンに依存せずにAngularプロジェクトを作成する",
+        "contents": "npx -p @angular/cli ng new sample --directory ./"
+    },
+    {
+        "title": "Ubuntuコンテナでpythonコマンドが使えるようシンボリックリンクを作成する",
+        "contents": "ln -s /usr/bin/python3 /usr/bin/python"
+    },
+    {
+        "title": "docker build時に標準出力にログを出力させる",
+        "contents": "docker compose build --progress plain"
+    },
+    {
+        "title": "Apache設定ファイルディレクトリ",
+        "contents": "/usr/local/apache2/conf/httpd.conf"
+    },
+    {
+        "title": "Nginx設定ファイルディレクトリ",
+        "contents": "/etc/nginx/conf.d/default.conf"
+    },
+    {
+        "title": "PostgreSQLデータディレクトリ",
+        "contents": "/var/lib/postgresql/data"
+    }
+]

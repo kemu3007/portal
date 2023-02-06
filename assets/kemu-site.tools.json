@@ -1,0 +1,17 @@
+[
+  {
+    "name": "QRコードジェネレータ",
+    "description": "任意の文字列をQRコードに変換します。",
+    "link": "https://kemu.site/utils/qrcode/"
+  },
+  {
+    "name": "Markdown Editor",
+    "description": "markdown記法で書かれた文字列をHTMLで表示します。",
+    "link": "https://kemu.site/utils/markdown/"
+  },
+  {
+    "name": "CSV to MD table",
+    "description": "コンマ区切りで入力されたcsvをMarkdownテーブル形式に変換します。",
+    "link": "https://kemu.site/utils/csv_to_md/"
+  }
+]

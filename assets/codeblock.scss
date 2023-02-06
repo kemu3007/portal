@@ -1,0 +1,75 @@
+:host::ng-deep img {
+  max-width: 100%;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
+}
+
+:host::ng-deep pre {
+  background-color: #2d2d2d;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+:host::ng-deep ul {
+  padding-left: 15px;
+}
+
+:host::ng-deep li {
+  list-style-type: circle;
+}
+
+:host::ng-deep pre > code > ol > li {
+  list-style-type: decimal;
+  width: 100%;
+}
+
+:host::ng-deep pre > code > ol > li::marker {
+  color: grey;
+}
+
+:host::ng-deep pre > code > ol {
+  display: grid;
+}
+
+:host::ng-deep .codespan {
+  color: #f39c12;
+  font-style: oblique;
+  font-weight: bolder;
+}
+
+::ng-deep .modal-body > img {
+  max-width: 100%;
+  box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
+}
+
+::ng-deep .modal-body > pre {
+  background-color: #2d2d2d;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+::ng-deep .modal-body > ul {
+  padding-left: 15px;
+}
+
+::ng-deep .modal-body > li {
+  list-style-type: circle;
+}
+
+::ng-deep .modal-body > pre > code > ol > li {
+  list-style-type: decimal;
+  width: 100%;
+}
+
+::ng-deep .modal-body > pre > code > ol > li::marker {
+  color: grey;
+}
+
+::ng-deep .modal-body > pre > code > ol {
+  display: grid;
+}
+
+::ng-deep .modal-body > .codespan {
+  color: #f39c12;
+  font-style: oblique;
+  font-weight: bolder;
+}
