@@ -71,7 +71,6 @@ portal/src/rss_zh.xml
 portal/src/tools_rss.xml
 
 portal/src/assets/articles/
-portal/src/assets/icon.png
 portal/src/assets/logs/
 portal/src/assets/comments/
 portal/src/assets/iframes/*.html
