@@ -115,6 +115,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <li class="link">
                                                 <a href="components/NewsComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >NewsComponent</a>
                                             </li>
+                                            <li class="link">
+                                                <a href="components/ToolsListComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ToolsListComponent</a>
+                                            </li>
                                         </ul>
                                     </li>
                             </li>
@@ -242,9 +245,6 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             </li>
                                             <li class="link">
                                                 <a href="components/StarNoteComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >StarNoteComponent</a>
-                                            </li>
-                                            <li class="link">
-                                                <a href="components/ToolsListComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ToolsListComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/YearCheckComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >YearCheckComponent</a>
