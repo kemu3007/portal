@@ -44,8 +44,7 @@ export class NewsbarComponent implements OnInit {
       },
       {
         type: 'info',
-        contents:
-          "Mermaid Live Editorがリリースされました。<a href='/tools/mermaid/' target='_blank'>こちら</a>から利用できます。",
+        contents: '本ブログは組織としての見解ではなく、個人の見解を示すものとなっております。ご承知の上閲覧ください。',
       },
       {
         type: 'info',
