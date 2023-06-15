@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">portal documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -35,32 +35,37 @@
 
 
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
   >
   AppComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
         </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -72,10 +77,11 @@
 
 
 
-<section>
+<section data-compodoc="block-metadata">
     <h3>Metadata</h3>
     <table class="table table-sm table-hover metadata">
         <tbody>
+
 
 
 
@@ -91,6 +97,8 @@
                 <td class="col-md-3">selector</td>
                 <td class="col-md-9"><code>app-root</code></td>
             </tr>
+
+
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
@@ -115,7 +123,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -163,7 +171,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
@@ -229,7 +237,7 @@
 
 
 
-    <section>
+    <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -301,7 +309,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-accessors">
     <h3 id="accessors">
         Accessors
     </h3>
@@ -353,7 +361,7 @@
 </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { RouterService } from &#x27;./router.service&#x27;;
 import { LoadingService } from &#x27;./shared/loading/loading.service&#x27;;
 import { Component } from &#x27;@angular/core&#x27;;
@@ -387,7 +395,7 @@ export class AppComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
+    <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;app-nav&gt;&lt;/app-nav&gt;
 &lt;app-newsbar&gt;&lt;/app-newsbar&gt;
 &lt;app-message&gt;&lt;/app-message&gt;
@@ -413,9 +421,9 @@ export class AppComponent {
     &lt;span class&#x3D;&quot;text-muted&quot;&gt;Copyright ©️ 2017-2022 All Rights Reserved.&lt;/span&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
-    &lt;a class&#x3D;&quot;text-muted&quot; href&#x3D;&quot;/&quot;&gt;home&lt;/a&gt;
-    &lt;a class&#x3D;&quot;text-muted ms-2&quot; href&#x3D;&quot;/blog/&quot;&gt;blog&lt;/a&gt;
-    &lt;a class&#x3D;&quot;text-muted ms-2&quot; href&#x3D;&quot;/tools/&quot;&gt;tools&lt;/a&gt;
+    &lt;a class&#x3D;&quot;text-muted&quot; href&#x3D;&quot;/tech/&quot;&gt;home&lt;/a&gt;
+    &lt;a class&#x3D;&quot;text-muted ms-2&quot; href&#x3D;&quot;/tech/blog/&quot;&gt;blog&lt;/a&gt;
+    &lt;a class&#x3D;&quot;text-muted ms-2&quot; href&#x3D;&quot;/tech/tools/&quot;&gt;tools&lt;/a&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
     &lt;div class&#x3D;&quot;mb-3 text-muted&quot;&gt;Last Release: {{ releaseDate }}&lt;/div&gt;
@@ -424,7 +432,7 @@ export class AppComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
+    <div class="tab-pane fade " id="styleData">
                 <p class="comment">
                     <code>./app.component.scss</code>
                 </p>
@@ -434,7 +442,7 @@ export class AppComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-tree">
+    <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -459,7 +467,7 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-nav></app-nav><app-newsbar></app-newsbar><app-message></app-message><app-ads-modal></app-ads-modal><div style="min-height: calc(100vh - 200px) !important">  <div [ngClass]="{ \'d-none\': !loading }">    <app-loading></app-loading>  </div>  <div [ngClass]="{ \'d-none\': loading }">    <router-outlet></router-outlet>  </div></div><div style="position: fixed; bottom: 5px; right: 5px">  <app-tweet-btn></app-tweet-btn></div><footer class="bg-light py-3 footer">  <div class="d-flex justify-content-end">    <span style="font-size: 24px">      <a class="mx-2" href="https://trash-box.dev/tech/doc/"><i class="bi bi-book"></i></a>    </span>  </div>  <div class="d-flex justify-content-center">    <span class="text-muted">Copyright ©️ 2017-2022 All Rights Reserved.</span>  </div>  <div class="d-flex justify-content-center">    <a class="text-muted" href="/">home</a>    <a class="text-muted ms-2" href="/blog/">blog</a>    <a class="text-muted ms-2" href="/tools/">tools</a>  </div>  <div class="d-flex justify-content-center">    <div class="mb-3 text-muted">Last Release: {{ releaseDate }}</div>  </div></footer></div>'
+        var COMPONENT_TEMPLATE = '<div><app-nav></app-nav><app-newsbar></app-newsbar><app-message></app-message><app-ads-modal></app-ads-modal><div style="min-height: calc(100vh - 200px) !important">  <div [ngClass]="{ \'d-none\': !loading }">    <app-loading></app-loading>  </div>  <div [ngClass]="{ \'d-none\': loading }">    <router-outlet></router-outlet>  </div></div><div style="position: fixed; bottom: 5px; right: 5px">  <app-tweet-btn></app-tweet-btn></div><footer class="bg-light py-3 footer">  <div class="d-flex justify-content-end">    <span style="font-size: 24px">      <a class="mx-2" href="https://trash-box.dev/tech/doc/"><i class="bi bi-book"></i></a>    </span>  </div>  <div class="d-flex justify-content-center">    <span class="text-muted">Copyright ©️ 2017-2022 All Rights Reserved.</span>  </div>  <div class="d-flex justify-content-center">    <a class="text-muted" href="/tech/">home</a>    <a class="text-muted ms-2" href="/tech/blog/">blog</a>    <a class="text-muted ms-2" href="/tech/tools/">tools</a>  </div>  <div class="d-flex justify-content-center">    <div class="mb-3 text-muted">Last Release: {{ releaseDate }}</div>  </div></footer></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'FxCalcComponent', 'selector': 'app-fx-calc'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LazyImgComponent', 'selector': 'app-lazy-img'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MermaidComponent', 'selector': 'app-mermaid'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsbarComponent', 'selector': 'app-newsbar'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'SnippetListComponent', 'selector': 'app-snippet-list'},{'name': 'StarNoteComponent', 'selector': 'app-star-note'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};

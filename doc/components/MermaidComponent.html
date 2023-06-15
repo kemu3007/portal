@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">portal documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -35,29 +35,33 @@
 
 
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
   >
   MermaidComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
         </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -71,15 +75,16 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+                <code>OnInit</code>
+                <code>AfterViewInit</code>
     </p>
 
 
-<section>
+<section data-compodoc="block-metadata">
     <h3>Metadata</h3>
     <table class="table table-sm table-hover metadata">
         <tbody>
+
 
 
 
@@ -95,6 +100,8 @@
                 <td class="col-md-3">selector</td>
                 <td class="col-md-9"><code>app-mermaid</code></td>
             </tr>
+
+
 
 
 
@@ -115,7 +122,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -131,6 +138,7 @@
                                 <a href="#form" >form</a>
                             </li>
                             <li>
+                                    <span class="modifier"></span>
                                 <a href="#mermaidDiv" >mermaidDiv</a>
                             </li>
                         </ul>
@@ -198,13 +206,13 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, modal: NgbModal, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>)</code>
+<code>constructor(messageService: <a href="../injectables/MessageService.html" target="_self">MessageService</a>, modal: NgbModal, sanitizer: DomSanitizer)</code>
                     </td>
                 </tr>
                         <tr>
@@ -254,7 +262,7 @@
                                                         <td>sanitizer</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
+                                                                    <code>DomSanitizer</code>
                                                         </td>
                                                   
                                                     <td>
@@ -275,7 +283,7 @@
 
 
 
-    <section>
+    <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -786,7 +794,7 @@
         </tbody>
     </table>
 </section>
-    <section>
+    <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -825,6 +833,7 @@
                 <td class="col-md-4">
                     <a name="mermaidDiv"></a>
                     <span class="name">
+                            <span class="modifier"></span>
                         <span ><b>mermaidDiv</b></span>
                         <a href="#mermaidDiv"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -856,7 +865,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-accessors">
     <h3 id="accessors">
         Accessors
     </h3>
@@ -886,7 +895,7 @@
 </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, ElementRef, OnInit, TemplateRef, ViewChild } from &#x27;@angular/core&#x27;;
 import { DomSanitizer } from &#x27;@angular/platform-browser&#x27;;
 import { MessageService } from &#x27;@app/shared/message/message.service&#x27;;
@@ -966,7 +975,7 @@ export class MermaidComponent implements OnInit, AfterViewInit {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
+    <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
   &lt;div class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
     &lt;h2 class&#x3D;&quot;mb-0&quot;&gt;Mermaid Live Editor&lt;app-tweet-btn class&#x3D;&quot;ms-3&quot;&gt;&lt;/app-tweet-btn&gt;&lt;/h2&gt;
@@ -1031,7 +1040,7 @@ export class MermaidComponent implements OnInit, AfterViewInit {
     </div>
 
 
-    <div class="tab-pane fade " id="c-tree">
+    <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">

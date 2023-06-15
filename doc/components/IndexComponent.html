@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">portal documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -35,29 +35,33 @@
 
 
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
   >
   IndexComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
         </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -71,14 +75,15 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code>OnInit</code>
     </p>
 
 
-<section>
+<section data-compodoc="block-metadata">
     <h3>Metadata</h3>
     <table class="table table-sm table-hover metadata">
         <tbody>
+
 
 
 
@@ -94,6 +99,8 @@
                 <td class="col-md-3">selector</td>
                 <td class="col-md-9"><code>app-index</code></td>
             </tr>
+
+
 
 
 
@@ -114,7 +121,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -156,7 +163,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
@@ -209,7 +216,7 @@
 
 
 
-    <section>
+    <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -252,7 +259,7 @@
         </tbody>
     </table>
 </section>
-    <section>
+    <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -293,7 +300,7 @@
 </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { Tool } from &#x27;@app/shared/tools/tools&#x27;;
 import { ToolsService } from &#x27;@app/shared/tools/tools.service&#x27;;
@@ -314,7 +321,7 @@ export class IndexComponent implements OnInit {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
+    <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-3&quot;&gt;
   &lt;div class&#x3D;&quot;row border&quot;&gt;
     &lt;div class&#x3D;&quot;col-sm-12 pt-3 bg-light&quot;&gt;
@@ -322,25 +329,25 @@ export class IndexComponent implements OnInit {
       &lt;div class&#x3D;&quot;overflow-auto&quot;&gt;
         &lt;mat-tab-group&gt;
           &lt;mat-tab label&#x3D;&quot;2023&quot;&gt;
-            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;/assets/iframes/weed_2023.html&quot;&gt;&lt;/iframe&gt;
+            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;./assets/iframes/weed_2023.html&quot;&gt;&lt;/iframe&gt;
           &lt;/mat-tab&gt;
           &lt;mat-tab label&#x3D;&quot;2022&quot;&gt;
-            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;/assets/iframes/weed_2022.html&quot;&gt;&lt;/iframe&gt;
+            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;./assets/iframes/weed_2022.html&quot;&gt;&lt;/iframe&gt;
           &lt;/mat-tab&gt;
           &lt;mat-tab label&#x3D;&quot;2021&quot;&gt;
-            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;/assets/iframes/weed_2021.html&quot;&gt;&lt;/iframe&gt;
+            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;./assets/iframes/weed_2021.html&quot;&gt;&lt;/iframe&gt;
           &lt;/mat-tab&gt;
           &lt;mat-tab label&#x3D;&quot;2020&quot;&gt;
-            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;/assets/iframes/weed_2020.html&quot;&gt;&lt;/iframe&gt;
+            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;./assets/iframes/weed_2020.html&quot;&gt;&lt;/iframe&gt;
           &lt;/mat-tab&gt;
           &lt;mat-tab label&#x3D;&quot;2019&quot;&gt;
-            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;/assets/iframes/weed_2019.html&quot;&gt;&lt;/iframe&gt;
+            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;./assets/iframes/weed_2019.html&quot;&gt;&lt;/iframe&gt;
           &lt;/mat-tab&gt;
           &lt;mat-tab label&#x3D;&quot;2018&quot;&gt;
-            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;/assets/iframes/weed_2018.html&quot;&gt;&lt;/iframe&gt;
+            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;./assets/iframes/weed_2018.html&quot;&gt;&lt;/iframe&gt;
           &lt;/mat-tab&gt;
           &lt;mat-tab label&#x3D;&quot;2017&quot;&gt;
-            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;/assets/iframes/weed_2017.html&quot;&gt;&lt;/iframe&gt;
+            &lt;iframe width&#x3D;&quot;100%&quot; src&#x3D;&quot;./assets/iframes/weed_2017.html&quot;&gt;&lt;/iframe&gt;
           &lt;/mat-tab&gt;
         &lt;/mat-tab-group&gt;
       &lt;/div&gt;
@@ -350,7 +357,7 @@ export class IndexComponent implements OnInit {
   &lt;div class&#x3D;&quot;row&quot;&gt;
     &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
       &lt;h2&gt;
-        News &lt;a href&#x3D;&quot;/rss.xml&quot; class&#x3D;&quot;btn btn-sm btn-light border text-muted&quot;&gt;&lt;i class&#x3D;&quot;bi bi-rss&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        News &lt;a href&#x3D;&quot;/tech/rss.xml&quot; class&#x3D;&quot;btn btn-sm btn-light border text-muted&quot;&gt;&lt;i class&#x3D;&quot;bi bi-rss&quot;&gt;&lt;/i&gt;&lt;/a&gt;
       &lt;/h2&gt;
       &lt;div class&#x3D;&quot;border border-light rounded shadow&quot;&gt;
         &lt;app-news&gt;&lt;/app-news&gt;
@@ -372,7 +379,7 @@ export class IndexComponent implements OnInit {
     </div>
 
 
-    <div class="tab-pane fade " id="c-tree">
+    <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -397,7 +404,7 @@ export class IndexComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container mt-3">  <div class="row border">    <div class="col-sm-12 pt-3 bg-light">      <h2>Contributions</h2>      <div class="overflow-auto">        <mat-tab-group>          <mat-tab label="2023">            <iframe width="100%" src="/assets/iframes/weed_2023.html"></iframe>          </mat-tab>          <mat-tab label="2022">            <iframe width="100%" src="/assets/iframes/weed_2022.html"></iframe>          </mat-tab>          <mat-tab label="2021">            <iframe width="100%" src="/assets/iframes/weed_2021.html"></iframe>          </mat-tab>          <mat-tab label="2020">            <iframe width="100%" src="/assets/iframes/weed_2020.html"></iframe>          </mat-tab>          <mat-tab label="2019">            <iframe width="100%" src="/assets/iframes/weed_2019.html"></iframe>          </mat-tab>          <mat-tab label="2018">            <iframe width="100%" src="/assets/iframes/weed_2018.html"></iframe>          </mat-tab>          <mat-tab label="2017">            <iframe width="100%" src="/assets/iframes/weed_2017.html"></iframe>          </mat-tab>        </mat-tab-group>      </div>    </div>  </div>  <hr />  <div class="row">    <div class="col-md-6">      <h2>        News <a href="/rss.xml" class="btn btn-sm btn-light border text-muted"><i class="bi bi-rss"></i></a>      </h2>      <div class="border border-light rounded shadow">        <app-news></app-news>      </div>    </div>    <div class="col-md-6">      <h2>Tools</h2>      <div class="border border-light rounded shadow">        <app-tools-list></app-tools-list>      </div>    </div>  </div></div><div class="mt-5 d-flex justify-content-center">  <app-ads type="auto"></app-ads></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-3">  <div class="row border">    <div class="col-sm-12 pt-3 bg-light">      <h2>Contributions</h2>      <div class="overflow-auto">        <mat-tab-group>          <mat-tab label="2023">            <iframe width="100%" src="./assets/iframes/weed_2023.html"></iframe>          </mat-tab>          <mat-tab label="2022">            <iframe width="100%" src="./assets/iframes/weed_2022.html"></iframe>          </mat-tab>          <mat-tab label="2021">            <iframe width="100%" src="./assets/iframes/weed_2021.html"></iframe>          </mat-tab>          <mat-tab label="2020">            <iframe width="100%" src="./assets/iframes/weed_2020.html"></iframe>          </mat-tab>          <mat-tab label="2019">            <iframe width="100%" src="./assets/iframes/weed_2019.html"></iframe>          </mat-tab>          <mat-tab label="2018">            <iframe width="100%" src="./assets/iframes/weed_2018.html"></iframe>          </mat-tab>          <mat-tab label="2017">            <iframe width="100%" src="./assets/iframes/weed_2017.html"></iframe>          </mat-tab>        </mat-tab-group>      </div>    </div>  </div>  <hr />  <div class="row">    <div class="col-md-6">      <h2>        News <a href="/tech/rss.xml" class="btn btn-sm btn-light border text-muted"><i class="bi bi-rss"></i></a>      </h2>      <div class="border border-light rounded shadow">        <app-news></app-news>      </div>    </div>    <div class="col-md-6">      <h2>Tools</h2>      <div class="border border-light rounded shadow">        <app-tools-list></app-tools-list>      </div>    </div>  </div></div><div class="mt-5 d-flex justify-content-center">  <app-ads type="auto"></app-ads></div></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'FxCalcComponent', 'selector': 'app-fx-calc'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LazyImgComponent', 'selector': 'app-lazy-img'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MermaidComponent', 'selector': 'app-mermaid'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsbarComponent', 'selector': 'app-newsbar'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'SnippetListComponent', 'selector': 'app-snippet-list'},{'name': 'StarNoteComponent', 'selector': 'app-star-note'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'IndexComponent'};

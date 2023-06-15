@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">portal documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -35,32 +35,37 @@
 
 
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
   >
   NavComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
         </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -72,10 +77,11 @@
 
 
 
-<section>
+<section data-compodoc="block-metadata">
     <h3>Metadata</h3>
     <table class="table table-sm table-hover metadata">
         <tbody>
+
 
 
 
@@ -91,6 +97,8 @@
                 <td class="col-md-3">selector</td>
                 <td class="col-md-9"><code>app-nav</code></td>
             </tr>
+
+
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
@@ -115,7 +123,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -174,7 +182,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
@@ -197,7 +205,7 @@
 
 
 
-    <section>
+    <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -341,7 +349,7 @@
         </tbody>
     </table>
 </section>
-    <section>
+    <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -384,7 +392,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-accessors">
     <h3 id="accessors">
         Accessors
     </h3>
@@ -414,7 +422,7 @@
 </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import count from &#x27;@assets/count.json&#x27;;
 import { NgbCollapse } from &#x27;@ng-bootstrap/ng-bootstrap&#x27;;
@@ -462,7 +470,7 @@ export class NavComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
+    <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;nav ngbNav #nav&#x3D;&quot;ngbNav&quot; [activeId]&#x3D;&quot;activeTab&quot; class&#x3D;&quot;navbar navbar-expand-md navbar-light pb-0 bg-light&quot;&gt;
   &lt;div class&#x3D;&quot;container-fluid shadow&quot;&gt;
     &lt;img height&#x3D;&quot;30px&quot; width&#x3D;&quot;30px&quot; class&#x3D;&quot;rounded-circle me-3&quot; src&#x3D;&quot;../../assets/icon.png&quot; /&gt;
@@ -482,8 +490,8 @@ export class NavComponent {
         &lt;/li&gt;
       &lt;/ul&gt;
       &lt;div class&#x3D;&quot;d-none d-md-block ms-auto ps-0 text-muted nav-link&quot;&gt;
-        &lt;a href&#x3D;&quot;/sitemap.xml&quot; class&#x3D;&quot;btn btn-sm btn-light me-1&quot;&gt;Sitemap &gt;&lt;/a&gt;
-        &lt;a href&#x3D;&quot;/rss.xml&quot; class&#x3D;&quot;btn btn-sm btn-light&quot;&gt;RSS &gt;&lt;/a&gt;
+        &lt;a href&#x3D;&quot;/tech/sitemap.xml&quot; class&#x3D;&quot;btn btn-sm btn-light me-1&quot;&gt;Sitemap &gt;&lt;/a&gt;
+        &lt;a href&#x3D;&quot;/tech/rss.xml&quot; class&#x3D;&quot;btn btn-sm btn-light&quot;&gt;RSS &gt;&lt;/a&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -491,7 +499,7 @@ export class NavComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
+    <div class="tab-pane fade " id="styleData">
                 <p class="comment">
                     <code>./nav.component.scss</code>
                 </p>
@@ -501,7 +509,7 @@ export class NavComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-tree">
+    <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -526,7 +534,7 @@ export class NavComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav ngbNav #nav="ngbNav" [activeId]="activeTab" class="navbar navbar-expand-md navbar-light pb-0 bg-light">  <div class="container-fluid shadow">    <img height="30px" width="30px" class="rounded-circle me-3" src="../../assets/icon.png" />    <a [routerLink]="[\'/\']" class="navbar-brand"> Trash Box </a>    <button matRipple class="navbar-toggler mb-1" type="button" (click)="menu.toggle()">&#9776;</button>    <div [ngbCollapse]="true" #menu="ngbCollapse" class="collapse navbar-collapse">      <ul class="navbar-nav">        <li class="nav-item" *ngFor="let tab of tabs; index as i">          <a            matRipple            class="nav-link"            [routerLink]="tab.to"            (click)="onClickedNav(menu)"            [ngClass]="{ active: isActive(tab.to) }"            >{{ tab.name }}<span class="ms-1 badge rounded-pill bg-success" *ngIf="tab.count">{{ tab.count }}</span></a          >        </li>      </ul>      <div class="d-none d-md-block ms-auto ps-0 text-muted nav-link">        <a href="/sitemap.xml" class="btn btn-sm btn-light me-1">Sitemap ></a>        <a href="/rss.xml" class="btn btn-sm btn-light">RSS ></a>      </div>    </div>  </div></nav></div>'
+        var COMPONENT_TEMPLATE = '<div><nav ngbNav #nav="ngbNav" [activeId]="activeTab" class="navbar navbar-expand-md navbar-light pb-0 bg-light">  <div class="container-fluid shadow">    <img height="30px" width="30px" class="rounded-circle me-3" src="../../assets/icon.png" />    <a [routerLink]="[\'/\']" class="navbar-brand"> Trash Box </a>    <button matRipple class="navbar-toggler mb-1" type="button" (click)="menu.toggle()">&#9776;</button>    <div [ngbCollapse]="true" #menu="ngbCollapse" class="collapse navbar-collapse">      <ul class="navbar-nav">        <li class="nav-item" *ngFor="let tab of tabs; index as i">          <a            matRipple            class="nav-link"            [routerLink]="tab.to"            (click)="onClickedNav(menu)"            [ngClass]="{ active: isActive(tab.to) }"            >{{ tab.name }}<span class="ms-1 badge rounded-pill bg-success" *ngIf="tab.count">{{ tab.count }}</span></a          >        </li>      </ul>      <div class="d-none d-md-block ms-auto ps-0 text-muted nav-link">        <a href="/tech/sitemap.xml" class="btn btn-sm btn-light me-1">Sitemap ></a>        <a href="/tech/rss.xml" class="btn btn-sm btn-light">RSS ></a>      </div>    </div>  </div></nav></div>'
     var COMPONENTS = [{'name': 'AdsComponent', 'selector': 'app-ads'},{'name': 'AdsModalComponent', 'selector': 'app-ads-modal'},{'name': 'AmazonAdsComponent', 'selector': 'app-amazon-ads'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'Base64Component', 'selector': 'app-base64'},{'name': 'BlogDetailComponent', 'selector': 'app-blog-detail'},{'name': 'BlogListComponent', 'selector': 'app-blog-list'},{'name': 'FxCalcComponent', 'selector': 'app-fx-calc'},{'name': 'IndexComponent', 'selector': 'app-index'},{'name': 'JsonFormatterComponent', 'selector': 'app-json-formatter'},{'name': 'JsonTyperComponent', 'selector': 'app-json-typer'},{'name': 'LazyImgComponent', 'selector': 'app-lazy-img'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'MdwriterComponent', 'selector': 'app-mdwriter'},{'name': 'MermaidComponent', 'selector': 'app-mermaid'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NewsbarComponent', 'selector': 'app-newsbar'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'OpenapiComponent', 'selector': 'app-openapi'},{'name': 'RealtimeComponent', 'selector': 'app-realtime'},{'name': 'RegexComponent', 'selector': 'app-regex'},{'name': 'SnippetListComponent', 'selector': 'app-snippet-list'},{'name': 'StarNoteComponent', 'selector': 'app-star-note'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'ToolsListComponent', 'selector': 'app-tools-list'},{'name': 'TweetBtnComponent', 'selector': 'app-tweet-btn'},{'name': 'YearCheckComponent', 'selector': 'app-year-check'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NavComponent'};
