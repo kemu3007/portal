@@ -4,8 +4,8 @@ staticPort: 1668
 reloadPort: 2667
 hostName: localhost
 projectName: portal
-homeFolder: /Users/kemu/workspace/hobby/portal/portal
+homeFolder: /Users/kemu/workspace/portal/portal
 distFolder: dist/portal
-outDir: /Users/kemu/workspace/hobby/portal/portal/dist/static
+outDir: /Users/kemu/workspace/portal/portal/dist/static
 handle404: ''
 allowErrorCollect: false

@@ -1,6 +1,7 @@
 
-import { registerPlugin, HandledRoute } from '@scullyio/scully';
+import { registerPlugin, HandledRoute, setPluginConfig } from '@scullyio/scully';
 import blogs from '../../src/assets/articles/list.json';
+import { baseHrefRewrite } from '@scullyio/scully-plugin-base-href-rewrite';
 
 
 export const myPlugin = 'myPlugin';
@@ -20,3 +21,5 @@ function blogRoutesPlugin(_route: string, _config = {}) {
 }
 
 registerPlugin('router', "blogIds", blogRoutesPlugin, [])
+
+setPluginConfig(baseHrefRewrite, { href: '/tech/'})
