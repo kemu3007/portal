@@ -9,7 +9,7 @@ Sentry.init({
   dsn: environment.sentryDSN,
   integrations: [
     new BrowserTracing({
-      tracingOrigins: ['localhost', 'https://tech.trash-box.dev'],
+      tracingOrigins: ['localhost', 'https://trash-box.dev/tech'],
       routingInstrumentation: Sentry.routingInstrumentation,
     }),
   ],

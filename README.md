@@ -1,10 +1,10 @@
-# tech.trash-box.dev
+# trash-box.dev/tech
 
 - npm v8.3.1
 - node: v16.14.0
 - python: 3.10
-- url: https://tech.trash-box.dev/
-- doc: https://tech.trash-box.dev/doc/
+- url: https://trash-box.dev/tech/
+- doc: https://trash-box.dev/tech/doc/
 
 ```mermaid
 graph LR;

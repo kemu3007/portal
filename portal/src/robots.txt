@@ -2,4 +2,4 @@ User-Agent: *
 
 Allow: /
 
-Sitemap: https://tech.trash-box.dev/sitemap.xml
+Sitemap: https://trash-box.dev/tech/sitemap.xml

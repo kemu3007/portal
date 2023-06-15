@@ -24,7 +24,7 @@ if __name__ == "__main__":
     articles: Dict[str, Article] = json.loads((Path() / "portal/src/assets/articles/list.json").read_text())
 
     create_meta(
-        "https://tech.trash-box.dev/assets/images/blog.png",
+        "https://trash-box.dev/tech/assets/images/blog.png",
         "Tech Blog | Trash Box",
         """
         Angular / Djangoがメインのログゴミ置き場です。
@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
     for key, data in articles.items():
         create_meta(
-            f"https://tech.trash-box.dev/assets/images/{key}.png",
+            f"https://trash-box.dev/tech/assets/images/{key}.png",
             f"{data['title']} | Tech Blog | Trash Box",
             data["body"],
             f"/blog/{key}",
@@ -42,14 +42,14 @@ if __name__ == "__main__":
 
     # tools
     create_meta(
-        "https://tech.trash-box.dev/assets/images/tools.png",
+        "https://trash-box.dev/tech/assets/images/tools.png",
         "Tools | Trash Box",
         "自作ツール置き場 / Markdown Writer, QrCode Maker, JSON Typer, JSON Formatter, Base64 Translator...",
         "/tools",
     )
     # JSON Typer
     create_meta(
-        "https://tech.trash-box.dev/assets/images/json-typer.png",
+        "https://trash-box.dev/tech/assets/images/json-typer.png",
         "JSON Typer | Tools | Trash Box",
         """
         任意のJSONの値をTypeScriptのinterface型に変換します。
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     # realtime
 
     create_meta(
-        "https://tech.trash-box.dev/assets/images/realtime.png",
+        "https://trash-box.dev/tech/assets/images/realtime.png",
         "REALTIME | Tools | Trash Box",
         """
         現在時刻を100ms単位で更新し、正確な日時をお知らせします。
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     # JSON Formatter
 
     create_meta(
-        "https://tech.trash-box.dev/assets/images/json-formatter.png",
+        "https://trash-box.dev/tech/assets/images/json-formatter.png",
         "JSON Formatter | Tools | Trash Box",
         """
         未整形のJSONデータを整形します。
@@ -85,7 +85,7 @@ if __name__ == "__main__":
     # Base64 Encoder/Decoder
 
     create_meta(
-        "https://tech.trash-box.dev/assets/images/base64.png",
+        "https://trash-box.dev/tech/assets/images/base64.png",
         "Base64 Encoder/Decoder | Tools | Trash Box",
         """
         文字列データをBase64に、Base64データを文字列に変換します。
@@ -97,7 +97,7 @@ if __name__ == "__main__":
     # GitHub Flavored Markdown Writer
 
     create_meta(
-        "https://tech.trash-box.dev/assets/images/mdwriter.png",
+        "https://trash-box.dev/tech/assets/images/mdwriter.png",
         "GitHub Flavored Markdown Writer | Tools | Trash Box",
         """
         GitHub Flavored MarkdownをHTMLに変換します。変換データ及び元のMarkdwonデータをワンクリックでコピー可能です。
@@ -108,7 +108,7 @@ if __name__ == "__main__":
     # Regex Checker
 
     create_meta(
-        "https://tech.trash-box.dev/assets/images/regex.png",
+        "https://trash-box.dev/tech/assets/images/regex.png",
         "Regex Checker | Tools | Trash Box",
         """
         正規表現とテキストを入力することでテキストを対象とした正規表現のテストを行い、index, マッチ文字列を返却します。
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     # Year Checker
 
     create_meta(
-        "https://tech.trash-box.dev/assets/images/fx-calc.png",
+        "https://trash-box.dev/tech/assets/images/fx-calc.png",
         "FX Calculator | Tools | Trash Box",
         """
         FXに利用する証拠金率、ロスカット値、購入可能の最大ロット数などの値を計算します。
@@ -130,7 +130,7 @@ if __name__ == "__main__":
     # Year Checker
 
     create_meta(
-        "https://tech.trash-box.dev/assets/images/year.png",
+        "https://trash-box.dev/tech/assets/images/year.png",
         "Year Checker | Tools | Trash Box",
         """
         誕生日をもとに各種卒業年度/厄年といった年月日を計算します。
@@ -141,7 +141,7 @@ if __name__ == "__main__":
     # OpenApi Viewer
 
     create_meta(
-        "https://tech.trash-box.dev/assets/images/openapi.png",
+        "https://trash-box.dev/tech/assets/images/openapi.png",
         "OpenApi Viewer | Tools | Trash Box",
         """
         OpenApi JSON/YAMLをSwagger-UI / Redoc UIで表示します。
@@ -152,7 +152,7 @@ if __name__ == "__main__":
     # Mermaid Live Editor
 
     create_meta(
-        "https://tech.trash-box.dev/assets/images/mermaid.png",
+        "https://trash-box.dev/tech/assets/images/mermaid.png",
         "Mermaid Live Editor | Tools | Trash Box",
         """
         Mermaidをリアルタイムで描画し、記述を支援します。
@@ -163,7 +163,7 @@ if __name__ == "__main__":
     # snippets
 
     create_meta(
-        "https://tech.trash-box.dev/assets/images/snippets.png",
+        "https://trash-box.dev/tech/assets/images/snippets.png",
         "Snippets | Trash Box",
         """
         開発時によく利用するスニペット置き場

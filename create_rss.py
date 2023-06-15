@@ -24,14 +24,14 @@ def create_ja_rss() -> ElementTree.Element:
     rss.set("xmlns:atom", "http://www.w3.org/2005/Atom")
     channel = ElementTree.SubElement(rss, "channel")
     atom_link = ElementTree.SubElement(channel, "atom:link")
-    atom_link.set("href", "https://tech.trash-box.dev/rss.xml")
+    atom_link.set("href", "https://trash-box.dev/tech/rss.xml")
     atom_link.set("rel", "self")
     atom_link.set("type", "application/rss+xml")
 
     append_child(channel, "lastBuildDate", datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0900"))
     append_child(channel, "category", "Python/TypeScript/Django/Angular/Nuxt/Vue/Docker/GitHub Pages")
     append_child(channel, "title", "Tech Blog | Trash Box")
-    append_child(channel, "link", "https://tech.trash-box.dev/")
+    append_child(channel, "link", "https://trash-box.dev/tech/")
     append_child(channel, "description", "Tech Blog | Trash Box では主にDjango / Angularに関する技術的な知見のメモ、共有を行っています。")
     append_child(channel, "language", "ja")
     append_child(channel, "copyright", "©️ 2017-2022 All Rights Reserved.")
@@ -46,7 +46,7 @@ def create_ja_rss() -> ElementTree.Element:
         article = articles[id]
 
         append_child(item, "title", escape(article["title"]))
-        append_child(item, "link", f"https://tech.trash-box.dev/blog/{id}/")
+        append_child(item, "link", f"https://trash-box.dev/tech/blog/{id}/")
 
         append_child(item, "category", "/".join([label["name"] for label in article["labels"]]))
 
@@ -66,14 +66,14 @@ def create_tools_rss() -> ElementTree.Element:
     rss.set("xmlns:atom", "http://www.w3.org/2005/Atom")
     channel = ElementTree.SubElement(rss, "channel")
     atom_link = ElementTree.SubElement(channel, "atom:link")
-    atom_link.set("href", f"https://tech.trash-box.dev/tools_rss.xml")
+    atom_link.set("href", f"https://trash-box.dev/tech/tools_rss.xml")
     atom_link.set("rel", "self")
     atom_link.set("type", "application/rss+xml")
 
     append_child(channel, "lastBuildDate", datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0900"))
     append_child(channel, "category", "Python/TypeScript/Django/Angular/Nuxt/Vue/Docker/GitHub Pages")
     append_child(channel, "title", "Tools | Trash Box")
-    append_child(channel, "link", "https://tech.trash-box.dev/")
+    append_child(channel, "link", "https://trash-box.dev/tech/")
     append_child(channel, "description", "Mermaid Live Editor, GitHub Flavored Markdown, Regex Checker, JSON Typer...")
     append_child(channel, "language", "ja")
     append_child(channel, "copyright", "©️ 2017-2022 All Rights Reserved.")
@@ -86,7 +86,7 @@ def create_tools_rss() -> ElementTree.Element:
         guid.text = tool["link"]
 
         append_child(item, "title", tool["label"])
-        append_child(item, "link", f"https://tech.trash-box.dev{tool['link']}/")
+        append_child(item, "link", f"https://trash-box.dev/tech{tool['link']}/")
         append_child(item, "category", "Tech Tool")
         append_child(item, "description", tool["description"])
         append_child(item, "pubDate", datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0900"))
