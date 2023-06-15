@@ -8,7 +8,7 @@ import { baseHrefRewrite } from '@scullyio/scully-plugin-base-href-rewrite';
 
 const defaultPostRenderers = ['seoHrefOptimise', baseHrefRewrite];
 
-setPluginConfig(baseHrefRewrite, { href: 'xxx' });
+setPluginConfig(baseHrefRewrite, { href: '/tech/' });
 
 export const config: ScullyConfig = {
   projectRoot: "./src",
