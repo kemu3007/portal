@@ -50,7 +50,6 @@ jobs:
       - name: build
         working-directory: ./portal
         run: |
-          npm run compodoc
           npm run ng build -- --sourceMap=true |& tee -a $GITHUB_STEP_SUMMARY
       - uses: getsentry/action-release@v1
         env:

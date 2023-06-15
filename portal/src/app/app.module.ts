@@ -1,7 +1,7 @@
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { APP_BASE_HREF } from '@angular/common';
+// import { APP_BASE_HREF } from '@angular/common';
 import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +16,7 @@ import * as Sentry from '@sentry/angular';
   declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule, SharedModule, BrowserAnimationsModule, ScullyLibModule],
   providers: [
-    { provide: APP_BASE_HREF, useValue: '/tech' },
+    // { provide: APP_BASE_HREF, useValue: '/tech' },
     { provide: MAT_DATE_LOCALE, useValue: 'ja' },
     { provide: ErrorHandler, useValue: Sentry.createErrorHandler({ showDialog: false }) },
     { provide: Sentry.TraceService, deps: [Router] },
