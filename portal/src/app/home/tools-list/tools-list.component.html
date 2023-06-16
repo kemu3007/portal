@@ -1,5 +1,5 @@
 <div id="tools" class="list-group">
-  <a class="list-group-item d-flex" style="cursor: pointer" *ngFor="let tool of tools" [href]="tool.link">
+  <a class="list-group-item d-flex" style="cursor: pointer" *ngFor="let tool of tools" [routerLink]="tool.link">
     <div matRipple class="text-start">
       <div class="fw-bold">{{ tool.label }}</div>
       {{ tool.description }}
