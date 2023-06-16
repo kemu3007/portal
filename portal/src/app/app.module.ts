@@ -6,10 +6,11 @@ import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from 
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Router } from '@angular/router';
+import { Router, UrlSerializer } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import * as Sentry from '@sentry/angular';
+import { TrailingSlashUrlSerializer } from './url-serializer';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -17,6 +18,7 @@ import * as Sentry from '@sentry/angular';
   imports: [BrowserModule, AppRoutingModule, NgbModule, SharedModule, BrowserAnimationsModule, ScullyLibModule],
   providers: [
     // { provide: APP_BASE_HREF, useValue: '/tech' },
+    { provide: UrlSerializer, useClass: TrailingSlashUrlSerializer },
     { provide: MAT_DATE_LOCALE, useValue: 'ja' },
     { provide: ErrorHandler, useValue: Sentry.createErrorHandler({ showDialog: false }) },
     { provide: Sentry.TraceService, deps: [Router] },
