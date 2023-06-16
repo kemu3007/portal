@@ -13,7 +13,7 @@ import { catchError, interval, NEVER } from 'rxjs';
   styleUrls: ['./blog-detail.component.scss'],
 })
 export class BlogDetailComponent implements OnInit {
-  url = '/assets/articles/';
+  url = 'assets/articles/';
 
   marked = this.markedService.marked;
   articles: Record<string, Article> = {};

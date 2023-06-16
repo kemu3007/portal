@@ -13,7 +13,7 @@ import { debounceTime, distinctUntilChanged, map, Observable, OperatorFunction, 
   templateUrl: './blog-list.component.html',
 })
 export class BlogListComponent implements OnInit {
-  url = '/assets/articles/list.json';
+  url = 'assets/articles/list.json';
   articles: Record<string, Article> = {};
 
   pageSize = 10;
@@ -27,7 +27,7 @@ export class BlogListComponent implements OnInit {
     @Inject(DOCUMENT) document: Document
   ) {
     if (route.snapshot.data['lang'] !== 'ja') {
-      this.url = `/assets/articles/${route.snapshot.data['lang']}/list.json`;
+      this.url = `assets/articles/${route.snapshot.data['lang']}/list.json`;
     }
     document.documentElement.lang = route.snapshot.data['lang'];
   }

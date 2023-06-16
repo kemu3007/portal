@@ -13,16 +13,14 @@ export class NewsComponent implements OnInit {
   constructor(private keyValuePipe: KeyValuePipe, private articlesService: ArticlesService, private router: Router) {}
 
   articles: Record<string, Article> = {};
-  logs: Record<string, Article> = {};
 
   ngOnInit(): void {
-    this.articlesService.getList('/assets/articles/list.json').subscribe((articles) => (this.articles = articles));
-    this.articlesService.getList('/assets/logs/list.json').subscribe((logs) => (this.logs = logs));
+    this.articlesService.getList('assets/articles/list.json').subscribe((articles) => (this.articles = articles));
   }
 
   get news() {
     return this.keyValuePipe
-      .transform(Object.assign({}, this.articles, this.logs))
+      .transform(Object.assign({}, this.articles))
       .sort((a, b) => Number(b.key) - Number(a.key));
   }
 

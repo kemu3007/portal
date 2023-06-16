@@ -15,7 +15,7 @@ export class NewsbarComponent implements OnInit {
   constructor(private articlesService: ArticlesService) {}
 
   ngOnInit() {
-    this.articlesService.getList('/assets/articles/list.json').subscribe((articles) => (this.articles = articles));
+    this.articlesService.getList('assets/articles/list.json').subscribe((articles) => (this.articles = articles));
     interval(5000).subscribe((_) => (this.index += 1));
   }
 
