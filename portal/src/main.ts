@@ -21,7 +21,8 @@ if (environment.production) {
 }
 
 if (document.domain === "kemu3007.github.io") {
-  location.href = `https://trash-box.dev/tech${location.pathname}`;
+  const path = location.pathname.replace('/portal', '')
+  location.href = `https://trash-box.dev/tech${path}`;
 }
 
 platformBrowserDynamic()
