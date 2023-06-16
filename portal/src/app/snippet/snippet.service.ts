@@ -9,6 +9,6 @@ export class SnippetService {
   constructor(private httpClient: HttpClient) {}
 
   get() {
-    return this.httpClient.get<Snippet[]>('/assets/snippets.json');
+    return this.httpClient.get<Snippet[]>('assets/snippets.json');
   }
 }

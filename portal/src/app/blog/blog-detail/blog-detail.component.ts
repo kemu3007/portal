@@ -35,7 +35,7 @@ export class BlogDetailComponent implements OnInit {
   }
 
   get imageUrl() {
-    return `/assets/images/${this.issueId}.png`;
+    return `assets/images/${this.issueId}.png`;
   }
 
   get originalUrl() {

@@ -10,6 +10,6 @@ export class ToolsService {
   constructor(private httpClient: HttpClient) {}
 
   get(): Observable<Tool[]> {
-    return this.httpClient.get<Tool[]>('/assets/tools.json');
+    return this.httpClient.get<Tool[]>('assets/tools.json');
   }
 }
