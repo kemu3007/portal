@@ -20,6 +20,10 @@ if (environment.production) {
   enableProdMode();
 }
 
+if (document.domain === "kemu3007.github.io") {
+  location.href = `https://trash-box.dev/tech${location.pathname}`;
+}
+
 platformBrowserDynamic()
   .bootstrapModule(AppModule)
   .catch((err) => console.error(err));
