@@ -20,8 +20,8 @@ if (environment.production) {
   enableProdMode();
 }
 
-if (document.domain === "kemu3007.github.io") {
-  const path = location.pathname.replace('/portal', '')
+if (document.domain === 'kemu3007.github.io') {
+  const path = location.pathname.replace('/portal', '');
   location.href = `https://trash-box.dev/tech${path}`;
 }
 

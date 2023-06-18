@@ -1,6 +1,7 @@
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { TrailingSlashUrlSerializer } from './url-serializer';
 // import { APP_BASE_HREF } from '@angular/common';
 import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
@@ -10,7 +11,6 @@ import { Router, UrlSerializer } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import * as Sentry from '@sentry/angular';
-import { TrailingSlashUrlSerializer } from './url-serializer';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

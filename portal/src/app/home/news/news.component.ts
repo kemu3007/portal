@@ -19,9 +19,7 @@ export class NewsComponent implements OnInit {
   }
 
   get news() {
-    return this.keyValuePipe
-      .transform(Object.assign({}, this.articles))
-      .sort((a, b) => Number(b.key) - Number(a.key));
+    return this.keyValuePipe.transform(Object.assign({}, this.articles)).sort((a, b) => Number(b.key) - Number(a.key));
   }
 
   navigateArticles(id: string) {
