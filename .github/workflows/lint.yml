@@ -33,3 +33,4 @@ jobs:
         working-directory: ./portal
         run: |
           npm run lint |& tee -a $GITHUB_STEP_SUMMARY
+          exit ${PIPESTATUS[0]}

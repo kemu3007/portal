@@ -28,3 +28,4 @@ jobs:
       - name: lint
         run: |
           make lint |& tee -a $GITHUB_STEP_SUMMARY
+          exit ${PIPESTATUS[0]}
