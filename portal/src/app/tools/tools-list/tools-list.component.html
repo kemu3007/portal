@@ -10,7 +10,7 @@
       <div class="col-md-4 bg-light px-0 mx-0 mt-1" *ngFor="let tool of pinnedTools; index as i">
         <a
           class="card shadow mt-1 text-decoration-none text-muted h-100"
-          [routerLink]="tool.link"
+          [routerLink]="'/' + tool.link"
           style="cursor: pointer"
         >
           <div class="card-body">
@@ -30,7 +30,7 @@
       <div class="col-md-4 bg-light px-0 mx-0 mt-1" *ngFor="let tool of tools; index as i">
         <a
           class="card shadow mt-1 text-decoration-none text-muted h-100"
-          [routerLink]="tool.link"
+          [routerLink]="'/' + tool.link"
           style="cursor: pointer"
         >
           <div class="card-body">
