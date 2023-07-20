@@ -15,7 +15,7 @@ export class NewsbarComponent implements OnInit {
   constructor(private articlesService: ArticlesService) {}
 
   ngOnInit() {
-    this.articlesService.getList('assets/articles/list.json').subscribe((articles) => (this.articles = articles));
+    this.articlesService.getList('./assets/articles/list.json').subscribe((articles) => (this.articles = articles));
     interval(5000).subscribe((_) => (this.index += 1));
   }
 
@@ -48,7 +48,7 @@ export class NewsbarComponent implements OnInit {
       },
       {
         type: 'info',
-        contents: `新着記事通知: <a href='/blog/${this.latestArticleId}/'>${this.latestArticleTitle}</a>`,
+        contents: `新着記事通知: <a href='./blog/${this.latestArticleId}/'>${this.latestArticleTitle}</a>`,
       },
     ];
   }

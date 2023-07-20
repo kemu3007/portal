@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Article, Label } from '@app/shared/articles/articles';
@@ -23,29 +22,19 @@ export class BlogListComponent implements OnInit {
     private router: Router,
     private articleService: ArticlesService,
     private route: ActivatedRoute,
-    private loadingService: LoadingService,
-    @Inject(DOCUMENT) document: Document
-  ) {
-    if (route.snapshot.data['lang'] !== 'ja') {
-      this.url = `assets/articles/${route.snapshot.data['lang']}/list.json`;
-    }
-    document.documentElement.lang = route.snapshot.data['lang'];
-  }
+    private loadingService: LoadingService
+  ) {}
 
   ngOnInit() {
     this.loadingService.loading = true;
     this.articleService.getList(this.url).subscribe((articles) => {
       this.articles = articles;
-      timer(100).subscribe((_) => (this.loadingService.loading = false));
+      timer(30).subscribe((_) => (this.loadingService.loading = false));
     });
     const page = this.route.snapshot.queryParamMap.get('page');
     if (page) {
       this.pageIndex = Number(page);
     }
-  }
-
-  get isTranslated() {
-    return this.route.snapshot.data['lang'] !== 'ja';
   }
 
   get isLoading() {
