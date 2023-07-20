@@ -26,17 +26,6 @@ weed_iframe_base = """
 """
 
 
-def write_weeds_iframe():
-    years = [2017, 2018, 2019, 2020, 2021, 2022, 2023]
-    for year in years:
-        weed_svg = BeautifulSoup(
-            urlopen(f"https://github.com/kemu3007?tab=overview&from={year}-12-01&to={year}-12-31"),
-            features="html.parser",
-        ).find(class_="js-calendar-graph-svg")
-        html = weed_iframe_base.format(svg=weed_svg, year=year)
-        (iframes_dir / f"weed_{year}.html").write_text(html)
-
-
 def write_blog_image(title: str, output: str):
     image = Image.new("RGB", ogp_size, (255, 255, 255))
     draw = ImageDraw.Draw(image)
@@ -83,4 +72,3 @@ if __name__ == "__main__":
     write_tools_image("OpenApi Viewer", "openapi")
     write_tools_image("Mermaid Live Editor", "mermaid")
     write_tools_image("FX Calculator", "fx-calc")
-    write_weeds_iframe()
