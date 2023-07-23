@@ -1,5 +1,6 @@
 import json
 import re
+import os
 from pathlib import Path
 
 import requests
@@ -7,12 +8,18 @@ import requests
 articles_dir = Path("portal/src/assets/articles")
 assets_dir = Path("portal/src/assets/")
 
+github_token = os.environ["GITHUB_TOKEN"]
+headers = {"Authorization": f"Bearer {github_token}"}
+
 
 def export_issues(label: str, dir: Path, extract_photo: bool = False):
     dir.mkdir(exist_ok=True)
     for path in dir.glob("*.json"):
         path.unlink(missing_ok=True)
-    res = requests.get(f"https://api.github.com/repos/kemu3007/portal/issues?labels={label}&per_page=100")
+    res = requests.get(
+        f"https://api.github.com/repos/kemu3007/portal/issues?labels={label}&per_page=100",
+        headers=headers,
+    )
     issues = json.loads(res.content)
     issue_dict = {}
     for issue in reversed(issues):
@@ -38,16 +45,10 @@ def export_issues(label: str, dir: Path, extract_photo: bool = False):
     return issues
 
 
-def extract_future():
-    res = requests.get(f"https://api.github.com/repos/kemu3007/portal/issues?labels=future&per_page=100")
-    titles: str = json.loads(res.content)[0]["body"].split()
-    (assets_dir / "future.json").write_text(
-        json.dumps([title.strip() for title in titles], indent=4, ensure_ascii=False)
-    )
-
-
 def extract_snippets():
-    res = requests.get(f"https://api.github.com/repos/kemu3007/portal/issues?labels=snippet&per_page=100")
+    res = requests.get(
+        f"https://api.github.com/repos/kemu3007/portal/issues?labels=snippet&per_page=100", headers=headers
+    )
     issue: str = json.loads(res.content)[0]["body"]
     snippets = []
     for line in issue.split("\n\r"):
@@ -61,5 +62,4 @@ def extract_snippets():
 
 if __name__ == "__main__":
     export_issues("article", articles_dir)
-    extract_future()
     extract_snippets()
