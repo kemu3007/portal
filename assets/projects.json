@@ -97,7 +97,14 @@
         "forks": 0,
         "open_issues": 6,
         "watchers": 0,
-        "default_branch": "master"
+        "default_branch": "master",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 493553051,
@@ -197,7 +204,14 @@
         "forks": 0,
         "open_issues": 0,
         "watchers": 0,
-        "default_branch": "main"
+        "default_branch": "main",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 483952917,
@@ -297,7 +311,14 @@
         "forks": 0,
         "open_issues": 0,
         "watchers": 1,
-        "default_branch": "main"
+        "default_branch": "main",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 482449503,
@@ -410,7 +431,14 @@
         "forks": 0,
         "open_issues": 0,
         "watchers": 0,
-        "default_branch": "main"
+        "default_branch": "main",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 511568161,
@@ -510,7 +538,14 @@
         "forks": 0,
         "open_issues": 0,
         "watchers": 0,
-        "default_branch": "main"
+        "default_branch": "main",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 508703499,
@@ -610,7 +645,14 @@
         "forks": 0,
         "open_issues": 0,
         "watchers": 0,
-        "default_branch": "main"
+        "default_branch": "main",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 482524589,
@@ -710,7 +752,14 @@
         "forks": 0,
         "open_issues": 2,
         "watchers": 0,
-        "default_branch": "main"
+        "default_branch": "main",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 196736188,
@@ -810,7 +859,14 @@
         "forks": 0,
         "open_issues": 2,
         "watchers": 0,
-        "default_branch": "master"
+        "default_branch": "master",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 482441269,
@@ -918,7 +974,14 @@
         "forks": 0,
         "open_issues": 0,
         "watchers": 0,
-        "default_branch": "main"
+        "default_branch": "main",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 466707479,
@@ -1018,7 +1081,14 @@
         "forks": 0,
         "open_issues": 0,
         "watchers": 0,
-        "default_branch": "main"
+        "default_branch": "main",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 450705705,
@@ -1118,7 +1188,14 @@
         "forks": 0,
         "open_issues": 0,
         "watchers": 0,
-        "default_branch": "master"
+        "default_branch": "master",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 438597068,
@@ -1218,107 +1295,14 @@
         "forks": 0,
         "open_issues": 0,
         "watchers": 0,
-        "default_branch": "master"
-    },
-    {
-        "id": 465217707,
-        "node_id": "R_kgDOG7qoqw",
-        "name": "portal",
-        "full_name": "kemu3007/portal",
-        "private": false,
-        "owner": {
-            "login": "kemu3007",
-            "id": 29157528,
-            "node_id": "MDQ6VXNlcjI5MTU3NTI4",
-            "avatar_url": "https://avatars.githubusercontent.com/u/29157528?v=4",
-            "gravatar_id": "",
-            "url": "https://api.github.com/users/kemu3007",
-            "html_url": "https://github.com/kemu3007",
-            "followers_url": "https://api.github.com/users/kemu3007/followers",
-            "following_url": "https://api.github.com/users/kemu3007/following{/other_user}",
-            "gists_url": "https://api.github.com/users/kemu3007/gists{/gist_id}",
-            "starred_url": "https://api.github.com/users/kemu3007/starred{/owner}{/repo}",
-            "subscriptions_url": "https://api.github.com/users/kemu3007/subscriptions",
-            "organizations_url": "https://api.github.com/users/kemu3007/orgs",
-            "repos_url": "https://api.github.com/users/kemu3007/repos",
-            "events_url": "https://api.github.com/users/kemu3007/events{/privacy}",
-            "received_events_url": "https://api.github.com/users/kemu3007/received_events",
-            "type": "User",
-            "site_admin": false
-        },
-        "html_url": "https://github.com/kemu3007/portal",
-        "description": "Kemu Portal Page Source",
-        "fork": false,
-        "url": "https://api.github.com/repos/kemu3007/portal",
-        "forks_url": "https://api.github.com/repos/kemu3007/portal/forks",
-        "keys_url": "https://api.github.com/repos/kemu3007/portal/keys{/key_id}",
-        "collaborators_url": "https://api.github.com/repos/kemu3007/portal/collaborators{/collaborator}",
-        "teams_url": "https://api.github.com/repos/kemu3007/portal/teams",
-        "hooks_url": "https://api.github.com/repos/kemu3007/portal/hooks",
-        "issue_events_url": "https://api.github.com/repos/kemu3007/portal/issues/events{/number}",
-        "events_url": "https://api.github.com/repos/kemu3007/portal/events",
-        "assignees_url": "https://api.github.com/repos/kemu3007/portal/assignees{/user}",
-        "branches_url": "https://api.github.com/repos/kemu3007/portal/branches{/branch}",
-        "tags_url": "https://api.github.com/repos/kemu3007/portal/tags",
-        "blobs_url": "https://api.github.com/repos/kemu3007/portal/git/blobs{/sha}",
-        "git_tags_url": "https://api.github.com/repos/kemu3007/portal/git/tags{/sha}",
-        "git_refs_url": "https://api.github.com/repos/kemu3007/portal/git/refs{/sha}",
-        "trees_url": "https://api.github.com/repos/kemu3007/portal/git/trees{/sha}",
-        "statuses_url": "https://api.github.com/repos/kemu3007/portal/statuses/{sha}",
-        "languages_url": "https://api.github.com/repos/kemu3007/portal/languages",
-        "stargazers_url": "https://api.github.com/repos/kemu3007/portal/stargazers",
-        "contributors_url": "https://api.github.com/repos/kemu3007/portal/contributors",
-        "subscribers_url": "https://api.github.com/repos/kemu3007/portal/subscribers",
-        "subscription_url": "https://api.github.com/repos/kemu3007/portal/subscription",
-        "commits_url": "https://api.github.com/repos/kemu3007/portal/commits{/sha}",
-        "git_commits_url": "https://api.github.com/repos/kemu3007/portal/git/commits{/sha}",
-        "comments_url": "https://api.github.com/repos/kemu3007/portal/comments{/number}",
-        "issue_comment_url": "https://api.github.com/repos/kemu3007/portal/issues/comments{/number}",
-        "contents_url": "https://api.github.com/repos/kemu3007/portal/contents/{+path}",
-        "compare_url": "https://api.github.com/repos/kemu3007/portal/compare/{base}...{head}",
-        "merges_url": "https://api.github.com/repos/kemu3007/portal/merges",
-        "archive_url": "https://api.github.com/repos/kemu3007/portal/{archive_format}{/ref}",
-        "downloads_url": "https://api.github.com/repos/kemu3007/portal/downloads",
-        "issues_url": "https://api.github.com/repos/kemu3007/portal/issues{/number}",
-        "pulls_url": "https://api.github.com/repos/kemu3007/portal/pulls{/number}",
-        "milestones_url": "https://api.github.com/repos/kemu3007/portal/milestones{/number}",
-        "notifications_url": "https://api.github.com/repos/kemu3007/portal/notifications{?since,all,participating}",
-        "labels_url": "https://api.github.com/repos/kemu3007/portal/labels{/name}",
-        "releases_url": "https://api.github.com/repos/kemu3007/portal/releases{/id}",
-        "deployments_url": "https://api.github.com/repos/kemu3007/portal/deployments",
-        "created_at": "2022-03-02T08:23:53Z",
-        "updated_at": "2023-04-02T14:22:09Z",
-        "pushed_at": "2023-07-23T00:27:32Z",
-        "git_url": "git://github.com/kemu3007/portal.git",
-        "ssh_url": "git@github.com:kemu3007/portal.git",
-        "clone_url": "https://github.com/kemu3007/portal.git",
-        "svn_url": "https://github.com/kemu3007/portal",
-        "homepage": "https://portal.kemu.site",
-        "size": 224164,
-        "stargazers_count": 4,
-        "watchers_count": 4,
-        "language": "JavaScript",
-        "has_issues": true,
-        "has_projects": true,
-        "has_downloads": true,
-        "has_wiki": true,
-        "has_pages": true,
-        "has_discussions": false,
-        "forks_count": 0,
-        "mirror_url": null,
-        "archived": false,
-        "disabled": false,
-        "open_issues_count": 64,
-        "license": null,
-        "allow_forking": true,
-        "is_template": false,
-        "web_commit_signoff_required": false,
-        "topics": [],
-        "visibility": "public",
-        "forks": 0,
-        "open_issues": 64,
-        "watchers": 4,
-        "default_branch": "master"
+        "default_branch": "master",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 488054862,
@@ -1418,7 +1402,14 @@
         "forks": 0,
         "open_issues": 0,
         "watchers": 0,
-        "default_branch": "master"
+        "default_branch": "master",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 234919357,
@@ -1518,7 +1509,14 @@
         "forks": 0,
         "open_issues": 0,
         "watchers": 0,
-        "default_branch": "master"
+        "default_branch": "master",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     },
     {
         "id": 237400772,
@@ -1618,6 +1616,13 @@
         "forks": 0,
         "open_issues": 1,
         "watchers": 0,
-        "default_branch": "master"
+        "default_branch": "master",
+        "permissions": {
+            "admin": false,
+            "maintain": false,
+            "push": false,
+            "triage": false,
+            "pull": false
+        }
     }
 ]

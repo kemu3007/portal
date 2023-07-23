@@ -1,7 +1,0 @@
-[
-    "CodePipelineを利用したECSデプロイ",
-    "django-structlogの動作確認",
-    "graphene-django",
-    "dataloaderによるn+1アプローチ",
-    "リードレプリカの作成と運用"
-]
