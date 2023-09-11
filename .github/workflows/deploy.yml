@@ -8,7 +8,7 @@ on:
       - master
   workflow_dispatch:
   schedule:
-    - cron:  '0 0 * * *'
+    - cron:  '0 0 * * 0'
 
 jobs:
   deploy:
@@ -52,7 +52,7 @@ jobs:
       - name: build
         working-directory: ./portal
         run: |
-          npm run ng build -- --sourceMap=true |& tee -a $GITHUB_STEP_SUMMARY
+          npm run build |& tee -a $GITHUB_STEP_SUMMARY
           exit ${PIPESTATUS[0]}
       - name: SSG
         working-directory: ./portal
