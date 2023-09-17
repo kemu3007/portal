@@ -8,7 +8,6 @@ export const environment: Env = {
   production: false,
   googleAdClient: '',
   adsenseProvider: 'google',
-  sentryDSN: '',
 };
 
 /*
