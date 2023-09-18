@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 import metaJson from '@assets/meta.json';
+import { environment } from '@environments/environment';
 import { tap } from 'rxjs';
 
 @Injectable({
@@ -30,7 +31,7 @@ export class RouterService {
         } else if (event instanceof NavigationEnd) {
           this.loadingService.loading = false;
           this.displayOrWaitAds();
-          const meta = (metaJson as any)[window.location.pathname];
+          const meta = (metaJson as any)[window.location.pathname.replace(environment.pathPrefix, '')];
           if (meta) {
             this.title.setTitle(meta.title);
             this.meta.updateTag({ name: 'description', content: meta.title });
