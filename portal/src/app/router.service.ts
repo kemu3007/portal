@@ -54,10 +54,10 @@ export class RouterService {
   }
 
   displayOrWaitAds() {
-    if (this.adsCount === 3) {
-      this.adsModalService.open();
-      this.adsCount = 0;
-    }
-    this.adsCount += 1;
+    // if (this.adsCount === 3) {
+    //   this.adsModalService.open();
+    //   this.adsCount = 0;
+    // }
+    // this.adsCount += 1;
   }
 }
