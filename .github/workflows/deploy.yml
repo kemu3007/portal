@@ -1,70 +1,70 @@
-name: deploy
+# name: deploy
 
-on:
-  issues:
-    types: [opened, edited, deleted]
-  push:
-    branches:
-      - master
-  workflow_dispatch:
-  schedule:
-    - cron:  '0 0 * * 0'
+# on:
+#   issues:
+#     types: [opened, edited, deleted]
+#   push:
+#     branches:
+#       - master
+#   workflow_dispatch:
+#   schedule:
+#     - cron:  '0 0 * * 0'
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    concurrency: 
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
-    strategy:
-      matrix:
-        node-version: ['16']
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-python@v3
-        with:
-          python-version: '3.10'
-          cache: 'pip'
-          cache-dependency-path: 'requirements.lock.txt'
-      - uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-          cache-dependency-path: portal/package-lock.json
-      - name: install deps
-        working-directory: ./portal
-        run: |
-          npm install --legacy-peer-deps
-      - name: collect article / prepare page, image, version, sitemap
-        run: |
-          pip install -r requirements.lock.txt
-          python export_issues.py
-          python export_projects.py
-          python create_img.py
-          python create_meta.py
-          python create_version.py
-          python create_sitemap.py
-          python create_rss.py
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: build
-        working-directory: ./portal
-        run: |
-          npm run build |& tee -a $GITHUB_STEP_SUMMARY
-          exit ${PIPESTATUS[0]}
-      - name: SSG
-        working-directory: ./portal
-        run: |
-          npm run scully |& tee -a $GITHUB_STEP_SUMMARY
-          exit ${PIPESTATUS[0]}
-      - name: deploy gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./portal/dist/static/
-      - uses: actions/upload-artifact@v3
-        with:
-          name: articles
-          path: ./portal/src/assets/articles/
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     concurrency: 
+#       group: ${{ github.workflow }}-${{ github.ref }}
+#       cancel-in-progress: true
+#     strategy:
+#       matrix:
+#         node-version: ['16']
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           fetch-depth: 0
+#       - uses: actions/setup-python@v3
+#         with:
+#           python-version: '3.10'
+#           cache: 'pip'
+#           cache-dependency-path: 'requirements.lock.txt'
+#       - uses: actions/setup-node@v2
+#         with:
+#           node-version: ${{ matrix.node-version }}
+#           cache: 'npm'
+#           cache-dependency-path: portal/package-lock.json
+#       - name: install deps
+#         working-directory: ./portal
+#         run: |
+#           npm install --legacy-peer-deps
+#       - name: collect article / prepare page, image, version, sitemap
+#         run: |
+#           pip install -r requirements.lock.txt
+#           python export_issues.py
+#           python export_projects.py
+#           python create_img.py
+#           python create_meta.py
+#           python create_version.py
+#           python create_sitemap.py
+#           python create_rss.py
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       - name: build
+#         working-directory: ./portal
+#         run: |
+#           npm run build |& tee -a $GITHUB_STEP_SUMMARY
+#           exit ${PIPESTATUS[0]}
+#       - name: SSG
+#         working-directory: ./portal
+#         run: |
+#           npm run scully |& tee -a $GITHUB_STEP_SUMMARY
+#           exit ${PIPESTATUS[0]}
+#       - name: deploy gh-pages
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           publish_dir: ./portal/dist/static/
+#       - uses: actions/upload-artifact@v3
+#         with:
+#           name: articles
+#           path: ./portal/src/assets/articles/
